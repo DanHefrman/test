@@ -1,122 +1,275 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>README</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
-  <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
-</head>
-<body>
-<h1 id="dojo-custom-element-menu-demo">Dojo Custom Element Menu Demo</h1>
-<p>Implementation of a basic menu widget that demonstrates using as custom elements against standard Dojo widgets.</p>
-<ul>
-<li><a href="#pre-requisites">Pre-requisites</a></li>
-<li><a href="#usage">Usage</a></li>
-<li><a href="#features">Features</a></li>
-<li><a href="#how-do-i-contribute">How do I contribute?</a>
-<ul>
-<li><a href="#installation">Installation</a></li>
-<li><a href="#testing">Testing</a></li>
-</ul></li>
-<li><a href="#licensing-information">Licensing information</a></li>
-</ul>
-<h2 id="pre-requisites">Pre-requisites</h2>
-<p><code>@dojo/cli</code> must be installed globally:</p>
-<pre class="shell"><code>npm install @dojo/cli -g</code></pre>
-<h2 id="usage">Usage</h2>
-<p>To use the <code>custom-element-menu</code>, clone the <code>examples</code> repository and install the npm dependencies:</p>
-<pre class="shell"><code>git clone https://github.com/dojo/examples
+	<head>
+		<meta charset="utf-8" />
+		<meta name="generator" content="pandoc" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+		<title>README</title>
+		<style type="text/css">
+			code {
+				white-space: pre-wrap;
+			}
+			span.smallcaps {
+				font-variant: small-caps;
+			}
+			span.underline {
+				text-decoration: underline;
+			}
+			div.column {
+				display: inline-block;
+				vertical-align: top;
+				width: 50%;
+			}
+		</style>
+		<style type="text/css">
+			a.sourceLine {
+				display: inline-block;
+				line-height: 1.25;
+			}
+			a.sourceLine {
+				pointer-events: none;
+				color: inherit;
+				text-decoration: inherit;
+			}
+			a.sourceLine:empty {
+				height: 1.2em;
+			}
+			.sourceCode {
+				overflow: visible;
+			}
+			code.sourceCode {
+				white-space: pre;
+				position: relative;
+			}
+			div.sourceCode {
+				margin: 1em 0;
+			}
+			pre.sourceCode {
+				margin: 0;
+			}
+			@media screen {
+				div.sourceCode {
+					overflow: auto;
+				}
+			}
+			@media print {
+				code.sourceCode {
+					white-space: pre-wrap;
+				}
+				a.sourceLine {
+					text-indent: -1em;
+					padding-left: 1em;
+				}
+			}
+			pre.numberSource a.sourceLine {
+				position: relative;
+				left: -4em;
+			}
+			pre.numberSource a.sourceLine::before {
+				content: attr(title);
+				position: relative;
+				left: -1em;
+				text-align: right;
+				vertical-align: baseline;
+				border: none;
+				pointer-events: all;
+				display: inline-block;
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+				-khtml-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+				padding: 0 4px;
+				width: 4em;
+				color: #aaaaaa;
+			}
+			pre.numberSource {
+				margin-left: 3em;
+				border-left: 1px solid #aaaaaa;
+				padding-left: 4px;
+			}
+			div.sourceCode {
+			}
+			@media screen {
+				a.sourceLine::before {
+					text-decoration: underline;
+				}
+			}
+			code span.al {
+				color: #ff0000;
+				font-weight: bold;
+			} /* Alert */
+			code span.an {
+				color: #60a0b0;
+				font-weight: bold;
+				font-style: italic;
+			} /* Annotation */
+			code span.at {
+				color: #7d9029;
+			} /* Attribute */
+			code span.bn {
+				color: #40a070;
+			} /* BaseN */
+			code span.bu {
+			} /* BuiltIn */
+			code span.cf {
+				color: #007020;
+				font-weight: bold;
+			} /* ControlFlow */
+			code span.ch {
+				color: #4070a0;
+			} /* Char */
+			code span.cn {
+				color: #880000;
+			} /* Constant */
+			code span.co {
+				color: #60a0b0;
+				font-style: italic;
+			} /* Comment */
+			code span.cv {
+				color: #60a0b0;
+				font-weight: bold;
+				font-style: italic;
+			} /* CommentVar */
+			code span.do {
+				color: #ba2121;
+				font-style: italic;
+			} /* Documentation */
+			code span.dt {
+				color: #902000;
+			} /* DataType */
+			code span.dv {
+				color: #40a070;
+			} /* DecVal */
+			code span.er {
+				color: #ff0000;
+				font-weight: bold;
+			} /* Error */
+			code span.ex {
+			} /* Extension */
+			code span.fl {
+				color: #40a070;
+			} /* Float */
+			code span.fu {
+				color: #06287e;
+			} /* Function */
+			code span.im {
+			} /* Import */
+			code span.in {
+				color: #60a0b0;
+				font-weight: bold;
+				font-style: italic;
+			} /* Information */
+			code span.kw {
+				color: #007020;
+				font-weight: bold;
+			} /* Keyword */
+			code span.op {
+				color: #666666;
+			} /* Operator */
+			code span.ot {
+				color: #007020;
+			} /* Other */
+			code span.pp {
+				color: #bc7a00;
+			} /* Preprocessor */
+			code span.sc {
+				color: #4070a0;
+			} /* SpecialChar */
+			code span.ss {
+				color: #bb6688;
+			} /* SpecialString */
+			code span.st {
+				color: #4070a0;
+			} /* String */
+			code span.va {
+				color: #19177c;
+			} /* Variable */
+			code span.vs {
+				color: #4070a0;
+			} /* VerbatimString */
+			code span.wa {
+				color: #60a0b0;
+				font-weight: bold;
+				font-style: italic;
+			} /* Warning */
+		</style>
+	</head>
+	<body>
+		<h1 id="dojo-custom-element-menu-demo">Dojo Custom Element Menu Demo</h1>
+		<p>
+			Implementation of a basic menu widget that demonstrates using as custom elements against standard Dojo
+			widgets.
+		</p>
+		<ul>
+			<li><a href="#pre-requisites">Pre-requisites</a></li>
+			<li><a href="#usage">Usage</a></li>
+			<li><a href="#features">Features</a></li>
+			<li>
+				<a href="#how-do-i-contribute">How do I contribute?</a>
+				<ul>
+					<li><a href="#installation">Installation</a></li>
+					<li><a href="#testing">Testing</a></li>
+				</ul>
+			</li>
+			<li><a href="#licensing-information">Licensing information</a></li>
+		</ul>
+		<h2 id="pre-requisites">Pre-requisites</h2>
+		<p><code>@dojo/cli</code> must be installed globally:</p>
+		<pre class="shell"><code>npm install @dojo/cli -g</code></pre>
+		<h2 id="usage">Usage</h2>
+		<p>
+			To use the <code>custom-element-menu</code>, clone the <code>examples</code> repository and install the npm
+			dependencies:
+		</p>
+		<pre class="shell"><code>git clone https://github.com/dojo/examples
 cd examples/custom-element-menu
 npm install</code></pre>
-<p>To run the application simply run the dojo build.</p>
-<pre><code>npm run build</code></pre>
-<p>Open the <code>dist</code> directory using a local webserver.</p>
-<h2 id="features">Features</h2>
-<p>This package demonstrates how to use Dojo widgets as a custom element.</p>
-<p>Notice <code>src/widgets/createMenuElement.ts</code> and <code>src/widgets/createMenuItemElement.ts</code> describe the custom elements. To build the custom elements, the <code>npm run build</code> command above first runs <code>dojo build</code> and then</p>
-<pre class="shell"><code>dojo build --element=src/widgets/createMenuItemElement.ts
+		<p>To run the application simply run the dojo build.</p>
+		<pre><code>npm run build</code></pre>
+		<p>Open the <code>dist</code> directory using a local webserver.</p>
+		<h2 id="features">Features</h2>
+		<p>This package demonstrates how to use Dojo widgets as a custom element.</p>
+		<p>
+			Notice <code>src/widgets/createMenuElement.ts</code> and
+			<code>src/widgets/createMenuItemElement.ts</code> describe the custom elements. To build the custom
+			elements, the <code>npm run build</code> command above first runs <code>dojo build</code> and then
+		</p>
+		<pre class="shell"><code>dojo build --element=src/widgets/createMenuItemElement.ts
 dojo build --element=src/widgets/createMenuElement.ts</code></pre>
-<p>Those CLI build commands use webpack to create bundles in the <code>dist</code> directory for each custom element. To use those custom elements in your own HTML page, import the custom elements’ HTML files:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;import&quot;</span><span class="ot"> href=</span><span class="st">&quot;./dist/menu/menu.html&quot;</span> <span class="kw">/&gt;</span> <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;import&quot;</span><span class="ot"> href=</span><span class="st">&quot;./dist/menu-item/menu-item.html&quot;</span> <span class="kw">/&gt;</span></a></code></pre></div>
-<h2 id="how-do-i-contribute">How do I contribute?</h2>
-<p>We appreciate your interest! Please see the <a href="https://github.com/dojo/meta#readme">Dojo Meta Repository</a> for the Contributing Guidelines and Style Guide.</p>
-<h3 id="installation">Installation</h3>
-<p>To start working with this package, clone the repository and run <code>npm install</code>.</p>
-<p>In order to build the project run <code>dojo build</code>.</p>
-<h3 id="testing">Testing</h3>
-<p>Test cases MUST be written using <a href="https://theintern.github.io">Intern</a> using the Object test interface and Assert assertion interface.</p>
-<p>You can test custom element menu locally using the <a href="https://github.com/dojo/cli-test-intern"><code>@dojo/cli-test-intern</code></a> command:</p>
-<pre class="shell"><code>dojo test -a</code></pre>
-<h2 id="licensing-information">Licensing Information</h2>
-<p>© 2018 <a href="https://js.foundation/">JS Foundation</a>. <a href="http://opensource.org/licenses/BSD-3-Clause">New BSD</a> license.</p>
-</body>
+		<p>
+			Those CLI build commands use webpack to create bundles in the <code>dist</code> directory for each custom
+			element. To use those custom elements in your own HTML page, import the custom elements’ HTML files:
+		</p>
+		<div class="sourceCode" id="cb5">
+			<pre
+				class="sourceCode html"
+			><code class="sourceCode html"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;import&quot;</span><span class="ot"> href=</span><span class="st">&quot;./dist/menu/menu.html&quot;</span> <span class="kw">/&gt;</span> <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;import&quot;</span><span class="ot"> href=</span><span class="st">&quot;./dist/menu-item/menu-item.html&quot;</span> <span class="kw">/&gt;</span></a></code></pre>
+		</div>
+		<h2 id="how-do-i-contribute">How do I contribute?</h2>
+		<p>
+			We appreciate your interest! Please see the
+			<a href="https://github.com/dojo/meta#readme">Dojo Meta Repository</a> for the Contributing Guidelines and
+			Style Guide.
+		</p>
+		<h3 id="installation">Installation</h3>
+		<p>To start working with this package, clone the repository and run <code>npm install</code>.</p>
+		<p>In order to build the project run <code>dojo build</code>.</p>
+		<h3 id="testing">Testing</h3>
+		<p>
+			Test cases MUST be written using <a href="https://theintern.github.io">Intern</a> using the Object test
+			interface and Assert assertion interface.
+		</p>
+		<p>
+			You can test custom element menu locally using the
+			<a href="https://github.com/dojo/cli-test-intern"><code>@dojo/cli-test-intern</code></a> command:
+		</p>
+		<pre class="shell"><code>dojo test -a</code></pre>
+		<h2 id="licensing-information">Licensing Information</h2>
+		<p>
+			© 2018 <a href="https://js.foundation/">JS Foundation</a>.
+			<a href="http://opensource.org/licenses/BSD-3-Clause">New BSD</a> license.
+		</p>
+	</body>
 </html>

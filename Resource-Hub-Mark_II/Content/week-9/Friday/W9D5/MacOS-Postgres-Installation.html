@@ -18,9 +18,9 @@
 <p>You can install both of these products using Homebrew. Your Windows-using classmates don’t have this convenience, so pretend you’re having a hard time doing this. 😉</p>
 <h2 id="installing-postgresql-12">Installing PostgreSQL 12</h2>
 <p>First, update your Homebrew installation. You should do this before each thing that you install using Homebrew.</p>
-<pre><code>brew update</code></pre>
+<pre class="shell"><code>brew update</code></pre>
 <p>Now, make sure that you have the correct Homebrew recipe. Type the following and make sure that the first line of the output contains some version of “12”.</p>
-<pre><code>brew info postgresql</code></pre>
+<pre class="shell"><code>brew info postgresql</code></pre>
 <p>You should see something like this in the output.</p>
 <pre><code>postgresql: stable 12.2 (bottled), HEAD</code></pre>
 <p>Now, launch the installation.</p>
@@ -28,7 +28,7 @@
 <p>This may take a while. Have a tea.</p>
 <h2 id="configuring-postgresql-12">Configuring PostgreSQL 12</h2>
 <p>When that completes, you can read the <strong>Caveats</strong> section from the installation output. You should do this with <em>everything</em> that you install using Homebrew.</p>
-<pre><code>To migrate existing data from a previous major version of PostgreSQL run:
+<pre class="shell"><code>To migrate existing data from a previous major version of PostgreSQL run:
   brew postgresql-upgrade-database
 
 To have launchd start postgresql now and restart at login:
@@ -36,11 +36,11 @@ To have launchd start postgresql now and restart at login:
 Or, if you don&#39;t want/need a background service you can just run:
   pg_ctl -D /usr/local/var/postgres start</code></pre>
 <p>You definitely want PostgreSQL to run now and every time you log in. Otherwise you’d have to start it every time you reboot your computer which can be a hassle. Following the instructions, please type the following into the command line.</p>
-<pre><code>brew services start postgresql</code></pre>
+<pre class="shell"><code>brew services start postgresql</code></pre>
 <p>That should report that PostgreSQL is now started.</p>
 <h2 id="connecting-to-postgresql">Connecting to PostgreSQL</h2>
 <p>To make sure your client tools are configured properly, type the following in a Terminal. This tells the <code>psql</code> client that you want to connect to the “postgres” database, which is the default database created when PostgreSQL is installed.</p>
-<pre><code>psql postgres</code></pre>
+<pre class="shell"><code>psql postgres</code></pre>
 <p>That will connect to the “postgres” database as your user that you’re logged in as, which the installer configured for you during the installation. It’s the same as specifying your user name by using the “-U” command line parameter and typing.</p>
 <pre><code>psql -U «your user name» postgres</code></pre>
 <p>When you successfully log in, it should show you the following output.</p>
@@ -51,12 +51,12 @@ postgres=#</code></pre>
 <p>Type <code>\q</code> and hit Return to quit the PostgreSQL client.</p>
 <h2 id="installing-postbird">Installing Postbird</h2>
 <p>Make sure that your Homebrew can find Postbird. Search for it using the <code>brew search</code> command.</p>
-<pre><code>brew search postbird</code></pre>
+<pre class="shell"><code>brew search postbird</code></pre>
 <p>You should get something back that looks like this.</p>
 <pre><code>==&gt; Casks
 postbird</code></pre>
 <p>That means it could find it. Since it’s a <strong>Cask</strong>, that means it’s an application that is meant to be used as a graphical user interface rather than on the command line. To install it, you need to include “cask” in the command.</p>
-<pre><code>brew cask install postbird</code></pre>
+<pre class="shell"><code>brew cask install postbird</code></pre>
 <p>Once it installs, try starting it. It’s in your Applications directory. You can use Spotlight to launch it by pressing Command+Space. In the Spotlight window, type “postbird”. It should show you the recently-installed application’s logo in the list as a white circle with a blue elephant. Select that and press Enter (or click it, if you’re the touchpad/mouse kind of person).</p>
 <p>The first time it starts, you may get this error.</p>
 <figure>

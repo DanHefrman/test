@@ -13,42 +13,15 @@
   </style>
 </head>
 <body>
-<!--
-
-
----
- "ES6 : First sip of ES6 with traceur"
-date: 2013-10-19 00:00:00 UTC
-updated: 2013-10-19 00:00:00 UTC
-categories: es6
----
-
--->
-&lt;!DOCTYPE html&gt;
-<html>
-<head>
-<title>
-basic-git-workflow
-</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./css/bootstrap.css"> <link rel="stylesheet" href="./css/bootstrap.grid.css"> <link rel="stylesheet" href="./css/bootstrap.min.css"> <link rel="stylesheet" href="./css/bootstrap-reboot.min.css"> <link rel="stylesheet" href="./css/bootstrap.css.map"> <link rel="stylesheet" href="./css/blog-home.css"> <link rel="stylesheet" href="./css/prism.css">
-<script async defer src="./css/prism.js"></script>
-</head>
-<body>
+<p>&lt;!DOCTYPE html&gt;</p>
 <p>I was really curious about the upcoming ES6 features. After a long time, today I made time to try out some of the features using <a href="https://github.com/google/traceur-compiler">traceur-compiler</a>.</p>
 <h2 id="boilerplate">Boilerplate</h2>
 <p>First thing I done was to setup a boilerplate to run ES6 with traceur. {% highlight html %}</p>
-<!-- index.html -->
-&lt;!doctype html&gt;
-<html class="no-js">
-<!--<![endif]-->
+<p>&lt;!doctype html&gt;</p>
 <pre><code>&lt;head&gt;
-  &lt;title&gt;ES6&lt;/title&gt;</code></pre>
-<link rel="stylesheet" href="./css/bootstrap.css"> <link rel="stylesheet" href="./css/bootstrap.grid.css"> <link rel="stylesheet" href="./css/bootstrap.min.css"> <link rel="stylesheet" href="./css/bootstrap-reboot.min.css"> <link rel="stylesheet" href="./css/bootstrap.css.map"> <link rel="stylesheet" href="./css/blog-home.css"> <link rel="stylesheet" href="./css/prism.css">
-<script async defer src="./css/prism.js"></script>
-</head>
-<pre><code>&lt;body&gt;
+  &lt;title&gt;ES6&lt;/title&gt;
+
+&lt;body&gt;
 
 &lt;script src=&quot;https://traceur-compiler.googlecode.com/git/bin/traceur.js&quot;
     type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
@@ -58,15 +31,10 @@ basic-git-workflow
     traceur.options.experimental = true;
 &lt;/script&gt;
 &lt;script type=&quot;text/traceur&quot; src=&quot;calc.js&quot;&gt;&lt;/script&gt;</code></pre>
-</body>
-</html>
 <p>{% endhighlight %}</p>
 <p>In the above traceur.js is the compiler and bootstrap.js is used for compile all the script tags with <strong>type=“text/traceur”</strong> into vanilla js.</p>
 <p>Some of the experimental features in traceur are truned off by default, so we need to enable all the experimental features using</p>
 <p>{% highlight html %}</p>
-<script>
-    traceur.options.experimental = true;
-</script>
 <p>{% endhighlight %}</p>
 <p>You can look into <a href="https://github.com/google/traceur-compiler/blob/master/src/options.js">options</a> for details.</p>
 <h2 id="creating-class">Creating class</h2>

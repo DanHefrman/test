@@ -1,4 +1,4 @@
-id="not-splitting-into-components"&gt;<a href="#not-splitting" id="not-splitting" class="anchor"><em></em></a> 1. Not splitting into components
+id=“not-splitting-into-components”&gt;<a href="#not-splitting" id="not-splitting" class="anchor"><em></em></a> 1. Not splitting into components
 
 Most people start writing the component and forget to split. So team will endup with very huge render method. Some try to abstract it into instance methods.
 

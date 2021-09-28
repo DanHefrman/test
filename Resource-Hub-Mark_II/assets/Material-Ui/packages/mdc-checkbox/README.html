@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>README</title>
+    <style type="text/css">
+      code {
+        white-space: pre-wrap;
+      }
+      span.smallcaps {
+        font-variant: small-caps;
+      }
+      span.underline {
+        text-decoration: underline;
+      }
+      div.column {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+      }
+    </style>
+    <style type="text/css">
+      a.sourceLine {
+        display: inline-block;
+        line-height: 1.25;
+      }
+      a.sourceLine {
+        pointer-events: none;
+        color: inherit;
+        text-decoration: inherit;
+      }
+      a.sourceLine:empty {
+        height: 1.2em;
+      }
+      .sourceCode {
+        overflow: visible;
+      }
+      code.sourceCode {
+        white-space: pre;
+        position: relative;
+      }
+      div.sourceCode {
+        margin: 1em 0;
+      }
+      pre.sourceCode {
+        margin: 0;
+      }
+      @media screen {
+        div.sourceCode {
+          overflow: auto;
+        }
+      }
+      @media print {
+        code.sourceCode {
+          white-space: pre-wrap;
+        }
+        a.sourceLine {
+          text-indent: -1em;
+          padding-left: 1em;
+        }
+      }
+      pre.numberSource a.sourceLine {
+        position: relative;
+        left: -4em;
+      }
+      pre.numberSource a.sourceLine::before {
+        content: attr(title);
+        position: relative;
+        left: -1em;
+        text-align: right;
+        vertical-align: baseline;
+        border: none;
+        pointer-events: all;
+        display: inline-block;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        padding: 0 4px;
+        width: 4em;
+        color: #aaaaaa;
+      }
+      pre.numberSource {
+        margin-left: 3em;
+        border-left: 1px solid #aaaaaa;
+        padding-left: 4px;
+      }
+      div.sourceCode {
+      }
+      @media screen {
+        a.sourceLine::before {
+          text-decoration: underline;
+        }
+      }
+      code span.al {
+        color: #ff0000;
+        font-weight: bold;
+      } /* Alert */
+      code span.an {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* Annotation */
+      code span.at {
+        color: #7d9029;
+      } /* Attribute */
+      code span.bn {
+        color: #40a070;
+      } /* BaseN */
+      code span.bu {
+      } /* BuiltIn */
+      code span.cf {
+        color: #007020;
+        font-weight: bold;
+      } /* ControlFlow */
+      code span.ch {
+        color: #4070a0;
+      } /* Char */
+      code span.cn {
+        color: #880000;
+      } /* Constant */
+      code span.co {
+        color: #60a0b0;
+        font-style: italic;
+      } /* Comment */
+      code span.cv {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* CommentVar */
+      code span.do {
+        color: #ba2121;
+        font-style: italic;
+      } /* Documentation */
+      code span.dt {
+        color: #902000;
+      } /* DataType */
+      code span.dv {
+        color: #40a070;
+      } /* DecVal */
+      code span.er {
+        color: #ff0000;
+        font-weight: bold;
+      } /* Error */
+      code span.ex {
+      } /* Extension */
+      code span.fl {
+        color: #40a070;
+      } /* Float */
+      code span.fu {
+        color: #06287e;
+      } /* Function */
+      code span.im {
+      } /* Import */
+      code span.in {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* Information */
+      code span.kw {
+        color: #007020;
+        font-weight: bold;
+      } /* Keyword */
+      code span.op {
+        color: #666666;
+      } /* Operator */
+      code span.ot {
+        color: #007020;
+      } /* Other */
+      code span.pp {
+        color: #bc7a00;
+      } /* Preprocessor */
+      code span.sc {
+        color: #4070a0;
+      } /* SpecialChar */
+      code span.ss {
+        color: #bb6688;
+      } /* SpecialString */
+      code span.st {
+        color: #4070a0;
+      } /* String */
+      code span.va {
+        color: #19177c;
+      } /* Variable */
+      code span.vs {
+        color: #4070a0;
+      } /* VerbatimString */
+      code span.wa {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* Warning */
+    </style>
+  </head>
+  <body>
+    <!--docs:
+title: "Checkboxes"
+layout: detail
+section: components
+excerpt: "Checkboxes allow the user to select multiple options from a set."
+iconId: selection_control
+path: /catalog/input-controls/checkboxes/
+-->
+    <h1 id="selection-controls-checkboxes">Selection controls: checkboxes</h1>
+    <p>
+      <a href="https://material.io/components/selection-controls#usage"
+        >Selection controls</a
+      >
+      allow the user to select options.
+    </p>
+    <p>Use checkboxes to:</p>
+    <ul>
+      <li>Select one or more options from a list</li>
+      <li>Present a list containing sub-selections</li>
+      <li>Turn an item on or off in a desktop environment</li>
+    </ul>
+    <figure>
+      <img
+        src="images/checkbox-hero.png"
+        alt="Checkbox hero example for menu options"
+      />
+      <figcaption>Checkbox hero example for menu options</figcaption>
+    </figure>
+    <p><strong>Contents</strong></p>
+    <ul>
+      <li><a href="#using-checkboxes">Using checkboxes</a></li>
+      <li><a href="#checkboxes">Checkboxes</a></li>
+      <li><a href="#other-variants">Other variants</a></li>
+      <li><a href="#api">API</a></li>
+      <li>
+        <a href="#usage-within-web-frameworks">Usage within web frameworks</a>
+      </li>
+    </ul>
+    <h2 id="using-checkboxes">Using checkboxes</h2>
+    <p>
+      Checkboxes allow the user to select one or more items from a set.
+      Checkboxes can be used to turn an option on or off.
+    </p>
+    <h3 id="installing-checkboxes">Installing checkboxes</h3>
+    <pre><code>npm install @material/checkbox</code></pre>
+    <h3 id="styles">Styles</h3>
+    <pre class="scss"><code>@use &quot;@material/checkbox&quot;;
+@use &quot;@material/form-field&quot;;
+
+@include checkbox.core-styles;
+@include form-field.core-styles;</code></pre>
+    <p>
+      <strong
+        >Note: The form field styles are only required when the checkbox is used
+        with the form field.</strong
+      >
+    </p>
+    <h3 id="javascript-instantiation">JavaScript instantiation</h3>
+    <p>
+      The checkbox will work without JavaScript, but you can enhance it with a
+      ripple interaction effect by instantiating <code>MDCCheckbox</code> on the
+      <code>mdc-checkbox</code> element. To activate the ripple effect upon
+      interacting with the label, you must also instantiate
+      <code>MDCFormField</code> on the <code>mdc-form-field</code> element and
+      set the <code>MDCCheckbox</code> instance as its <code>input</code>.
+    </p>
+    <div class="sourceCode" id="cb3">
+      <pre
+        class="sourceCode js"
+      ><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="im">import</span> <span class="op">{</span>MDCFormField<span class="op">}</span> <span class="im">from</span> <span class="st">&#39;@material/form-field&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="im">import</span> <span class="op">{</span>MDCCheckbox<span class="op">}</span> <span class="im">from</span> <span class="st">&#39;@material/checkbox&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-3" title="3"></a>
+<a class="sourceLine" id="cb3-4" title="4"><span class="kw">const</span> checkbox <span class="op">=</span> <span class="kw">new</span> <span class="at">MDCCheckbox</span>(<span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&#39;.mdc-checkbox&#39;</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-5" title="5"><span class="kw">const</span> formField <span class="op">=</span> <span class="kw">new</span> <span class="at">MDCFormField</span>(<span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&#39;.mdc-form-field&#39;</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-6" title="6"><span class="va">formField</span>.<span class="at">input</span> <span class="op">=</span> checkbox<span class="op">;</span></a></code></pre>
+    </div>
+    <blockquote>
+      <p>
+        See
+        <a href="../../docs/importing-js.md">Importing the JS component</a> for
+        more information on how to import JavaScript.
+      </p>
+    </blockquote>
+    <h3 id="making-checkboxes-accessible">Making checkboxes accessible</h3>
+    <p>
+      Material Design spec advises that touch targets should be at least 48px x
+      48px. To meet this requirement, add the
+      <code>mdc-checkbox--touch</code> class to your checkbox as follows:
+    </p>
+    <div class="sourceCode" id="cb4">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-touch-target-wrapper&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb4-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox mdc-checkbox--touch&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb4-3" title="3">    <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;checkbox&quot;</span></a>
+<a class="sourceLine" id="cb4-4" title="4"><span class="ot">           class=</span><span class="st">&quot;mdc-checkbox__native-control&quot;</span></a>
+<a class="sourceLine" id="cb4-5" title="5"><span class="ot">           id=</span><span class="st">&quot;checkbox-1&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb4-6" title="6">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox__background&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb4-7" title="7">      <span class="kw">&lt;svg</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox__checkmark&quot;</span></a>
+<a class="sourceLine" id="cb4-8" title="8"><span class="ot">           viewBox=</span><span class="st">&quot;0 0 24 24&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb4-9" title="9">        <span class="kw">&lt;path</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox__checkmark-path&quot;</span></a>
+<a class="sourceLine" id="cb4-10" title="10"><span class="ot">              fill=</span><span class="st">&quot;none&quot;</span></a>
+<a class="sourceLine" id="cb4-11" title="11"><span class="ot">              d=</span><span class="st">&quot;M1.73,12.91 8.1,19.28 22.79,4.59&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb4-12" title="12">      <span class="kw">&lt;/svg&gt;</span></a>
+<a class="sourceLine" id="cb4-13" title="13">      <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox__mixedmark&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb4-14" title="14">    <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb4-15" title="15">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox__ripple&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb4-16" title="16">  <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb4-17" title="17"><span class="kw">&lt;/div&gt;</span></a></code></pre>
+    </div>
+    <p>
+      Note that the outer <code>mdc-touch-target-wrapper</code> element is only
+      necessary if you want to avoid potentially overlapping touch targets on
+      adjacent elements (due to collapsing margins).
+    </p>
+    <h2 id="checkboxes">Checkboxes</h2>
+    <p>
+      We recommend using MDC Checkbox with
+      <a href="../mdc-form-field">MDC Form Field</a> for enhancements such as
+      label alignment, label activation of the ripple interaction effect, and
+      RTL-awareness.
+    </p>
+    <h3 id="checkbox-example">Checkbox example</h3>
+    <div class="sourceCode" id="cb5">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-form-field&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb5-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb5-3" title="3">    <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;checkbox&quot;</span></a>
+<a class="sourceLine" id="cb5-4" title="4"><span class="ot">           class=</span><span class="st">&quot;mdc-checkbox__native-control&quot;</span></a>
+<a class="sourceLine" id="cb5-5" title="5"><span class="ot">           id=</span><span class="st">&quot;checkbox-1&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb5-6" title="6">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox__background&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb5-7" title="7">      <span class="kw">&lt;svg</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox__checkmark&quot;</span></a>
+<a class="sourceLine" id="cb5-8" title="8"><span class="ot">           viewBox=</span><span class="st">&quot;0 0 24 24&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb5-9" title="9">        <span class="kw">&lt;path</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox__checkmark-path&quot;</span></a>
+<a class="sourceLine" id="cb5-10" title="10"><span class="ot">              fill=</span><span class="st">&quot;none&quot;</span></a>
+<a class="sourceLine" id="cb5-11" title="11"><span class="ot">              d=</span><span class="st">&quot;M1.73,12.91 8.1,19.28 22.79,4.59&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb5-12" title="12">      <span class="kw">&lt;/svg&gt;</span></a>
+<a class="sourceLine" id="cb5-13" title="13">      <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox__mixedmark&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb5-14" title="14">    <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb5-15" title="15">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox__ripple&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb5-16" title="16">  <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb5-17" title="17">  <span class="kw">&lt;label</span><span class="ot"> for=</span><span class="st">&quot;checkbox-1&quot;</span><span class="kw">&gt;</span>Checkbox 1<span class="kw">&lt;/label&gt;</span></a>
+<a class="sourceLine" id="cb5-18" title="18"><span class="kw">&lt;/div&gt;</span></a></code></pre>
+    </div>
+    <p>
+      <strong
+        >Note: If you are using IE, you need to include a closing
+        <code>&lt;/path&gt;</code> tag if you wish to avoid console
+        warnings.</strong
+      >
+    </p>
+    <h3 id="checkbox-states">Checkbox states</h3>
+    <p>
+      Checkboxes can be selected, unselected, or indeterminate. Checkboxes have
+      enabled, disabled, hover, focused, and pressed states.
+    </p>
+    <figure>
+      <img
+        src="images/checkbox-states.png"
+        alt="Checkbox states in a table. Columns are enabled, disabled, hover, focused, pressed. Rows are selected, unselected, or indeterminite"
+      />
+      <figcaption>
+        Checkbox states in a table. Columns are enabled, disabled, hover,
+        focused, pressed. Rows are selected, unselected, or indeterminite
+      </figcaption>
+    </figure>
+    <h2 id="other-variants">Other variants</h2>
+    <h3 id="disabled-checkboxes">Disabled checkboxes</h3>
+    <p>
+      Note that <code>mdc-checkbox--disabled</code> is necessary on the root
+      element of CSS-only checkboxes to prevent hover states from activating.
+      Checkboxes that use the JavaScript component do not need this class; a
+      <code>disabled</code> attribute on the <code>&lt;input&gt;</code> element
+      is sufficient.
+    </p>
+    <div class="sourceCode" id="cb6">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox mdc-checkbox--disabled&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb6-2" title="2">  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;checkbox&quot;</span></a>
+<a class="sourceLine" id="cb6-3" title="3"><span class="ot">         id=</span><span class="st">&quot;basic-disabled-checkbox&quot;</span></a>
+<a class="sourceLine" id="cb6-4" title="4"><span class="ot">         class=</span><span class="st">&quot;mdc-checkbox__native-control&quot;</span></a>
+<a class="sourceLine" id="cb6-5" title="5"><span class="ot">         disabled</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb6-6" title="6">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox__background&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb6-7" title="7">    <span class="kw">&lt;svg</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox__checkmark&quot;</span></a>
+<a class="sourceLine" id="cb6-8" title="8"><span class="ot">         viewBox=</span><span class="st">&quot;0 0 24 24&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb6-9" title="9">      <span class="kw">&lt;path</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox__checkmark-path&quot;</span></a>
+<a class="sourceLine" id="cb6-10" title="10"><span class="ot">            fill=</span><span class="st">&quot;none&quot;</span></a>
+<a class="sourceLine" id="cb6-11" title="11"><span class="ot">            d=</span><span class="st">&quot;M1.73,12.91 8.1,19.28 22.79,4.59&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb6-12" title="12">    <span class="kw">&lt;/svg&gt;</span></a>
+<a class="sourceLine" id="cb6-13" title="13">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox__mixedmark&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb6-14" title="14">  <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb6-15" title="15">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox__ripple&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb6-16" title="16"><span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb6-17" title="17"><span class="kw">&lt;label</span><span class="ot"> for=</span><span class="st">&quot;basic-disabled-checkbox&quot;</span><span class="ot"> id=</span><span class="st">&quot;basic-disabled-checkbox-label&quot;</span><span class="kw">&gt;</span>This is my disabled checkbox<span class="kw">&lt;/label&gt;</span></a></code></pre>
+    </div>
+    <h3 id="indeterminate-checkboxes">Indeterminate checkboxes</h3>
+    <p>
+      Note that <code>data-indeterminate="true"</code> is necessary on the input
+      element for initial render, or in a CSS-only mode. Checkboxes that use the
+      Javascript component can modify the <code>indeterminate</code> property at
+      runtime.
+    </p>
+    <div class="sourceCode" id="cb7">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb7-2" title="2">  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;checkbox&quot;</span></a>
+<a class="sourceLine" id="cb7-3" title="3"><span class="ot">         id=</span><span class="st">&quot;basic-indeterminate-checkbox&quot;</span></a>
+<a class="sourceLine" id="cb7-4" title="4"><span class="ot">         class=</span><span class="st">&quot;mdc-checkbox__native-control&quot;</span></a>
+<a class="sourceLine" id="cb7-5" title="5"><span class="ot">         data-indeterminate=</span><span class="st">&quot;true&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb7-6" title="6">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox__background&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb7-7" title="7">    <span class="kw">&lt;svg</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox__checkmark&quot;</span></a>
+<a class="sourceLine" id="cb7-8" title="8"><span class="ot">         viewBox=</span><span class="st">&quot;0 0 24 24&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb7-9" title="9">      <span class="kw">&lt;path</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox__checkmark-path&quot;</span></a>
+<a class="sourceLine" id="cb7-10" title="10"><span class="ot">            fill=</span><span class="st">&quot;none&quot;</span></a>
+<a class="sourceLine" id="cb7-11" title="11"><span class="ot">            d=</span><span class="st">&quot;M1.73,12.91 8.1,19.28 22.79,4.59&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb7-12" title="12">    <span class="kw">&lt;/svg&gt;</span></a>
+<a class="sourceLine" id="cb7-13" title="13">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox__mixedmark&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb7-14" title="14">  <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb7-15" title="15">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox__ripple&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb7-16" title="16"><span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb7-17" title="17"><span class="kw">&lt;label</span><span class="ot"> for=</span><span class="st">&quot;basic-indeterminate-checkbox&quot;</span><span class="ot"> id=</span><span class="st">&quot;basic-indeterminate-checkbox-label&quot;</span><span class="kw">&gt;</span>This is my indeterminate checkbox<span class="kw">&lt;/label&gt;</span></a></code></pre>
+    </div>
+    <h2 id="api">API</h2>
+    <h3 id="sass-mixins">Sass mixins</h3>
+    <p>
+      MDC Checkbox uses <a href="../mdc-theme">MDC Theme</a>’s
+      <code>secondary</code> color by default for “marked” states (i.e., checked
+      or indeterminate).
+    </p>
+    <table>
+      <colgroup>
+        <col style="width: 50%" />
+        <col style="width: 50%" />
+      </colgroup>
+      <thead>
+        <tr class="header">
+          <th>Mixin</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="odd">
+          <td>
+            <code
+              >container-colors($unmarked-stroke-color, $unmarked-fill-color,
+              $marked-stroke-color, $marked-fill-color,
+              $generate-keyframes)</code
+            >
+          </td>
+          <td>
+            Sets stroke &amp; fill colors for both marked and unmarked state of
+            enabled checkbox. Set
+            <span class="math inline"
+              >$generate-keyframes to false to prevent the mixin from generating
+              @keyframes. `disabled-container-colors($</span
+            >unmarked-stroke-color, $unmarked-fill-color, $marked-stroke-color,
+            <span class="math inline"
+              >$marked-fill-color)` | Sets stroke &amp; fill colors for both
+              marked and unmarked state of disabled checkbox. `ink-color($</span
+            >color)<code
+              >| Sets the ink color of the checked and indeterminate icons for
+              an enabled checkbox</code
+            >disabled-ink-color(<span class="math inline"
+              >$color)` | Sets the ink color of the checked and indeterminate
+              icons for a disabled checkbox `focus-indicator-color($</span
+            >color)<code
+              >| Sets the color of the focus indicator (ripple) when checkbox is
+              selected or is in indeterminate state.</code
+            >ripple-size(<span class="math inline"
+              >$ripple-size)` | Sets the ripple size of the checkbox.
+              `density($</span
+            >density-scale)<code
+              >| Sets density scale for checkbox, Supported density scales
+              are</code
+            >-3<code>,</code>-2<code>,</code>-1<code>, and</code>0` (default).
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      The ripple effect for the Checkbox component is styled using
+      <a href="../mdc-ripple">MDC Ripple</a> mixins.
+    </p>
+    <h3 id="mdccheckbox-properties-and-methods">
+      <code>MDCCheckbox</code> properties and methods
+    </h3>
+    <table>
+      <thead>
+        <tr class="header">
+          <th>Property Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="odd">
+          <td><code>checked</code></td>
+          <td><code>boolean</code></td>
+          <td>Setter/getter for the checkbox’s checked state</td>
+        </tr>
+        <tr class="even">
+          <td><code>indeterminate</code></td>
+          <td><code>boolean</code></td>
+          <td>Setter/getter for the checkbox’s indeterminate state</td>
+        </tr>
+        <tr class="odd">
+          <td><code>disabled</code></td>
+          <td><code>boolean</code></td>
+          <td>Setter/getter for the checkbox’s disabled state</td>
+        </tr>
+        <tr class="even">
+          <td><code>value</code></td>
+          <td><code>string</code></td>
+          <td>Setter/getter for the checkbox’s</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2 id="usage-within-web-frameworks">Usage within web frameworks</h2>
+    <p>
+      If you are using a JavaScript framework, such as React or Angular, you can
+      create a Checkbox for your framework. Depending on your needs, you can use
+      the <em>Simple Approach: Wrapping MDC Web Vanilla Components</em>, or the
+      <em>Advanced Approach: Using Foundations and Adapters</em>. Please follow
+      the instructions
+      <a href="../../docs/integrating-into-frameworks.md">here</a>.
+    </p>
+    <h3 id="mdccheckboxadapter"><code>MDCCheckboxAdapter</code></h3>
+    <table>
+      <colgroup>
+        <col style="width: 50%" />
+        <col style="width: 50%" />
+      </colgroup>
+      <thead>
+        <tr class="header">
+          <th>Method Signature</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="odd">
+          <td><code>addClass(className: string) =&gt; void</code></td>
+          <td>Adds a class to the root element.</td>
+        </tr>
+        <tr class="even">
+          <td><code>removeClass(className: string) =&gt; void</code></td>
+          <td>Removes a class from the root element.</td>
+        </tr>
+        <tr class="odd">
+          <td><code>forceLayout() =&gt; void</code></td>
+          <td>
+            Force-trigger a layout on the root element. This is needed to
+            restart animations correctly. If you find that you do not need to do
+            this, you can simply make it a no-op.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>isAttachedToDOM() =&gt; boolean</code></td>
+          <td>
+            Returns true if the component is currently attached to the DOM,
+            false otherwise.
+          </td>
+        </tr>
+        <tr class="odd">
+          <td><code>isIndeterminate() =&gt; boolean</code></td>
+          <td>Returns true if the component is in the indeterminate state.</td>
+        </tr>
+        <tr class="even">
+          <td><code>isChecked() =&gt; boolean</code></td>
+          <td>Returns true if the component is checked.</td>
+        </tr>
+        <tr class="odd">
+          <td><code>hasNativeControl() =&gt; boolean</code></td>
+          <td>Returns true if the input is present in the component.</td>
+        </tr>
+        <tr class="even">
+          <td>
+            <code>setNativeControlDisabled(disabled: boolean) =&gt; void</code>
+          </td>
+          <td>Sets the input to disabled.</td>
+        </tr>
+        <tr class="odd">
+          <td>
+            <code
+              >setNativeControlAttr(attr: string, value: string) =&gt;
+              void</code
+            >
+          </td>
+          <td>
+            Sets an HTML attribute to the given value on the native input
+            element.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>removeNativeControlAttr(attr: string) =&gt; void</code></td>
+          <td>Removes an attribute from the native input element.</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3 id="mdccheckboxfoundation"><code>MDCCheckboxFoundation</code></h3>
+    <table>
+      <colgroup>
+        <col style="width: 50%" />
+        <col style="width: 50%" />
+      </colgroup>
+      <thead>
+        <tr class="header">
+          <th>Method Signature</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="odd">
+          <td><code>setDisabled(disabled: boolean) =&gt; void</code></td>
+          <td>
+            Updates the <code>disabled</code> property on the underlying input.
+            Does nothing when the underlying input is not present.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>handleAnimationEnd() =&gt; void</code></td>
+          <td>
+            <code>animationend</code> event handler that should be applied to
+            the root element.
+          </td>
+        </tr>
+        <tr class="odd">
+          <td><code>handleChange() =&gt; void</code></td>
+          <td>
+            <code>change</code> event handler that should be applied to the
+            checkbox element.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

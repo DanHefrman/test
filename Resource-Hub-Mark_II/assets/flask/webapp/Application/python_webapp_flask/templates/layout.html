@@ -1,28 +1,46 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>layout</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
-</head>
-<body>
-<p><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></p>
-<p><a href="/" class="navbar-brand">Python Flask</a></p>
-<ul>
-<li><a href="%7B%7B%20url_for(&#39;home&#39;)%20%7D%7D">Home</a></li>
-<li><a href="%7B%7B%20url_for(&#39;about&#39;)%20%7D%7D">About</a></li>
-<li><a href="%7B%7B%20url_for(&#39;contact&#39;)%20%7D%7D">Contact</a></li>
-</ul>
-<p>{% block content %}{% endblock %}</p>
-<hr />
-<p>© {{ year }} - Python Flask Application</p>
-<p>{% block scripts %}{% endblock %}</p>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>layout</title>
+    <style type="text/css">
+      code {
+        white-space: pre-wrap;
+      }
+      span.smallcaps {
+        font-variant: small-caps;
+      }
+      span.underline {
+        text-decoration: underline;
+      }
+      div.column {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      <span class="icon-bar"></span> <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </p>
+    <p><a href="/" class="navbar-brand">Python Flask</a></p>
+    <ul>
+      <li><a href="%7B%7B%20url_for(&#39;home&#39;)%20%7D%7D">Home</a></li>
+      <li><a href="%7B%7B%20url_for(&#39;about&#39;)%20%7D%7D">About</a></li>
+      <li>
+        <a href="%7B%7B%20url_for(&#39;contact&#39;)%20%7D%7D">Contact</a>
+      </li>
+    </ul>
+    <p>{% block content %}{% endblock %}</p>
+    <hr />
+    <p>© {{ year }} - Python Flask Application</p>
+    <p>{% block scripts %}{% endblock %}</p>
+  </body>
 </html>

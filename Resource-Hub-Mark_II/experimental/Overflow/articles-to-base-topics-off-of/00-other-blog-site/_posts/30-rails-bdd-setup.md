@@ -36,6 +36,6 @@ Then you need to add `cli: '--drb'` to rspec and cucmber guard configuration, to
 
 An example configuration with cli option will look like,
 
-{% highlight ruby %} guard ‘cucumber’, cli: ‘–drb’ do watch(%r{^features/.+.feature<span class="math inline">$}) watch(%r{^features/support/.+$</span>}) { ‘features’ } watch(%r{^features/step\_definitions/(.+)\_steps.rb$}) { |m| Dir\[File.join(“\*\*/\#{m\[1\]}.feature”)\]\[0\] || ‘features’ } end {% endhighlight %}
+{% highlight ruby %} guard ‘cucumber’, cli: ‘–drb’ do watch(%r{^features/.+.feature<span class="math inline"><span class="math inline">$}) watch(%r{^features/support/.+$</span></span>}) { ‘features’ } watch(%r{^features/step\_definitions/(.+)\_steps.rb$}) { |m| Dir\[File.join(“\*\*/\#{m\[1\]}.feature”)\]\[0\] || ‘features’ } end {% endhighlight %}
 
 Thats it. My bdd setup for rails is done.

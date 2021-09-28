@@ -11,99 +11,12 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
-  <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
 </head>
 <body>
-<!--
-
-
----
- 'ELM : Passing initial data to ELM application'
-excerpt: 'ELM : Passing initial data to ELM application using programWithFlags'
-date: 2017-11-05 00:00:00 IST
-updated: 2017-11-05 00:00:00 IST
-categories: elm
-tags: elm
----
-
--->
-&lt;!DOCTYPE html&gt;
-<html>
-<head>
-<title>
-basic-git-workflow
-</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./css/bootstrap.css"> <link rel="stylesheet" href="./css/bootstrap.grid.css"> <link rel="stylesheet" href="./css/bootstrap.min.css"> <link rel="stylesheet" href="./css/bootstrap-reboot.min.css"> <link rel="stylesheet" href="./css/bootstrap.css.map"> <link rel="stylesheet" href="./css/blog-home.css"> <link rel="stylesheet" href="./css/prism.css">
-<script async defer src="./css/prism.js"></script>
-</head>
-<body>
+<p>&lt;!DOCTYPE html&gt;</p>
 <p>When we start introducing the ELM slowly into our existing application, there is high chance that we need to pass some initial data to ELM module to configure it while it starts up.</p>
 <p>Consider we have written a small application using <code>program</code>.</p>
-<pre class="elm"><code>-- Main.elm
+<pre><code>-- Main.elm
 type Action = NoOp
 
 type alias Model =
@@ -137,18 +50,18 @@ main =
     subscription: \_ -&gt; Sub.none
   }</code></pre>
 <p>And the bootup will be</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="im">import</span> <span class="op">{</span> Main <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;./Main.elm&#39;</span></a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="kw">var</span> app <span class="op">=</span> <span class="va">Main</span>.<span class="at">embed</span>(<span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&#39;elm-app&#39;</span>))<span class="op">;</span></a></code></pre></div>
+<pre><code>import { Main } from &#39;./Main.elm&#39;
+var app = Main.embed(document.getElementById(&#39;elm-app&#39;));</code></pre>
 <p>In the above app we don’t have any way to pass the initial value for the name. To make the above app to accept <code>name</code> while booting up we need to follow 2 steps</p>
 <ol type="1">
 <li>Pass the data as second parameter to <code>embed</code></li>
 <li>Use <code>programWithFlags</code> instead of <code>program</code>.</li>
 </ol>
 <p>Let start with defining the <code>type</code> flags</p>
-<pre class="elm"><code>type alias Flags =
+<pre><code>type alias Flags =
   { name : String }</code></pre>
 <p>Now use the <code>programWithFlags</code> instead of <code>program</code> for our <code>main</code>.</p>
-<pre class="elm"><code>main : Program Flags Model Action
+<pre><code>main : Program Flags Model Action
 main =
   Html.programWithFlags {
     init: init,
@@ -157,17 +70,17 @@ main =
     subscription: \_ -&gt; Sub.none
   }</code></pre>
 <p>Then, in <code>init</code> method update the model using the value we received via flag.</p>
-<pre class="elm"><code>init : Flags -&gt; (Model -&gt; Cmd Action)
+<pre><code>init : Flags -&gt; (Model -&gt; Cmd Action)
 init flags =
   ({ initModel | name = flags.name }, Cmd.none)</code></pre>
 <p>Now our app is ready to accept the name on startup. Let’s pass the value to our elm program.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="im">import</span> <span class="op">{</span> Main <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;./Main.elm&#39;</span></a>
-<a class="sourceLine" id="cb6-2" title="2"><span class="kw">var</span> app <span class="op">=</span> <span class="va">Main</span>.<span class="at">embed</span>(<span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&#39;elm-app&#39;</span>)<span class="op">,</span> <span class="op">{</span> </a>
-<a class="sourceLine" id="cb6-3" title="3">  <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;ELM&#39;</span> </a>
-<a class="sourceLine" id="cb6-4" title="4"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
+<pre><code>import { Main } from &#39;./Main.elm&#39;
+var app = Main.embed(document.getElementById(&#39;elm-app&#39;), { 
+  name: &#39;ELM&#39; 
+});</code></pre>
 <p>Thats it we are now passing the data to ELM program while it starting. If we are using <code>fullscreen</code> method, same as <code>embed</code> it will accept the initial data as the second parameter.</p>
 <p>So now our final code will look like,</p>
-<pre class="elm"><code>-- Main.elm
+<pre><code>-- Main.elm
 type alias Flags =
   { name : String }
 

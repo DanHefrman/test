@@ -1,46 +1,82 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>README</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
-</head>
-<body>
-<h1 id="dojowidgetsselect"><span class="citation" data-cites="dojo/widgets/select"><span class="citation" data-cites="dojo/widgets/select"><span class="citation" data-cites="dojo/widgets/select"><span class="citation" data-cites="dojo/widgets/select">@dojo/widgets/select</span></span></span></span></h1>
-<p>Dojo’s <code>Select</code> provides a dropdown menu form control using either the native <code>&lt;select&gt;</code> element or a fully custom component. The custom version uses the <code>Listbox</code> widget as its list of options.</p>
-<h2 id="features">Features</h2>
-<ul>
-<li>Compatible with any underlying data provider, data format, or store</li>
-<li>Allows customization of option state and vdom</li>
-<li>Keyboard accessible</li>
-</ul>
-<h3 id="keyboard-usage">Keyboard Usage</h3>
-<p>The custom <code>Select</code> supports keyboard navigation for opening and closing the options menu and moving through options. If <code>useNativeElement</code> is true, it defers to native keyboard support.</p>
-<p><strong>Trigger Button Events</strong></p>
-<ul>
-<li>Enter Key: opens the options menu</li>
-<li>Space Key: opens the options menu</li>
-</ul>
-<p><strong>Options Menu Events</strong></p>
-<ul>
-<li>Enter Key: selects the current option and closes the menu</li>
-<li>Space Key: selects the current option and closes the menu</li>
-<li>Up Arrow: highlights the previous option</li>
-<li>Down Arrow: highlights the next option</li>
-<li>Home/Page Up: highlights the first option</li>
-<li>End/Page Down: highlights the last option</li>
-<li>Escape Key: closes the options menu without selecting an option</li>
-</ul>
-<h3 id="accessibility-features">Accessibility Features</h3>
-<p>The simplest way to create an accessible select field that works across all browsers, devices, and assistive tech is to set <code>useNativeElement</code> to true. However, the custom element also sets appropriate ARIA attributes handles keyboard interactions.</p>
-<h3 id="internationalization-features">Internationalization Features</h3>
-<p>Option text is handled through the <code>getOptionLabel</code> property. Localization is handled by the parent component and localized strings can be reactively passed in using this method.</p>
-</body>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="generator" content="pandoc" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+		<title>README</title>
+		<style type="text/css">
+			code {
+				white-space: pre-wrap;
+			}
+			span.smallcaps {
+				font-variant: small-caps;
+			}
+			span.underline {
+				text-decoration: underline;
+			}
+			div.column {
+				display: inline-block;
+				vertical-align: top;
+				width: 50%;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 id="dojowidgetsselect">
+			<span class="citation" data-cites="dojo/widgets/select"
+				><span class="citation" data-cites="dojo/widgets/select"
+					><span class="citation" data-cites="dojo/widgets/select"
+						><span class="citation" data-cites="dojo/widgets/select"
+							>@dojo/widgets/select</span
+						></span
+					></span
+				></span
+			>
+		</h1>
+		<p>
+			Dojo’s <code>Select</code> provides a dropdown menu form control using either the native
+			<code>&lt;select&gt;</code> element or a fully custom component. The custom version uses
+			the <code>Listbox</code> widget as its list of options.
+		</p>
+		<h2 id="features">Features</h2>
+		<ul>
+			<li>Compatible with any underlying data provider, data format, or store</li>
+			<li>Allows customization of option state and vdom</li>
+			<li>Keyboard accessible</li>
+		</ul>
+		<h3 id="keyboard-usage">Keyboard Usage</h3>
+		<p>
+			The custom <code>Select</code> supports keyboard navigation for opening and closing the
+			options menu and moving through options. If <code>useNativeElement</code> is true, it
+			defers to native keyboard support.
+		</p>
+		<p><strong>Trigger Button Events</strong></p>
+		<ul>
+			<li>Enter Key: opens the options menu</li>
+			<li>Space Key: opens the options menu</li>
+		</ul>
+		<p><strong>Options Menu Events</strong></p>
+		<ul>
+			<li>Enter Key: selects the current option and closes the menu</li>
+			<li>Space Key: selects the current option and closes the menu</li>
+			<li>Up Arrow: highlights the previous option</li>
+			<li>Down Arrow: highlights the next option</li>
+			<li>Home/Page Up: highlights the first option</li>
+			<li>End/Page Down: highlights the last option</li>
+			<li>Escape Key: closes the options menu without selecting an option</li>
+		</ul>
+		<h3 id="accessibility-features">Accessibility Features</h3>
+		<p>
+			The simplest way to create an accessible select field that works across all browsers,
+			devices, and assistive tech is to set <code>useNativeElement</code> to true. However,
+			the custom element also sets appropriate ARIA attributes handles keyboard interactions.
+		</p>
+		<h3 id="internationalization-features">Internationalization Features</h3>
+		<p>
+			Option text is handled through the <code>getOptionLabel</code> property. Localization is
+			handled by the parent component and localized strings can be reactively passed in using
+			this method.
+		</p>
+	</body>
 </html>

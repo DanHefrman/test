@@ -97,26 +97,7 @@ window.onload = addElements;</code></pre>
 <p><strong>Referencing a JS File vs. Using a Script Block</strong></p>
 <ul>
 <li><p>You can also put JS directly into your HTML document by placing it in the script tag</p>
-&lt;!DOCTYPE html&gt;
-<html>
-<head>
-<title>
-My Cool Website
-</title>
-<script type="text/javascript">
-      const addListElement = () => {
-        const listElement = document.createElement("ul");
-        const listItem = document.createElement("li");
-        listItem.setAttribute("id", "dreamy-eyes");
-        listElement.appendChild(listItem);
-        document.body.prepend(listElement);
-      };
-      window.onload = addListElement;
-    </script>
-</head>
-<body>
-</body>
-</html></li>
+<p>&lt;!DOCTYPE html&gt;</p></li>
 </ul>
 <hr />
 <h2 id="element-selection-placement-3"><strong>Element Selection Placement 3</strong></h2>

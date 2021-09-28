@@ -31,7 +31,7 @@
 <p>This above command will generate <strong>Guardfile</strong> and add configuration for spork, rspec and cucumber.</p>
 <p>Then you need to add <code>cli: '--drb'</code> to rspec and cucmber guard configuration, to run them over the Spork DRb server.</p>
 <p>An example configuration with cli option will look like,</p>
-<p>{% highlight ruby %} guard ‘cucumber’, cli: ‘–drb’ do watch(%r{^features/.+.feature<span class="math inline"><span class="math inline">$}) watch(%r{^features/support/.+$</span></span>}) { ‘features’ } watch(%r{^features/step_definitions/(.+)_steps.rb$}) { |m| Dir[File.join(“**/#{m[1]}.feature”)][0] || ‘features’ } end {% endhighlight %}</p>
+<p>{% highlight ruby %} guard ‘cucumber’, cli: ‘–drb’ do watch(%r{^features/.+.feature<span class="math inline"><span class="math inline"><span class="math inline">$}) watch(%r{^features/support/.+$</span></span></span>}) { ‘features’ } watch(%r{^features/step_definitions/(.+)_steps.rb$}) { |m| Dir[File.join(“**/#{m[1]}.feature”)][0] || ‘features’ } end {% endhighlight %}</p>
 <p>Thats it. My bdd setup for rails is done.</p>
 </body>
 </html>

@@ -11,108 +11,21 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
-  <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
 </head>
 <body>
-<!--
-
-
----
- "Sublime Text handler for firefox in Ubuntu"
-excerpt: "Sublime Text handler for firefox in Ubuntu"
-date: 2014-07-02 00:00:00 IST
-updated: 2014-07-02 00:00:00 IST
-categories: rails, sublime
-tags: rails, sublime, better-errors
----
-
--->
-&lt;!DOCTYPE html&gt;
-<html>
-<head>
-<title>
-basic-git-workflow
-</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./css/bootstrap.css"> <link rel="stylesheet" href="./css/bootstrap.grid.css"> <link rel="stylesheet" href="./css/bootstrap.min.css"> <link rel="stylesheet" href="./css/bootstrap-reboot.min.css"> <link rel="stylesheet" href="./css/bootstrap.css.map"> <link rel="stylesheet" href="./css/blog-home.css"> <link rel="stylesheet" href="./css/prism.css">
-<script async defer src="./css/prism.js"></script>
-</head>
-<body>
+<p>&lt;!DOCTYPE html&gt;</p>
 <p><a href="https://github.com/charliesome/better_errors">Better errors</a> is a pretty good gem for debugging. It comes with live REPL on the error page which makes debugging lot easier. You can inspect the variable right from the error page with the REPL and even you can switch the context in the stack frame.</p>
 <p>Another best thing is you can open the file right from the browser in Sublime Text.</p>
 <p><a href="http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2014/07/3d610a9c-fd0b-491d-8a20-56a74b91c066_zpsd222cd62.png"><img src="http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2014/07/3d610a9c-fd0b-491d-8a20-56a74b91c066_zpsd222cd62.png" alt="Better Errors" /></a>.</p>
 <p>When you click on the filename <code>app/controllers/home_controller.rb</code> (the one marked on the above image) it open the file, in your editor. But in order to this work on ubuntu, you need to register a handler for it.</p>
 <p>To register the handler, copy the below code into a file and save it somewhere the shell can find it.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="co">#!/usr/bin/env bash</span></a>
-<a class="sourceLine" id="cb1-2" title="2"></a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="va">request=${1:23}</span>               <span class="co"># Delete the first 23 characters</span></a>
-<a class="sourceLine" id="cb1-4" title="4"><span class="va">request=${request//</span>%2F<span class="va">/</span>/<span class="va">}</span>     <span class="co"># Replace %2F with /</span></a>
-<a class="sourceLine" id="cb1-5" title="5"><span class="va">request=${request/</span>&amp;line=<span class="va">/</span>:<span class="va">}</span>   <span class="co"># Replace &amp;line= with :</span></a>
-<a class="sourceLine" id="cb1-6" title="6"><span class="va">request=${request/</span>&amp;column=<span class="va">/</span>:<span class="va">}</span> <span class="co"># Replace &amp;column= with :</span></a>
-<a class="sourceLine" id="cb1-7" title="7"><span class="ex">subl</span> <span class="va">$request</span>                 <span class="co"># Launch ST2</span></a></code></pre></div>
+<pre><code>#!/usr/bin/env bash
+
+request=${1:23}               # Delete the first 23 characters
+request=${request//%2F//}     # Replace %2F with /
+request=${request/&amp;line=/:}   # Replace &amp;line= with :
+request=${request/&amp;column=/:} # Replace &amp;column= with :
+subl $request                 # Launch ST2</code></pre>
 <p>I saved this in <code>~/bin</code> since <code>~/bin</code> is already availabe in my <code>$PATH</code>. Make sure you have given that file and executable permission.</p>
 <p>After saving the handler, when you click on filename (shown in the image above), firefox will ask to point out the handler for subl.</p>
 <p><a href="http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2014/07/fafd05e5-2775-41d2-8e46-f47ea7bdb44a_zpsd2818e43.png"><img src="http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2014/07/fafd05e5-2775-41d2-8e46-f47ea7bdb44a_zpsd2818e43.png" alt="firefox" /></a></p>

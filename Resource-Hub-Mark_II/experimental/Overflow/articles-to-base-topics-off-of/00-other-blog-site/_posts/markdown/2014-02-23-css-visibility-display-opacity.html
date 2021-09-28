@@ -13,34 +13,11 @@
   </style>
 </head>
 <body>
-<!--
-
-
----
- "CSS : Visibility, Opacity and Display"
-date: 2014-02-23 21:00:00 IST
-updated: 2014-02-23 21:00:00 IST
-categories: css
----
-
--->
-&lt;!DOCTYPE html&gt;
-<html>
-<head>
-<title>
-basic-git-workflow
-</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./css/bootstrap.css"> <link rel="stylesheet" href="./css/bootstrap.grid.css"> <link rel="stylesheet" href="./css/bootstrap.min.css"> <link rel="stylesheet" href="./css/bootstrap-reboot.min.css"> <link rel="stylesheet" href="./css/bootstrap.css.map"> <link rel="stylesheet" href="./css/blog-home.css"> <link rel="stylesheet" href="./css/prism.css">
-<script async defer src="./css/prism.js"></script>
-</head>
-<body>
+<p>&lt;!DOCTYPE html&gt;</p>
 <p>Until last wednesday, I was really confused about the functionality of <code>visibility</code>, <code>opacity</code> and <code>display</code> properties. Then <a href="http://twitter.com/shidhin">Shidhin</a> spend some time, explained and make me understand what are the difference between those.</p>
 <p>In this post, I am trying to summarize the difference between <code>visibility:hidden</code>, <code>display:none</code> and <code>opacity:0</code>.</p>
 <h1 id="demo">Demo</h1>
-<a class="jsbin-embed" href="http://jsbin.com/fupeb/6/embed?output,css">JS Bin</a>
-<script src="http://static.jsbin.com/js/embed.js"></script>
+<p><a href="http://jsbin.com/fupeb/6/embed?output,css" class="jsbin-embed">JS Bin</a></p>
 <h1 id="visibility">Visibility</h1>
 <p>Using the visibility property in CSS, we can toggle the visibility of an element using the values <code>hidden</code> or <code>visible</code>. If we make the the element hidden, it will be hidden from the user and user can’t access it’s child, but still in the DOM, <code>the space of the element will be consumed</code>.</p>
 <p>In the demo above, You can see a box below the text visibility.The box look like a rectangle even the child element is given <code>visibility:hidden</code> proves that it still consumes the space on DOM.</p>

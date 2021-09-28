@@ -11,6 +11,69 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
 </head>
 <body>
 <h1 id="notes"><strong>Notes</strong></h1>
@@ -92,45 +155,84 @@
 <ul>
 <li>Remains in it’s original position in the page flow.</li>
 <li>It is positioned <em>RELATIVE</em> to the it’s <em>ORIGINAL PLACE</em> on the page flow.</li>
-<li><p>Creates a <strong>stacking context</strong> : overlapping elements whose order can be set by the z-index property.</p>
-<p>#pink-box { background-color: #ff69b4; bottom: 0; left: -20px; position: relative; right: 0; top: 0; }</p></li>
+<li>Creates a <strong>stacking context</strong> : overlapping elements whose order can be set by the z-index property.</li>
 </ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb1-1" title="1"><span class="pp">#pink-box</span> {</a>
+<a class="sourceLine" id="cb1-2" title="2">  <span class="kw">background-color</span>: <span class="cn">#ff69b4</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-3" title="3">  <span class="kw">bottom</span>: <span class="dv">0</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-4" title="4">  <span class="kw">left</span>: <span class="dv">-20</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-5" title="5">  <span class="kw">position</span>: <span class="dv">relative</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-6" title="6">  <span class="kw">right</span>: <span class="dv">0</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-7" title="7">  <span class="kw">top</span>: <span class="dv">0</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-8" title="8">}</a></code></pre></div>
 <figure>
 <img src="https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/layout/assets/relative-pink-box.png" alt="rel" /><figcaption>rel</figcaption>
 </figure>
 <p><strong>Absolute Positioning</strong></p>
 <ul>
 <li>Absolute elements are removed from the normal page flow and other elements around it act like it’s not there. (how we can easily achieve some layering)</li>
-<li><p>Here are some examples to illustration absolute positioning:</p>
-<p>.container { background-color: #2b2d2f; position: relative; }</p>
-<p>#pink-box { position: absolute; top: 60px; }</p></li>
+<li>Here are some examples to illustration absolute positioning:</li>
 </ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">.container</span> {</a>
+<a class="sourceLine" id="cb2-2" title="2">  <span class="kw">background-color</span>: <span class="cn">#2b2d2f</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-3" title="3">  <span class="kw">position</span>: <span class="dv">relative</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-4" title="4">}</a>
+<a class="sourceLine" id="cb2-5" title="5"></a>
+<a class="sourceLine" id="cb2-6" title="6"><span class="pp">#pink-box</span> {</a>
+<a class="sourceLine" id="cb2-7" title="7">  <span class="kw">position</span>: <span class="dv">absolute</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-8" title="8">  <span class="kw">top</span>: <span class="dv">60</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-9" title="9">}</a></code></pre></div>
 <figure>
 <img src="https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/layout/assets/absolute-pink-box.png" alt="img" /><figcaption>img</figcaption>
 </figure>
 <ul>
 <li>Note that the container ele has a relative positioning - this is so that any changes made to the absolute positioned children will be positioned from it’s top-left corner.</li>
-<li><p>Note that because we removed the pink from the normal page flow, the container has now shifted the blue box to where the pink box should have been - which is why it is now layered beneath the pink.</p>
-<p>.container { background-color: #2b2d2f; position: relative; }</p>
-<p>#pink-box { position: absolute; top: 60px; }</p>
-<p>#blue-box { position: absolute; }</p></li>
+<li>Note that because we removed the pink from the normal page flow, the container has now shifted the blue box to where the pink box should have been - which is why it is now layered beneath the pink.</li>
 </ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb3-1" title="1"><span class="fu">.container</span> {</a>
+<a class="sourceLine" id="cb3-2" title="2">  <span class="kw">background-color</span>: <span class="cn">#2b2d2f</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-3" title="3">  <span class="kw">position</span>: <span class="dv">relative</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-4" title="4">}</a>
+<a class="sourceLine" id="cb3-5" title="5"></a>
+<a class="sourceLine" id="cb3-6" title="6"><span class="pp">#pink-box</span> {</a>
+<a class="sourceLine" id="cb3-7" title="7">  <span class="kw">position</span>: <span class="dv">absolute</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-8" title="8">  <span class="kw">top</span>: <span class="dv">60</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-9" title="9">}</a>
+<a class="sourceLine" id="cb3-10" title="10"></a>
+<a class="sourceLine" id="cb3-11" title="11"><span class="pp">#blue-box</span> {</a>
+<a class="sourceLine" id="cb3-12" title="12">  <span class="kw">position</span>: <span class="dv">absolute</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-13" title="13">}</a></code></pre></div>
 <figure>
 <img src="https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/layout/assets/absolute-blue-box.png" alt="img" /><figcaption>img</figcaption>
 </figure>
 <ul>
-<li><p>As you can see here, since we have also taken the blue box out of the normal page flow by declaring it as absoutely positioned it now overlaps over the pink box.</p>
-<p>.container { background-color: #2b2d2f; position: relative; }</p>
-<p>#pink-box { background-color: #ff69b4; bottom: 60px; position: absolute; }</p></li>
+<li>As you can see here, since we have also taken the blue box out of the normal page flow by declaring it as absoutely positioned it now overlaps over the pink box.</li>
 </ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb4-1" title="1"><span class="fu">.container</span> {</a>
+<a class="sourceLine" id="cb4-2" title="2">  <span class="kw">background-color</span>: <span class="cn">#2b2d2f</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-3" title="3">  <span class="kw">position</span>: <span class="dv">relative</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-4" title="4">}</a>
+<a class="sourceLine" id="cb4-5" title="5"></a>
+<a class="sourceLine" id="cb4-6" title="6"><span class="pp">#pink-box</span> {</a>
+<a class="sourceLine" id="cb4-7" title="7">  <span class="kw">background-color</span>: <span class="cn">#ff69b4</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-8" title="8">  <span class="kw">bottom</span>: <span class="dv">60</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-9" title="9">  <span class="kw">position</span>: <span class="dv">absolute</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-10" title="10">}</a></code></pre></div>
 <figure>
 <img src="https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/layout/assets/relative-parent-absolute-child.png" alt="img" /><figcaption>img</figcaption>
 </figure>
 <ul>
-<li><p>Example where the absolute element has it’s bottom property modified.</p>
-<p>.container { background-color: #2b2d2f; }</p>
-<p>#pink-box { background-color: #ff69b4; bottom: 60px; position: absolute; }</p></li>
+<li>Example where the absolute element has it’s bottom property modified.</li>
 </ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb5-1" title="1"><span class="fu">.container</span> {</a>
+<a class="sourceLine" id="cb5-2" title="2">  <span class="kw">background-color</span>: <span class="cn">#2b2d2f</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb5-3" title="3">}</a>
+<a class="sourceLine" id="cb5-4" title="4"></a>
+<a class="sourceLine" id="cb5-5" title="5"><span class="pp">#pink-box</span> {</a>
+<a class="sourceLine" id="cb5-6" title="6">  <span class="kw">background-color</span>: <span class="cn">#ff69b4</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb5-7" title="7">  <span class="kw">bottom</span>: <span class="dv">60</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb5-8" title="8">  <span class="kw">position</span>: <span class="dv">absolute</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb5-9" title="9">}</a></code></pre></div>
 <figure>
 <img src="https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/layout/assets/static-parent-absolute-child.png" alt="img" /><figcaption>img</figcaption>
 </figure>
@@ -163,8 +265,14 @@
 <p><strong>Using Flexbox</strong></p>
 <ul>
 <li><p>Flexbox automatically resizes a container element to fit the viewport size without needing to use breakpoints. <img src="https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/flexbox/assets/flexbox-elements.png" alt="flex" /></p></li>
-<li><p>Flexbox layout applies styles to the parent element, and it’s children.</p>
-<p>.container { display: flex; /<em>sets display to use flex</em>/ flex-wrap: wrap; /<em>bc flex tries to fit everything into one line, use wrap to have the elements wrap to the next line</em>/ flex-direction: row; /<em>lets us create either rows or columns</em>/ }</p></li>
+<li><p>Flexbox layout applies styles to the parent element, and it’s children.</p></li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb6-1" title="1"><span class="fu">.container</span> {</a>
+<a class="sourceLine" id="cb6-2" title="2">  <span class="kw">display</span>: flex<span class="op">;</span> <span class="co">/*sets display to use flex*/</span></a>
+<a class="sourceLine" id="cb6-3" title="3">  <span class="kw">flex-wrap</span>: wrap<span class="op">;</span> <span class="co">/*bc flex tries to fit everything into one line, use wrap to have the elements wrap to the next line*/</span></a>
+<a class="sourceLine" id="cb6-4" title="4">  <span class="kw">flex-direction</span>: row<span class="op">;</span> <span class="co">/*lets us create either rows or columns*/</span></a>
+<a class="sourceLine" id="cb6-5" title="5">}</a></code></pre></div>
+<ul>
 <li><strong><code>flex-flow</code></strong> can be used to combine wrap and direction.</li>
 <li><strong><code>justify-content</code></strong> used to define the alignment of flex items along the main axis.</li>
 <li><strong><code>align-items</code></strong> used to define the alignment on the Y-axis.</li>
@@ -187,18 +295,54 @@
 <p><strong>Bootstrap vs CSS Grid</strong></p>
 <ul>
 <li>Bootstrap was a front-end library commonly used to create grid layouts but now CSS grid provides greater flexibility and control.</li>
-<li><p>Grid applies style to a parent container and it’s child elements.</p>
-<p>.grid-container { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: auto; grid-template-areas: “header header header” “main . sidebar” “footer footer footer”;</p>
-<p>grid-column-gap: 20px; grid-row-gap: 30px; justify-items: stretch; align-items: stretch; justify-content: stretch; align-content: stretch; }</p>
-<p>.item-1 { grid-area: header; } .item-2 { grid-area: main; } .item-3 { grid-area: sidebar; } .item-4 { grid-area: footer; }</p></li>
+<li>Grid applies style to a parent container and it’s child elements.</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb7-1" title="1"><span class="fu">.grid-container</span> {</a>
+<a class="sourceLine" id="cb7-2" title="2">  <span class="kw">display</span>: grid<span class="op">;</span></a>
+<a class="sourceLine" id="cb7-3" title="3">  <span class="kw">grid-template-columns</span>: <span class="fu">repeat(</span><span class="dv">3</span><span class="op">,</span> <span class="dv">1</span>fr<span class="fu">)</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb7-4" title="4">  <span class="kw">grid-template-rows</span>: <span class="bu">auto</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb7-5" title="5">  <span class="kw">grid-template-areas</span>:</a>
+<a class="sourceLine" id="cb7-6" title="6">    <span class="st">&quot;header header header&quot;</span></a>
+<a class="sourceLine" id="cb7-7" title="7">    <span class="st">&quot;main . sidebar&quot;</span></a>
+<a class="sourceLine" id="cb7-8" title="8">    <span class="st">&quot;footer footer footer&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb7-9" title="9"></a>
+<a class="sourceLine" id="cb7-10" title="10">  <span class="kw">grid-column-gap</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb7-11" title="11">  <span class="kw">grid-row-gap</span>: <span class="dv">30</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb7-12" title="12">  <span class="kw">justify-items</span>: stretch<span class="op">;</span></a>
+<a class="sourceLine" id="cb7-13" title="13">  <span class="kw">align-items</span>: stretch<span class="op">;</span></a>
+<a class="sourceLine" id="cb7-14" title="14">  <span class="kw">justify-content</span>: stretch<span class="op">;</span></a>
+<a class="sourceLine" id="cb7-15" title="15">  <span class="kw">align-content</span>: stretch<span class="op">;</span></a>
+<a class="sourceLine" id="cb7-16" title="16">}</a>
+<a class="sourceLine" id="cb7-17" title="17"></a>
+<a class="sourceLine" id="cb7-18" title="18"><span class="fu">.item-1</span> {</a>
+<a class="sourceLine" id="cb7-19" title="19">  <span class="kw">grid-area</span>: header<span class="op">;</span></a>
+<a class="sourceLine" id="cb7-20" title="20">}</a>
+<a class="sourceLine" id="cb7-21" title="21"><span class="fu">.item-2</span> {</a>
+<a class="sourceLine" id="cb7-22" title="22">  <span class="kw">grid-area</span>: main<span class="op">;</span></a>
+<a class="sourceLine" id="cb7-23" title="23">}</a>
+<a class="sourceLine" id="cb7-24" title="24"><span class="fu">.item-3</span> {</a>
+<a class="sourceLine" id="cb7-25" title="25">  <span class="kw">grid-area</span>: sidebar<span class="op">;</span></a>
+<a class="sourceLine" id="cb7-26" title="26">}</a>
+<a class="sourceLine" id="cb7-27" title="27"><span class="fu">.item-4</span> {</a>
+<a class="sourceLine" id="cb7-28" title="28">  <span class="kw">grid-area</span>: footer<span class="op">;</span></a>
+<a class="sourceLine" id="cb7-29" title="29">}</a></code></pre></div>
+<ul>
 <li>Columns and Rows can be defined with: pixels, percentages, auto, named grid lines, using <code>repeat</code>, fractions.</li>
 <li><strong><code>Grid Template Areas</code></strong> gives us a handy way to map out and visualize areas of the grid layout.</li>
 <li>Combine areas with templates to define how much space an area should take up.</li>
 <li><p><strong><code>Grid Gaps</code></strong> can be used to create ‘gutters’ between grid item.s</p></li>
 <li><p>The way we have defined our grid with <code>grid-templates</code> and <code>areas</code> are condidered <strong>explicit</strong>.</p></li>
-<li><p>We can also <strong><code>implicitly</code></strong> define grids.</p>
-<p>.grid-container { display: grid; grid-template-columns: 100px 100px 100px 100px; grid-template-rows: 50px 50px 50px; grid-auto-columns: 100px; grid-auto-rows: 50px; }</p></li>
-<li><p>Any grid items that aren’t explicity placed are automatically placed or <em>re-flowed</em></p></li>
+<li><p>We can also <strong><code>implicitly</code></strong> define grids.</p></li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb8-1" title="1"><span class="fu">.grid-container</span> {</a>
+<a class="sourceLine" id="cb8-2" title="2">  <span class="kw">display</span>: grid<span class="op">;</span></a>
+<a class="sourceLine" id="cb8-3" title="3">  <span class="kw">grid-template-columns</span>: <span class="dv">100</span><span class="dt">px</span> <span class="dv">100</span><span class="dt">px</span> <span class="dv">100</span><span class="dt">px</span> <span class="dv">100</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb8-4" title="4">  <span class="kw">grid-template-rows</span>: <span class="dv">50</span><span class="dt">px</span> <span class="dv">50</span><span class="dt">px</span> <span class="dv">50</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb8-5" title="5">  <span class="kw">grid-auto-columns</span>: <span class="dv">100</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb8-6" title="6">  <span class="kw">grid-auto-rows</span>: <span class="dv">50</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb8-7" title="7">}</a></code></pre></div>
+<ul>
+<li>Any grid items that aren’t explicity placed are automatically placed or <em>re-flowed</em></li>
 </ul>
 <p><strong>Spanning Columns &amp; Rows</strong></p>
 <ul>
@@ -209,10 +353,21 @@
 <li><strong><code>grid-row-start</code></strong></li>
 <li><strong><code>grid-row-end</code></strong></li>
 </ul></li>
-<li><p>All four properties can take any of the following values: the line number, span #, span name, auto.</p>
-<p>.item-1 { grid-row-start: row2-start; /* Item starts at row line named “row2-start” <em>/ grid-row-end: 5; /</em> Item ends at row line 5 <em>/ grid-column-start: 1; /</em> Item starts at column line 1 <em>/ grid-column-end: three; /</em> Item ends at column line named “three” */ }</p>
-<p>.item-2 { grid-row-start: 1; /* Item starts at row line 1 <em>/ grid-row-end: span 2; /</em> Item spans two rows and ends at row line 3 <em>/ grid-column-start: 3; /</em> Item starts at column line 3 <em>/ grid-column-end: span col5-start; /</em> Item spans and ends at line named “col5-start” */ }</p></li>
+<li><p>All four properties can take any of the following values: the line number, span #, span name, auto.</p></li>
 </ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb9-1" title="1"><span class="fu">.item-1</span> {</a>
+<a class="sourceLine" id="cb9-2" title="2">  <span class="kw">grid-row-start</span>: row2-start<span class="op">;</span> <span class="co">/* Item starts at row line named &quot;row2-start&quot; */</span></a>
+<a class="sourceLine" id="cb9-3" title="3">  <span class="kw">grid-row-end</span>: <span class="dv">5</span><span class="op">;</span> <span class="co">/* Item ends at row line 5 */</span></a>
+<a class="sourceLine" id="cb9-4" title="4">  <span class="kw">grid-column-start</span>: <span class="dv">1</span><span class="op">;</span> <span class="co">/* Item starts at column line 1 */</span></a>
+<a class="sourceLine" id="cb9-5" title="5">  <span class="kw">grid-column-end</span>: three<span class="op">;</span> <span class="co">/* Item ends at column line named &quot;three&quot; */</span></a>
+<a class="sourceLine" id="cb9-6" title="6">}</a>
+<a class="sourceLine" id="cb9-7" title="7"></a>
+<a class="sourceLine" id="cb9-8" title="8"><span class="fu">.item-2</span> {</a>
+<a class="sourceLine" id="cb9-9" title="9">  <span class="kw">grid-row-start</span>: <span class="dv">1</span><span class="op">;</span> <span class="co">/* Item starts at row line 1 */</span></a>
+<a class="sourceLine" id="cb9-10" title="10">  <span class="kw">grid-row-end</span>: span <span class="dv">2</span><span class="op">;</span> <span class="co">/* Item spans two rows and ends at row line 3 */</span></a>
+<a class="sourceLine" id="cb9-11" title="11">  <span class="kw">grid-column-start</span>: <span class="dv">3</span><span class="op">;</span> <span class="co">/* Item starts at column line 3 */</span></a>
+<a class="sourceLine" id="cb9-12" title="12">  <span class="kw">grid-column-end</span>: span col5-start<span class="op">;</span> <span class="co">/* Item spans and ends at line named &quot;col5-start&quot; */</span></a>
+<a class="sourceLine" id="cb9-13" title="13">}</a></code></pre></div>
 <p><strong>Grid Areas</strong></p>
 <ul>
 <li>We use the grid areas in conjunction with grid-container property to <strong>define sections of the layout</strong>.</li>

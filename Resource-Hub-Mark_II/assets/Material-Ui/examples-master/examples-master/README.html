@@ -1,371 +1,396 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>README</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
-</head>
-<body>
-<h1 id="dojoexamples"><span class="citation" data-cites="dojo/examples"><span class="citation" data-cites="dojo/examples">@dojo/examples</span></span></h1>
-<p><a href="https://travis-ci.org/dojo/examples"><img src="https://travis-ci.org/dojo/examples.svg?branch=master" alt="Build Status" /></a></p>
-<p>This repository contains example applications built using Dojo.</p>
-<p>For current progress on Dojo, contribution guidelines and other information, please visit <a href="https://github.com/dojo/meta"><code>dojo/meta</code></a>.</p>
-<ul>
-<li><a href="#examples">Examples</a></li>
-<li><a href="#how-do-i-contribute">How do I contribute?</a>
-<ul>
-<li><a href="#adding-an-example">Adding an Example</a></li>
-<li><a href="#installation--testing">Installation &amp; Testing</a></li>
-<li><a href="#building-all-examples">Building all Examples</a></li>
-</ul></li>
-<li><a href="#licensing-information">Licensing information</a></li>
-</ul>
-<h2 id="examples">Examples</h2>
-<p>Here is a table of the current examples available in this repository complete with code and a hosted demonstration:</p>
-<table style="width:97%;">
-<colgroup>
-<col style="width: 5%" />
-<col style="width: 10%" />
-<col style="width: 13%" />
-<col style="width: 23%" />
-<col style="width: 46%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>
-Example
-</th>
-<th>
-Code
-</th>
-<th>
-Demo
-</th>
-<th>
-Sandbox
-</th>
-<th>
-Overview
-</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>
-TodoMVC
-</td>
-<td>
-<a href="./packages/todo-mvc">Link</a>
-</td>
-<td>
-<a href="https://examples.dojo.io/todo-mvc">Link</a>
-</td>
-<td>
-<a href="https://codesandbox.io/s/github/dojo/examples/tree/master/packages/todo-mvc">Link</a>
-</td>
-<td>
-Reference implementation of <a href="http://todomvc.com/">TodoMVC</a> built using Dojo packages.
-</td>
-</tr>
-<tr class="even">
-<td>
-TodoMVC (kitchen sink)
-</td>
-<td>
-<a href="./packages/todo-mvc-kitchensink">Link</a>
-</td>
-<td>
-<a href="https://examples.dojo.io/todo-mvc-kitchensink">Link</a>
-</td>
-<td>
-<a href="https://codesandbox.io/s/github/dojo/examples/tree/master/packages/todo-mvc-kitchensink">Link</a>
-</td>
-<td>
-Feature-enhanced version of TodoMVC built using Dojo packages.
-</td>
-</tr>
-<tr class="odd">
-<td>
-iCache Basic
-</td>
-<td>
-<a href="./packages/icache-basic">Link</a>
-</td>
-<td>
-<a href="https://examples.dojo.io/icache-basic">Link</a>
-</td>
-<td>
-<a href="https://codesandbox.io/s/github/dojo/examples/tree/master/packages/icache-basic">Link</a>
-</td>
-<td>
-Basic example of icache middleware usage
-</td>
-</tr>
-<tr class="even">
-<td>
-iCache Advanced
-</td>
-<td>
-<a href="./packages/icache-advanced">Link</a>
-</td>
-<td>
-<a href="https://examples.dojo.io/icache-advanced">Link</a>
-</td>
-<td>
-<a href="https://codesandbox.io/s/github/dojo/examples/tree/master/packages/icache-advanced">Link</a>
-</td>
-<td>
-Example of getOrSet icache API and typed icache
-</td>
-</tr>
-<tr class="odd">
-<td>
-Resize Middleware
-</td>
-<td>
-<a href="./packages/resize-middleware">Link</a>
-</td>
-<td>
-<a href="https://examples.dojo.io/resize-middleware">Link</a>
-</td>
-<td>
-<a href="https://codesandbox.io/s/github/dojo/examples/tree/master/packages/resize-middleware">Link</a>
-</td>
-<td>
-Demonstrates working with an element that changes dimensions
-</td>
-</tr>
-<tr class="even">
-<td>
-HNPWA
-</td>
-<td>
-<a href="./packages/hnpwa">Link</a>
-</td>
-<td>
-<a href="https://examples.dojo.io/hnpwa">Link</a>
-</td>
-<td>
-<a href="https://codesandbox.io/s/github/dojo/examples/tree/master/packages/hnpwa">Link</a>
-</td>
-<td>
-Reference implementation of <a href="https://hnpwa.com/">HNPWA</a> built using Dojo packages.
-</td>
-</tr>
-<tr class="odd">
-<td>
-Widget Showcase
-</td>
-<td>
-<a href="./packages/widget-showcase">Link</a>
-</td>
-<td>
-<a href="https://examples.dojo.io/widget-showcase">Link</a>
-</td>
-<td>
-<a href="https://codesandbox.io/s/github/dojo/examples/tree/master/packages/widget-showcase">Link</a>
-</td>
-<td>
-Showcase of widgets from <span class="citation" data-cites="dojo/widgets"><span class="citation" data-cites="dojo/widgets">[@dojo/widgets]</span></span>(https://github.com/dojo/widgets).
-</td>
-</tr>
-<tr class="even">
-<td>
-Custom Element Showcase
-</td>
-<td>
-<a href="./packages/custom-element-showcase">Link</a>
-</td>
-<td>
-<a href="https://examples.dojo.io/custom-element-showcase">Link</a>
-</td>
-<td>
-</td>
-<td>
-Showcase of widgets from <span class="citation" data-cites="dojo/widgets"><span class="citation" data-cites="dojo/widgets">[@dojo/widgets]</span></span>(https://github.com/dojo/widgets) compiled as <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements">custom elements</a>.
-</td>
-</tr>
-<tr class="odd">
-<td>
-Custom Element Menu
-</td>
-<td>
-<a href="./packages/custom-element-menu">Link</a>
-</td>
-<td>
-<a href="https://examples.dojo.io/custom-element-menu">Link</a>
-</td>
-<td>
-</td>
-<td>
-Demonstration of a menu widget compiled as a <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements">custom element</a>.
-</td>
-</tr>
-<tr class="even">
-<td>
-Real-world Application
-</td>
-<td>
-<a href="./packages/realworld">Link</a>
-</td>
-<td>
-<a href="https://examples.dojo.io/realworld">Link</a>
-</td>
-<td>
-<a href="https://codesandbox.io/s/github/dojo/examples/tree/master/packages/realworld">Link</a>
-</td>
-<td>
-A real-world implementation of an existing site using Dojo packages: conduit.
-</td>
-</tr>
-<tr class="odd">
-<td>
-Intersection Observer
-</td>
-<td>
-<a href="./packages/intersection-observer">Link</a>
-</td>
-<td>
-<a href="https://examples.dojo.io/intersection-observer/">Link</a>
-</td>
-<td>
-<a href="https://codesandbox.io/s/github/dojo/examples/tree/master/packages/intersection-observer">Link</a>
-</td>
-<td>
-Demonstration of the <a href="https://github.com/dojo/widget-core#intersection"><code>Intersection</code></a> meta and how it can be used to create an infinite scrolling list.
-</td>
-</tr>
-<tr class="even">
-<td>
-Resize Observer
-</td>
-<td>
-<a href="./packages/resize-observer">Link</a>
-</td>
-<td>
-<a href="https://examples.dojo.io/resize-observer/">Link</a>
-</td>
-<td>
-</td>
-<td>
-Demonstration of the <a href="https://github.com/dojo/widget-core#resize"><code>Resize</code></a> meta and how it can be used to create responsive components.
-</td>
-</tr>
-<tr class="odd">
-<td>
-Dgrid Wrapper
-</td>
-<td>
-<a href="./packages/dgrid-wrapper">Link</a>
-</td>
-<td>
-<a href="https://examples.dojo.io/dgrid-wrapper">Link</a>
-</td>
-<td>
-</td>
-<td>
-Demonstration of the <a href="https://github.com/dojo/interop/tree/master/packages/src/dgrid"><code>Dgrid Wrapper</code></a> for running <a href="http://dgrid.io">dgrid</a> in a reactive way in a modern Dojo application.
-</td>
-</tr>
-<tr class="even">
-<td>
-World Clock
-</td>
-<td>
-<a href="./packages/world-clock">Link</a>
-</td>
-<td>
-<a href="https://examples.dojo.io/world-clock">Link</a>
-</td>
-<td>
-</td>
-<td>
-Demonstration of i18n in an application built using Dojo packages.
-</td>
-</tr>
-<tr class="odd">
-<td>
-Static Blog
-</td>
-<td>
-<a href="./packages/static-blog">Link</a>
-</td>
-<td>
-<a href="https://examples.dojo.io/static-blog">Link</a>
-</td>
-<td>
-<a href="https://codesandbox.io/s/github/dojo/examples/tree/master/packages/static-blog">Link</a>
-</td>
-<td>
-Template for creating a blog using dojo with build time rendering and blocks
-</td>
-</tr>
-<tr class="even">
-<td>
-Store Arrays
-</td>
-<td>
-<a href="./packages/store-arrays">Link</a>
-</td>
-<td>
-<a href="https://examples.dojo.io/store-arrays">Link</a>
-</td>
-<td>
-<a href="https://codesandbox.io/s/github/dojo/examples/tree/master/packages/store-arrays">Link</a>
-</td>
-<td>
-Demonstrates working with arrays in <span class="citation" data-cites="dojo/stores"><span class="citation" data-cites="dojo/stores">@dojo/stores</span></span>
-</td>
-</tr>
-</tbody>
-</table>
-<h2 id="how-do-i-contribute">How Do I Contribute?</h2>
-<p>We appreciate your interest!</p>
-<h3 id="adding-an-example">Adding an Example</h3>
-<p>To add an example to the project, create the example in the <code>packages</code> directory. In order to build and deploy the application there are a few required.</p>
-<h4 id="npm-scripts">Npm Scripts</h4>
-<p>There are two required npm scripts:</p>
-<h5 id="builddeploy">build:deploy</h5>
-<p>The <code>build:deploy</code> script needs to install node modules at the beginning and remove them at the end after successfully building the example. E.g.</p>
-<pre><code>&quot;build:deploy&quot;: &quot;npm install &amp;&amp; dojo build --dojorc .dojorc-deploy &amp;&amp; shx rm -rf node_modules&quot;,</code></pre>
-<h4 id="package">package</h4>
-<p>The <code>package</code> script needs move the built output into the correct directory in the main output/dist directory. E.g.</p>
-<pre><code>&quot;package&quot;: &quot;shx cp -r output/dist/ ../../output/dist/hnpwa/&quot;,</code></pre>
-<h4 id="dojorc-deploy-file"><code>.dojorc-deploy</code> file</h4>
-<p>A <code>.dojorc-deploy</code> file that extends the base <code>.dojorc</code> but specifies a base of the examples directory name. E.g.</p>
-<pre><code>{
+	<head>
+		<meta charset="utf-8" />
+		<meta name="generator" content="pandoc" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+		<title>README</title>
+		<style type="text/css">
+			code {
+				white-space: pre-wrap;
+			}
+			span.smallcaps {
+				font-variant: small-caps;
+			}
+			span.underline {
+				text-decoration: underline;
+			}
+			div.column {
+				display: inline-block;
+				vertical-align: top;
+				width: 50%;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 id="dojoexamples">
+			<span class="citation" data-cites="dojo/examples"
+				><span class="citation" data-cites="dojo/examples">@dojo/examples</span></span
+			>
+		</h1>
+		<p>
+			<a href="https://travis-ci.org/dojo/examples"
+				><img src="https://travis-ci.org/dojo/examples.svg?branch=master" alt="Build Status"
+			/></a>
+		</p>
+		<p>This repository contains example applications built using Dojo.</p>
+		<p>
+			For current progress on Dojo, contribution guidelines and other information, please visit
+			<a href="https://github.com/dojo/meta"><code>dojo/meta</code></a
+			>.
+		</p>
+		<ul>
+			<li><a href="#examples">Examples</a></li>
+			<li>
+				<a href="#how-do-i-contribute">How do I contribute?</a>
+				<ul>
+					<li><a href="#adding-an-example">Adding an Example</a></li>
+					<li><a href="#installation--testing">Installation &amp; Testing</a></li>
+					<li><a href="#building-all-examples">Building all Examples</a></li>
+				</ul>
+			</li>
+			<li><a href="#licensing-information">Licensing information</a></li>
+		</ul>
+		<h2 id="examples">Examples</h2>
+		<p>
+			Here is a table of the current examples available in this repository complete with code and a hosted
+			demonstration:
+		</p>
+		<table style="width: 97%">
+			<colgroup>
+				<col style="width: 5%" />
+				<col style="width: 10%" />
+				<col style="width: 13%" />
+				<col style="width: 23%" />
+				<col style="width: 46%" />
+			</colgroup>
+			<thead>
+				<tr class="header">
+					<th>Example</th>
+					<th>Code</th>
+					<th>Demo</th>
+					<th>Sandbox</th>
+					<th>Overview</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="odd">
+					<td>TodoMVC</td>
+					<td>
+						<a href="./packages/todo-mvc">Link</a>
+					</td>
+					<td>
+						<a href="https://examples.dojo.io/todo-mvc">Link</a>
+					</td>
+					<td>
+						<a href="https://codesandbox.io/s/github/dojo/examples/tree/master/packages/todo-mvc">Link</a>
+					</td>
+					<td>
+						Reference implementation of <a href="http://todomvc.com/">TodoMVC</a> built using Dojo packages.
+					</td>
+				</tr>
+				<tr class="even">
+					<td>TodoMVC (kitchen sink)</td>
+					<td>
+						<a href="./packages/todo-mvc-kitchensink">Link</a>
+					</td>
+					<td>
+						<a href="https://examples.dojo.io/todo-mvc-kitchensink">Link</a>
+					</td>
+					<td>
+						<a
+							href="https://codesandbox.io/s/github/dojo/examples/tree/master/packages/todo-mvc-kitchensink"
+							>Link</a
+						>
+					</td>
+					<td>Feature-enhanced version of TodoMVC built using Dojo packages.</td>
+				</tr>
+				<tr class="odd">
+					<td>iCache Basic</td>
+					<td>
+						<a href="./packages/icache-basic">Link</a>
+					</td>
+					<td>
+						<a href="https://examples.dojo.io/icache-basic">Link</a>
+					</td>
+					<td>
+						<a href="https://codesandbox.io/s/github/dojo/examples/tree/master/packages/icache-basic"
+							>Link</a
+						>
+					</td>
+					<td>Basic example of icache middleware usage</td>
+				</tr>
+				<tr class="even">
+					<td>iCache Advanced</td>
+					<td>
+						<a href="./packages/icache-advanced">Link</a>
+					</td>
+					<td>
+						<a href="https://examples.dojo.io/icache-advanced">Link</a>
+					</td>
+					<td>
+						<a href="https://codesandbox.io/s/github/dojo/examples/tree/master/packages/icache-advanced"
+							>Link</a
+						>
+					</td>
+					<td>Example of getOrSet icache API and typed icache</td>
+				</tr>
+				<tr class="odd">
+					<td>Resize Middleware</td>
+					<td>
+						<a href="./packages/resize-middleware">Link</a>
+					</td>
+					<td>
+						<a href="https://examples.dojo.io/resize-middleware">Link</a>
+					</td>
+					<td>
+						<a href="https://codesandbox.io/s/github/dojo/examples/tree/master/packages/resize-middleware"
+							>Link</a
+						>
+					</td>
+					<td>Demonstrates working with an element that changes dimensions</td>
+				</tr>
+				<tr class="even">
+					<td>HNPWA</td>
+					<td>
+						<a href="./packages/hnpwa">Link</a>
+					</td>
+					<td>
+						<a href="https://examples.dojo.io/hnpwa">Link</a>
+					</td>
+					<td>
+						<a href="https://codesandbox.io/s/github/dojo/examples/tree/master/packages/hnpwa">Link</a>
+					</td>
+					<td>
+						Reference implementation of <a href="https://hnpwa.com/">HNPWA</a> built using Dojo packages.
+					</td>
+				</tr>
+				<tr class="odd">
+					<td>Widget Showcase</td>
+					<td>
+						<a href="./packages/widget-showcase">Link</a>
+					</td>
+					<td>
+						<a href="https://examples.dojo.io/widget-showcase">Link</a>
+					</td>
+					<td>
+						<a href="https://codesandbox.io/s/github/dojo/examples/tree/master/packages/widget-showcase"
+							>Link</a
+						>
+					</td>
+					<td>
+						Showcase of widgets from
+						<span class="citation" data-cites="dojo/widgets"
+							><span class="citation" data-cites="dojo/widgets">[@dojo/widgets]</span></span
+						>(https://github.com/dojo/widgets).
+					</td>
+				</tr>
+				<tr class="even">
+					<td>Custom Element Showcase</td>
+					<td>
+						<a href="./packages/custom-element-showcase">Link</a>
+					</td>
+					<td>
+						<a href="https://examples.dojo.io/custom-element-showcase">Link</a>
+					</td>
+					<td></td>
+					<td>
+						Showcase of widgets from
+						<span class="citation" data-cites="dojo/widgets"
+							><span class="citation" data-cites="dojo/widgets">[@dojo/widgets]</span></span
+						>(https://github.com/dojo/widgets) compiled as
+						<a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements"
+							>custom elements</a
+						>.
+					</td>
+				</tr>
+				<tr class="odd">
+					<td>Custom Element Menu</td>
+					<td>
+						<a href="./packages/custom-element-menu">Link</a>
+					</td>
+					<td>
+						<a href="https://examples.dojo.io/custom-element-menu">Link</a>
+					</td>
+					<td></td>
+					<td>
+						Demonstration of a menu widget compiled as a
+						<a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements"
+							>custom element</a
+						>.
+					</td>
+				</tr>
+				<tr class="even">
+					<td>Real-world Application</td>
+					<td>
+						<a href="./packages/realworld">Link</a>
+					</td>
+					<td>
+						<a href="https://examples.dojo.io/realworld">Link</a>
+					</td>
+					<td>
+						<a href="https://codesandbox.io/s/github/dojo/examples/tree/master/packages/realworld">Link</a>
+					</td>
+					<td>A real-world implementation of an existing site using Dojo packages: conduit.</td>
+				</tr>
+				<tr class="odd">
+					<td>Intersection Observer</td>
+					<td>
+						<a href="./packages/intersection-observer">Link</a>
+					</td>
+					<td>
+						<a href="https://examples.dojo.io/intersection-observer/">Link</a>
+					</td>
+					<td>
+						<a
+							href="https://codesandbox.io/s/github/dojo/examples/tree/master/packages/intersection-observer"
+							>Link</a
+						>
+					</td>
+					<td>
+						Demonstration of the
+						<a href="https://github.com/dojo/widget-core#intersection"><code>Intersection</code></a> meta
+						and how it can be used to create an infinite scrolling list.
+					</td>
+				</tr>
+				<tr class="even">
+					<td>Resize Observer</td>
+					<td>
+						<a href="./packages/resize-observer">Link</a>
+					</td>
+					<td>
+						<a href="https://examples.dojo.io/resize-observer/">Link</a>
+					</td>
+					<td></td>
+					<td>
+						Demonstration of the
+						<a href="https://github.com/dojo/widget-core#resize"><code>Resize</code></a> meta and how it can
+						be used to create responsive components.
+					</td>
+				</tr>
+				<tr class="odd">
+					<td>Dgrid Wrapper</td>
+					<td>
+						<a href="./packages/dgrid-wrapper">Link</a>
+					</td>
+					<td>
+						<a href="https://examples.dojo.io/dgrid-wrapper">Link</a>
+					</td>
+					<td></td>
+					<td>
+						Demonstration of the
+						<a href="https://github.com/dojo/interop/tree/master/packages/src/dgrid"
+							><code>Dgrid Wrapper</code></a
+						>
+						for running <a href="http://dgrid.io">dgrid</a> in a reactive way in a modern Dojo application.
+					</td>
+				</tr>
+				<tr class="even">
+					<td>World Clock</td>
+					<td>
+						<a href="./packages/world-clock">Link</a>
+					</td>
+					<td>
+						<a href="https://examples.dojo.io/world-clock">Link</a>
+					</td>
+					<td></td>
+					<td>Demonstration of i18n in an application built using Dojo packages.</td>
+				</tr>
+				<tr class="odd">
+					<td>Static Blog</td>
+					<td>
+						<a href="./packages/static-blog">Link</a>
+					</td>
+					<td>
+						<a href="https://examples.dojo.io/static-blog">Link</a>
+					</td>
+					<td>
+						<a href="https://codesandbox.io/s/github/dojo/examples/tree/master/packages/static-blog"
+							>Link</a
+						>
+					</td>
+					<td>Template for creating a blog using dojo with build time rendering and blocks</td>
+				</tr>
+				<tr class="even">
+					<td>Store Arrays</td>
+					<td>
+						<a href="./packages/store-arrays">Link</a>
+					</td>
+					<td>
+						<a href="https://examples.dojo.io/store-arrays">Link</a>
+					</td>
+					<td>
+						<a href="https://codesandbox.io/s/github/dojo/examples/tree/master/packages/store-arrays"
+							>Link</a
+						>
+					</td>
+					<td>
+						Demonstrates working with arrays in
+						<span class="citation" data-cites="dojo/stores"
+							><span class="citation" data-cites="dojo/stores">@dojo/stores</span></span
+						>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<h2 id="how-do-i-contribute">How Do I Contribute?</h2>
+		<p>We appreciate your interest!</p>
+		<h3 id="adding-an-example">Adding an Example</h3>
+		<p>
+			To add an example to the project, create the example in the <code>packages</code> directory. In order to
+			build and deploy the application there are a few required.
+		</p>
+		<h4 id="npm-scripts">Npm Scripts</h4>
+		<p>There are two required npm scripts:</p>
+		<h5 id="builddeploy">build:deploy</h5>
+		<p>
+			The <code>build:deploy</code> script needs to install node modules at the beginning and remove them at the
+			end after successfully building the example. E.g.
+		</p>
+		<pre><code>&quot;build:deploy&quot;: &quot;npm install &amp;&amp; dojo build --dojorc .dojorc-deploy &amp;&amp; shx rm -rf node_modules&quot;,</code></pre>
+		<h4 id="package">package</h4>
+		<p>
+			The <code>package</code> script needs move the built output into the correct directory in the main
+			output/dist directory. E.g.
+		</p>
+		<pre><code>&quot;package&quot;: &quot;shx cp -r output/dist/ ../../output/dist/hnpwa/&quot;,</code></pre>
+		<h4 id="dojorc-deploy-file"><code>.dojorc-deploy</code> file</h4>
+		<p>
+			A <code>.dojorc-deploy</code> file that extends the base <code>.dojorc</code> but specifies a base of the
+			examples directory name. E.g.
+		</p>
+		<pre><code>{
     &quot;extends&quot;: &quot;.dojorc&quot;,
     &quot;build-app&quot;: {
         &quot;base&quot;: &quot;/hnpwa/&quot;
     }
 }</code></pre>
-<h3 id="installation-testing">Installation &amp; Testing</h3>
-<p>Refer to each <code>README.md</code> for details on installing and testing the examples:</p>
-<ul>
-<li><a href="./pacakges/todo-mvc/README.md">todo-mvc</a></li>
-<li><a href="./pacakges/todo-mvc-kitchensink/README.md">todo-mvc-kitchensink</a></li>
-<li><a href="./pacakges/hnpwa/README.md">hnpwa</a></li>
-<li><a href="./pacakges/custom-element-menu/README.md">custom-element-menu</a></li>
-<li><a href="./pacakges/widget-showcase/README.md">widget-showcase</a></li>
-<li><a href="./pacakges/custom-element-showcase/README.md">custom-element-showcase</a></li>
-<li><a href="./pacakges/dojo-cli-example/README.md">dojo-cli-example</a></li>
-<li><a href="./pacakges/realworld/README.md">Conduit RealWorld Application</a></li>
-<li><a href="./pacakges/intersection-observer/README.md">intersection-observer</a></li>
-<li><a href="./pacakges/resize-observer/README.md">resize-observer</a></li>
-<li><a href="./pacakges/dgrid-wrapper/README.md">dgrid-wrapper</a></li>
-<li><a href="./pacakges/world-clock/README.md">world-clock</a></li>
-</ul>
-<h3 id="building-all-examples">Building all Examples</h3>
-<p>From the root directory, run <code>npm install</code> and then <code>npm run build</code>. The built examples are output into the <code>output/dist</code> directory at the of the product.</p>
-<h2 id="licensing-information">Licensing Information</h2>
-<p>© 2018 <a href="https://js.foundation/">JS Foundation</a>. <a href="http://opensource.org/licenses/BSD-3-Clause">New BSD</a> license.</p>
-<p><a href="https://codesandbox.io/s/github/dojo/examples/tree/master/packages/todo-mvc">Link</a> |</p>
-</body>
+		<h3 id="installation-testing">Installation &amp; Testing</h3>
+		<p>Refer to each <code>README.md</code> for details on installing and testing the examples:</p>
+		<ul>
+			<li><a href="./pacakges/todo-mvc/README.md">todo-mvc</a></li>
+			<li><a href="./pacakges/todo-mvc-kitchensink/README.md">todo-mvc-kitchensink</a></li>
+			<li><a href="./pacakges/hnpwa/README.md">hnpwa</a></li>
+			<li><a href="./pacakges/custom-element-menu/README.md">custom-element-menu</a></li>
+			<li><a href="./pacakges/widget-showcase/README.md">widget-showcase</a></li>
+			<li><a href="./pacakges/custom-element-showcase/README.md">custom-element-showcase</a></li>
+			<li><a href="./pacakges/dojo-cli-example/README.md">dojo-cli-example</a></li>
+			<li><a href="./pacakges/realworld/README.md">Conduit RealWorld Application</a></li>
+			<li><a href="./pacakges/intersection-observer/README.md">intersection-observer</a></li>
+			<li><a href="./pacakges/resize-observer/README.md">resize-observer</a></li>
+			<li><a href="./pacakges/dgrid-wrapper/README.md">dgrid-wrapper</a></li>
+			<li><a href="./pacakges/world-clock/README.md">world-clock</a></li>
+		</ul>
+		<h3 id="building-all-examples">Building all Examples</h3>
+		<p>
+			From the root directory, run <code>npm install</code> and then <code>npm run build</code>. The built
+			examples are output into the <code>output/dist</code> directory at the of the product.
+		</p>
+		<h2 id="licensing-information">Licensing Information</h2>
+		<p>
+			© 2018 <a href="https://js.foundation/">JS Foundation</a>.
+			<a href="http://opensource.org/licenses/BSD-3-Clause">New BSD</a> license.
+		</p>
+		<p><a href="https://codesandbox.io/s/github/dojo/examples/tree/master/packages/todo-mvc">Link</a> |</p>
+	</body>
 </html>

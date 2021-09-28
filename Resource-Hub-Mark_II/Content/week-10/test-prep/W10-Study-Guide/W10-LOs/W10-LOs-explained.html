@@ -11,69 +11,6 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
-  <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
 </head>
 <body>
 <h1 id="databases-sql-and-sequelize-week-10---learning-objectives">Databases, SQL, and Sequelize (Week 10) - Learning Objectives</h1>
@@ -117,7 +54,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Professionalism and good design (described below)</li>
 <li>Would you be able to tell that this wasn’t done by a professional dev?</li>
 </ul>
-<ol start="2" type="1">
+<ol type="1">
 <li>Explain aspects of a good looking Web application</li>
 </ol>
 <ul>
@@ -153,7 +90,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>etc.</li>
 </ul></li>
 </ul>
-<ol start="3" type="1">
+<ol type="1">
 <li>Identify App Academy’s expectations of your projects for after you graduate</li>
 </ol>
 <ul>
@@ -168,7 +105,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Include a scorecard! We’ll get more into the specifics of this process as we start producing projects, but scorecards are a way for App Academy to be able to provide you feedback on your projects. It’s an easy format for you to be able to see ways that you could improve the project and for instructors and career coaches to be able to provide that feedback. This will only be seen by you and the a/A team, but it’ll help you get your project in its most presentable form!</li>
 </ul></li>
 </ul>
-<ol start="4" type="1">
+<ol type="1">
 <li>Practice good code hygiene when making projects live</li>
 </ol>
 <ul>
@@ -187,7 +124,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>A software application that you run that your programs can connect to so that they can store, modify, and retrieve data.</li>
 <li>An RDBMS can track many databases. We will use PostgreSQL, or “postgres”, primarily for our RDBMS and it will be able to create individual databases for each of our projects.</li>
 </ul>
-<ol start="2" type="1">
+<ol type="1">
 <li>Describe what relational data is</li>
 </ol>
 <ul>
@@ -195,7 +132,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>When working with relational databases, we can connect two entries together utilizing foreign keys (explained below).</li>
 <li>In a pets database, we could be keeping track of dogs and cats as well as the toys that each of them own. That “ownership” of a cat to a toy is the “relational” aspect of relational data. Two pieces of information that can be connected together to show some sort of meaning.</li>
 </ul>
-<ol start="3" type="1">
+<ol type="1">
 <li>Define what a database is</li>
 </ol>
 <ul>
@@ -203,7 +140,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>A database can be made up of many tables that each store specific kinds of information.</li>
 <li>We could have a pets database that stores information about many different types of animals. Each animal type could potentially be represented by a different table.</li>
 </ul>
-<ol start="4" type="1">
+<ol type="1">
 <li>Define what a database table is</li>
 </ol>
 <ul>
@@ -211,7 +148,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>The records (entries) on these tables can be connected to records on other tables through the use of foreign keys</li>
 <li>In our pets database, we could have a <code>dogs</code> table, with individual records</li>
 </ul>
-<ol start="5" type="1">
+<ol type="1">
 <li>Describe the purpose of a primary key</li>
 </ol>
 <ul>
@@ -219,21 +156,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>We often use an “id” field that simply increments with each entry. The incrementing ensures that each record has a unique identifier, even if their are other fields of the record that are repeated (two people with the same name would still need to have a unique identifier, for example).</li>
 <li>With a unique identifier, we can easily connect records within the table to records from other tables.</li>
 </ul>
-<ol start="6" type="1">
+<ol type="1">
 <li>Describe the purpose of a foreign key</li>
 </ol>
 <ul>
 <li>A foreign key is used as the connector from this record to the primary key of another table’s record.</li>
 <li>In our pets example, we can imagine two tables to demonstrate: a table to represent cats and a table to represent toys. Each of these tables has a primary key of “id” that is used as the unique identifier. In order to make a connection between a toy and a cat, we can add another field to the cat table called “owner_id”, indicating that it is a foreign key for the cat table. By setting a toy’s “owner_id” to the same value as a particular cat’s “id”, we can indicate that the cat is the owner of that toy.</li>
 </ul>
-<ol start="7" type="1">
+<ol type="1">
 <li>Describe how to properly name things in PostgreSQL</li>
 </ol>
 <ul>
 <li>Names within postgres should generally consist of only lowercase letters, numbers, and underscores.</li>
 <li>Tables within a database are plural by convention, so a table for cats would typically be “cats” and office locations would be “office_locations” (all lowercase, underscores to replace spaces, plural)</li>
 </ul>
-<ol start="8" type="1">
+<ol type="1">
 <li>Install and configure PostgreSQL 12, its client tools, and a GUI client for it named Postbird</li>
 </ol>
 <ul>
@@ -245,7 +182,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>WSL2: https://github.com/appacademy-starters/postgres-docker</li>
 <li>WSL1: https://open.appacademy.io/learn/js-py—aug-2020-online/week-10-aug-2020-online/installing-postgresql-on-windows</li>
 </ul>
-<ol start="9" type="1">
+<ol type="1">
 <li>Connect to an instance of PostgreSQL with the command line tool psql</li>
 </ol>
 <ul>
@@ -263,7 +200,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>psql -U pets_user -W pets</code> (the order of our flags doesn’t matter, as long as any arguments associated with them are together, such as <code>pets_user</code> directly following <code>-U</code> in this example)</li>
 </ul></li>
 </ul>
-<ol start="10" type="1">
+<ol type="1">
 <li>Identify whether a user is a normal user or a superuser by the prompt in the psql shell</li>
 </ol>
 <ul>
@@ -271,21 +208,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>If the prompt shows <code>=&gt;</code>, the user is a normal user</li>
 <li>If the prompt show <code>=#</code>, the user is a superuser</li>
 </ul>
-<ol start="11" type="1">
+<ol type="1">
 <li>Create a user for the relational database management system</li>
 </ol>
 <ul>
 <li>Within psql, we can create a user with the <code>CREATE USER {username} {WITH options}</code> command.</li>
 <li>The most common options we’ll want to use are <code>WITH PASSWORD 'mypassword'</code> to provide a password for the user we are creating, <code>CREATEDB</code> to allow the user to create new databases, or <code>SUPERUSER</code> to create a user with all elevated permissions.</li>
 </ul>
-<ol start="12" type="1">
+<ol type="1">
 <li>Create a database in the database management system</li>
 </ol>
 <ul>
 <li>We can use the command <code>CREATE DATABASE {database name} {options}</code> inside psql to create a new database.</li>
 <li>A popular option we may utilize is <code>WITH OWNER {owner name}</code> to set another user as the owner of the database we are making.</li>
 </ul>
-<ol start="13" type="1">
+<ol type="1">
 <li>Configure a database so that only the owner (and superusers) can connect to it</li>
 </ol>
 <ul>
@@ -293,31 +230,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>In order to remove connection privileges to a database from the public we can use <code>REVOKE CONNECT ON DATABASE {db_name} FROM PUBLIC;</code>, removing all public connection access.</li>
 <li>If we wanted to grant it back, or to a specific user, we could similarly do <code>GRANT CONNECT ON DATABASE {db_name} FROM {specific user, PUBLIC, etc.};</code></li>
 </ul>
-<ol start="14" type="1">
+<ol type="1">
 <li>View a list of databases in an installation of PostgreSQL</li>
 </ol>
 <ul>
 <li>To list all databases we can use the <code>\l</code> or <code>\list</code> command in psql.</li>
 </ul>
-<ol start="15" type="1">
-<li>Create tables in a database</li>
+<ol type="1">
+<li><p>Create tables in a database</p>
+<p>CREATE TABLE {table name} ( {columnA} {typeA}, {columnB} {typeB}, etc… );</p></li>
 </ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">CREATE</span> <span class="kw">TABLE</span> {<span class="kw">table</span> name} (</a>
-<a class="sourceLine" id="cb1-2" title="2">  {columnA} {typeA},</a>
-<a class="sourceLine" id="cb1-3" title="3">  {columnB} {typeB},</a>
-<a class="sourceLine" id="cb1-4" title="4">  etc<span class="op">..</span>.</a>
-<a class="sourceLine" id="cb1-5" title="5">);</a></code></pre></div>
 <ul>
 <li>The whitespace does not matter. Creating the SQL statements on multiple lines is easier to read, but just like JavaScript, they can be presented differently.</li>
 <li>One common issue is that SQL does not like trailing commas, so the last column cannot have a comma after its type in this example.</li>
 </ul>
-<ol start="16" type="1">
+<ol type="1">
 <li>View a list of tables in a database</li>
 </ol>
 <ul>
 <li>To list all database tables, use the <code>\dt</code> command.</li>
 </ul>
-<ol start="17" type="1">
+<ol type="1">
 <li>Identify and describe the common data types used in PostgreSQL</li>
 </ol>
 <ul>
@@ -334,61 +267,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>TIMESTAMP</code>: date and time</li>
 </ul></li>
 </ul>
-<ol start="18" type="1">
+<ol type="1">
 <li>Describe the purpose of the UNIQUE and NOT NULL constraints, and create columns in database tables that have them</li>
 </ol>
 <ul>
 <li>In addition to the data type, we can provide flags for constraints to place on our column data.</li>
 <li>The <code>UNIQUE</code> flag indicates that the data for the column must not be repeated.</li>
 <li>By default we can create entries in our tables that are missing data from columns. When creating a pet, maybe we don’t provide an age because we don’t know it, for example. If we want to require that the data be present in order to create a new record, we can indicate that column must be <code>NOT NULL</code>.</li>
-<li>In the example below, we are requiring our pets to have unique names and for them to be present (both UNIQUE and NOT NULL). We have no such constraints on the age column, allowing repetition of ages or their complete absence.</li>
+<li><p>In the example below, we are requiring our pets to have unique names and for them to be present (both UNIQUE and NOT NULL). We have no such constraints on the age column, allowing repetition of ages or their complete absence.</p>
+<p>CREATE TABLE pets ( id SERIAL PRIMARY KEY, name VARCHAR(255) UNIQUE NOT NULL, age SMALLINT );</p></li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">CREATE</span> <span class="kw">TABLE</span> pets (</a>
-<a class="sourceLine" id="cb2-2" title="2">  <span class="kw">id</span> SERIAL <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</a>
-<a class="sourceLine" id="cb2-3" title="3">  name <span class="dt">VARCHAR</span>(<span class="dv">255</span>) <span class="kw">UNIQUE</span> <span class="kw">NOT</span> <span class="kw">NULL</span>,</a>
-<a class="sourceLine" id="cb2-4" title="4">  age <span class="dt">SMALLINT</span></a>
-<a class="sourceLine" id="cb2-5" title="5">);</a></code></pre></div>
-<ol start="19" type="1">
+<ol type="1">
 <li>Create a primary key for a table</li>
 </ol>
 <ul>
-<li>When creating a table we can indicate the primary key by passing in the column name to parentheses like so:</li>
+<li><p>When creating a table we can indicate the primary key by passing in the column name to parentheses like so:</p>
+<p>CREATE TABLE people ( id SERIAL, first_name VARCHAR(50), last_name VARCHAR(50), PRIMARY KEY (id) );</p></li>
+<li><p>We could have also used the <code>PRIMARY KEY</code> flag on the column definition itself:</p>
+<p>CREATE TABLE people ( id SERIAL PRIMARY KEY, first_name VARCHAR(50), last_name VARCHAR(50) );</p></li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">CREATE</span> <span class="kw">TABLE</span> people (</a>
-<a class="sourceLine" id="cb3-2" title="2">  <span class="kw">id</span> SERIAL,</a>
-<a class="sourceLine" id="cb3-3" title="3">  first_name <span class="dt">VARCHAR</span>(<span class="dv">50</span>),</a>
-<a class="sourceLine" id="cb3-4" title="4">  last_name <span class="dt">VARCHAR</span>(<span class="dv">50</span>),</a>
-<a class="sourceLine" id="cb3-5" title="5">  <span class="kw">PRIMARY</span> <span class="kw">KEY</span> (<span class="kw">id</span>)</a>
-<a class="sourceLine" id="cb3-6" title="6">);</a></code></pre></div>
-<ul>
-<li>We could have also used the <code>PRIMARY KEY</code> flag on the column definition itself:</li>
-</ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">CREATE</span> <span class="kw">TABLE</span> people (</a>
-<a class="sourceLine" id="cb4-2" title="2">  <span class="kw">id</span> SERIAL <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</a>
-<a class="sourceLine" id="cb4-3" title="3">  first_name <span class="dt">VARCHAR</span>(<span class="dv">50</span>),</a>
-<a class="sourceLine" id="cb4-4" title="4">  last_name <span class="dt">VARCHAR</span>(<span class="dv">50</span>)</a>
-<a class="sourceLine" id="cb4-5" title="5">);</a></code></pre></div>
-<ol start="20" type="1">
+<ol type="1">
 <li>Create foreign key constraints to relate tables</li>
 </ol>
 <ul>
 <li>In our table definition, we can use the line <code>FOREIGN KEY (foreign_key_stored_in_this_table) REFERENCE {other table} ({other_tables_key_name})</code> to connect two tables.</li>
-<li>This is probably easier to see in an example:</li>
+<li><p>This is probably easier to see in an example:</p>
+<p>CREATE TABLE people ( id SERIAL PRIMARY KEY, first_name VARCHAR(50), last_name VARCHAR(50) );</p>
+<p>CREATE TABLE pets ( id SERIAL PRIMARY KEY, name VARCHAR(255), age SMALLINT, person_id INTEGER, FOREIGN KEY (person_id) REFERENCES people (id) );</p></li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">CREATE</span> <span class="kw">TABLE</span> people (</a>
-<a class="sourceLine" id="cb5-2" title="2">  <span class="kw">id</span> SERIAL <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</a>
-<a class="sourceLine" id="cb5-3" title="3">  first_name <span class="dt">VARCHAR</span>(<span class="dv">50</span>),</a>
-<a class="sourceLine" id="cb5-4" title="4">  last_name <span class="dt">VARCHAR</span>(<span class="dv">50</span>)</a>
-<a class="sourceLine" id="cb5-5" title="5">);</a>
-<a class="sourceLine" id="cb5-6" title="6"></a>
-<a class="sourceLine" id="cb5-7" title="7"><span class="kw">CREATE</span> <span class="kw">TABLE</span> pets (</a>
-<a class="sourceLine" id="cb5-8" title="8">  <span class="kw">id</span> SERIAL <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</a>
-<a class="sourceLine" id="cb5-9" title="9">  name <span class="dt">VARCHAR</span>(<span class="dv">255</span>),</a>
-<a class="sourceLine" id="cb5-10" title="10">  age <span class="dt">SMALLINT</span>,</a>
-<a class="sourceLine" id="cb5-11" title="11">  person_id <span class="dt">INTEGER</span>,</a>
-<a class="sourceLine" id="cb5-12" title="12">  <span class="kw">FOREIGN</span> <span class="kw">KEY</span> (person_id) <span class="kw">REFERENCES</span> people (<span class="kw">id</span>)</a>
-<a class="sourceLine" id="cb5-13" title="13">);</a></code></pre></div>
-<ol start="21" type="1">
+<ol type="1">
 <li>Explain that SQL is not case sensitive for its keywords but is for its entity names</li>
 </ol>
 <ul>
@@ -402,29 +309,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol>
 <ul>
 <li>Supply the column names in the <code>SELECT</code> clause. If we want all columns, we can also use <code>*</code></li>
-<li>Supply the table names in the <code>FROM</code> clause</li>
-</ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb6-1" title="1"><span class="co">-- Selects all columns from the friends table</span></a>
-<a class="sourceLine" id="cb6-2" title="2"><span class="kw">SELECT</span></a>
-<a class="sourceLine" id="cb6-3" title="3">  <span class="op">*</span> </a>
-<a class="sourceLine" id="cb6-4" title="4"><span class="kw">FROM</span></a>
-<a class="sourceLine" id="cb6-5" title="5">  friends;</a>
-<a class="sourceLine" id="cb6-6" title="6"></a>
-<a class="sourceLine" id="cb6-7" title="7"><span class="co">-- Selects the first_name column from the friends table (remember whitespace is ignored)</span></a>
-<a class="sourceLine" id="cb6-8" title="8"><span class="kw">SELECT</span> name</a>
-<a class="sourceLine" id="cb6-9" title="9"><span class="kw">FROM</span> friends;</a></code></pre></div>
+<li><p>Supply the table names in the <code>FROM</code> clause</p>
+– Selects all columns from the friends table SELECT
 <ul>
-<li>Sometimes we may need to specify what table we are selecting a column from, particulurly if we had joined multiple tables together.</li>
+<li>FROM friends;</li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb7-1" title="1"><span class="co">-- Notice here we are indicating that we want the &quot;name&quot; field from the &quot;friends&quot; table as well as the &quot;name&quot; field from the &quot;puppies&quot; table. We indicate the table name by table.column</span></a>
-<a class="sourceLine" id="cb7-2" title="2"><span class="co">-- We are also aliasing these fields with the AS keyword so that our returned results have friend_name and puppy_name as field headers</span></a>
-<a class="sourceLine" id="cb7-3" title="3"><span class="kw">SELECT</span></a>
-<a class="sourceLine" id="cb7-4" title="4">  friends.name <span class="kw">AS</span> friend_name , puppies.name <span class="kw">AS</span> puppy_name</a>
-<a class="sourceLine" id="cb7-5" title="5"><span class="kw">FROM</span></a>
-<a class="sourceLine" id="cb7-6" title="6">  friends</a>
-<a class="sourceLine" id="cb7-7" title="7"><span class="kw">JOIN</span> </a>
-<a class="sourceLine" id="cb7-8" title="8">  puppies <span class="kw">ON</span> friends.puppy_id <span class="op">=</span> puppies.<span class="kw">id</span></a></code></pre></div>
-<ol start="2" type="1">
+<p>– Selects the first_name column from the friends table (remember whitespace is ignored) SELECT name FROM friends;</p></li>
+<li><p>Sometimes we may need to specify what table we are selecting a column from, particulurly if we had joined multiple tables together.</p>
+<p>– Notice here we are indicating that we want the “name” field from the “friends” table as well as the “name” field from the “puppies” table. We indicate the table name by table.column – We are also aliasing these fields with the AS keyword so that our returned results have friend_name and puppy_name as field headers SELECT friends.name AS friend_name , puppies.name AS puppy_name FROM friends JOIN puppies ON friends.puppy_id = puppies.id</p></li>
+</ul>
+<ol type="1">
 <li>How to use the <code>WHERE</code> clause on <code>SELECT</code>, <code>UPDATE</code>, and <code>DELETE</code> statements to narrow the scope of the command</li>
 </ol>
 <ul>
@@ -436,86 +330,53 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>WHERE {column} BETWEEN {value1} AND {value2}</code> can check for matches between two values (numeric ranges)</li>
 <li><code>WHERE {column} LIKE {pattern}</code> can check for matches to a string. This is most useful when we use the wildcard <code>%</code>, such as <code>WHERE breed LIKE '%Shepherd'</code>, which will match any breed that ends in “Shepherd”</li>
 <li>The <code>NOT</code> operator can also be used for negation in the checks.</li>
-<li>Mathematical operators can be used when performing calculations or comparisons within a query as well, such as</li>
+<li><p>Mathematical operators can be used when performing calculations or comparisons within a query as well, such as</p>
+<p>SELECT name, breed, weight_lbs FROM puppies WHERE weight_lbs &gt; 50;</p>
+<p>– OR</p>
+<p>SELECT name, breed, age_yrs FROM puppies WHERE age_yrs * 10 = 5;</p></li>
+</ul></li>
 </ul>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">SELECT</span> name, breed, weight_lbs <span class="kw">FROM</span> puppies</a>
-<a class="sourceLine" id="cb8-2" title="2"><span class="kw">WHERE</span> weight_lbs <span class="op">&gt;</span> <span class="dv">50</span>;</a>
-<a class="sourceLine" id="cb8-3" title="3"></a>
-<a class="sourceLine" id="cb8-4" title="4"><span class="co">-- OR</span></a>
-<a class="sourceLine" id="cb8-5" title="5"></a>
-<a class="sourceLine" id="cb8-6" title="6"><span class="kw">SELECT</span> name, breed, age_yrs <span class="kw">FROM</span> puppies</a>
-<a class="sourceLine" id="cb8-7" title="7"><span class="kw">WHERE</span> age_yrs <span class="op">*</span> <span class="dv">10</span> <span class="op">=</span> <span class="dv">5</span>;</a></code></pre></div></li>
-</ul>
-<ol start="3" type="1">
+<ol type="1">
 <li>How to use the <code>JOIN</code> keyword to join two (or more) tables together into a single virtual table</li>
 </ol>
 <ul>
-<li>When we want to get information from a related table or do querying based on related table values, we can join the connected table by comparing the foreign key to where it lines up on the other table:</li>
+<li><p>When we want to get information from a related table or do querying based on related table values, we can join the connected table by comparing the foreign key to where it lines up on the other table:</p>
+– Here we are joining the puppies table on to the friends table. We are specifying that the comparison we should make is the foreign key puppy_id on the friends table should line up with the primary key id on the puppies table. SELECT
+<ul>
+<li>FROM friends JOIN puppies ON friends.puppy_id = puppies.id</li>
+</ul></li>
 </ul>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb9-1" title="1"><span class="co">-- Here we are joining the puppies table on to the friends table. We are specifying that the comparison we should make is the foreign key puppy_id on the friends table should line up with the primary key id on the puppies table.</span></a>
-<a class="sourceLine" id="cb9-2" title="2"><span class="kw">SELECT</span></a>
-<a class="sourceLine" id="cb9-3" title="3">  <span class="op">*</span></a>
-<a class="sourceLine" id="cb9-4" title="4"><span class="kw">FROM</span></a>
-<a class="sourceLine" id="cb9-5" title="5">  friends</a>
-<a class="sourceLine" id="cb9-6" title="6"><span class="kw">JOIN</span> </a>
-<a class="sourceLine" id="cb9-7" title="7">  puppies <span class="kw">ON</span> friends.puppy_id <span class="op">=</span> puppies.<span class="kw">id</span></a></code></pre></div>
-<ol start="4" type="1">
+<ol type="1">
 <li>How to use the <code>INSERT</code> statement to insert data into a table</li>
 </ol>
 <ul>
 <li>When a table is already created we can then insert records into it using the <code>INSERT INTO</code> keywords.</li>
-<li>We provide the name of the table that we would like to add records to, followed by the <code>VALUES</code> keyword and each record we are adding. Here’s an example:</li>
+<li><p>We provide the name of the table that we would like to add records to, followed by the <code>VALUES</code> keyword and each record we are adding. Here’s an example:</p>
+<p>– We are providing the table name, then multiple records to insert – The values are listed in the order that they are defined on the table INSERT INTO table_name VALUES (column1_value, colum2_value, column3_value), (column1_value, colum2_value, column3_value), (column1_value, colum2_value, column3_value);</p></li>
+<li><p>We can also specify columns when we are inserting data. This makes it clear which fields we are providing data for and allows us to provide them out of order, skip null or default values, etc.</p>
+<p>– In this example, we want to use the default value for id since it is autoincremented, so we provide DEFAULT for this field INSERT INTO friends (id, first_name, last_name) VALUES (DEFAULT, ‘Amy’, ‘Pond’);</p>
+<p>– Alternatively, we can leave it out completely, since the default value will be used if none is provided INSERT INTO friends (first_name, last_name) VALUES (‘Rose’, ‘Tyler’), (‘Martha’, ‘Jones’), (‘Donna’, ‘Noble’), (‘River’, ‘Song’);</p></li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb10-1" title="1"><span class="co">-- We are providing the table name, then multiple records to insert</span></a>
-<a class="sourceLine" id="cb10-2" title="2"><span class="co">-- The values are listed in the order that they are defined on the table</span></a>
-<a class="sourceLine" id="cb10-3" title="3"><span class="kw">INSERT</span> <span class="kw">INTO</span> table_name</a>
-<a class="sourceLine" id="cb10-4" title="4"><span class="kw">VALUES</span></a>
-<a class="sourceLine" id="cb10-5" title="5">  (column1_value, colum2_value, column3_value),</a>
-<a class="sourceLine" id="cb10-6" title="6">  (column1_value, colum2_value, column3_value),</a>
-<a class="sourceLine" id="cb10-7" title="7">  (column1_value, colum2_value, column3_value);</a></code></pre></div>
-<ul>
-<li>We can also specify columns when we are inserting data. This makes it clear which fields we are providing data for and allows us to provide them out of order, skip null or default values, etc.</li>
-</ul>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb11-1" title="1"><span class="co">-- In this example, we want to use the default value for id since it is autoincremented, so we provide DEFAULT for this field</span></a>
-<a class="sourceLine" id="cb11-2" title="2"><span class="kw">INSERT</span> <span class="kw">INTO</span> friends (<span class="kw">id</span>, first_name, last_name)</a>
-<a class="sourceLine" id="cb11-3" title="3"><span class="kw">VALUES</span></a>
-<a class="sourceLine" id="cb11-4" title="4">  (<span class="kw">DEFAULT</span>, <span class="st">&#39;Amy&#39;</span>, <span class="st">&#39;Pond&#39;</span>);</a>
-<a class="sourceLine" id="cb11-5" title="5"></a>
-<a class="sourceLine" id="cb11-6" title="6"><span class="co">-- Alternatively, we can leave it out completely, since the default value will be used if none is provided</span></a>
-<a class="sourceLine" id="cb11-7" title="7"><span class="kw">INSERT</span> <span class="kw">INTO</span> friends (first_name, last_name)</a>
-<a class="sourceLine" id="cb11-8" title="8"><span class="kw">VALUES</span></a>
-<a class="sourceLine" id="cb11-9" title="9">  (<span class="st">&#39;Rose&#39;</span>, <span class="st">&#39;Tyler&#39;</span>),</a>
-<a class="sourceLine" id="cb11-10" title="10">  (<span class="st">&#39;Martha&#39;</span>, <span class="st">&#39;Jones&#39;</span>),</a>
-<a class="sourceLine" id="cb11-11" title="11">  (<span class="st">&#39;Donna&#39;</span>, <span class="st">&#39;Noble&#39;</span>),</a>
-<a class="sourceLine" id="cb11-12" title="12">  (<span class="st">&#39;River&#39;</span>, <span class="st">&#39;Song&#39;</span>);</a></code></pre></div>
-<ol start="5" type="1">
+<ol type="1">
 <li>How to use an <code>UPDATE</code> statement to update data in a table</li>
 </ol>
 <ul>
 <li>The <code>UPDATE</code> keyword can be used to find records and change their values in our database.</li>
 <li>We generally follow the pattern of <code>UPDATE {table} SET {column} = {new value} WHERE {match condition};</code>.</li>
 <li>Without a condition to narrow our records down, we will update every record in the table, so this is an important thing to double check!</li>
-<li>We can update multiple fields as well by specifying each column in parentheses and their associated new values: <code>UPDATE {table} SET ({column1}, {column2}) = ({value1}, {value2}) WHERE {match condition};</code></li>
+<li><p>We can update multiple fields as well by specifying each column in parentheses and their associated new values: <code>UPDATE {table} SET ({column1}, {column2}) = ({value1}, {value2}) WHERE {match condition};</code></p>
+<p>– Updates the pet with id of 4 to change their name and breed UPDATE pets SET (name, breed) = (‘Floofy’, ‘Fluffy Dog Breed’) WHERE id = 4;</p></li>
 </ul>
-<div class="sourceCode" id="cb12"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb12-1" title="1"><span class="co">-- Updates the pet with id of 4 to change their name and breed</span></a>
-<a class="sourceLine" id="cb12-2" title="2"><span class="kw">UPDATE</span></a>
-<a class="sourceLine" id="cb12-3" title="3">  pets</a>
-<a class="sourceLine" id="cb12-4" title="4"><span class="kw">SET</span></a>
-<a class="sourceLine" id="cb12-5" title="5">  (name, breed) <span class="op">=</span> (<span class="st">&#39;Floofy&#39;</span>, <span class="st">&#39;Fluffy Dog Breed&#39;</span>) <span class="kw">WHERE</span> <span class="kw">id</span> <span class="op">=</span> <span class="dv">4</span>;</a></code></pre></div>
-<ol start="6" type="1">
+<ol type="1">
 <li>How to use a <code>DELETE</code> statement to remove data from a table</li>
 </ol>
 <ul>
 <li>Similar to selecting records, we can delete records from a table by specifying what table we are deleting from and what criteria we would like to match in order to delete.</li>
 <li>We follow the general structure <code>DELETE FROM {table} WHERE {condition};</code></li>
-<li>The condition here is also very important! Without a condition, all records match and will be deleted.</li>
+<li><p>The condition here is also very important! Without a condition, all records match and will be deleted.</p>
+<p>– Deletes from the pets table any record that either has a name Floofy, a name Doggo, or an id of 3. DELETE FROM pets WHERE name IN (‘Floofy’, ‘Doggo’) OR id = 3;</p></li>
 </ul>
-<div class="sourceCode" id="cb13"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb13-1" title="1"><span class="co">-- Deletes from the pets table any record that either has a name Floofy, a name Doggo, or an id of 3.</span></a>
-<a class="sourceLine" id="cb13-2" title="2"><span class="kw">DELETE</span> <span class="kw">FROM</span></a>
-<a class="sourceLine" id="cb13-3" title="3">  pets</a>
-<a class="sourceLine" id="cb13-4" title="4"><span class="kw">WHERE</span></a>
-<a class="sourceLine" id="cb13-5" title="5">  name <span class="kw">IN</span> (<span class="st">&#39;Floofy&#39;</span>, <span class="st">&#39;Doggo&#39;</span>) <span class="kw">OR</span> <span class="kw">id</span> <span class="op">=</span> <span class="dv">3</span>;</a></code></pre></div>
-<ol start="7" type="1">
+<ol type="1">
 <li>How to use a seed file to populate data in a database</li>
 </ol>
 <ul>
@@ -550,43 +411,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 </ul>
-<ol start="2" type="1">
+<ol type="1">
 <li>How to use transactions to group multiple SQL commands into one succeed or fail operation</li>
 </ol>
 <ul>
 <li>We can define an explicit transaction using <code>BEGIN</code> and ending with either <code>COMMIT</code> or <code>ROLLBACK</code>.</li>
-<li>If any command inside the block fails, everything will be rolled back. We can also specify that we want to roll back at the end of the block instead of committing. We saw that this can be useful when analyzing operations that would manipulate our database.</li>
+<li><p>If any command inside the block fails, everything will be rolled back. We can also specify that we want to roll back at the end of the block instead of committing. We saw that this can be useful when analyzing operations that would manipulate our database.</p>
+<p>BEGIN; UPDATE accounts SET balance = balance - 100.00 WHERE name = ‘Alice’; UPDATE branches SET balance = balance - 100.00 WHERE name = (SELECT branch_name FROM accounts WHERE name = ‘Alice’); UPDATE accounts SET balance = balance + 100.00 WHERE name = ‘Bob’; UPDATE branches SET balance = balance + 100.00 WHERE name = (SELECT branch_name FROM accounts WHERE name = ‘Bob’); COMMIT;</p>
+<p>BEGIN; EXPLAIN ANALYZE UPDATE cities SET city = ‘New York City’ WHERE city = ‘New York’; ROLLBACK;</p></li>
 </ul>
-<div class="sourceCode" id="cb14"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb14-1" title="1"><span class="cf">BEGIN</span>;</a>
-<a class="sourceLine" id="cb14-2" title="2">  <span class="kw">UPDATE</span> accounts <span class="kw">SET</span> balance <span class="op">=</span> balance <span class="op">-</span> <span class="fl">100.00</span></a>
-<a class="sourceLine" id="cb14-3" title="3">      <span class="kw">WHERE</span> name <span class="op">=</span> <span class="st">&#39;Alice&#39;</span>;</a>
-<a class="sourceLine" id="cb14-4" title="4">  <span class="kw">UPDATE</span> branches <span class="kw">SET</span> balance <span class="op">=</span> balance <span class="op">-</span> <span class="fl">100.00</span></a>
-<a class="sourceLine" id="cb14-5" title="5">      <span class="kw">WHERE</span> name <span class="op">=</span> (<span class="kw">SELECT</span> branch_name <span class="kw">FROM</span> accounts <span class="kw">WHERE</span> name <span class="op">=</span> <span class="st">&#39;Alice&#39;</span>);</a>
-<a class="sourceLine" id="cb14-6" title="6">  <span class="kw">UPDATE</span> accounts <span class="kw">SET</span> balance <span class="op">=</span> balance <span class="op">+</span> <span class="fl">100.00</span></a>
-<a class="sourceLine" id="cb14-7" title="7">      <span class="kw">WHERE</span> name <span class="op">=</span> <span class="st">&#39;Bob&#39;</span>;</a>
-<a class="sourceLine" id="cb14-8" title="8">  <span class="kw">UPDATE</span> branches <span class="kw">SET</span> balance <span class="op">=</span> balance <span class="op">+</span> <span class="fl">100.00</span></a>
-<a class="sourceLine" id="cb14-9" title="9">      <span class="kw">WHERE</span> name <span class="op">=</span> (<span class="kw">SELECT</span> branch_name <span class="kw">FROM</span> accounts <span class="kw">WHERE</span> name <span class="op">=</span> <span class="st">&#39;Bob&#39;</span>);</a>
-<a class="sourceLine" id="cb14-10" title="10"><span class="kw">COMMIT</span>;</a></code></pre></div>
-<div class="sourceCode" id="cb15"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb15-1" title="1"><span class="cf">BEGIN</span>;</a>
-<a class="sourceLine" id="cb15-2" title="2">  <span class="kw">EXPLAIN</span> <span class="kw">ANALYZE</span></a>
-<a class="sourceLine" id="cb15-3" title="3">  <span class="kw">UPDATE</span> cities</a>
-<a class="sourceLine" id="cb15-4" title="4">  <span class="kw">SET</span> city <span class="op">=</span> <span class="st">&#39;New York City&#39;</span></a>
-<a class="sourceLine" id="cb15-5" title="5">  <span class="kw">WHERE</span> city <span class="op">=</span> <span class="st">&#39;New York&#39;</span>;</a>
-<a class="sourceLine" id="cb15-6" title="6"><span class="kw">ROLLBACK</span>;</a></code></pre></div>
-<ol start="3" type="1">
+<ol type="1">
 <li>How to apply indexes to tables to improve performance</li>
 </ol>
 <ul>
 <li>An index can help optimize queries that we have to run regularly. If we are constantly looking up records in a table by a particular field (such as username or phone number), we can add an index in order to speed up this process.</li>
 <li>An index maintains a sorted version of the field with a reference to the record that it points to in the table (via primary key). If we want to find a record based on a field that we have an index for, we can look through this index in a more efficient manner than having to scan through the entire table (generally O(log n) since the index is sorted, instead of O(n) for a sequential scan).</li>
-<li>To add an index to a field we can use the following syntax:</li>
-</ul>
-<div class="sourceCode" id="cb16"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb16-1" title="1"><span class="kw">CREATE</span> <span class="kw">INDEX</span> index_name <span class="kw">ON</span> table_name (column_name);</a></code></pre></div>
-<ul>
-<li>To drop an index we can do the following:</li>
-</ul>
-<div class="sourceCode" id="cb17"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb17-1" title="1"><span class="kw">DROP</span> <span class="kw">INDEX</span> index_name</a></code></pre></div>
-<ul>
+<li><p>To add an index to a field we can use the following syntax:</p>
+<p>CREATE INDEX index_name ON table_name (column_name);</p></li>
+<li><p>To drop an index we can do the following:</p>
+<p>DROP INDEX index_name</p></li>
 <li>Making an index is not always the best approach. Indices allow for faster lookup, but slow down record insertion and the updating of associated fields, since we not only have to add the information to the table, but also manipulate the index.
 <ul>
 <li>We generally wouldn’t care about adding an index if:
@@ -597,7 +440,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 </ul>
-<ol start="4" type="1">
+<ol type="1">
 <li>Explain what and why someone would use EXPLAIN</li>
 </ol>
 <ul>
@@ -605,59 +448,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>It gives us an idea of how our database will search for data as well as a qualitative comparitor for how expensive that operation will be. Comparing the cost of two queries will tell us which one is more efficient (lower cost).</li>
 <li>We can also use the ANALYZE command with EXPLAIN, which will actually run the specified query. Doing so gives us more detailed information, such as the milliseconds it took our query to execute as well as specifics like the exact number of rows filtered and returned.</li>
 </ul>
-<ol start="5" type="1">
+<ol type="1">
 <li>Demonstrate how to install and use the node-postgres library and its Pool class to query a PostgreSQL-managed database</li>
 </ol>
 <ul>
-<li>We can add the <code>node-postgres</code> library to our application with <code>npm install pg</code>. From there we will typically use the Pool class associated with this library. That way we can run many SQL queries with one database connection (as opposed to Client, which closes the connection after a query).</li>
+<li><p>We can add the <code>node-postgres</code> library to our application with <code>npm install pg</code>. From there we will typically use the Pool class associated with this library. That way we can run many SQL queries with one database connection (as opposed to Client, which closes the connection after a query).</p>
+<p>const { Pool } = require(‘pg’);</p>
+<p>// If we need to specify a username, password, or database, we can do so when we create a Pool instance, otherwise the default values for logging in to psql are used: const pool = new Pool({ username: ‘&lt;<username>&gt;’, password: ‘&lt;<password>&gt;’, database: ‘&lt;<database>&gt;’})</p></li>
+<li><p>The <code>query</code> method on the Pool instance will allow us to execute a SQL query on our database. We can pass in a string that represents the query we want to run</p>
+<p>const allAirportsSql = <code>SELECT id, city_id, faa_id, name   FROM airports;</code>;</p>
+<p>async function selectAllAirports() { const results = await pool.query(allAirportsSql); console.log(results.rows); pool.end(); // invoking end() will close our connection to the database }</p>
+<p>selectAllAirports();</p></li>
+<li><p>The return value of this asynchronous function is an object with a <code>rows</code> key that points to an array of objects, each object representing a record with field names as keys.</p></li>
 </ul>
-<div class="sourceCode" id="cb18"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb18-1" title="1"><span class="kw">const</span> <span class="op">{</span> Pool <span class="op">}</span> <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;pg&#39;</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb18-2" title="2"></a>
-<a class="sourceLine" id="cb18-3" title="3"><span class="co">// If we need to specify a username, password, or database, we can do so when we create a Pool instance, otherwise the default values for logging in to psql are used:</span></a>
-<a class="sourceLine" id="cb18-4" title="4"><span class="kw">const</span> pool <span class="op">=</span> <span class="kw">new</span> <span class="at">Pool</span>(<span class="op">{</span> <span class="dt">username</span><span class="op">:</span> <span class="st">&#39;&lt;&lt;username&gt;&gt;&#39;</span><span class="op">,</span> <span class="dt">password</span><span class="op">:</span> <span class="st">&#39;&lt;&lt;password&gt;&gt;&#39;</span><span class="op">,</span> <span class="dt">database</span><span class="op">:</span> <span class="st">&#39;&lt;&lt;database&gt;&gt;&#39;</span><span class="op">}</span>)</a></code></pre></div>
-<ul>
-<li>The <code>query</code> method on the Pool instance will allow us to execute a SQL query on our database. We can pass in a string that represents the query we want to run</li>
-</ul>
-<div class="sourceCode" id="cb19"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb19-1" title="1"><span class="kw">const</span> allAirportsSql <span class="op">=</span> <span class="vs">`</span></a>
-<a class="sourceLine" id="cb19-2" title="2"><span class="vs">  SELECT id, city_id, faa_id, name</span></a>
-<a class="sourceLine" id="cb19-3" title="3"><span class="vs">  FROM airports;</span></a>
-<a class="sourceLine" id="cb19-4" title="4"><span class="vs">`</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb19-5" title="5"></a>
-<a class="sourceLine" id="cb19-6" title="6"><span class="kw">async</span> <span class="kw">function</span> <span class="at">selectAllAirports</span>() <span class="op">{</span></a>
-<a class="sourceLine" id="cb19-7" title="7">  <span class="kw">const</span> results <span class="op">=</span> <span class="cf">await</span> <span class="va">pool</span>.<span class="at">query</span>(allAirportsSql)<span class="op">;</span></a>
-<a class="sourceLine" id="cb19-8" title="8">  <span class="va">console</span>.<span class="at">log</span>(<span class="va">results</span>.<span class="at">rows</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb19-9" title="9">  <span class="va">pool</span>.<span class="at">end</span>()<span class="op">;</span> <span class="co">// invoking end() will close our connection to the database</span></a>
-<a class="sourceLine" id="cb19-10" title="10"><span class="op">}</span></a>
-<a class="sourceLine" id="cb19-11" title="11"></a>
-<a class="sourceLine" id="cb19-12" title="12"><span class="at">selectAllAirports</span>()<span class="op">;</span></a></code></pre></div>
-<ul>
-<li>The return value of this asynchronous function is an object with a <code>rows</code> key that points to an array of objects, each object representing a record with field names as keys.</li>
-</ul>
-<ol start="6" type="1">
+<ol type="1">
 <li>Explain how to write prepared statements with placeholders for parameters of the form “$1”, “$2”, and so on</li>
 </ol>
 <ul>
 <li>The prepared statement (SQL string that we wrote) can also be made more dynamic by allowing for parameters to be passed in.</li>
-<li>The Pool instance’s <code>query</code> function allows us to pass a second argument, an array of parameters to be used in the query string. The location of the parameter substitutions are designated with <code>$1</code>, <code>$2</code>, etc., to signify the first, second, etc., arguments.</li>
+<li><p>The Pool instance’s <code>query</code> function allows us to pass a second argument, an array of parameters to be used in the query string. The location of the parameter substitutions are designated with <code>$1</code>, <code>$2</code>, etc., to signify the first, second, etc., arguments.</p>
+<p>const airportsByNameSql = <code>SELECT name, faa_id   FROM airports   WHERE UPPER(name) LIKE UPPER($1)</code>;</p>
+<p>async function selectAirportsByName(name) { const results = await pool.query(airportsByNameSql, [ <code>%${name}%</code> ]); console.log(results.rows); pool.end(); // invoking end() will close our connection to the database }</p>
+<p>// Get the airport name from the command line and store it // in the variable “name”. Pass that value to the // selectAirportsByName function. const name = process.argv[2]; // console.log(name); selectAirportsByName(name);</p></li>
 </ul>
-<div class="sourceCode" id="cb20"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb20-1" title="1"><span class="kw">const</span> airportsByNameSql <span class="op">=</span> <span class="vs">`</span></a>
-<a class="sourceLine" id="cb20-2" title="2"><span class="vs">  SELECT name, faa_id</span></a>
-<a class="sourceLine" id="cb20-3" title="3"><span class="vs">  FROM airports</span></a>
-<a class="sourceLine" id="cb20-4" title="4"><span class="vs">  WHERE UPPER(name) LIKE UPPER($1)</span></a>
-<a class="sourceLine" id="cb20-5" title="5"><span class="vs">`</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb20-6" title="6"></a>
-<a class="sourceLine" id="cb20-7" title="7"><span class="kw">async</span> <span class="kw">function</span> <span class="at">selectAirportsByName</span>(name) <span class="op">{</span></a>
-<a class="sourceLine" id="cb20-8" title="8">    <span class="kw">const</span> results <span class="op">=</span> <span class="cf">await</span> <span class="va">pool</span>.<span class="at">query</span>(airportsByNameSql<span class="op">,</span> [ <span class="vs">`%</span><span class="sc">${</span>name<span class="sc">}</span><span class="vs">%`</span> ])<span class="op">;</span></a>
-<a class="sourceLine" id="cb20-9" title="9">    <span class="va">console</span>.<span class="at">log</span>(<span class="va">results</span>.<span class="at">rows</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb20-10" title="10">    <span class="va">pool</span>.<span class="at">end</span>()<span class="op">;</span> <span class="co">// invoking end() will close our connection to the database</span></a>
-<a class="sourceLine" id="cb20-11" title="11"><span class="op">}</span></a>
-<a class="sourceLine" id="cb20-12" title="12"></a>
-<a class="sourceLine" id="cb20-13" title="13"><span class="co">// Get the airport name from the command line and store it</span></a>
-<a class="sourceLine" id="cb20-14" title="14"><span class="co">// in the variable &quot;name&quot;. Pass that value to the</span></a>
-<a class="sourceLine" id="cb20-15" title="15"><span class="co">// selectAirportsByName function.</span></a>
-<a class="sourceLine" id="cb20-16" title="16"><span class="kw">const</span> name <span class="op">=</span> <span class="va">process</span>.<span class="at">argv</span>[<span class="dv">2</span>]<span class="op">;</span></a>
-<a class="sourceLine" id="cb20-17" title="17"><span class="co">// console.log(name);</span></a>
-<a class="sourceLine" id="cb20-18" title="18"><span class="at">selectAirportsByName</span>(name)<span class="op">;</span></a></code></pre></div>
 <h2 id="orm-w10d4---learning-objectives">ORM (W10D4) - Learning Objectives</h2>
 <h3 id="orm">ORM</h3>
 <ol type="1">
@@ -692,35 +505,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>In psql: <code>CREATE USER example_user WITH PASSWORD 'badpassword' CREATEDB</code></li>
 <li>In terminal: <code>npx sequelize-cli db:create</code></li>
 </ul></li>
-<li>Double check that our configuration file matches our username, password, database, dialect, and seederStorage (these will be filled out for you in an assessment scenario):</li>
+<li><p>Double check that our configuration file matches our username, password, database, dialect, and seederStorage (these will be filled out for you in an assessment scenario):</p>
+<p>{ “development”: { “username”: “sequelize_recipe_box_app”, “password”: “HfKfK79k”, “database”: “recipe_box_development”, “host”: “127.0.0.1”, “dialect”: “postgres”, “seederStorage”: “sequelize” }, “test”: { “username”: “sequelize_recipe_box_app”, “password”: “HfKfK79k”, “database”: “recipe_box_test”, “host”: “127.0.0.1”, “dialect”: “postgres”, “seederStorage”: “sequelize” }, “production”: { “username”: “sequelize_recipe_box_app”, “password”: “HfKfK79k”, “database”: “recipe_box_production”, “host”: “127.0.0.1”, “dialect”: “postgres”, “seederStorage”: “sequelize” } }</p></li>
 </ul>
-<div class="sourceCode" id="cb21"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb21-1" title="1"><span class="fu">{</span></a>
-<a class="sourceLine" id="cb21-2" title="2">  <span class="dt">&quot;development&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb21-3" title="3">    <span class="dt">&quot;username&quot;</span><span class="fu">:</span> <span class="st">&quot;sequelize_recipe_box_app&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb21-4" title="4">    <span class="dt">&quot;password&quot;</span><span class="fu">:</span> <span class="st">&quot;HfKfK79k&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb21-5" title="5">    <span class="dt">&quot;database&quot;</span><span class="fu">:</span> <span class="st">&quot;recipe_box_development&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb21-6" title="6">    <span class="dt">&quot;host&quot;</span><span class="fu">:</span> <span class="st">&quot;127.0.0.1&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb21-7" title="7">    <span class="dt">&quot;dialect&quot;</span><span class="fu">:</span> <span class="st">&quot;postgres&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb21-8" title="8">    <span class="dt">&quot;seederStorage&quot;</span><span class="fu">:</span> <span class="st">&quot;sequelize&quot;</span></a>
-<a class="sourceLine" id="cb21-9" title="9">  <span class="fu">},</span></a>
-<a class="sourceLine" id="cb21-10" title="10">  <span class="dt">&quot;test&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb21-11" title="11">    <span class="dt">&quot;username&quot;</span><span class="fu">:</span> <span class="st">&quot;sequelize_recipe_box_app&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb21-12" title="12">    <span class="dt">&quot;password&quot;</span><span class="fu">:</span> <span class="st">&quot;HfKfK79k&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb21-13" title="13">    <span class="dt">&quot;database&quot;</span><span class="fu">:</span> <span class="st">&quot;recipe_box_test&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb21-14" title="14">    <span class="dt">&quot;host&quot;</span><span class="fu">:</span> <span class="st">&quot;127.0.0.1&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb21-15" title="15">    <span class="dt">&quot;dialect&quot;</span><span class="fu">:</span> <span class="st">&quot;postgres&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb21-16" title="16">    <span class="dt">&quot;seederStorage&quot;</span><span class="fu">:</span> <span class="st">&quot;sequelize&quot;</span></a>
-<a class="sourceLine" id="cb21-17" title="17">  <span class="fu">},</span></a>
-<a class="sourceLine" id="cb21-18" title="18">  <span class="dt">&quot;production&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb21-19" title="19">    <span class="dt">&quot;username&quot;</span><span class="fu">:</span> <span class="st">&quot;sequelize_recipe_box_app&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb21-20" title="20">    <span class="dt">&quot;password&quot;</span><span class="fu">:</span> <span class="st">&quot;HfKfK79k&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb21-21" title="21">    <span class="dt">&quot;database&quot;</span><span class="fu">:</span> <span class="st">&quot;recipe_box_production&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb21-22" title="22">    <span class="dt">&quot;host&quot;</span><span class="fu">:</span> <span class="st">&quot;127.0.0.1&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb21-23" title="23">    <span class="dt">&quot;dialect&quot;</span><span class="fu">:</span> <span class="st">&quot;postgres&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb21-24" title="24">    <span class="dt">&quot;seederStorage&quot;</span><span class="fu">:</span> <span class="st">&quot;sequelize&quot;</span></a>
-<a class="sourceLine" id="cb21-25" title="25">  <span class="fu">}</span></a>
-<a class="sourceLine" id="cb21-26" title="26"><span class="fu">}</span></a></code></pre></div>
-<ol start="2" type="1">
+<ol type="1">
 <li>How to use database migrations to make your database grow with your application in a source-control enabled way</li>
 </ol>
 <ul>
@@ -747,22 +535,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>In addition to the migration files, our <code>model:generate</code> command also created a model file for us. This file is what allows sequelize to transform the results of its SQL queries into useful JavaScript objects for us.</li>
 <li><p>The model is where we can specify a validation that we want to perform before trying to run a SQL query. If the validation fails, we can respond with a message instead of running the query, which can be an expensive operation that we know won’t work.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb22-1" title="1"><span class="co">// Before we make changes, sequelize generates the type that this field represents</span></a>
-<a class="sourceLine" id="cb22-2" title="2">specification<span class="op">:</span> <span class="va">DataTypes</span>.<span class="at">TEXT</span></a>
-<a class="sourceLine" id="cb22-3" title="3"></a>
-<a class="sourceLine" id="cb22-4" title="4"><span class="co">// We can replace the generated format with an object to specify not only the type, but the validations that we want to implement. The validations can also take in messages the respond with on failure and arguments.</span></a>
-<a class="sourceLine" id="cb22-5" title="5">specification<span class="op">:</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb22-6" title="6">  <span class="dt">type</span><span class="op">:</span> <span class="va">DataTypes</span>.<span class="at">TEXT</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb22-7" title="7">  <span class="dt">validate</span><span class="op">:</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb22-8" title="8">    <span class="dt">notEmpty</span><span class="op">:</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb22-9" title="9">      <span class="dt">msg</span><span class="op">:</span> <span class="st">&#39;The specification cannot be empty&#39;</span></a>
-<a class="sourceLine" id="cb22-10" title="10">    <span class="op">},</span></a>
-<a class="sourceLine" id="cb22-11" title="11">    <span class="dt">len</span><span class="op">:</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb22-12" title="12">      <span class="dt">args</span><span class="op">:</span> [<span class="dv">10</span><span class="op">,</span> <span class="dv">100</span>]</a>
-<a class="sourceLine" id="cb22-13" title="13">      <span class="dt">msg</span><span class="op">:</span> <span class="st">&#39;The specifcation must be between 10 and 100 characters&#39;</span></a>
-<a class="sourceLine" id="cb22-14" title="14">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb22-15" title="15">  <span class="op">}</span></a>
-<a class="sourceLine" id="cb22-16" title="16"><span class="op">}</span></a></code></pre></div></li>
+<pre><code>// Before we make changes, sequelize generates the type that this field represents
+specification: DataTypes.TEXT
+
+// We can replace the generated format with an object to specify not only the type, but the validations that we want to implement. The validations can also take in messages the respond with on failure and arguments.
+specification: {
+  type: DataTypes.TEXT,
+  validate: {
+    notEmpty: {
+      msg: &#39;The specification cannot be empty&#39;
+    },
+    len: {
+      args: [10, 100]
+      msg: &#39;The specifcation must be between 10 and 100 characters&#39;
+    }
+  }
+}</code></pre></li>
 <li>Another key part of the model file is setting up our associations. We can use the <code>belongsTo</code>, <code>hasMany</code>, and <code>belongsToMany</code> methods to set up model-level associations. Doing so is what creates the helpful functionality like <code>addOwner</code> that we saw in the pets example, a function that automatically generates the SQL necessary to create a petOwner record and supplies the appropriate petId and ownerId.
 <ul>
 <li>In a one-to-many association, we need to have a <code>belongsTo</code> association on the “many” side, and a <code>hasMany</code> association on the “one” side:
@@ -771,27 +559,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>Recipe.hasMany(models.Instruction, { foreignKey: 'recipeId' });</code></li>
 </ul></li>
 <li><p>In a many-to-many association, we need to have a <code>belongsToMany</code> on each side of the association. We generally specify a columnMapping object to show the association more clearly:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb23-1" title="1"><span class="co">// In our Owner model</span></a>
-<a class="sourceLine" id="cb23-2" title="2"><span class="co">// To connect this Owner to a Pet through the PetOwner</span></a>
-<a class="sourceLine" id="cb23-3" title="3"><span class="kw">const</span> columnMapping <span class="op">=</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb23-4" title="4">  <span class="dt">through</span><span class="op">:</span> <span class="st">&#39;PetOwner&#39;</span><span class="op">,</span> <span class="co">// joins table</span></a>
-<a class="sourceLine" id="cb23-5" title="5">  <span class="dt">otherKey</span><span class="op">:</span> <span class="st">&#39;petId&#39;</span><span class="op">,</span> <span class="co">// key that connects to other table we have a many association with</span></a>
-<a class="sourceLine" id="cb23-6" title="6">  <span class="dt">foreignKey</span><span class="op">:</span> <span class="st">&#39;ownerId&#39;</span> <span class="co">// our foreign key in the joins table</span></a>
-<a class="sourceLine" id="cb23-7" title="7"><span class="op">}</span></a>
-<a class="sourceLine" id="cb23-8" title="8"><span class="va">Owner</span>.<span class="at">belongsToMany</span>(<span class="va">models</span>.<span class="at">Pet</span><span class="op">,</span> columnMapping)<span class="op">;</span></a>
-<a class="sourceLine" id="cb23-9" title="9"></a>
-<a class="sourceLine" id="cb23-10" title="10"><span class="co">// In our Pet model</span></a>
-<a class="sourceLine" id="cb23-11" title="11"><span class="co">// To connect this Pet to an Owner through the PetOwner</span></a>
-<a class="sourceLine" id="cb23-12" title="12"><span class="kw">const</span> columnMapping <span class="op">=</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb23-13" title="13">  <span class="dt">through</span><span class="op">:</span> <span class="st">&#39;PetOwner&#39;</span><span class="op">,</span> <span class="co">// joins table</span></a>
-<a class="sourceLine" id="cb23-14" title="14">  <span class="dt">otherKey</span><span class="op">:</span> <span class="st">&#39;ownerId&#39;</span><span class="op">,</span> <span class="co">// key that connects to other table we have a many association with</span></a>
-<a class="sourceLine" id="cb23-15" title="15">  <span class="dt">foreignKey</span><span class="op">:</span> <span class="st">&#39;petId&#39;</span> <span class="co">// our foreign key in the joins table</span></a>
-<a class="sourceLine" id="cb23-16" title="16"><span class="op">}</span></a>
-<a class="sourceLine" id="cb23-17" title="17"><span class="va">Pet</span>.<span class="at">belongsToMany</span>(<span class="va">models</span>.<span class="at">Owner</span><span class="op">,</span> columnMapping)<span class="op">;</span></a></code></pre></div></li>
+<pre><code>// In our Owner model
+// To connect this Owner to a Pet through the PetOwner
+const columnMapping = {
+  through: &#39;PetOwner&#39;, // joins table
+  otherKey: &#39;petId&#39;, // key that connects to other table we have a many association with
+  foreignKey: &#39;ownerId&#39; // our foreign key in the joins table
+}
+Owner.belongsToMany(models.Pet, columnMapping);
+
+// In our Pet model
+// To connect this Pet to an Owner through the PetOwner
+const columnMapping = {
+  through: &#39;PetOwner&#39;, // joins table
+  otherKey: &#39;ownerId&#39;, // key that connects to other table we have a many association with
+  foreignKey: &#39;petId&#39; // our foreign key in the joins table
+}
+Pet.belongsToMany(models.Owner, columnMapping);</code></pre></li>
 </ul></li>
 </ul></li>
 </ul>
-<ol start="3" type="1">
+<ol type="1">
 <li>How to perform CRUD operations with Sequelize</li>
 </ol>
 <ul>
@@ -802,300 +590,187 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>npx sequelize-cli seed:generate --name add-cats</code></li>
 <li><code>up</code> indicates what to create when we seed our database, <code>down</code> indicates what to delete if we want to unseed the database.</li>
 <li><p>For our up, we use the <code>queryInterface.bulkInsert()</code> method, which takes in the name of the table to seed and an array of objects representing the records we want to create:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb24-1" title="1">up<span class="op">:</span> (queryInterface<span class="op">,</span> Sequelize) <span class="kw">=&gt;</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb24-2" title="2">  <span class="cf">return</span> <span class="va">queryInterface</span>.<span class="at">bulkInsert</span>(<span class="st">&#39;&lt;&lt;TableName&gt;&gt;&#39;</span><span class="op">,</span> [</a>
-<a class="sourceLine" id="cb24-3" title="3">    <span class="op">{</span> <span class="dt">field1</span><span class="op">:</span> value1a<span class="op">,</span> <span class="dt">field2</span><span class="op">:</span> value2a <span class="op">},</span></a>
-<a class="sourceLine" id="cb24-4" title="4">    <span class="op">{</span> <span class="dt">field1</span><span class="op">:</span> value1b<span class="op">,</span> <span class="dt">field2</span><span class="op">:</span> value2b <span class="op">},</span></a>
-<a class="sourceLine" id="cb24-5" title="5">    <span class="op">{</span> <span class="dt">field1</span><span class="op">:</span> value1c<span class="op">,</span> <span class="dt">field2</span><span class="op">:</span> value2c <span class="op">}</span></a>
-<a class="sourceLine" id="cb24-6" title="6">  ])<span class="op">;</span></a>
-<a class="sourceLine" id="cb24-7" title="7"><span class="op">}</span></a></code></pre></div></li>
-<li>For our down, we use the <code>queryInterface.bulkDelete()</code> method, which takes in the name of the table and an object representing our WHERE clause. Unseeding will delete all records from the specified table that match the WHERE clause.</li>
-</ul>
-<div class="sourceCode" id="cb25"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb25-1" title="1"><span class="co">// If we want to specify what to remove:</span></a>
-<a class="sourceLine" id="cb25-2" title="2">down<span class="op">:</span> (queryInterface<span class="op">,</span> Sequelize) <span class="kw">=&gt;</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb25-3" title="3">  <span class="cf">return</span> <span class="va">queryInterface</span>.<span class="at">bulkDelete</span>(<span class="st">&#39;&lt;&lt;TableName&gt;&gt;&#39;</span><span class="op">,</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb25-4" title="4">    <span class="dt">field1</span><span class="op">:</span> [value1a<span class="op">,</span> value1b<span class="op">,</span> value1c] <span class="co">//...etc.</span></a>
-<a class="sourceLine" id="cb25-5" title="5">  <span class="op">}</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb25-6" title="6"><span class="op">}</span></a>
-<a class="sourceLine" id="cb25-7" title="7"><span class="co">// If we want to remove everything from the table:</span></a>
-<a class="sourceLine" id="cb25-8" title="8">down<span class="op">:</span> (queryInterface<span class="op">,</span> Sequelize) <span class="kw">=&gt;</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb25-9" title="9">  <span class="cf">return</span> <span class="va">queryInterface</span>.<span class="at">bulkDelete</span>(<span class="st">&#39;&lt;&lt;TableName&gt;&gt;&#39;</span><span class="op">,</span> <span class="kw">null</span><span class="op">,</span> <span class="op">{}</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb25-10" title="10"><span class="op">}</span></a></code></pre></div>
-<ul>
+<pre><code>up: (queryInterface, Sequelize) =&gt; {
+  return queryInterface.bulkInsert(&#39;&lt;&lt;TableName&gt;&gt;&#39;, [
+    { field1: value1a, field2: value2a },
+    { field1: value1b, field2: value2b },
+    { field1: value1c, field2: value2c }
+  ]);
+}</code></pre></li>
+<li><p>For our down, we use the <code>queryInterface.bulkDelete()</code> method, which takes in the name of the table and an object representing our WHERE clause. Unseeding will delete all records from the specified table that match the WHERE clause.</p>
+<p>// If we want to specify what to remove: down: (queryInterface, Sequelize) =&gt; { return queryInterface.bulkDelete(‘&lt;<TableName>&gt;’, { field1: [value1a, value1b, value1c] //…etc. }); } // If we want to remove everything from the table: down: (queryInterface, Sequelize) =&gt; { return queryInterface.bulkDelete(‘&lt;<TableName>&gt;’, null, {}); }</p></li>
 <li>Running <code>npx sequelize-cli db:seed:all</code> will run all of our seeder files.</li>
 <li><code>npx sequelize-cli db:seed:undo:all</code> will undo all of our seeding.</li>
-<li>If we omit the <code>:all</code> we can run specific seed files</li>
+<li><p>If we omit the <code>:all</code> we can run specific seed files</p></li>
 </ul></li>
 </ul></li>
 <li><h4 id="inserting-with-build-and-create">Inserting with Build and Create</h4>
 <ul>
 <li>In addition to seed files, which we generally use for starter data, we can create new records in our database by using <code>build</code> and <code>save</code>, or the combined <code>create</code>
 <ul>
-<li>Use the .build method of the Cat model to create a new Cat instance in index.js</li>
-</ul>
-<div class="sourceCode" id="cb26"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb26-1" title="1"><span class="co">// Constructs an instance of the JavaScript `Cat` class. **Does not</span></a>
-<a class="sourceLine" id="cb26-2" title="2"><span class="co">// save anything to the database yet**. Attributes are passed in as a</span></a>
-<a class="sourceLine" id="cb26-3" title="3"><span class="co">// POJO.</span></a>
-<a class="sourceLine" id="cb26-4" title="4"><span class="kw">const</span> newCat <span class="op">=</span> <span class="va">Cat</span>.<span class="at">build</span>(<span class="op">{</span></a>
-<a class="sourceLine" id="cb26-5" title="5">  <span class="dt">firstName</span><span class="op">:</span> <span class="st">&#39;Markov&#39;</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb26-6" title="6">  <span class="dt">specialSkill</span><span class="op">:</span> <span class="st">&#39;sleeping&#39;</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb26-7" title="7">  <span class="dt">age</span><span class="op">:</span> <span class="dv">5</span></a>
-<a class="sourceLine" id="cb26-8" title="8"><span class="op">}</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb26-9" title="9"></a>
-<a class="sourceLine" id="cb26-10" title="10"><span class="co">// This actually creates a new `Cats` record in the database. We must</span></a>
-<a class="sourceLine" id="cb26-11" title="11"><span class="co">// wait for this asynchronous operation to succeed.</span></a>
-<a class="sourceLine" id="cb26-12" title="12"><span class="cf">await</span> <span class="va">newCat</span>.<span class="at">save</span>()<span class="op">;</span></a>
-<a class="sourceLine" id="cb26-13" title="13"></a>
-<a class="sourceLine" id="cb26-14" title="14"><span class="co">// This builds and saves all in one step. If we don&#39;t need to perform any operations on the instance before saving it, this can optimize our code.</span></a>
-<a class="sourceLine" id="cb26-15" title="15"><span class="kw">const</span> newerCat <span class="op">=</span> <span class="cf">await</span> <span class="va">Cat</span>.<span class="at">create</span>(<span class="op">{</span></a>
-<a class="sourceLine" id="cb26-16" title="16">  <span class="dt">firstName</span><span class="op">:</span> <span class="st">&#39;Whiskers&#39;</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb26-17" title="17">  <span class="dt">specialSkill</span><span class="op">:</span> <span class="st">&#39;sleeping&#39;</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb26-18" title="18">  <span class="dt">age</span><span class="op">:</span> <span class="dv">2</span></a>
-<a class="sourceLine" id="cb26-19" title="19"><span class="op">}</span>)</a></code></pre></div></li>
+<li><p>Use the .build method of the Cat model to create a new Cat instance in index.js</p>
+<p>// Constructs an instance of the JavaScript <code>Cat</code> class. <strong>Does not // save anything to the database yet</strong>. Attributes are passed in as a // POJO. const newCat = Cat.build({ firstName: ‘Markov’, specialSkill: ‘sleeping’, age: 5 });</p>
+<p>// This actually creates a new <code>Cats</code> record in the database. We must // wait for this asynchronous operation to succeed. await newCat.save();</p>
+<p>// This builds and saves all in one step. If we don’t need to perform any operations on the instance before saving it, this can optimize our code. const newerCat = await Cat.create({ firstName: ‘Whiskers’, specialSkill: ‘sleeping’, age: 2 })</p></li>
+</ul></li>
 </ul></li>
 <li><h4 id="updating-records">Updating Records</h4>
 <ul>
-<li>When we have a reference to an instance of a model (i.e. after we have queried for it or created it), we can update values by simply reassigning those fields and using the <code>save</code> method</li>
-</ul>
-<div class="sourceCode" id="cb27"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb27-1" title="1"><span class="co">// Get a reference to the cat record that we want to update (here just the cat with primary key of 1)</span></a>
-<a class="sourceLine" id="cb27-2" title="2"><span class="kw">const</span> cat <span class="op">=</span> <span class="cf">await</span> <span class="va">Cat</span>.<span class="at">findByPk</span>(<span class="dv">1</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb27-3" title="3"></a>
-<a class="sourceLine" id="cb27-4" title="4"><span class="co">// Change cat&#39;s attributes.</span></a>
-<a class="sourceLine" id="cb27-5" title="5"><span class="va">cat</span>.<span class="at">firstName</span> <span class="op">=</span> <span class="st">&quot;Curie&quot;</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb27-6" title="6"><span class="va">cat</span>.<span class="at">specialSkill</span> <span class="op">=</span> <span class="st">&quot;jumping&quot;</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb27-7" title="7"><span class="va">cat</span>.<span class="at">age</span> <span class="op">=</span> <span class="dv">123</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb27-8" title="8"></a>
-<a class="sourceLine" id="cb27-9" title="9"><span class="co">// Save the new name to the database.</span></a>
-<a class="sourceLine" id="cb27-10" title="10"><span class="cf">await</span> <span class="va">cat</span>.<span class="at">save</span>()<span class="op">;</span></a></code></pre></div></li>
+<li><p>When we have a reference to an instance of a model (i.e. after we have queried for it or created it), we can update values by simply reassigning those fields and using the <code>save</code> method</p>
+<p>// Get a reference to the cat record that we want to update (here just the cat with primary key of 1) const cat = await Cat.findByPk(1);</p>
+<p>// Change cat’s attributes. cat.firstName = “Curie”; cat.specialSkill = “jumping”; cat.age = 123;</p>
+<p>// Save the new name to the database. await cat.save();</p></li>
+</ul></li>
 <li><h4 id="deleting-records">Deleting Records</h4>
 <ul>
-<li>When we have a reference to an instance of a model, we can delete that record by using <code>destroy</code></li>
+<li><p>When we have a reference to an instance of a model, we can delete that record by using <code>destroy</code></p>
+<p>const cat = await Cat.findByPk(1); // Remove the Markov record. await cat.destroy();</p></li>
+<li><p>We can also call <code>destroy</code> on the model itself. By passing in an object that specifies a where clause, we can destroy all records that match that query</p>
+<p>await Cat.destroy({ where: { specialSkill: ‘jumping’ } });</p></li>
+</ul></li>
 </ul>
-<div class="sourceCode" id="cb28"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb28-1" title="1"><span class="kw">const</span> cat <span class="op">=</span> <span class="cf">await</span> <span class="va">Cat</span>.<span class="at">findByPk</span>(<span class="dv">1</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb28-2" title="2"><span class="co">// Remove the Markov record.</span></a>
-<a class="sourceLine" id="cb28-3" title="3"><span class="cf">await</span> <span class="va">cat</span>.<span class="at">destroy</span>()<span class="op">;</span></a></code></pre></div>
-<ul>
-<li>We can also call <code>destroy</code> on the model itself. By passing in an object that specifies a where clause, we can destroy all records that match that query</li>
-</ul>
-<div class="sourceCode" id="cb29"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb29-1" title="1"><span class="cf">await</span> <span class="va">Cat</span>.<span class="at">destroy</span>(<span class="op">{</span> <span class="dt">where</span><span class="op">:</span> <span class="op">{</span> <span class="dt">specialSkill</span><span class="op">:</span> <span class="st">&#39;jumping&#39;</span> <span class="op">}</span> <span class="op">}</span>)<span class="op">;</span></a></code></pre></div></li>
-</ul>
-<ol start="4" type="1">
+<ol type="1">
 <li>How to query using Sequelize</li>
 </ol>
 <ul>
 <li><h4 id="findall">findAll</h4>
-<div class="sourceCode" id="cb30"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb30-1" title="1"><span class="kw">const</span> cats <span class="op">=</span> <span class="cf">await</span> <span class="va">Cat</span>.<span class="at">findAll</span>()<span class="op">;</span></a>
-<a class="sourceLine" id="cb30-2" title="2"><span class="co">// Log the fetched cats.</span></a>
-<a class="sourceLine" id="cb30-3" title="3"><span class="co">// The extra arguments to stringify are a replacer and a space respectively</span></a>
-<a class="sourceLine" id="cb30-4" title="4"><span class="co">// Here we&#39;re specifying a space of 2 in order to print more legibly</span></a>
-<a class="sourceLine" id="cb30-5" title="5"><span class="co">// We don&#39;t want a replacer, so we pass null just so that we can pass a 3rd argument</span></a>
-<a class="sourceLine" id="cb30-6" title="6"><span class="va">console</span>.<span class="at">log</span>(<span class="va">JSON</span>.<span class="at">stringify</span>(cats<span class="op">,</span> <span class="kw">null</span><span class="op">,</span> <span class="dv">2</span>))<span class="op">;</span></a></code></pre></div></li>
+<pre><code>const cats = await Cat.findAll();
+// Log the fetched cats.
+// The extra arguments to stringify are a replacer and a space respectively
+// Here we&#39;re specifying a space of 2 in order to print more legibly
+// We don&#39;t want a replacer, so we pass null just so that we can pass a 3rd argument
+console.log(JSON.stringify(cats, null, 2));</code></pre></li>
 <li><h4 id="where-clause">WHERE clause</h4>
 <ul>
 <li>Passing an object to findAll can add on clauses to our query</li>
 <li>The <code>where</code> key takes an object as a value to indicate what we are filtering by</li>
-<li>{ where: { field: value } } =&gt; WHERE field = value</li>
-</ul>
-<div class="sourceCode" id="cb31"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb31-1" title="1"><span class="kw">const</span> cats <span class="op">=</span> <span class="cf">await</span> <span class="va">Cat</span>.<span class="at">findAll</span>(<span class="op">{</span></a>
-<a class="sourceLine" id="cb31-2" title="2">  <span class="dt">where</span><span class="op">:</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb31-3" title="3">    <span class="dt">firstName</span><span class="op">:</span> <span class="st">&quot;Markov&quot;</span></a>
-<a class="sourceLine" id="cb31-4" title="4">  <span class="op">}</span></a>
-<a class="sourceLine" id="cb31-5" title="5"><span class="op">}</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb31-6" title="6"><span class="va">console</span>.<span class="at">log</span>(<span class="va">JSON</span>.<span class="at">stringify</span>(cats<span class="op">,</span> <span class="kw">null</span><span class="op">,</span> <span class="dv">2</span>))<span class="op">;</span></a></code></pre></div></li>
+<li><p>{ where: { field: value } } =&gt; WHERE field = value</p>
+<p>const cats = await Cat.findAll({ where: { firstName: “Markov” } }); console.log(JSON.stringify(cats, null, 2));</p></li>
+</ul></li>
 <li><h4 id="or-in-the-where-clause">OR in the WHERE clause</h4>
 <ul>
 <li>Using an array for the value tells sequelize we want to match any of these values</li>
-<li>{ where: { field: [value1, value2] } =&gt; WHERE field IN (value1, value2)</li>
-</ul>
-<div class="sourceCode" id="cb32"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb32-1" title="1"><span class="kw">const</span> cats <span class="op">=</span> <span class="cf">await</span> <span class="va">Cat</span>.<span class="at">findAll</span>(<span class="op">{</span></a>
-<a class="sourceLine" id="cb32-2" title="2">  <span class="dt">where</span><span class="op">:</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb32-3" title="3">    <span class="dt">firstName</span><span class="op">:</span> [<span class="st">&quot;Markov&quot;</span><span class="op">,</span> <span class="st">&quot;Curie&quot;</span>]</a>
-<a class="sourceLine" id="cb32-4" title="4">  <span class="op">}</span></a>
-<a class="sourceLine" id="cb32-5" title="5"><span class="op">}</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb32-6" title="6"><span class="va">console</span>.<span class="at">log</span>(<span class="va">JSON</span>.<span class="at">stringify</span>(cats<span class="op">,</span> <span class="kw">null</span><span class="op">,</span> <span class="dv">2</span>))<span class="op">;</span></a></code></pre></div></li>
+<li><p>{ where: { field: [value1, value2] } =&gt; WHERE field IN (value1, value2)</p>
+<p>const cats = await Cat.findAll({ where: { firstName: [“Markov”, “Curie”] } }); console.log(JSON.stringify(cats, null, 2));</p></li>
+</ul></li>
 <li><h4 id="and-in-the-where-clause">AND in the WHERE clause</h4>
 <ul>
 <li>Providing additional key/value pairs to the where object indicates all filters must match</li>
-<li>{ where: { field1: value1, field2: value2 } } =&gt; WHERE field1 = value1 AND field2 = value2</li>
-</ul>
-<div class="sourceCode" id="cb33"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb33-1" title="1"><span class="kw">const</span> cats <span class="op">=</span> <span class="cf">await</span> <span class="va">Cat</span>.<span class="at">findAll</span>(<span class="op">{</span></a>
-<a class="sourceLine" id="cb33-2" title="2">  <span class="dt">where</span><span class="op">:</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb33-3" title="3">    <span class="dt">firstName</span><span class="op">:</span> <span class="st">&quot;Markov&quot;</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb33-4" title="4">    <span class="dt">age</span><span class="op">:</span> <span class="dv">4</span></a>
-<a class="sourceLine" id="cb33-5" title="5">  <span class="op">}</span></a>
-<a class="sourceLine" id="cb33-6" title="6"><span class="op">}</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb33-7" title="7"><span class="va">console</span>.<span class="at">log</span>(<span class="va">JSON</span>.<span class="at">stringify</span>(cats<span class="op">,</span> <span class="kw">null</span><span class="op">,</span> <span class="dv">2</span>))<span class="op">;</span></a></code></pre></div></li>
+<li><p>{ where: { field1: value1, field2: value2 } } =&gt; WHERE field1 = value1 AND field2 = value2</p>
+<p>const cats = await Cat.findAll({ where: { firstName: “Markov”, age: 4 } }); console.log(JSON.stringify(cats, null, 2));</p></li>
+</ul></li>
 <li><h4 id="sequelize-op-operator">Sequelize Op operator</h4>
 <ul>
 <li>By requiring Op from the sequelize library we can provide more advanced comparison operators</li>
 <li><code>const { Op } = require("sequelize");</code></li>
 <li><p>Op.ne: Not equal operator</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb34-1" title="1"><span class="kw">const</span> cats <span class="op">=</span> <span class="cf">await</span> <span class="va">Cat</span>.<span class="at">findAll</span>(<span class="op">{</span></a>
-<a class="sourceLine" id="cb34-2" title="2">  <span class="dt">where</span><span class="op">:</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb34-3" title="3">    <span class="dt">firstName</span><span class="op">:</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb34-4" title="4">      <span class="co">// All cats where the name is not equal to &quot;Markov&quot;</span></a>
-<a class="sourceLine" id="cb34-5" title="5">      <span class="co">// We use brackets in order to evaluate Op.ne and use the value as the key</span></a>
-<a class="sourceLine" id="cb34-6" title="6">      [<span class="va">Op</span>.<span class="at">ne</span>]<span class="op">:</span> <span class="st">&quot;Markov&quot;</span></a>
-<a class="sourceLine" id="cb34-7" title="7">    <span class="op">},</span></a>
-<a class="sourceLine" id="cb34-8" title="8">  <span class="op">},</span></a>
-<a class="sourceLine" id="cb34-9" title="9"><span class="op">}</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb34-10" title="10"><span class="va">console</span>.<span class="at">log</span>(<span class="va">JSON</span>.<span class="at">stringify</span>(cats<span class="op">,</span> <span class="kw">null</span><span class="op">,</span> <span class="dv">2</span>))<span class="op">;</span></a></code></pre></div></li>
+<pre><code>const cats = await Cat.findAll({
+  where: {
+    firstName: {
+      // All cats where the name is not equal to &quot;Markov&quot;
+      // We use brackets in order to evaluate Op.ne and use the value as the key
+      [Op.ne]: &quot;Markov&quot;
+    },
+  },
+});
+console.log(JSON.stringify(cats, null, 2));</code></pre></li>
 <li><p>Op.and: and operator</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb35-1" title="1"><span class="kw">const</span> cats <span class="op">=</span> <span class="cf">await</span> <span class="va">Cat</span>.<span class="at">findAll</span>(<span class="op">{</span></a>
-<a class="sourceLine" id="cb35-2" title="2">  <span class="dt">where</span><span class="op">:</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb35-3" title="3">    <span class="co">// The array that Op.and points to must all be true</span></a>
-<a class="sourceLine" id="cb35-4" title="4">    <span class="co">// Here, we find cats where the name is not &quot;Markov&quot; and the age is 4</span></a>
-<a class="sourceLine" id="cb35-5" title="5">    [<span class="va">Op</span>.<span class="at">and</span>]<span class="op">:</span> [</a>
-<a class="sourceLine" id="cb35-6" title="6">      <span class="op">{</span> <span class="dt">firstName</span><span class="op">:</span> <span class="op">{</span> [<span class="va">Op</span>.<span class="at">ne</span>]<span class="op">:</span> <span class="st">&quot;Markov&quot;</span> <span class="op">}</span> <span class="op">},</span></a>
-<a class="sourceLine" id="cb35-7" title="7">      <span class="op">{</span> <span class="dt">age</span><span class="op">:</span> <span class="dv">4</span> <span class="op">},</span></a>
-<a class="sourceLine" id="cb35-8" title="8">    ]<span class="op">,</span></a>
-<a class="sourceLine" id="cb35-9" title="9">  <span class="op">},</span></a>
-<a class="sourceLine" id="cb35-10" title="10"><span class="op">}</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb35-11" title="11"><span class="va">console</span>.<span class="at">log</span>(<span class="va">JSON</span>.<span class="at">stringify</span>(cats<span class="op">,</span> <span class="kw">null</span><span class="op">,</span> <span class="dv">2</span>))<span class="op">;</span></a></code></pre></div></li>
+<pre><code>const cats = await Cat.findAll({
+  where: {
+    // The array that Op.and points to must all be true
+    // Here, we find cats where the name is not &quot;Markov&quot; and the age is 4
+    [Op.and]: [
+      { firstName: { [Op.ne]: &quot;Markov&quot; } },
+      { age: 4 },
+    ],
+  },
+});
+console.log(JSON.stringify(cats, null, 2));</code></pre></li>
 <li><p>Op.or: or operator</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb36-1" title="1"><span class="kw">const</span> cats <span class="op">=</span> <span class="cf">await</span> <span class="va">Cat</span>.<span class="at">findAll</span>(<span class="op">{</span></a>
-<a class="sourceLine" id="cb36-2" title="2">  <span class="dt">where</span><span class="op">:</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb36-3" title="3">    <span class="co">// One condition in the array that Op.or points to must be true</span></a>
-<a class="sourceLine" id="cb36-4" title="4">    <span class="co">// Here, we find cats where the name is &quot;Markov&quot; or where the age is 4</span></a>
-<a class="sourceLine" id="cb36-5" title="5">    [<span class="va">Op</span>.<span class="at">or</span>]<span class="op">:</span> [</a>
-<a class="sourceLine" id="cb36-6" title="6">      <span class="op">{</span> <span class="dt">firstName</span><span class="op">:</span> <span class="st">&quot;Markov&quot;</span> <span class="op">},</span></a>
-<a class="sourceLine" id="cb36-7" title="7">      <span class="op">{</span> <span class="dt">age</span><span class="op">:</span> <span class="dv">4</span> <span class="op">},</span></a>
-<a class="sourceLine" id="cb36-8" title="8">    ]<span class="op">,</span></a>
-<a class="sourceLine" id="cb36-9" title="9">  <span class="op">},</span></a>
-<a class="sourceLine" id="cb36-10" title="10"><span class="op">}</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb36-11" title="11"><span class="va">console</span>.<span class="at">log</span>(<span class="va">JSON</span>.<span class="at">stringify</span>(cats<span class="op">,</span> <span class="kw">null</span><span class="op">,</span> <span class="dv">2</span>))<span class="op">;</span></a></code></pre></div></li>
+<pre><code>const cats = await Cat.findAll({
+  where: {
+    // One condition in the array that Op.or points to must be true
+    // Here, we find cats where the name is &quot;Markov&quot; or where the age is 4
+    [Op.or]: [
+      { firstName: &quot;Markov&quot; },
+      { age: 4 },
+    ],
+  },
+});
+console.log(JSON.stringify(cats, null, 2));</code></pre></li>
 <li><p>Op.gt and Op.lt: greater than and less than operators</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb37-1" title="1"><span class="kw">const</span> cats <span class="op">=</span> <span class="cf">await</span> <span class="va">Cat</span>.<span class="at">findAll</span>(<span class="op">{</span></a>
-<a class="sourceLine" id="cb37-2" title="2">  <span class="dt">where</span><span class="op">:</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb37-3" title="3">    <span class="co">// Find all cats where the age is greater than 4</span></a>
-<a class="sourceLine" id="cb37-4" title="4">    <span class="dt">age</span><span class="op">:</span> <span class="op">{</span> [<span class="va">Op</span>.<span class="at">gt</span>]<span class="op">:</span> <span class="dv">4</span> <span class="op">},</span></a>
-<a class="sourceLine" id="cb37-5" title="5">  <span class="op">}</span></a>
-<a class="sourceLine" id="cb37-6" title="6">  <span class="op">},</span></a>
-<a class="sourceLine" id="cb37-7" title="7">})<span class="op">;</span></a>
-<a class="sourceLine" id="cb37-8" title="8"><span class="va">console</span>.<span class="at">log</span>(<span class="va">JSON</span>.<span class="at">stringify</span>(cats<span class="op">,</span> <span class="kw">null</span><span class="op">,</span> <span class="dv">2</span>))<span class="op">;</span></a></code></pre></div></li>
+<pre><code>const cats = await Cat.findAll({
+  where: {
+    // Find all cats where the age is greater than 4
+    age: { [Op.gt]: 4 },
+  }
+  },
+});
+console.log(JSON.stringify(cats, null, 2));</code></pre></li>
 </ul></li>
 <li><h4 id="ordering-results">Ordering results</h4>
 <ul>
 <li>Just like the where clause, we can pass an order key to specify we want our results ordered</li>
 <li>The key <code>order</code> points to an array with the fields that we want to order by</li>
-<li>By default, the order is ascending, just like standard SQL. If we want to specify descending, we can instead use a nested array with the field name as the first element and “DESC” as the second element. (We could also specify “ASC” as a second element in a nested array, but it is unnecessary as it is default)</li>
-</ul>
-<div class="sourceCode" id="cb38"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb38-1" title="1"><span class="kw">const</span> cats <span class="op">=</span> <span class="cf">await</span> <span class="va">Cat</span>.<span class="at">findAll</span>(<span class="op">{</span></a>
-<a class="sourceLine" id="cb38-2" title="2">  <span class="co">// Order by age descending, then by firstName ascending if cats have the same age</span></a>
-<a class="sourceLine" id="cb38-3" title="3">  <span class="dt">order</span><span class="op">:</span> [[<span class="st">&quot;age&quot;</span><span class="op">,</span> <span class="st">&quot;DESC&quot;</span>]<span class="op">,</span> <span class="st">&quot;firstName&quot;</span>]<span class="op">,</span></a>
-<a class="sourceLine" id="cb38-4" title="4"><span class="op">}</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb38-5" title="5"><span class="va">console</span>.<span class="at">log</span>(<span class="va">JSON</span>.<span class="at">stringify</span>(cats<span class="op">,</span> <span class="kw">null</span><span class="op">,</span> <span class="dv">2</span>))<span class="op">;</span></a></code></pre></div></li>
+<li><p>By default, the order is ascending, just like standard SQL. If we want to specify descending, we can instead use a nested array with the field name as the first element and “DESC” as the second element. (We could also specify “ASC” as a second element in a nested array, but it is unnecessary as it is default)</p>
+<p>const cats = await Cat.findAll({ // Order by age descending, then by firstName ascending if cats have the same age order: [[“age”, “DESC”], “firstName”], }); console.log(JSON.stringify(cats, null, 2));</p></li>
+</ul></li>
 <li><h4 id="limiting-results">Limiting results</h4>
 <ul>
-<li>We can provide a <code>limit</code> key in order to limit our results to a specified number</li>
-</ul>
-<div class="sourceCode" id="cb39"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb39-1" title="1"><span class="kw">const</span> cats <span class="op">=</span> <span class="cf">await</span> <span class="va">Cat</span>.<span class="at">findAll</span>(<span class="op">{</span></a>
-<a class="sourceLine" id="cb39-2" title="2">  <span class="dt">order</span><span class="op">:</span> [[<span class="st">&quot;age&quot;</span><span class="op">,</span> <span class="st">&quot;DESC&quot;</span>]]<span class="op">,</span></a>
-<a class="sourceLine" id="cb39-3" title="3">  <span class="co">// Here we are limiting our results to one record. It will still return an array, just with one object inside. We could have said any number here, the result is always an array.</span></a>
-<a class="sourceLine" id="cb39-4" title="4">  <span class="dt">limit</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb39-5" title="5"><span class="op">}</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb39-6" title="6"><span class="va">console</span>.<span class="at">log</span>(<span class="va">JSON</span>.<span class="at">stringify</span>(cats<span class="op">,</span> <span class="kw">null</span><span class="op">,</span> <span class="dv">2</span>))<span class="op">;</span></a></code></pre></div></li>
+<li><p>We can provide a <code>limit</code> key in order to limit our results to a specified number</p>
+<p>const cats = await Cat.findAll({ order: [[“age”, “DESC”]], // Here we are limiting our results to one record. It will still return an array, just with one object inside. We could have said any number here, the result is always an array. limit: 1, }); console.log(JSON.stringify(cats, null, 2));</p></li>
+</ul></li>
 <li><h4 id="findone">findOne</h4>
 <ul>
 <li>If we only want one record to be returned we can use findOne instead of findAll</li>
 <li>If multiple records would have matched our findOne query, it will return the first record</li>
-<li>Unlike findAll, findOne will return the object directly instead of an array. If no records matched the query it will return null.</li>
-</ul>
-<div class="sourceCode" id="cb40"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb40-1" title="1"><span class="co">// finds the oldest cat</span></a>
-<a class="sourceLine" id="cb40-2" title="2"><span class="kw">const</span> cat <span class="op">=</span> <span class="cf">await</span> <span class="va">Cat</span>.<span class="at">findOne</span>(<span class="op">{</span></a>
-<a class="sourceLine" id="cb40-3" title="3">  <span class="dt">order</span><span class="op">:</span> [[<span class="st">&quot;age&quot;</span><span class="op">,</span> <span class="st">&quot;DESC&quot;</span>]]<span class="op">,</span></a>
-<a class="sourceLine" id="cb40-4" title="4"><span class="op">}</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb40-5" title="5"><span class="va">console</span>.<span class="at">log</span>(<span class="va">JSON</span>.<span class="at">stringify</span>(cat<span class="op">,</span> <span class="kw">null</span><span class="op">,</span> <span class="dv">2</span>))<span class="op">;</span></a></code></pre></div></li>
+<li><p>Unlike findAll, findOne will return the object directly instead of an array. If no records matched the query it will return null.</p>
+<p>// finds the oldest cat const cat = await Cat.findOne({ order: [[“age”, “DESC”]], }); console.log(JSON.stringify(cat, null, 2));</p></li>
+</ul></li>
 <li><h4 id="querying-with-associations">Querying with Associations</h4>
 <ul>
-<li>We can include associated data by adding an <code>include</code> key to our options object</li>
+<li><p>We can include associated data by adding an <code>include</code> key to our options object</p>
+<p>const pet = Pet.findByPk(1, { include: [ PetType, Owner ] }); console.log( pet.id, pet.name, pet.age, pet.petTypeId, pet.PetType.type, pet.Owners )</p></li>
+<li><p>We can get nested associations by having <code>include</code> point to an object that specifies which <code>model</code> we have an association with, then chaining an association on with another <code>include</code></p>
+<p>const owner = Owner.findByPk(1, { include: { model: Pet, include: PetType } }); console.log( pet.id, pet.name, pet.age, pet.petTypeId, pet.PetType.type, pet.Owners )</p></li>
+</ul></li>
 </ul>
-<div class="sourceCode" id="cb41"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb41-1" title="1"><span class="kw">const</span> pet <span class="op">=</span> <span class="va">Pet</span>.<span class="at">findByPk</span>(<span class="dv">1</span><span class="op">,</span> <span class="op">{</span> <span class="dt">include</span><span class="op">:</span> [ PetType<span class="op">,</span> Owner ] <span class="op">}</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb41-2" title="2"><span class="va">console</span>.<span class="at">log</span>(</a>
-<a class="sourceLine" id="cb41-3" title="3">  <span class="va">pet</span>.<span class="at">id</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb41-4" title="4">  <span class="va">pet</span>.<span class="at">name</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb41-5" title="5">  <span class="va">pet</span>.<span class="at">age</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb41-6" title="6">  <span class="va">pet</span>.<span class="at">petTypeId</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb41-7" title="7">  <span class="va">pet</span>.<span class="va">PetType</span>.<span class="at">type</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb41-8" title="8">  <span class="va">pet</span>.<span class="at">Owners</span></a>
-<a class="sourceLine" id="cb41-9" title="9">)</a></code></pre></div>
-<ul>
-<li>We can get nested associations by having <code>include</code> point to an object that specifies which <code>model</code> we have an association with, then chaining an association on with another <code>include</code></li>
-</ul>
-<div class="sourceCode" id="cb42"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb42-1" title="1"><span class="kw">const</span> owner <span class="op">=</span> <span class="va">Owner</span>.<span class="at">findByPk</span>(<span class="dv">1</span><span class="op">,</span> <span class="op">{</span> <span class="dt">include</span><span class="op">:</span> <span class="op">{</span> <span class="dt">model</span><span class="op">:</span> Pet<span class="op">,</span> <span class="dt">include</span><span class="op">:</span> PetType <span class="op">}</span> <span class="op">}</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb42-2" title="2"><span class="va">console</span>.<span class="at">log</span>(</a>
-<a class="sourceLine" id="cb42-3" title="3">  <span class="va">pet</span>.<span class="at">id</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb42-4" title="4">  <span class="va">pet</span>.<span class="at">name</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb42-5" title="5">  <span class="va">pet</span>.<span class="at">age</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb42-6" title="6">  <span class="va">pet</span>.<span class="at">petTypeId</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb42-7" title="7">  <span class="va">pet</span>.<span class="va">PetType</span>.<span class="at">type</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb42-8" title="8">  <span class="va">pet</span>.<span class="at">Owners</span></a>
-<a class="sourceLine" id="cb42-9" title="9">)</a></code></pre></div></li>
-</ul>
-<ol start="5" type="1">
+<ol type="1">
 <li>How to perform data validations with Sequelize</li>
 </ol>
 <ul>
 <li>See the database migrations section above.</li>
-<li>In general, we add in a validate key to each field that we want validations for. This key points to an object that specifies all of the validations we want to make on that field, such as <code>notEmpty</code>, <code>notNull</code>, <code>len</code>, <code>isIn</code>, etc.</li>
+<li><p>In general, we add in a validate key to each field that we want validations for. This key points to an object that specifies all of the validations we want to make on that field, such as <code>notEmpty</code>, <code>notNull</code>, <code>len</code>, <code>isIn</code>, etc.</p>
+<p>specification: { type: DataTypes.TEXT, validate: { notEmpty: { msg: ‘The specification cannot be empty’ }, len: { args: [10, 100] msg: ‘The specifcation must be between 10 and 100 characters’ } } }</p></li>
 </ul>
-<div class="sourceCode" id="cb43"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb43-1" title="1">specification<span class="op">:</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb43-2" title="2">  <span class="dt">type</span><span class="op">:</span> <span class="va">DataTypes</span>.<span class="at">TEXT</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb43-3" title="3">  <span class="dt">validate</span><span class="op">:</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb43-4" title="4">    <span class="dt">notEmpty</span><span class="op">:</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb43-5" title="5">      <span class="dt">msg</span><span class="op">:</span> <span class="st">&#39;The specification cannot be empty&#39;</span></a>
-<a class="sourceLine" id="cb43-6" title="6">    <span class="op">},</span></a>
-<a class="sourceLine" id="cb43-7" title="7">    <span class="dt">len</span><span class="op">:</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb43-8" title="8">      <span class="dt">args</span><span class="op">:</span> [<span class="dv">10</span><span class="op">,</span> <span class="dv">100</span>]</a>
-<a class="sourceLine" id="cb43-9" title="9">      <span class="dt">msg</span><span class="op">:</span> <span class="st">&#39;The specifcation must be between 10 and 100 characters&#39;</span></a>
-<a class="sourceLine" id="cb43-10" title="10">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb43-11" title="11">  <span class="op">}</span></a>
-<a class="sourceLine" id="cb43-12" title="12"><span class="op">}</span></a></code></pre></div>
-<ol start="6" type="1">
+<ol type="1">
 <li>How to use transactions with Sequelize</li>
 </ol>
 <ul>
 <li>We can create a transaction block in order to make sure either all operations are performed or none of them are</li>
 <li>We use the <code>.transaction</code> method in order to create our block. The method takes in a callback with an argument to track our transaction id (typically just a simple <code>tx</code> variable).</li>
-<li>All of our sequelize operations can be passed a <code>transaction</code> key on their options argument which points to our transaction id. This indicates that this operation is part of the transaction block and should only be executed in the database when the whole block executes without error.</li>
+<li><p>All of our sequelize operations can be passed a <code>transaction</code> key on their options argument which points to our transaction id. This indicates that this operation is part of the transaction block and should only be executed in the database when the whole block executes without error.</p>
+<p>async function main() { try { // Do all database access within the transaction. await sequelize.transaction(async (tx) =&gt; { // Fetch Markov and Curie’s accounts. const markovAccount = await BankAccount.findByPk( 1, { transaction: tx }, ); const curieAccount = await BankAccount.findByPk( 2, { transaction: tx } );</p>
+<pre><code>  // No one can mess with Markov or Curie&#39;s accounts until the
+  // transaction completes! The account data has been locked!
+
+  // Increment Curie&#39;s balance by $5,000.
+  curieAccount.balance += 5000;
+  await curieAccount.save({ transaction: tx });
+
+  // Decrement Markov&#39;s balance by $5,000.
+  markovAccount.balance -= 5000;
+  await markovAccount.save({ transaction: tx });
+});</code></pre>
+<p>} catch (err) { // Report if anything goes wrong. console.log(“Error!”);</p>
+<pre><code>for (const e of err.errors) {
+  console.log(
+    `${e.instance.clientName}: ${e.message}`
+  );
+}</code></pre>
+<p>}</p>
+<p>await sequelize.close(); }</p>
+<p>main();</p></li>
 </ul>
-<div class="sourceCode" id="cb44"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb44-1" title="1"><span class="kw">async</span> <span class="kw">function</span> <span class="at">main</span>() <span class="op">{</span></a>
-<a class="sourceLine" id="cb44-2" title="2">  <span class="cf">try</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb44-3" title="3">    <span class="co">// Do all database access within the transaction.</span></a>
-<a class="sourceLine" id="cb44-4" title="4">    <span class="cf">await</span> <span class="va">sequelize</span>.<span class="at">transaction</span>(<span class="kw">async</span> (tx) <span class="kw">=&gt;</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb44-5" title="5">      <span class="co">// Fetch Markov and Curie&#39;s accounts.</span></a>
-<a class="sourceLine" id="cb44-6" title="6">      <span class="kw">const</span> markovAccount <span class="op">=</span> <span class="cf">await</span> <span class="va">BankAccount</span>.<span class="at">findByPk</span>(</a>
-<a class="sourceLine" id="cb44-7" title="7">        <span class="dv">1</span><span class="op">,</span> <span class="op">{</span> <span class="dt">transaction</span><span class="op">:</span> tx <span class="op">},</span></a>
-<a class="sourceLine" id="cb44-8" title="8">      )<span class="op">;</span></a>
-<a class="sourceLine" id="cb44-9" title="9">      <span class="kw">const</span> curieAccount <span class="op">=</span> <span class="cf">await</span> <span class="va">BankAccount</span>.<span class="at">findByPk</span>(</a>
-<a class="sourceLine" id="cb44-10" title="10">        <span class="dv">2</span><span class="op">,</span> <span class="op">{</span> <span class="dt">transaction</span><span class="op">:</span> tx <span class="op">}</span></a>
-<a class="sourceLine" id="cb44-11" title="11">      )<span class="op">;</span></a>
-<a class="sourceLine" id="cb44-12" title="12"></a>
-<a class="sourceLine" id="cb44-13" title="13">      <span class="co">// No one can mess with Markov or Curie&#39;s accounts until the</span></a>
-<a class="sourceLine" id="cb44-14" title="14">      <span class="co">// transaction completes! The account data has been locked!</span></a>
-<a class="sourceLine" id="cb44-15" title="15"></a>
-<a class="sourceLine" id="cb44-16" title="16">      <span class="co">// Increment Curie&#39;s balance by $5,000.</span></a>
-<a class="sourceLine" id="cb44-17" title="17">      <span class="va">curieAccount</span>.<span class="at">balance</span> <span class="op">+=</span> <span class="dv">5000</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb44-18" title="18">      <span class="cf">await</span> <span class="va">curieAccount</span>.<span class="at">save</span>(<span class="op">{</span> <span class="dt">transaction</span><span class="op">:</span> tx <span class="op">}</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb44-19" title="19"></a>
-<a class="sourceLine" id="cb44-20" title="20">      <span class="co">// Decrement Markov&#39;s balance by $5,000.</span></a>
-<a class="sourceLine" id="cb44-21" title="21">      <span class="va">markovAccount</span>.<span class="at">balance</span> <span class="op">-=</span> <span class="dv">5000</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb44-22" title="22">      <span class="cf">await</span> <span class="va">markovAccount</span>.<span class="at">save</span>(<span class="op">{</span> <span class="dt">transaction</span><span class="op">:</span> tx <span class="op">}</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb44-23" title="23">    <span class="op">}</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb44-24" title="24">  <span class="op">}</span> <span class="cf">catch</span> (err) <span class="op">{</span></a>
-<a class="sourceLine" id="cb44-25" title="25">    <span class="co">// Report if anything goes wrong.</span></a>
-<a class="sourceLine" id="cb44-26" title="26">    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;Error!&quot;</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb44-27" title="27"></a>
-<a class="sourceLine" id="cb44-28" title="28">    <span class="cf">for</span> (<span class="kw">const</span> e <span class="kw">of</span> <span class="va">err</span>.<span class="at">errors</span>) <span class="op">{</span></a>
-<a class="sourceLine" id="cb44-29" title="29">      <span class="va">console</span>.<span class="at">log</span>(</a>
-<a class="sourceLine" id="cb44-30" title="30">        <span class="vs">`</span><span class="sc">${</span><span class="va">e</span>.<span class="va">instance</span>.<span class="at">clientName</span><span class="sc">}</span><span class="vs">: </span><span class="sc">${</span><span class="va">e</span>.<span class="at">message</span><span class="sc">}</span><span class="vs">`</span></a>
-<a class="sourceLine" id="cb44-31" title="31">      )<span class="op">;</span></a>
-<a class="sourceLine" id="cb44-32" title="32">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb44-33" title="33">  <span class="op">}</span></a>
-<a class="sourceLine" id="cb44-34" title="34"></a>
-<a class="sourceLine" id="cb44-35" title="35">  <span class="cf">await</span> <span class="va">sequelize</span>.<span class="at">close</span>()<span class="op">;</span></a>
-<a class="sourceLine" id="cb44-36" title="36"><span class="op">}</span></a>
-<a class="sourceLine" id="cb44-37" title="37"></a>
-<a class="sourceLine" id="cb44-38" title="38"><span class="at">main</span>()<span class="op">;</span></a></code></pre></div>
 </body>
 </html>

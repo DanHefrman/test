@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="trailing-action">Trailing Action</h1>
+<p>The trailing action is used in removable input chips. It is a subcomponent of the chips and intended only for use in the context of a chip.</p>
+<h2 id="basic-usage">Basic Usage</h2>
+<h3 id="html-structure">HTML Structure</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">&lt;button</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip-trailing-action&quot;</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="ot">        aria-label=</span><span class="st">&quot;Remove chip&quot;</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="ot">        tabindex=</span><span class="st">&quot;-1&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb1-4" title="4">  <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip-trailing-action__ripple&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb1-5" title="5">  <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip-trailing-action__icon material-icons&quot;</span><span class="kw">&gt;</span>close<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb1-6" title="6"><span class="kw">&lt;/button&gt;</span></a></code></pre></div>
+<h3 id="styles">Styles</h3>
+<pre class="scss"><code>@use &quot;@material/chips/mdc-chip-trailing-action&quot;;</code></pre>
+<h2 id="variants">Variants</h2>
+<h3 id="non-navigable-trailing-action">Non-navigable trailing action</h3>
+<p>In some cases, the trailing action should be non-navigable. To accomplish this, swap the <code>aria-label</code> for <code>aria-hidden="true"</code>.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">&lt;button</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip-trailing-action&quot;</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="ot">        aria-hidden=</span><span class="st">&quot;true&quot;</span></a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="ot">        tabindex=</span><span class="st">&quot;-1&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb3-4" title="4">  <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip-trailing-action__icon material-icons&quot;</span><span class="kw">&gt;</span>close<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb3-5" title="5"><span class="kw">&lt;/button&gt;</span></a></code></pre></div>
+<h3 id="accessibility">Accessibility</h3>
+<p>Material Design spec advises that touch targets should be at least 48 x 48 px. To meet this requirement, add the following to your trailing action:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">&lt;button</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip-trailing-action&quot;</span></a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="ot">        aria-label=</span><span class="st">&quot;Remove chip&quot;</span></a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="ot">        tabindex=</span><span class="st">&quot;-1&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb4-4" title="4">  <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip-trailing-action__ripple&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb4-5" title="5">  <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip-trailing-action__touch&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb4-6" title="6">  <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip-trailing-action__icon material-icons&quot;</span><span class="kw">&gt;</span>close<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb4-7" title="7"><span class="kw">&lt;/button&gt;</span></a></code></pre></div>
+<h2 id="style-customization">Style Customization</h2>
+<h3 id="css-classes">CSS Classes</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>CSS Class</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>mdc-chip-trailing-action</code></td>
+<td>Mandatory.</td>
+</tr>
+<tr class="even">
+<td><code>mdc-chip-trailing-action__icon</code></td>
+<td>Mandatory. Indicates the chip icon.</td>
+</tr>
+<tr class="odd">
+<td><code>mdc-chip-trailing-action__ripple</code></td>
+<td>Mandatory. Indicates the chip ripple.</td>
+</tr>
+<tr class="even">
+<td><code>mdc-chip-trailing-action__touch</code></td>
+<td>Optional. Renders an accessible touch target.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sass-mixins">Sass Mixins</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mixin</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>color($color)</code></td>
+<td>Sets the trailing action color</td>
+</tr>
+<tr class="even">
+<td><code>size($size)</code></td>
+<td>Sets the trailing action size</td>
+</tr>
+<tr class="odd">
+<td><code>horizontal-spacing($left, $right)</code></td>
+<td>Sets the trailing action horizontal spacing</td>
+</tr>
+<tr class="even">
+<td><code>touch-target-width($width)</code></td>
+<td>Sets the trailing action touch target width</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mdcchiptrailingaction-methods"><code>MDCChipTrailingAction</code> Methods</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Method Signature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>removeFocus() =&gt; void</code></td>
+<td>Proxies to the foundation’s <code>removeFocus</code> method</td>
+</tr>
+<tr class="even">
+<td><code>focus() =&gt; void</code></td>
+<td>Proxies to the foundation’s <code>focus</code> method</td>
+</tr>
+<tr class="odd">
+<td><code>isNavigable() =&gt; void</code></td>
+<td>Proxies to the foundation’s <code>isNavigable</code> method</td>
+</tr>
+</tbody>
+</table>
+<h5 id="events">Events</h5>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Event Name</th>
+<th><code>event.detail</code></th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>MDCChipTrailingAction:interaction</code></td>
+<td><code>{trigger: InteractionTrigger}</code></td>
+<td>Indicates the trailing action was interacted with via mouse or keyboard</td>
+</tr>
+<tr class="even">
+<td><code>MDCChipTrailingAction:navigation</code></td>
+<td><code>{key: string}</code></td>
+<td>Indicates a navigation event has occurred on a trailing action</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><em>NOTE</em>: All of <code>MDCChipTrailingAction</code>’s emitted events bubble up through the DOM.</p>
+</blockquote>
+<h2 id="usage-within-web-frameworks">Usage within Web Frameworks</h2>
+<p>If you are using a JavaScript framework, such as React or Angular, you can create Chips for your framework. Depending on your needs, you can use the <em>Simple Approach: Wrapping MDC Web Vanilla Components</em>, or the <em>Advanced Approach: Using Foundations and Adapters</em>. Please follow the instructions <a href="../../docs/integrating-into-frameworks.md">here</a>.</p>
+<h3 id="mdcchiptrailingactionadapter"><code>MDCChipTrailingActionAdapter</code></h3>
+<p>See <a href="component.ts"><code>component.ts</code></a> for a vanilla DOM implementations of the adapter API for reference.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method Signature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>focus() =&gt; void</code></td>
+<td>Gives focus to the root element</td>
+</tr>
+<tr class="even">
+<td><code>getAttribute(attr: string) =&gt; string|null</code></td>
+<td>Returns the attribute value, if present</td>
+</tr>
+<tr class="odd">
+<td><code>notifyInteraction(trigger: InteractionTrigger) =&gt; void</code></td>
+<td>Notifies the Chip that the trailing action has been interacted with</td>
+</tr>
+<tr class="even">
+<td><code>notifyNavigation(key: string) =&gt; void</code></td>
+<td>Notifies the Chip that the trailing action was navigated</td>
+</tr>
+<tr class="odd">
+<td><code>setAttribute(attr: string, value: string) =&gt; void</code></td>
+<td>Sets an attribute on the root to the given value</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mdcchiptrailingactionfoundation"><code>MDCChipTrailingActionFoundation</code></h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method Signature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>removeFocus() =&gt; void</code></td>
+<td>Removes focus from the trailing action</td>
+</tr>
+<tr class="even">
+<td><code>focus() =&gt; void</code></td>
+<td>Gives focus to the trailing action</td>
+</tr>
+<tr class="odd">
+<td><code>isNavigable() =&gt; boolean</code></td>
+<td>Returns the navigability of the trailing action</td>
+</tr>
+<tr class="even">
+<td><code>handleClick(evt: MouseEvent) =&gt; void</code></td>
+<td>Handles a click event on the root element</td>
+</tr>
+<tr class="odd">
+<td><code>handleKeydown(evt: KeyboardEvent) =&gt; void</code></td>
+<td>Handles a keydown event on the root element</td>
+</tr>
+</tbody>
+</table>
+<h4 id="mdcchiptrailingactionfoundation-event-handlers"><code>MDCChipTrailingActionFoundation</code> Event Handlers</h4>
+<p>When wrapping the trailing action foundation, the following events must be bound to the indicated foundation methods:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Events</th>
+<th>Element Selector</th>
+<th>Foundation Handler</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>click</code></td>
+<td><code>.mdc-chip-trailing-action</code> (root)</td>
+<td><code>handleClick()</code></td>
+</tr>
+<tr class="even">
+<td><code>keydown</code></td>
+<td><code>.mdc-chip-trailing-action</code> (root)</td>
+<td><code>handleKeydown()</code></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

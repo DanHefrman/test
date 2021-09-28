@@ -1,10 +1,8 @@
-<span class="citation" data-cites="dojo/widgets/title-pane">@dojo/widgets/title-pane</span>
-===========================================================================================
+# <span class="citation" data-cites="dojo/widgets/title-pane">@dojo/widgets/title-pane</span>
 
 Dojo’s `TitlePane` component can be used to display content inside a window with a titlebar. When the titlebar is clicked, the content collapses.
 
-Features
---------
+## Features
 
 -   Content can be prevented from collapsing
 -   Provides default styling for the titlebar and content area that responds responsively to different screen sizes

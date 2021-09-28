@@ -22,8 +22,8 @@ The various vendor prefixes are
 
 If you are familiar with flash animations, you will already know that time will be divided into lot of frames and we will place the object in different places for each frame and when they are executed we will feel like the object is moving. The same concept is used here as well. Using `@keyframes` we tell CSS engine to what to do with the object at a particular frame.
 
-<span class="citation" data-cites="keyframes">@keyframes</span>
-===============================================================
+<span class="citation" data-cites="keyframes"><span class="citation" data-cites="keyframes">@keyframes</span></span>
+====================================================================================================================
 
 `@keyframes` let the author control over animation sequence, and author can tell what to do when it reach this particular sequence. We will define a `@keyframes` with a name and that name will be provided as `animation-name`.
 

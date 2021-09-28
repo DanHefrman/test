@@ -11,121 +11,34 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
-  <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
 </head>
 <body>
-<!--
-
-
----
- "CSS : Understanding em and rem for font size"
-date: 2014-04-19 01:0:00 IST
-updated: 2014-04-19 01:00:00 IST
-categories: css
----
-
--->
-&lt;!DOCTYPE html&gt;
-<html>
-<head>
-<title>
-basic-git-workflow
-</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./css/bootstrap.css"> <link rel="stylesheet" href="./css/bootstrap.grid.css"> <link rel="stylesheet" href="./css/bootstrap.min.css"> <link rel="stylesheet" href="./css/bootstrap-reboot.min.css"> <link rel="stylesheet" href="./css/bootstrap.css.map"> <link rel="stylesheet" href="./css/blog-home.css"> <link rel="stylesheet" href="./css/prism.css">
-<script async defer src="./css/prism.js"></script>
-</head>
-<body>
-<p>We can use 4 units to specify font-size, <code>px</code>, <code>%</code>, <code>em</code> and newly added <code>rem</code>. The <code>em</code> and <code>rem</code> where bit confusing for me. In this blog post I like to discuss the difference between <code>em</code> and <code>rem</code> which <span class="citation" data-cites="shidhin">[@shidhin]</span>(http://twitter.com/shidhin) taught me.</p>
+<p>&lt;!DOCTYPE html&gt;</p>
+<p>We can use 4 units to specify font-size, <code>px</code>, <code>%</code>, <code>em</code> and newly added <code>rem</code>. The <code>em</code> and <code>rem</code> where bit confusing for me. In this blog post I like to discuss the difference between <code>em</code> and <code>rem</code> which <span class="citation" data-cites="shidhin">[<span class="citation" data-cites="shidhin">@shidhin</span>]</span>(http://twitter.com/shidhin) taught me.</p>
 <h1 id="understanding-em-unit">Understanding <code>em</code> unit</h1>
 <p><code>em</code>s are font-relative length units. They are calculated in relative to its parent font size. By default,</p>
-<pre><code>1em = 16px; // assuming parent fontsize as 100% or not set.
-</code></pre>
+<pre><code>1em = 16px; // assuming parent fontsize as 100% or not set.</code></pre>
 <p>when it comes to an equation</p>
-<pre><code>Xem = 16 * X * (parent font size)/100
-</code></pre>
+<pre><code>Xem = 16 * X * (parent font size)/100</code></pre>
 <p>If the parent font size is not set it gets the defaults from the font size of html tag. For easier calculation, we can set the font size of html tag as 62%. Now as per the equation,</p>
 <pre><code>1 em = 16 * 1 * 62/100
      = 16 * 1 * .62
      = ~10px</code></pre>
 <p>But <code>em</code> have compounding issue, to expain what it is, consider we have</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">&lt;style&gt;</span></a>
-<a class="sourceLine" id="cb4-2" title="2">  div {</a>
-<a class="sourceLine" id="cb4-3" title="3">    <span class="kw">font-size</span>: <span class="dv">2</span><span class="dt">em</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb4-4" title="4">  }</a>
-<a class="sourceLine" id="cb4-5" title="5"><span class="kw">&lt;/style&gt;</span></a>
-<a class="sourceLine" id="cb4-6" title="6"><span class="kw">&lt;div&gt;</span></a>
-<a class="sourceLine" id="cb4-7" title="7">  this is parent</a>
-<a class="sourceLine" id="cb4-8" title="8">  <span class="kw">&lt;div&gt;</span>this is child<span class="kw">&lt;/div&gt;</span></a>
-<a class="sourceLine" id="cb4-9" title="9"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
+<pre><code>&lt;style&gt;
+  div {
+    font-size: 2em;
+  }
+&lt;/style&gt;
+&lt;div&gt;
+  this is parent
+  &lt;div&gt;this is child&lt;/div&gt;
+&lt;/div&gt;</code></pre>
 <p>This will result in</p>
-<center>
-<img src="http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2014/04/em_zps2c126b54.png" alt="em coumpounding issue" />
-</center>
-<p>This is because parent div have a font-size of 2em (16px <em>2 = 32px), when it comes to child div it 2em becomes 64px(32px </em> 2 = 64px) because its parent is set to 32px.</p>
+<figure>
+<img src="http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2014/04/em_zps2c126b54.png" alt="em coumpounding issue" /><figcaption>em coumpounding issue</figcaption>
+</figure>
+<p>This is because parent div have a font-size of 2em (16px <em>2 = 32px), when it comes to child div it 2em becomes 64px(32px</em> 2 = 64px) because its parent is set to 32px.</p>
 <ul>
 <li>parent : 16px * 2 = 32px</li>
 <li>child : 32px * 2 = 64px (since parent is set to 32px)</li>
@@ -135,29 +48,28 @@ basic-git-workflow
 <p><code>rem</code>s are also font-relative length units but it depends on font size of the root element. A root element is the element which doesn’t have a parent, in web its <code>&lt;html&gt;</code> tag. A similar equation as of em’s can be used here also, but instead of parent font size here we use font-size of <code>&lt;html&gt;</code> tag.</p>
 <pre><code>Xrem = 16 * X * (html font size)/100</code></pre>
 <p>Since <code>rem</code> depends on root element it’s free from compounding issue, which make this special. just consider an example</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">&lt;style&gt;</span></a>
-<a class="sourceLine" id="cb6-2" title="2">  div{</a>
-<a class="sourceLine" id="cb6-3" title="3">    <span class="kw">font-size</span>: <span class="dv">2</span><span class="dt">rem</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb6-4" title="4">  }</a>
-<a class="sourceLine" id="cb6-5" title="5"><span class="kw">&lt;/style&gt;</span></a>
-<a class="sourceLine" id="cb6-6" title="6"><span class="kw">&lt;p&gt;</span></a>
-<a class="sourceLine" id="cb6-7" title="7">  this is parent</a>
-<a class="sourceLine" id="cb6-8" title="8">  <span class="kw">&lt;p&gt;</span></a>
-<a class="sourceLine" id="cb6-9" title="9">    this is child</a>
-<a class="sourceLine" id="cb6-10" title="10">  <span class="kw">&lt;/p&gt;</span></a>
-<a class="sourceLine" id="cb6-11" title="11"><span class="kw">&lt;/p&gt;</span></a></code></pre></div>
+<pre><code>&lt;style&gt;
+  div{
+    font-size: 2rem;
+  }
+&lt;/style&gt;
+&lt;p&gt;
+  this is parent
+  &lt;p&gt;
+    this is child
+  &lt;/p&gt;
+&lt;/p&gt;</code></pre>
 <p>This will result same font-size for both parent and child paragraph.</p>
-<center>
-<img src="http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2014/04/rem_zps28e36a26.png" alt="rem" />
-</center>
+<figure>
+<img src="http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2014/04/rem_zps28e36a26.png" alt="rem" /><figcaption>rem</figcaption>
+</figure>
 <p><code>rem</code> is supported by all the <a href="http://caniuse.com/#search=rem">modern browers</a> and IE9+. You can use the fallback techniques or a <a href="https://github.com/chuckcarpenter/REM-unit-polyfill">polyfill</a> to support older browsers.</p>
-<a class="jsbin-embed" href="http://jsbin.com/tawux/1/embed">JS Bin</a>
-<script src="http://static.jsbin.com/js/embed.js"></script>
+<p><a href="http://jsbin.com/tawux/1/embed" class="jsbin-embed">JS Bin</a></p>
 <p>The fallback technique is using the font-size in pixes at first and font-size in rem second, so in older browsers the font-size in rem won’t be effective and fallback to pixels.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb7-1" title="1">div {</a>
-<a class="sourceLine" id="cb7-2" title="2">  <span class="kw">font-size</span>: <span class="dv">32</span><span class="dt">px</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb7-3" title="3">  <span class="kw">font-size</span>: <span class="dv">2</span><span class="dt">rem</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb7-4" title="4">}</a></code></pre></div>
+<pre><code>div {
+  font-size: 32px;
+  font-size: 2rem;
+}</code></pre>
 <p>So I hope you understood the <code>em</code> and <code>rem</code>, and you will be able to use it wisely.</p>
 </body>
 </html>

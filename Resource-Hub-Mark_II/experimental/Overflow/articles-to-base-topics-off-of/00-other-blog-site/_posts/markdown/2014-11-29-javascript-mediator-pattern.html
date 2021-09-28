@@ -11,127 +11,41 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
-  <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
 </head>
 <body>
-<!--
-
-
----
- "JavaScript: Mediator pattern"
-excerpt: "JavaScript: Mediator pattern"
-date: 2014-11-29 00:00:00 IST
-updated: 2014-11-29 00:00:00 IST
-categories: javascript, patterns
----
-
--->
-&lt;!DOCTYPE html&gt;
-<html>
-<head>
-<title>
-basic-git-workflow
-</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./css/bootstrap.css"> <link rel="stylesheet" href="./css/bootstrap.grid.css"> <link rel="stylesheet" href="./css/bootstrap.min.css"> <link rel="stylesheet" href="./css/bootstrap-reboot.min.css"> <link rel="stylesheet" href="./css/bootstrap.css.map"> <link rel="stylesheet" href="./css/blog-home.css"> <link rel="stylesheet" href="./css/prism.css">
-<script async defer src="./css/prism.js"></script>
-</head>
-<body>
+<p>&lt;!DOCTYPE html&gt;</p>
 <p>When I thought of decoupling modules in <a href="http://whatznear.com">Whatznear</a>, first thing I want to get rid of using <code>$.trigger</code> for each and everything. That doen’t mean I don’t wanna trigger events anymore, but I want some other way for modules to communicate with others and it should not make themselves dependencies. Thus I though of introducing a <code>Mediator</code> for inter module communication. I introduced Mediator along with <a href="/2014/11/javascript-extending-module.html">Module pattern</a>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1">Mediator <span class="op">=</span> (<span class="kw">function</span> () <span class="op">{</span></a>
-<a class="sourceLine" id="cb1-2" title="2">  <span class="kw">var</span> subscribe <span class="op">=</span> <span class="kw">function</span> (channel<span class="op">,</span> func<span class="op">,</span> context) <span class="op">{</span></a>
-<a class="sourceLine" id="cb1-3" title="3">    <span class="cf">if</span> (<span class="op">!</span><span class="va">Mediator</span>.<span class="at">channels</span>[channel]) <span class="op">{</span></a>
-<a class="sourceLine" id="cb1-4" title="4">      <span class="va">Mediator</span>.<span class="at">channels</span>[channel] <span class="op">=</span> []<span class="op">;</span></a>
-<a class="sourceLine" id="cb1-5" title="5">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb1-6" title="6">    <span class="va">Mediator</span>.<span class="at">channels</span>[channel].<span class="at">push</span>(<span class="op">{</span> <span class="dt">context</span><span class="op">:</span> context<span class="op">,</span> <span class="dt">callback</span><span class="op">:</span> func <span class="op">}</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb1-7" title="7">    <span class="cf">return</span> <span class="kw">this</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb1-8" title="8">  <span class="op">};</span></a>
-<a class="sourceLine" id="cb1-9" title="9"></a>
-<a class="sourceLine" id="cb1-10" title="10">  <span class="kw">var</span> publish <span class="op">=</span> <span class="kw">function</span> (channel) <span class="op">{</span></a>
-<a class="sourceLine" id="cb1-11" title="11">    <span class="cf">if</span> (<span class="op">!</span><span class="va">Mediator</span>.<span class="at">channels</span>[channel]) <span class="op">{</span></a>
-<a class="sourceLine" id="cb1-12" title="12">      <span class="cf">return</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb1-13" title="13">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb1-14" title="14">    <span class="kw">var</span> args <span class="op">=</span> <span class="va">Array</span>.<span class="va">prototype</span>.<span class="va">slice</span>.<span class="at">call</span>(<span class="kw">arguments</span><span class="op">,</span> <span class="dv">1</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb1-15" title="15">    <span class="kw">var</span> subscripions <span class="op">=</span> <span class="va">Mediator</span>.<span class="at">channels</span>[channel]<span class="op">;</span></a>
-<a class="sourceLine" id="cb1-16" title="16">    <span class="cf">for</span> (i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="va">subscripions</span>.<span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) <span class="op">{</span></a>
-<a class="sourceLine" id="cb1-17" title="17">      subscripion <span class="op">=</span> channels[i]<span class="op">;</span></a>
-<a class="sourceLine" id="cb1-18" title="18">      <span class="va">subscripion</span>.<span class="va">callback</span>.<span class="at">apply</span>(<span class="va">subscripion</span>.<span class="at">context</span><span class="op">,</span> args)<span class="op">;</span></a>
-<a class="sourceLine" id="cb1-19" title="19">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb1-20" title="20">    <span class="cf">return</span> <span class="kw">this</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb1-21" title="21">  <span class="op">};</span></a>
-<a class="sourceLine" id="cb1-22" title="22"></a>
-<a class="sourceLine" id="cb1-23" title="23">  <span class="cf">return</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb1-24" title="24">    <span class="dt">channels</span><span class="op">:</span> []<span class="op">,</span></a>
-<a class="sourceLine" id="cb1-25" title="25">    <span class="dt">publish</span><span class="op">:</span> publish<span class="op">,</span></a>
-<a class="sourceLine" id="cb1-26" title="26">    <span class="dt">subscribe</span><span class="op">:</span> subscribe<span class="op">,</span></a>
-<a class="sourceLine" id="cb1-27" title="27">  <span class="op">};</span></a>
-<a class="sourceLine" id="cb1-28" title="28"><span class="op">}</span>)()<span class="op">;</span></a></code></pre></div>
+<pre><code>Mediator = (function () {
+  var subscribe = function (channel, func, context) {
+    if (!Mediator.channels[channel]) {
+      Mediator.channels[channel] = [];
+    }
+    Mediator.channels[channel].push({ context: context, callback: func });
+    return this;
+  };
+
+  var publish = function (channel) {
+    if (!Mediator.channels[channel]) {
+      return;
+    }
+    var args = Array.prototype.slice.call(arguments, 1);
+    var subscripions = Mediator.channels[channel];
+    for (i = 0; i &lt; subscripions.length; i++) {
+      subscripion = channels[i];
+      subscripion.callback.apply(subscripion.context, args);
+    }
+    return this;
+  };
+
+  return {
+    channels: [],
+    publish: publish,
+    subscribe: subscribe,
+  };
+})();</code></pre>
 <p>Using <code>$.on</code> and <code>$.trigger</code> introduces unnecessary dom dependencies between modules, but in Mediator all the modules have only one dependency <code>Mediator</code>. All the modules can now subscribe to an event using <code>subscribe</code> method.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="va">Mediator</span>.<span class="at">subscribe</span>(<span class="st">&quot;some-event&quot;</span><span class="op">,</span> func<span class="op">,</span> <span class="kw">this</span>)<span class="op">;</span></a></code></pre></div>
+<pre><code>Mediator.subscribe(&quot;some-event&quot;, func, this);</code></pre>
 <p>Also any module can publish event using <code>publish</code> method.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="va">Mediator</span>.<span class="at">publish</span>(<span class="st">&quot;some-event&quot;</span>)<span class="op">;</span></a></code></pre></div>
+<pre><code>Mediator.publish(&quot;some-event&quot;);</code></pre>
 </body>
 </html>

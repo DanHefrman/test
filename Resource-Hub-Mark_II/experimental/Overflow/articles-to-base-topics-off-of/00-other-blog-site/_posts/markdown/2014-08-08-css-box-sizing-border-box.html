@@ -13,31 +13,7 @@
   </style>
 </head>
 <body>
-<!--
-
-
----
- "CSS : box-sizing: border-box;"
-excerpt: "CSS : box-sizing: border-box;"
-date: 2014-08-08 00:00:00 IST
-updated: 2014-08-08 00:00:00 IST
-categories: css
-tags: css
----
-
--->
-&lt;!DOCTYPE html&gt;
-<html>
-<head>
-<title>
-basic-git-workflow
-</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./css/bootstrap.css"> <link rel="stylesheet" href="./css/bootstrap.grid.css"> <link rel="stylesheet" href="./css/bootstrap.min.css"> <link rel="stylesheet" href="./css/bootstrap-reboot.min.css"> <link rel="stylesheet" href="./css/bootstrap.css.map"> <link rel="stylesheet" href="./css/blog-home.css"> <link rel="stylesheet" href="./css/prism.css">
-<script async defer src="./css/prism.js"></script>
-</head>
-<body>
+<p>&lt;!DOCTYPE html&gt;</p>
 <p>The first thing I think, IE done right is its box-model, means how they handle the sizing of the elements. By W3C specification by the width of an element is the width of its content, padding and border is not included in the width. But IE broken the specification they included padding and border in the width.</p>
 <p>{% highlight sh %}</p>
 <h1 id="in-ie">In IE</h1>
@@ -59,6 +35,6 @@ basic-git-workflow
 <h2 id="box-sizing-border-box">* {box-sizing: border-box}</h2>
 <p><a href="http://twitter.com/paul_irish">Paul Irish</a> has written an <a href="http://www.paulirish.com/2012/box-sizing-border-box-ftw/">blog post</a> on advantage of resting all the elements to border-box by default. In non IE browsers, the default box-sizing is <strong>content-box</strong>.</p>
 <p>To reset all elements to border-box,</p>
-<p>{% highlight css %} <em>, </em>:before, *:after { -ms-box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; } {% endhighlight %}</p>
+<p>{% highlight css %} <em>,</em> :before, *:after { -ms-box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; } {% endhighlight %}</p>
 </body>
 </html>

@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<!--docs:
+title: "Chips"
+layout: detail
+section: components
+excerpt: "Chips are compact elements that represent an attribute, text, entity, or action."
+iconId: chip
+path: /catalog/chips/
+-->
+<h1 id="chips">Chips</h1>
+<!--<div class="article__asset">
+  <a class="article__asset-link"
+     href="https://material-components.github.io/material-components-web-catalog/#/component/chips">
+    <img src="{{ site.rootpath }}/images/mdc_web_screenshots/chips.png" width="363" alt="Chips screenshot">
+  </a>
+</div>-->
+<p>Chips are compact elements that allow users to enter information, select a choice, filter content, or trigger an action.</p>
+<h2 id="design-api-documentation">Design &amp; API Documentation</h2>
+<ul class="icon-list">
+<li class="icon-list-item icon-list-item--spec">
+<a href="https://material.io/go/design-chips">Material Design guidelines: Chips</a>
+</li>
+<li class="icon-list-item icon-list-item--link">
+<a href="https://material-components.github.io/material-components-web-catalog/#/component/chips">Demo</a>
+</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<pre><code>npm install @material/chips</code></pre>
+<h2 id="basic-usage">Basic Usage</h2>
+<h3 id="html-structure">HTML Structure</h3>
+<blockquote>
+<p><strong>Note</strong>: Due to IE11 and Edge’s lack of support for the <code>:focus-within</code> selector, keyboard navigation of the chip set will not be visually obvious.</p>
+</blockquote>
+<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip-set&quot;</span><span class="ot"> role=</span><span class="st">&quot;grid&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip&quot;</span><span class="ot"> role=</span><span class="st">&quot;row&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-3" title="3">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip__ripple&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb2-4" title="4">    <span class="kw">&lt;span</span><span class="ot"> role=</span><span class="st">&quot;gridcell&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-5" title="5">      <span class="kw">&lt;span</span><span class="ot"> role=</span><span class="st">&quot;button&quot;</span><span class="ot"> tabindex=</span><span class="st">&quot;0&quot;</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip__primary-action&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-6" title="6">        <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip__text&quot;</span><span class="kw">&gt;</span>Chip One<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb2-7" title="7">      <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb2-8" title="8">    <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb2-9" title="9">  <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb2-10" title="10">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip&quot;</span><span class="ot"> role=</span><span class="st">&quot;row&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-11" title="11">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip__ripple&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb2-12" title="12">    <span class="kw">&lt;span</span><span class="ot"> role=</span><span class="st">&quot;gridcell&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-13" title="13">      <span class="kw">&lt;span</span><span class="ot"> role=</span><span class="st">&quot;button&quot;</span><span class="ot"> tabindex=</span><span class="st">&quot;-1&quot;</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip__primary-action&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-14" title="14">        <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip__text&quot;</span><span class="kw">&gt;</span>Chip Two<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb2-15" title="15">      <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb2-16" title="16">    <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb2-17" title="17">  <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb2-18" title="18">  ...</a>
+<a class="sourceLine" id="cb2-19" title="19"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
+<h3 id="styles">Styles</h3>
+<pre class="scss"><code>@use &quot;@material/chips/mdc-chips&quot;;</code></pre>
+<h3 id="javascript-instantiation">JavaScript Instantiation</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="im">import</span> <span class="op">{</span>MDCChipSet<span class="op">}</span> <span class="im">from</span> <span class="st">&#39;@material/chips&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="kw">const</span> chipSetEl <span class="op">=</span> <span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&#39;.mdc-chip-set&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="kw">const</span> chipSet <span class="op">=</span> <span class="kw">new</span> <span class="at">MDCChipSet</span>(chipSetEl)<span class="op">;</span></a></code></pre></div>
+<blockquote>
+<p>See <a href="../../docs/importing-js.md">Importing the JS component</a> for more information on how to import JavaScript.</p>
+</blockquote>
+<h2 id="variants">Variants</h2>
+<h3 id="leading-and-trailing-icons">Leading and Trailing Icons</h3>
+<p>You can optionally add a leading icon (i.e. thumbnail) and/or a trailing “remove” icon to a chip. To add an icon, add an <code>i</code> element with your preferred icon, give it a class of <code>mdc-chip__icon</code>, and a class of either <code>mdc-chip__icon--leading</code> or <code>mdc-chip__icon--trailing</code>.</p>
+<p>We recommend using <a href="https://material.io/tools/icons/">Material Icons</a> from Google Fonts:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">&lt;head&gt;</span></a>
+<a class="sourceLine" id="cb5-2" title="2">  <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href=</span><span class="st">&quot;https://fonts.googleapis.com/icon?family=Material+Icons&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="kw">&lt;/head&gt;</span></a></code></pre></div>
+<p>However, you can also use SVG, <a href="https://fontawesome.com/">Font Awesome</a>, or any other icon library you wish.</p>
+<h4 id="leading-icon">Leading icon</h4>
+<div class="sourceCode" id="cb6"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip&quot;</span><span class="ot"> role=</span><span class="st">&quot;row&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb6-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip__ripple&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb6-3" title="3">  <span class="kw">&lt;i</span><span class="ot"> class=</span><span class="st">&quot;material-icons mdc-chip__icon mdc-chip__icon--leading&quot;</span><span class="kw">&gt;</span>event<span class="kw">&lt;/i&gt;</span></a>
+<a class="sourceLine" id="cb6-4" title="4">  <span class="kw">&lt;span</span><span class="ot"> role=</span><span class="st">&quot;gridcell&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb6-5" title="5">    <span class="kw">&lt;span</span><span class="ot"> role=</span><span class="st">&quot;button&quot;</span><span class="ot"> tabindex=</span><span class="st">&quot;0&quot;</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip__primary-action&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb6-6" title="6">      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip__text&quot;</span><span class="kw">&gt;</span>Add to calendar<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb6-7" title="7">    <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb6-8" title="8">  <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb6-9" title="9"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
+<h4 id="trailing-icon">Trailing icon</h4>
+<p>A trailing icon comes with the functionality to remove the chip from the set. If you’re adding a trailing icon, also set <code>tabindex="0"</code> and <code>role="button"</code> to make it accessible by keyboard and screenreader. Trailing icons should only be added to <a href="#input-chips">input chips</a>.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip&quot;</span><span class="ot"> role=</span><span class="st">&quot;row&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb7-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip__ripple&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb7-3" title="3">  <span class="kw">&lt;span</span><span class="ot"> role=</span><span class="st">&quot;gridcell&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb7-4" title="4">    <span class="kw">&lt;span</span><span class="ot"> role=</span><span class="st">&quot;button&quot;</span><span class="ot"> tabindex=</span><span class="st">&quot;0&quot;</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip__primary-action&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb7-5" title="5">      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip__text&quot;</span><span class="kw">&gt;</span>Jane Smith<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb7-6" title="6">    <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb7-7" title="7">  <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb7-8" title="8">  <span class="kw">&lt;span</span><span class="ot"> role=</span><span class="st">&quot;gridcell&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb7-9" title="9">    <span class="kw">&lt;i</span><span class="ot"> class=</span><span class="st">&quot;material-icons mdc-chip__icon mdc-chip__icon--trailing&quot;</span><span class="ot"> tabindex=</span><span class="st">&quot;-1&quot;</span><span class="ot"> role=</span><span class="st">&quot;button&quot;</span><span class="kw">&gt;</span>cancel<span class="kw">&lt;/i&gt;</span></a>
+<a class="sourceLine" id="cb7-10" title="10">  <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb7-11" title="11"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
+<h3 id="choice-chips">Choice Chips</h3>
+<p>Choice chips are a variant of chips which allow single selection from a set of options. To define a set of chips as choice chips, add the class <code>mdc-chip-set--choice</code> to the chip set element.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip-set mdc-chip-set--choice&quot;</span><span class="ot"> role=</span><span class="st">&quot;grid&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb8-2" title="2">  ...</a>
+<a class="sourceLine" id="cb8-3" title="3"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
+<h3 id="filter-chips">Filter Chips</h3>
+<p>Filter chips are a variant of chips which allow multiple selection from a set of options. To define a set of chips as filter chips, add the class <code>mdc-chip-set--filter</code> to the chip set element. When a filter chip is selected, a checkmark appears as the leading icon. If the chip already has a leading icon, the checkmark replaces it. This requires the HTML structure of a filter chip to differ from other chips:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip-set mdc-chip-set--filter&quot;</span><span class="ot"> role=</span><span class="st">&quot;grid&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb9-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip&quot;</span><span class="ot"> role=</span><span class="st">&quot;row&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb9-3" title="3">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip__ripple&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb9-4" title="4">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip__checkmark&quot;</span> <span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb9-5" title="5">      <span class="kw">&lt;svg</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip__checkmark-svg&quot;</span><span class="ot"> viewBox=</span><span class="st">&quot;-2 -3 30 30&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb9-6" title="6">        <span class="kw">&lt;path</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip__checkmark-path&quot;</span><span class="ot"> fill=</span><span class="st">&quot;none&quot;</span><span class="ot"> stroke=</span><span class="st">&quot;black&quot;</span></a>
+<a class="sourceLine" id="cb9-7" title="7"><span class="ot">              d=</span><span class="st">&quot;M1.73,12.91 8.1,19.28 22.79,4.59&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb9-8" title="8">      <span class="kw">&lt;/svg&gt;</span></a>
+<a class="sourceLine" id="cb9-9" title="9">    <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb9-10" title="10">    <span class="kw">&lt;span</span><span class="ot"> role=</span><span class="st">&quot;gridcell&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb9-11" title="11">      <span class="kw">&lt;span</span><span class="ot"> role=</span><span class="st">&quot;checkbox&quot;</span><span class="ot"> tabindex=</span><span class="st">&quot;0&quot;</span><span class="ot"> aria-checked=</span><span class="st">&quot;false&quot;</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip__primary-action&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb9-12" title="12">        <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip__text&quot;</span><span class="kw">&gt;</span>Filterable content<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb9-13" title="13">      <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb9-14" title="14">    <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb9-15" title="15">  <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb9-16" title="16">  ...</a>
+<a class="sourceLine" id="cb9-17" title="17"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
+<p>To use a leading icon in a filter chip, put the <code>mdc-chip__icon--leading</code> element <em>before</em> the <code>mdc-chip__checkmark</code> element:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip-set mdc-chip-set--filter&quot;</span><span class="ot"> role=</span><span class="st">&quot;grid&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb10-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip&quot;</span><span class="ot"> role=</span><span class="st">&quot;row&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb10-3" title="3">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip__ripple&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb10-4" title="4">    <span class="kw">&lt;i</span><span class="ot"> class=</span><span class="st">&quot;material-icons mdc-chip__icon mdc-chip__icon--leading&quot;</span><span class="kw">&gt;</span>face<span class="kw">&lt;/i&gt;</span></a>
+<a class="sourceLine" id="cb10-5" title="5">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip__checkmark&quot;</span> <span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb10-6" title="6">      <span class="kw">&lt;svg</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip__checkmark-svg&quot;</span><span class="ot"> viewBox=</span><span class="st">&quot;-2 -3 30 30&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb10-7" title="7">        <span class="kw">&lt;path</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip__checkmark-path&quot;</span><span class="ot"> fill=</span><span class="st">&quot;none&quot;</span><span class="ot"> stroke=</span><span class="st">&quot;black&quot;</span></a>
+<a class="sourceLine" id="cb10-8" title="8"><span class="ot">              d=</span><span class="st">&quot;M1.73,12.91 8.1,19.28 22.79,4.59&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb10-9" title="9">      <span class="kw">&lt;/svg&gt;</span></a>
+<a class="sourceLine" id="cb10-10" title="10">    <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb10-11" title="11">    <span class="kw">&lt;span</span><span class="ot"> role=</span><span class="st">&quot;gridcell&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb10-12" title="12">      <span class="kw">&lt;span</span><span class="ot"> role=</span><span class="st">&quot;checkbox&quot;</span><span class="ot"> tabindex=</span><span class="st">&quot;0&quot;</span><span class="ot"> aria-checked=</span><span class="st">&quot;false&quot;</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip__primary-action&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb10-13" title="13">        <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip__text&quot;</span><span class="kw">&gt;</span>Filterable content<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb10-14" title="14">      <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb10-15" title="15">    <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb10-16" title="16">  <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb10-17" title="17">  ...</a>
+<a class="sourceLine" id="cb10-18" title="18"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
+<h3 id="input-chips">Input Chips</h3>
+<p>Input chips are a variant of chips which enable user input by converting text into chips. To define a set of chips as input chips, add the class <code>mdc-chip-set--input</code> to the chip set element.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip-set mdc-chip-set--input&quot;</span><span class="ot"> role=</span><span class="st">&quot;grid&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb11-2" title="2">  ...</a>
+<a class="sourceLine" id="cb11-3" title="3"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
+<h4 id="adding-chips-to-the-dom">Adding Chips to the DOM</h4>
+<p>The MDC Chips package does not handle the process of converting text into chips, in order to remain framework-agnostic. The <code>MDCChipSet</code> component exposes an <code>addChip</code> method, which accepts an element which is expected to already be inserted within the Chip Set element after any existing chips. The <code>MDCChipSet</code> component will then handle creating and tracking a <code>MDCChip</code> component instance.</p>
+<p>For example:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb12-1" title="1"><span class="va">input</span>.<span class="at">addEventListener</span>(<span class="st">&#39;keydown&#39;</span><span class="op">,</span> <span class="kw">function</span>(event) <span class="op">{</span></a>
+<a class="sourceLine" id="cb12-2" title="2">  <span class="cf">if</span> (<span class="va">event</span>.<span class="at">key</span> <span class="op">===</span> <span class="st">&#39;Enter&#39;</span> <span class="op">||</span> <span class="va">event</span>.<span class="at">keyCode</span> <span class="op">===</span> <span class="dv">13</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb12-3" title="3">    <span class="kw">const</span> chipEl <span class="op">=</span> <span class="va">document</span>.<span class="at">createElement</span>(<span class="st">&#39;div&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb12-4" title="4">    <span class="co">// ... perform operations to properly populate/decorate chip element ...</span></a>
+<a class="sourceLine" id="cb12-5" title="5">    <span class="va">chipSetEl</span>.<span class="at">appendChild</span>(chipEl)<span class="op">;</span></a>
+<a class="sourceLine" id="cb12-6" title="6">    <span class="va">chipSet</span>.<span class="at">addChip</span>(chipEl)<span class="op">;</span></a>
+<a class="sourceLine" id="cb12-7" title="7">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb12-8" title="8"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
+<blockquote>
+<p><em>NOTE</em>: <code>MDCChipSet</code> will generate a unique ID to apply to each added chip’s element if it does not already have an ID when it is passed to <code>addChip</code>. This is used to distinguish chips during user interactions.</p>
+</blockquote>
+<h4 id="removing-chips-from-the-dom">Removing Chips from the DOM</h4>
+<p>By default, input chips are removed in response to clicking the trailing remove icon in the chip. Removal can also be triggered by calling <code>MDCChip</code>’s <code>beginExit()</code> method.</p>
+<p>Individual <code>MDCChip</code> instances will emit a <code>MDCChip:removal</code> event once the exit transition ends. <code>MDCChipSet</code> will handle destroying the <code>MDCChip</code> instance in response to <code>MDCChip:removal</code>, but it must be removed from the DOM manually. You can listen for <code>MDCChip:removal</code> from the parent Chip Set or any ancestor, since the event bubbles:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb13-1" title="1"><span class="va">chipSet</span>.<span class="at">listen</span>(<span class="st">&#39;MDCChip:removal&#39;</span><span class="op">,</span> <span class="kw">function</span>(event) <span class="op">{</span></a>
+<a class="sourceLine" id="cb13-2" title="2">  <span class="va">chipSetEl</span>.<span class="at">removeChild</span>(<span class="va">event</span>.<span class="va">detail</span>.<span class="at">root</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb13-3" title="3"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
+<h3 id="pre-selected">Pre-selected</h3>
+<p>To display a pre-selected filter or choice chip, add the class <code>mdc-chip--selected</code> to the root chip element.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip-set mdc-chip-set--choice&quot;</span><span class="ot"> role=</span><span class="st">&quot;grid&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb14-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip mdc-chip--selected&quot;</span><span class="ot"> role=</span><span class="st">&quot;row&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb14-3" title="3">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip__ripple&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb14-4" title="4">    <span class="kw">&lt;span</span><span class="ot"> role=</span><span class="st">&quot;gridcell&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb14-5" title="5">      <span class="kw">&lt;span</span><span class="ot"> role=</span><span class="st">&quot;radio&quot;</span><span class="ot"> tabindex=</span><span class="st">&quot;0&quot;</span><span class="ot"> aria-checked=</span><span class="st">&quot;true&quot;</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip__primary-action&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb14-6" title="6">        <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip__text&quot;</span><span class="kw">&gt;</span>Add to calendar<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb14-7" title="7">      <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb14-8" title="8">    <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb14-9" title="9">  <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb14-10" title="10"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
+<p>To pre-select filter chips that have a leading icon, also add the class <code>mdc-chip__icon--leading-hidden</code> to the <code>mdc-chip__icon--leading</code> element. This will ensure that the checkmark displaces the leading icon.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip-set mdc-chip-set--filter&quot;</span><span class="ot"> role=</span><span class="st">&quot;grid&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb15-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip mdc-chip--selected&quot;</span><span class="ot"> role=</span><span class="st">&quot;row&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb15-3" title="3">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip__ripple&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb15-4" title="4">    <span class="kw">&lt;i</span><span class="ot"> class=</span><span class="st">&quot;material-icons mdc-chip__icon mdc-chip__icon--leading mdc-chip__icon--leading-hidden&quot;</span><span class="kw">&gt;</span>face<span class="kw">&lt;/i&gt;</span></a>
+<a class="sourceLine" id="cb15-5" title="5">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip__checkmark&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb15-6" title="6">      <span class="kw">&lt;svg</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip__checkmark-svg&quot;</span><span class="ot"> viewBox=</span><span class="st">&quot;-2 -3 30 30&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb15-7" title="7">        <span class="kw">&lt;path</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip__checkmark-path&quot;</span><span class="ot"> fill=</span><span class="st">&quot;none&quot;</span><span class="ot"> stroke=</span><span class="st">&quot;black&quot;</span></a>
+<a class="sourceLine" id="cb15-8" title="8"><span class="ot">              d=</span><span class="st">&quot;M1.73,12.91 8.1,19.28 22.79,4.59&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb15-9" title="9">      <span class="kw">&lt;/svg&gt;</span></a>
+<a class="sourceLine" id="cb15-10" title="10">    <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb15-11" title="11">    <span class="kw">&lt;span</span><span class="ot"> role=</span><span class="st">&quot;gridcell&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb15-12" title="12">      <span class="kw">&lt;span</span><span class="ot"> role=</span><span class="st">&quot;checkbox&quot;</span><span class="ot"> tabindex=</span><span class="st">&quot;0&quot;</span><span class="ot"> aria-checked=</span><span class="st">&quot;true&quot;</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip__primary-action&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb15-13" title="13">        <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip__text&quot;</span><span class="kw">&gt;</span>Filterable content<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb15-14" title="14">      <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb15-15" title="15">    <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb15-16" title="16">  <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb15-17" title="17"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
+<h2 id="additional-information">Additional Information</h2>
+<h3 id="accessibility">Accessibility</h3>
+<p>Material Design spec advises that touch targets should be at least 48 x 48 px. To meet this requirement, add the following to your chip:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb16-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-touch-target-wrapper&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb16-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip mdc-chip--touch&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb16-3" title="3">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip__ripple&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb16-4" title="4">    <span class="kw">&lt;span</span><span class="ot"> role=</span><span class="st">&quot;gridcell&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb16-5" title="5">      <span class="kw">&lt;span</span><span class="ot"> role=</span><span class="st">&quot;button&quot;</span><span class="ot"> tabindex=</span><span class="st">&quot;0&quot;</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip__primary-action&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb16-6" title="6">        <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip__touch&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb16-7" title="7">        <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-chip__text&quot;</span><span class="kw">&gt;</span>Chip One<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb16-8" title="8">      <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb16-9" title="9">    <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb16-10" title="10">  <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb16-11" title="11"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
+<p>Note that the outer <code>mdc-touch-target-wrapper</code> element is only necessary if you want to avoid potentially overlapping touch targets on adjacent elements (due to collapsing margins).</p>
+<h2 id="style-customization">Style Customization</h2>
+<h3 id="css-classes">CSS Classes</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>CSS Class</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>mdc-chip-set</code></td>
+<td>Mandatory. Indicates the set that the chip belongs to.</td>
+</tr>
+<tr class="even">
+<td><code>mdc-chip-set--input</code></td>
+<td>Optional. Indicates that the chips in the set are input chips, which enable user input by converting text into chips.</td>
+</tr>
+<tr class="odd">
+<td><code>mdc-chip-set--choice</code></td>
+<td>Optional. Indicates that the chips in the set are choice chips, which allow a single selection from a set of options.</td>
+</tr>
+<tr class="even">
+<td><code>mdc-chip-set--filter</code></td>
+<td>Optional. Indicates that the chips in the set are filter chips, which allow multiple selection from a set of options.</td>
+</tr>
+<tr class="odd">
+<td><code>mdc-chip</code></td>
+<td>Mandatory.</td>
+</tr>
+<tr class="even">
+<td><code>mdc-chip__ripple</code></td>
+<td>Mandatory. Indicates the element which shows the ripple styling.</td>
+</tr>
+<tr class="odd">
+<td><code>mdc-chip--selected</code></td>
+<td>Optional. Indicates that the chip is selected.</td>
+</tr>
+<tr class="even">
+<td><code>mdc-chip__text</code></td>
+<td>Mandatory. Indicates the text content of the chip.</td>
+</tr>
+<tr class="odd">
+<td><code>mdc-chip__icon</code></td>
+<td>Optional. Indicates an icon in the chip. We recommend using <a href="https://material.io/tools/icons/">Material Icons</a> from Google Fonts.</td>
+</tr>
+<tr class="even">
+<td><code>mdc-chip__icon--leading</code></td>
+<td>Optional. Indicates a leading icon in the chip.</td>
+</tr>
+<tr class="odd">
+<td><code>mdc-chip__icon--leading-hidden</code></td>
+<td>Optional. Hides the leading icon in a filter chip when the chip is selected.</td>
+</tr>
+<tr class="even">
+<td><code>mdc-chip__icon--trailing</code></td>
+<td>Optional. Indicates a trailing icon which removes the chip from the DOM. Only use with input chips.</td>
+</tr>
+<tr class="odd">
+<td><code>mdc-chip__checkmark</code></td>
+<td>Optional. Indicates the checkmark in a filter chip.</td>
+</tr>
+<tr class="even">
+<td><code>mdc-chip__checkmark-svg</code></td>
+<td>Mandatory with the use of <code>mdc-chip__checkmark</code>. Indicates the checkmark SVG element in a filter chip.</td>
+</tr>
+<tr class="odd">
+<td><code>mdc-chip__checkmark-path</code></td>
+<td>Mandatory with the use of <code>mdc-chip__checkmark</code>. Indicates the checkmark SVG path in a filter chip.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><em>NOTE</em>: Every element that has an <code>mdc-chip__icon</code> class must also have either the <code>mdc-chip__icon--leading</code> or <code>mdc-chip__icon--trailing</code> class.</p>
+</blockquote>
+<p><code>mdc-chip__action--primary</code> | Mandatory. Placed on the <code>mdc-chip__text</code> element. <code>mdc-chip__action--trailing</code> | Optinoal. Placed on the <code>mdc-chip__icon--trailing</code> when it should be accessible via keyboard navigation. <code>mdc-chip--deletable</code> | Optional. Indicates that the chip should be removable by the delete or backspace key.</p>
+<h3 id="sass-mixins">Sass Mixins</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mixin</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>set-spacing($gap-size)</code></td>
+<td>Customizes the amount of space between each chip in the set</td>
+</tr>
+<tr class="even">
+<td><code>shape-radius($radius, $rtl-reflexive)</code></td>
+<td>Sets the rounded shape to chip with given radius size. Set <code>$rtl-reflexive</code> to true to flip radius values in RTL context, defaults to false.</td>
+</tr>
+<tr class="odd">
+<td><code>fill-color-accessible($color)</code></td>
+<td>Customizes the background fill color for a chip, and updates the chip’s ink, icon and ripple colors to meet accessibility standards</td>
+</tr>
+<tr class="even">
+<td><code>fill-color($color)</code></td>
+<td>Customizes the background fill color for a chip</td>
+</tr>
+<tr class="odd">
+<td><code>ink-color($color)</code></td>
+<td>Customizes the text ink color for a chip, and updates the chip’s ripple color to match</td>
+</tr>
+<tr class="even">
+<td><code>selected-ink-color($color)</code></td>
+<td>Customizes text ink and ripple color of a chip in the <em>selected</em> state</td>
+</tr>
+<tr class="odd">
+<td><code>outline($width, $style, $color)</code></td>
+<td>Customizes the outline properties for a chip</td>
+</tr>
+<tr class="even">
+<td><code>outline-width($width, $horizontal-padding)</code></td>
+<td>Customizes the outline width for a chip. <code>$horizontal-padding</code> is only required in cases where <code>horizontal-padding</code> is also included with a custom value</td>
+</tr>
+<tr class="odd">
+<td><code>outline-style($style)</code></td>
+<td>Customizes the outline style for a chip</td>
+</tr>
+<tr class="even">
+<td><code>outline-color($color)</code></td>
+<td>Customizes the outline color for a chip</td>
+</tr>
+<tr class="odd">
+<td><code>height($height)</code></td>
+<td>Customizes the height for a chip</td>
+</tr>
+<tr class="even">
+<td><code>horizontal-padding($padding)</code></td>
+<td>Customizes the horizontal padding for a chip</td>
+</tr>
+<tr class="odd">
+<td><code>leading-icon-color($color, $opacity)</code></td>
+<td>Customizes the color of a leading icon in a chip, optionally customizes opacity</td>
+</tr>
+<tr class="even">
+<td><code>trailing-icon-color($color, $opacity, $hover-opacity, $focus-opacity)</code></td>
+<td>Customizes the color of a trailing icon in a chip, optionally customizes regular/hover/focus opacities</td>
+</tr>
+<tr class="odd">
+<td><code>leading-icon-size($size)</code></td>
+<td>Customizes the size of a leading icon in a chip</td>
+</tr>
+<tr class="even">
+<td><code>trailing-icon-size($size)</code></td>
+<td>Customizes the size of a trailing icon in a chip</td>
+</tr>
+<tr class="odd">
+<td><code>leading-icon-margin($left-margin, $right-margin)</code></td>
+<td>Customizes the margin of a leading icon in a chip</td>
+</tr>
+<tr class="even">
+<td><code>trailing-icon-margin($left-margin, $right-margin)</code></td>
+<td>Customizes the margin of a trailing icon in a chip</td>
+</tr>
+<tr class="odd">
+<td><code>elevation-transition()</code></td>
+<td>Adds a MDC elevation transition to the chip. This should be used instead of setting transition with <code>mdc-elevation-transition-value()</code> directly when a box shadow transition is desired for a chip</td>
+</tr>
+<tr class="even">
+<td><code>density($density-scale)</code></td>
+<td>Sets density scale for chip. Supported density scales are <code>-2</code>, <code>-1</code> and <code>0</code> (default).</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><em>NOTE</em>: <code>mdc-chip-set-spacing</code> also sets the amount of space between a chip and the edge of the set it’s contained in.</p>
+</blockquote>
+<h2 id="mdcchip-and-mdcchipset-properties-and-methods"><code>MDCChip</code> and <code>MDCChipSet</code> Properties and Methods</h2>
+<p>The MDC Chips package is composed of two JavaScript classes: * <code>MDCChip</code> defines the behavior of a single chip. * <code>MDCChipSet</code> defines the behavior of chips within a specific set. For example, chips in an input chip set behave differently from those in a filter chip set.</p>
+<p>To use the <code>MDCChip</code> and <code>MDCChipSet</code> classes, <a href="../../docs/importing-js.md">import</a> both classes from <code>@material/chips</code>.</p>
+<h3 id="mdcchip"><code>MDCChip</code></h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method Signature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>beginExit() =&gt; void</code></td>
+<td>Proxies to the foundation’s <code>beginExit</code> method</td>
+</tr>
+<tr class="even">
+<td><code>focusPrimaryAction() =&gt; void</code></td>
+<td>Proxies to the foundation’s <code>focusPrimaryAction</code> method</td>
+</tr>
+<tr class="odd">
+<td><code>focusTrailingAction() =&gt; void</code></td>
+<td>Proxies to the foundation’s <code>focusTrailingAction</code> method</td>
+</tr>
+<tr class="even">
+<td><code>removeFocus() =&gt; void</code></td>
+<td>Proxies to the foundation’s <code>removeFocus</code> method</td>
+</tr>
+<tr class="odd">
+<td><code>setSelectedFromChipSet(selected: boolean) =&gt; void</code></td>
+<td>Proxies to the foundation’s <code>setSelectedFromChipset</code> method (only called from the chip set)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Property</th>
+<th>Value Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td><code>string</code> (read-only)</td>
+<td>Unique identifier on the chip*</td>
+</tr>
+<tr class="even">
+<td><code>selected</code></td>
+<td><code>boolean</code></td>
+<td>Proxies to the foundation’s <code>isSelected</code>/<code>setSelected</code> methods</td>
+</tr>
+<tr class="odd">
+<td><code>shouldRemoveOnTrailingIconClick</code></td>
+<td><code>boolean</code></td>
+<td>Proxies to the foundation’s <code>getShouldRemoveOnTrailingIconClick</code>/<code>setShouldRemoveOnTrailingIconClick</code> methods**</td>
+</tr>
+<tr class="even">
+<td><code>ripple</code></td>
+<td><code>MDCRipple</code> (read-only)</td>
+<td>The <code>MDCRipple</code> instance for the root element that <code>MDCChip</code> initializes</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>*<em>NOTE</em>: This will be the same as the <code>id</code> attribute on the root element. If an <code>id</code> is not provided, a unique one will be generated by <code>MDCChipSet.addChip()</code>.</p>
+</blockquote>
+<blockquote>
+<p>**<em>NOTE</em>: If <code>shouldRemoveOnTrailingIconClick</code> is set to false, you must manually call <code>beginExit()</code> on the chip to remove it.</p>
+</blockquote>
+<h4 id="events">Events</h4>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Event Name</th>
+<th><code>event.detail</code></th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>MDCChip:interaction</code></td>
+<td><code>{chipId: string}</code></td>
+<td>Indicates the chip was interacted with (via click/tap or Enter key)</td>
+</tr>
+<tr class="even">
+<td><code>MDCChip:selection</code></td>
+<td><code>{chipId: string, selected: boolean}</code></td>
+<td>Indicates the chip’s selection state has changed (for choice/filter chips)</td>
+</tr>
+<tr class="odd">
+<td><code>MDCChip:removal</code></td>
+<td><code>{chipId: string, removedAnnouncement: string|null}</code></td>
+<td>Indicates the chip is ready to be removed from the DOM</td>
+</tr>
+<tr class="even">
+<td><code>MDCChip:trailingIconInteraction</code></td>
+<td><code>{chipId: string}</code></td>
+<td>Indicates the chip’s trailing icon was interacted with (via click/tap or Enter key)</td>
+</tr>
+<tr class="odd">
+<td><code>MDCChip:navigation</code></td>
+<td><code>{chipId: string, key: string, source: FocusSource}</code></td>
+<td>Indicates a navigation event has occurred on a chip</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><em>NOTE</em>: All of <code>MDCChip</code>’s emitted events bubble up through the DOM.</p>
+</blockquote>
+<h3 id="mdcchipset"><code>MDCChipSet</code></h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method Signature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>addChip(chipEl: Element) =&gt; void</code></td>
+<td>Adds a new <code>MDCChip</code> instance to the chip set based on the given <code>mdc-chip</code> element</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Property</th>
+<th>Value Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>chips</code></td>
+<td><code>ReadonlyArray&lt;MDCChip&gt;</code></td>
+<td>An array of the <code>MDCChip</code> objects that represent chips in the set</td>
+</tr>
+<tr class="even">
+<td><code>selectedChipIds</code></td>
+<td><code>ReadonlyArray&lt;string&gt;</code></td>
+<td>An array of the IDs of all selected chips</td>
+</tr>
+</tbody>
+</table>
+<h2 id="usage-within-web-frameworks">Usage within Web Frameworks</h2>
+<p>If you are using a JavaScript framework, such as React or Angular, you can create Chips for your framework. Depending on your needs, you can use the <em>Simple Approach: Wrapping MDC Web Vanilla Components</em>, or the <em>Advanced Approach: Using Foundations and Adapters</em>. Please follow the instructions <a href="../../docs/integrating-into-frameworks.md">here</a>.</p>
+<h3 id="adapters-mdcchipadapter-and-mdcchipsetadapter">Adapters: <code>MDCChipAdapter</code> and <code>MDCChipSetAdapter</code></h3>
+<p>See <a href="chip/component.ts"><code>chip/component.ts</code></a> and <a href="chip-set/component.ts"><code>chip-set/component.ts</code></a> for vanilla DOM implementations of these adapter APIs for reference.</p>
+<h4 id="mdcchipadapter"><code>MDCChipAdapter</code></h4>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method Signature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>addClass(className: string) =&gt; void</code></td>
+<td>Adds a class to the root element</td>
+</tr>
+<tr class="even">
+<td><code>removeClass(className: string) =&gt; void</code></td>
+<td>Removes a class from the root element</td>
+</tr>
+<tr class="odd">
+<td><code>hasClass(className: string) =&gt; boolean</code></td>
+<td>Returns true if the root element contains the given class</td>
+</tr>
+<tr class="even">
+<td><code>addClassToLeadingIcon(className: string) =&gt; void</code></td>
+<td>Adds a class to the leading icon element</td>
+</tr>
+<tr class="odd">
+<td><code>removeClassFromLeadingIcon(className: string) =&gt; void</code></td>
+<td>Removes a class from the leading icon element</td>
+</tr>
+<tr class="even">
+<td><code>eventTargetHasClass(target: EventTarget, className: string) =&gt; boolean</code></td>
+<td>Returns true if target has className, false otherwise</td>
+</tr>
+<tr class="odd">
+<td><code>notifyInteraction() =&gt; void</code></td>
+<td>Notifies the Chip Set that the chip has been interacted with*</td>
+</tr>
+<tr class="even">
+<td><code>notifySelection(selected: boolean, chipSetShouldIgnore: boolean) =&gt; void</code></td>
+<td>Notifies the Chip Set that the chip has been selected or deselected**. When <code>chipSetShouldIgnore</code> is <code>true</code>, the chip set does not process the event.</td>
+</tr>
+<tr class="odd">
+<td><code>notifyTrailingIconInteraction() =&gt; void</code></td>
+<td>Notifies the Chip Set that the chip’s trailing icon has been interacted with*</td>
+</tr>
+<tr class="even">
+<td><code>notifyRemoval() =&gt; void</code></td>
+<td>Notifies the Chip Set that the chip will be removed***</td>
+</tr>
+<tr class="odd">
+<td><code>getComputedStyleValue(propertyName: string) =&gt; string</code></td>
+<td>Returns the computed property value of the given style property on the root element</td>
+</tr>
+<tr class="even">
+<td><code>setStyleProperty(propertyName: string, value: string) =&gt; void</code></td>
+<td>Sets the property value of the given style property on the root element</td>
+</tr>
+<tr class="odd">
+<td><code>hasLeadingIcon() =&gt; boolean</code></td>
+<td>Returns whether the chip has a leading icon</td>
+</tr>
+<tr class="even">
+<td><code>getRootBoundingClientRect() =&gt; ClientRect</code></td>
+<td>Returns the bounding client rect of the root element</td>
+</tr>
+<tr class="odd">
+<td><code>getCheckmarkBoundingClientRect() =&gt; ClientRect \| null</code></td>
+<td>Returns the bounding client rect of the checkmark element or null if it doesn’t exist</td>
+</tr>
+<tr class="even">
+<td><code>notifyNavigation(key: string, source: EventSource) =&gt; void</code></td>
+<td>Notifies the Chip Set that a navigation event has occurred</td>
+</tr>
+<tr class="odd">
+<td><code>setPrimaryActionAttr(attr: string, value: string) =&gt; void</code></td>
+<td>Sets an attribute on the primary action element to the given value</td>
+</tr>
+<tr class="even">
+<td><code>focusPrimaryAction() =&gt; void</code></td>
+<td>Gives focus to the primary action element</td>
+</tr>
+<tr class="odd">
+<td><code>hasTrailingAction() =&gt; boolean</code></td>
+<td>Returns <code>true</code> if the chip has a trailing action element</td>
+</tr>
+<tr class="even">
+<td><code>setTrailingActionAttr(attr: string, value: string) =&gt; void</code></td>
+<td>Sets an attribute on the trailing action element to the given value, if the element exists</td>
+</tr>
+<tr class="odd">
+<td><code>focusTrailingAction() =&gt; void</code></td>
+<td>Gives focus to the trailing action element if present</td>
+</tr>
+<tr class="even">
+<td><code>getAttribute(attr: string) =&gt; string|null</code></td>
+<td>Returns the string value of the attribute if it exists, otherwise <code>null</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>*<em>NOTE</em>: <code>notifyInteraction</code> and <code>notifyTrailingIconInteraction</code> must pass along the target chip’s ID, and must be observable by the parent <code>mdc-chip-set</code> element (e.g. via DOM event bubbling).</p>
+</blockquote>
+<blockquote>
+<p>**<em>NOTE</em>: <code>notifySelection</code> must pass along the target chip’s ID and selected state, and must be observable by the parent <code>mdc-chip-set</code> element (e.g. via DOM event bubbling).</p>
+</blockquote>
+<blockquote>
+<p>***<em>NOTE</em>: <code>notifyRemoval</code> must pass along the target chip’s ID and its root element, and must be observable by the parent <code>mdc-chip-set</code> element (e.g. via DOM event bubbling).</p>
+</blockquote>
+<h4 id="mdcchipsetadapter"><code>MDCChipSetAdapter</code></h4>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method Signature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>hasClass(className: string) =&gt; boolean</code></td>
+<td>Returns whether the chip set element has the given class</td>
+</tr>
+<tr class="even">
+<td><code>removeChipAtIndex(index: number) =&gt; void</code></td>
+<td>Removes the chip with the given <code>index</code> from the chip set</td>
+</tr>
+<tr class="odd">
+<td><code>selectChipAtIndex(index: string, selected: boolean, shouldNotifyClients: boolean) =&gt; void</code></td>
+<td>Calls <code>MDCChip#setSelectedFromChipSet(selected)</code> on the chip at the given <code>index</code>. Will emit a selection event if called with <code>shouldNotifyClients</code> set to <code>true</code>. The emitted selection event will be ignored by the <code>MDCChipSetFoundation</code>.</td>
+</tr>
+<tr class="even">
+<td><code>getIndexOfChipById(id: string) =&gt; number</code></td>
+<td>Returns the index of the chip with the matching <code>id</code> or -1</td>
+</tr>
+<tr class="odd">
+<td><code>focusChipPrimaryActionAtIndex(index: number) =&gt; void</code></td>
+<td>Calls <code>MDCChip#focusPrimaryAction()</code> on the chip at the given <code>index</code></td>
+</tr>
+<tr class="even">
+<td><code>focusChipTrailingActionAtIndex(index: number) =&gt; void</code></td>
+<td>Calls <code>MDCChip#focusTrailingAction()</code> on the chip at the given <code>index</code></td>
+</tr>
+<tr class="odd">
+<td><code>isRTL() =&gt; boolean</code></td>
+<td>Returns <code>true</code> if the text direction is RTL</td>
+</tr>
+<tr class="even">
+<td><code>getChipListCount() =&gt; number</code></td>
+<td>Returns the number of chips inside the chip set</td>
+</tr>
+<tr class="odd">
+<td><code>removeFocusFromChipAtIndex(index: number) =&gt; void</code></td>
+<td>Calls <code>MDCChip#removeFocus()</code> on the chip at the given <code>index</code></td>
+</tr>
+<tr class="even">
+<td><code>announceMessage(message: string) =&gt; void</code></td>
+<td>Announces the message via <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions">an <code>aria-live</code> region</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="foundations-mdcchipfoundation-and-mdcchipsetfoundation">Foundations: <code>MDCChipFoundation</code> and <code>MDCChipSetFoundation</code></h3>
+<h4 id="mdcchipfoundation"><code>MDCChipFoundation</code></h4>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method Signature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>isSelected() =&gt; boolean</code></td>
+<td>Returns true if the chip is selected</td>
+</tr>
+<tr class="even">
+<td><code>setSelected(selected: boolean) =&gt; void</code></td>
+<td>Sets the chip’s selected state</td>
+</tr>
+<tr class="odd">
+<td><code>setSelectedFromChipSet(selected: boolean, shouldNotifyClients: boolean) =&gt; void</code></td>
+<td>Sets the chip’s selected state (called from the chip set) to the <code>selected</code> param. Will emit a selection event if called with <code>shouldNotifyClients</code> set to <code>true</code>. The emitted selection event will be ignored by the <code>MDCChipSetFoundation</code>.</td>
+</tr>
+<tr class="even">
+<td><code>getShouldRemoveOnTrailingIconClick() =&gt; boolean</code></td>
+<td>Returns whether a trailing icon click should trigger exit/removal of the chip</td>
+</tr>
+<tr class="odd">
+<td><code>setShouldRemoveOnTrailingIconClick(shouldRemove: boolean) =&gt; void</code></td>
+<td>Sets whether a trailing icon click should trigger exit/removal of the chip</td>
+</tr>
+<tr class="even">
+<td><code>getDimensions() =&gt; ClientRect</code></td>
+<td>Returns the dimensions of the chip. This is used for applying ripple to the chip.</td>
+</tr>
+<tr class="odd">
+<td><code>beginExit() =&gt; void</code></td>
+<td>Begins the exit animation which leads to removal of the chip</td>
+</tr>
+<tr class="even">
+<td><code>handleInteraction(evt: Event) =&gt; void</code></td>
+<td>Handles an interaction event on the root element</td>
+</tr>
+<tr class="odd">
+<td><code>handleTransitionEnd(evt: Event) =&gt; void</code></td>
+<td>Handles a transition end event on the root element</td>
+</tr>
+<tr class="even">
+<td><code>handleTrailingIconInteraction(evt: Event) =&gt; void</code></td>
+<td>Handles an interaction event on the trailing icon element</td>
+</tr>
+<tr class="odd">
+<td><code>handleKeydown(evt: Event) =&gt; void</code></td>
+<td>Handles a keydown event on the root element</td>
+</tr>
+<tr class="even">
+<td><code>removeFocus() =&gt; void</code></td>
+<td>Removes focusability from the chip</td>
+</tr>
+</tbody>
+</table>
+<h4 id="mdcchipfoundation-event-handlers"><code>MDCChipFoundation</code> Event Handlers</h4>
+<p>When wrapping the Chip foundation, the following events must be bound to the indicated foundation methods:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Events</th>
+<th>Element Selector</th>
+<th>Foundation Handler</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>click</code>, <code>keydown</code></td>
+<td><code>.mdc-chip</code> (root)</td>
+<td><code>handleInteraction()</code></td>
+</tr>
+<tr class="even">
+<td><code>click</code>, <code>keydown</code></td>
+<td><code>.mdc-chip__icon--trailing</code> (if present)</td>
+<td><code>handleTrailingIconInteraction()</code></td>
+</tr>
+<tr class="odd">
+<td><code>transitionend</code></td>
+<td><code>.mdc-chip</code> (root)</td>
+<td><code>handleTransitionEnd()</code></td>
+</tr>
+<tr class="even">
+<td><code>keydown</code></td>
+<td><code>.mdc-chip</code> (root)</td>
+<td><code>handleKeydown()</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="mdcchipsetfoundation"><code>MDCChipSetFoundation</code></h4>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method Signature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>getSelectedChipIds() =&gt; ReadonlyArray&lt;string&gt;</code></td>
+<td>Returns an array of the IDs of all selected chips</td>
+</tr>
+<tr class="even">
+<td><code>select(chipId: string) =&gt; void</code></td>
+<td>Selects the chip with the given id</td>
+</tr>
+<tr class="odd">
+<td><code>handleChipInteraction(detail: MDCChipInteractionEventDetail) =&gt; void</code></td>
+<td>Handles a custom <code>MDCChip:interaction</code> event on the root element</td>
+</tr>
+<tr class="even">
+<td><code>handleChipSelection(detail: MDCChipSelectionEventDetail) =&gt; void</code></td>
+<td>Handles a custom <code>MDCChip:selection</code> event on the root element. When <code>chipSetShouldIgnore</code> is true, the chip set does not process the event.</td>
+</tr>
+<tr class="odd">
+<td><code>handleChipRemoval(detail: MDCChipRemovalEventDetail) =&gt; void</code></td>
+<td>Handles a custom <code>MDCChip:removal</code> event on the root element</td>
+</tr>
+<tr class="even">
+<td><code>handleChipNavigation(detail: MDCChipNavigationEventDetail) =&gt; void</code></td>
+<td>Handles a custom <code>MDCChip:navigation</code> event on the root element</td>
+</tr>
+</tbody>
+</table>
+<h4 id="mdcchipsetfoundation-event-handlers"><code>MDCChipSetFoundation</code> Event Handlers</h4>
+<p>When wrapping the Chip Set foundation, the following events must be bound to the indicated foundation methods:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Events</th>
+<th>Element Selector</th>
+<th>Foundation Handler</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>MDCChip:interaction</code></td>
+<td><code>.mdc-chip-set</code> (root)</td>
+<td><code>handleChipInteraction</code></td>
+</tr>
+<tr class="even">
+<td><code>MDCChip:selection</code></td>
+<td><code>.mdc-chip-set</code> (root)</td>
+<td><code>handleChipSelection</code></td>
+</tr>
+<tr class="odd">
+<td><code>MDCChip:removal</code></td>
+<td><code>.mdc-chip-set</code> (root)</td>
+<td><code>handleChipRemoval</code></td>
+</tr>
+<tr class="even">
+<td><code>MDCChip:navigation</code></td>
+<td><code>.mdc-chip-set</code> (root)</td>
+<td><code>handleChipNavigation</code></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

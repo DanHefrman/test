@@ -11,69 +11,6 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
-  <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
 </head>
 <body>
 <h1 id="css-and-ajax-week-9---learning-objectives">CSS and AJAX (Week 9) - Learning Objectives</h1>
@@ -81,39 +18,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3 id="basic-css">Basic CSS</h3>
 <ol type="1">
 <li><p>How to import other CSS files into your CSS file</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1">   @import <span class="at">url</span>(<span class="st">&#39;&#39;</span>)</a>
-<a class="sourceLine" id="cb1-2" title="2">   @import <span class="st">&#39;relative path file&#39;</span></a></code></pre></div></li>
+<pre><code>   @import url(&#39;&#39;)
+   @import &#39;relative path file&#39;</code></pre></li>
 <li><p>Explain how CSS rules are applied based on their order and specificity</p></li>
 </ol>
 <p>They are executed by most specific and the last one executed in line-order</p>
-<ol start="3" type="1">
-<li>Describe and apply element, id, and class selectors</li>
-</ol>
-<div class="sourceCode" id="cb2"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb2-1" title="1">  body {</a>
-<a class="sourceLine" id="cb2-2" title="2">    global</a>
-<a class="sourceLine" id="cb2-3" title="3">  }</a>
-<a class="sourceLine" id="cb2-4" title="4"></a>
-<a class="sourceLine" id="cb2-5" title="5">  <span class="pp">#id</span>{</a>
-<a class="sourceLine" id="cb2-6" title="6"></a>
-<a class="sourceLine" id="cb2-7" title="7">  }</a>
-<a class="sourceLine" id="cb2-8" title="8"></a>
-<a class="sourceLine" id="cb2-9" title="9">  <span class="fu">.class</span>{</a>
-<a class="sourceLine" id="cb2-10" title="10"></a>
-<a class="sourceLine" id="cb2-11" title="11">  }</a>
-<a class="sourceLine" id="cb2-12" title="12"></a>
-<a class="sourceLine" id="cb2-13" title="13">  a{</a>
-<a class="sourceLine" id="cb2-14" title="14">    element</a>
-<a class="sourceLine" id="cb2-15" title="15">  }</a>
-<a class="sourceLine" id="cb2-16" title="16"></a>
-<a class="sourceLine" id="cb2-17" title="17">  <span class="op">*</span>{</a>
-<a class="sourceLine" id="cb2-18" title="18">    wildcard</a>
-<a class="sourceLine" id="cb2-19" title="19">  }</a>
-<a class="sourceLine" id="cb2-20" title="20"></a></code></pre></div>
-<ol start="4" type="1">
+<ol type="1">
+<li><p>Describe and apply element, id, and class selectors</p>
+<p>body { global }</p>
+<p>#id{</p>
+<p>}</p>
+<p>.class{</p>
+<p>}</p>
+<p>a{ element }</p>
+<p>*{ wildcard }</p></li>
 <li>Write “combinators” to create compound selector statements to target specific elements</li>
 <li>Explain and apply pseudo selectors for specific elements in specific states (i.e. :hover)</li>
 <li>Explain and apply the <code>::before</code> and <code>::after</code> pseudo elements, &amp; Use the content CSS property to define the content of an element</li>
-<li>Style content on an HTML page targeting:</li>
+<li><p>Style content on an HTML page targeting:</p></li>
 </ol>
 <ul>
 <li>Type faces, sizes, styles, and weights</li>
@@ -124,7 +46,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Opacity (transparency)</li>
 <li>Covering an element with a background image</li>
 </ul>
-<ol start="8" type="1">
+<ol type="1">
 <li>Explain the generic font names “serif”, “sans-serif”, and “monospace” and correctly identify examples of each</li>
 <li>Explain why using Web fonts helps with consistent experience across viewing devices:</li>
 <li>Explain absolute and relative length units in CSS</li>
@@ -159,7 +81,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>the browser positions absolutely positioned elements with and without a relatively positioned parent element</li>
 <li>the browser positions a static positioned element</li>
 </ul>
-<ol start="2" type="1">
+<ol type="1">
 <li>Identify elements rendered with specific padding and margin settings</li>
 <li>Apply padding and margins to HTML elements to achieve a desired layout</li>
 <li>Apply positioning settings to HTML elements (fixed, relative, and absolute) to achieve a desired layout. (Sticky positioning is not supported on some older but still used browsers, so it will not be assessed, but can useful.)</li>

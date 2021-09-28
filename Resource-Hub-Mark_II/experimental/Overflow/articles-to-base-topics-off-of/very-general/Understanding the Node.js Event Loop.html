@@ -13,7 +13,7 @@
   </style>
 </head>
 <body>
-<h1 id="understanding-the-node.js-event-loop-risingstack">Understanding the Node.js Event Loop | <span class="citation" data-cites="RisingStack">@RisingStack</span></h1>
+<h1 id="understanding-the-node.js-event-loop-risingstack">Understanding the Node.js Event Loop | <span class="citation" data-cites="RisingStack"><span class="citation" data-cites="RisingStack">@RisingStack</span></span></h1>
 <blockquote>
 <p>This article helps you to understand how the Node.js event loop works, and how you can leverage it to build fast applications.</p>
 </blockquote>
@@ -277,22 +277,22 @@ promise6</code></pre>
 </ol>
 <p>Task queue: <code>setInterval</code>, <code>setTimeout 1</code></p>
 <p><strong>Cycle 2:</strong></p>
-<ol start="5" type="1">
+<ol type="1">
 <li>the microtask queue is empty, `setInteval`’s handler can be run, another `setInterval` is scheduled as a task, right behind `setTimeout 1`</li>
 </ol>
 <p>Task queue: <code>setTimeout 1</code>, <code>setInterval</code></p>
 <p><strong>Cycle 3:</strong></p>
-<ol start="6" type="1">
+<ol type="1">
 <li>the microtask queue is empty, `setTimeout 1`’s handler can be run, `promise 3` and `promise 4` are scheduled as microtasks,</li>
 <li>handlers of `promise 3` and `promise 4` are run `setTimeout 2` is scheduled as task</li>
 </ol>
 <p>Task queue: <code>setInterval</code>, <code>setTimeout 2</code></p>
 <p><strong>Cycle 4:</strong></p>
-<ol start="8" type="1">
+<ol type="1">
 <li>the microtask queue is empty, `setInteval`’s handler can be run, another `setInterval` is scheduled as a task, right behind `setTimeout`</li>
 </ol>
 <p>Task queue: <code>setTimeout 2</code>, <code>setInteval</code></p>
-<ol start="9" type="1">
+<ol type="1">
 <li>`setTimeout 2`’s handler run, `promise 5` and `promise 6` are scheduled as microtasks</li>
 </ol>
 <p>Now handlers of <code>promise 5</code> and <code>promise 6</code> should be run clearing our interval, but for some strange reason <code>setInterval</code> is run again. However, if you run this code in Chrome, you will get the expected behavior.</p>

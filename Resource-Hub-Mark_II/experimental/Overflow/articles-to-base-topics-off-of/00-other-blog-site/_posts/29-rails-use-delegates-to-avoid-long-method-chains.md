@@ -15,7 +15,7 @@ Please note that thoughtout this post I will be refereing to `@product` which
 assumed as object of Product model.
 ===================================
 
-<span class="citation" data-cites="product.organisation.name">@product.organisation.name</span> {% endhighlight %}
+<span class="citation" data-cites="product.organisation.name"><span class="citation" data-cites="product.organisation.name">@product.organisation.name</span></span> {% endhighlight %}
 
 But according to “Rails Anti-patterns” more than one dot notation in a statement is an example of anti pattern.
 

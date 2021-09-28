@@ -11,69 +11,6 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
-  <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
 </head>
 <body>
 <h1 id="notes"><strong>Notes</strong></h1>
@@ -89,26 +26,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>There is stigma attached to it</li>
 </ul></li>
 <li><p><strong><code>Bubbling Up</code></strong> : Term that infers that an item <em>is in motion</em>, <em>moving in some direction</em>, and <em>has some final resting destination</em>.</p></li>
-<li><p>Bubble sort, sorts an array of integers by bubbling the largest integer to the top. <img src="https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/naive_sorting_algorithms/bubble_sort/images/BubbleSort.gif" alt="bubble" /></p></li>
+<li><p>Bubble sort, sorts an array of integers by bubbling the largest integer to the top. <img src="https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/naive_sorting_algorithms/bubble_sort/images/BubbleSort.gif" alt="bubble" /></p>
+<p>// Bubble Sort function bubble(array) { let sorted = true; for (let i = 0; i &lt; array.length; i++) { let num1 = array[i]; let num2 = array[i + 1]; if (num1 &gt; num2) { array[i + 1] = num1; array[i] = num2; sorted = false; } } if (sorted) { return array; } else { return bubble(array); } }</p></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="co">// Bubble Sort</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="kw">function</span> <span class="at">bubble</span>(array) <span class="op">{</span></a>
-<a class="sourceLine" id="cb1-3" title="3">  <span class="kw">let</span> sorted <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb1-4" title="4">  <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="va">array</span>.<span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) <span class="op">{</span></a>
-<a class="sourceLine" id="cb1-5" title="5">    <span class="kw">let</span> num1 <span class="op">=</span> array[i]<span class="op">;</span></a>
-<a class="sourceLine" id="cb1-6" title="6">    <span class="kw">let</span> num2 <span class="op">=</span> array[i <span class="op">+</span> <span class="dv">1</span>]<span class="op">;</span></a>
-<a class="sourceLine" id="cb1-7" title="7">    <span class="cf">if</span> (num1 <span class="op">&gt;</span> num2) <span class="op">{</span></a>
-<a class="sourceLine" id="cb1-8" title="8">      array[i <span class="op">+</span> <span class="dv">1</span>] <span class="op">=</span> num1<span class="op">;</span></a>
-<a class="sourceLine" id="cb1-9" title="9">      array[i] <span class="op">=</span> num2<span class="op">;</span></a>
-<a class="sourceLine" id="cb1-10" title="10">      sorted <span class="op">=</span> <span class="kw">false</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb1-11" title="11">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb1-12" title="12">  <span class="op">}</span></a>
-<a class="sourceLine" id="cb1-13" title="13">  <span class="cf">if</span> (sorted) <span class="op">{</span></a>
-<a class="sourceLine" id="cb1-14" title="14">    <span class="cf">return</span> array<span class="op">;</span></a>
-<a class="sourceLine" id="cb1-15" title="15">  <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb1-16" title="16">    <span class="cf">return</span> <span class="at">bubble</span>(array)<span class="op">;</span></a>
-<a class="sourceLine" id="cb1-17" title="17">  <span class="op">}</span></a>
-<a class="sourceLine" id="cb1-18" title="18"><span class="op">}</span></a></code></pre></div>
 <hr />
 <h2 id="selection-sort"><strong>Selection Sort</strong></h2>
 <ul>
@@ -120,25 +40,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Swap with value at location Min</li>
 <li>Increment Min to point to next element.</li>
 <li>Repeat until list is sorted.</li>
-</ol></li>
+</ol>
+let selectionSort = (arr) =&gt; { let len = arr.length; for (let i = 0; i &lt; len; i++) { let min = i; for (let j = i + 1; j &lt; len; j++) { if (arr[min] &gt; arr[j]) { min = j; } } if (min !== i) { let tmp = arr[i]; arr[i] = arr[min]; arr[min] = tmp; } } return arr; };</li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">let</span> selectionSort <span class="op">=</span> (arr) <span class="kw">=&gt;</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb2-2" title="2">  <span class="kw">let</span> len <span class="op">=</span> <span class="va">arr</span>.<span class="at">length</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb2-3" title="3">  <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> len<span class="op">;</span> i<span class="op">++</span>) <span class="op">{</span></a>
-<a class="sourceLine" id="cb2-4" title="4">    <span class="kw">let</span> min <span class="op">=</span> i<span class="op">;</span></a>
-<a class="sourceLine" id="cb2-5" title="5">    <span class="cf">for</span> (<span class="kw">let</span> j <span class="op">=</span> i <span class="op">+</span> <span class="dv">1</span><span class="op">;</span> j <span class="op">&lt;</span> len<span class="op">;</span> j<span class="op">++</span>) <span class="op">{</span></a>
-<a class="sourceLine" id="cb2-6" title="6">      <span class="cf">if</span> (arr[min] <span class="op">&gt;</span> arr[j]) <span class="op">{</span></a>
-<a class="sourceLine" id="cb2-7" title="7">        min <span class="op">=</span> j<span class="op">;</span></a>
-<a class="sourceLine" id="cb2-8" title="8">      <span class="op">}</span></a>
-<a class="sourceLine" id="cb2-9" title="9">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb2-10" title="10">    <span class="cf">if</span> (min <span class="op">!==</span> i) <span class="op">{</span></a>
-<a class="sourceLine" id="cb2-11" title="11">      <span class="kw">let</span> tmp <span class="op">=</span> arr[i]<span class="op">;</span></a>
-<a class="sourceLine" id="cb2-12" title="12">      arr[i] <span class="op">=</span> arr[min]<span class="op">;</span></a>
-<a class="sourceLine" id="cb2-13" title="13">      arr[min] <span class="op">=</span> tmp<span class="op">;</span></a>
-<a class="sourceLine" id="cb2-14" title="14">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb2-15" title="15">  <span class="op">}</span></a>
-<a class="sourceLine" id="cb2-16" title="16">  <span class="cf">return</span> arr<span class="op">;</span></a>
-<a class="sourceLine" id="cb2-17" title="17"><span class="op">};</span></a></code></pre></div>
 <hr />
 <h2 id="insertion-sort"><strong>Insertion Sort</strong></h2>
 <figure>
@@ -154,21 +58,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Shift all the elemnts in the sorted sub list that is greater than the value to be sorted.</li>
 <li>Insert the value</li>
 <li>Repeat until list is sorted.</li>
-</ol></li>
+</ol>
+let insertionSort = (inputArr) =&gt; { let length = inputArr.length; for (let i = 1; i &lt; length; i++) { let key = inputArr[i]; let j = i - 1; while (j &gt;= 0 &amp;&amp; inputArr[j] &gt; key) { inputArr[j + 1] = inputArr[j]; j = j - 1; } inputArr[j + 1] = key; } return inputArr; };</li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">let</span> insertionSort <span class="op">=</span> (inputArr) <span class="kw">=&gt;</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb3-2" title="2">  <span class="kw">let</span> length <span class="op">=</span> <span class="va">inputArr</span>.<span class="at">length</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb3-3" title="3">  <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">1</span><span class="op">;</span> i <span class="op">&lt;</span> length<span class="op">;</span> i<span class="op">++</span>) <span class="op">{</span></a>
-<a class="sourceLine" id="cb3-4" title="4">    <span class="kw">let</span> key <span class="op">=</span> inputArr[i]<span class="op">;</span></a>
-<a class="sourceLine" id="cb3-5" title="5">    <span class="kw">let</span> j <span class="op">=</span> i <span class="op">-</span> <span class="dv">1</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb3-6" title="6">    <span class="cf">while</span> (j <span class="op">&gt;=</span> <span class="dv">0</span> <span class="op">&amp;&amp;</span> inputArr[j] <span class="op">&gt;</span> key) <span class="op">{</span></a>
-<a class="sourceLine" id="cb3-7" title="7">      inputArr[j <span class="op">+</span> <span class="dv">1</span>] <span class="op">=</span> inputArr[j]<span class="op">;</span></a>
-<a class="sourceLine" id="cb3-8" title="8">      j <span class="op">=</span> j <span class="op">-</span> <span class="dv">1</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb3-9" title="9">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb3-10" title="10">    inputArr[j <span class="op">+</span> <span class="dv">1</span>] <span class="op">=</span> key<span class="op">;</span></a>
-<a class="sourceLine" id="cb3-11" title="11">  <span class="op">}</span></a>
-<a class="sourceLine" id="cb3-12" title="12">  <span class="cf">return</span> inputArr<span class="op">;</span></a>
-<a class="sourceLine" id="cb3-13" title="13"><span class="op">};</span></a></code></pre></div>
 <hr />
 <h2 id="merge-sort"><strong>Merge Sort</strong></h2>
 <figure>
@@ -182,26 +74,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>If there is only one element in the list, it is already sorted; return the array.</li>
 <li>Otherwise, divide the list recursively into two halves until it can no longer be divided.</li>
 <li>Merge the smallest lists into new list in a sorted order.</li>
-</ol></li>
+</ol>
+<p>const merge = (arr1, arr2) =&gt; { let sorted = [];</p>
+<p>while (arr1.length &amp;&amp; arr2.length) { if (arr1[0] &lt; arr2[0]) sorted.push(arr1.shift()); else sorted.push(arr2.shift()); }</p>
+<p>return sorted.concat(arr1.slice().concat(arr2.slice())); };</p>
+<p>const mergeSort = (arr) =&gt; { if (arr.length &lt;= 1) return arr; let mid = Math.floor(arr.length / 2), left = mergeSort(arr.slice(0, mid)), right = mergeSort(arr.slice(mid));</p>
+<p>return merge(left, right); };</p></li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">const</span> merge <span class="op">=</span> (arr1<span class="op">,</span> arr2) <span class="kw">=&gt;</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb4-2" title="2">  <span class="kw">let</span> sorted <span class="op">=</span> []<span class="op">;</span></a>
-<a class="sourceLine" id="cb4-3" title="3"></a>
-<a class="sourceLine" id="cb4-4" title="4">  <span class="cf">while</span> (<span class="va">arr1</span>.<span class="at">length</span> <span class="op">&amp;&amp;</span> <span class="va">arr2</span>.<span class="at">length</span>) <span class="op">{</span></a>
-<a class="sourceLine" id="cb4-5" title="5">    <span class="cf">if</span> (arr1[<span class="dv">0</span>] <span class="op">&lt;</span> arr2[<span class="dv">0</span>]) <span class="va">sorted</span>.<span class="at">push</span>(<span class="va">arr1</span>.<span class="at">shift</span>())<span class="op">;</span></a>
-<a class="sourceLine" id="cb4-6" title="6">    <span class="cf">else</span> <span class="va">sorted</span>.<span class="at">push</span>(<span class="va">arr2</span>.<span class="at">shift</span>())<span class="op">;</span></a>
-<a class="sourceLine" id="cb4-7" title="7">  <span class="op">}</span></a>
-<a class="sourceLine" id="cb4-8" title="8"></a>
-<a class="sourceLine" id="cb4-9" title="9">  <span class="cf">return</span> <span class="va">sorted</span>.<span class="at">concat</span>(<span class="va">arr1</span>.<span class="at">slice</span>().<span class="at">concat</span>(<span class="va">arr2</span>.<span class="at">slice</span>()))<span class="op">;</span></a>
-<a class="sourceLine" id="cb4-10" title="10"><span class="op">};</span></a></code></pre></div>
-<div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">const</span> mergeSort <span class="op">=</span> (arr) <span class="kw">=&gt;</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb5-2" title="2">  <span class="cf">if</span> (<span class="va">arr</span>.<span class="at">length</span> <span class="op">&lt;=</span> <span class="dv">1</span>) <span class="cf">return</span> arr<span class="op">;</span></a>
-<a class="sourceLine" id="cb5-3" title="3">  <span class="kw">let</span> mid <span class="op">=</span> <span class="va">Math</span>.<span class="at">floor</span>(<span class="va">arr</span>.<span class="at">length</span> / <span class="dv">2</span>)<span class="op">,</span></a>
-<a class="sourceLine" id="cb5-4" title="4">    left <span class="op">=</span> <span class="at">mergeSort</span>(<span class="va">arr</span>.<span class="at">slice</span>(<span class="dv">0</span><span class="op">,</span> mid))<span class="op">,</span></a>
-<a class="sourceLine" id="cb5-5" title="5">    right <span class="op">=</span> <span class="at">mergeSort</span>(<span class="va">arr</span>.<span class="at">slice</span>(mid))<span class="op">;</span></a>
-<a class="sourceLine" id="cb5-6" title="6"></a>
-<a class="sourceLine" id="cb5-7" title="7">  <span class="cf">return</span> <span class="at">merge</span>(left<span class="op">,</span> right)<span class="op">;</span></a>
-<a class="sourceLine" id="cb5-8" title="8"><span class="op">};</span></a></code></pre></div>
 <hr />
 <h2 id="quick-sort"><strong>Quick Sort</strong></h2>
 <ul>
@@ -210,52 +89,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>It is easy to sort elements of an array relative to a particular target value.</li>
 <li>An array of 0 or 1 elements is already trivially sorted. <img src="https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/efficient_sorting_algorithms/quick_sort/images/QuickSort.gif" alt="quicksort" /></li>
-</ul></li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">function</span> <span class="at">quick_Sort</span>(origArray) <span class="op">{</span></a>
-<a class="sourceLine" id="cb6-2" title="2">  <span class="cf">if</span> (<span class="va">origArray</span>.<span class="at">length</span> <span class="op">&lt;=</span> <span class="dv">1</span>) <span class="op">{</span></a>
-<a class="sourceLine" id="cb6-3" title="3">    <span class="cf">return</span> origArray<span class="op">;</span></a>
-<a class="sourceLine" id="cb6-4" title="4">  <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb6-5" title="5">    <span class="kw">var</span> left <span class="op">=</span> []<span class="op">;</span></a>
-<a class="sourceLine" id="cb6-6" title="6">    <span class="kw">var</span> right <span class="op">=</span> []<span class="op">;</span></a>
-<a class="sourceLine" id="cb6-7" title="7">    <span class="kw">var</span> newArray <span class="op">=</span> []<span class="op">;</span></a>
-<a class="sourceLine" id="cb6-8" title="8">    <span class="kw">var</span> pivot <span class="op">=</span> <span class="va">origArray</span>.<span class="at">pop</span>()<span class="op">;</span></a>
-<a class="sourceLine" id="cb6-9" title="9">    <span class="kw">var</span> length <span class="op">=</span> <span class="va">origArray</span>.<span class="at">length</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb6-10" title="10"></a>
-<a class="sourceLine" id="cb6-11" title="11">    <span class="cf">for</span> (<span class="kw">var</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> length<span class="op">;</span> i<span class="op">++</span>) <span class="op">{</span></a>
-<a class="sourceLine" id="cb6-12" title="12">      <span class="cf">if</span> (origArray[i] <span class="op">&lt;=</span> pivot) <span class="op">{</span></a>
-<a class="sourceLine" id="cb6-13" title="13">        <span class="va">left</span>.<span class="at">push</span>(origArray[i])<span class="op">;</span></a>
-<a class="sourceLine" id="cb6-14" title="14">      <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb6-15" title="15">        <span class="va">right</span>.<span class="at">push</span>(origArray[i])<span class="op">;</span></a>
-<a class="sourceLine" id="cb6-16" title="16">      <span class="op">}</span></a>
-<a class="sourceLine" id="cb6-17" title="17">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb6-18" title="18"></a>
-<a class="sourceLine" id="cb6-19" title="19">    <span class="cf">return</span> <span class="va">newArray</span>.<span class="at">concat</span>(<span class="at">quick_Sort</span>(left)<span class="op">,</span> pivot<span class="op">,</span> <span class="at">quick_Sort</span>(right))<span class="op">;</span></a>
-<a class="sourceLine" id="cb6-20" title="20">  <span class="op">}</span></a>
-<a class="sourceLine" id="cb6-21" title="21"><span class="op">}</span></a></code></pre></div>
+<p>function quick_Sort(origArray) { if (origArray.length &lt;= 1) { return origArray; } else { var left = []; var right = []; var newArray = []; var pivot = origArray.pop(); var length = origArray.length;</p>
+<pre><code>for (var i = 0; i &lt; length; i++) {
+  if (origArray[i] &lt;= pivot) {
+    left.push(origArray[i]);
+  } else {
+    right.push(origArray[i]);
+  }
+}
+
+return newArray.concat(quick_Sort(left), pivot, quick_Sort(right));</code></pre>
+<p>} }</p></li>
+</ul>
 <p><strong>binary search</strong></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">const</span> binarySearch <span class="op">=</span> (array<span class="op">,</span> target) <span class="kw">=&gt;</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb7-2" title="2">  <span class="kw">let</span> startIndex <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb7-3" title="3">  <span class="kw">let</span> endIndex <span class="op">=</span> <span class="va">array</span>.<span class="at">length</span> <span class="op">-</span> <span class="dv">1</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb7-4" title="4">  <span class="cf">while</span>(startIndex <span class="op">&lt;=</span> endIndex) <span class="op">{</span></a>
-<a class="sourceLine" id="cb7-5" title="5">    <span class="kw">let</span> middleIndex <span class="op">=</span> <span class="va">Math</span>.<span class="at">floor</span>((startIndex <span class="op">+</span> endIndex) / <span class="dv">2</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb7-6" title="6">    <span class="cf">if</span>(target <span class="op">===</span> array[middleIndex) <span class="op">{</span></a>
-<a class="sourceLine" id="cb7-7" title="7">      <span class="cf">return</span> <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;Target was found at index &quot;</span> <span class="op">+</span> middleIndex)<span class="op">;</span></a>
-<a class="sourceLine" id="cb7-8" title="8">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb7-9" title="9">    <span class="cf">if</span>(target <span class="op">&gt;</span> array[middleIndex]) <span class="op">{</span></a>
-<a class="sourceLine" id="cb7-10" title="10">      <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;Searching the right side of Array&quot;</span>)</a>
-<a class="sourceLine" id="cb7-11" title="11">      startIndex <span class="op">=</span> middleIndex <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb7-12" title="12">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb7-13" title="13">    <span class="cf">if</span>(target <span class="op">&lt;</span> array[middleIndex]) <span class="op">{</span></a>
-<a class="sourceLine" id="cb7-14" title="14">      <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;Searching the left side of array&quot;</span>)</a>
-<a class="sourceLine" id="cb7-15" title="15">      endIndex <span class="op">=</span> middleIndex <span class="op">-</span> <span class="dv">1</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb7-16" title="16">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb7-17" title="17">    <span class="cf">else</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb7-18" title="18">      <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;Not Found this loop iteration. Looping another iteration.&quot;</span>)</a>
-<a class="sourceLine" id="cb7-19" title="19">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb7-20" title="20">  <span class="op">}</span></a>
-<a class="sourceLine" id="cb7-21" title="21"></a>
-<a class="sourceLine" id="cb7-22" title="22">  <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;Target value not found in array&quot;</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb7-23" title="23"><span class="op">}</span></a></code></pre></div>
+<pre><code>const binarySearch = (array, target) =&gt; {
+  let startIndex = 0;
+  let endIndex = array.length - 1;
+  while(startIndex &lt;= endIndex) {
+    let middleIndex = Math.floor((startIndex + endIndex) / 2);
+    if(target === array[middleIndex) {
+      return console.log(&quot;Target was found at index &quot; + middleIndex);
+    }
+    if(target &gt; array[middleIndex]) {
+      console.log(&quot;Searching the right side of Array&quot;)
+      startIndex = middleIndex + 1;
+    }
+    if(target &lt; array[middleIndex]) {
+      console.log(&quot;Searching the left side of array&quot;)
+      endIndex = middleIndex - 1;
+    }
+    else {
+      console.log(&quot;Not Found this loop iteration. Looping another iteration.&quot;)
+    }
+  }
+
+  console.log(&quot;Target value not found in array&quot;);
+}</code></pre>
 </body>
 </html>

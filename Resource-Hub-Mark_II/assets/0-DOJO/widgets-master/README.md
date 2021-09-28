@@ -1,5 +1,4 @@
-<span class="citation" data-cites="dojo/widgets"><span class="citation" data-cites="dojo/widgets"><span class="citation" data-cites="dojo/widgets"><span class="citation" data-cites="dojo/widgets">@dojo/widgets</span></span></span></span>
-=============================================================================================================================================================================================================================================
+# <span class="citation" data-cites="dojo/widgets"><span class="citation" data-cites="dojo/widgets"><span class="citation" data-cites="dojo/widgets"><span class="citation" data-cites="dojo/widgets">@dojo/widgets</span></span></span></span>
 
 [![Build Status](https://travis-ci.org/dojo/widgets.svg?branch=master)](https://travis-ci.org/dojo/widgets) [![codecov](https://codecov.io/gh/dojo/widgets/branch/master/graph/badge.svg)](https://codecov.io/gh/dojo/widgets) [![npm version](https://badge.fury.io/js/%40dojo%2Fwidgets.svg)](https://badge.fury.io/js/%40dojo%2Fwidgets)
 
@@ -15,14 +14,13 @@ A suite of pre-built Dojo widgets, ready to use in your web application. These w
     -   [Testing](#testing)
 -   [Licensing Information](#licensing-information)
 
-Usage
------
+## Usage
 
 To use `@dojo/widgets` in your project, you will need to install the package:
 
     npm install @dojo/widgets
 
-This package contains *all* of the widgets in this repo.
+This package contains _all_ of the widgets in this repo.
 
 All of the widgets are on the same release schedule, that is to say, that we release all widgets at the same time. Minor releases may include new widgets and/or features, whereas patch releases may contain fixes to more than 1 widget.
 
@@ -36,8 +34,7 @@ Each widget module has a default export of the widget itself, as well as named e
 
 Because each widget is a separate module, when you create a release build of your application, you will only include the widgets that you have explicitly imported. This allows our [`dojo cli`](https://github.com/dojo/cli) build tooling to make sure that the production build of your application only includes the widgets you use and is as small as possible.
 
-Features
---------
+## Features
 
 -   All widgets are supported in all evergreen browsers (Chrome, Edge, Firefox, IE11+, and Safari) as well as popular mobile browsers (Mobile Safari, Chrome on Android).
 
@@ -47,8 +44,7 @@ Features
 
 -   All widgets support internationalization (`i18n`)
 
-Widgets
--------
+## Widgets
 
 Live examples of current widgets are available in the [widget showcase](https://dojo.github.io/examples/widget-showcase/).
 
@@ -110,14 +106,13 @@ Live examples of current widgets are available in the [widget showcase](https://
 
 [Tooltip](src/tooltip/README.md)
 
-Conventions
------------
+## Conventions
 
 ### EventHandlers
 
 You can register event handlers that get called when the corresponding events occur by passing the handlers into a widget’s `properties`. The naming convention for event handlers is as follows:
 
--   if the parent of the widget has the power to decide *if* an event is successful, i.e. can cancel the event, then the child widget will call an event handler in the following format:
+-   if the parent of the widget has the power to decide _if_ an event is successful, i.e. can cancel the event, then the child widget will call an event handler in the following format:
 
 `onRequest[X]`, e.g. for a `close` event, the event handler called by the child widget must be called `onRequestClose`
 
@@ -159,8 +154,7 @@ The range definitions are as follows:
 -   **300 - 400**: Full-page overlays such as Dialogs.
 -   **400 - 500**: Body level popups, tooltips and alerts.
 
-How to customize a widget
--------------------------
+## How to customize a widget
 
 There are many ways in which you can customize the behavior and appearance of Dojo widgets. See the [`core`](https://github.com/dojo/framework/blob/master/src/core/README.md) README for examples of how to customize the theme or a specific CSS class of a widget.
 
@@ -181,13 +175,11 @@ Individual widgets also provide certain types of extension points where applicab
 -   `render*`: Large render functions are split up into multiple smaller pieces that can be more easily overridden to create custom vdom.
 -   `getModifierClasses`: Modify the array of conditionally applied classes like `css.selected` or `css.disabled`. Not all widgets include these extension points, and some have additional overridable methods.
 
-Widget Variants
----------------
+## Widget Variants
 
 When writing a widget variant, ie. `RaisedButton`, you should ensure that you use `theme.compose` from the widget [theme middleware](https://github.com/dojo/widgets/blob/master/src/middleware/theme.ts). This allows your variant to interit css from it’s base widget whilst allowing it to be themed separately.
 
-How do I contribute?
---------------------
+## How do I contribute?
 
 We appreciate your interest! Please see the [Dojo Meta Repository](https://github.com/dojo/meta#readme) for the Contributing Guidelines and Style Guide.
 
@@ -213,7 +205,7 @@ To test locally in node run:
 
 The Dojo widget examples application is located in `src/examples`.
 
-To add a new example, create a directory that matches the directory name of the widget e.g. `src/examples/src/widgets/text-input`. Each widget *must* have an example called `Basic.tsx` and an entry in the `src/examples/src/config.ts` keyed by the name of the widget directory. The widget example should import widgets from `@dojo/widgets` and not via a relative import. It is very important that the config entry name (ie. `text-input`) matches the folder name / css file name of the widget otherwise the doc build will fail.
+To add a new example, create a directory that matches the directory name of the widget e.g. `src/examples/src/widgets/text-input`. Each widget _must_ have an example called `Basic.tsx` and an entry in the `src/examples/src/config.ts` keyed by the name of the widget directory. The widget example should import widgets from `@dojo/widgets` and not via a relative import. It is very important that the config entry name (ie. `text-input`) matches the folder name / css file name of the widget otherwise the doc build will fail.
 
     {
         'text-input: {
@@ -259,7 +251,6 @@ To build the documentation run `npm run build:docs` and to build and serve the d
 
 The examples also run on Codesanbox, to run the examples on the master branch go to https://codesandbox.io/s/github/dojo/widgets/tree/master/src/examples. To run the examples for a specific user/branch/tag adjust the url as required.
 
-Licensing information
----------------------
+## Licensing information
 
 © 2018 [JS Foundation](https://js.foundation/). [New BSD](http://opensource.org/licenses/BSD-3-Clause) license.

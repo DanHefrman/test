@@ -11,119 +11,35 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
-  <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
 </head>
 <body>
-<!--
-
-
----
- "JavaScript : Writing modular code"
-date: 2014-04-18 15:00:00 IST
-updated: 2014-04-18 15:00:00 IST
-categories: javascript
----
-
--->
-&lt;!DOCTYPE html&gt;
-<html>
-<head>
-<title>
-basic-git-workflow
-</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./css/bootstrap.css"> <link rel="stylesheet" href="./css/bootstrap.grid.css"> <link rel="stylesheet" href="./css/bootstrap.min.css"> <link rel="stylesheet" href="./css/bootstrap-reboot.min.css"> <link rel="stylesheet" href="./css/bootstrap.css.map"> <link rel="stylesheet" href="./css/blog-home.css"> <link rel="stylesheet" href="./css/prism.css">
-<script async defer src="./css/prism.js"></script>
-</head>
-<body>
+<p>&lt;!DOCTYPE html&gt;</p>
 <p>As every newbies to JavaScript, me too jumbed into the language without really learning it. That time I only used JavaScript for client side validations with use of jQuery and its plugins. But when the years passed the usage of JavaScript increaced and started using it for more functionalities. Then the code which I wrote started becoming a mess. So I started thinking of “How to write better JavaScript code?”.</p>
 <p>Starting to learn <a href="http://backbonejs.org">Backbone</a> and testing in JavaScript was a turning point in my JavaScript career. They taught me how to write modular code, which can be testable, reusable, maintainable and not to mess things up.</p>
 <p>Here is simple todo app example in which how I changed the code into modular one from a spaghetti code. The functionality of this is really simple which will allow you to add a todo item and remove it. This todo app doens’t use any js framework/libraries, just simple JavaScript.</p>
 <p>When I wrote the todo app with simple javascript it look simpler and functioning perfectly. You can take a look at <a href="http://jsbin.com/tezod/1/edit">jsbin</a> to try out.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb1-1" title="1"><span class="co">&lt;!-- todo.html --&gt;</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;container&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb1-3" title="3">  <span class="kw">&lt;ul</span><span class="ot"> class=</span><span class="st">&quot;items&quot;</span><span class="kw">&gt;&lt;/ul&gt;</span></a>
-<a class="sourceLine" id="cb1-4" title="4">  <span class="kw">&lt;button</span><span class="ot"> class=</span><span class="st">&quot;btn add-item&quot;</span><span class="kw">&gt;</span>Add Item<span class="kw">&lt;/button&gt;</span></a>
-<a class="sourceLine" id="cb1-5" title="5"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="co">// todo.js</span></a>
-<a class="sourceLine" id="cb2-2" title="2">(<span class="kw">function</span> () <span class="op">{</span></a>
-<a class="sourceLine" id="cb2-3" title="3">  <span class="kw">var</span> d <span class="op">=</span> document<span class="op">;</span></a>
-<a class="sourceLine" id="cb2-4" title="4">  <span class="kw">var</span> btn <span class="op">=</span> <span class="va">d</span>.<span class="at">querySelector</span>(<span class="st">&quot;.add-item&quot;</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb2-5" title="5"></a>
-<a class="sourceLine" id="cb2-6" title="6">  <span class="va">btn</span>.<span class="at">addEventListener</span>(<span class="st">&quot;click&quot;</span><span class="op">,</span> <span class="kw">function</span> () <span class="op">{</span></a>
-<a class="sourceLine" id="cb2-7" title="7">    <span class="kw">var</span> cont <span class="op">=</span> <span class="va">d</span>.<span class="at">querySelector</span>(<span class="st">&quot;.items&quot;</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb2-8" title="8">    <span class="kw">var</span> item <span class="op">=</span> <span class="va">d</span>.<span class="at">createElement</span>(<span class="st">&quot;li&quot;</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb2-9" title="9">    <span class="kw">var</span> text <span class="op">=</span> <span class="at">prompt</span>(<span class="st">&quot;write something&quot;</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb2-10" title="10">    <span class="va">item</span>.<span class="at">innerHTML</span> <span class="op">=</span> text <span class="op">+</span> <span class="st">&quot; &lt;span class=&#39;close pull-right&#39;&gt;&amp;times;&lt;/span&gt;&quot;</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb2-11" title="11">    <span class="va">cont</span>.<span class="at">appendChild</span>(item)<span class="op">;</span></a>
-<a class="sourceLine" id="cb2-12" title="12">    <span class="va">item</span>.<span class="at">addEventListener</span>(<span class="st">&quot;click&quot;</span><span class="op">,</span> <span class="kw">function</span> () <span class="op">{</span></a>
-<a class="sourceLine" id="cb2-13" title="13">      <span class="va">cont</span>.<span class="at">removeChild</span>(<span class="kw">this</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb2-14" title="14">    <span class="op">}</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb2-15" title="15">  <span class="op">}</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb2-16" title="16"><span class="op">}</span>)()<span class="op">;</span></a></code></pre></div>
+<pre><code>&lt;!-- todo.html --&gt;
+&lt;div class=&quot;container&quot;&gt;
+  &lt;ul class=&quot;items&quot;&gt;&lt;/ul&gt;
+  &lt;button class=&quot;btn add-item&quot;&gt;Add Item&lt;/button&gt;
+&lt;/div&gt;
+
+// todo.js
+(function () {
+  var d = document;
+  var btn = d.querySelector(&quot;.add-item&quot;);
+
+  btn.addEventListener(&quot;click&quot;, function () {
+    var cont = d.querySelector(&quot;.items&quot;);
+    var item = d.createElement(&quot;li&quot;);
+    var text = prompt(&quot;write something&quot;);
+    item.innerHTML = text + &quot; &lt;span class=&#39;close pull-right&#39;&gt;&amp;times;&lt;/span&gt;&quot;;
+    cont.appendChild(item);
+    item.addEventListener(&quot;click&quot;, function () {
+      cont.removeChild(this);
+    });
+  });
+})();</code></pre>
 <p>In first look, you can’t find any issues with this code, since it works fine. but when we take a deep look, this code is</p>
 <ul>
 <li>Not testable</li>
@@ -131,45 +47,45 @@ basic-git-workflow
 <li>Not reusable</li>
 </ul>
 <p>To fix these issues I refactored this into simple modules. This is how I done it.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="co">// todo.module.js</span></a>
-<a class="sourceLine" id="cb3-2" title="2">(<span class="kw">function</span> () <span class="op">{</span></a>
-<a class="sourceLine" id="cb3-3" title="3">  <span class="kw">var</span> d <span class="op">=</span> document<span class="op">;</span></a>
-<a class="sourceLine" id="cb3-4" title="4">  <span class="kw">var</span> Wrapper <span class="op">=</span> <span class="kw">function</span> (options) <span class="op">{</span></a>
-<a class="sourceLine" id="cb3-5" title="5">    <span class="kw">this</span>.<span class="at">el</span> <span class="op">=</span> <span class="va">options</span>.<span class="at">el</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb3-6" title="6">    <span class="kw">this</span>.<span class="at">el</span></a>
-<a class="sourceLine" id="cb3-7" title="7">      .<span class="at">querySelector</span>(<span class="st">&quot;.add-item&quot;</span>)</a>
-<a class="sourceLine" id="cb3-8" title="8">      .<span class="at">addEventListener</span>(<span class="st">&quot;click&quot;</span><span class="op">,</span> <span class="kw">this</span>.<span class="va">add</span>.<span class="at">bind</span>(<span class="kw">this</span>))<span class="op">;</span></a>
-<a class="sourceLine" id="cb3-9" title="9">  <span class="op">};</span></a>
-<a class="sourceLine" id="cb3-10" title="10"></a>
-<a class="sourceLine" id="cb3-11" title="11">  <span class="va">Wrapper</span>.<span class="va">prototype</span>.<span class="at">add</span> <span class="op">=</span> <span class="kw">function</span> (item) <span class="op">{</span></a>
-<a class="sourceLine" id="cb3-12" title="12">    <span class="cf">if</span> (<span class="op">!</span><span class="va">item</span>.<span class="at">el</span>) <span class="op">{</span></a>
-<a class="sourceLine" id="cb3-13" title="13">      item <span class="op">=</span> <span class="kw">new</span> <span class="at">Item</span>(<span class="op">{</span> <span class="dt">el</span><span class="op">:</span> <span class="va">d</span>.<span class="at">createElement</span>(<span class="st">&quot;li&quot;</span>) <span class="op">}</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb3-14" title="14">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb3-15" title="15">    <span class="kw">this</span>.<span class="va">el</span>.<span class="at">querySelector</span>(<span class="st">&quot;.items&quot;</span>).<span class="at">appendChild</span>(<span class="va">item</span>.<span class="at">el</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb3-16" title="16">  <span class="op">};</span></a>
-<a class="sourceLine" id="cb3-17" title="17"></a>
-<a class="sourceLine" id="cb3-18" title="18">  <span class="kw">var</span> Item <span class="op">=</span> <span class="kw">function</span> (options) <span class="op">{</span></a>
-<a class="sourceLine" id="cb3-19" title="19">    <span class="kw">this</span>.<span class="at">el</span> <span class="op">=</span> <span class="va">options</span>.<span class="at">el</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb3-20" title="20">    <span class="kw">this</span>.<span class="va">el</span>.<span class="at">innerHTML</span> <span class="op">=</span> <span class="kw">this</span>.<span class="at">createText</span>(<span class="va">options</span>.<span class="at">text</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb3-21" title="21">    <span class="kw">this</span>.<span class="va">el</span>.<span class="at">addEventListener</span>(<span class="st">&quot;click&quot;</span><span class="op">,</span> <span class="kw">this</span>.<span class="va">remove</span>.<span class="at">bind</span>(<span class="kw">this</span>))<span class="op">;</span></a>
-<a class="sourceLine" id="cb3-22" title="22">  <span class="op">};</span></a>
-<a class="sourceLine" id="cb3-23" title="23"></a>
-<a class="sourceLine" id="cb3-24" title="24">  <span class="va">Item</span>.<span class="va">prototype</span>.<span class="at">createText</span> <span class="op">=</span> <span class="kw">function</span> (text) <span class="op">{</span></a>
-<a class="sourceLine" id="cb3-25" title="25">    <span class="cf">if</span> (text <span class="op">===</span> <span class="kw">undefined</span>) <span class="op">{</span></a>
-<a class="sourceLine" id="cb3-26" title="26">      text <span class="op">=</span> <span class="at">prompt</span>(<span class="st">&quot;write something&quot;</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb3-27" title="27">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb3-28" title="28">    <span class="cf">return</span> text <span class="op">+</span> <span class="st">&quot; &lt;span class=&#39;close pull-right&#39;&gt;&amp;times;&lt;/span&gt;&quot;</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb3-29" title="29">  <span class="op">};</span></a>
-<a class="sourceLine" id="cb3-30" title="30"></a>
-<a class="sourceLine" id="cb3-31" title="31">  <span class="va">Item</span>.<span class="va">prototype</span>.<span class="at">remove</span> <span class="op">=</span> <span class="kw">function</span> (e) <span class="op">{</span></a>
-<a class="sourceLine" id="cb3-32" title="32">    <span class="cf">if</span> (<span class="va">e</span>.<span class="va">target</span>.<span class="va">tagName</span>.<span class="at">toLowerCase</span>() <span class="op">==</span> <span class="st">&quot;span&quot;</span>) <span class="op">{</span></a>
-<a class="sourceLine" id="cb3-33" title="33">      <span class="kw">this</span>.<span class="va">el</span>.<span class="at">removeEventListener</span>(<span class="st">&quot;click&quot;</span><span class="op">,</span> <span class="kw">this</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb3-34" title="34">      <span class="kw">this</span>.<span class="va">el</span>.<span class="va">parentNode</span>.<span class="at">removeChild</span>(<span class="kw">this</span>.<span class="at">el</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb3-35" title="35">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb3-36" title="36">  <span class="op">};</span></a>
-<a class="sourceLine" id="cb3-37" title="37"></a>
-<a class="sourceLine" id="cb3-38" title="38">  <span class="kw">var</span> wrap <span class="op">=</span> <span class="kw">new</span> <span class="at">Wrapper</span>(<span class="op">{</span> <span class="dt">el</span><span class="op">:</span> <span class="va">d</span>.<span class="at">querySelector</span>(<span class="st">&quot;.container&quot;</span>) <span class="op">}</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb3-39" title="39"><span class="op">}</span>)()<span class="op">;</span></a></code></pre></div>
+<pre><code>// todo.module.js
+(function () {
+  var d = document;
+  var Wrapper = function (options) {
+    this.el = options.el;
+    this.el
+      .querySelector(&quot;.add-item&quot;)
+      .addEventListener(&quot;click&quot;, this.add.bind(this));
+  };
+
+  Wrapper.prototype.add = function (item) {
+    if (!item.el) {
+      item = new Item({ el: d.createElement(&quot;li&quot;) });
+    }
+    this.el.querySelector(&quot;.items&quot;).appendChild(item.el);
+  };
+
+  var Item = function (options) {
+    this.el = options.el;
+    this.el.innerHTML = this.createText(options.text);
+    this.el.addEventListener(&quot;click&quot;, this.remove.bind(this));
+  };
+
+  Item.prototype.createText = function (text) {
+    if (text === undefined) {
+      text = prompt(&quot;write something&quot;);
+    }
+    return text + &quot; &lt;span class=&#39;close pull-right&#39;&gt;&amp;times;&lt;/span&gt;&quot;;
+  };
+
+  Item.prototype.remove = function (e) {
+    if (e.target.tagName.toLowerCase() == &quot;span&quot;) {
+      this.el.removeEventListener(&quot;click&quot;, this);
+      this.el.parentNode.removeChild(this.el);
+    }
+  };
+
+  var wrap = new Wrapper({ el: d.querySelector(&quot;.container&quot;) });
+})();</code></pre>
 <p>I know that the code has grown from 15 lines to something like 30-37 lines. But why this code is better?</p>
 <h1 id="seperated-the-functionalities">Seperated the functionalities</h1>
 <p>It splits into two, Wrapper and item in which the functionalities on the todo-list will go to wrapper and and functionalities to the specific items goes to item. ie., we can test them seperately.</p>
@@ -178,8 +94,7 @@ basic-git-workflow
 <h1 id="maintainable">Maintainable</h1>
 <p>Here we clearly know where the functionalities are written, in Wrapper or in Item. If I need to add another functionlity it will be very clear that where should write that. if the new functionality is related to whole todo-list it will goto Wrapper or if the functionality is related to a item it will go to Item.</p>
 <p>Here is the refactored(modular) code in action.</p>
-<a class="jsbin-embed" href="http://jsbin.com/pariz/4/embed?js,output">JS Bin</a>
-<script src="http://static.jsbin.com/js/embed.js"></script>
+<p><a href="http://jsbin.com/pariz/4/embed?js,output" class="jsbin-embed">JS Bin</a></p>
 <p>If you are interested, here is a <a href="http://jsbin.com/majoh/7/edit?js,output">CoffeeScript</a> version for you. I think the CS version will more look as its modular.</p>
 <p>Hope this will help you to write modular code from today. If you think the modular code can better than this, please lemme know via comments.</p>
 </body>

@@ -20,19 +20,7 @@ Let’s create the first role for codedeploy
 -   Create Role
 -   Edit the `Trust relationship` and update the content to the following one
 
-    {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Sid": "", 
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "codedeploy.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    }
+    { “Version”: “2012-10-17”, “Statement”: \[ { “Sid”: "“,”Effect“:”Allow“,”Principal“: {”Service“:”codedeploy.amazonaws.com" }, “Action”: “sts:AssumeRole” } \] }
 
 Now we can create the second role to give EC2 instance to access s3.
 

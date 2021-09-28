@@ -1,5 +1,4 @@
-          It was two days back I used gist for the first time. Before that I used [syntax highlighter](http://alexgorbatchev.com/SyntaxHighlighter/) . It was a nice once but setting up this was a nightmare.So googled for the some another syntax highlighter. There I got [gist](http://gist.github.com/). I really amazed with its zero setup feature. From the first try itself i got the desired output.  
-  
+          It was two days back I used gist for the first time. Before that I used [syntax highlighter](http://alexgorbatchev.com/SyntaxHighlighter/) . It was a nice once but setting up this was a nightmare.So googled for the some another syntax highlighter. There I got [gist](http://gist.github.com/). I really amazed with its zero setup feature. From the first try itself i got the desired output.
 
 > Here is the steps I done to show my code in syntax highlighting.
 
@@ -8,7 +7,7 @@
 
 >  Yes, its done. The code is showing in my blog with perfect syntax highlighting. :D.
 
-** Pros**  
+** Pros**
 
 1.  Zero setup
 2.  code is well source controlled and head version is available here.
@@ -17,12 +16,10 @@
 5.  Better performance.
 6.  Source code is centralized. When you need any corrections you just need to update only the gist, all the blogs will be updated.
 
-**Cons**  
+**Cons**
 
 1.  Showing raw data make the whole web page refresh.
 
 >       The Pros and cons are my own opinions. There is a chance for your opinion to be different ;). I am waiting for it. :D
 
-  
-Happy blogging.  
-  
+Happy blogging.

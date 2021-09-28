@@ -13,34 +13,34 @@
   </style>
 </head>
 <body>
-<p><img src="media/image1.png" style="width:7.65849in;height:3.26838in" /></p>
-<p><img src="media/image2.png" style="width:5.875in;height:4.3125in" /></p>
-<p><img src="media/image3.png" style="width:7.27083in;height:3.97917in" /></p>
-<p><img src="media/image4.png" style="width:8.38599in;height:4.63093in" /></p>
-<p><img src="media/image5.png" style="width:8.36458in;height:3.82292in" /></p>
-<p><img src="media/image6.png" style="width:8.38606in;height:4.22489in" /></p>
-<p><img src="media/image7.png" style="width:9.125in;height:3.85417in" /></p>
-<p><img src="media/image8.png" style="width:7.97493in;height:4.40929in" /></p>
-<p><img src="media/image9.png" style="width:9.89583in;height:5.35417in" /></p>
-<p><img src="media/image10.png" style="width:8.83075in;height:3.55032in" /></p>
-<p><img src="media/image11.png" style="width:8.97917in;height:6.10417in" /></p>
-<p><img src="media/image12.png" style="width:8.62308in;height:3.25in" /></p>
-<p><img src="media/image13.png" style="width:5.52083in;height:3.625in" /></p>
-<p><img src="media/image14.png" style="width:7.13451in;height:4.36346in" /></p>
-<p><img src="media/image15.png" style="width:5.76923in;height:5.46236in" /></p>
-<p><img src="media/image16.png" style="width:7.50683in;height:5.07783in" /></p>
-<p><img src="media/image17.png" style="width:7.22688in;height:2.03643in" /></p>
-<p><img src="media/image18.png" style="width:9.31597in;height:3.38814in" /></p>
-<p><img src="media/image19.png" style="width:7.48462in;height:4.24354in" /></p>
-<p><img src="media/image20.png" style="width:9.64615in;height:2.33333in" /></p>
-<p><img src="media/image21.png" style="width:7.64275in;height:3.23029in" /></p>
-<p><img src="media/image22.png" style="width:7.59274in;height:5.13429in" /></p>
-<p><img src="media/image23.png" style="width:7.64615in;height:6.63259in" /></p>
-<p><img src="media/image24.png" style="width:8.37692in;height:5.39194in" /></p>
-<p><img src="media/image25.png" style="width:8.66798in;height:5.27083in" /></p>
-<p><img src="media/image26.png" style="width:8.32396in;height:2.27997in" /></p>
-<p><img src="media/image27.png" style="width:7.98462in;height:1.55975in" /></p>
-<p><img src="media/image28.png" style="width:8.02292in;height:6.06602in" /></p>
+<p><img src="media/image1.png" /></p>
+<p><img src="media/image2.png" /></p>
+<p><img src="media/image3.png" /></p>
+<p><img src="media/image4.png" /></p>
+<p><img src="media/image5.png" /></p>
+<p><img src="media/image6.png" /></p>
+<p><img src="media/image7.png" /></p>
+<p><img src="media/image8.png" /></p>
+<p><img src="media/image9.png" /></p>
+<p><img src="media/image10.png" /></p>
+<p><img src="media/image11.png" /></p>
+<p><img src="media/image12.png" /></p>
+<p><img src="media/image13.png" /></p>
+<p><img src="media/image14.png" /></p>
+<p><img src="media/image15.png" /></p>
+<p><img src="media/image16.png" /></p>
+<p><img src="media/image17.png" /></p>
+<p><img src="media/image18.png" /></p>
+<p><img src="media/image19.png" /></p>
+<p><img src="media/image20.png" /></p>
+<p><img src="media/image21.png" /></p>
+<p><img src="media/image22.png" /></p>
+<p><img src="media/image23.png" /></p>
+<p><img src="media/image24.png" /></p>
+<p><img src="media/image25.png" /></p>
+<p><img src="media/image26.png" /></p>
+<p><img src="media/image27.png" /></p>
+<p><img src="media/image28.png" /></p>
 <p><em>//! Single Linked List</em></p>
 <p>class Node {</p>
 <p>    constructor(val) {</p>
@@ -76,7 +76,7 @@
 <p>        }</p>
 <p>        <em>this</em>.tail = newTail;</p>
 <p>        <em>this</em>.tail.next = null;</p>
-<p>        <em>this</em>.length--;</p>
+<p>        <em>this</em>.length–;</p>
 <p>        <em>if</em> (<em>this</em>.length === 0) {</p>
 <p>            <em>this</em>.head = null;</p>
 <p>            <em>this</em>.tail = null;</p>
@@ -101,7 +101,7 @@
 <p>        <em>if</em> (!<em>this</em>.head) <em>return</em> undefined;</p>
 <p>        const currentHead = <em>this</em>.head;</p>
 <p>        <em>this</em>.head = currentHead.next;</p>
-<p>        <em>this</em>.length--;</p>
+<p>        <em>this</em>.length–;</p>
 <p>        <em>if</em> (<em>this</em>.length === 0) {</p>
 <p>            <em>this</em>.tail = null;</p>
 <p>        }</p>
@@ -155,7 +155,7 @@
 <p>        const previousNode = <em>this</em>.get(index - 1);</p>
 <p>        const removed = previousNode.next;</p>
 <p>        previousNode.next = removed.next;</p>
-<p>        <em>this</em>.length--;</p>
+<p>        <em>this</em>.length–;</p>
 <p>        <em>return</em> removed;</p>
 <p>    }</p>
 <p>    size() {</p>
@@ -165,7 +165,7 @@
 <p>exports.Node = Node;</p>
 <p>exports.LinkedList = LinkedList;</p>
 <p><em>//!Queue Array:</em></p>
-<p><em>// Using the first element of the array as the "front" of the queue</em></p>
+<p><em>// Using the first element of the array as the “front” of the queue</em></p>
 <p>class QueueArray {</p>
 <p>    constructor() {</p>
 <p>        <em>this</em>.queue = [];</p>
@@ -180,7 +180,7 @@
 <p>        <em>return</em> <em>this</em>.queue[0];</p>
 <p>    }</p>
 <p>}</p>
-<p><em>// Using the last element of the array as the "front" of the queue</em></p>
+<p><em>// Using the last element of the array as the “front” of the queue</em></p>
 <p>class QueueArray {</p>
 <p>    constructor() {</p>
 <p>        <em>this</em>.queue = [];</p>
@@ -230,7 +230,7 @@
 <p>            <em>this</em>.back = null;</p>
 <p>        }</p>
 <p>        <em>this</em>.front = <em>this</em>.front.next;</p>
-<p>        <em>this</em>.length--;</p>
+<p>        <em>this</em>.length–;</p>
 <p>        <em>return</em> temp.value;</p>
 <p>    }</p>
 <p>    size() {</p>
@@ -238,9 +238,9 @@
 <p>    }</p>
 <p>}</p>
 <p><em>//!Stack Array</em></p>
-<p><em>// Using the last element of the array as the "top" of the stack</em></p>
+<p><em>// Using the last element of the array as the “top” of the stack</em></p>
 <p><em>// This is more efficient than the second implementation because we can push and</em></p>
-<p><em>// pop from an array in O(1) time since we don't have to reassign any indices.</em></p>
+<p><em>// pop from an array in O(1) time since we don’t have to reassign any indices.</em></p>
 <p>class StackArray {</p>
 <p>    constructor() {</p>
 <p>        <em>this</em>.stack = [];</p>
@@ -255,7 +255,7 @@
 <p>        <em>return</em> <em>this</em>.stack[<em>this</em>.stack.length - 1];</p>
 <p>    }</p>
 <p>}</p>
-<p><em>// Using the first element of the array as the "top" of the stack</em></p>
+<p><em>// Using the first element of the array as the “top” of the stack</em></p>
 <p><em>// This is not as efficient as the previous implementation since we have to</em></p>
 <p><em>// reassign indices for a shift and unshift, but the user will see the same</em></p>
 <p><em>// functionality.</em></p>
@@ -304,7 +304,7 @@
 <p>        }</p>
 <p>        const temp = <em>this</em>.top;</p>
 <p>        <em>this</em>.top = <em>this</em>.top.next;</p>
-<p>        <em>this</em>.length--;</p>
+<p>        <em>this</em>.length–;</p>
 <p>        <em>return</em> temp.value;</p>
 <p>    }</p>
 <p>    peek() {</p>

@@ -1,7 +1,6 @@
 Open Dialog
 
-Buttons
--------
+## Buttons
 
 ### Enabled
 
@@ -11,38 +10,29 @@ Basic Button Icon Button Popup Toggle
 
 Basic Button Icon Button Popup Toggle
 
-Checkbox
---------
+## Checkbox
 
-Toggle
-------
+## Toggle
 
-Radio
------
+## Radio
 
-Text Input
-----------
+## Text Input
 
-Enhanced Text Input
--------------------
+## Enhanced Text Input
 
-Time Picker
------------
+## Time Picker
 
 Basic Time Picker
 
-Text Area
----------
+## Text Area
 
 Example Text Area
 
 Disabled Text Area
 
-Selects
--------
+## Selects
 
-Progress Bars
--------------
+## Progress Bars
 
 value: 50%
 
@@ -52,8 +42,7 @@ value: 250, custom output function
 
 value: 10, showOutput: false
 
-Sliders
--------
+## Sliders
 
 Horizontal slider, value: 50
 

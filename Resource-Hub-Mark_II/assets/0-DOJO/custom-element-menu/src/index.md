@@ -1,5 +1,4 @@
-Dojo Widget Menu
-----------------
+## Dojo Widget Menu
 
 ### Demo
 
@@ -19,11 +18,10 @@ Dojo Widget Menu
         ]);
       }
     }
-                    
-                
 
-Custom Element Menu
--------------------
+
+
+## Custom Element Menu
 
 ### Demo
 
@@ -42,5 +40,5 @@ Custom Element Menu
         console.log(detail);
       });
     </script>
-                    
-                
+
+

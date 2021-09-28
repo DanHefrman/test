@@ -1,4 +1,4 @@
-In the talk “JavaScript luv Unicode”, <span class="citation" data-cites="mathiasb">\[@mathiasb\]</span>(https://mathiasbynens.be/) really given a pretty good introduction to unicodes. This is a brief post on what I learned about uncodes from his talk. Please note that many of the following things are explaned in the context of JavaScript.
+In the talk “JavaScript luv Unicode”, <span class="citation" data-cites="mathiasb">\[<span class="citation" data-cites="mathiasb">@mathiasb</span>\]</span>(https://mathiasbynens.be/) really given a pretty good introduction to unicodes. This is a brief post on what I learned about uncodes from his talk. Please note that many of the following things are explaned in the context of JavaScript.
 
 All the symbols in unicode standard will have a unique number called **code point** and a unique name. we don’t much care about the name in this post, but we use the word “code point” a lot. For example, the letter “A” is represented as **U+0041** in unicode where the integer part **0041** is called **code point**.
 

@@ -1,78 +1,140 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>V7-Migration-Guide</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
-</head>
-<body>
-<h1 id="widgets-6-to-7-migration-guide">Widgets 6 to 7 Migration Guide</h1>
-<h2 id="breaking-changes">Breaking changes</h2>
-<h3 id="removal-of-touchmousepointer-events">Removal of touch/mouse/pointer events</h3>
-<p>We have standardized mouse / touch events to use <code>pointer</code> events and removed a large number of callbacks. For example, <code>text-input</code> now provides <code>onOver</code> / <code>onOut</code> events rather than <code>mouseIn</code> / <code>mouseOut</code> which signify the cross device nature of the pointer events being used.</p>
-<h3 id="standardization-of-inputvaluechange">Standardization of input/value/change</h3>
-<p>We have consolidated the use of <code>onInput</code> / <code>onChange</code> / etc to a consistent <code>onValue</code> callback. All widgets returning a value will do so using this callback. In addition to this change, any callbacks which previously returned a value or a key such as <code>onChange</code> / <code>onBlur</code> have either been removed or have been changed to return zero parameters.</p>
-<p>To match the use of <code>onValue</code>, all widgets that accept a value now either take a <code>value</code> or <code>initialValue</code> property (in the case of partially controlled widgets). This will make it easier and more consistent to use the widget library.</p>
-<h3 id="partially-controlled-pattern">Partially controlled pattern</h3>
-<p>In an effort to make widgets easier and simpler to use out of the box we have changed many of our form widgets to use a partially controlled pattern. This means widgets that accept <code>initialValue</code> will manage their own value internally. They will still report back value changes via the <code>onValue</code> callback but you do not need to keep setting <code>value</code> on the widget. The same is true for widgets that accept an <code>onValidate</code> callback but do not accept <code>valid</code>. These widgets will self validate and inform you of their validation state.</p>
-<h3 id="validated-widgets">Validated widgets</h3>
-<p>Many of our form widgets are now capable of validating themselves. In many cases this is done in an uncontrolled way meaning the widget will display its valid state / error message and will call the <code>onValidate</code> callback when valid state changes.</p>
-<hr />
-<h2 id="individual-widget-changes">Individual Widget Changes</h2>
-<h3 id="accordionpane">AccordionPane</h3>
-<ul>
-<li>Renamed to <code>Accordion</code>.</li>
-</ul>
-<h4 id="property-changes">Property changes</h4>
-<h5 id="added-properties">Added properties</h5>
-<ul>
-<li><code>exclusive?: boolean;</code>
-<ul>
-<li>This property only allows one open child pane at a time.</li>
-</ul></li>
-</ul>
-<h5 id="changed-properties">Changed properties</h5>
-<ul>
-<li><code>children: AccordionPaneChildren;</code>
-<ul>
-<li>This property no longer accepts <code>TitlePane</code> widgets.</li>
-<li>This property accepts a renderer function that returns child panes.</li>
-<li>Child panes use renderer function arguments as properties.</li>
-<li><code>Pane</code> is exported from <code>Accordion</code></li>
-</ul></li>
-</ul>
-<h5 id="removed-properties">Removed properties</h5>
-<ul>
-<li><code>onRequestClose?(key: string): void</code>
-<ul>
-<li>This property was removed altogether.</li>
-<li>Child panes can use <code>onClose</code> instead.</li>
-</ul></li>
-<li><code>onRequestOpen?(key: string): void</code>
-<ul>
-<li>This property was removed altogether.</li>
-<li>Child panes can use <code>onOpen</code> instead.</li>
-</ul></li>
-<li><code>openKeys?: string[]</code>
-<ul>
-<li>This property was removed altogether.</li>
-<li>Child pane open state is now internally managed.</li>
-<li>Child panes can use <code>initialOpen</code> to set initial open state.</li>
-</ul></li>
-</ul>
-<h4 id="changes-in-behavior">Changes in behavior</h4>
-<p>The <code>Accordion</code> widget is now uncontrolled by default, meaning it manages its own child pane open state internally. Child panes can use an <code>initialOpen</code> property to set individual initial open state. Child panes can also use <code>onOpen</code> and <code>onClose</code> properties to detect when this open state changes.</p>
-<p>The <code>Accordion</code> now uses a child renderer function to determine its child panes. This means that a function is passed as the widget’s only child, and that function receives <code>onOpen</code>, <code>onClose</code>, and <code>open</code> arguments to be used as properties each returned pane. Child panes should be <code>Pane</code> widgets, a convenience wrapper around <code>TitlePane</code> with features specific to <code>Accordion</code>.</p>
-<h4 id="example-of-migration-from-v6-to-v7">Example of migration from v6 to v7</h4>
-<h5 id="v6-example">v6 Example</h5>
-<pre><code>&lt;AccordionPane
+	<head>
+		<meta charset="utf-8" />
+		<meta name="generator" content="pandoc" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+		<title>V7-Migration-Guide</title>
+		<style type="text/css">
+			code {
+				white-space: pre-wrap;
+			}
+			span.smallcaps {
+				font-variant: small-caps;
+			}
+			span.underline {
+				text-decoration: underline;
+			}
+			div.column {
+				display: inline-block;
+				vertical-align: top;
+				width: 50%;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 id="widgets-6-to-7-migration-guide">Widgets 6 to 7 Migration Guide</h1>
+		<h2 id="breaking-changes">Breaking changes</h2>
+		<h3 id="removal-of-touchmousepointer-events">Removal of touch/mouse/pointer events</h3>
+		<p>
+			We have standardized mouse / touch events to use <code>pointer</code> events and removed
+			a large number of callbacks. For example, <code>text-input</code> now provides
+			<code>onOver</code> / <code>onOut</code> events rather than <code>mouseIn</code> /
+			<code>mouseOut</code> which signify the cross device nature of the pointer events being
+			used.
+		</p>
+		<h3 id="standardization-of-inputvaluechange">Standardization of input/value/change</h3>
+		<p>
+			We have consolidated the use of <code>onInput</code> / <code>onChange</code> / etc to a
+			consistent <code>onValue</code> callback. All widgets returning a value will do so using
+			this callback. In addition to this change, any callbacks which previously returned a
+			value or a key such as <code>onChange</code> / <code>onBlur</code> have either been
+			removed or have been changed to return zero parameters.
+		</p>
+		<p>
+			To match the use of <code>onValue</code>, all widgets that accept a value now either
+			take a <code>value</code> or <code>initialValue</code> property (in the case of
+			partially controlled widgets). This will make it easier and more consistent to use the
+			widget library.
+		</p>
+		<h3 id="partially-controlled-pattern">Partially controlled pattern</h3>
+		<p>
+			In an effort to make widgets easier and simpler to use out of the box we have changed
+			many of our form widgets to use a partially controlled pattern. This means widgets that
+			accept <code>initialValue</code> will manage their own value internally. They will still
+			report back value changes via the <code>onValue</code> callback but you do not need to
+			keep setting <code>value</code> on the widget. The same is true for widgets that accept
+			an <code>onValidate</code> callback but do not accept <code>valid</code>. These widgets
+			will self validate and inform you of their validation state.
+		</p>
+		<h3 id="validated-widgets">Validated widgets</h3>
+		<p>
+			Many of our form widgets are now capable of validating themselves. In many cases this is
+			done in an uncontrolled way meaning the widget will display its valid state / error
+			message and will call the <code>onValidate</code> callback when valid state changes.
+		</p>
+		<hr />
+		<h2 id="individual-widget-changes">Individual Widget Changes</h2>
+		<h3 id="accordionpane">AccordionPane</h3>
+		<ul>
+			<li>Renamed to <code>Accordion</code>.</li>
+		</ul>
+		<h4 id="property-changes">Property changes</h4>
+		<h5 id="added-properties">Added properties</h5>
+		<ul>
+			<li>
+				<code>exclusive?: boolean;</code>
+				<ul>
+					<li>This property only allows one open child pane at a time.</li>
+				</ul>
+			</li>
+		</ul>
+		<h5 id="changed-properties">Changed properties</h5>
+		<ul>
+			<li>
+				<code>children: AccordionPaneChildren;</code>
+				<ul>
+					<li>This property no longer accepts <code>TitlePane</code> widgets.</li>
+					<li>This property accepts a renderer function that returns child panes.</li>
+					<li>Child panes use renderer function arguments as properties.</li>
+					<li><code>Pane</code> is exported from <code>Accordion</code></li>
+				</ul>
+			</li>
+		</ul>
+		<h5 id="removed-properties">Removed properties</h5>
+		<ul>
+			<li>
+				<code>onRequestClose?(key: string): void</code>
+				<ul>
+					<li>This property was removed altogether.</li>
+					<li>Child panes can use <code>onClose</code> instead.</li>
+				</ul>
+			</li>
+			<li>
+				<code>onRequestOpen?(key: string): void</code>
+				<ul>
+					<li>This property was removed altogether.</li>
+					<li>Child panes can use <code>onOpen</code> instead.</li>
+				</ul>
+			</li>
+			<li>
+				<code>openKeys?: string[]</code>
+				<ul>
+					<li>This property was removed altogether.</li>
+					<li>Child pane open state is now internally managed.</li>
+					<li>Child panes can use <code>initialOpen</code> to set initial open state.</li>
+				</ul>
+			</li>
+		</ul>
+		<h4 id="changes-in-behavior">Changes in behavior</h4>
+		<p>
+			The <code>Accordion</code> widget is now uncontrolled by default, meaning it manages its
+			own child pane open state internally. Child panes can use an
+			<code>initialOpen</code> property to set individual initial open state. Child panes can
+			also use <code>onOpen</code> and <code>onClose</code> properties to detect when this
+			open state changes.
+		</p>
+		<p>
+			The <code>Accordion</code> now uses a child renderer function to determine its child
+			panes. This means that a function is passed as the widget’s only child, and that
+			function receives <code>onOpen</code>, <code>onClose</code>, and
+			<code>open</code> arguments to be used as properties each returned pane. Child panes
+			should be <code>Pane</code> widgets, a convenience wrapper around
+			<code>TitlePane</code> with features specific to <code>Accordion</code>.
+		</p>
+		<h4 id="example-of-migration-from-v6-to-v7">Example of migration from v6 to v7</h4>
+		<h5 id="v6-example">v6 Example</h5>
+		<pre><code>&lt;AccordionPane
     onRequestClose={(key) =&gt; icache.set(&#39;keys&#39;, icache.get(&#39;keys&#39;).filter(k !== key))}
     onRequestOpen={(key) =&gt; icache.set(&#39;keys&#39;, [...icache.get(&#39;keys&#39;), key])}
     openKeys={icache.get(&#39;keys&#39;)}
@@ -81,8 +143,8 @@
         Content
     &lt;/TitlePane&gt;
 &lt;/AccordionPane&gt;</code></pre>
-<h5 id="v7-example">v7 Example</h5>
-<pre><code>&lt;Accordion&gt;
+		<h5 id="v7-example">v7 Example</h5>
+		<pre><code>&lt;Accordion&gt;
     {(onOpen, onClose, open) =&gt; [
         &lt;Pane key=&quot;pane&quot; onOpen={onOpen(&#39;pane&#39;)} onClose={onClose(&#39;pane&#39;)} open={open(&#39;pane&#39;)}&gt;
             {{
@@ -92,107 +154,159 @@
         &lt;/Pane&gt;,
     ]}
 &lt;/Accordion&gt;</code></pre>
-<p>Latest example can be found at <a href="https://widgets.dojo.io/#widget/accordion/overview">widgets.dojo.io/#widget/accordion/overview</a></p>
-<hr />
-<h3 id="button">Button</h3>
-<h4 id="property-changes-1">Property changes</h4>
-<h5 id="changed-properties-1">Changed properties</h5>
-<ul>
-<li>onDown?(): void;
-<ul>
-<li>Handler for events triggered by pointer down.</li>
-<li>Replaces previous down event handlers.</li>
-</ul></li>
-</ul>
-<h5 id="removed-properties-1">Removed properties</h5>
-<ul>
-<li>popup?: { expanded?: boolean; id?: string } | boolean;
-<ul>
-<li>Popup functionality was removed from <code>Button</code>.</li>
-<li>The <code>TriggerPopup</code> widget provides popup functionality.</li>
-</ul></li>
-<li>onInput?(value?: string | number | boolean): void;
-<ul>
-<li>Not applicable to a button.</li>
-</ul></li>
-<li>onChange?(value?: string | number | boolean): void;
-<ul>
-<li>Not applicable to a button.</li>
-</ul></li>
-<li>The following interaction events were replaced by onDown:
-<ul>
-<li>onMouseDown?(): void;</li>
-<li>onMouseUp?(): void;</li>
-<li>onTouchStart?(): void;</li>
-<li>onTouchEnd?(): void;</li>
-<li>onTouchCancel?(): void;</li>
-<li>onMouseDown?(): void;</li>
-<li>onMouseUp?(): void;</li>
-<li>onTouchStart?(): void;</li>
-<li>onTouchEnd?(): void;</li>
-<li>onTouchCancel?(): void;</li>
-</ul></li>
-</ul>
-<h4 id="example-of-migration-from-v6-to-v7-1">Example of migration from v6 to v7</h4>
-<h5 id="v6-example-1">v6 Example</h5>
-<pre><code>&lt;Button
+		<p>
+			Latest example can be found at
+			<a href="https://widgets.dojo.io/#widget/accordion/overview"
+				>widgets.dojo.io/#widget/accordion/overview</a
+			>
+		</p>
+		<hr />
+		<h3 id="button">Button</h3>
+		<h4 id="property-changes-1">Property changes</h4>
+		<h5 id="changed-properties-1">Changed properties</h5>
+		<ul>
+			<li>
+				onDown?(): void;
+				<ul>
+					<li>Handler for events triggered by pointer down.</li>
+					<li>Replaces previous down event handlers.</li>
+				</ul>
+			</li>
+		</ul>
+		<h5 id="removed-properties-1">Removed properties</h5>
+		<ul>
+			<li>
+				popup?: { expanded?: boolean; id?: string } | boolean;
+				<ul>
+					<li>Popup functionality was removed from <code>Button</code>.</li>
+					<li>The <code>TriggerPopup</code> widget provides popup functionality.</li>
+				</ul>
+			</li>
+			<li>
+				onInput?(value?: string | number | boolean): void;
+				<ul>
+					<li>Not applicable to a button.</li>
+				</ul>
+			</li>
+			<li>
+				onChange?(value?: string | number | boolean): void;
+				<ul>
+					<li>Not applicable to a button.</li>
+				</ul>
+			</li>
+			<li>
+				The following interaction events were replaced by onDown:
+				<ul>
+					<li>onMouseDown?(): void;</li>
+					<li>onMouseUp?(): void;</li>
+					<li>onTouchStart?(): void;</li>
+					<li>onTouchEnd?(): void;</li>
+					<li>onTouchCancel?(): void;</li>
+					<li>onMouseDown?(): void;</li>
+					<li>onMouseUp?(): void;</li>
+					<li>onTouchStart?(): void;</li>
+					<li>onTouchEnd?(): void;</li>
+					<li>onTouchCancel?(): void;</li>
+				</ul>
+			</li>
+		</ul>
+		<h4 id="example-of-migration-from-v6-to-v7-1">Example of migration from v6 to v7</h4>
+		<h5 id="v6-example-1">v6 Example</h5>
+		<pre><code>&lt;Button
     onMouseDown={() =&gt; {
         console.log(&#39;Down&#39;);
     }}
 &gt;
     Example Button
 &lt;/Button&gt;</code></pre>
-<h5 id="v7-example-1">v7 Example</h5>
-<pre><code>&lt;Button
+		<h5 id="v7-example-1">v7 Example</h5>
+		<pre><code>&lt;Button
     onDown={() =&gt; {
         console.log(&#39;Down&#39;);
     }}
 &gt;
     Example Button
 &lt;/Button&gt;</code></pre>
-<p>Latest example can be found at <a href="https://widgets.dojo.io/#widget/button/overview">widgets.dojo.io/#widget/button/overview</a></p>
-<hr />
-<h3 id="calendar">Calendar</h3>
-<h4 id="property-changes-2">Property changes</h4>
-<h5 id="changed-properties-2">Changed properties</h5>
-<ul>
-<li>initialValue?: Date
-<ul>
-<li>This property can be used to provide an initial value or can be used to partially control the component, which responds to changes in this value</li>
-</ul></li>
-<li>value?: Date
-<ul>
-<li>This property replaced <code>selectedDate</code></li>
-</ul></li>
-<li>onValue?(value: Date): void
-<ul>
-<li>This property replaced <code>onDateSelect</code></li>
-<li>The name was changed to follow a more consistent pattern</li>
-</ul></li>
-<li>initialMonth?: number
-<ul>
-<li>This property can be used to specify the initial month that should be displayed or can be used together with <code>onMonth</code> to partially control the month displayed, which will responod to changes in this value</li>
-</ul></li>
-<li>onMonth?(month: number): void
-<ul>
-<li>This property replaced <code>onMonthChange</code></li>
-<li>The name was changed to follow a more consistent pattern</li>
-</ul></li>
-<li>initialYear?: number
-<ul>
-<li>This property can be used to specify the initial year that should be displayed or can be used together with <code>onYear</code> to partially control the year displayed, which will respond to changes in this value</li>
-</ul></li>
-<li>onYear?(year: number): void
-<ul>
-<li>This property replaced <code>onYearChange</code></li>
-<li>The name was changed to follow a more consistent pattern</li>
-</ul></li>
-</ul>
-<h4 id="changes-in-behavior-1">Changes in behavior</h4>
-<p>The calendar widget is now uncontrolled by default. Initial values can be provided but the calendar will maintain its own internal state, tracking the displayed month and year and the currently selected value. The calendar can be partially controlled using the <code>initial</code> properties as it will update when those values change. For use cases where the component needs to be fully controlled, the <code>value</code>, <code>month</code>, and <code>year</code> properties can be used.</p>
-<h4 id="example-of-migration-from-v6-to-v7-2">Example of migration from v6 to v7</h4>
-<h5 id="v6-example-2">v6 Example</h5>
-<pre><code>const selectedDate = icache.getOrSet(&#39;date&#39;, new Date());
+		<p>
+			Latest example can be found at
+			<a href="https://widgets.dojo.io/#widget/button/overview"
+				>widgets.dojo.io/#widget/button/overview</a
+			>
+		</p>
+		<hr />
+		<h3 id="calendar">Calendar</h3>
+		<h4 id="property-changes-2">Property changes</h4>
+		<h5 id="changed-properties-2">Changed properties</h5>
+		<ul>
+			<li>
+				initialValue?: Date
+				<ul>
+					<li>
+						This property can be used to provide an initial value or can be used to
+						partially control the component, which responds to changes in this value
+					</li>
+				</ul>
+			</li>
+			<li>
+				value?: Date
+				<ul>
+					<li>This property replaced <code>selectedDate</code></li>
+				</ul>
+			</li>
+			<li>
+				onValue?(value: Date): void
+				<ul>
+					<li>This property replaced <code>onDateSelect</code></li>
+					<li>The name was changed to follow a more consistent pattern</li>
+				</ul>
+			</li>
+			<li>
+				initialMonth?: number
+				<ul>
+					<li>
+						This property can be used to specify the initial month that should be
+						displayed or can be used together with <code>onMonth</code> to partially
+						control the month displayed, which will responod to changes in this value
+					</li>
+				</ul>
+			</li>
+			<li>
+				onMonth?(month: number): void
+				<ul>
+					<li>This property replaced <code>onMonthChange</code></li>
+					<li>The name was changed to follow a more consistent pattern</li>
+				</ul>
+			</li>
+			<li>
+				initialYear?: number
+				<ul>
+					<li>
+						This property can be used to specify the initial year that should be
+						displayed or can be used together with <code>onYear</code> to partially
+						control the year displayed, which will respond to changes in this value
+					</li>
+				</ul>
+			</li>
+			<li>
+				onYear?(year: number): void
+				<ul>
+					<li>This property replaced <code>onYearChange</code></li>
+					<li>The name was changed to follow a more consistent pattern</li>
+				</ul>
+			</li>
+		</ul>
+		<h4 id="changes-in-behavior-1">Changes in behavior</h4>
+		<p>
+			The calendar widget is now uncontrolled by default. Initial values can be provided but
+			the calendar will maintain its own internal state, tracking the displayed month and year
+			and the currently selected value. The calendar can be partially controlled using the
+			<code>initial</code> properties as it will update when those values change. For use
+			cases where the component needs to be fully controlled, the <code>value</code>,
+			<code>month</code>, and <code>year</code> properties can be used.
+		</p>
+		<h4 id="example-of-migration-from-v6-to-v7-2">Example of migration from v6 to v7</h4>
+		<h5 id="v6-example-2">v6 Example</h5>
+		<pre><code>const selectedDate = icache.getOrSet(&#39;date&#39;, new Date());
 const month = icache.getOrSet(&#39;month&#39;, selectedDate.getMonth());
 const year = icache.getOrSet(&#39;year&#39;, selectedDate.getFullYear());
 
@@ -210,53 +324,78 @@ const year = icache.getOrSet(&#39;year&#39;, selectedDate.getFullYear());
         icache.set(&#39;year&#39;, year);
     }}
 /&gt;;</code></pre>
-<h5 id="v7-example-2">v7 Example</h5>
-<pre><code>&lt;Calendar
+		<h5 id="v7-example-2">v7 Example</h5>
+		<pre><code>&lt;Calendar
     onValue={(date) =&gt; {
         icache.set(&#39;date&#39;, date);
     }}
 /&gt;</code></pre>
-<p>Latest example can be found at <a href="https://widgets.dojo.io/#widget/calendar/overview">widgets.dojo.io/#widget/calendar/overview</a></p>
-<hr />
-<h3 id="checkbox">Checkbox</h3>
-<h4 id="property-changes-3">Property changes</h4>
-<h5 id="changed-properties-3">Changed properties</h5>
-<ul>
-<li>onBlur: () =&gt; void;
-<ul>
-<li>this prop now is passed zero arguments, whereas previously it was passed the current <code>value</code> and <code>checked</code> property values.</li>
-</ul></li>
-<li>onFocus: () =&gt; void;
-<ul>
-<li>this prop now is passed zero arguments, whereas previously it was passed the current <code>value</code> and <code>checked</code> property values.</li>
-</ul></li>
-</ul>
-<h5 id="removed-properties-2">Removed properties</h5>
-<ul>
-<li>label: string;
-<ul>
-<li>Removed in favor of using a child to render the label</li>
-</ul></li>
-<li>onLabel: DNode
-<ul>
-<li>Removed in favor of using a child renderer</li>
-</ul></li>
-<li>offLabel: DNode
-<ul>
-<li>Removed in favor of using a child renderer</li>
-</ul></li>
-<li>mode: ‘normal’ | ‘toggle’
-<ul>
-<li>“toggle” mode has been split into the <code>switch</code> widget (see below)</li>
-</ul></li>
-<li>onChange: (value: string, checked: boolean) =&gt; void;</li>
-<li>replaced by <code>onValue(checked: boolean)</code></li>
-<li>onClick: (value: string, checked: boolean) =&gt; void;</li>
-<li>replaced by <code>onValue(checked: boolean)</code></li>
-</ul>
-<h4 id="example-of-migration-from-v6-to-v7-3">Example of migration from v6 to v7</h4>
-<h5 id="v6-example-3">v6 Example</h5>
-<pre><code>import { create, tsx } from &#39;@dojo/framework/core/vdom&#39;;
+		<p>
+			Latest example can be found at
+			<a href="https://widgets.dojo.io/#widget/calendar/overview"
+				>widgets.dojo.io/#widget/calendar/overview</a
+			>
+		</p>
+		<hr />
+		<h3 id="checkbox">Checkbox</h3>
+		<h4 id="property-changes-3">Property changes</h4>
+		<h5 id="changed-properties-3">Changed properties</h5>
+		<ul>
+			<li>
+				onBlur: () =&gt; void;
+				<ul>
+					<li>
+						this prop now is passed zero arguments, whereas previously it was passed the
+						current <code>value</code> and <code>checked</code> property values.
+					</li>
+				</ul>
+			</li>
+			<li>
+				onFocus: () =&gt; void;
+				<ul>
+					<li>
+						this prop now is passed zero arguments, whereas previously it was passed the
+						current <code>value</code> and <code>checked</code> property values.
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<h5 id="removed-properties-2">Removed properties</h5>
+		<ul>
+			<li>
+				label: string;
+				<ul>
+					<li>Removed in favor of using a child to render the label</li>
+				</ul>
+			</li>
+			<li>
+				onLabel: DNode
+				<ul>
+					<li>Removed in favor of using a child renderer</li>
+				</ul>
+			</li>
+			<li>
+				offLabel: DNode
+				<ul>
+					<li>Removed in favor of using a child renderer</li>
+				</ul>
+			</li>
+			<li>
+				mode: ‘normal’ | ‘toggle’
+				<ul>
+					<li>
+						“toggle” mode has been split into the <code>switch</code> widget (see below)
+					</li>
+				</ul>
+			</li>
+			<li>onChange: (value: string, checked: boolean) =&gt; void;</li>
+			<li>replaced by <code>onValue(checked: boolean)</code></li>
+			<li>onClick: (value: string, checked: boolean) =&gt; void;</li>
+			<li>replaced by <code>onValue(checked: boolean)</code></li>
+		</ul>
+		<h4 id="example-of-migration-from-v6-to-v7-3">Example of migration from v6 to v7</h4>
+		<h5 id="v6-example-3">v6 Example</h5>
+		<pre><code>import { create, tsx } from &#39;@dojo/framework/core/vdom&#39;;
 import icache from &#39;@dojo/framework/core/middleware/icache&#39;;
 import Checkbox from &#39;@dojo/widgets/checkbox&#39;;
 
@@ -279,8 +418,8 @@ export default factory(function CheckboxExample({ middleware: { icache } }) {
         // other checkboxes...
     ];
 });</code></pre>
-<h5 id="v7-example-3">v7 Example</h5>
-<pre><code>import { create, tsx } from &#39;@dojo/framework/core/vdom&#39;;
+		<h5 id="v7-example-3">v7 Example</h5>
+		<pre><code>import { create, tsx } from &#39;@dojo/framework/core/vdom&#39;;
 import icache from &#39;@dojo/framework/core/middleware/icache&#39;;
 import Checkbox from &#39;@dojo/widgets/checkbox&#39;;
 
@@ -300,45 +439,69 @@ export default factory(function CheckboxExample({ middleware: { icache } }) {
         // other checkboxes...
     ];
 });</code></pre>
-<p>Latest example can be found at <a href="https://widgets.dojo.io/#widget/checkbox/overview">widgets.dojo.io/#widget/checkbox/overview</a></p>
-<hr />
-<h3 id="dialog">Dialog</h3>
-<h4 id="property-changes-4">Property changes</h4>
-<h5 id="changed-properties-4">Changed properties</h5>
-<ul>
-<li><code>title?: DNode;</code>
-<ul>
-<li>Title is now specified in the child function and not passed as a property.</li>
-</ul></li>
-<li><code>modal?: boolean;</code>
-<ul>
-<li>The modal property is now only valid when role=“dialog”</li>
-</ul></li>
-</ul>
-<h5 id="removed-properties-3">Removed properties</h5>
-<ul>
-<li><code>underlayEnterAnimation</code>
-<ul>
-<li>Replaced by theming <code>underlayEnter</code> class.</li>
-</ul></li>
-<li><code>underlayExitAnimation</code>
-<ul>
-<li>Replaced by theming <code>underlayExit</code> class.</li>
-</ul></li>
-<li><code>enterAnimation</code>
-<ul>
-<li>Replaced by theming <code>enter</code> class</li>
-</ul></li>
-<li><code>exitAnimation</code>
-<ul>
-<li>Replaced by theming <code>exit</code> class</li>
-</ul></li>
-</ul>
-<h4 id="changes-in-behavior-2">Changes in behavior</h4>
-<p>Dialog contents, title, and actions are now specified via a child function. Previously, the title was specified via a property and the dialog contents where passed as the children of the Dialog. Dialog actions are nodes that appear below the dialog contents, like cancel / ok buttons.</p>
-<h4 id="example-of-migration-from-v6-to-v7-4">Example of migration from v6 to v7</h4>
-<h5 id="v6-example-4">v6 Example</h5>
-<pre><code>&lt;Dialog
+		<p>
+			Latest example can be found at
+			<a href="https://widgets.dojo.io/#widget/checkbox/overview"
+				>widgets.dojo.io/#widget/checkbox/overview</a
+			>
+		</p>
+		<hr />
+		<h3 id="dialog">Dialog</h3>
+		<h4 id="property-changes-4">Property changes</h4>
+		<h5 id="changed-properties-4">Changed properties</h5>
+		<ul>
+			<li>
+				<code>title?: DNode;</code>
+				<ul>
+					<li>
+						Title is now specified in the child function and not passed as a property.
+					</li>
+				</ul>
+			</li>
+			<li>
+				<code>modal?: boolean;</code>
+				<ul>
+					<li>The modal property is now only valid when role=“dialog”</li>
+				</ul>
+			</li>
+		</ul>
+		<h5 id="removed-properties-3">Removed properties</h5>
+		<ul>
+			<li>
+				<code>underlayEnterAnimation</code>
+				<ul>
+					<li>Replaced by theming <code>underlayEnter</code> class.</li>
+				</ul>
+			</li>
+			<li>
+				<code>underlayExitAnimation</code>
+				<ul>
+					<li>Replaced by theming <code>underlayExit</code> class.</li>
+				</ul>
+			</li>
+			<li>
+				<code>enterAnimation</code>
+				<ul>
+					<li>Replaced by theming <code>enter</code> class</li>
+				</ul>
+			</li>
+			<li>
+				<code>exitAnimation</code>
+				<ul>
+					<li>Replaced by theming <code>exit</code> class</li>
+				</ul>
+			</li>
+		</ul>
+		<h4 id="changes-in-behavior-2">Changes in behavior</h4>
+		<p>
+			Dialog contents, title, and actions are now specified via a child function. Previously,
+			the title was specified via a property and the dialog contents where passed as the
+			children of the Dialog. Dialog actions are nodes that appear below the dialog contents,
+			like cancel / ok buttons.
+		</p>
+		<h4 id="example-of-migration-from-v6-to-v7-4">Example of migration from v6 to v7</h4>
+		<h5 id="v6-example-4">v6 Example</h5>
+		<pre><code>&lt;Dialog
     title=&quot;Basic Dialog&quot;
     open={this._open}
     onRequestClose={() =&gt; {
@@ -350,8 +513,8 @@ export default factory(function CheckboxExample({ middleware: { icache } }) {
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque id purus ipsum. Aenean ac purus
     purus. Nam sollicitudin varius augue, sed lacinia felis tempor in.
 &lt;/Dialog&gt;</code></pre>
-<h5 id="v7-example-4">v7 Example</h5>
-<pre><code>&lt;Dialog open={isOpen} onRequestClose={() =&gt; icache.set(&#39;isOpen&#39;, false)}&gt;
+		<h5 id="v7-example-4">v7 Example</h5>
+		<pre><code>&lt;Dialog open={isOpen} onRequestClose={() =&gt; icache.set(&#39;isOpen&#39;, false)}&gt;
     {{
         title: &#39;Basic Dialog&#39;,
         content: (
@@ -362,58 +525,86 @@ export default factory(function CheckboxExample({ middleware: { icache } }) {
         ),
     }}
 &lt;/Dialog&gt;</code></pre>
-<p>Latest example can be found at <a href="https://widgets.dojo.io/#widget/dialog/overview">widgets.dojo.io/#widget/dialog/overview</a></p>
-<hr />
-<h3 id="toolbar">Toolbar</h3>
-<ul>
-<li>Renamed to <code>Header</code>.</li>
-</ul>
-<h4 id="property-changes-5">Property changes</h4>
-<h5 id="added-properties-1">Added properties</h5>
-<ul>
-<li><code>sticky?: boolean</code>
-<ul>
-<li>This property fixed the header to the top of a view.</li>
-</ul></li>
-</ul>
-<h5 id="changed-properties-5">Changed properties</h5>
-<ul>
-<li><code>children: HeaderChildren</code>
-<ul>
-<li>This property no longer accepts <code>DNode</code> actions.</li>
-<li>This property accepts a child renderer object.</li>
-<li>Leading, trailing, title, and actions are set using this renderer.</li>
-</ul></li>
-</ul>
-<h5 id="removed-properties-4">Removed properties</h5>
-<ul>
-<li><code>align?: Align</code>
-<ul>
-<li>This property was removed altogether.</li>
-<li>Alignment functionality is no longer supported.</li>
-</ul></li>
-<li><code>collapseWidth?: number</code>
-<ul>
-<li>This property was removed altogether.</li>
-<li>Collapse functionality is no longer supported.</li>
-</ul></li>
-<li><code>onCollapse?(collapsed: boolean): void</code>
-<ul>
-<li>This property was removed altogether.</li>
-<li>Collapse functionality is no longer supported.</li>
-</ul></li>
-<li><code>heading?: string</code>
-<ul>
-<li>This property was removed altogether.</li>
-<li>The header title is now set using a child renderer.</li>
-</ul></li>
-</ul>
-<h4 id="changes-in-behavior-3">Changes in behavior</h4>
-<p>The <code>Header</code> now uses a child renderer object to determine its leading content, trailing content, title, and action items. This means that an object is passed as the widget’s only child with keys for <code>leading</code> , <code>trailing</code>, <code>title</code>, and <code>actions</code>, each of which return elements to render accordingly.</p>
-<p>The <code>Header</code> no longer auto-collapses action items into a <code>SlidePane</code>. Instead, to be more aligned with future Dojo application architecture, media-based middleware can be used to responsively change the <code>Header</code> out for a different widget depending on available space.</p>
-<h4 id="example-of-migration-from-v6-to-v7-5">Example of migration from v6 to v7</h4>
-<h5 id="v6-example-5">v6 Example</h5>
-<pre><code>&lt;Toolbar
+		<p>
+			Latest example can be found at
+			<a href="https://widgets.dojo.io/#widget/dialog/overview"
+				>widgets.dojo.io/#widget/dialog/overview</a
+			>
+		</p>
+		<hr />
+		<h3 id="toolbar">Toolbar</h3>
+		<ul>
+			<li>Renamed to <code>Header</code>.</li>
+		</ul>
+		<h4 id="property-changes-5">Property changes</h4>
+		<h5 id="added-properties-1">Added properties</h5>
+		<ul>
+			<li>
+				<code>sticky?: boolean</code>
+				<ul>
+					<li>This property fixed the header to the top of a view.</li>
+				</ul>
+			</li>
+		</ul>
+		<h5 id="changed-properties-5">Changed properties</h5>
+		<ul>
+			<li>
+				<code>children: HeaderChildren</code>
+				<ul>
+					<li>This property no longer accepts <code>DNode</code> actions.</li>
+					<li>This property accepts a child renderer object.</li>
+					<li>Leading, trailing, title, and actions are set using this renderer.</li>
+				</ul>
+			</li>
+		</ul>
+		<h5 id="removed-properties-4">Removed properties</h5>
+		<ul>
+			<li>
+				<code>align?: Align</code>
+				<ul>
+					<li>This property was removed altogether.</li>
+					<li>Alignment functionality is no longer supported.</li>
+				</ul>
+			</li>
+			<li>
+				<code>collapseWidth?: number</code>
+				<ul>
+					<li>This property was removed altogether.</li>
+					<li>Collapse functionality is no longer supported.</li>
+				</ul>
+			</li>
+			<li>
+				<code>onCollapse?(collapsed: boolean): void</code>
+				<ul>
+					<li>This property was removed altogether.</li>
+					<li>Collapse functionality is no longer supported.</li>
+				</ul>
+			</li>
+			<li>
+				<code>heading?: string</code>
+				<ul>
+					<li>This property was removed altogether.</li>
+					<li>The header title is now set using a child renderer.</li>
+				</ul>
+			</li>
+		</ul>
+		<h4 id="changes-in-behavior-3">Changes in behavior</h4>
+		<p>
+			The <code>Header</code> now uses a child renderer object to determine its leading
+			content, trailing content, title, and action items. This means that an object is passed
+			as the widget’s only child with keys for <code>leading</code> , <code>trailing</code>,
+			<code>title</code>, and <code>actions</code>, each of which return elements to render
+			accordingly.
+		</p>
+		<p>
+			The <code>Header</code> no longer auto-collapses action items into a
+			<code>SlidePane</code>. Instead, to be more aligned with future Dojo application
+			architecture, media-based middleware can be used to responsively change the
+			<code>Header</code> out for a different widget depending on available space.
+		</p>
+		<h4 id="example-of-migration-from-v6-to-v7-5">Example of migration from v6 to v7</h4>
+		<h5 id="v6-example-5">v6 Example</h5>
+		<pre><code>&lt;Toolbar
     align={Align.right}
     collapseWidth={700}
     heading=&quot;Title&quot;
@@ -425,8 +616,8 @@ export default factory(function CheckboxExample({ middleware: { icache } }) {
     &lt;a href=&quot;#bar&quot;&gt;Bar&lt;/a&gt;
     &lt;a href=&quot;#baz&quot;&gt;Baz&lt;/a&gt;
 &lt;/Toolbar&gt;</code></pre>
-<h5 id="v7-example-5">v7 Example</h5>
-<pre><code>&lt;Header&gt;
+		<h5 id="v7-example-5">v7 Example</h5>
+		<pre><code>&lt;Header&gt;
     {{
         title: &#39;Title&#39;,
         actions: [
@@ -436,8 +627,11 @@ export default factory(function CheckboxExample({ middleware: { icache } }) {
         ],
     }}
 &lt;/Header&gt;</code></pre>
-<h4 id="example-of-responsive-toolbar-behaviour-using-header-and-slidepane">Example of responsive toolbar behaviour using <code>Header</code> and <code>SlidePane</code></h4>
-<pre><code>import { create, tsx } from &#39;@dojo/framework/core/vdom&#39;;
+		<h4 id="example-of-responsive-toolbar-behaviour-using-header-and-slidepane">
+			Example of responsive toolbar behaviour using <code>Header</code> and
+			<code>SlidePane</code>
+		</h4>
+		<pre><code>import { create, tsx } from &#39;@dojo/framework/core/vdom&#39;;
 import theme from &#39;@dojo/framework/core/middleware/theme&#39;;
 import breakpoint from &#39;@dojo/framework/core/middleware/breakpoint&#39;;
 import icache from &#39;@dojo/framework/core/middleware/icache&#39;;
@@ -507,101 +701,157 @@ export default factory(function CollapsingHeader({ middleware: { theme, breakpoi
 .action {
     padding: 10px;
 }</code></pre>
-<p>Latest example can be found at <a href="https://widgets.dojo.io/#widget/header/overview">widgets.dojo.io/#widget/header/overview</a></p>
-<hr />
-<h3 id="label">Label</h3>
-<h4 id="property-changes-6">Property changes</h4>
-<h5 id="removed-properties-5">Removed properties</h5>
-<ul>
-<li><code>invalid?: boolean</code>
-<ul>
-<li>replaced by <code>valid?: boolean</code></li>
-<li>inverted validation API for consistency</li>
-</ul></li>
-</ul>
-<h4 id="example-of-migration-from-v6-to-v7-6">Example of migration from v6 to v7</h4>
-<h5 id="v6-example-6">v6 Example</h5>
-<pre><code>&lt;Label invalid={true}&gt;Invalid Label&lt;/Label&gt;</code></pre>
-<h5 id="v7-example-6">v7 Example</h5>
-<pre><code>&lt;Label valid={false}&gt;Invalid Label&lt;/Label&gt;</code></pre>
-<p>Latest example can be found at <a href="https://widgets.dojo.io/#widget/label/overview">widgets.dojo.io/#widget/label/overview</a></p>
-<hr />
-<h3 id="listbox">ListBox</h3>
-<ul>
-<li>Rewritten and renamed to <code>List</code></li>
-<li>Now uses a <code>resource</code> and the <code>data</code> middleware.</li>
-</ul>
-<h4 id="property-changes-7">Property changes</h4>
-<h5 id="additional-mandatory-properties">Additional Mandatory Properties</h5>
-<ul>
-<li><code>onValue(value: string)</code>
-<ul>
-<li>this is the callback on value change.</li>
-</ul></li>
-<li><code>resource</code>
-<ul>
-<li>this is the data resource for the List to use to generate the list items</li>
-</ul></li>
-<li><code>transform</code>
-<ul>
-<li>a transform is required for the List as it uses a typed data middleware.</li>
-<li>a <code>defaultTransform</code> is exported from <code>List</code></li>
-</ul></li>
-</ul>
-<h5 id="changed-properties-6">Changed properties</h5>
-<ul>
-<li><code>getOptionDisabled</code>
-<ul>
-<li>replaced by <code>disabled(item: ListOption): boolean</code> callback</li>
-</ul></li>
-<li><code>optionData</code>
-<ul>
-<li>replaced by <code>resource</code></li>
-<li>widget is now data aware and uses <code>resources</code></li>
-</ul></li>
-<li><code>visualFocus</code>
-<ul>
-<li>replaced by <code>focusable: boolean</code>.</li>
-<li>determines if the List can be focused and capture key press events</li>
-</ul></li>
-<li><code>onActiveIndexChange</code>
-<ul>
-<li>only received the index of the item requesting to be made active</li>
-<li>keyboard navigation is now partially controlled, you need only pass the <code>onActiveIndexChange</code> &amp; <code>activeIndex</code> properties if you wish to fully control them.</li>
-</ul></li>
-<li><code>onOptionSelect</code>
-<ul>
-<li>replaced by <code>onValue</code> which returns the selected item value</li>
-</ul></li>
-<li><code>getOptionSelected</code>
-<ul>
-<li>replaced by partial control via internal state or fully controlled selections via <code>value</code> &amp; <code>onValue</code> properties</li>
-</ul></li>
-</ul>
-<h5 id="removed-properties-6">Removed properties</h5>
-<ul>
-<li><code>multiselect: boolean;</code>
-<ul>
-<li>list is now single select but can be used as part of a multiselect typeahead implementation</li>
-</ul></li>
-<li><code>getOptionLabel</code>
-<ul>
-<li><code>label</code> is now passed via a <code>ListOption</code> from the <code>resource</code>. If a label is not passed, the <code>value</code> is used instead.</li>
-</ul></li>
-<li><code>getOptionId</code>
-<ul>
-<li>an id is generated and used internally for each list item.</li>
-</ul></li>
-<li><code>tabIndex</code>
-<ul>
-<li>the tab index is managed internally</li>
-<li>focus can be disabled via the <code>focusable</code> property.</li>
-</ul></li>
-</ul>
-<h4 id="changes-in-behavior-4">Changes in behavior</h4>
-<h4 id="example-of-migration-from-v6-to-v7-7">Example of migration from v6 to v7</h4>
-<h5 id="v6-example-7">v6 Example</h5>
-<pre><code>&lt;Listbox
+		<p>
+			Latest example can be found at
+			<a href="https://widgets.dojo.io/#widget/header/overview"
+				>widgets.dojo.io/#widget/header/overview</a
+			>
+		</p>
+		<hr />
+		<h3 id="label">Label</h3>
+		<h4 id="property-changes-6">Property changes</h4>
+		<h5 id="removed-properties-5">Removed properties</h5>
+		<ul>
+			<li>
+				<code>invalid?: boolean</code>
+				<ul>
+					<li>replaced by <code>valid?: boolean</code></li>
+					<li>inverted validation API for consistency</li>
+				</ul>
+			</li>
+		</ul>
+		<h4 id="example-of-migration-from-v6-to-v7-6">Example of migration from v6 to v7</h4>
+		<h5 id="v6-example-6">v6 Example</h5>
+		<pre><code>&lt;Label invalid={true}&gt;Invalid Label&lt;/Label&gt;</code></pre>
+		<h5 id="v7-example-6">v7 Example</h5>
+		<pre><code>&lt;Label valid={false}&gt;Invalid Label&lt;/Label&gt;</code></pre>
+		<p>
+			Latest example can be found at
+			<a href="https://widgets.dojo.io/#widget/label/overview"
+				>widgets.dojo.io/#widget/label/overview</a
+			>
+		</p>
+		<hr />
+		<h3 id="listbox">ListBox</h3>
+		<ul>
+			<li>Rewritten and renamed to <code>List</code></li>
+			<li>Now uses a <code>resource</code> and the <code>data</code> middleware.</li>
+		</ul>
+		<h4 id="property-changes-7">Property changes</h4>
+		<h5 id="additional-mandatory-properties">Additional Mandatory Properties</h5>
+		<ul>
+			<li>
+				<code>onValue(value: string)</code>
+				<ul>
+					<li>this is the callback on value change.</li>
+				</ul>
+			</li>
+			<li>
+				<code>resource</code>
+				<ul>
+					<li>
+						this is the data resource for the List to use to generate the list items
+					</li>
+				</ul>
+			</li>
+			<li>
+				<code>transform</code>
+				<ul>
+					<li>
+						a transform is required for the List as it uses a typed data middleware.
+					</li>
+					<li>a <code>defaultTransform</code> is exported from <code>List</code></li>
+				</ul>
+			</li>
+		</ul>
+		<h5 id="changed-properties-6">Changed properties</h5>
+		<ul>
+			<li>
+				<code>getOptionDisabled</code>
+				<ul>
+					<li>replaced by <code>disabled(item: ListOption): boolean</code> callback</li>
+				</ul>
+			</li>
+			<li>
+				<code>optionData</code>
+				<ul>
+					<li>replaced by <code>resource</code></li>
+					<li>widget is now data aware and uses <code>resources</code></li>
+				</ul>
+			</li>
+			<li>
+				<code>visualFocus</code>
+				<ul>
+					<li>replaced by <code>focusable: boolean</code>.</li>
+					<li>determines if the List can be focused and capture key press events</li>
+				</ul>
+			</li>
+			<li>
+				<code>onActiveIndexChange</code>
+				<ul>
+					<li>only received the index of the item requesting to be made active</li>
+					<li>
+						keyboard navigation is now partially controlled, you need only pass the
+						<code>onActiveIndexChange</code> &amp; <code>activeIndex</code> properties
+						if you wish to fully control them.
+					</li>
+				</ul>
+			</li>
+			<li>
+				<code>onOptionSelect</code>
+				<ul>
+					<li>replaced by <code>onValue</code> which returns the selected item value</li>
+				</ul>
+			</li>
+			<li>
+				<code>getOptionSelected</code>
+				<ul>
+					<li>
+						replaced by partial control via internal state or fully controlled
+						selections via <code>value</code> &amp; <code>onValue</code> properties
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<h5 id="removed-properties-6">Removed properties</h5>
+		<ul>
+			<li>
+				<code>multiselect: boolean;</code>
+				<ul>
+					<li>
+						list is now single select but can be used as part of a multiselect typeahead
+						implementation
+					</li>
+				</ul>
+			</li>
+			<li>
+				<code>getOptionLabel</code>
+				<ul>
+					<li>
+						<code>label</code> is now passed via a <code>ListOption</code> from the
+						<code>resource</code>. If a label is not passed, the <code>value</code> is
+						used instead.
+					</li>
+				</ul>
+			</li>
+			<li>
+				<code>getOptionId</code>
+				<ul>
+					<li>an id is generated and used internally for each list item.</li>
+				</ul>
+			</li>
+			<li>
+				<code>tabIndex</code>
+				<ul>
+					<li>the tab index is managed internally</li>
+					<li>focus can be disabled via the <code>focusable</code> property.</li>
+				</ul>
+			</li>
+		</ul>
+		<h4 id="changes-in-behavior-4">Changes in behavior</h4>
+		<h4 id="example-of-migration-from-v6-to-v7-7">Example of migration from v6 to v7</h4>
+		<h5 id="v6-example-7">v6 Example</h5>
+		<pre><code>&lt;Listbox
     key=&quot;listbox1&quot;
     activeIndex={this._listbox1Index}
     widgetId=&quot;listbox1&quot;
@@ -619,8 +869,8 @@ export default factory(function CollapsingHeader({ middleware: { theme, breakpoi
         this.invalidate();
     }}
 &gt;&lt;/Listbox&gt;</code></pre>
-<h5 id="v7-example-7">v7 Example</h5>
-<pre><code>const animals = [{ value: &#39;cat&#39; }, { value: &#39;dog&#39; }, { value: &#39;mouse&#39; }, { value: &#39;rat&#39; }];
+		<h5 id="v7-example-7">v7 Example</h5>
+		<pre><code>const animals = [{ value: &#39;cat&#39; }, { value: &#39;dog&#39; }, { value: &#39;mouse&#39; }, { value: &#39;rat&#39; }];
 const resource = createResource(createMemoryTemplate());
 
 &lt;List
@@ -632,93 +882,140 @@ const resource = createResource(createMemoryTemplate());
         icache.set(&#39;value&#39;, value);
     }}
 /&gt;;</code></pre>
-<p>Latest example can be found at <a href="https://widgets.dojo.io/#widget/list/overview">widgets.dojo.io/#widget/list/overview</a></p>
-<hr />
-<h3 id="progress">Progress</h3>
-<h4 id="property-changes-8">Property changes</h4>
-<h5 id="changed-properties-7">Changed properties</h5>
-<ul>
-<li><code>output?: () =&gt; RenderResult;</code>
-<ul>
-<li><code>output</code> was moved to a child renderer and should be handled in a child function.</li>
-</ul></li>
-</ul>
-<h4 id="changes-in-behavior-5">Changes in behavior</h4>
-<p>Output is now handled via an optional child renderer of type RenderResult.</p>
-<h4 id="example-of-migration-from-v6-to-v7-8">Example of migration from v6 to v7</h4>
-<h5 id="v6-example-8">v6 Example</h5>
-<pre><code>&lt;Progress
+		<p>
+			Latest example can be found at
+			<a href="https://widgets.dojo.io/#widget/list/overview"
+				>widgets.dojo.io/#widget/list/overview</a
+			>
+		</p>
+		<hr />
+		<h3 id="progress">Progress</h3>
+		<h4 id="property-changes-8">Property changes</h4>
+		<h5 id="changed-properties-7">Changed properties</h5>
+		<ul>
+			<li>
+				<code>output?: () =&gt; RenderResult;</code>
+				<ul>
+					<li>
+						<code>output</code> was moved to a child renderer and should be handled in a
+						child function.
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<h4 id="changes-in-behavior-5">Changes in behavior</h4>
+		<p>Output is now handled via an optional child renderer of type RenderResult.</p>
+		<h4 id="example-of-migration-from-v6-to-v7-8">Example of migration from v6 to v7</h4>
+		<h5 id="v6-example-8">v6 Example</h5>
+		<pre><code>&lt;Progress
     value={value}
     max={max}
     output={(value, percent) =&gt; `${value} of ${max} is ${percent}%`}
 /&gt;</code></pre>
-<h5 id="v7-example-8">v7 Example</h5>
-<pre><code>&lt;Progress value={value} max={max}&gt;
+		<h5 id="v7-example-8">v7 Example</h5>
+		<pre><code>&lt;Progress value={value} max={max}&gt;
     {{
         output: (value, percent) =&gt; `${value} of ${max} is ${percent}%`,
     }}
 &lt;/Progress&gt;</code></pre>
-<p>Latest example can be found at <a href="https://widgets.dojo.io/#widget/progress/overview">widgets.dojo.io/#widget/progress/overview</a></p>
-<hr />
-<h3 id="radio">Radio</h3>
-<h4 id="property-changes-9">Property changes</h4>
-<h5 id="changed-properties-8">Changed properties</h5>
-<ul>
-<li><code>label?: RenderResult;</code>
-<ul>
-<li>Label is now handled in a child renderer. Child content of the Radio widget is displayed in a Label.</li>
-</ul></li>
-</ul>
-<h5 id="removed-properties-7">Removed properties</h5>
-<ul>
-<li><code>labelAfter?: boolean;</code>
-<ul>
-<li>Removed in favor of a single label handled via a child renderer.</li>
-</ul></li>
-</ul>
-<h4 id="changes-in-behavior-6">Changes in behavior</h4>
-<p>Label is now handled via an optional child renderer of type RenderResult.</p>
-<h4 id="example-of-migration-from-v6-to-v7-9">Example of migration from v6 to v7</h4>
-<h5 id="v6-example-9">v6 Example</h5>
-<pre><code>&lt;Radio label={&#39;Radio Button 1&#39;} /&gt;</code></pre>
-<h5 id="v7-example-9">v7 Example</h5>
-<pre><code>&lt;Radio&gt;Radio Button 1&lt;/Radio&gt;</code></pre>
-<p>Latest example can be found at <a href="https://widgets.dojo.io/#widget/radio/overview">widgets.dojo.io/#widget/radio/overview</a></p>
-<hr />
-<h3 id="rangeslider">RangeSlider</h3>
-<h4 id="property-changes-10">Property changes</h4>
-<h5 id="changed-properties-9">Changed properties</h5>
-<ul>
-<li><code>initialValue?: RangeValue</code>
-<ul>
-<li>This property can be used to partially control the range slider by setting an initial value.</li>
-</ul></li>
-<li><code>value?: RangeValue</code>
-<ul>
-<li>The range-slider now internally manages its value by default and it is no longer necessary to pass the current value</li>
-<li>Passing a value allows the range-slider to be fully controlled</li>
-</ul></li>
-<li><code>label?: RenderResult;</code>
-<ul>
-<li>Replaced with a child renderer</li>
-</ul></li>
-<li><code>output?(value: RangeValue): RenderResult;</code>
-<ul>
-<li>Replaced with a child renderer</li>
-</ul></li>
-</ul>
-<h5 id="removed-properties-8">Removed properties</h5>
-<ul>
-<li><code>labelAfter</code>
-<ul>
-<li>No longer supported</li>
-</ul></li>
-</ul>
-<h4 id="changes-in-behavior-7">Changes in behavior</h4>
-<p>The range slider widget now internally manages its own value by default and can be changed via the <code>initialValue</code> property. The range slider can be fully controlled using the <code>value</code> property.</p>
-<h4 id="example-of-migration-from-v6-to-v7-10">Example of migration from v6 to v7</h4>
-<h5 id="v6-example-10">v6 Example</h5>
-<pre><code>&lt;RangeSlider
+		<p>
+			Latest example can be found at
+			<a href="https://widgets.dojo.io/#widget/progress/overview"
+				>widgets.dojo.io/#widget/progress/overview</a
+			>
+		</p>
+		<hr />
+		<h3 id="radio">Radio</h3>
+		<h4 id="property-changes-9">Property changes</h4>
+		<h5 id="changed-properties-8">Changed properties</h5>
+		<ul>
+			<li>
+				<code>label?: RenderResult;</code>
+				<ul>
+					<li>
+						Label is now handled in a child renderer. Child content of the Radio widget
+						is displayed in a Label.
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<h5 id="removed-properties-7">Removed properties</h5>
+		<ul>
+			<li>
+				<code>labelAfter?: boolean;</code>
+				<ul>
+					<li>Removed in favor of a single label handled via a child renderer.</li>
+				</ul>
+			</li>
+		</ul>
+		<h4 id="changes-in-behavior-6">Changes in behavior</h4>
+		<p>Label is now handled via an optional child renderer of type RenderResult.</p>
+		<h4 id="example-of-migration-from-v6-to-v7-9">Example of migration from v6 to v7</h4>
+		<h5 id="v6-example-9">v6 Example</h5>
+		<pre><code>&lt;Radio label={&#39;Radio Button 1&#39;} /&gt;</code></pre>
+		<h5 id="v7-example-9">v7 Example</h5>
+		<pre><code>&lt;Radio&gt;Radio Button 1&lt;/Radio&gt;</code></pre>
+		<p>
+			Latest example can be found at
+			<a href="https://widgets.dojo.io/#widget/radio/overview"
+				>widgets.dojo.io/#widget/radio/overview</a
+			>
+		</p>
+		<hr />
+		<h3 id="rangeslider">RangeSlider</h3>
+		<h4 id="property-changes-10">Property changes</h4>
+		<h5 id="changed-properties-9">Changed properties</h5>
+		<ul>
+			<li>
+				<code>initialValue?: RangeValue</code>
+				<ul>
+					<li>
+						This property can be used to partially control the range slider by setting
+						an initial value.
+					</li>
+				</ul>
+			</li>
+			<li>
+				<code>value?: RangeValue</code>
+				<ul>
+					<li>
+						The range-slider now internally manages its value by default and it is no
+						longer necessary to pass the current value
+					</li>
+					<li>Passing a value allows the range-slider to be fully controlled</li>
+				</ul>
+			</li>
+			<li>
+				<code>label?: RenderResult;</code>
+				<ul>
+					<li>Replaced with a child renderer</li>
+				</ul>
+			</li>
+			<li>
+				<code>output?(value: RangeValue): RenderResult;</code>
+				<ul>
+					<li>Replaced with a child renderer</li>
+				</ul>
+			</li>
+		</ul>
+		<h5 id="removed-properties-8">Removed properties</h5>
+		<ul>
+			<li>
+				<code>labelAfter</code>
+				<ul>
+					<li>No longer supported</li>
+				</ul>
+			</li>
+		</ul>
+		<h4 id="changes-in-behavior-7">Changes in behavior</h4>
+		<p>
+			The range slider widget now internally manages its own value by default and can be
+			changed via the <code>initialValue</code> property. The range slider can be fully
+			controlled using the <code>value</code> property.
+		</p>
+		<h4 id="example-of-migration-from-v6-to-v7-10">Example of migration from v6 to v7</h4>
+		<h5 id="v6-example-10">v6 Example</h5>
+		<pre><code>&lt;RangeSlider
     onInput={(min: number, max: number) =&gt; {
         this._state.value1Min = min;
         this._state.value1Max = max;
@@ -730,55 +1027,72 @@ const resource = createResource(createMemoryTemplate());
         this.invalidate();
     }}
 /&gt;</code></pre>
-<h5 id="v7-example-10">v7 Example</h5>
-<pre><code>&lt;RangeSlider
+		<h5 id="v7-example-10">v7 Example</h5>
+		<pre><code>&lt;RangeSlider
     initialValue={{
         min: 0,
         max: 100,
     }}
 /&gt;</code></pre>
-<p>Latest example can be found at <a href="https://widgets.dojo.io/#widget/range-slider/overview">widgets.dojo.io/#widget/range-slider/overview</a></p>
-<hr />
-<h3 id="select">Select</h3>
-<ul>
-<li>Now uses list, no longer supports using the native element.</li>
-<li><code>NativeSelect</code> is now it’s own widget</li>
-<li>Select now uses <code>resource</code> and the <code>data</code> middleware.</li>
-</ul>
-<h4 id="property-changes-11">Property changes</h4>
-<h5 id="changed-properties-10">Changed properties</h5>
-<ul>
-<li><code>onValue: (value: string) =&gt; void;</code>
-<ul>
-<li>Replaces <code>onChange</code></li>
-</ul></li>
-<li><code>initialValue?: string;</code>
-<ul>
-<li>Can be used to an initial value and then let the component act in an uncontrolled manner.</li>
-</ul></li>
-</ul>
-<h5 id="removed-properties-9">Removed properties</h5>
-<ul>
-<li><code>useNativeElement: boolean;</code>
-<ul>
-<li>Native use case is now supported by its own widget</li>
-</ul></li>
-</ul>
-<h4 id="changes-in-behavior-8">Changes in behavior</h4>
-<ul>
-<li>Can now be used in an uncontrolled or controlled manner.</li>
-<li>Accepts a resource, please see <code>Listbox</code> migration for more information as this is used internally by <code>Select</code>.</li>
-</ul>
-<h4 id="example-of-migration-from-v6-to-v7-11">Example of migration from v6 to v7</h4>
-<h5 id="v6-example-11">v6 Example</h5>
-<pre><code>&lt;Select
+		<p>
+			Latest example can be found at
+			<a href="https://widgets.dojo.io/#widget/range-slider/overview"
+				>widgets.dojo.io/#widget/range-slider/overview</a
+			>
+		</p>
+		<hr />
+		<h3 id="select">Select</h3>
+		<ul>
+			<li>Now uses list, no longer supports using the native element.</li>
+			<li><code>NativeSelect</code> is now it’s own widget</li>
+			<li>Select now uses <code>resource</code> and the <code>data</code> middleware.</li>
+		</ul>
+		<h4 id="property-changes-11">Property changes</h4>
+		<h5 id="changed-properties-10">Changed properties</h5>
+		<ul>
+			<li>
+				<code>onValue: (value: string) =&gt; void;</code>
+				<ul>
+					<li>Replaces <code>onChange</code></li>
+				</ul>
+			</li>
+			<li>
+				<code>initialValue?: string;</code>
+				<ul>
+					<li>
+						Can be used to an initial value and then let the component act in an
+						uncontrolled manner.
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<h5 id="removed-properties-9">Removed properties</h5>
+		<ul>
+			<li>
+				<code>useNativeElement: boolean;</code>
+				<ul>
+					<li>Native use case is now supported by its own widget</li>
+				</ul>
+			</li>
+		</ul>
+		<h4 id="changes-in-behavior-8">Changes in behavior</h4>
+		<ul>
+			<li>Can now be used in an uncontrolled or controlled manner.</li>
+			<li>
+				Accepts a resource, please see <code>Listbox</code> migration for more information
+				as this is used internally by <code>Select</code>.
+			</li>
+		</ul>
+		<h4 id="example-of-migration-from-v6-to-v7-11">Example of migration from v6 to v7</h4>
+		<h5 id="v6-example-11">v6 Example</h5>
+		<pre><code>&lt;Select
     onChange={(value) =&gt; {
         icache.set(&#39;value&#39;, value);
     }}
     value={icache.get(&#39;value&#39;)}
 /&gt;</code></pre>
-<h5 id="v7-example-11">v7 Example</h5>
-<pre><code>const animals = [{ value: &#39;cat&#39; }, { value: &#39;dog&#39; }, { value: &#39;mouse&#39; }, { value: &#39;rat&#39; }];
+		<h5 id="v7-example-11">v7 Example</h5>
+		<pre><code>const animals = [{ value: &#39;cat&#39; }, { value: &#39;dog&#39; }, { value: &#39;mouse&#39; }, { value: &#39;rat&#39; }];
 const resource = createResource(createMemoryTemplate());
 
 &lt;Select
@@ -789,10 +1103,24 @@ const resource = createResource(createMemoryTemplate());
         icache.set(&#39;value&#39;, value);
     }}
 /&gt;;</code></pre>
-<p>Latest example can be found at <a href="https://widgets.dojo.io/#widget/select/overview">widgets.dojo.io/#widget/select/overview</a></p>
-<h4 id="example-using-select-and-resource-within-a-class-based-widget">Example using select and resource within a class-based widget</h4>
-<p>To use a widget that requires a resource within a class-bassed widget, you must inject the resource middleware via a wrapping widget. An example of this approach can be seen below. (Example taken from <a href="https://github.com/agubler/dojo-resource-wrapper">github.com/agubler/dojo-resource-wrapper</a>)</p>
-<pre><code>// Resource wrapper
+		<p>
+			Latest example can be found at
+			<a href="https://widgets.dojo.io/#widget/select/overview"
+				>widgets.dojo.io/#widget/select/overview</a
+			>
+		</p>
+		<h4 id="example-using-select-and-resource-within-a-class-based-widget">
+			Example using select and resource within a class-based widget
+		</h4>
+		<p>
+			To use a widget that requires a resource within a class-bassed widget, you must inject
+			the resource middleware via a wrapping widget. An example of this approach can be seen
+			below. (Example taken from
+			<a href="https://github.com/agubler/dojo-resource-wrapper"
+				>github.com/agubler/dojo-resource-wrapper</a
+			>)
+		</p>
+		<pre><code>// Resource wrapper
 import { create } from &#39;@dojo/framework/core/vdom&#39;;
 import { createResourceMiddleware } from &#39;@dojo/framework/core/middleware/resources&#39;;
 import { RenderResult } from &#39;@dojo/framework/core/interfaces&#39;;
@@ -859,79 +1187,124 @@ registerThemeInjector(theme, registry);
 
 const r = renderer(() =&gt; w(App, {}));
 r.mount({ registry });</code></pre>
-<hr />
-<h3 id="slidepane">SlidePane</h3>
-<h4 id="property-changes-12">Property changes</h4>
-<h5 id="added-properties-2">Added properties</h5>
-<ul>
-<li><code>aria?: { [key: string]: string | null }</code>
-<ul>
-<li>This property is used to pass custom <code>aria-*</code> attributes DOM nodes.</li>
-</ul></li>
-</ul>
-<h5 id="removed-properties-10">Removed properties</h5>
-<ul>
-<li><code>onOpen?(): void</code>
-<ul>
-<li>This property was removed altogether.</li>
-<li>This functionality is no longer supported.</li>
-</ul></li>
-</ul>
-<h4 id="changes-in-behavior-9">Changes in behavior</h4>
-<p>The <code>SlidePane</code> no longer supports an <code>onOpen</code> property and instead only uses <code>onRequestClose</code> to update externally-managed open state.</p>
-<h4 id="example-of-migration-from-v6-to-v7-12">Example of migration from v6 to v7</h4>
-<h5 id="v6-example-12">v6 Example</h5>
-<pre><code>&lt;SlidePane
+		<hr />
+		<h3 id="slidepane">SlidePane</h3>
+		<h4 id="property-changes-12">Property changes</h4>
+		<h5 id="added-properties-2">Added properties</h5>
+		<ul>
+			<li>
+				<code>aria?: { [key: string]: string | null }</code>
+				<ul>
+					<li>
+						This property is used to pass custom <code>aria-*</code> attributes DOM
+						nodes.
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<h5 id="removed-properties-10">Removed properties</h5>
+		<ul>
+			<li>
+				<code>onOpen?(): void</code>
+				<ul>
+					<li>This property was removed altogether.</li>
+					<li>This functionality is no longer supported.</li>
+				</ul>
+			</li>
+		</ul>
+		<h4 id="changes-in-behavior-9">Changes in behavior</h4>
+		<p>
+			The <code>SlidePane</code> no longer supports an <code>onOpen</code> property and
+			instead only uses <code>onRequestClose</code> to update externally-managed open state.
+		</p>
+		<h4 id="example-of-migration-from-v6-to-v7-12">Example of migration from v6 to v7</h4>
+		<h5 id="v6-example-12">v6 Example</h5>
+		<pre><code>&lt;SlidePane
     open={icache.get(&#39;open&#39;)}
     onOpen={() =&gt; icache.set(&#39;open&#39;, false)}
     onRequestClose={() =&gt; icache.set(&#39;open&#39;, false)}
 /&gt;</code></pre>
-<h5 id="v7-example-12">v7 Example</h5>
-<pre><code>&lt;SlidePane open={icache.get(&#39;open&#39;)} onRequestClose={() =&gt; icache.set(&#39;open&#39;, false)} /&gt;</code></pre>
-<p>Latest example can be found at <a href="https://widgets.dojo.io/#widget/slide-pane/overview">widgets.dojo.io/#widget/slide-pane/overview</a></p>
-<hr />
-<h3 id="slider">Slider</h3>
-<h4 id="property-changes-13">Property changes</h4>
-<h5 id="added-properties-3">Added properties</h5>
-<ul>
-<li><code>initialValue</code>: <code>number</code>
-<ul>
-<li>Can be used to provide an initial value or can be used to partially control the slider.</li>
-</ul></li>
-</ul>
-<h5 id="removed-properties-11">Removed properties</h5>
-<ul>
-<li><code>label</code>: <code>string</code>
-<ul>
-<li>Removed in favor of a single label handled via a child renderer.</li>
-</ul></li>
-<li><code>labelAfter</code>: <code>boolean</code>
-<ul>
-<li>Removed in favor of a single label handled via a child renderer.</li>
-</ul></li>
-<li><code>output</code>: <code>() =&gt; RenderResult</code>
-<ul>
-<li><code>output</code> was moved to a child renderer and should be handled in a child function.</li>
-</ul></li>
-<li><code>onChange</code>: <code>(value: number) =&gt; void</code>
-<ul>
-<li>replaced by <code>onValue(value: number)</code></li>
-<li>since <code>Slider</code> is now uncontrolled, the new <code>onValue</code> property is used to read the slider’s value on change, not set it.</li>
-</ul></li>
-<li><code>onInput</code>: <code>(value: number) =&gt; void</code>
-<ul>
-<li>removed in favor of controlling input handling internally.</li>
-</ul></li>
-</ul>
-<h4 id="changes-in-behavior-10">Changes in behavior</h4>
-<ul>
-<li><code>Slider</code> is now uncontrolled by default, meaning that parents no longer must manually update the slider’s current value in response to user interaction.</li>
-<li>The <code>Slider</code> can be controlled by using the <code>value</code> property.</li>
-<li>Rendering the label and output is now handled via an optional child renderer of type <code>RenderResult</code>.</li>
-</ul>
-<h4 id="example-of-migration-from-v6-to-v7-13">Example of migration from v6 to v7</h4>
-<h5 id="v6-example-13">v6 Example</h5>
-<pre><code>&lt;Slider
+		<h5 id="v7-example-12">v7 Example</h5>
+		<pre><code>&lt;SlidePane open={icache.get(&#39;open&#39;)} onRequestClose={() =&gt; icache.set(&#39;open&#39;, false)} /&gt;</code></pre>
+		<p>
+			Latest example can be found at
+			<a href="https://widgets.dojo.io/#widget/slide-pane/overview"
+				>widgets.dojo.io/#widget/slide-pane/overview</a
+			>
+		</p>
+		<hr />
+		<h3 id="slider">Slider</h3>
+		<h4 id="property-changes-13">Property changes</h4>
+		<h5 id="added-properties-3">Added properties</h5>
+		<ul>
+			<li>
+				<code>initialValue</code>: <code>number</code>
+				<ul>
+					<li>
+						Can be used to provide an initial value or can be used to partially control
+						the slider.
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<h5 id="removed-properties-11">Removed properties</h5>
+		<ul>
+			<li>
+				<code>label</code>: <code>string</code>
+				<ul>
+					<li>Removed in favor of a single label handled via a child renderer.</li>
+				</ul>
+			</li>
+			<li>
+				<code>labelAfter</code>: <code>boolean</code>
+				<ul>
+					<li>Removed in favor of a single label handled via a child renderer.</li>
+				</ul>
+			</li>
+			<li>
+				<code>output</code>: <code>() =&gt; RenderResult</code>
+				<ul>
+					<li>
+						<code>output</code> was moved to a child renderer and should be handled in a
+						child function.
+					</li>
+				</ul>
+			</li>
+			<li>
+				<code>onChange</code>: <code>(value: number) =&gt; void</code>
+				<ul>
+					<li>replaced by <code>onValue(value: number)</code></li>
+					<li>
+						since <code>Slider</code> is now uncontrolled, the new
+						<code>onValue</code> property is used to read the slider’s value on change,
+						not set it.
+					</li>
+				</ul>
+			</li>
+			<li>
+				<code>onInput</code>: <code>(value: number) =&gt; void</code>
+				<ul>
+					<li>removed in favor of controlling input handling internally.</li>
+				</ul>
+			</li>
+		</ul>
+		<h4 id="changes-in-behavior-10">Changes in behavior</h4>
+		<ul>
+			<li>
+				<code>Slider</code> is now uncontrolled by default, meaning that parents no longer
+				must manually update the slider’s current value in response to user interaction.
+			</li>
+			<li>
+				The <code>Slider</code> can be controlled by using the <code>value</code> property.
+			</li>
+			<li>
+				Rendering the label and output is now handled via an optional child renderer of type
+				<code>RenderResult</code>.
+			</li>
+		</ul>
+		<h4 id="example-of-migration-from-v6-to-v7-13">Example of migration from v6 to v7</h4>
+		<h5 id="v6-example-13">v6 Example</h5>
+		<pre><code>&lt;Slider
     label=&quot;How much do you like tribbles?&quot;
     min={0}
     max={100}
@@ -960,8 +1333,8 @@ r.mount({ registry });</code></pre>
         icache.set(&#39;tribbleValue&#39;, value);
     }}
 /&gt;</code></pre>
-<h5 id="v7-example-13">v7 Example</h5>
-<pre><code>&lt;Slider initialValue={0} min={0} max={100} step={1}&gt;
+		<h5 id="v7-example-13">v7 Example</h5>
+		<pre><code>&lt;Slider initialValue={0} min={0} max={100} step={1}&gt;
     {{
         label: &#39;How much do you like tribbles?&#39;,
         output: (value: number) =&gt; {
@@ -985,67 +1358,89 @@ r.mount({ registry });</code></pre>
         },
     }}
 &lt;/Slider&gt;</code></pre>
-<p>Latest example can be found at <a href="https://widgets.dojo.io/#widget/slider/overview">widgets.dojo.io/#widget/slider/overview</a></p>
-<hr />
-<h3 id="snackbar">Snackbar</h3>
-<h4 id="property-changes-14">Property changes</h4>
-<h5 id="removed-properties-12">Removed properties</h5>
-<ul>
-<li><code>messageRenderer: () =&gt; RenderResult</code>
-<ul>
-<li>replaced by children.message: RenderResult</li>
-</ul></li>
-<li><code>actionsRenderer: () =&gt; RenderResult</code>
-<ul>
-<li>replaced by children.actions: RenderResult</li>
-</ul></li>
-</ul>
-<h4 id="example-of-migration-from-v6-to-v7-14">Example of migration from v6 to v7</h4>
-<h5 id="v6-implementation">v6 implementation</h5>
-<pre><code>&lt;Snackbar messageRenderer={() =&gt; &#39;Snackbar&#39;} actionsRenderer={() =&gt; &#39;Actions&#39;} open={true} /&gt;</code></pre>
-<h5 id="v7-implementation">v7 implementation</h5>
-<pre><code>&lt;Snackbar open={true}&gt;
+		<p>
+			Latest example can be found at
+			<a href="https://widgets.dojo.io/#widget/slider/overview"
+				>widgets.dojo.io/#widget/slider/overview</a
+			>
+		</p>
+		<hr />
+		<h3 id="snackbar">Snackbar</h3>
+		<h4 id="property-changes-14">Property changes</h4>
+		<h5 id="removed-properties-12">Removed properties</h5>
+		<ul>
+			<li>
+				<code>messageRenderer: () =&gt; RenderResult</code>
+				<ul>
+					<li>replaced by children.message: RenderResult</li>
+				</ul>
+			</li>
+			<li>
+				<code>actionsRenderer: () =&gt; RenderResult</code>
+				<ul>
+					<li>replaced by children.actions: RenderResult</li>
+				</ul>
+			</li>
+		</ul>
+		<h4 id="example-of-migration-from-v6-to-v7-14">Example of migration from v6 to v7</h4>
+		<h5 id="v6-implementation">v6 implementation</h5>
+		<pre><code>&lt;Snackbar messageRenderer={() =&gt; &#39;Snackbar&#39;} actionsRenderer={() =&gt; &#39;Actions&#39;} open={true} /&gt;</code></pre>
+		<h5 id="v7-implementation">v7 implementation</h5>
+		<pre><code>&lt;Snackbar open={true}&gt;
     {{
         message: &#39;Snackbar&#39;,
         actions: &#39;Actions&#39;,
     }}
 &lt;/Snackbar&gt;</code></pre>
-<p>Latest example can be found at <a href="https://widgets.dojo.io/#widget/snackbar/overview">widgets.dojo.io/#widget/snackbar/overview</a></p>
-<hr />
-<h3 id="switch">Switch</h3>
-<ul>
-<li>Split out of <code>Checkbox</code>, now a separate widget.</li>
-</ul>
-<h4 id="property-changes-15">Property changes</h4>
-<h5 id="removed-properties-13">Removed properties</h5>
-<ul>
-<li><code>label</code>: <code>string</code>;
-<ul>
-<li>Removed in favor of using a child renderer</li>
-</ul></li>
-<li><code>onLabel</code>: <code>DNode</code>
-<ul>
-<li>Removed in favor of using a child renderer</li>
-</ul></li>
-<li><code>offLabel</code>: <code>DNode</code>
-<ul>
-<li>Removed in favor of using a child renderer</li>
-</ul></li>
-<li><code>onChange</code>: <code>(value: string, checked: boolean) =&gt; void</code>;
-<ul>
-<li>replaced by <code>onValue(checked: boolean)</code></li>
-</ul></li>
-</ul>
-<h4 id="example-of-migration-from-v6-to-v7-15">Example of migration from v6 to v7</h4>
-<h5 id="v6-example-14">v6 Example</h5>
-<pre><code>&lt;Checkbox
+		<p>
+			Latest example can be found at
+			<a href="https://widgets.dojo.io/#widget/snackbar/overview"
+				>widgets.dojo.io/#widget/snackbar/overview</a
+			>
+		</p>
+		<hr />
+		<h3 id="switch">Switch</h3>
+		<ul>
+			<li>Split out of <code>Checkbox</code>, now a separate widget.</li>
+		</ul>
+		<h4 id="property-changes-15">Property changes</h4>
+		<h5 id="removed-properties-13">Removed properties</h5>
+		<ul>
+			<li>
+				<code>label</code>: <code>string</code>;
+				<ul>
+					<li>Removed in favor of using a child renderer</li>
+				</ul>
+			</li>
+			<li>
+				<code>onLabel</code>: <code>DNode</code>
+				<ul>
+					<li>Removed in favor of using a child renderer</li>
+				</ul>
+			</li>
+			<li>
+				<code>offLabel</code>: <code>DNode</code>
+				<ul>
+					<li>Removed in favor of using a child renderer</li>
+				</ul>
+			</li>
+			<li>
+				<code>onChange</code>: <code>(value: string, checked: boolean) =&gt; void</code>;
+				<ul>
+					<li>replaced by <code>onValue(checked: boolean)</code></li>
+				</ul>
+			</li>
+		</ul>
+		<h4 id="example-of-migration-from-v6-to-v7-15">Example of migration from v6 to v7</h4>
+		<h5 id="v6-example-14">v6 Example</h5>
+		<pre><code>&lt;Checkbox
     checked={icache.get(&#39;checked&#39;)}
     label=&quot;On/Off&quot;
     mode={Mode.toggle}
     onChange={this.onChange}
 /&gt;</code></pre>
-<h5 id="v7-example-14">v7 Example</h5>
-<pre><code>&lt;Switch
+		<h5 id="v7-example-14">v7 Example</h5>
+		<pre><code>&lt;Switch
     value={icache.get(&#39;checked&#39;)}
     onValue={(value) =&gt; {
         icache.set(&#39;checked&#39;, true);
@@ -1053,41 +1448,66 @@ r.mount({ registry });</code></pre>
 &gt;
     {{ label: &#39;On/Off&#39; }}
 &lt;/Switch&gt;</code></pre>
-<p>Latest example can be found at <a href="https://widgets.dojo.io/#widget/switch/overview">widgets.dojo.io/#widget/switch/overview</a></p>
-<hr />
-<h3 id="tabcontroller">TabController</h3>
-<h4 id="structural-changes">Structural changes</h4>
-<ul>
-<li><code>&lt;TabController&gt;</code> takes a renderer function as its child instead of a list of <code>&lt;Tab&gt;</code> widgets.</li>
-<li>The <code>&lt;Tab&gt;</code> widget previously used to manage both the tab button and tab content properties has been split into a <code>tabs</code> property passed to <code>&lt;TabController&gt;</code> and a <code>&lt;TabContent&gt;</code> widget that defines the tab content.</li>
-</ul>
-<h4 id="property-changes-16">Property changes</h4>
-<h5 id="additional-mandatory-properties-1">Additional Mandatory Properties</h5>
-<ul>
-<li><code>tabs: TabItem[];</code>
-<ul>
-<li>this prop defines the label and initial state of each tab.</li>
-</ul></li>
-</ul>
-<h5 id="removed-properties-14">Removed properties</h5>
-<ul>
-<li><code>activeIndex: number;</code>
-<ul>
-<li>the active tab index is now controlled internally.</li>
-<li>the tab that should be opened by default can be controlled with the new <code>initialId</code> property that takes the tab’s <code>id</code> rather than its numerical index.</li>
-</ul></li>
-<li><code>onRequestTabChange: (index: number, key: string) =&gt; void;</code>
-<ul>
-<li>parents no longer must control which tab is active.</li>
-</ul></li>
-<li><code>onRequestTabClose: (index: number, key: string) =&gt; void;</code>
-<ul>
-<li>parents no longer must control which tabs are closed.</li>
-</ul></li>
-</ul>
-<h4 id="example-of-migration-from-v6-to-v7-16">Example of migration from v6 to v7</h4>
-<h5 id="v6-example-15">v6 Example</h5>
-<pre><code>import { tsx, create } from &#39;@dojo/framework/core/vdom&#39;;
+		<p>
+			Latest example can be found at
+			<a href="https://widgets.dojo.io/#widget/switch/overview"
+				>widgets.dojo.io/#widget/switch/overview</a
+			>
+		</p>
+		<hr />
+		<h3 id="tabcontroller">TabController</h3>
+		<h4 id="structural-changes">Structural changes</h4>
+		<ul>
+			<li>
+				<code>&lt;TabController&gt;</code> takes a renderer function as its child instead of
+				a list of <code>&lt;Tab&gt;</code> widgets.
+			</li>
+			<li>
+				The <code>&lt;Tab&gt;</code> widget previously used to manage both the tab button
+				and tab content properties has been split into a <code>tabs</code> property passed
+				to <code>&lt;TabController&gt;</code> and a <code>&lt;TabContent&gt;</code> widget
+				that defines the tab content.
+			</li>
+		</ul>
+		<h4 id="property-changes-16">Property changes</h4>
+		<h5 id="additional-mandatory-properties-1">Additional Mandatory Properties</h5>
+		<ul>
+			<li>
+				<code>tabs: TabItem[];</code>
+				<ul>
+					<li>this prop defines the label and initial state of each tab.</li>
+				</ul>
+			</li>
+		</ul>
+		<h5 id="removed-properties-14">Removed properties</h5>
+		<ul>
+			<li>
+				<code>activeIndex: number;</code>
+				<ul>
+					<li>the active tab index is now controlled internally.</li>
+					<li>
+						the tab that should be opened by default can be controlled with the new
+						<code>initialId</code> property that takes the tab’s <code>id</code> rather
+						than its numerical index.
+					</li>
+				</ul>
+			</li>
+			<li>
+				<code>onRequestTabChange: (index: number, key: string) =&gt; void;</code>
+				<ul>
+					<li>parents no longer must control which tab is active.</li>
+				</ul>
+			</li>
+			<li>
+				<code>onRequestTabClose: (index: number, key: string) =&gt; void;</code>
+				<ul>
+					<li>parents no longer must control which tabs are closed.</li>
+				</ul>
+			</li>
+		</ul>
+		<h4 id="example-of-migration-from-v6-to-v7-16">Example of migration from v6 to v7</h4>
+		<h5 id="v6-example-15">v6 Example</h5>
+		<pre><code>import { tsx, create } from &#39;@dojo/framework/core/vdom&#39;;
 import icache from &#39;@dojo/framework/core/middleware/icache&#39;;
 import Set from &#39;@dojo/framework/shim/Set&#39;;
 import TabController from &#39;@dojo/widgets/tab-controller&#39;;
@@ -1126,8 +1546,8 @@ export default factory(function Closeable() {
         &lt;/TabController&gt;
     );
 });</code></pre>
-<h5 id="v7-example-15">v7 Example</h5>
-<pre><code>import { tsx, create } from &#39;@dojo/framework/core/vdom&#39;;
+		<h5 id="v7-example-15">v7 Example</h5>
+		<pre><code>import { tsx, create } from &#39;@dojo/framework/core/vdom&#39;;
 import TabController, { TabItem } from &#39;@dojo/widgets/tab-controller&#39;;
 import TabContent from &#39;@dojo/widgets/tab-controller/TabContent&#39;;
 
@@ -1164,256 +1584,420 @@ export default factory(function Closeable() {
         &lt;/TabController&gt;
     );
 });</code></pre>
-<p>Latest example can be found at <a href="https://widgets.dojo.io/#widget/tab-controller/overview">widgets.dojo.io/#widget/tab-controller/overview</a></p>
-<hr />
-<h3 id="textarea">TextArea</h3>
-<h4 id="property-changes-17">Property changes</h4>
-<h5 id="added-properties-4">Added properties</h5>
-<ul>
-<li><code>initialValue?: string;</code>
-<ul>
-<li>Can be used to provide an initial value or can be used to partially control the text area.</li>
-</ul></li>
-</ul>
-<h5 id="removed-properties-15">Removed properties</h5>
-<ul>
-<li><code>label</code>: <code>string;</code>
-<ul>
-<li><code>&lt;TextArea&gt;</code> now takes an optional child that will be rendered as its label.</li>
-</ul></li>
-</ul>
-<h4 id="changes-in-behavior-11">Changes in behavior</h4>
-<ul>
-<li><code>TextArea</code> is now uncontrolled by default, meaning parent widgets are no longer responsible for updating the current value in response to changes or events. The widget is controllable with <code>value</code>.</li>
-</ul>
-<h4 id="example-of-migration-from-v6-to-v7-17">Example of migration from v6 to v7</h4>
-<h5 id="v6-example-16">v6 example</h5>
-<pre><code>&lt;TextArea label=&quot;Textarea with label&quot; /&gt;</code></pre>
-<h5 id="v7-example-16">v7 example</h5>
-<pre><code>&lt;TextArea&gt;Textarea with label&lt;/TextArea&gt;</code></pre>
-<p>Latest example can be found at <a href="https://widgets.dojo.io/#widget/text-area/overview">widgets.dojo.io/#widget/text-area/overview</a></p>
-<hr />
-<h3 id="textinput">TextInput</h3>
-<h4 id="property-changes-18">Property changes</h4>
-<h5 id="added-properties-5">Added properties</h5>
-<ul>
-<li><code>initialValue?: T['value'];</code>
-<ul>
-<li>Can be used to provide an initial value or can be used to partially control the text input.</li>
-</ul></li>
-</ul>
-<h5 id="removed-properties-16">Removed properties</h5>
-<ul>
-<li><code>label</code>: <code>string</code>
-<ul>
-<li>Specifying a label is now done with a <code>label</code> key on a child renderer object (see the example below)</li>
-</ul></li>
-<li><code>leading</code>: <code>() =&gt; DNode</code>
-<ul>
-<li>Specifying leading content is now done with a <code>leading</code> key on a child renderer object (see the example below)</li>
-<li>Since the original property function receives no arguments, the child renderer object expects a static value instead of a function.</li>
-</ul></li>
-<li><code>trailing</code>: <code>() =&gt; DNode</code>
-<ul>
-<li>Specifying trailing content is now done with a <code>trailing</code> key on a child renderer object (see the example below)</li>
-<li>Since the original property function receives no arguments, the child renderer object expects a static value instead of a function.</li>
-</ul></li>
-</ul>
-<h4 id="changes-in-behavior-12">Changes in behavior</h4>
-<ul>
-<li><code>TextInput</code> is now uncontrolled by default, meaning parent widgets are no longer responsible for updating the current value in response to changes or events. The widget is controllable with <code>value</code>.</li>
-<li><code>Addon</code> widget is now exported from <code>TextInput</code> which can be used to wrap the <code>leading</code> / <code>trailing</code> sections.</li>
-</ul>
-<h4 id="example-of-migration-from-v6-to-v7-18">Example of migration from v6 to v7</h4>
-<h5 id="v6-example-17">v6 example</h5>
-<pre><code>&lt;TextInput
+		<p>
+			Latest example can be found at
+			<a href="https://widgets.dojo.io/#widget/tab-controller/overview"
+				>widgets.dojo.io/#widget/tab-controller/overview</a
+			>
+		</p>
+		<hr />
+		<h3 id="textarea">TextArea</h3>
+		<h4 id="property-changes-17">Property changes</h4>
+		<h5 id="added-properties-4">Added properties</h5>
+		<ul>
+			<li>
+				<code>initialValue?: string;</code>
+				<ul>
+					<li>
+						Can be used to provide an initial value or can be used to partially control
+						the text area.
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<h5 id="removed-properties-15">Removed properties</h5>
+		<ul>
+			<li>
+				<code>label</code>: <code>string;</code>
+				<ul>
+					<li>
+						<code>&lt;TextArea&gt;</code> now takes an optional child that will be
+						rendered as its label.
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<h4 id="changes-in-behavior-11">Changes in behavior</h4>
+		<ul>
+			<li>
+				<code>TextArea</code> is now uncontrolled by default, meaning parent widgets are no
+				longer responsible for updating the current value in response to changes or events.
+				The widget is controllable with <code>value</code>.
+			</li>
+		</ul>
+		<h4 id="example-of-migration-from-v6-to-v7-17">Example of migration from v6 to v7</h4>
+		<h5 id="v6-example-16">v6 example</h5>
+		<pre><code>&lt;TextArea label=&quot;Textarea with label&quot; /&gt;</code></pre>
+		<h5 id="v7-example-16">v7 example</h5>
+		<pre><code>&lt;TextArea&gt;Textarea with label&lt;/TextArea&gt;</code></pre>
+		<p>
+			Latest example can be found at
+			<a href="https://widgets.dojo.io/#widget/text-area/overview"
+				>widgets.dojo.io/#widget/text-area/overview</a
+			>
+		</p>
+		<hr />
+		<h3 id="textinput">TextInput</h3>
+		<h4 id="property-changes-18">Property changes</h4>
+		<h5 id="added-properties-5">Added properties</h5>
+		<ul>
+			<li>
+				<code>initialValue?: T['value'];</code>
+				<ul>
+					<li>
+						Can be used to provide an initial value or can be used to partially control
+						the text input.
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<h5 id="removed-properties-16">Removed properties</h5>
+		<ul>
+			<li>
+				<code>label</code>: <code>string</code>
+				<ul>
+					<li>
+						Specifying a label is now done with a <code>label</code> key on a child
+						renderer object (see the example below)
+					</li>
+				</ul>
+			</li>
+			<li>
+				<code>leading</code>: <code>() =&gt; DNode</code>
+				<ul>
+					<li>
+						Specifying leading content is now done with a <code>leading</code> key on a
+						child renderer object (see the example below)
+					</li>
+					<li>
+						Since the original property function receives no arguments, the child
+						renderer object expects a static value instead of a function.
+					</li>
+				</ul>
+			</li>
+			<li>
+				<code>trailing</code>: <code>() =&gt; DNode</code>
+				<ul>
+					<li>
+						Specifying trailing content is now done with a <code>trailing</code> key on
+						a child renderer object (see the example below)
+					</li>
+					<li>
+						Since the original property function receives no arguments, the child
+						renderer object expects a static value instead of a function.
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<h4 id="changes-in-behavior-12">Changes in behavior</h4>
+		<ul>
+			<li>
+				<code>TextInput</code> is now uncontrolled by default, meaning parent widgets are no
+				longer responsible for updating the current value in response to changes or events.
+				The widget is controllable with <code>value</code>.
+			</li>
+			<li>
+				<code>Addon</code> widget is now exported from <code>TextInput</code> which can be
+				used to wrap the <code>leading</code> / <code>trailing</code> sections.
+			</li>
+		</ul>
+		<h4 id="example-of-migration-from-v6-to-v7-18">Example of migration from v6 to v7</h4>
+		<h5 id="v6-example-17">v6 example</h5>
+		<pre><code>&lt;TextInput
     type=&quot;text&quot;
     label=&quot;Input Label&quot;
     value=&quot;Initial value&quot;
     leading={() =&gt; &lt;span&gt;A&lt;/span&gt;}
     trailing={() =&gt; &lt;span&gt;Z&lt;/span&gt;}
 /&gt;</code></pre>
-<h5 id="v7-example-17">v7 example</h5>
-<pre><code>&lt;TextInput type=&quot;text&quot; value=&quot;Initial value&quot;&gt;
+		<h5 id="v7-example-17">v7 example</h5>
+		<pre><code>&lt;TextInput type=&quot;text&quot; value=&quot;Initial value&quot;&gt;
     {{
         label: &#39;Input Label&#39;,
         leading: &lt;Addon&gt;A&lt;/Addon&gt;,
         trailing: &lt;Addon filled&gt;Z&lt;/Addon&gt;,
     }}
 &lt;/TextInput&gt;</code></pre>
-<p>Latest example can be found at <a href="https://widgets.dojo.io/#widget/text-input/overview">widgets.dojo.io/#widget/text-input/overview</a></p>
-<hr />
-<h3 id="timepicker">TimePicker</h3>
-<h4 id="property-changes-19">Property changes</h4>
-<h5 id="additional-properties">Additional Properties</h5>
-<ul>
-<li><code>format?: '24' | '12';</code>
-<ul>
-<li>Specifies whether or not the time is displayed in 24h or 12h format</li>
-</ul></li>
-<li><code>onValidate?(valid: boolean, message: string): void;</code>
-<ul>
-<li>Called when validation occurs on the time picker.</li>
-</ul></li>
-<li><code>initialValue?: string;</code>
-<ul>
-<li>Used to set the initial value of the time picker.</li>
-<li>The time picker is now internally managed by default and does not need to be managed by the parent widget, but can still be controlled using <code>value</code> and <code>onValue</code>.</li>
-</ul></li>
-</ul>
-<h5 id="changed-properties-11">Changed properties</h5>
-<ul>
-<li><code>start</code>
-<ul>
-<li>Renamed to <code>min</code> to match with native time picker</li>
-</ul></li>
-<li><code>end</code>
-<ul>
-<li>Renamed to <code>max</code> to match with native time picker</li>
-</ul></li>
-<li><code>isOptionDisabled</code>
-<ul>
-<li>Renamed to <code>timeDisabled</code></li>
-<li>Takes a function with a single <code>Date</code> parameter. The option is disabled if the function returns falsey</li>
-</ul></li>
-<li><code>label</code>
-<ul>
-<li>Replaced with child renderer</li>
-</ul></li>
-</ul>
-<h5 id="removed-properties-17">Removed properties</h5>
-<ul>
-<li><code>widgetId</code>
-<ul>
-<li>No longer needed</li>
-</ul></li>
-<li><code>valid</code>
-<ul>
-<li>Validation is now handled internally by the time picker and exposed via the <code>onValidate</code> property</li>
-</ul></li>
-<li><code>useNativeElement</code>
-<ul>
-<li>No longer supported</li>
-</ul></li>
-<li><code>readOnly</code>
-<ul>
-<li>No longer supported. Time picker can be <code>disabled</code> if required</li>
-</ul></li>
-<li><code>options</code>
-<ul>
-<li>It is no longer necessary to manually specify the options. The options may be configured via the <code>start</code>, <code>end</code>, and <code>step</code> properties.</li>
-</ul></li>
-<li><code>openOnFocus</code>
-<ul>
-<li>No longer supported. Clicking the button or using the enter/down arrow is required to open the time picker menu</li>
-</ul></li>
-<li><code>onRequestOptions</code>
-<ul>
-<li>No longer supported</li>
-</ul></li>
-<li><code>onOver</code>
-<ul>
-<li>No longer supported</li>
-</ul></li>
-<li><code>onOut</code>
-<ul>
-<li>No longer supported</li>
-</ul></li>
-<li><code>onMenuChange</code>
-<ul>
-<li>No longer supported</li>
-</ul></li>
-<li><code>onFocus</code>
-<ul>
-<li>No longer supported</li>
-</ul></li>
-<li><code>onClick</code>
-<ul>
-<li>No longer supported</li>
-</ul></li>
-<li><code>onBlur</code>
-<ul>
-<li>No longer supported</li>
-</ul></li>
-<li><code>labelHidden</code>
-<ul>
-<li>No longer supported</li>
-</ul></li>
-<li><code>labelAfter</code>
-<ul>
-<li>No longer supported</li>
-</ul></li>
-<li><code>inputProperties</code>
-<ul>
-<li>No longer supported</li>
-</ul></li>
-<li><code>clearable</code>
-<ul>
-<li>No longer supported, the time picker is not clearable</li>
-</ul></li>
-<li><code>autoBlur</code>
-<ul>
-<li>No longer supported</li>
-</ul></li>
-</ul>
-<h4 id="changes-in-behavior-13">Changes in behavior</h4>
-<p>The time picker will generate its own time options manually now, and therefore does not require the parent widget to pass in a list of time options.</p>
-<h4 id="example-of-migration-from-v6-to-v7-19">Example of migration from v6 to v7</h4>
-<h5 id="v6-example-18">v6 Example</h5>
-<pre><code>&lt;TimePicker
+		<p>
+			Latest example can be found at
+			<a href="https://widgets.dojo.io/#widget/text-input/overview"
+				>widgets.dojo.io/#widget/text-input/overview</a
+			>
+		</p>
+		<hr />
+		<h3 id="timepicker">TimePicker</h3>
+		<h4 id="property-changes-19">Property changes</h4>
+		<h5 id="additional-properties">Additional Properties</h5>
+		<ul>
+			<li>
+				<code>format?: '24' | '12';</code>
+				<ul>
+					<li>Specifies whether or not the time is displayed in 24h or 12h format</li>
+				</ul>
+			</li>
+			<li>
+				<code>onValidate?(valid: boolean, message: string): void;</code>
+				<ul>
+					<li>Called when validation occurs on the time picker.</li>
+				</ul>
+			</li>
+			<li>
+				<code>initialValue?: string;</code>
+				<ul>
+					<li>Used to set the initial value of the time picker.</li>
+					<li>
+						The time picker is now internally managed by default and does not need to be
+						managed by the parent widget, but can still be controlled using
+						<code>value</code> and <code>onValue</code>.
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<h5 id="changed-properties-11">Changed properties</h5>
+		<ul>
+			<li>
+				<code>start</code>
+				<ul>
+					<li>Renamed to <code>min</code> to match with native time picker</li>
+				</ul>
+			</li>
+			<li>
+				<code>end</code>
+				<ul>
+					<li>Renamed to <code>max</code> to match with native time picker</li>
+				</ul>
+			</li>
+			<li>
+				<code>isOptionDisabled</code>
+				<ul>
+					<li>Renamed to <code>timeDisabled</code></li>
+					<li>
+						Takes a function with a single <code>Date</code> parameter. The option is
+						disabled if the function returns falsey
+					</li>
+				</ul>
+			</li>
+			<li>
+				<code>label</code>
+				<ul>
+					<li>Replaced with child renderer</li>
+				</ul>
+			</li>
+		</ul>
+		<h5 id="removed-properties-17">Removed properties</h5>
+		<ul>
+			<li>
+				<code>widgetId</code>
+				<ul>
+					<li>No longer needed</li>
+				</ul>
+			</li>
+			<li>
+				<code>valid</code>
+				<ul>
+					<li>
+						Validation is now handled internally by the time picker and exposed via the
+						<code>onValidate</code> property
+					</li>
+				</ul>
+			</li>
+			<li>
+				<code>useNativeElement</code>
+				<ul>
+					<li>No longer supported</li>
+				</ul>
+			</li>
+			<li>
+				<code>readOnly</code>
+				<ul>
+					<li>
+						No longer supported. Time picker can be <code>disabled</code> if required
+					</li>
+				</ul>
+			</li>
+			<li>
+				<code>options</code>
+				<ul>
+					<li>
+						It is no longer necessary to manually specify the options. The options may
+						be configured via the <code>start</code>, <code>end</code>, and
+						<code>step</code> properties.
+					</li>
+				</ul>
+			</li>
+			<li>
+				<code>openOnFocus</code>
+				<ul>
+					<li>
+						No longer supported. Clicking the button or using the enter/down arrow is
+						required to open the time picker menu
+					</li>
+				</ul>
+			</li>
+			<li>
+				<code>onRequestOptions</code>
+				<ul>
+					<li>No longer supported</li>
+				</ul>
+			</li>
+			<li>
+				<code>onOver</code>
+				<ul>
+					<li>No longer supported</li>
+				</ul>
+			</li>
+			<li>
+				<code>onOut</code>
+				<ul>
+					<li>No longer supported</li>
+				</ul>
+			</li>
+			<li>
+				<code>onMenuChange</code>
+				<ul>
+					<li>No longer supported</li>
+				</ul>
+			</li>
+			<li>
+				<code>onFocus</code>
+				<ul>
+					<li>No longer supported</li>
+				</ul>
+			</li>
+			<li>
+				<code>onClick</code>
+				<ul>
+					<li>No longer supported</li>
+				</ul>
+			</li>
+			<li>
+				<code>onBlur</code>
+				<ul>
+					<li>No longer supported</li>
+				</ul>
+			</li>
+			<li>
+				<code>labelHidden</code>
+				<ul>
+					<li>No longer supported</li>
+				</ul>
+			</li>
+			<li>
+				<code>labelAfter</code>
+				<ul>
+					<li>No longer supported</li>
+				</ul>
+			</li>
+			<li>
+				<code>inputProperties</code>
+				<ul>
+					<li>No longer supported</li>
+				</ul>
+			</li>
+			<li>
+				<code>clearable</code>
+				<ul>
+					<li>No longer supported, the time picker is not clearable</li>
+				</ul>
+			</li>
+			<li>
+				<code>autoBlur</code>
+				<ul>
+					<li>No longer supported</li>
+				</ul>
+			</li>
+		</ul>
+		<h4 id="changes-in-behavior-13">Changes in behavior</h4>
+		<p>
+			The time picker will generate its own time options manually now, and therefore does not
+			require the parent widget to pass in a list of time options.
+		</p>
+		<h4 id="example-of-migration-from-v6-to-v7-19">Example of migration from v6 to v7</h4>
+		<h5 id="v6-example-18">v6 Example</h5>
+		<pre><code>&lt;TimePicker
     start=&quot;12:00:00&quot;
     end=&quot;12:00:59&quot;
     step={1}
     onValue={(value) =&gt; icache.set(&#39;value&#39;, value)}
     label=&quot;Time: &quot;
 /&gt;</code></pre>
-<h5 id="v7-example-18">v7 Example</h5>
-<pre><code>&lt;TimePicker min=&quot;12:00:00&quot; max=&quot;12:00:59&quot; step={1} onValue={(value) =&gt; icache.set(&#39;value&#39;, value)}&gt;
+		<h5 id="v7-example-18">v7 Example</h5>
+		<pre><code>&lt;TimePicker min=&quot;12:00:00&quot; max=&quot;12:00:59&quot; step={1} onValue={(value) =&gt; icache.set(&#39;value&#39;, value)}&gt;
     {{ label: &#39;Time: &#39; }}
 &lt;/TimePicker&gt;</code></pre>
-<p>Latest example can be found at <a href="https://widgets.dojo.io/#widget/time-picker/overview">widgets.dojo.io/#widget/time-picker/overview</a></p>
-<hr />
-<h3 id="titlepane">TitlePane</h3>
-<h4 id="property-changes-20">Property changes</h4>
-<h5 id="changed-properties-12">Changed properties</h5>
-<ul>
-<li><code>onClose?(): void</code>
-<ul>
-<li>This property replaces <code>onRequestClose</code>.</li>
-<li>This property receives no arguments.</li>
-</ul></li>
-<li><code>onOpen?(): void</code>
-<ul>
-<li>This property replaces <code>onRequestOpen</code>.</li>
-<li>This property receives no arguments.</li>
-</ul></li>
-<li><code>initialOpen?: boolean</code>
-<ul>
-<li>This property sets initial open state.</li>
-<li>This widget then manages its open state internally.</li>
-<li>The <code>open</code> property can alternatively be used for full control.</li>
-</ul></li>
-<li><code>children: TitlePaneChildren</code>
-<ul>
-<li>This property no longer accepts <code>DNode</code> content.</li>
-<li>This property accepts a child renderer object.</li>
-<li>Pane title and content are set using this renderer.</li>
-</ul></li>
-</ul>
-<h5 id="removed-properties-18">Removed properties</h5>
-<ul>
-<li><code>title: DNode</code>
-<ul>
-<li>This property was removed altogether.</li>
-<li>Pane titles are now set using a child renderer.</li>
-</ul></li>
-</ul>
-<h4 id="changes-in-behavior-14">Changes in behavior</h4>
-<p>The <code>TitlePane</code> widget is now uncontrolled by default, meaning it manages its own open state internally. An <code>initialOpen</code> property can be used to set initial open state, and <code>onOpen</code> and <code>onClose</code> properties can be used to detect when this open state changes. If full-control is needed to support complex use-cases - such as restrictions around opening or closing - the <code>open</code> property can be used instead of <code>initialOpen</code> to mandate open state.</p>
-<p>The <code>TitlePane</code> now uses a child renderer object to determine its title and content. This means that an object is passed as the widget’s only child with keys for <code>title</code> and <code>content</code>, each of which return elements to render accordingly.</p>
-<h4 id="example-of-migration-from-v6-to-v7-20">Example of migration from v6 to v7</h4>
-<h5 id="v6-example-19">v6 Example</h5>
-<pre><code>&lt;TitlePane
+		<p>
+			Latest example can be found at
+			<a href="https://widgets.dojo.io/#widget/time-picker/overview"
+				>widgets.dojo.io/#widget/time-picker/overview</a
+			>
+		</p>
+		<hr />
+		<h3 id="titlepane">TitlePane</h3>
+		<h4 id="property-changes-20">Property changes</h4>
+		<h5 id="changed-properties-12">Changed properties</h5>
+		<ul>
+			<li>
+				<code>onClose?(): void</code>
+				<ul>
+					<li>This property replaces <code>onRequestClose</code>.</li>
+					<li>This property receives no arguments.</li>
+				</ul>
+			</li>
+			<li>
+				<code>onOpen?(): void</code>
+				<ul>
+					<li>This property replaces <code>onRequestOpen</code>.</li>
+					<li>This property receives no arguments.</li>
+				</ul>
+			</li>
+			<li>
+				<code>initialOpen?: boolean</code>
+				<ul>
+					<li>This property sets initial open state.</li>
+					<li>This widget then manages its open state internally.</li>
+					<li>
+						The <code>open</code> property can alternatively be used for full control.
+					</li>
+				</ul>
+			</li>
+			<li>
+				<code>children: TitlePaneChildren</code>
+				<ul>
+					<li>This property no longer accepts <code>DNode</code> content.</li>
+					<li>This property accepts a child renderer object.</li>
+					<li>Pane title and content are set using this renderer.</li>
+				</ul>
+			</li>
+		</ul>
+		<h5 id="removed-properties-18">Removed properties</h5>
+		<ul>
+			<li>
+				<code>title: DNode</code>
+				<ul>
+					<li>This property was removed altogether.</li>
+					<li>Pane titles are now set using a child renderer.</li>
+				</ul>
+			</li>
+		</ul>
+		<h4 id="changes-in-behavior-14">Changes in behavior</h4>
+		<p>
+			The <code>TitlePane</code> widget is now uncontrolled by default, meaning it manages its
+			own open state internally. An <code>initialOpen</code> property can be used to set
+			initial open state, and <code>onOpen</code> and <code>onClose</code> properties can be
+			used to detect when this open state changes. If full-control is needed to support
+			complex use-cases - such as restrictions around opening or closing - the
+			<code>open</code> property can be used instead of <code>initialOpen</code> to mandate
+			open state.
+		</p>
+		<p>
+			The <code>TitlePane</code> now uses a child renderer object to determine its title and
+			content. This means that an object is passed as the widget’s only child with keys for
+			<code>title</code> and <code>content</code>, each of which return elements to render
+			accordingly.
+		</p>
+		<h4 id="example-of-migration-from-v6-to-v7-20">Example of migration from v6 to v7</h4>
+		<h5 id="v6-example-19">v6 Example</h5>
+		<pre><code>&lt;TitlePane
     title=&quot;Title&quot;
     onRequestClose={() =&gt; icache.set(&#39;open&#39;, false)}
     onRequestOpen={() =&gt; icache.set(&#39;open&#39;, true)}
@@ -1421,40 +2005,52 @@ export default factory(function Closeable() {
 &gt;
     Content
 &lt;/TitlePane&gt;</code></pre>
-<h5 id="v7-example-19">v7 Example</h5>
-<pre><code>&lt;TitlePane&gt;
+		<h5 id="v7-example-19">v7 Example</h5>
+		<pre><code>&lt;TitlePane&gt;
     {{
         title: &#39;Title&#39;,
         content: &#39;Content&#39;,
     }}
 &lt;/TitlePane&gt;</code></pre>
-<p>Latest example can be found at <a href="https://widgets.dojo.io/#widget/title-pane/overview">widgets.dojo.io/#widget/title-pane/overview</a></p>
-<hr />
-<h3 id="tooltip">Tooltip</h3>
-<h4 id="property-changes-21">Property changes</h4>
-<h5 id="changed-properties-13">Changed properties</h5>
-<ul>
-<li><code>children</code>: <code>DNode</code>
-<ul>
-<li>This property no longer accepts <code>DNode</code> triggers.</li>
-<li>This property accepts a child renderer object.</li>
-<li>The trigger and contents are set using this renderer.</li>
-</ul></li>
-</ul>
-<h5 id="removed-properties-19">Removed properties</h5>
-<ul>
-<li><code>content</code>: <code>DNode</code>
-<ul>
-<li>The tooltip content is now set via a child renderer object.</li>
-</ul></li>
-</ul>
-<h4 id="changes-in-behavior-15">Changes in behavior</h4>
-<ul>
-<li>Both the tooltip trigger and content are specified on a child renderer object rather than as a child <code>DNode</code> and property, respectively.</li>
-</ul>
-<h4 id="example-of-migration-from-v6-to-v7-21">Example of migration from v6 to v7</h4>
-<h5 id="v6-example-20">v6 Example</h5>
-<pre><code>&lt;Tooltip content=&quot;This tooltip shows on click&quot; open={icache.get(&#39;show&#39;)}&gt;
+		<p>
+			Latest example can be found at
+			<a href="https://widgets.dojo.io/#widget/title-pane/overview"
+				>widgets.dojo.io/#widget/title-pane/overview</a
+			>
+		</p>
+		<hr />
+		<h3 id="tooltip">Tooltip</h3>
+		<h4 id="property-changes-21">Property changes</h4>
+		<h5 id="changed-properties-13">Changed properties</h5>
+		<ul>
+			<li>
+				<code>children</code>: <code>DNode</code>
+				<ul>
+					<li>This property no longer accepts <code>DNode</code> triggers.</li>
+					<li>This property accepts a child renderer object.</li>
+					<li>The trigger and contents are set using this renderer.</li>
+				</ul>
+			</li>
+		</ul>
+		<h5 id="removed-properties-19">Removed properties</h5>
+		<ul>
+			<li>
+				<code>content</code>: <code>DNode</code>
+				<ul>
+					<li>The tooltip content is now set via a child renderer object.</li>
+				</ul>
+			</li>
+		</ul>
+		<h4 id="changes-in-behavior-15">Changes in behavior</h4>
+		<ul>
+			<li>
+				Both the tooltip trigger and content are specified on a child renderer object rather
+				than as a child <code>DNode</code> and property, respectively.
+			</li>
+		</ul>
+		<h4 id="example-of-migration-from-v6-to-v7-21">Example of migration from v6 to v7</h4>
+		<h5 id="v6-example-20">v6 Example</h5>
+		<pre><code>&lt;Tooltip content=&quot;This tooltip shows on click&quot; open={icache.get(&#39;show&#39;)}&gt;
     &lt;button
         onclick={() =&gt; {
             icache.set(&#39;show&#39;, !icache.get(&#39;show&#39;));
@@ -1463,8 +2059,8 @@ export default factory(function Closeable() {
         Toggle Tooltip
     &lt;/button&gt;
 &lt;/Tooltip&gt;</code></pre>
-<h5 id="v7-example-20">v7 Example</h5>
-<pre><code>&lt;Tooltip open={icache.get(&#39;show&#39;)}&gt;
+		<h5 id="v7-example-20">v7 Example</h5>
+		<pre><code>&lt;Tooltip open={icache.get(&#39;show&#39;)}&gt;
     {{
         content: &#39;This tooltip shows on click&#39;,
         trigger: (
@@ -1478,6 +2074,11 @@ export default factory(function Closeable() {
         ),
     }}
 &lt;/Tooltip&gt;</code></pre>
-<p>Latest example can be found at <a href="https://widgets.dojo.io/#widget/tooltip/overview">widgets.dojo.io/#widget/tooltip/overview</a></p>
-</body>
+		<p>
+			Latest example can be found at
+			<a href="https://widgets.dojo.io/#widget/tooltip/overview"
+				>widgets.dojo.io/#widget/tooltip/overview</a
+			>
+		</p>
+	</body>
 </html>

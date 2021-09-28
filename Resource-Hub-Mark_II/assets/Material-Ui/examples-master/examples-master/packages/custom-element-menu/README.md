@@ -1,5 +1,4 @@
-Dojo Custom Element Menu Demo
-=============================
+# Dojo Custom Element Menu Demo
 
 Implementation of a basic menu widget that demonstrates using as custom elements against standard Dojo widgets.
 
@@ -11,15 +10,13 @@ Implementation of a basic menu widget that demonstrates using as custom elements
     -   [Testing](#testing)
 -   [Licensing information](#licensing-information)
 
-Pre-requisites
---------------
+## Pre-requisites
 
 `@dojo/cli` must be installed globally:
 
     npm install @dojo/cli -g
 
-Usage
------
+## Usage
 
 To use the `custom-element-menu`, clone the `examples` repository and install the npm dependencies:
 
@@ -33,8 +30,7 @@ To run the application simply run the dojo build.
 
 Open the `dist` directory using a local webserver.
 
-Features
---------
+## Features
 
 This package demonstrates how to use Dojo widgets as a custom element.
 
@@ -47,8 +43,7 @@ Those CLI build commands use webpack to create bundles in the `dist` directory f
 
     <link rel="import" href="./dist/menu/menu.html" /> <link rel="import" href="./dist/menu-item/menu-item.html" />
 
-How do I contribute?
---------------------
+## How do I contribute?
 
 We appreciate your interest! Please see the [Dojo Meta Repository](https://github.com/dojo/meta#readme) for the Contributing Guidelines and Style Guide.
 
@@ -66,7 +61,6 @@ You can test custom element menu locally using the [`@dojo/cli-test-intern`](htt
 
     dojo test -a
 
-Licensing Information
----------------------
+## Licensing Information
 
 © 2018 [JS Foundation](https://js.foundation/). [New BSD](http://opensource.org/licenses/BSD-3-Clause) license.

@@ -1,38 +1,82 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>README</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
-</head>
-<body>
-<h1 id="example-index">example-index</h1>
-<p>This project was generated with the <a href="https://github.com/dojo/cli">Dojo CLI</a> &amp; <a href="https://github.com/dojo/cli-create-app">Dojo CLI create app command</a>.</p>
-<h2 id="build">Build</h2>
-<p>Run <code>npm run build</code> or <code>dojo build --mode dist</code> (the <code>mode</code> option defaults to <code>dist</code>) to create a production build for the project. The built artifacts will be stored in the <code>output/dist</code> directory.</p>
-<h2 id="development-build">Development Build</h2>
-<p>Run <code>npm run build:dev</code> or <code>dojo build --mode dev</code> to create a development build for the project. The built artifacts will be stored in the <code>output/dev</code> directory.</p>
-<h2 id="development-server">Development server</h2>
-<p>Run <code>npm run dev</code> or <code>dojo build --mode dev --watch file --serve</code> to create a development build and start a development server. By default the server runs on port <code>9999</code>, navigate to <code>http://localhost:9999/</code>.</p>
-<p>To change the port of the development server use the <code>--port</code> option on the <code>dojo build</code> command.</p>
-<p>To create an in memory development build and start a development server with hot reload, switch the <code>--watch</code> option to <code>memory</code>.</p>
-<h2 id="running-unit-tests">Running unit tests</h2>
-<p>To run units tests in node only use <code>npm run test</code> or <code>dojo test</code> which uses JIT (just in time) compilation.</p>
-<p>To run the unit tests against built bundles, run <code>npm run test:unit</code>.</p>
-<p>To be re-run the unit tests without needing to re-build the full application each time, first build the app with <code>--mode unit</code> and the <code>--watch</code> option, <code>dojo build --mode unit --watch</code>. Then run <code>dojo test --config local</code> to run the unit tests as needed.</p>
-<p>The build test artifacts are written to the <code>output/tests/unit</code> directory. These tests are located in the <code>tests/unit</code> directory.</p>
-<h2 id="running-functional-tests">Running functional tests</h2>
-<p>To run the functional tests, run <code>npm run test:functional</code>. These tests are located in the <code>tests/functional</code> directory.</p>
-<h2 id="running-unit-and-functional-tests-together">Running unit and functional tests together</h2>
-<p>To run both unit and functional tests as the same time, run <code>npm run test:all</code>.</p>
-<h2 id="further-help">Further help</h2>
-<p>To get help for these commands and more, run <code>dojo</code> on the command line.</p>
-</body>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="generator" content="pandoc" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+		<title>README</title>
+		<style type="text/css">
+			code {
+				white-space: pre-wrap;
+			}
+			span.smallcaps {
+				font-variant: small-caps;
+			}
+			span.underline {
+				text-decoration: underline;
+			}
+			div.column {
+				display: inline-block;
+				vertical-align: top;
+				width: 50%;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 id="example-index">example-index</h1>
+		<p>
+			This project was generated with the <a href="https://github.com/dojo/cli">Dojo CLI</a> &amp;
+			<a href="https://github.com/dojo/cli-create-app">Dojo CLI create app command</a>.
+		</p>
+		<h2 id="build">Build</h2>
+		<p>
+			Run <code>npm run build</code> or <code>dojo build --mode dist</code> (the <code>mode</code> option defaults
+			to <code>dist</code>) to create a production build for the project. The built artifacts will be stored in
+			the <code>output/dist</code> directory.
+		</p>
+		<h2 id="development-build">Development Build</h2>
+		<p>
+			Run <code>npm run build:dev</code> or <code>dojo build --mode dev</code> to create a development build for
+			the project. The built artifacts will be stored in the <code>output/dev</code> directory.
+		</p>
+		<h2 id="development-server">Development server</h2>
+		<p>
+			Run <code>npm run dev</code> or <code>dojo build --mode dev --watch file --serve</code> to create a
+			development build and start a development server. By default the server runs on port <code>9999</code>,
+			navigate to <code>http://localhost:9999/</code>.
+		</p>
+		<p>
+			To change the port of the development server use the <code>--port</code> option on the
+			<code>dojo build</code> command.
+		</p>
+		<p>
+			To create an in memory development build and start a development server with hot reload, switch the
+			<code>--watch</code> option to <code>memory</code>.
+		</p>
+		<h2 id="running-unit-tests">Running unit tests</h2>
+		<p>
+			To run units tests in node only use <code>npm run test</code> or <code>dojo test</code> which uses JIT (just
+			in time) compilation.
+		</p>
+		<p>To run the unit tests against built bundles, run <code>npm run test:unit</code>.</p>
+		<p>
+			To be re-run the unit tests without needing to re-build the full application each time, first build the app
+			with <code>--mode unit</code> and the <code>--watch</code> option,
+			<code>dojo build --mode unit --watch</code>. Then run <code>dojo test --config local</code> to run the unit
+			tests as needed.
+		</p>
+		<p>
+			The build test artifacts are written to the <code>output/tests/unit</code> directory. These tests are
+			located in the <code>tests/unit</code> directory.
+		</p>
+		<h2 id="running-functional-tests">Running functional tests</h2>
+		<p>
+			To run the functional tests, run <code>npm run test:functional</code>. These tests are located in the
+			<code>tests/functional</code> directory.
+		</p>
+		<h2 id="running-unit-and-functional-tests-together">Running unit and functional tests together</h2>
+		<p>To run both unit and functional tests as the same time, run <code>npm run test:all</code>.</p>
+		<h2 id="further-help">Further help</h2>
+		<p>To get help for these commands and more, run <code>dojo</code> on the command line.</p>
+	</body>
 </html>

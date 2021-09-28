@@ -1,10 +1,8 @@
-<span class="citation" data-cites="dojo/widgets/typeahead">@dojo/widgets/typeahead</span>
-=========================================================================================
+# <span class="citation" data-cites="dojo/widgets/typeahead">@dojo/widgets/typeahead</span>
 
 Dojo’s `Typeahead` provides a form input with a filterable list of options. As the user types, the options are filtered and presented to the user.
 
-Features
---------
+## Features
 
 -   Compatible with any underlying data provider, data format, or store
 -   Allows customization of option state and vdom

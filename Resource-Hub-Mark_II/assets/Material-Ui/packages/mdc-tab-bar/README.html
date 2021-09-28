@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<!--docs:
+title: "Tab Bar"
+layout: detail
+section: components
+excerpt: "Manages a set of Tabs."
+iconId: tabs
+path: /catalog/tabs/tab-bar/
+-->
+<h1 id="tab-bar">Tab Bar</h1>
+<p>Tabs organize and allow navigation between groups of content that are related and at the same level of hierarchy. The Tab Bar contains the Tab Scroller and Tab components.</p>
+<h2 id="design-api-documentation">Design &amp; API Documentation</h2>
+<ul class="icon-list">
+<li class="icon-list-item icon-list-item--spec">
+<a href="https://material.io/go/design-tabs">Material Design guidelines: Tabs</a>
+</li>
+<li class="icon-list-item icon-list-item--link">
+<a href="https://material-components.github.io/material-components-web-catalog/#/component/tabs">Demo</a>
+</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<pre><code>npm install @material/tab-bar</code></pre>
+<h2 id="basic-usage">Basic Usage</h2>
+<h3 id="html-structure">HTML Structure</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-tab-bar&quot;</span><span class="ot"> role=</span><span class="st">&quot;tablist&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-tab-scroller&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-3" title="3">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-tab-scroller__scroll-area&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-4" title="4">      <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-tab-scroller__scroll-content&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-5" title="5">        <span class="kw">&lt;button</span><span class="ot"> class=</span><span class="st">&quot;mdc-tab mdc-tab--active&quot;</span><span class="ot"> role=</span><span class="st">&quot;tab&quot;</span><span class="ot"> aria-selected=</span><span class="st">&quot;true&quot;</span><span class="ot"> tabindex=</span><span class="st">&quot;0&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-6" title="6">          <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-tab__content&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-7" title="7">            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-tab__icon material-icons&quot;</span><span class="ot"> aria-hidden=</span><span class="st">&quot;true&quot;</span><span class="kw">&gt;</span>favorite<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb2-8" title="8">            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-tab__text-label&quot;</span><span class="kw">&gt;</span>Favorites<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb2-9" title="9">          <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb2-10" title="10">          <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-tab-indicator mdc-tab-indicator--active&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-11" title="11">            <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-tab-indicator__content mdc-tab-indicator__content--underline&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb2-12" title="12">          <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb2-13" title="13">          <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-tab__ripple&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb2-14" title="14">        <span class="kw">&lt;/button&gt;</span></a>
+<a class="sourceLine" id="cb2-15" title="15">      <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb2-16" title="16">    <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb2-17" title="17">  <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb2-18" title="18"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
+<h3 id="styles">Styles</h3>
+<pre class="scss"><code>@use &quot;@material/tab-bar/mdc-tab-bar&quot;;
+@use &quot;@material/tab-scroller/mdc-tab-scroller&quot;;
+@use &quot;@material/tab-indicator/mdc-tab-indicator&quot;;
+@use &quot;@material/tab/mdc-tab&quot;;</code></pre>
+<h3 id="javascript-instantiation">JavaScript Instantiation</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="im">import</span> <span class="op">{</span>MDCTabBar<span class="op">}</span> <span class="im">from</span> <span class="st">&#39;@material/tab-bar&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-2" title="2"></a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="kw">const</span> tabBar <span class="op">=</span> <span class="kw">new</span> <span class="at">MDCTabBar</span>(<span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&#39;.mdc-tab-bar&#39;</span>))<span class="op">;</span></a></code></pre></div>
+<blockquote>
+<p>See <a href="../../docs/importing-js.md">Importing the JS component</a> for more information on how to import JavaScript.</p>
+</blockquote>
+<h2 id="variants">Variants</h2>
+<p>MDC Tab Bar does not have any variants; however, its subcomponents do. See the <a href="../mdc-tab-scroller">Tab Scroller</a>, <a href="../mdc-tab">Tab</a>, and <a href="../mdc-tab-indicator">Tab Indicator</a> documentation for more information.</p>
+<h3 id="tab-icons">Tab Icons</h3>
+<p>We recommend using <a href="https://material.io/tools/icons/">Material Icons</a> from Google Fonts:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">&lt;head&gt;</span></a>
+<a class="sourceLine" id="cb5-2" title="2">  <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href=</span><span class="st">&quot;https://fonts.googleapis.com/icon?family=Material+Icons&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="kw">&lt;/head&gt;</span></a></code></pre></div>
+<p>However, you can also use SVG, <a href="https://fontawesome.com/">Font Awesome</a>, or any other icon library you wish.</p>
+<h2 id="style-customization">Style Customization</h2>
+<h3 id="css-classes">CSS Classes</h3>
+<table>
+<thead>
+<tr class="header">
+<th>CSS Class</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>mdc-tab-bar</code></td>
+<td>Mandatory.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sass-mixins">Sass Mixins</h3>
+<p>To customize the width of the tab bar, use the following mixin.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mixin</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>width($width)</code></td>
+<td>Customizes the width of the tab bar.</td>
+</tr>
+<tr class="even">
+<td><code>density($density-scale)</code></td>
+<td>Sets density scale to default tab bar variant. Use <code>stacked-density</code> mixin for stacked variant. Supported density scales <code>-4</code>, <code>-3</code>, <code>-2</code>, <code>-1</code> and <code>0</code>.</td>
+</tr>
+<tr class="odd">
+<td><code>stacked-density($density-scale)</code></td>
+<td>Sets density scale to stacked tab bar variant. Supported density scales <code>-4</code>, <code>-3</code>, <code>-2</code>, <code>-1</code> and <code>0</code>.</td>
+</tr>
+<tr class="even">
+<td><code>tab-scroller-transition($duration-ms, $timing-function)</code></td>
+<td>Sets the CSS transition for the tab scrolling animation. This mixin is a proxy to <code>mdc-tab-scroller-transition</code> mixin.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mdctabbar-properties-and-methods"><code>MDCTabBar</code> Properties and Methods</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Property</th>
+<th>Value Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>focusOnActivate</code></td>
+<td><code>boolean</code> (write-only)</td>
+<td>Sets whether tabs focus themselves when activated. Defaults to <code>true</code>.</td>
+</tr>
+<tr class="even">
+<td><code>useAutomaticActivation</code></td>
+<td><code>boolean</code> (write-only)</td>
+<td>Sets how tabs activate in response to keyboard interaction. Automatic (<code>true</code>) activates as soon as a tab is focused with arrow keys; manual (<code>false</code>) activates only when the user presses space/enter. The default is automatic (<code>true</code>).</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method Signature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>activateTab(index: number) =&gt; void</code></td>
+<td>Activates the tab at the given index.</td>
+</tr>
+<tr class="even">
+<td><code>scrollIntoView(index: number) =&gt; void</code></td>
+<td>Scrolls the tab at the given index into view.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Event Name</th>
+<th>Event Data Structure</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>MDCTabBar:activated</code></td>
+<td><code>{"detail": {"index": number}}</code></td>
+<td>Emitted when a Tab is activated with the index of the activated Tab. Listen for this to update content when a Tab becomes active.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="usage-within-web-frameworks">Usage within Web Frameworks</h2>
+<p>If you are using a JavaScript framework, such as React or Angular, you can create a Tab Bar for your framework. Depending on your needs, you can use the <em>Simple Approach: Wrapping MDC Web Vanilla Components</em>, or the <em>Advanced Approach: Using Foundations and Adapters</em>. Please follow the instructions <a href="../../docs/integrating-into-frameworks.md">here</a>.</p>
+<h3 id="mdctabbaradapter"><code>MDCTabBarAdapter</code></h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method Signature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>scrollTo(scrollX: number) =&gt; void</code></td>
+<td>Scrolls the Tab Scroller to the given position.</td>
+</tr>
+<tr class="even">
+<td><code>incrementScroll(scrollXIncrement: number) =&gt; void</code></td>
+<td>Increments the Tab Scroller by the given value.</td>
+</tr>
+<tr class="odd">
+<td><code>getScrollPosition() =&gt; number</code></td>
+<td>Returns the scroll position of the Tab Scroller.</td>
+</tr>
+<tr class="even">
+<td><code>getScrollContentWidth() =&gt; number</code></td>
+<td>Returns the width of the Tab Scroller’s scroll content element.</td>
+</tr>
+<tr class="odd">
+<td><code>getOffsetWidth() =&gt; number</code></td>
+<td>Returns the offsetWidth of the root element.</td>
+</tr>
+<tr class="even">
+<td><code>isRTL() =&gt; boolean</code></td>
+<td>Returns if the text direction is RTL.</td>
+</tr>
+<tr class="odd">
+<td><code>setActiveTab(index: number) =&gt; void</code></td>
+<td>Sets the tab at the given index to be activated.</td>
+</tr>
+<tr class="even">
+<td><code>activateTabAtIndex(index: number, clientRect: ClientRect) =&gt; void</code></td>
+<td>Activates the Tab at the given index with the given clientRect.</td>
+</tr>
+<tr class="odd">
+<td><code>deactivateTabAtIndex(index) =&gt; void</code></td>
+<td>Deactivates the Tab at the given index.</td>
+</tr>
+<tr class="even">
+<td><code>focusTabAtIndex(index: number) =&gt; void</code></td>
+<td>Focuses the Tab at the given index.</td>
+</tr>
+<tr class="odd">
+<td><code>getTabIndicatorClientRectAtIndex(index: number) =&gt; ClientRect</code></td>
+<td>Returns the client rect of the Tab at the given index.</td>
+</tr>
+<tr class="even">
+<td><code>getTabDimensionsAtIndex(index) =&gt; MDCTabDimensions</code></td>
+<td>Returns the dimensions of the Tab at the given index.</td>
+</tr>
+<tr class="odd">
+<td><code>getTabListLength() =&gt; number</code></td>
+<td>Returns the number of child Tab components.</td>
+</tr>
+<tr class="even">
+<td><code>getPreviousActiveTabIndex() =&gt; number</code></td>
+<td>Returns the index of the previously active Tab.</td>
+</tr>
+<tr class="odd">
+<td><code>getFocusedTabIndex() =&gt; number</code></td>
+<td>Returns the index of the focused Tab.</td>
+</tr>
+<tr class="even">
+<td><code>getIndexOfTabById(id: string) =&gt; number</code></td>
+<td>Returns the index of the given Tab ID.</td>
+</tr>
+<tr class="odd">
+<td><code>notifyTabActivated(index: number) =&gt; void</code></td>
+<td>Emits the <code>MDCTabBar:activated</code> event.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mdctabbarfoundation"><code>MDCTabBarFoundation</code></h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method Signature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>activateTab(index: number) =&gt; void</code></td>
+<td>Activates the tab at the given index.</td>
+</tr>
+<tr class="even">
+<td><code>setUseAutomaticActivation(useAutomaticActivation: boolean) =&gt; void</code></td>
+<td>Sets how tabs activate in response to keyboard interaction. Automatic (<code>true</code>) activates as soon as a tab is focused with arrow keys; manual (<code>false</code>) activates only when the user presses space/enter.</td>
+</tr>
+<tr class="odd">
+<td><code>handleKeyDown(evt: Event) =&gt; void</code></td>
+<td>Handles the logic for the <code>"keydown"</code> event.</td>
+</tr>
+<tr class="even">
+<td><code>handleTabInteraction(evt: Event) =&gt; void</code></td>
+<td>Handles the logic for the <code>"MDCTab:interacted"</code> event.</td>
+</tr>
+<tr class="odd">
+<td><code>scrollIntoView(index: number) =&gt; void</code></td>
+<td>Scrolls the Tab at the given index into view.</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

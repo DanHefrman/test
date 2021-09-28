@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="generator" content="pandoc" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+		<title>README</title>
+		<style type="text/css">
+			code {
+				white-space: pre-wrap;
+			}
+			span.smallcaps {
+				font-variant: small-caps;
+			}
+			span.underline {
+				text-decoration: underline;
+			}
+			div.column {
+				display: inline-block;
+				vertical-align: top;
+				width: 50%;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 id="dojo-todomvc-kitchen-sink-example">Dojo TodoMVC Kitchen Sink Example</h1>
+		<p>A feature-rich version of TodoMVC, built with current pre-release versions of Dojo packages.</p>
+		<ul>
+			<li><a href="#pre-requisites">Pre-requisites</a></li>
+			<li><a href="#usage">Usage</a></li>
+			<li><a href="#features">Features</a></li>
+			<li>
+				<a href="#how-do-i-contribute">How do I contribute?</a>
+				<ul>
+					<li><a href="#installation">Installation</a></li>
+					<li><a href="#testing">Testing</a></li>
+				</ul>
+			</li>
+			<li><a href="#licensing-information">Licensing information</a></li>
+		</ul>
+		<h2 id="pre-requisites">Pre-requisites</h2>
+		<p><code>@dojo/cli</code> must be installed globally:</p>
+		<pre class="shell"><code>npm install @dojo/cli -g</code></pre>
+		<h2 id="usage">Usage</h2>
+		<p>
+			To use <code>todo-mvc-kitchensink</code>, clone the <code>examples</code> repository and install the npm
+			dependencies:
+		</p>
+		<pre class="shell"><code>git clone https://github.com/dojo/examples
+cd examples/todo-mvc-kitchensink
+npm install</code></pre>
+		<p>To run the application simply run the dojo build.</p>
+		<pre><code>dojo build</code></pre>
+		<p>To watch and serve the application source, then run the build with the <code>-w</code> command.</p>
+		<pre><code>dojo build -w -s</code></pre>
+		<h2 id="features">Features</h2>
+		<p>This package demonstrates how to build an application using Dojo.</p>
+		<ul>
+			<li>Custom widgets using <code>@dojo/widget-core</code></li>
+			<li>Applying CSS to widgets</li>
+			<li>Overriding CSS with theming.</li>
+			<li>Using <code>@dojo/router</code></li>
+			<li>Using <code>@dojo/i18n</code> to provide internalization.</li>
+		</ul>
+		<h2 id="how-do-i-contribute">How do I contribute?</h2>
+		<p>
+			We appreciate your interest! Please see the
+			<a href="https://github.com/dojo/meta#readme">Dojo Meta Repository</a> for the Contributing Guidelines and
+			Style Guide.
+		</p>
+		<h3 id="installation">Installation</h3>
+		<p>To start working with this package, clone the repository and run <code>npm install</code>.</p>
+		<p>In order to build the project run <code>dojo build</code>.</p>
+		<h3 id="testing">Testing</h3>
+		<p>
+			Test cases MUST be written using <a href="https://theintern.github.io">Intern</a> using the Object test
+			interface and Assert assertion interface.
+		</p>
+		<p>
+			You can test TodoMVC locally using the
+			<a href="https://github.com/dojo/cli-test-intern"><code>@dojo/cli-test-intern</code></a> command:
+		</p>
+		<pre class="shell"><code>dojo test -a</code></pre>
+		<h2 id="licensing-information">Licensing Information</h2>
+		<p>
+			© 2018 <a href="https://js.foundation/">JS Foundation</a>.
+			<a href="http://opensource.org/licenses/BSD-3-Clause">New BSD</a> license.
+		</p>
+	</body>
+</html>

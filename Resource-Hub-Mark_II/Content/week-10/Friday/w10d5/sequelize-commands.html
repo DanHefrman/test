@@ -42,8 +42,9 @@ ORDER BY merchants.merchant_name</code></pre>
     foreign:Key: &#39;personId&#39;.
     otherKey: &#39;courseId&#39;
     });
-}</code></pre>
-<pre><code>function(models){
+}
+
+function(models){
   Course.belongsToMany(models.person, {
   through:models.Enrollment,
   foreignKey: &#39;courseId&#39;,

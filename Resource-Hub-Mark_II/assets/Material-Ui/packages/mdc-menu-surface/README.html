@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<!--docs:
+title: "Menu Surface"
+layout: detail
+section: components
+excerpt: "Material Design menu surface."
+iconId: menu
+path: /catalog/menu-surface/
+-->
+<h1 id="menu-surface">Menu Surface</h1>
+<!--<div class="article__asset">
+  <a class="article__asset-link"
+     href="https://material-components.github.io/material-components-web-catalog/#/component/menu">
+    <img src="{{ site.rootpath }}/images/mdc_web_screenshots/menus.png" width="178" alt="Menus screenshot">
+  </a>
+</div>-->
+<p>The MDC Menu Surface component is a reusable surface that appears above the content of the page and can be positioned adjacent to an element. Menu Surfaces require JavaScript to properly position themselves when opening.</p>
+<h2 id="design-api-documentation">Design &amp; API Documentation</h2>
+<ul class="icon-list">
+<li class="icon-list-item icon-list-item--spec">
+<a href="https://material.io/guidelines/components/menus.html">Material Design guidelines: Menus</a>
+</li>
+<li class="icon-list-item icon-list-item--link">
+<a href="https://material-components.github.io/material-components-web-catalog/#/component/menu">Demo</a>
+</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<pre><code>npm install @material/menu-surface</code></pre>
+<h2 id="usage">Usage</h2>
+<h3 id="html-structure">HTML Structure</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-menu-surface&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-2" title="2">...</a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
+<h3 id="styles">Styles</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb3-1" title="1"><span class="im">@use</span> <span class="st">&quot;@material/menu-surface/mdc-menu-surface&quot;</span><span class="op">;</span></a></code></pre></div>
+<h3 id="javascript-instantiation">JavaScript Instantiation</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="im">import</span> <span class="op">{</span>MDCMenuSurface<span class="op">}</span> <span class="im">from</span> <span class="st">&#39;@material/menu-surface&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-2" title="2"></a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="kw">const</span> menuSurface <span class="op">=</span> <span class="kw">new</span> <span class="at">MDCMenuSurface</span>(<span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&#39;.mdc-menu-surface&#39;</span>))<span class="op">;</span></a></code></pre></div>
+<blockquote>
+<p>See <a href="../../docs/importing-js.md">Importing the JS component</a> for more information on how to import JavaScript.</p>
+</blockquote>
+<h2 id="variants">Variants</h2>
+<h3 id="anchors-and-positioning">Anchors and Positioning</h3>
+<h4 id="anchored-to-parent">Anchored To Parent</h4>
+<p>The menu surface can be positioned to automatically anchor to a parent element when opened.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;toolbar&quot;</span><span class="ot"> class=</span><span class="st">&quot;toolbar mdc-menu-surface--anchor&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb5-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-menu-surface&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb5-3" title="3">  ...</a>
+<a class="sourceLine" id="cb5-4" title="4">  <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb5-5" title="5"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
+<h4 id="anchor-to-element-within-wrapper">Anchor To Element Within Wrapper</h4>
+<p>The menu surface can be positioned to automatically anchor to another element, by wrapping the other element with the anchor class.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-menu-surface--anchor&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb6-2" title="2">  <span class="kw">&lt;button</span><span class="ot"> id=</span><span class="st">&quot;menu-surface-button&quot;</span><span class="kw">&gt;</span>Open Menu Surface<span class="kw">&lt;/button&gt;</span></a>
+<a class="sourceLine" id="cb6-3" title="3">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-menu-surface&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb6-4" title="4">  ...</a>
+<a class="sourceLine" id="cb6-5" title="5">  <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb6-6" title="6"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
+<h4 id="fixed-position">Fixed Position</h4>
+<p>The menu surface can use fixed positioning when being displayed.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-menu-surface mdc-menu-surface--fixed&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb7-2" title="2">...</a>
+<a class="sourceLine" id="cb7-3" title="3"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
+<p>Or in JS:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb8-1" title="1"><span class="co">// ...</span></a>
+<a class="sourceLine" id="cb8-2" title="2"><span class="va">menuSurface</span>.<span class="at">setFixedPosition</span>(<span class="kw">true</span>)<span class="op">;</span></a></code></pre></div>
+<h4 id="absolute-position">Absolute Position</h4>
+<p>The menu surface can use absolute positioning when being displayed. This requires that the element containing the menu has the <code>position: relative</code> style.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-menu-surface&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb9-2" title="2">...</a>
+<a class="sourceLine" id="cb9-3" title="3"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb10-1" title="1"><span class="co">// ...</span></a>
+<a class="sourceLine" id="cb10-2" title="2"><span class="va">menuSurface</span>.<span class="at">setAbsolutePosition</span>(<span class="dv">100</span><span class="op">,</span> <span class="dv">100</span>)<span class="op">;</span></a></code></pre></div>
+<h2 id="style-customization">Style Customization</h2>
+<h3 id="css-classes">CSS Classes</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>CSS Class</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>mdc-menu-surface</code></td>
+<td>Mandatory.</td>
+</tr>
+<tr class="even">
+<td><code>mdc-menu-surface--animating-open</code></td>
+<td>Indicates the menu surface is currently animating open. This class is removed once the animation completes.</td>
+</tr>
+<tr class="odd">
+<td><code>mdc-menu-surface--open</code></td>
+<td>Indicates the menu surface is currently open, or is currently animating open.</td>
+</tr>
+<tr class="even">
+<td><code>mdc-menu-surface--animating-closed</code></td>
+<td>Indicates the menu surface is currently animating closed. This class is removed once the animation completes.</td>
+</tr>
+<tr class="odd">
+<td><code>mdc-menu-surface--anchor</code></td>
+<td>Used to indicate which element the menu should be anchored to.</td>
+</tr>
+<tr class="even">
+<td><code>mdc-menu-surface--fixed</code></td>
+<td>Used to indicate that the menu is using fixed positioning.</td>
+</tr>
+<tr class="odd">
+<td><code>mdc-menu-surface--fullwidth</code></td>
+<td>Sets the menu-surface’s width to match that of its parent anchor. Do not use with <code>mdc-menu-surface--fixed</code> or if hoisting to body.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sass-mixins">Sass Mixins</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mixin</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>ink-color($color)</code></td>
+<td>Sets the <code>color</code> property of the <code>mdc-menu-surface</code>.</td>
+</tr>
+<tr class="even">
+<td><code>fill-color($color)</code></td>
+<td>Sets the <code>background-color</code> property of the <code>mdc-menu-surface</code>.</td>
+</tr>
+<tr class="odd">
+<td><code>shape-radius($radius, $rtl-reflexive)</code></td>
+<td>Sets the rounded shape to menu surface with given radius size. Set <code>$rtl-reflexive</code> to true to flip radius values in RTL context, defaults to false.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="constants-types">Constants &amp; Types</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Constant Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Corner</code></td>
+<td>Enum for representing an element corner for positioning the menu-surface. See <a href="./constants.ts">constants.ts</a>.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Type Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>MDCMenuDimensions</code></td>
+<td>Width/height of an element. See <a href="./types.ts">types.ts</a>.</td>
+</tr>
+<tr class="even">
+<td><code>MDCMenuDistance</code></td>
+<td>Margin values representing the distance from anchor point that the menu surface should be shown. See <a href="./types.ts">types.ts</a>.</td>
+</tr>
+<tr class="odd">
+<td><code>MDCMenuPoint</code></td>
+<td>X/Y coordinates. See <a href="./types.ts">types.ts</a>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mdcmenusurface-properties-and-methods"><code>MDCMenuSurface</code> Properties and Methods</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Property</th>
+<th>Value Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>quickOpen</code></td>
+<td><code>boolean</code></td>
+<td>Proxies to the foundation’s <code>setQuickOpen()</code> method.</td>
+</tr>
+<tr class="even">
+<td><code>anchorElement</code></td>
+<td><code>Element</code></td>
+<td>Gets or sets the element that the surface is anchored to, or <code>null</code> if the surface is not anchored. Defaults to the root element’s parent <code>mdc-menu-surface--anchor</code> element if present.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method Signature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>isOpen() =&gt; boolean</code></td>
+<td>Proxies to the foundation’s <code>isOpen</code> method.</td>
+</tr>
+<tr class="even">
+<td><code>open() =&gt; void</code></td>
+<td>Proxies to the foundation’s <code>open</code> method.</td>
+</tr>
+<tr class="odd">
+<td><code>close(skipRestoreFocus: boolean) =&gt; void</code></td>
+<td>Proxies to the foundation’s <code>close</code> method.</td>
+</tr>
+<tr class="even">
+<td><code>setAnchorCorner(Corner) =&gt; void</code></td>
+<td>Proxies to the foundation’s <code>setAnchorCorner(Corner)</code> method.</td>
+</tr>
+<tr class="odd">
+<td><code>setAnchorMargin(Partial&lt;MDCMenuDistance&gt;) =&gt; void</code></td>
+<td>Proxies to the foundation’s <code>setAnchorMargin(Partial&lt;MDCMenuDistance&gt;)</code> method.</td>
+</tr>
+<tr class="even">
+<td><code>setFixedPosition(isFixed: boolean) =&gt; void</code></td>
+<td>Adds the <code>mdc-menu-surface--fixed</code> class to the <code>mdc-menu-surface</code> element. Proxies to the foundation’s <code>setIsHoisted()</code> and <code>setFixedPosition()</code> methods.</td>
+</tr>
+<tr class="odd">
+<td><code>setAbsolutePosition(x: number, y: number) =&gt; void</code></td>
+<td>Proxies to the foundation’s <code>setAbsolutePosition(x, y)</code> method. Used to set the absolute x/y position of the menu on the page. Should only be used when the menu is hoisted to the body.</td>
+</tr>
+<tr class="even">
+<td><code>setMenuSurfaceAnchorElement(element: Element) =&gt; void</code></td>
+<td>Sets the element used as an anchor for <code>menu-surface</code> positioning logic.</td>
+</tr>
+<tr class="odd">
+<td><code>setIsHoisted() =&gt; void</code></td>
+<td>Proxies to the foundation’s <code>setIsHoisted</code> method.</td>
+</tr>
+<tr class="even">
+<td><code>getDefaultFoundation() =&gt; MDCMenuSurfaceFoundation</code></td>
+<td>Returns the foundation.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="events">Events</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Event Name</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>MDCMenuSurface:closed</code></td>
+<td>none</td>
+<td>Event emitted after the menu surface is closed.</td>
+</tr>
+<tr class="even">
+<td><code>MDCMenuSurface:opened</code></td>
+<td>none</td>
+<td>Event emitted after the menu surface is opened.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="usage-within-frameworks">Usage Within Frameworks</h2>
+<p>If you are using a JavaScript framework, such as React or Angular, you can create a Menu Surface for your framework. Depending on your needs, you can use the <em>Simple Approach: Wrapping MDC Web Vanilla Components</em>, or the <em>Advanced Approach: Using Foundations and Adapters</em>. Please follow the instructions <a href="../../docs/integrating-into-frameworks.md">here</a>.</p>
+<h3 id="mdcmenusurfaceadapter"><code>MDCMenuSurfaceAdapter</code></h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method Signature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>addClass(className: string) =&gt; void</code></td>
+<td>Adds a class to the root element.</td>
+</tr>
+<tr class="even">
+<td><code>removeClass(className: string) =&gt; void</code></td>
+<td>Removes a class from the root element.</td>
+</tr>
+<tr class="odd">
+<td><code>hasClass(className: string) =&gt; boolean</code></td>
+<td>Returns a boolean indicating whether the root element has a given class.</td>
+</tr>
+<tr class="even">
+<td><code>hasAnchor: () =&gt; boolean</code></td>
+<td>Returns whether the menu surface has an anchor for positioning.</td>
+</tr>
+<tr class="odd">
+<td><code>notifyClose() =&gt; void</code></td>
+<td>Dispatches an event notifying listeners that the menu surface has been closed.</td>
+</tr>
+<tr class="even">
+<td><code>notifyOpen() =&gt; void</code></td>
+<td>Dispatches an event notifying listeners that the menu surface has been opened.</td>
+</tr>
+<tr class="odd">
+<td><code>isElementInContainer(el: Element) =&gt; boolean</code></td>
+<td>Returns true if the <code>el</code> Element is inside the <code>mdc-menu-surface</code> container.</td>
+</tr>
+<tr class="even">
+<td><code>isRtl() =&gt; boolean</code></td>
+<td>Returns boolean indicating whether the current environment is RTL.</td>
+</tr>
+<tr class="odd">
+<td><code>setTransformOrigin(value: string) =&gt; void</code></td>
+<td>Sets the transform origin for the menu surface element.</td>
+</tr>
+<tr class="even">
+<td><code>isFocused() =&gt; boolean</code></td>
+<td>Returns a boolean value indicating whether the root element of the menu surface is focused.</td>
+</tr>
+<tr class="odd">
+<td><code>saveFocus() =&gt; void</code></td>
+<td>Stores the currently focused element on the document, for restoring with <code>restoreFocus</code>.</td>
+</tr>
+<tr class="even">
+<td><code>restoreFocus() =&gt; void</code></td>
+<td>Restores the previously saved focus state, by making the previously focused element the active focus again.</td>
+</tr>
+<tr class="odd">
+<td><code>getInnerDimensions() =&gt; MDCMenuDimensions</code></td>
+<td>Returns an object with the items container width and height.</td>
+</tr>
+<tr class="even">
+<td><code>getAnchorDimensions() =&gt; ClientRect \| null</code></td>
+<td>Returns an object with the dimensions and position of the anchor.</td>
+</tr>
+<tr class="odd">
+<td><code>getBodyDimensions() =&gt; MDCMenuDimensions</code></td>
+<td>Returns an object with width and height of the body, in pixels.</td>
+</tr>
+<tr class="even">
+<td><code>getWindowDimensions() =&gt; MDCMenuDimensions</code></td>
+<td>Returns an object with width and height of the viewport, in pixels.</td>
+</tr>
+<tr class="odd">
+<td><code>getWindowScroll() =&gt; MDCMenuPoint</code></td>
+<td>Returns an object with the amount the body has been scrolled on the <code>x</code> and <code>y</code> axis.</td>
+</tr>
+<tr class="even">
+<td><code>setPosition(position: Partial&lt;MDCMenuDistance&gt;) =&gt; void</code></td>
+<td>Sets the position of the menu surface element.</td>
+</tr>
+<tr class="odd">
+<td><code>setMaxHeight(value: string) =&gt; void</code></td>
+<td>Sets <code>max-height</code> style for the menu surface element.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mdcmenusurfacefoundation"><code>MDCMenuSurfaceFoundation</code></h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method Signature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>setAnchorCorner(corner: Corner) =&gt; void</code></td>
+<td>Sets the corner that the menu surface will be anchored to. See <a href="./constants.ts">constants.ts</a></td>
+</tr>
+<tr class="even">
+<td><code>setAnchorMargin(margin: Partial&lt;MDCMenuDistance&gt;) =&gt; void</code></td>
+<td>Sets the distance from the anchor point that the menu surface should be shown.</td>
+</tr>
+<tr class="odd">
+<td><code>setIsHoisted(isHoisted: boolean) =&gt; void</code></td>
+<td>Sets whether the menu surface has been hoisted to the body so that the offsets are calculated relative to the page and not the anchor.</td>
+</tr>
+<tr class="even">
+<td><code>setFixedPosition(isFixed: boolean) =&gt; void</code></td>
+<td>Sets whether the menu surface is using fixed positioning.</td>
+</tr>
+<tr class="odd">
+<td><code>setAbsolutePosition(x: number, y: number) =&gt; void</code></td>
+<td>Sets the absolute x/y position of the menu. Should only be used when the menu is hoisted or using fixed positioning.</td>
+</tr>
+<tr class="even">
+<td><code>handleBodyClick(event: MouseEvent) =&gt; void</code></td>
+<td>Method used as the callback function for the <code>click</code> event.</td>
+</tr>
+<tr class="odd">
+<td><code>handleKeydown(event: KeyboardEvent) =&gt; void</code></td>
+<td>Method used as the callback function for the <code>keydown</code> events.</td>
+</tr>
+<tr class="even">
+<td><code>open() =&gt; void</code></td>
+<td>Opens the menu surface.</td>
+</tr>
+<tr class="odd">
+<td><code>close() =&gt; void</code></td>
+<td>Closes the menu.</td>
+</tr>
+<tr class="even">
+<td><code>isOpen() =&gt; boolean</code></td>
+<td>Returns a boolean indicating whether the menu surface is open.</td>
+</tr>
+<tr class="odd">
+<td><code>setQuickOpen(quickOpen: boolean) =&gt; void</code></td>
+<td>Sets whether the menu surface should open and close without animation when the <code>open</code>/<code>close</code> methods are called.</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<!--docs:
+title: "Ripples"
+layout: detail
+section: components
+excerpt: "Ink ripple touch feedback effect."
+iconId: ripple
+path: /catalog/ripples/
+-->
+<h1 id="ripple">Ripple</h1>
+<p>MDC Ripple provides the JavaScript and CSS required to provide components (or any element at all) with a material “ink ripple” interaction effect. It is designed to be efficient, uninvasive, and usable without adding any extra DOM to your elements.</p>
+<p>MDC Ripple also works without JavaScript, where it gracefully degrades to a simpler CSS-Only implementation.</p>
+<h2 id="design-api-documentation">Design &amp; API Documentation</h2>
+<ul class="icon-list">
+<li class="icon-list-item icon-list-item--spec">
+<a href="https://material.io/go/design-states">Material Design guidelines: States</a>
+</li>
+<li class="icon-list-item icon-list-item--link">
+<a href="https://material-components.github.io/material-components-web-catalog/#/component/ripple">Demo</a>
+</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<pre><code>npm install @material/ripple</code></pre>
+<h2 id="usage">Usage</h2>
+<p>A ripple can be applied to a variety of elements to represent interactive surfaces. Several MDC Web components, such as Button, FAB, Checkbox and Radio, also use ripples.</p>
+<p>A ripple can be added to an element through either a JavaScript or CSS-only implementation. When a ripple is initialized on an element using JS, it dynamically adds a <code>mdc-ripple-upgraded</code> class to that element. If ripple JS is not initialized but Sass mixins are included on the element, the ripple uses a simpler CSS-only implementation which relies on the <code>:hover</code>, <code>:focus</code>, and <code>:active</code> pseudo-classes.</p>
+<h3 id="css-classes">CSS Classes</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>CSS Class</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>mdc-ripple-surface</code></td>
+<td>Adds a ripple to the element</td>
+</tr>
+<tr class="even">
+<td><code>mdc-ripple-surface--primary</code></td>
+<td>Sets the ripple color to the theme primary color</td>
+</tr>
+<tr class="odd">
+<td><code>mdc-ripple-surface--accent</code></td>
+<td>Sets the ripple color to the theme secondary color</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sass-apis">Sass APIs</h3>
+<p>In order to fully style the ripple effect for different states (hover/focus/pressed), the following mixins must be included:</p>
+<ul>
+<li><code>surface</code>, for base styles</li>
+<li>Either <code>radius-bounded</code> or <code>radius-unbounded</code>, to appropriately size the ripple on the surface</li>
+<li>Either the basic or advanced <code>states</code> mixins, as explained below</li>
+</ul>
+<h5 id="using-basic-states-mixins">Using basic states mixins</h5>
+<div class="sourceCode" id="cb2"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb2-1" title="1"><span class="im">@use</span> <span class="st">&quot;@material/ripple&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-2" title="2"></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="fu">.my-surface</span> {</a>
+<a class="sourceLine" id="cb2-4" title="4">  <span class="im">@include</span> ripple<span class="dv">.</span>surface<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-5" title="5">  <span class="im">@include</span> ripple<span class="dv">.</span>radius-bounded<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-6" title="6">  <span class="im">@include</span> ripple<span class="dv">.</span>states<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-7" title="7">}</a></code></pre></div>
+<h5 id="using-advanced-states-mixins">Using advanced states mixins</h5>
+<div class="sourceCode" id="cb3"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb3-1" title="1"><span class="fu">.my-surface</span> {</a>
+<a class="sourceLine" id="cb3-2" title="2">  <span class="im">@include</span> ripple<span class="dv">.</span>surface<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-3" title="3">  <span class="im">@include</span> ripple<span class="dv">.</span>radius-bounded<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-4" title="4">  <span class="im">@include</span> ripple<span class="dv">.</span>states-base-color<span class="fu">(</span><span class="cn">black</span><span class="fu">)</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-5" title="5">  <span class="im">@include</span> ripple<span class="dv">.</span>states-opacities<span class="fu">(</span>(hover: <span class="dv">.1</span><span class="op">,</span> focus: <span class="dv">.3</span><span class="op">,</span> press: <span class="dv">.4</span><span class="fu">)</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-6" title="6">}</a></code></pre></div>
+<p>These APIs use pseudo-elements for the ripple effect: <code>::before</code> for the background, and <code>::after</code> for the foreground.</p>
+<h4 id="ripple-mixins">Ripple Mixins</h4>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mixin</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>surface</code></td>
+<td>Mandatory. Adds base styles for a ripple surface</td>
+</tr>
+<tr class="even">
+<td><code>radius-bounded($radius)</code></td>
+<td>Adds styles for the radius of the ripple effect,<br>for bounded ripple surfaces</td>
+</tr>
+<tr class="odd">
+<td><code>radius-unbounded($radius)</code></td>
+<td>Adds styles for the radius of the ripple effect,<br>for unbounded ripple surfaces</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><em>NOTE</em>: It is mandatory to include <em>either</em> <code>radius-bounded</code> or <code>radius-unbounded</code>. In both cases, <code>$radius</code> is optional and defaults to <code>100%</code>.</p>
+</blockquote>
+<h4 id="basic-states-mixins">Basic States Mixins</h4>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mixin</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>states($color, $has-nested-focusable-element)</code></td>
+<td>Mandatory. Adds state and ripple styles in the given color</td>
+</tr>
+<tr class="even">
+<td><code>states-activated($color, $has-nested-focusable-element)</code></td>
+<td>Optional. Adds state and ripple styles for activated states in the given color</td>
+</tr>
+<tr class="odd">
+<td><code>states-selected($color, $has-nested-focusable-element)</code></td>
+<td>Optional. Adds state and ripple styles for selected states in the given color</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><em>NOTE</em>: Each of the mixins above adds ripple styles using the indicated color, deciding opacity values based on whether the passed color is light or dark.</p>
+</blockquote>
+<blockquote>
+<p><em>NOTE</em>: The <code>states-activated</code> and <code>states-selected</code> mixins add the appropriate state styles to the root element containing <code>&amp;--activated</code> or <code>&amp;--selected</code> modifier classes respectively.</p>
+</blockquote>
+<blockquote>
+<p><em>NOTE</em>: <code>$has-nested-focusable-element</code> defaults to <code>false</code> but should be set to <code>true</code> if the component contains a focusable element (e.g. an input) inside the root element.</p>
+</blockquote>
+<h4 id="advanced-states-mixins">Advanced States Mixins</h4>
+<p>When using the advanced states mixins instead of the basic states mixins, every one of the mixins below should be included at least once.</p>
+<p>These mixins can also be used to emit activated or selected styles, by applying them within a selector for <code>&amp;--activated</code> or <code>&amp;--selected</code> modifier classes.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mixin</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>states-base-color($color)</code></td>
+<td>Mandatory. Sets up base state styles using the provided color</td>
+</tr>
+<tr class="even">
+<td><code>states-opacities($opacity-map, $has-nested-focusable-element)</code></td>
+<td>Sets the opacity of the ripple in any of the <code>hover</code>, <code>focus</code>, or <code>press</code> states. The <code>opacity-map</code> can specify one or more of these states as keys. States not specified in the map resort to default opacity values.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><em>NOTE</em>: <code>$has-nested-focusable-element</code> defaults to <code>false</code> but should be set to <code>true</code> if the component contains a focusable element (e.g. an input) inside the root element.</p>
+</blockquote>
+<blockquote>
+<p><em>DEPRECATED</em>: The individual mixins <code>states-hover-opacity($opacity)</code>, <code>states-focus-opacity($opacity, $has-nested-focusable-element)</code>, and <code>states-press-opacity($opacity)</code> are deprecated in favor of the unified <code>states-opacities($opacity-map, $has-nested-focusable-element)</code> mixin above.</p>
+</blockquote>
+<h4 id="sass-functions">Sass Functions</h4>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>states-opacity($color, $state)</code></td>
+<td>Returns the appropriate default opacity to apply to the given color in the given state (hover, focus, press, selected, or activated)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mdcripple"><code>MDCRipple</code></h3>
+<p>The <code>MDCRipple</code> JavaScript component allows for programmatic activation / deactivation of the ripple, for interdependent interaction between components. For example, this is used for making form field labels trigger the ripples in their corresponding input elements.</p>
+<p>To use the <code>MDCRipple</code> component, first <a href="../../docs/importing-js.md">import the <code>MDCRipple</code> JS</a>. Then, initialize the ripple with the correct DOM element.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">const</span> surface <span class="op">=</span> <span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&#39;.my-surface&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="kw">const</span> ripple <span class="op">=</span> <span class="kw">new</span> <span class="at">MDCRipple</span>(surface)<span class="op">;</span></a></code></pre></div>
+<p>You can also use <code>attachTo()</code> as an alias if you don’t care about retaining a reference to the ripple.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb5-1" title="1"><span class="va">MDCRipple</span>.<span class="at">attachTo</span>(<span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&#39;.my-surface&#39;</span>))<span class="op">;</span></a></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th>Property</th>
+<th>Value Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>unbounded</code></td>
+<td>Boolean</td>
+<td>Whether or not the ripple is unbounded</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><em>NOTE</em>: Surfaces for bounded ripples should have the <code>overflow</code> property set to <code>hidden</code>, while surfaces for unbounded ripples should have it set to <code>visible</code>.</p>
+</blockquote>
+<table>
+<thead>
+<tr class="header">
+<th>Method Signature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>activate() =&gt; void</code></td>
+<td>Proxies to the foundation’s <code>activate</code> method</td>
+</tr>
+<tr class="even">
+<td><code>deactivate() =&gt; void</code></td>
+<td>Proxies to the foundation’s <code>deactivate</code> method</td>
+</tr>
+<tr class="odd">
+<td><code>layout() =&gt; void</code></td>
+<td>Proxies to the foundation’s <code>layout</code> method</td>
+</tr>
+<tr class="even">
+<td><code>handleFocus() =&gt; void</code></td>
+<td>Handles focus event on the ripple surface</td>
+</tr>
+<tr class="odd">
+<td><code>handleBlur() =&gt; void</code></td>
+<td>Handles blur event on the ripple surface</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mdcrippleadapter"><code>MDCRippleAdapter</code></h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method Signature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>browserSupportsCssVars() =&gt; boolean</code></td>
+<td>Whether or not the given browser supports CSS Variables.</td>
+</tr>
+<tr class="even">
+<td><code>isUnbounded() =&gt; boolean</code></td>
+<td>Whether or not the ripple should be considered unbounded.</td>
+</tr>
+<tr class="odd">
+<td><code>isSurfaceActive() =&gt; boolean</code></td>
+<td>Whether or not the surface the ripple is acting upon is <a href="https://www.w3.org/TR/css3-selectors/#useraction-pseudos">active</a></td>
+</tr>
+<tr class="even">
+<td><code>isSurfaceDisabled() =&gt; boolean</code></td>
+<td>Whether or not the ripple is attached to a disabled component</td>
+</tr>
+<tr class="odd">
+<td><code>addClass(className: string) =&gt; void</code></td>
+<td>Adds a class to the ripple surface</td>
+</tr>
+<tr class="even">
+<td><code>removeClass(className: string) =&gt; void</code></td>
+<td>Removes a class from the ripple surface</td>
+</tr>
+<tr class="odd">
+<td><code>containsEventTarget(target: EventTarget) =&gt; boolean</code></td>
+<td>Whether or not the ripple surface contains the given event target</td>
+</tr>
+<tr class="even">
+<td><code>registerInteractionHandler(evtType: string, handler: EventListener) =&gt; void</code></td>
+<td>Registers an event handler on the ripple surface</td>
+</tr>
+<tr class="odd">
+<td><code>deregisterInteractionHandler(evtType: string, handler: EventListener) =&gt; void</code></td>
+<td>Unregisters an event handler on the ripple surface</td>
+</tr>
+<tr class="even">
+<td><code>registerDocumentInteractionHandler(evtType: string, handler: EventListener) =&gt; void</code></td>
+<td>Registers an event handler on the documentElement</td>
+</tr>
+<tr class="odd">
+<td><code>deregisterDocumentInteractionHandler(evtType: string, handler: EventListener) =&gt; void</code></td>
+<td>Unregisters an event handler on the documentElement</td>
+</tr>
+<tr class="even">
+<td><code>registerResizeHandler(handler: Function) =&gt; void</code></td>
+<td>Registers a handler to be called when the ripple surface (or its viewport) resizes</td>
+</tr>
+<tr class="odd">
+<td><code>deregisterResizeHandler(handler: Function) =&gt; void</code></td>
+<td>Unregisters a handler to be called when the ripple surface (or its viewport) resizes</td>
+</tr>
+<tr class="even">
+<td><code>updateCssVariable(varName: string, value: (string or null)) =&gt; void</code></td>
+<td>Sets the CSS property <code>varName</code> on the ripple surface to the value specified</td>
+</tr>
+<tr class="odd">
+<td><code>computeBoundingRect() =&gt; ClientRect</code></td>
+<td>Returns the ClientRect for the surface</td>
+</tr>
+<tr class="even">
+<td><code>getWindowPageOffset() =&gt; {x: number, y: number}</code></td>
+<td>Returns the <code>page{X,Y}Offset</code> values for the window object</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><em>NOTE</em>: When implementing <code>browserSupportsCssVars</code>, please take the <a href="#caveat-safari">Safari 9</a> considerations into account. We provide a <code>supportsCssVariables</code> function within the <code>util.js</code> which we recommend using, as it handles this for you.</p>
+</blockquote>
+<h3 id="mdcripplefoundation"><code>MDCRippleFoundation</code></h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method Signature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>activate() =&gt; void</code></td>
+<td>Triggers an activation of the ripple (the first stage, which happens when the ripple surface is engaged via interaction, such as a <code>mousedown</code> or a <code>pointerdown</code> event). It expands from the center.</td>
+</tr>
+<tr class="even">
+<td><code>deactivate() =&gt; void</code></td>
+<td>Triggers a deactivation of the ripple (the second stage, which happens when the ripple surface is engaged via interaction, such as a <code>mouseup</code> or a <code>pointerup</code> event). It expands from the center.</td>
+</tr>
+<tr class="odd">
+<td><code>layout() =&gt; void</code></td>
+<td>Recomputes all dimensions and positions for the ripple element. Useful if a ripple surface’s position or dimension is changed programmatically.</td>
+</tr>
+<tr class="even">
+<td><code>setUnbounded(unbounded: boolean) =&gt; void</code></td>
+<td>Sets the ripple to be unbounded or not, based on the given boolean.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tipstricks">Tips/Tricks</h2>
+<h3 id="using-a-sentinel-element-for-a-ripple">Using a sentinel element for a ripple</h3>
+<p>Usually, you’ll want to leverage <code>::before</code> and <code>::after</code> pseudo-elements when integrating the ripple into MDC Web components. If you can’t use pseudo-elements, create a sentinel element inside your root element. The sentinel element covers the root element’s surface.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;my-component&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb6-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-ripple-surface&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb6-3" title="3">  <span class="co">&lt;!-- your component DOM --&gt;</span></a>
+<a class="sourceLine" id="cb6-4" title="4"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
+<h3 id="unbounded-ripple">Unbounded ripple</h3>
+<p>You can set a ripple to be <em>unbounded</em>, such as those used for MDC Checkboxes and MDC Radio Buttons, either imperatively in JS <em>or</em> declaratively using the DOM.</p>
+<h4 id="using-js">Using JS</h4>
+<p>Set the <code>unbounded</code> property on the <code>MDCRipple</code> component.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">const</span> ripple <span class="op">=</span> <span class="kw">new</span> <span class="at">MDCRipple</span>(root)<span class="op">;</span></a>
+<a class="sourceLine" id="cb7-2" title="2"><span class="va">ripple</span>.<span class="at">unbounded</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></a></code></pre></div>
+<h4 id="using-dom">Using DOM</h4>
+<p>Add a <code>data-mdc-ripple-is-unbounded</code> attribute to your root element.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;my-surface&quot;</span><span class="ot"> data-mdc-ripple-is-unbounded</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb8-2" title="2">  <span class="kw">&lt;p&gt;</span>A surface<span class="kw">&lt;/p&gt;</span></a>
+<a class="sourceLine" id="cb8-3" title="3"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
+<h3 id="mdcripple-with-custom-functionality">MDCRipple with custom functionality</h3>
+<p>Usually, you’ll want to use <code>MDCRipple</code> <em>along</em> with the component for the actual UI element you’re trying to add a ripple to. <code>MDCRipple</code> has a static <code>createAdapter(instance)</code> method that can be used to instantiate a ripple within any <code>MDCComponent</code> that requires custom adapter functionality.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode ts"><code class="sourceCode typescript"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">class</span> MyMDCComponent <span class="kw">extends</span> MDCComponent <span class="op">{</span></a>
+<a class="sourceLine" id="cb9-2" title="2">  <span class="kw">constructor</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb9-3" title="3">    <span class="fu">super</span>(<span class="op">...</span><span class="kw">arguments</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb9-4" title="4">    <span class="kw">const</span> foundation <span class="op">=</span> <span class="kw">new</span> <span class="fu">MDCRippleFoundation</span>(<span class="op">{</span></a>
+<a class="sourceLine" id="cb9-5" title="5">      <span class="op">...</span><span class="va">MDCRipple</span><span class="op">.</span><span class="fu">createAdapter</span>(<span class="kw">this</span>)<span class="op">,</span></a>
+<a class="sourceLine" id="cb9-6" title="6">      isSurfaceActive<span class="op">:</span> () <span class="kw">=&gt;</span> <span class="va">this</span><span class="op">.</span><span class="at">isActive_</span><span class="op">,</span> <span class="co">/* Custom functionality */</span></a>
+<a class="sourceLine" id="cb9-7" title="7">    <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb9-8" title="8">    <span class="va">this</span><span class="op">.</span><span class="at">ripple</span> <span class="op">=</span> <span class="kw">new</span> <span class="fu">MDCRipple</span>(<span class="va">this</span><span class="op">.</span><span class="at">root</span><span class="op">,</span> foundation)<span class="op">;</span></a>
+<a class="sourceLine" id="cb9-9" title="9">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb9-10" title="10"><span class="op">}</span></a></code></pre></div>
+<h3 id="handling-keyboard-events-for-custom-ui-components">Handling keyboard events for custom UI components</h3>
+<p>Different keyboard events activate different elements. For example, the space key activates buttons, while the enter key activates links.</p>
+<p><code>MDCRipple</code> uses the <code>adapter.isSurfaceActive()</code> method to detect whether or not a keyboard event has activated the surface the ripple is on. Our vanilla implementation of the adapter does this by checking whether the <code>:active</code> pseudo-class has been applied to the ripple surface. However, this approach will <em>not</em> work for custom components that the browser does not apply this pseudo-class to.</p>
+<p>To make your component work properly with keyboard events, you’ll have to listen for both <code>keydown</code> and <code>keyup</code> events to set some state that determines whether or not the surface is “active”.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode ts"><code class="sourceCode typescript"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">class</span> MyComponent <span class="op">{</span></a>
+<a class="sourceLine" id="cb10-2" title="2">  <span class="kw">constructor</span>(element) <span class="op">{</span></a>
+<a class="sourceLine" id="cb10-3" title="3">    <span class="va">this</span><span class="op">.</span><span class="at">root</span> <span class="op">=</span> element<span class="op">;</span></a>
+<a class="sourceLine" id="cb10-4" title="4">    <span class="va">this</span><span class="op">.</span><span class="at">active</span> <span class="op">=</span> <span class="kw">false</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb10-5" title="5">    <span class="va">this</span><span class="op">.</span><span class="va">root</span><span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">&#39;keydown&#39;</span><span class="op">,</span> evt <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb10-6" title="6">      <span class="fu">if</span> (<span class="fu">isSpace</span>(evt)) <span class="op">{</span></a>
+<a class="sourceLine" id="cb10-7" title="7">        <span class="va">this</span><span class="op">.</span><span class="at">active</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb10-8" title="8">      <span class="op">}</span></a>
+<a class="sourceLine" id="cb10-9" title="9">    <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb10-10" title="10">    <span class="va">this</span><span class="op">.</span><span class="va">root</span><span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">&#39;keyup&#39;</span><span class="op">,</span> evt <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb10-11" title="11">      <span class="fu">if</span> (<span class="fu">isSpace</span>(evt)) <span class="op">{</span></a>
+<a class="sourceLine" id="cb10-12" title="12">        <span class="va">this</span><span class="op">.</span><span class="at">active</span> <span class="op">=</span> <span class="kw">false</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb10-13" title="13">      <span class="op">}</span></a>
+<a class="sourceLine" id="cb10-14" title="14">    <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb10-15" title="15">    <span class="kw">const</span> foundation <span class="op">=</span> <span class="kw">new</span> <span class="fu">MDCRippleFoundation</span>(</a>
+<a class="sourceLine" id="cb10-16" title="16">      <span class="op">...</span><span class="va">MDCRipple</span><span class="op">.</span><span class="fu">createAdapter</span>(<span class="kw">this</span>)<span class="op">,</span></a>
+<a class="sourceLine" id="cb10-17" title="17">      <span class="co">// ...</span></a>
+<a class="sourceLine" id="cb10-18" title="18">      isSurfaceActive<span class="op">:</span> () <span class="kw">=&gt;</span> <span class="va">this</span><span class="op">.</span><span class="at">active</span></a>
+<a class="sourceLine" id="cb10-19" title="19">    <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb10-20" title="20">    <span class="va">this</span><span class="op">.</span><span class="at">ripple</span> <span class="op">=</span> <span class="kw">new</span> <span class="fu">MDCRipple</span>(<span class="va">this</span><span class="op">.</span><span class="at">root</span><span class="op">,</span> foundation)<span class="op">;</span></a>
+<a class="sourceLine" id="cb10-21" title="21">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb10-22" title="22">}</a></code></pre></div>
+<h3 id="specifying-known-element-dimensions-for-asynchronous-style-loading">Specifying known element dimensions for asynchronous style loading</h3>
+<p>If you asynchronously load style resources, such as loading stylesheets dynamically or loading fonts, then <code>adapter.getClientRect()</code> may return <em>incorrect</em> dimensions if the ripple is initialized before the stylesheet/font has loaded. In this case, you can override the default behavior of <code>getClientRect()</code> to return the correct results.</p>
+<p>For example, if you know an icon font sizes its elements to <code>24px</code> width and height:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">const</span> foundation <span class="op">=</span> <span class="kw">new</span> <span class="at">MDCRippleFoundation</span>(<span class="op">{</span></a>
+<a class="sourceLine" id="cb11-2" title="2">  <span class="co">// ...</span></a>
+<a class="sourceLine" id="cb11-3" title="3">  <span class="dt">computeBoundingRect</span><span class="op">:</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb11-4" title="4">    <span class="kw">const</span> <span class="op">{</span>left<span class="op">,</span> top<span class="op">}</span> <span class="op">=</span> <span class="va">element</span>.<span class="at">getBoundingClientRect</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb11-5" title="5">    <span class="kw">const</span> dim <span class="op">=</span> <span class="dv">24</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb11-6" title="6">    <span class="cf">return</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb11-7" title="7">      left<span class="op">,</span></a>
+<a class="sourceLine" id="cb11-8" title="8">      top<span class="op">,</span></a>
+<a class="sourceLine" id="cb11-9" title="9">      <span class="dt">width</span><span class="op">:</span> dim<span class="op">,</span></a>
+<a class="sourceLine" id="cb11-10" title="10">      <span class="dt">height</span><span class="op">:</span> dim<span class="op">,</span></a>
+<a class="sourceLine" id="cb11-11" title="11">      <span class="dt">right</span><span class="op">:</span> left <span class="op">+</span> dim<span class="op">,</span></a>
+<a class="sourceLine" id="cb11-12" title="12">      <span class="dt">bottom</span><span class="op">:</span> top <span class="op">+</span> dim</a>
+<a class="sourceLine" id="cb11-13" title="13">    <span class="op">};</span></a>
+<a class="sourceLine" id="cb11-14" title="14">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb11-15" title="15"><span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb11-16" title="16"><span class="kw">this</span>.<span class="at">ripple</span> <span class="op">=</span> <span class="kw">new</span> <span class="at">MDCRipple</span>(<span class="kw">this</span>.<span class="at">root</span><span class="op">,</span> foundation)<span class="op">;</span></a></code></pre></div>
+<h3 id="the-util-api">The util API</h3>
+<p>External frameworks and libraries can use the following utility methods when integrating a component.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method Signature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>util.supportsCssVariables(windowObj, forceRefresh = false) =&gt; Boolean</code></td>
+<td>Determine whether the current browser supports CSS variables (custom properties)</td>
+</tr>
+<tr class="even">
+<td><code>util.getNormalizedEventCoords(ev, pageOffset, clientRect) =&gt; object</code></td>
+<td>Determines X/Y coordinates of an event normalized for touch events and ripples</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><em>NOTE</em>: The function <code>util.supportsCssVariables</code> cache its results; <code>forceRefresh</code> will force recomputation, but is used mainly for testing and should not be necessary in normal use.</p>
+</blockquote>
+<h2 id="caveats">Caveats</h2>
+<h3 id="caveat-safari-9">Caveat: Safari 9</h3>
+<blockquote>
+<p>TL;DR ripples are disabled in Safari 9 because of a bug with CSS variables.</p>
+</blockquote>
+<p>The ripple works by updating CSS variables used by pseudo-elements. Unfortunately, in Safari 9.1, there is a bug where updating a CSS variable on an element will <em>not</em> trigger a style recalculation on that element’s pseudo-elements (try out <a href="http://codepen.io/traviskaufman/pen/jARYOR">this codepen</a> in Chrome, and then in Safari 9.1 to see the issue). Webkit builds which have this bug fixed (e.g. the builds used in Safari 10+) support <a href="https://drafts.csswg.org/css-color/#hex-notation">CSS 4 Hex Notation</a> while those without the fix don’t. We feature-detect whether we are working with a WebKit build that can handle our usage of CSS variables.</p>
+<h3 id="caveat-mobile-safari">Caveat: Mobile Safari</h3>
+<blockquote>
+<p>TL;DR for CSS-only ripple styles to work as intended, register a <code>touchstart</code> event handler on the affected element or its ancestor.</p>
+</blockquote>
+<p>Mobile Safari does not trigger <code>:active</code> styles noticeably by default, as <a href="https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/AdjustingtheTextSize/AdjustingtheTextSize.html#//apple_ref/doc/uid/TP40006510-SW5">documented</a> in the Safari Web Content Guide. This effectively suppresses the intended pressed state styles for CSS-only ripple surfaces. This behavior can be remedied by registering a <code>touchstart</code> event handler on the element, or on any common ancestor of the desired elements.</p>
+<p>See <a href="https://stackoverflow.com/a/33681490">this StackOverflow answer</a> for additional information on mobile Safari’s behavior.</p>
+</body>
+</html>

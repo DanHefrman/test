@@ -35,7 +35,7 @@
 <hr />
 <h2 id="css-selectors"><strong>CSS Selectors</strong></h2>
 <ul>
-<li><strong><code>CSS Selector</code></strong> : Applies styles to a specific DOM element(s), there are various types:
+<li><p><strong><code>CSS Selector</code></strong> : Applies styles to a specific DOM element(s), there are various types:</p>
 <ul>
 <li><strong><code>Type Selectors</code></strong> : Matches by node name.</li>
 <li><strong><code>Class Selectors</code></strong> : Matches by class name.</li>
@@ -46,7 +46,7 @@
 <p>/* Type selector */ div { background-color: #000000; }</p>
 <p>/* Class selector */ .active { color: #ffffff; }</p>
 <p>/* ID selector */ #list-1 { border: 1px solid gray; }</p>
-/* Universal selector */
+<p>/* Universal selector */</p>
 <ul>
 <li>{ padding: 10px; }</li>
 </ul>
@@ -60,38 +60,24 @@
 <p><strong>Compound Class Selectors</strong></p>
 <ul>
 <li>To get around accidentally selecting elements with multiple classes beyond what we want to grab we can chain dots.</li>
-<li><p>TO use a compound class selector just append the classes together when referencing them in the CSS.</p>
-<div class="box yellow">
-
-</div>
-<div class="box orange">
-
-</div>
-<div class="circle orange">
-
-</div></li>
+<li><p>TO use a compound class selector just append the classes together when referencing them in the CSS.</p></li>
 <li>i.e. .box.yellow will select only the first element.</li>
 <li><p>KEEP IN MIND that if you do include a space it will make the selector into a <em>descendant selector</em>.</p>
 <p>h1#heading, h2.subheading { font-style: italic; }</p></li>
 <li><p>When we want to target all <code>h1</code> tags with the id of <code>heading</code>.</p></li>
 </ul>
 <p><strong>CSS Combinators</strong></p>
-<ul>
-<li>CSS Combinators are used to combine other selectors into more complex or targeted selectors - they are very powerful!</li>
-<li><p>Be careful not to use too many of them as they will make your CSS far too complex.</p>
-<ul>
-<li><strong><code>Descendant Selectors</code></strong>
+<p>CSS Combinators are used to combine other selectors into more complex or targeted selectors - they are very powerful!</p>
+<p>Be careful not to use too many of them as they will make your CSS far too complex.</p>
+<p><strong><code>Descendant Selectors</code></strong></p>
 <ul>
 <li>Seperated by a space.</li>
 <li>Selects all descendants of a parent container.</li>
-</ul></li>
-<li><p><strong><code>Direct Child Selectors</code></strong></p>
-<ul>
-<li>Indicated with a <code>&gt;</code>.</li>
-<li>Different from descendants because it only affects the direct children of an element.</li>
-<li><p>.menu &gt; .is-active { background-color: #ffe0b2; }</p></li>
-<li><body>
-<div class="menu">
+</ul>
+<p><strong><code>Direct Child Selectors</code></strong></p>
+<p>Indicated with a <code>&gt;</code>.</p>
+<p>Different from descendants because it only affects the direct children of an element.</p>
+<p>.menu &gt; .is-active { background-color: #ffe0b2; }</p>
 <pre><code>    &lt;div class=&quot;is-active&quot;&gt;Belka&lt;/div&gt;
     &lt;div&gt;
       &lt;div class=&quot;is-active&quot;&gt;Strelka&lt;/div&gt;
@@ -101,22 +87,16 @@
 &lt;div class=&quot;is-active&quot;&gt;
   Laika
 &lt;/div&gt;
-&lt;/body&gt;</code></pre></li>
-<li><p>Belka would be the only element selected.</p></li>
-</ul></li>
-<li><p><strong><code>Adjacent Sibling Selectors</code></strong></p>
+&lt;/body&gt;</code></pre>
+<p>Belka would be the only element selected.</p>
+<p><strong><code>Adjacent Sibling Selectors</code></strong></p>
 <ul>
 <li>Uses the <code>+</code> symbol.</li>
 <li>Used for elements that directly follow one another and who both have the same parent.</li>
-<li><pre><code>h1 + h2 {
-  font-style: italic;
-    }
-
-  &lt;h1&gt;Big header&lt;/h1&gt;
+<li><p>h1 + h2 { font-style: italic; }</p>
+<pre><code>  &lt;h1&gt;Big header&lt;/h1&gt;
   &lt;h2&gt;This one is styled because it is directly adjacent to the H1&lt;/h2&gt;
   &lt;h2&gt;This one is NOT styled because there is no H1 right before it&lt;/h2&gt;</code></pre></li>
-</ul></li>
-</ul></li>
 </ul>
 <p><strong>Pseudo-Classes</strong></p>
 <ul>
@@ -143,30 +123,15 @@
 </ul>
 <p><strong><code>Pseudo-Selectors</code></strong></p>
 <ul>
-<li>Used to create pseudo-elements as children of the elements to which the property applies.
+<li><p>Used to create pseudo-elements as children of the elements to which the property applies.</p>
 <ul>
 <li><code>::after</code></li>
 <li><code>::before</code></li>
 </ul>
-<style>
-  p::before {
-    background-color: lightblue;
-    border-right: 4px solid violet;
-    content: ":-) ";
-    margin-right: 4px;
-    padding-left: 4px;
-  }
-</style>
-<p>
-This is the first paragraph
-</p>
-<p>
-This is the second paragraph
-</p>
-<p>
-This is the third paragraph
-</p></li>
-<li>Will add some blue smiley faces before the p tag elements.</li>
+<p>This is the first paragraph</p>
+<p>This is the second paragraph</p>
+<p>This is the third paragraph</p></li>
+<li><p>Will add some blue smiley faces before the p tag elements.</p></li>
 </ul>
 <p><strong>CSS Rules</strong></p>
 <ul>
@@ -186,27 +151,7 @@ This is the third paragraph
 <li><ol type="1">
 <li>Last Read in the browser wins. <img src="https://i.gyazo.com/791874ae4dc749b84d901403a4c32776.png" alt="4num" /> <img src="https://i.gyazo.com/ca8542e4d17baa50b858ff0fe750e23b.png" alt="4numResults" /></li>
 </ol></li>
-</ul>
-<style>
-  .box {
-    width: 50px;
-    height: 50px;
-    border: 1px solid black;
-  }
-  .orange {
-    background-color: orange;
-  }
-  .yellow {
-    background-color: yellow;
-    border: 1px solid purple;
-  }
-</style>
-<div class="box yellow">
-
-</div>
-<div class="box orange">
-
-</div></li>
+</ul></li>
 <li>Coming back to our example where all the CSS Rules have tied, the last step 4 wins out so our element will have a <code>purple border</code>.</li>
 </ul>
 <hr />

@@ -1,5 +1,4 @@
-<img src="logo.png" width="48" /> RealWorld Example App
-=======================================================
+# <img src="logo.png" width="48" /> RealWorld Example App
 
 > ### Dojo codebase containing real-world examples (CRUD, auth, advanced patterns, etc.) that adheres to the [RealWorld](https://github.com/gothinkster/realworld) spec and API.
 
@@ -18,15 +17,13 @@ This codebase was created to demonstrate an application built with Dojo.
 
 For more information on how this works with other front-ends & back-ends, head over to the [RealWorld](https://github.com/gothinkster/realworld) repository.
 
-How it works
-============
+# How it works
 
 Dojo RealWorld using <span class="citation" data-cites="dojo/widget-core">@dojo/widget-core</span>, <span class="citation" data-cites="dojo/routing">@dojo/routing</span> and <span class="citation" data-cites="dojo/stores">@dojo/stores</span>.
 
 For more information on Dojo visit [dojo.io](https://dojo.io)
 
-Getting started
-===============
+# Getting started
 
 View the [Dojo RealWorld live demo](https://dojo.github.io/examples/realworld/)
 
@@ -44,7 +41,6 @@ For a production build of the application:
 
 To run the tests run `npm test`
 
-Licensing Information
----------------------
+## Licensing Information
 
 The Dojo-specific portions of this example are © 2018 [JS Foundation](https://js.foundation/). [New BSD](http://opensource.org/licenses/BSD-3-Clause) license.

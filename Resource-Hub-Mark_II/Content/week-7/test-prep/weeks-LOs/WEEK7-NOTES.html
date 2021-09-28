@@ -94,7 +94,7 @@
 <li>Instead we should count the number of simple operations.</li>
 </ul></li>
 <li>Big O Notation is a way to formalize fuzzy counting.</li>
-<li>An algorithm is O(f(n)) if the number of simple operations the computer has to do is eventually less than a constant f(n) times, as n increases.
+<li><p>An algorithm is O(f(n)) if the number of simple operations the computer has to do is eventually less than a constant f(n) times, as n increases.</p>
 <ul>
 <li>f(n) = n (Linear)</li>
 <li>f(n) = n^2 (Quadratic)</li>
@@ -322,7 +322,7 @@ Factorial
 <p>// O(n), where n is the length of the array function linear2(array) { for (let i = 0; i &lt; array.length; i++) { console.log(i); } }</p>
 <p>// O(n) function linear3(n) { if (n === 1) return; linear3(n - 1); }</p></li>
 </ul></li>
-<li><strong><code>O(nlog(n)) Log Linear Time</code></strong>
+<li><p><strong><code>O(nlog(n)) Log Linear Time</code></strong></p>
 <ul>
 <li>Combination of linear and logarithmic behavior, we will see features from both classes.</li>
 <li>Algo’s that are log-linear will use both recursion AND iteration.</li>
@@ -330,14 +330,14 @@ Factorial
 <p>// O(n * log(n)) function loglinear(n) { if (n &lt;= 1) return;</p>
 <p>for (let i = 1; i &lt;= n; i++) { console.log(i); }</p>
 <p>loglinear(n / 2); loglinear(n / 2); }</p></li>
-<li><strong><code>O(nc) Polynomial</code></strong>
+<li><p><strong><code>O(nc) Polynomial</code></strong></p>
 <ul>
 <li>C is a fixed constant.</li>
 </ul>
 <p>// O(n^2) function quadratic(n) { for (let i = 1; i &lt;= n; i++) { for (let j = 1; j &lt;= n; j++) {} } }</p>
 <p>// O(n^3) function cubic(n) { for (let i = 1; i &lt;= n; i++) { for (let j = 1; j &lt;= n; j++) { for (let k = 1; k &lt;= n; k++) {} } } }</p></li>
 <li><p>Example of Quadratic and Cubic runtime.</p></li>
-<li><strong><code>O(c^n) Exponential</code></strong>
+<li><p><strong><code>O(c^n) Exponential</code></strong></p>
 <ul>
 <li>C is now the number of recursive calls made in each stack frame.</li>
 <li>Algo’s with exponential time are VERY SLOW.</li>
@@ -430,7 +430,7 @@ fastFib(50); // =&gt; 12586269025</code></pre>
 <hr />
 <h2 id="tabulation"><strong>Tabulation</strong></h2>
 <ul>
-<li><strong>Tabulation Strategy</strong>
+<li><p><strong>Tabulation Strategy</strong></p>
 <ul>
 <li>Use When:
 <ul>
@@ -779,7 +779,7 @@ let insertionSort = (inputArr) =&gt; { let length = inputArr.length; for (let i 
 <ul>
 <li>Merge sort is nlogn time.</li>
 <li>We need a function for merging and a function for sorting.</li>
-<li>Steps:
+<li><p>Steps:</p>
 <ol type="1">
 <li>If there is only one element in the list, it is already sorted; return the array.</li>
 <li>Otherwise, divide the list recursively into two halves until it can no longer be divided.</li>
@@ -795,7 +795,7 @@ let insertionSort = (inputArr) =&gt; { let length = inputArr.length; for (let i 
 <h2 id="quick-sort-1"><strong>Quick Sort</strong></h2>
 <ul>
 <li>QS is another Divide and Conquer strategy.</li>
-<li>Some key ideas to keep in mind:
+<li><p>Some key ideas to keep in mind:</p>
 <ul>
 <li>It is easy to sort elements of an array relative to a particular target value.</li>
 <li>An array of 0 or 1 elements is already trivially sorted. <img src="https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/efficient_sorting_algorithms/quick_sort/images/QuickSort.gif" alt="quicksort" /></li>

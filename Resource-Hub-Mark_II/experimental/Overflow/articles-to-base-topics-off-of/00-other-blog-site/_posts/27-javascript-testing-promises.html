@@ -125,10 +125,10 @@ describe(&#39;getUsers&#39;, () =&gt; {
 <p>Better Error</p>
 <p>Isn’t this error message better for programmers to debug the failure.</p>
 <h3 id="update-2017-01-22">UPDATE : 2017-01-22</h3>
-<p>There is even better way, Thanks to <span class="citation" data-cites="blakeembrey">[<span class="citation" data-cites="blakeembrey">@blakeembrey</span>]</span>(https://twitter.com/blakeembrey).</p>
+<p>There is even better way, Thanks to <span class="citation" data-cites="blakeembrey">[<span class="citation" data-cites="blakeembrey"><span class="citation" data-cites="blakeembrey">@blakeembrey</span></span>]</span>(https://twitter.com/blakeembrey).</p>
 <blockquote>
-<p><a href="https://twitter.com/revathskumar"><span class="citation" data-cites="revathskumar"><span class="citation" data-cites="revathskumar">@revathskumar</span></span></a> FWIW, you shouldn’t use <code>done</code> at all with mocha (<a href="https://t.co/ijOcbpydV3" class="uri">https://t.co/ijOcbpydV3</a>) - you should just return the promise directly</p>
-<p>— Blake Embrey (<span class="citation" data-cites="blakeembrey"><span class="citation" data-cites="blakeembrey">@blakeembrey</span></span>) <a href="https://twitter.com/blakeembrey/status/803386495180472320">November 28, 2016</a></p>
+<p><a href="https://twitter.com/revathskumar"><span class="citation" data-cites="revathskumar"><span class="citation" data-cites="revathskumar"><span class="citation" data-cites="revathskumar">@revathskumar</span></span></span></a> FWIW, you shouldn’t use <code>done</code> at all with mocha (<a href="https://t.co/ijOcbpydV3" class="uri">https://t.co/ijOcbpydV3</a>) - you should just return the promise directly</p>
+<p>— Blake Embrey (<span class="citation" data-cites="blakeembrey"><span class="citation" data-cites="blakeembrey"><span class="citation" data-cites="blakeembrey">@blakeembrey</span></span></span>) <a href="https://twitter.com/blakeembrey/status/803386495180472320">November 28, 2016</a></p>
 </blockquote>
 <p>We don’t need to use <code>done</code> at all, instead we can just <a href="http://mochajs.org/#working-with-promises">return the promise</a> from <code>it</code> block.</p>
 <pre><code>// test.js

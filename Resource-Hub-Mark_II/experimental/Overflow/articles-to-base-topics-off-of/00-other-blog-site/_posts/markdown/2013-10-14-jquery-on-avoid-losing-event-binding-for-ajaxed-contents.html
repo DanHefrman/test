@@ -13,64 +13,19 @@
   </style>
 </head>
 <body>
-<!--
-
-
----
- "jQuery.on : avoid losing event binding for ajaxed contents"
-date: 2013-10-14 00:00:00 UTC
-updated: 2013-10-14 00:00:00 UTC
-categories: jquery
----
-
--->
-&lt;!DOCTYPE html&gt;
-<html>
-<head>
-<title>
-basic-git-workflow
-</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./css/bootstrap.css"> <link rel="stylesheet" href="./css/bootstrap.grid.css"> <link rel="stylesheet" href="./css/bootstrap.min.css"> <link rel="stylesheet" href="./css/bootstrap-reboot.min.css"> <link rel="stylesheet" href="./css/bootstrap.css.map"> <link rel="stylesheet" href="./css/blog-home.css"> <link rel="stylesheet" href="./css/prism.css">
-<script async defer src="./css/prism.js"></script>
-</head>
-<body>
+<p>&lt;!DOCTYPE html&gt;</p>
 <h2 id="problem">Problem</h2>
 <p>Recently when I was working on a rails project I have to render the a partial after the form sumitted via <code>remote: true</code>. But then I noticed that the event binding stopped working after the rendering partial via <code>.js.erb</code>.</p>
 <p>{% highlight js %} // list.js.erb $(‘.user-list’).html(&lt;%= j render partial: “user_list” %&gt;); {% endhighlight %}</p>
 <p>The user_list consists of a table of users, In which the user details are shown when we click on the corresponding row. This is working fine when they are rendered from server. But the show details stopped working after we render the <code>list.js.erb</code> after the form submission.</p>
 <p>{% highlight html %}</p>
-<!-- _user_list.html.erb -->
-<table>
-<thead>
-<tr>
-<th>
-Name
-</th>
-<th>
-Email
-</th>
-</tr>
-</thead>
-<tbody>
-&lt;% <span class="citation" data-cites="user.each">@user.each</span> do | user | %&gt;
-<tr class='user'>
-<td>
-&lt;% user.name %&gt;
-</td>
-<td>
-&lt;% user.email %&gt;
-</td>
-</tr>
-<tr class='user-details'>
-<td colspan="2">
-&lt;%= user.details %&gt;
-</td>
-</tr>
-&lt;% end %&gt;
-</tbody>
-</table>
+<p>Name</p>
+<p>Email</p>
+<p>&lt;% <span class="citation" data-cites="user.each"><span class="citation" data-cites="user.each">@user.each</span></span> do | user | %&gt;</p>
+<p>&lt;% user.name %&gt;</p>
+<p>&lt;% user.email %&gt;</p>
+<p>&lt;%= user.details %&gt;</p>
+<p>&lt;% end %&gt;</p>
 <p>{% endhighlight %}</p>
 <p>The user-details row is initialy hidden by css. The below code is used to show the hidden details of the user.</p>
 <p>{% highlight js %} // users.js $(‘.user’).on(‘click’,function(e){ $(e.currentTarget).next(‘tr.user-details’).fadeToggle(500) }) {% endhighlight %}</p>

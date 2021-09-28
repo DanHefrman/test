@@ -11,69 +11,6 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
-  <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
 </head>
 <body>
 <h1 id="graphs-w8d3---learning-objectives">Graphs (W8D3) - Learning Objectives</h1>
@@ -98,48 +35,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Adjacency Matrix - 2D Array
 <ul>
 <li>Visually clear what’s going on</li>
-<li>One axis (outside array) has an entry (inner array) for each node in the graph. If one node is connected to another node in the graph, our entry in the inner array is set to true. Otherwise the entry is false.</li>
-</ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">let</span> matrix <span class="op">=</span> [</a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="co">/*          A       B       C       D       E       F   */</span></a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="co">/*A*/</span>    [<span class="kw">true</span><span class="op">,</span>  <span class="kw">true</span><span class="op">,</span>   <span class="kw">true</span><span class="op">,</span>   <span class="kw">false</span><span class="op">,</span>  <span class="kw">true</span><span class="op">,</span>   <span class="kw">false</span>]<span class="op">,</span></a>
-<a class="sourceLine" id="cb1-4" title="4"><span class="co">/*B*/</span>    [<span class="kw">false</span><span class="op">,</span> <span class="kw">true</span><span class="op">,</span>   <span class="kw">false</span><span class="op">,</span>  <span class="kw">false</span><span class="op">,</span>  <span class="kw">false</span><span class="op">,</span>  <span class="kw">false</span>]<span class="op">,</span></a>
-<a class="sourceLine" id="cb1-5" title="5"><span class="co">/*C*/</span>    [<span class="kw">false</span><span class="op">,</span> <span class="kw">true</span><span class="op">,</span>   <span class="kw">true</span><span class="op">,</span>   <span class="kw">true</span><span class="op">,</span>   <span class="kw">false</span><span class="op">,</span>  <span class="kw">false</span>]<span class="op">,</span></a>
-<a class="sourceLine" id="cb1-6" title="6"><span class="co">/*D*/</span>    [<span class="kw">false</span><span class="op">,</span> <span class="kw">false</span><span class="op">,</span>  <span class="kw">false</span><span class="op">,</span>  <span class="kw">true</span><span class="op">,</span>   <span class="kw">false</span><span class="op">,</span>  <span class="kw">false</span>]<span class="op">,</span></a>
-<a class="sourceLine" id="cb1-7" title="7"><span class="co">/*E*/</span>    [<span class="kw">true</span><span class="op">,</span>  <span class="kw">false</span><span class="op">,</span>  <span class="kw">false</span><span class="op">,</span>  <span class="kw">false</span><span class="op">,</span>  <span class="kw">true</span><span class="op">,</span>   <span class="kw">false</span>]<span class="op">,</span></a>
-<a class="sourceLine" id="cb1-8" title="8"><span class="co">/*F*/</span>    [<span class="kw">false</span><span class="op">,</span> <span class="kw">false</span><span class="op">,</span>  <span class="kw">false</span><span class="op">,</span>  <span class="kw">false</span><span class="op">,</span>  <span class="kw">true</span><span class="op">,</span>   <span class="kw">true</span>]</a>
-<a class="sourceLine" id="cb1-9" title="9">]<span class="op">;</span></a></code></pre></div></li>
+<li><p>One axis (outside array) has an entry (inner array) for each node in the graph. If one node is connected to another node in the graph, our entry in the inner array is set to true. Otherwise the entry is false.</p>
+<p>let matrix = [ /* A B C D E F <em>/ /</em>A<em>/ [true, true, true, false, true, false], /</em>B<em>/ [false, true, false, false, false, false], /</em>C<em>/ [false, true, true, true, false, false], /</em>D<em>/ [false, false, false, true, false, false], /</em>E<em>/ [true, false, false, false, true, false], /</em>F*/ [false, false, false, false, true, true]];</p></li>
+</ul></li>
 <li>Adjacency List - POJO
 <ul>
 <li>Object where every value in the graph has a key</li>
 <li>Value for the key is an array with each other node that it is connected to (neighbors)</li>
 <li>Easy to iterate through</li>
 <li>Doesn’t take up as much space as an Adjacency Matrix or Node</li>
-<li>Can refer to the entire graph by referencing the object</li>
-</ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1">  <span class="kw">let</span> list <span class="op">=</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb2-2" title="2">    <span class="dt">a</span><span class="op">:</span> [<span class="st">&#39;b&#39;</span><span class="op">,</span> <span class="st">&#39;c&#39;</span><span class="op">,</span> <span class="st">&#39;e&#39;</span>]<span class="op">,</span></a>
-<a class="sourceLine" id="cb2-3" title="3">    <span class="dt">b</span><span class="op">:</span> []<span class="op">,</span></a>
-<a class="sourceLine" id="cb2-4" title="4">    <span class="dt">c</span><span class="op">:</span> [<span class="st">&#39;b&#39;</span><span class="op">,</span> <span class="st">&#39;d&#39;</span>]<span class="op">,</span></a>
-<a class="sourceLine" id="cb2-5" title="5">    <span class="dt">d</span><span class="op">:</span> []<span class="op">,</span></a>
-<a class="sourceLine" id="cb2-6" title="6">    <span class="dt">e</span><span class="op">:</span> [<span class="st">&#39;a&#39;</span>]<span class="op">,</span></a>
-<a class="sourceLine" id="cb2-7" title="7">    <span class="dt">f</span><span class="op">:</span> [<span class="st">&#39;e&#39;</span>]</a>
-<a class="sourceLine" id="cb2-8" title="8">  <span class="op">};</span></a></code></pre></div></li>
+<li><p>Can refer to the entire graph by referencing the object</p>
+<p>let list = { a: [‘b’, ‘c’, ‘e’], b: [], c: [‘b’, ‘d’], d: [], e: [‘a’], f: [‘e’] };</p></li>
+</ul></li>
 <li>Nodes
 <ul>
 <li>Similar to our linked list or tree implementations</li>
 <li>Track the value and the neighbors array as instance variables on the node</li>
-<li>We don’t have a reference to the overall graph with this implementation</li>
-</ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">class</span> GraphNode <span class="op">{</span></a>
-<a class="sourceLine" id="cb3-2" title="2">  <span class="at">constructor</span>(val) <span class="op">{</span></a>
-<a class="sourceLine" id="cb3-3" title="3">    <span class="kw">this</span>.<span class="at">val</span> <span class="op">=</span> val<span class="op">;</span></a>
-<a class="sourceLine" id="cb3-4" title="4">    <span class="kw">this</span>.<span class="at">neighbors</span> <span class="op">=</span> []<span class="op">;</span></a>
-<a class="sourceLine" id="cb3-5" title="5">  <span class="op">}</span></a>
-<a class="sourceLine" id="cb3-6" title="6"><span class="op">}</span></a></code></pre></div></li>
+<li><p>We don’t have a reference to the overall graph with this implementation</p>
+<p>class GraphNode { constructor(val) { this.val = val; this.neighbors = []; } }</p></li>
+</ul></li>
 </ul></li>
 </ul>
-<ol start="2" type="1">
+<ol type="1">
 <li>Traverse a graph.</li>
 </ol>
 <ul>
@@ -157,126 +74,65 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>etc.</li>
 </ul></li>
 <li>Some possible example implementations:</li>
-<li>Using a node implementation with recursion:</li>
-</ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="co">// If you are unfamiliar, a Set is a data structure that does not allow for repeated values</span></a>
-<a class="sourceLine" id="cb4-2" title="2"><span class="co">// It makes sense to use here because it has constant lookup time with its `has` method</span></a>
-<a class="sourceLine" id="cb4-3" title="3"><span class="co">// and our visited nodes should never have repeats.</span></a>
-<a class="sourceLine" id="cb4-4" title="4"><span class="co">// We could have accomplished the same thing with a different data structure</span></a>
-<a class="sourceLine" id="cb4-5" title="5"><span class="co">// (object, array, etc.), but a Set makes sense with what we are tracking.</span></a>
-<a class="sourceLine" id="cb4-6" title="6"><span class="kw">function</span> <span class="at">depthFirstRecur</span>(node<span class="op">,</span> visited<span class="op">=</span><span class="kw">new</span> <span class="at">Set</span>()) <span class="op">{</span></a>
-<a class="sourceLine" id="cb4-7" title="7">    <span class="co">// if this node has already been visited, then return early</span></a>
-<a class="sourceLine" id="cb4-8" title="8">    <span class="cf">if</span> (<span class="va">visited</span>.<span class="at">has</span>(<span class="va">node</span>.<span class="at">val</span>)) <span class="cf">return</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb4-9" title="9"></a>
-<a class="sourceLine" id="cb4-10" title="10">    <span class="co">// otherwise it hasn&#39;t yet been visited,</span></a>
-<a class="sourceLine" id="cb4-11" title="11">    <span class="co">// so print it&#39;s val and mark it as visited.</span></a>
-<a class="sourceLine" id="cb4-12" title="12">    <span class="va">console</span>.<span class="at">log</span>(<span class="va">node</span>.<span class="at">val</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb4-13" title="13">    <span class="va">visited</span>.<span class="at">add</span>(<span class="va">node</span>.<span class="at">val</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb4-14" title="14"></a>
-<a class="sourceLine" id="cb4-15" title="15">    <span class="co">// then explore each of its neighbors</span></a>
-<a class="sourceLine" id="cb4-16" title="16">    <span class="va">node</span>.<span class="va">neighbors</span>.<span class="at">forEach</span>(neighbor <span class="kw">=&gt;</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb4-17" title="17">        <span class="at">depthFirstRecur</span>(neighbor<span class="op">,</span> visited)<span class="op">;</span></a>
-<a class="sourceLine" id="cb4-18" title="18">    <span class="op">}</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb4-19" title="19"><span class="op">}</span></a>
-<a class="sourceLine" id="cb4-20" title="20"></a>
-<a class="sourceLine" id="cb4-21" title="21"><span class="at">depthFirstRecur</span>(f)<span class="op">;</span></a></code></pre></div>
-<ul>
-<li>Using a node implementation with iteration:</li>
-</ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb5-1" title="1"><span class="co">// This is easy to swap to a breadth-first approach by using a queue instead of a stack!</span></a>
-<a class="sourceLine" id="cb5-2" title="2"><span class="co">// Instead of popping from the top, we can shift from the front</span></a>
-<a class="sourceLine" id="cb5-3" title="3"><span class="kw">function</span> <span class="at">depthFirstIter</span>(node) <span class="op">{</span></a>
-<a class="sourceLine" id="cb5-4" title="4">    <span class="kw">let</span> visited <span class="op">=</span> <span class="kw">new</span> <span class="at">Set</span>()<span class="op">;</span></a>
-<a class="sourceLine" id="cb5-5" title="5">    <span class="kw">let</span> stack <span class="op">=</span> [ node ]<span class="op">;</span></a>
-<a class="sourceLine" id="cb5-6" title="6"></a>
-<a class="sourceLine" id="cb5-7" title="7">    <span class="cf">while</span> (<span class="va">stack</span>.<span class="at">length</span>) <span class="op">{</span></a>
-<a class="sourceLine" id="cb5-8" title="8">        <span class="kw">let</span> node <span class="op">=</span> <span class="va">stack</span>.<span class="at">pop</span>()<span class="op">;</span></a>
-<a class="sourceLine" id="cb5-9" title="9"></a>
-<a class="sourceLine" id="cb5-10" title="10">        <span class="co">// if this node has already been visited, then skip this node</span></a>
-<a class="sourceLine" id="cb5-11" title="11">        <span class="cf">if</span> (<span class="va">visited</span>.<span class="at">has</span>(<span class="va">node</span>.<span class="at">val</span>)) <span class="cf">continue</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb5-12" title="12"></a>
-<a class="sourceLine" id="cb5-13" title="13">        <span class="co">// otherwise it hasn&#39;t yet been visited,</span></a>
-<a class="sourceLine" id="cb5-14" title="14">        <span class="co">// so print it&#39;s val and mark it as visited.</span></a>
-<a class="sourceLine" id="cb5-15" title="15">        <span class="va">console</span>.<span class="at">log</span>(<span class="va">node</span>.<span class="at">val</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb5-16" title="16">        <span class="va">visited</span>.<span class="at">add</span>(<span class="va">node</span>.<span class="at">val</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb5-17" title="17"></a>
-<a class="sourceLine" id="cb5-18" title="18">        <span class="co">// then add its neighbors to the stack to be explored</span></a>
-<a class="sourceLine" id="cb5-19" title="19">        <span class="va">stack</span>.<span class="at">push</span>(...<span class="va">node</span>.<span class="at">neighbors</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb5-20" title="20">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb5-21" title="21"><span class="op">}</span></a>
-<a class="sourceLine" id="cb5-22" title="22"></a>
-<a class="sourceLine" id="cb5-23" title="23"><span class="at">depthFirstIter</span>(f)<span class="op">;</span></a></code></pre></div>
-<ul>
+<li><p>Using a node implementation with recursion:</p>
+<p>// If you are unfamiliar, a Set is a data structure that does not allow for repeated values // It makes sense to use here because it has constant lookup time with its <code>has</code> method // and our visited nodes should never have repeats. // We could have accomplished the same thing with a different data structure // (object, array, etc.), but a Set makes sense with what we are tracking. function depthFirstRecur(node, visited=new Set()) { // if this node has already been visited, then return early if (visited.has(node.val)) return;</p>
+<pre><code>// otherwise it hasn&#39;t yet been visited,
+// so print it&#39;s val and mark it as visited.
+console.log(node.val);
+visited.add(node.val);
+
+// then explore each of its neighbors
+node.neighbors.forEach(neighbor =&gt; {
+    depthFirstRecur(neighbor, visited);
+});</code></pre>
+<p>}</p>
+<p>depthFirstRecur(f);</p></li>
+<li><p>Using a node implementation with iteration:</p>
+<p>// This is easy to swap to a breadth-first approach by using a queue instead of a stack! // Instead of popping from the top, we can shift from the front function depthFirstIter(node) { let visited = new Set(); let stack = [ node ];</p>
+<pre><code>while (stack.length) {
+    let node = stack.pop();
+
+    // if this node has already been visited, then skip this node
+    if (visited.has(node.val)) continue;
+
+    // otherwise it hasn&#39;t yet been visited,
+    // so print it&#39;s val and mark it as visited.
+    console.log(node.val);
+    visited.add(node.val);
+
+    // then add its neighbors to the stack to be explored
+    stack.push(...node.neighbors);
+}</code></pre>
+<p>}</p>
+<p>depthFirstIter(f);</p></li>
 <li>Using an adjacency list with recursion:
 <ul>
 <li>One advantage of an adjacency list is that, since we have a reference to the whole graph, we can access nodes that aren’t connected to our starting point. This may or may not be desired, so we can implement our functions differently to account for this feature.</li>
-</ul></li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">function</span> <span class="at">depthFirst</span>(graph) <span class="op">{</span></a>
-<a class="sourceLine" id="cb6-2" title="2">    <span class="kw">let</span> visited <span class="op">=</span> <span class="kw">new</span> <span class="at">Set</span>()<span class="op">;</span></a>
-<a class="sourceLine" id="cb6-3" title="3"></a>
-<a class="sourceLine" id="cb6-4" title="4">    <span class="co">// This loop allows us to access every node/vertex, even if it wasn&#39;t connected</span></a>
-<a class="sourceLine" id="cb6-5" title="5">    <span class="co">// to where we started.</span></a>
-<a class="sourceLine" id="cb6-6" title="6">    <span class="co">// If we only wanted to reach points from a starting location, we could take in</span></a>
-<a class="sourceLine" id="cb6-7" title="7">    <span class="co">// that value as an argument and use it as the node directly with our helper</span></a>
-<a class="sourceLine" id="cb6-8" title="8">    <span class="co">// function, no need to loop.</span></a>
-<a class="sourceLine" id="cb6-9" title="9">    <span class="cf">for</span> (<span class="kw">let</span> node <span class="kw">in</span> graph) <span class="op">{</span></a>
-<a class="sourceLine" id="cb6-10" title="10">        <span class="at">_depthFirstRecur</span>(node<span class="op">,</span> graph<span class="op">,</span> visited)<span class="op">;</span></a>
-<a class="sourceLine" id="cb6-11" title="11">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb6-12" title="12"><span class="op">}</span></a>
-<a class="sourceLine" id="cb6-13" title="13"></a>
-<a class="sourceLine" id="cb6-14" title="14"><span class="kw">function</span> <span class="at">_depthFirstRecur</span>(node<span class="op">,</span> graph<span class="op">,</span> visited) <span class="op">{</span></a>
-<a class="sourceLine" id="cb6-15" title="15">    <span class="cf">if</span> (<span class="va">visited</span>.<span class="at">has</span>(node)) <span class="cf">return</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb6-16" title="16"></a>
-<a class="sourceLine" id="cb6-17" title="17">    <span class="va">console</span>.<span class="at">log</span>(node)<span class="op">;</span></a>
-<a class="sourceLine" id="cb6-18" title="18">    <span class="va">visited</span>.<span class="at">add</span>(node)<span class="op">;</span></a>
-<a class="sourceLine" id="cb6-19" title="19"></a>
-<a class="sourceLine" id="cb6-20" title="20">    graph[node].<span class="at">forEach</span>(neighbor <span class="kw">=&gt;</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb6-21" title="21">        <span class="at">_depthFirstRecur</span>(neighbor<span class="op">,</span> graph<span class="op">,</span> visited)<span class="op">;</span></a>
-<a class="sourceLine" id="cb6-22" title="22">    <span class="op">}</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb6-23" title="23"><span class="op">}</span></a>
-<a class="sourceLine" id="cb6-24" title="24"></a>
-<a class="sourceLine" id="cb6-25" title="25"><span class="at">depthFirst</span>(graph)<span class="op">;</span></a></code></pre></div>
-<ul>
-<li>Using an adjacency list with iteration:</li>
-</ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb7-1" title="1"><span class="co">// With starting node, not exploring all nodes, only the connected ones</span></a>
-<a class="sourceLine" id="cb7-2" title="2"><span class="kw">function</span> <span class="at">depthFirstIter</span>(graph<span class="op">,</span> startNode) <span class="op">{</span></a>
-<a class="sourceLine" id="cb7-3" title="3">  <span class="co">// Just like our node implementation, if we want to operate breadth-first, we</span></a>
-<a class="sourceLine" id="cb7-4" title="4">  <span class="co">// can utilize a queue instead of a stack, shifting instead of popping</span></a>
-<a class="sourceLine" id="cb7-5" title="5">  <span class="kw">let</span> stack <span class="op">=</span> [startNode]<span class="op">;</span></a>
-<a class="sourceLine" id="cb7-6" title="6">  <span class="kw">let</span> visited <span class="op">=</span> <span class="kw">new</span> <span class="at">Set</span>()<span class="op">;</span></a>
-<a class="sourceLine" id="cb7-7" title="7"></a>
-<a class="sourceLine" id="cb7-8" title="8">  <span class="cf">while</span> (<span class="va">stack</span>.<span class="at">length</span> <span class="op">&gt;</span> <span class="dv">0</span>) <span class="op">{</span></a>
-<a class="sourceLine" id="cb7-9" title="9">    <span class="kw">let</span> node <span class="op">=</span> <span class="va">stack</span>.<span class="at">pop</span>()<span class="op">;</span></a>
-<a class="sourceLine" id="cb7-10" title="10">    <span class="cf">if</span> (<span class="va">visited</span>.<span class="at">has</span>(node)) <span class="cf">continue</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb7-11" title="11">    <span class="va">console</span>.<span class="at">log</span>(node)</a>
-<a class="sourceLine" id="cb7-12" title="12">    <span class="va">visited</span>.<span class="at">add</span>(node)<span class="op">;</span></a>
-<a class="sourceLine" id="cb7-13" title="13">    <span class="va">stack</span>.<span class="at">push</span>(...<span class="at">graph</span>[node])<span class="op">;</span></a>
-<a class="sourceLine" id="cb7-14" title="14">  <span class="op">}</span></a>
-<a class="sourceLine" id="cb7-15" title="15"><span class="op">}</span></a>
-<a class="sourceLine" id="cb7-16" title="16"></a>
-<a class="sourceLine" id="cb7-17" title="17"><span class="co">// Exploring all nodes, even unconnected ones.</span></a>
-<a class="sourceLine" id="cb7-18" title="18"><span class="kw">function</span> <span class="at">depthFirstIter</span>(graph) <span class="op">{</span></a>
-<a class="sourceLine" id="cb7-19" title="19">  <span class="kw">let</span> visited <span class="op">=</span> <span class="kw">new</span> <span class="at">Set</span>()<span class="op">;</span></a>
-<a class="sourceLine" id="cb7-20" title="20"></a>
-<a class="sourceLine" id="cb7-21" title="21">  <span class="co">// Just like with recursion, this loop allows us to access every node/vertex,</span></a>
-<a class="sourceLine" id="cb7-22" title="22">  <span class="co">// even if it wasn&#39;t connected to where we started.</span></a>
-<a class="sourceLine" id="cb7-23" title="23">  <span class="co">// If we only wanted to reach points from a starting location, we could take in</span></a>
-<a class="sourceLine" id="cb7-24" title="24">  <span class="co">// that value as an argument and use it as the startNode directly in our</span></a>
-<a class="sourceLine" id="cb7-25" title="25">  <span class="co">// stack/queue (the implementation we have above).</span></a>
-<a class="sourceLine" id="cb7-26" title="26">  <span class="cf">for</span> (<span class="kw">let</span> startNode <span class="kw">in</span> graph) <span class="op">{</span></a>
-<a class="sourceLine" id="cb7-27" title="27">    <span class="kw">let</span> stack <span class="op">=</span> [startNode]<span class="op">;</span></a>
-<a class="sourceLine" id="cb7-28" title="28">    <span class="cf">while</span> (<span class="va">stack</span>.<span class="at">length</span> <span class="op">&gt;</span> <span class="dv">0</span>) <span class="op">{</span></a>
-<a class="sourceLine" id="cb7-29" title="29">      <span class="kw">let</span> node <span class="op">=</span> <span class="va">stack</span>.<span class="at">pop</span>()<span class="op">;</span></a>
-<a class="sourceLine" id="cb7-30" title="30">      <span class="cf">if</span> (<span class="va">visited</span>.<span class="at">has</span>(node)) <span class="cf">continue</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb7-31" title="31">      <span class="va">console</span>.<span class="at">log</span>(node)</a>
-<a class="sourceLine" id="cb7-32" title="32">      <span class="va">visited</span>.<span class="at">add</span>(node)<span class="op">;</span></a>
-<a class="sourceLine" id="cb7-33" title="33">      <span class="va">stack</span>.<span class="at">push</span>(...<span class="at">graph</span>[node])<span class="op">;</span></a>
-<a class="sourceLine" id="cb7-34" title="34">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb7-35" title="35">  <span class="op">}</span></a>
-<a class="sourceLine" id="cb7-36" title="36"><span class="op">}</span></a></code></pre></div>
-<ul>
+<p>function depthFirst(graph) { let visited = new Set();</p>
+<pre><code>// This loop allows us to access every node/vertex, even if it wasn&#39;t connected
+// to where we started.
+// If we only wanted to reach points from a starting location, we could take in
+// that value as an argument and use it as the node directly with our helper
+// function, no need to loop.
+for (let node in graph) {
+    _depthFirstRecur(node, graph, visited);
+}</code></pre>
+<p>}</p>
+<p>function _depthFirstRecur(node, graph, visited) { if (visited.has(node)) return;</p>
+<pre><code>console.log(node);
+visited.add(node);
+
+graph[node].forEach(neighbor =&gt; {
+    _depthFirstRecur(neighbor, graph, visited);
+});</code></pre>
+<p>}</p>
+<p>depthFirst(graph);</p></li>
+<li><p>Using an adjacency list with iteration:</p>
+<p>// With starting node, not exploring all nodes, only the connected ones function depthFirstIter(graph, startNode) { // Just like our node implementation, if we want to operate breadth-first, we // can utilize a queue instead of a stack, shifting instead of popping let stack = [startNode]; let visited = new Set();</p>
+<p>while (stack.length &gt; 0) { let node = stack.pop(); if (visited.has(node)) continue; console.log(node) visited.add(node); stack.push(…graph[node]); } }</p>
+<p>// Exploring all nodes, even unconnected ones. function depthFirstIter(graph) { let visited = new Set();</p>
+<p>// Just like with recursion, this loop allows us to access every node/vertex, // even if it wasn’t connected to where we started. // If we only wanted to reach points from a starting location, we could take in // that value as an argument and use it as the startNode directly in our // stack/queue (the implementation we have above). for (let startNode in graph) { let stack = [startNode]; while (stack.length &gt; 0) { let node = stack.pop(); if (visited.has(node)) continue; console.log(node) visited.add(node); stack.push(…graph[node]); } } }</p></li>
 <li>With all of thes implementations, we should be able to make conclusions from these traversals as well instead of just console logging.
 <ul>
 <li>Is it possible to get from node A to node B?

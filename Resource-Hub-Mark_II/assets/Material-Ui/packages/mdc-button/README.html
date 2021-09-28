@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>README</title>
+    <style type="text/css">
+      code {
+        white-space: pre-wrap;
+      }
+      span.smallcaps {
+        font-variant: small-caps;
+      }
+      span.underline {
+        text-decoration: underline;
+      }
+      div.column {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+      }
+    </style>
+    <style type="text/css">
+      a.sourceLine {
+        display: inline-block;
+        line-height: 1.25;
+      }
+      a.sourceLine {
+        pointer-events: none;
+        color: inherit;
+        text-decoration: inherit;
+      }
+      a.sourceLine:empty {
+        height: 1.2em;
+      }
+      .sourceCode {
+        overflow: visible;
+      }
+      code.sourceCode {
+        white-space: pre;
+        position: relative;
+      }
+      div.sourceCode {
+        margin: 1em 0;
+      }
+      pre.sourceCode {
+        margin: 0;
+      }
+      @media screen {
+        div.sourceCode {
+          overflow: auto;
+        }
+      }
+      @media print {
+        code.sourceCode {
+          white-space: pre-wrap;
+        }
+        a.sourceLine {
+          text-indent: -1em;
+          padding-left: 1em;
+        }
+      }
+      pre.numberSource a.sourceLine {
+        position: relative;
+        left: -4em;
+      }
+      pre.numberSource a.sourceLine::before {
+        content: attr(title);
+        position: relative;
+        left: -1em;
+        text-align: right;
+        vertical-align: baseline;
+        border: none;
+        pointer-events: all;
+        display: inline-block;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        padding: 0 4px;
+        width: 4em;
+        color: #aaaaaa;
+      }
+      pre.numberSource {
+        margin-left: 3em;
+        border-left: 1px solid #aaaaaa;
+        padding-left: 4px;
+      }
+      div.sourceCode {
+      }
+      @media screen {
+        a.sourceLine::before {
+          text-decoration: underline;
+        }
+      }
+      code span.al {
+        color: #ff0000;
+        font-weight: bold;
+      } /* Alert */
+      code span.an {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* Annotation */
+      code span.at {
+        color: #7d9029;
+      } /* Attribute */
+      code span.bn {
+        color: #40a070;
+      } /* BaseN */
+      code span.bu {
+      } /* BuiltIn */
+      code span.cf {
+        color: #007020;
+        font-weight: bold;
+      } /* ControlFlow */
+      code span.ch {
+        color: #4070a0;
+      } /* Char */
+      code span.cn {
+        color: #880000;
+      } /* Constant */
+      code span.co {
+        color: #60a0b0;
+        font-style: italic;
+      } /* Comment */
+      code span.cv {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* CommentVar */
+      code span.do {
+        color: #ba2121;
+        font-style: italic;
+      } /* Documentation */
+      code span.dt {
+        color: #902000;
+      } /* DataType */
+      code span.dv {
+        color: #40a070;
+      } /* DecVal */
+      code span.er {
+        color: #ff0000;
+        font-weight: bold;
+      } /* Error */
+      code span.ex {
+      } /* Extension */
+      code span.fl {
+        color: #40a070;
+      } /* Float */
+      code span.fu {
+        color: #06287e;
+      } /* Function */
+      code span.im {
+      } /* Import */
+      code span.in {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* Information */
+      code span.kw {
+        color: #007020;
+        font-weight: bold;
+      } /* Keyword */
+      code span.op {
+        color: #666666;
+      } /* Operator */
+      code span.ot {
+        color: #007020;
+      } /* Other */
+      code span.pp {
+        color: #bc7a00;
+      } /* Preprocessor */
+      code span.sc {
+        color: #4070a0;
+      } /* SpecialChar */
+      code span.ss {
+        color: #bb6688;
+      } /* SpecialString */
+      code span.st {
+        color: #4070a0;
+      } /* String */
+      code span.va {
+        color: #19177c;
+      } /* Variable */
+      code span.vs {
+        color: #4070a0;
+      } /* VerbatimString */
+      code span.wa {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* Warning */
+    </style>
+  </head>
+  <body>
+    <!--docs:
+title: "Buttons"
+layout: detail
+section: components
+excerpt: "Web Buttons"
+iconId: button
+path: /catalog/buttons/
+-->
+    <h1 id="buttons">Buttons</h1>
+    <p>
+      <a href="https://material.io/components/buttons/">Buttons</a> allow users
+      to take actions, and make choices, with a single tap.
+    </p>
+    <p>There are four types of buttons:</p>
+    <ol type="1">
+      <li><a href="#text-button">Text button</a></li>
+      <li><a href="#outlined-button">Outlined button</a></li>
+      <li><a href="#contained-button">Contained button</a></li>
+      <li><a href="#toggle-button">Toggle button</a></li>
+    </ol>
+    <p>
+      <strong
+        >Note: Toggle buttons are implemented using the
+        <code>mdc-icon-button</code> component. For more information, see the
+        <a href="../mdc-icon-button"><code>mdc-icon-button</code> page</a
+        >.</strong
+      >
+    </p>
+    <figure>
+      <img
+        src="images/buttons_types.png"
+        alt="Example of the four button types"
+      />
+      <figcaption>Example of the four button types</figcaption>
+    </figure>
+    <h2 id="using-buttons">Using buttons</h2>
+    <h3 id="installation">Installation</h3>
+    <pre><code>npm install @material/button</code></pre>
+    <h3 id="styles">Styles</h3>
+    <pre class="scss"><code>@use &quot;@material/button&quot;;
+
+@include button.core-styles;</code></pre>
+    <h3 id="javascript-instantiation">JavaScript instantiation</h3>
+    <p>
+      The button will work without JavaScript, but you can enhance it to have a
+      ripple effect by instantiating <code>MDCRipple</code> on the root element.
+      See <a href="../mdc-ripple">MDC Ripple</a> for details.
+    </p>
+    <div class="sourceCode" id="cb3">
+      <pre
+        class="sourceCode js"
+      ><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="im">import</span> <span class="op">{</span>MDCRipple<span class="op">}</span> <span class="im">from</span> <span class="st">&#39;@material/ripple&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-2" title="2"></a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="kw">const</span> buttonRipple <span class="op">=</span> <span class="kw">new</span> <span class="at">MDCRipple</span>(<span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&#39;.mdc-button&#39;</span>))<span class="op">;</span></a></code></pre>
+    </div>
+    <p>
+      <strong
+        >Note: See
+        <a href="../../docs/importing-js.md">Importing the JS component</a> for
+        more information on how to import JavaScript.</strong
+      >
+    </p>
+    <h3 id="making-buttons-accessible">Making buttons accessible</h3>
+    <p>
+      Material Design spec advises that touch targets should be at least 48 x 48
+      px. To meet this requirement, add the following to your button:
+    </p>
+    <div class="sourceCode" id="cb4">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-touch-target-wrapper&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb4-2" title="2">  <span class="kw">&lt;button</span><span class="ot"> class=</span><span class="st">&quot;mdc-button mdc-button--touch&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb4-3" title="3">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-button__ripple&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb4-4" title="4">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-button__label&quot;</span><span class="kw">&gt;</span>My Accessible Button<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb4-5" title="5">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-button__touch&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb4-6" title="6">  <span class="kw">&lt;/button&gt;</span></a>
+<a class="sourceLine" id="cb4-7" title="7"><span class="kw">&lt;/div&gt;</span></a></code></pre>
+    </div>
+    <p>
+      <strong
+        >Note: The outer <code>mdc-touch-target-wrapper</code> element is only
+        necessary if you want to avoid potentially overlapping touch targets on
+        adjacent elements (due to collapsing margins).</strong
+      >
+    </p>
+    <h2 id="text-button">Text button</h2>
+    <p>
+      <a href="https://material.io/components/buttons/#text-button"
+        >Text buttons</a
+      >
+      are typically used for less-pronounced actions, including those located in
+      dialogs and cards. In cards, text buttons help maintain an emphasis on
+      card content.
+    </p>
+    <h3 id="text-button-example">Text button example</h3>
+    <p><img src="images/text-button.png" alt="Text button example" /></p>
+    <div class="sourceCode" id="cb5">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb5-1" title="1"> <span class="kw">&lt;button</span><span class="ot"> class=</span><span class="st">&quot;mdc-button&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb5-2" title="2">   <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-button__ripple&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb5-3" title="3">   <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-button__label&quot;</span><span class="kw">&gt;</span>Text Button<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb5-4" title="4"><span class="kw">&lt;/button&gt;</span></a></code></pre>
+    </div>
+    <p><b>Text button with icon example</b></p>
+    <p>
+      <img
+        src="images/text-icon-button.png"
+        alt="Text button with bookmark icon example"
+      />
+    </p>
+    <div class="sourceCode" id="cb6">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">&lt;button</span><span class="ot"> class=</span><span class="st">&quot;mdc-button&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb6-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-button__ripple&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb6-3" title="3">  <span class="kw">&lt;i</span><span class="ot"> class=</span><span class="st">&quot;material-icons mdc-button__icon&quot;</span><span class="ot"> aria-hidden=</span><span class="st">&quot;true&quot;</span></a>
+<a class="sourceLine" id="cb6-4" title="4">    <span class="kw">&gt;</span>bookmark<span class="kw">&lt;/i</span></a>
+<a class="sourceLine" id="cb6-5" title="5">  <span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb6-6" title="6">  <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-button__label&quot;</span><span class="kw">&gt;</span>Text Button plus icon<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb6-7" title="7"><span class="kw">&lt;/button&gt;</span></a></code></pre>
+    </div>
+    <h2 id="outlined-button">Outlined button</h2>
+    <p>
+      <a href="https://material.io/components/buttons/#outlined-button"
+        >Outlined buttons</a
+      >
+      are medium-emphasis buttons. They contain actions that are important, but
+      aren’t the primary action in an app.
+    </p>
+    <h3 id="outlined-button-example">Outlined button example</h3>
+    <p>
+      <img src="images/outlined-button.png" alt="Outlined button example" />
+    </p>
+    <div class="sourceCode" id="cb7">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">&lt;button</span><span class="ot"> class=</span><span class="st">&quot;mdc-button mdc-button--outlined&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb7-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-button__ripple&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb7-3" title="3">  <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-button__label&quot;</span><span class="kw">&gt;</span>Outlined Button<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb7-4" title="4"><span class="kw">&lt;/button&gt;</span></a></code></pre>
+    </div>
+    <p><b>Outlined button with icon example</b></p>
+    <p>
+      <img
+        src="images/outlined-icon-button.png"
+        alt="Outlined button with bookmark icon"
+      />
+    </p>
+    <div class="sourceCode" id="cb8">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">&lt;button</span><span class="ot"> class=</span><span class="st">&quot;mdc-button mdc-button--outlined&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb8-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-button__ripple&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb8-3" title="3">  <span class="kw">&lt;i</span><span class="ot"> class=</span><span class="st">&quot;material-icons mdc-button__icon&quot;</span><span class="ot"> aria-hidden=</span><span class="st">&quot;true&quot;</span><span class="kw">&gt;</span>bookmark<span class="kw">&lt;/i&gt;</span></a>
+<a class="sourceLine" id="cb8-4" title="4">  <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-button__label&quot;</span><span class="kw">&gt;</span>Outlined Button plus Icon<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb8-5" title="5"><span class="kw">&lt;/button&gt;</span></a></code></pre>
+    </div>
+    <h2 id="contained-button">Contained button</h2>
+    <p>
+      <a href="https://material.io/components/buttons/#contained-button"
+        >Contained buttons</a
+      >
+      are high-emphasis, distinguished by their use of elevation and fill. They
+      contain actions that are primary to your app.
+    </p>
+    <h3 id="contained-button-example">Contained button example</h3>
+    <p>
+      <img src="images/contained-button.png" alt="Contained button example" />
+    </p>
+    <div class="sourceCode" id="cb9">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">&lt;button</span><span class="ot"> class=</span><span class="st">&quot;mdc-button mdc-button--raised&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb9-2" title="2">  <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-button__label&quot;</span><span class="kw">&gt;</span>Contained Button<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb9-3" title="3"><span class="kw">&lt;/button&gt;</span></a></code></pre>
+    </div>
+    <p>
+      <strong
+        >Note: <code>mdc-button--raised</code> is applied for a contained button
+        with elevation, and <code>mdc-button--unelevated</code> is applied for a
+        contained button flush with the surface.</strong
+      >
+    </p>
+    <p><b>Contained button with icon example</b></p>
+    <p>
+      <img
+        src="images/contained-icon-button.png"
+        alt="Contained button with a bookmark icon"
+      />
+    </p>
+    <div class="sourceCode" id="cb10">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">&lt;button</span><span class="ot"> class=</span><span class="st">&quot;mdc-button mdc-button--raised&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb10-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-button__ripple&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb10-3" title="3">  <span class="kw">&lt;i</span><span class="ot"> class=</span><span class="st">&quot;material-icons mdc-button__icon&quot;</span><span class="ot"> aria-hidden=</span><span class="st">&quot;true&quot;</span></a>
+<a class="sourceLine" id="cb10-4" title="4">    <span class="kw">&gt;</span>bookmark<span class="kw">&lt;/i</span></a>
+<a class="sourceLine" id="cb10-5" title="5">  <span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb10-6" title="6">  <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-button__label&quot;</span><span class="kw">&gt;</span>Contained Button plus Icon<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb10-7" title="7"><span class="kw">&lt;/button&gt;</span></a></code></pre>
+    </div>
+    <h2 id="toggle-button">Toggle button</h2>
+    <p>
+      <a href="https://material.io/components/buttons/#toggle-button"
+        >Toggle buttons</a
+      >
+      can be used to select from a group of choices.
+    </p>
+    <p>There are two types of toggle buttons:</p>
+    <ul>
+      <li><a href="#toggle-button">Toggle button</a></li>
+      <li><a href="#icon">Icon</a></li>
+    </ul>
+    <p><img src="images/toggle-bar.png" alt="toggle button group" /></p>
+    <p>MDC Web currently does not support toggle button groups.</p>
+    <h3 id="icon">Icon</h3>
+    <p>
+      Icons can be used as toggle buttons when they allow selection, or
+      deselection, of a single choice, such as marking an item as a favorite.
+    </p>
+    <p>
+      For more details, see the
+      <a href="../mdc-icon-button"><code>mdc-icon-button</code> page</a>.
+    </p>
+    <h2 id="other-variants">Other Variants</h2>
+    <h3 id="icon-1">Icon</h3>
+    <p>
+      We recommend using
+      <a href="https://material.io/tools/icons/">Material Icons</a> from Google
+      Fonts:
+    </p>
+    <div class="sourceCode" id="cb11">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">&lt;head&gt;</span></a>
+<a class="sourceLine" id="cb11-2" title="2">  <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href=</span><span class="st">&quot;https://fonts.googleapis.com/icon?family=Material+Icons&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb11-3" title="3"><span class="kw">&lt;/head&gt;</span></a></code></pre>
+    </div>
+    <p>
+      However, you can also use SVG,
+      <a href="https://fontawesome.com/">Font Awesome</a>, or any other icon
+      library you wish.
+    </p>
+    <p>
+      To add an icon, add an element with the
+      <code>mdc-button__icon</code> class inside the button element and set the
+      attribute <code>aria-hidden="true"</code>. The icon is set to 18px to meet
+      legibility requirements.
+    </p>
+    <div class="sourceCode" id="cb12">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb12-1" title="1"><span class="kw">&lt;button</span><span class="ot"> class=</span><span class="st">&quot;mdc-button&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb12-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-button__ripple&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb12-3" title="3">  <span class="kw">&lt;i</span><span class="ot"> class=</span><span class="st">&quot;material-icons mdc-button__icon&quot;</span><span class="ot"> aria-hidden=</span><span class="st">&quot;true&quot;</span><span class="kw">&gt;</span>favorite<span class="kw">&lt;/i&gt;</span></a>
+<a class="sourceLine" id="cb12-4" title="4">  <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-button__label&quot;</span><span class="kw">&gt;</span>Button<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb12-5" title="5"><span class="kw">&lt;/button&gt;</span></a></code></pre>
+    </div>
+    <p>It’s also possible to use an SVG icon:</p>
+    <div class="sourceCode" id="cb13">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb13-1" title="1"><span class="kw">&lt;button</span><span class="ot"> class=</span><span class="st">&quot;mdc-button&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb13-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-button__ripple&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb13-3" title="3">  <span class="kw">&lt;svg</span><span class="ot"> class=</span><span class="st">&quot;mdc-button__icon&quot;</span><span class="ot"> aria-hidden=</span><span class="st">&quot;true&quot;</span><span class="ot"> xmlns=</span><span class="st">&quot;http://www.w3.org/2000/svg&quot;</span><span class="ot"> viewBox=</span><span class="st">&quot;...&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb13-4" title="4">  ...</a>
+<a class="sourceLine" id="cb13-5" title="5">  <span class="kw">&lt;/svg&gt;</span></a>
+<a class="sourceLine" id="cb13-6" title="6">  <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-button__label&quot;</span><span class="kw">&gt;</span>Button<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb13-7" title="7"><span class="kw">&lt;/button&gt;</span></a></code></pre>
+    </div>
+    <h4 id="trailing-icon">Trailing Icon</h4>
+    <p>
+      Certain icons make more sense to appear after the button’s text label
+      rather than before. This can be accomplished by putting the icon markup
+      <em>after</em> the <code>mdc-button__label</code> element.
+    </p>
+    <div class="sourceCode" id="cb14">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">&lt;button</span><span class="ot"> class=</span><span class="st">&quot;mdc-button&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb14-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-button__ripple&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb14-3" title="3">  <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-button__label&quot;</span><span class="kw">&gt;</span>Button<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb14-4" title="4">  <span class="kw">&lt;i</span><span class="ot"> class=</span><span class="st">&quot;material-icons mdc-button__icon&quot;</span><span class="ot"> aria-hidden=</span><span class="st">&quot;true&quot;</span><span class="kw">&gt;</span>favorite<span class="kw">&lt;/i&gt;</span></a>
+<a class="sourceLine" id="cb14-5" title="5"><span class="kw">&lt;/button&gt;</span></a></code></pre>
+    </div>
+    <p>
+      <strong
+        >Note: The <code>mdc-button__label</code> element is
+        <em>required</em> in order for the trailing icon to be styled
+        appropriately.</strong
+      >
+    </p>
+    <h3 id="disabled">Disabled</h3>
+    <p>
+      To disable a button, add the <code>disabled</code> attribute directly to
+      the <code>&lt;button&gt;</code>, or set the
+      <code>disabled</code> attribute on the
+      <code>&lt;fieldset&gt;</code> containing the button. Disabled buttons
+      cannot be interacted with and have no visual interaction effect.
+    </p>
+    <div class="sourceCode" id="cb15">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">&lt;button</span><span class="ot"> class=</span><span class="st">&quot;mdc-button&quot;</span><span class="ot"> disabled</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb15-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-button__ripple&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb15-3" title="3">  <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-button__label&quot;</span><span class="kw">&gt;</span>Button<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb15-4" title="4"><span class="kw">&lt;/button&gt;</span></a></code></pre>
+    </div>
+    <h2 id="button-theming-example">Button theming example</h2>
+    <p>
+      The following example shows text, contained, and outlined button types
+      with Material Theming.
+    </p>
+    <p>
+      <img
+        src="images/button-theming.png"
+        width="400"
+        alt="Button theming with three buttons - text, contained, and outlined - with Shrine theming."
+      />
+    </p>
+    <h3 id="theming-with-sass-variables">Theming with Sass variables</h3>
+    <p>
+      Before importing any MDC Web modules, set the theme colors in your Sass
+      file:
+    </p>
+    <pre class="scss"><code>@use &quot;@material/theme&quot; with (
+  $primary: #FEDBD0,
+  $on-primary: #442C2E
+);</code></pre>
+    <p>
+      In this case we also want to customize the label color of the text and
+      outlined buttons, to fulfill color contrast requirements. Assuming that
+      you’ve applied the <code>custom-text-button</code> and
+      <code>custom-outlined-button</code> classes to your buttons:
+    </p>
+    <pre class="scss"><code>@use &quot;@material/button&quot;;
+
+@include button.core-styles;
+
+.custom-text-button,
+.custom-outlined-button {
+  @include button.ink-color(#84565E);
+}</code></pre>
+    <h3 id="theming-with-css-custom-properties">
+      Theming with CSS custom properties
+    </h3>
+    <p>
+      If you want to customize the theme for buttons without changing the theme
+      across the app, you can also use CSS custom properties:
+    </p>
+    <pre class="scss"><code>@use &quot;@material/button&quot;;
+
+@include button.core-styles;
+
+.custom-text-button,
+.custom-outlined-button {
+  --mdc-theme-primary: #FEDBD0;
+  --mdc-theme-on-primary: #442C2E;
+
+  @include button.ink-color(#84565E);
+}</code></pre>
+    <p>
+      For a more information on theming in general, see
+      <a href="../../docs/theming.md">this page</a>.
+    </p>
+    <h2 id="api">API</h2>
+    <h3 id="css-classes">CSS classes</h3>
+    <table>
+      <colgroup>
+        <col style="width: 50%" />
+        <col style="width: 50%" />
+      </colgroup>
+      <thead>
+        <tr class="header">
+          <th>CSS Class</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="odd">
+          <td><code>mdc-button</code></td>
+          <td>
+            Mandatory. Defaults to a text button that is flush with the surface.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>mdc-button__ripple</code></td>
+          <td>
+            Mandatory. Indicates the element which shows the ripple styling.
+          </td>
+        </tr>
+        <tr class="odd">
+          <td><code>mdc-button--raised</code></td>
+          <td>
+            Optional. Styles a contained button that is elevated above the
+            surface.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>mdc-button--unelevated</code></td>
+          <td>
+            Optional. Styles a contained button that is flush with the surface.
+          </td>
+        </tr>
+        <tr class="odd">
+          <td><code>mdc-button--outlined</code></td>
+          <td>
+            Optional. Styles an outlined button that is flush with the surface.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>mdc-button__label</code></td>
+          <td>
+            Recommended.* Indicates the element containing the button’s text
+            label.
+          </td>
+        </tr>
+        <tr class="odd">
+          <td><code>mdc-button__icon</code></td>
+          <td>Optional. Indicates the element containing the button’s icon.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      <strong
+        >Note: The <code>mdc-button__label</code> element is required for
+        buttons with a trailing icon, but it is currently optional for buttons
+        with no icon or a leading icon. In the latter cases, it is acceptable
+        for the text label to simply exist directly within the
+        <code>mdc-button</code> element.<br />
+        However, the <code>mdc-button__label</code> class may become mandatory
+        for all cases in the future so we recommended to always include
+        it.</strong
+      >
+    </p>
+    <h3 id="sass-mixins">Sass mixins</h3>
+    <p>
+      To customize a button’s color and properties, you can use the following
+      mixins.
+    </p>
+    <h4 id="basic-sass-mixins">Basic Sass mixins</h4>
+    <p>
+      MDC Button uses <a href="../mdc-theme">MDC Theme</a>’s
+      <code>primary</code> color by default. Use the following mixins to
+      customize it.
+    </p>
+    <table>
+      <colgroup>
+        <col style="width: 50%" />
+        <col style="width: 50%" />
+      </colgroup>
+      <thead>
+        <tr class="header">
+          <th>Mixin</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="odd">
+          <td><code>filled-accessible($container-fill-color)</code></td>
+          <td>
+            Sets the container fill color for a contained (<em>raised</em> or
+            <em>unelevated</em>) button, and updates the button’s ink, icon, and
+            ripple colors to meet accessibility standards
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h4 id="advanced-sass-mixins">Advanced Sass mixins</h4>
+    <p>
+      These mixins will override the color of the container, ink, outline or
+      ripple. It is up to you to ensure your button meets accessibility
+      standards.
+    </p>
+    <table>
+      <colgroup>
+        <col style="width: 50%" />
+        <col style="width: 50%" />
+      </colgroup>
+      <thead>
+        <tr class="header">
+          <th>Mixin</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="odd">
+          <td><code>container-fill-color($color)</code></td>
+          <td>
+            Sets the container fill color to the given color for an enabled
+            button.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>disabled-container-fill-color($color)</code></td>
+          <td>
+            Sets the container fill color to the given color for a disabled
+            button.
+          </td>
+        </tr>
+        <tr class="odd">
+          <td><code>icon-color($color)</code></td>
+          <td>Sets the icon color to the given color for an enabled button.</td>
+        </tr>
+        <tr class="even">
+          <td><code>disabled-icon-color($color)</code></td>
+          <td>Sets the icon color to the given color for a disabled button.</td>
+        </tr>
+        <tr class="odd">
+          <td><code>ink-color($color)</code></td>
+          <td>
+            Sets the ink color to the given color for an enabled button, and
+            sets the icon color to the given color unless
+            <code>icon-color</code> is also used.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>disabled-ink-color($color)</code></td>
+          <td>
+            Sets the ink color to the given color for a disabled button, and
+            sets the icon color to the given color unless
+            <code>icon-color</code> is also used.
+          </td>
+        </tr>
+        <tr class="odd">
+          <td><code>density($density-scale)</code></td>
+          <td>
+            Sets density scale for button. Supported density scale values
+            (<code>-3</code>, <code>-2</code>, <code>-1</code>, <code>0</code>).
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>height($height)</code></td>
+          <td>Sets custom height for button.</td>
+        </tr>
+        <tr class="odd">
+          <td>
+            <code>shape-radius($radius, $density-scale, $rtl-reflexive)</code>
+          </td>
+          <td>
+            Sets rounded shape to button with given radius size.
+            <code>$density-scale</code> is only required when
+            <code>$radius</code> value is in percentage unit, defaults to
+            <code>$density-default-scale</code>. Set
+            <code>$rtl-reflexive</code> to true to flip radius values in RTL
+            context, defaults to false.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>horizontal-padding($padding)</code></td>
+          <td>Sets horizontal padding to the given number.</td>
+        </tr>
+        <tr class="odd">
+          <td><code>outline-color($color)</code></td>
+          <td>
+            Sets the outline color to the given color for an enabled button.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>disabled-outline-color($color)</code></td>
+          <td>
+            Sets the outline color to the given color for a disabled button.
+          </td>
+        </tr>
+        <tr class="odd">
+          <td><code>outline-width($width, $padding)</code></td>
+          <td>
+            Sets the outline width to the given number (defaults to 2px) and
+            adjusts padding accordingly. <code>$padding</code> is only required
+            in cases where <code>$horizontal-padding</code> is also included
+            with a custom value.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

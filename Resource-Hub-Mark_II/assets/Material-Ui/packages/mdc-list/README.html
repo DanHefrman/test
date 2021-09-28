@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<!--docs:
+title: "Lists"
+layout: detail
+section: components
+excerpt: "Lists are continuous, vertical indexes of text or images."
+iconId: list
+path: /catalog/lists/
+-->
+<h1 id="lists">Lists</h1>
+<p><a href="https://material.io/components/lists/">Lists</a> are continuous, vertical indexes of text or images.</p>
+<p>There are three list types: 1. <a href="#single-line-list">Single-line list</a> 1. <a href="#two-line-list">Two-line list</a> 1. <a href="#three-line-list">Three-line list</a></p>
+<figure>
+<img src="images/lists-types.png" alt="Composite image of the three list types" /><figcaption>Composite image of the three list types</figcaption>
+</figure>
+<h2 id="using-lists">Using lists</h2>
+<h3 id="installation">Installation</h3>
+<pre><code>npm install @material/list</code></pre>
+<h3 id="styles">Styles</h3>
+<pre class="scss"><code>@use &quot;@material/list&quot;;
+
+@include list.core-styles;</code></pre>
+<h3 id="javascript">JavaScript</h3>
+<p>MDC List includes an optional JavaScript component which can be used for keyboard interaction and accessibility.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="im">import</span> <span class="op">{</span>MDCList<span class="op">}</span> <span class="im">from</span> <span class="st">&#39;@material/list&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-2" title="2"></a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="kw">const</span> list <span class="op">=</span> <span class="kw">new</span> <span class="at">MDCList</span>(<span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&#39;.mdc-list&#39;</span>))<span class="op">;</span></a></code></pre></div>
+<blockquote>
+<p>See <a href="../../docs/importing-js.md">Importing the JS component</a> for more information on how to import JavaScript.</p>
+</blockquote>
+<p>Note that the JS component does <em>not</em> automatically instantiate ripples on list items. If you wish to include the fully-upgraded ripple effect on list items, you must instantiate <code>MDCRipple</code> on each item:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="im">import</span> <span class="op">{</span>MDCRipple<span class="op">}</span> <span class="im">from</span> <span class="st">&#39;@material/ripple&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-2" title="2"></a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="kw">const</span> listItemRipples <span class="op">=</span> <span class="va">list</span>.<span class="va">listElements</span>.<span class="at">map</span>((listItemEl) <span class="kw">=&gt;</span> <span class="kw">new</span> <span class="at">MDCRipple</span>(listItemEl))<span class="op">;</span></a></code></pre></div>
+<h3 id="making-lists-accessible">Making lists accessible</h3>
+<p>The MDCList JavaScript component implements the WAI-ARIA best practices for <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#Listbox">listbox</a>. This includes overriding the default tab behavior within the list component.</p>
+<p>The <code>tabindex</code> should be set to <code>0</code> for first list item element or selected list item element, remaining list item elements should not have <code>tabindex</code> set.</p>
+<p>Use <code>role="listbox"</code> only for single selection list, without this role the <code>ul</code> element is implicitely <code>role="list"</code>. Do not use <code>aria-orientation</code> attribute for standard list (i.e., <code>role="list"</code>), use component’s <code>vertical</code> property to set the orientation to vertical.</p>
+<p>Single selection list supports <code>aria-selected</code> and <code>aria-current</code> attributes. List automatically detects the presence of these attributes and sets it to next selected list item based on which ARIA attribute you use (i.e., <code>aria-selected</code> or <code>aria-current</code>). Please see WAI-ARIA <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-current">aria-current</a> article for recommended usage and available attribute values.</p>
+<p>As the user navigates through the list, any <code>button</code> and <code>a</code> elements within the list will receive <code>tabindex="-1"</code> when the list item is not focused. When the list item receives focus, the aforementioned elements will receive <code>tabIndex="0"</code>. This allows for the user to tab through list item elements and then tab to the first element after the list. The <code>Arrow</code>, <code>Home</code>, and <code>End</code> keys should be used for navigating internal list elements. If <code>singleSelection=true</code>, the list will allow the user to use the <code>Space</code> or <code>Enter</code> keys to select or deselect a list item. The MDCList will perform the following actions for each key press. Since list interaction will toggle a radio button or checkbox within the list item, the list will not toggle <code>tabindex</code> for those elements.</p>
+<p>Disabled list item will be included in the keyboard navigation. Please see <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#kbd_disabled_controls">Focusability of disabled controls</a> section in ARIA practices article.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Key</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>ArrowUp</code></td>
+<td>When the list is in a vertical orientation (default), it will cause the previous list item to receive focus.</td>
+</tr>
+<tr class="even">
+<td><code>ArrowDown</code></td>
+<td>When the list is in a vertical orientation (default), it will cause the next list item to receive focus.</td>
+</tr>
+<tr class="odd">
+<td><code>ArrowLeft</code></td>
+<td>When the list is in a horizontal orientation, it will cause the previous list item to receive focus.</td>
+</tr>
+<tr class="even">
+<td><code>ArrowRight</code></td>
+<td>When the list is in a horizontal orientation, it will cause the next list item to receive focus.</td>
+</tr>
+<tr class="odd">
+<td><code>Home</code></td>
+<td>Will cause the first list item in the list to receive focus.</td>
+</tr>
+<tr class="even">
+<td><code>End</code></td>
+<td>Will cause the last list item in the list to receive focus.</td>
+</tr>
+<tr class="odd">
+<td><code>Space</code></td>
+<td>Will cause the currently focused list item to become selected/deselected if <code>singleSelection=true</code>.</td>
+</tr>
+<tr class="even">
+<td><code>Enter</code></td>
+<td>Will cause the currently focused list item to become selected/deselected if <code>singleSelection=true</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="single-line-list">Single-line list</h2>
+<p>Single-line list items contain a maximum of one line of text.</p>
+<h3 id="single-line-list-example">Single-line list example</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">&lt;ul</span><span class="ot"> class=</span><span class="st">&quot;mdc-list&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb5-2" title="2">  <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item&quot;</span><span class="ot"> tabindex=</span><span class="st">&quot;0&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb5-3" title="3">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__ripple&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb5-4" title="4">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__text&quot;</span><span class="kw">&gt;</span>Single-line item<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb5-5" title="5">  <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb5-6" title="6">  <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb5-7" title="7">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__ripple&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb5-8" title="8">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__text&quot;</span><span class="kw">&gt;</span>Single-line item<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb5-9" title="9">  <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb5-10" title="10">  <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb5-11" title="11">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__ripple&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb5-12" title="12">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__text&quot;</span><span class="kw">&gt;</span>Single-line item<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb5-13" title="13">  <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb5-14" title="14"><span class="kw">&lt;/ul&gt;</span></a></code></pre></div>
+<h2 id="two-line-list">Two-line list</h2>
+<p>Two-line list items contain a maximum of two lines of text.</p>
+<h3 id="two-line-list-example">Two-line list example</h3>
+<p>Use the <code>mdc-list--two-line</code> combined with some extra markup around the text to style a two-line list.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">&lt;ul</span><span class="ot"> class=</span><span class="st">&quot;mdc-list mdc-list--two-line&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb6-2" title="2">  <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item&quot;</span><span class="ot"> tabindex=</span><span class="st">&quot;0&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb6-3" title="3">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__ripple&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb6-4" title="4">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__text&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb6-5" title="5">      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__primary-text&quot;</span><span class="kw">&gt;</span>Two-line item<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb6-6" title="6">      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__secondary-text&quot;</span><span class="kw">&gt;</span>Secondary text<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb6-7" title="7">    <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb6-8" title="8">  <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb6-9" title="9">  <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb6-10" title="10">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__ripple&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb6-11" title="11">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__text&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb6-12" title="12">      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__primary-text&quot;</span><span class="kw">&gt;</span>Two-line item<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb6-13" title="13">      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__secondary-text&quot;</span><span class="kw">&gt;</span>Secondary text<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb6-14" title="14">    <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb6-15" title="15">  <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb6-16" title="16">  <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb6-17" title="17">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__ripple&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb6-18" title="18">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__text&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb6-19" title="19">      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__primary-text&quot;</span><span class="kw">&gt;</span>Two-line item<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb6-20" title="20">      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__secondary-text&quot;</span><span class="kw">&gt;</span>Secondary text<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb6-21" title="21">    <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb6-22" title="22">  <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb6-23" title="23"><span class="kw">&lt;/ul&gt;</span></a></code></pre></div>
+<p><strong>Note: Make sure there are no white-space characters before primary and secondary text content.</strong></p>
+<h3 id="three-line-list">Three-line list</h3>
+<p>Three-line list items contains a maximum of three lines of text.</p>
+<p>MDC Web does not currently support three-line lists.</p>
+<h2 id="other-variants">Other Variants</h2>
+<h3 id="list-groups">List Groups</h3>
+<p>Multiple related lists can be grouped together using the <code>mdc-list-group</code> class on a containing element.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-group&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb7-2" title="2">  <span class="kw">&lt;h3</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-group__subheader&quot;</span><span class="kw">&gt;</span>List 1<span class="kw">&lt;/h3&gt;</span></a>
+<a class="sourceLine" id="cb7-3" title="3">  <span class="kw">&lt;ul</span><span class="ot"> class=</span><span class="st">&quot;mdc-list&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb7-4" title="4">    <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item&quot;</span><span class="ot"> tabindex=</span><span class="st">&quot;0&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb7-5" title="5">      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__ripple&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb7-6" title="6">      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__text&quot;</span><span class="kw">&gt;</span>line item<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb7-7" title="7">    <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb7-8" title="8">    <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb7-9" title="9">      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__ripple&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb7-10" title="10">      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__text&quot;</span><span class="kw">&gt;</span>line item<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb7-11" title="11">    <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb7-12" title="12">    <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb7-13" title="13">      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__ripple&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb7-14" title="14">      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__text&quot;</span><span class="kw">&gt;</span>line item<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb7-15" title="15">    <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb7-16" title="16">  <span class="kw">&lt;/ul&gt;</span></a>
+<a class="sourceLine" id="cb7-17" title="17">  <span class="kw">&lt;h3</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-group__subheader&quot;</span><span class="kw">&gt;</span>List 2<span class="kw">&lt;/h3&gt;</span></a>
+<a class="sourceLine" id="cb7-18" title="18">  <span class="kw">&lt;ul</span><span class="ot"> class=</span><span class="st">&quot;mdc-list&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb7-19" title="19">    <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb7-20" title="20">      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__ripple&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb7-21" title="21">      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__text&quot;</span><span class="kw">&gt;</span>line item<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb7-22" title="22">    <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb7-23" title="23">    <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb7-24" title="24">      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__ripple&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb7-25" title="25">      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__text&quot;</span><span class="kw">&gt;</span>line item<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb7-26" title="26">    <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb7-27" title="27">    <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb7-28" title="28">      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__ripple&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb7-29" title="29">      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__text&quot;</span><span class="kw">&gt;</span>line item<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb7-30" title="30">    <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb7-31" title="31">  <span class="kw">&lt;/ul&gt;</span></a>
+<a class="sourceLine" id="cb7-32" title="32"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
+<h3 id="list-dividers">List Dividers</h3>
+<p>MDC List contains an <code>mdc-list-divider</code> class which can be used as full-width or inset subdivisions either within lists themselves, or standalone between related groups of content.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">&lt;ul</span><span class="ot"> class=</span><span class="st">&quot;mdc-list&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb8-2" title="2">  <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item&quot;</span><span class="ot"> tabindex=</span><span class="st">&quot;0&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb8-3" title="3">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__ripple&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb8-4" title="4">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__text&quot;</span><span class="kw">&gt;</span>Item 1 - Division 1<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb8-5" title="5">  <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb8-6" title="6">  <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb8-7" title="7">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__ripple&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb8-8" title="8">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__text&quot;</span><span class="kw">&gt;</span>Item 2 - Division 1<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb8-9" title="9">  <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb8-10" title="10">  <span class="kw">&lt;li</span><span class="ot"> role=</span><span class="st">&quot;separator&quot;</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-divider&quot;</span><span class="kw">&gt;&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb8-11" title="11">  <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb8-12" title="12">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__ripple&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb8-13" title="13">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__text&quot;</span><span class="kw">&gt;</span>Item 1 - Division 2<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb8-14" title="14">  <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb8-15" title="15">  <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb8-16" title="16">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__ripple&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb8-17" title="17">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__text&quot;</span><span class="kw">&gt;</span>Item 2 - Division 2<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb8-18" title="18">  <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb8-19" title="19"><span class="kw">&lt;/ul&gt;</span></a></code></pre></div>
+<p><strong>Note: The role=“separator” attribute on the list divider. It is important to include this so that assistive technology can be made aware that this is a presentational element and is not meant to be included as an item in a list. Note that separator is indeed a valid role for li elements.</strong></p>
+<p>OR</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">&lt;ul</span><span class="ot"> class=</span><span class="st">&quot;mdc-list&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb9-2" title="2">  <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item&quot;</span><span class="ot"> tabindex=</span><span class="st">&quot;0&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb9-3" title="3">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__text&quot;</span><span class="kw">&gt;</span>Item 1 - List 1<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb9-4" title="4">  <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb9-5" title="5">  <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb9-6" title="6">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__text&quot;</span><span class="kw">&gt;</span>Item 2 - List 1<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb9-7" title="7">  <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb9-8" title="8"><span class="kw">&lt;/ul&gt;</span></a>
+<a class="sourceLine" id="cb9-9" title="9"><span class="kw">&lt;hr</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-divider&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb9-10" title="10"><span class="kw">&lt;ul</span><span class="ot"> class=</span><span class="st">&quot;mdc-list&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb9-11" title="11">  <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb9-12" title="12">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__text&quot;</span><span class="kw">&gt;</span>Item 1 - List 2<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb9-13" title="13">  <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb9-14" title="14">  <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb9-15" title="15">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__text&quot;</span><span class="kw">&gt;</span>Item 2 - List 2<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb9-16" title="16">  <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb9-17" title="17"><span class="kw">&lt;/ul&gt;</span></a></code></pre></div>
+<h3 id="single-selection-list">Single Selection List</h3>
+<p>MDC List can handle selecting/deselecting list elements based on click or keyboard actions. When enabled, the <code>space</code> and <code>enter</code> keys (or <code>click</code> event) will trigger a single list item to become selected and any other previously selected element to become deselected.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">&lt;ul</span><span class="ot"> id=</span><span class="st">&quot;my-list&quot;</span><span class="ot"> class=</span><span class="st">&quot;mdc-list&quot;</span><span class="ot"> role=</span><span class="st">&quot;listbox&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb10-2" title="2">  <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item&quot;</span><span class="ot"> role=</span><span class="st">&quot;option&quot;</span><span class="ot"> tabindex=</span><span class="st">&quot;0&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb10-3" title="3">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__ripple&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb10-4" title="4">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__text&quot;</span><span class="kw">&gt;</span>Single-line item<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb10-5" title="5">  <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb10-6" title="6">  <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item&quot;</span><span class="ot"> role=</span><span class="st">&quot;option&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb10-7" title="7">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__ripple&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb10-8" title="8">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__text&quot;</span><span class="kw">&gt;</span>Single-line item<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb10-9" title="9">  <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb10-10" title="10">  <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item&quot;</span><span class="ot"> role=</span><span class="st">&quot;option&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb10-11" title="11">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__ripple&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb10-12" title="12">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__text&quot;</span><span class="kw">&gt;</span>Single-line item<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb10-13" title="13">  <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb10-14" title="14"><span class="kw">&lt;/ul&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">const</span> list <span class="op">=</span> <span class="kw">new</span> <span class="at">MDCList</span>(<span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&#39;my-list&#39;</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb11-2" title="2"><span class="va">list</span>.<span class="at">singleSelection</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></a></code></pre></div>
+<h4 id="pre-selected-list-item">Pre-selected list item</h4>
+<p>When rendering the list with a pre-selected list item, the list item that needs to be selected should contain the <code>mdc-list-item--selected</code> or <code>mdc-list-item--activated</code> class before creating the list. Please see <a href="#Accessibility">Accessibility</a> section for appropriate aria attributes.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb12-1" title="1"><span class="kw">&lt;ul</span><span class="ot"> id=</span><span class="st">&quot;my-list&quot;</span><span class="ot"> class=</span><span class="st">&quot;mdc-list&quot;</span><span class="ot"> role=</span><span class="st">&quot;listbox&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb12-2" title="2">  <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item&quot;</span><span class="ot"> role=</span><span class="st">&quot;option&quot;</span><span class="ot"> aria-selected=</span><span class="st">&quot;false&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb12-3" title="3">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__text&quot;</span><span class="kw">&gt;</span>Single-line item<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb12-4" title="4">  <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb12-5" title="5">  <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item mdc-list-item--selected&quot;</span><span class="ot"> role=</span><span class="st">&quot;option&quot;</span><span class="ot"> aria-selected=</span><span class="st">&quot;true&quot;</span><span class="ot"> tabindex=</span><span class="st">&quot;0&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb12-6" title="6">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__text&quot;</span><span class="kw">&gt;</span>Single-line item<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb12-7" title="7">  <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb12-8" title="8">  <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item&quot;</span><span class="ot"> role=</span><span class="st">&quot;option&quot;</span><span class="ot"> aria-selected=</span><span class="st">&quot;false&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb12-9" title="9">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__text&quot;</span><span class="kw">&gt;</span>Single-line item<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb12-10" title="10">  <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb12-11" title="11"><span class="kw">&lt;/ul&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb13-1" title="1"><span class="kw">const</span> list <span class="op">=</span> <span class="kw">new</span> <span class="at">MDCList</span>(<span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&#39;my-list&#39;</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb13-2" title="2"><span class="va">list</span>.<span class="at">singleSelection</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></a></code></pre></div>
+<h3 id="list-with-radio-group">List with radio group</h3>
+<p>When rendering list radio group with pre-selected radio button the selected list item should contain <code>aria-checked</code> set to <code>true</code> and the native radio input element contains <code>checked</code> attribute, all other list items should have <code>aria-checked</code> set to <code>false</code>. The list root contains <code>role="radiogroup"</code> whereas each list item within radio group contains <code>role="radio"</code>.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">&lt;ul</span><span class="ot"> class=</span><span class="st">&quot;mdc-list&quot;</span><span class="ot"> role=</span><span class="st">&quot;radiogroup&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb14-2" title="2">  <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item&quot;</span><span class="ot"> role=</span><span class="st">&quot;radio&quot;</span><span class="ot"> aria-checked=</span><span class="st">&quot;false&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb14-3" title="3">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__ripple&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb14-4" title="4">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__graphic&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb14-5" title="5">      <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-radio&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb14-6" title="6">        <span class="kw">&lt;input</span><span class="ot"> class=</span><span class="st">&quot;mdc-radio__native-control&quot;</span></a>
+<a class="sourceLine" id="cb14-7" title="7"><span class="ot">              type=</span><span class="st">&quot;radio&quot;</span></a>
+<a class="sourceLine" id="cb14-8" title="8"><span class="ot">              id=</span><span class="st">&quot;demo-list-radio-item-1&quot;</span></a>
+<a class="sourceLine" id="cb14-9" title="9"><span class="ot">              name=</span><span class="st">&quot;demo-list-radio-item-group&quot;</span></a>
+<a class="sourceLine" id="cb14-10" title="10"><span class="ot">              value=</span><span class="st">&quot;1&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb14-11" title="11">        <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-radio__background&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb14-12" title="12">          <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-radio__outer-circle&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb14-13" title="13">          <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-radio__inner-circle&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb14-14" title="14">        <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb14-15" title="15">      <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb14-16" title="16">    <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb14-17" title="17">    <span class="kw">&lt;label</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__text&quot;</span><span class="ot"> for=</span><span class="st">&quot;demo-list-radio-item-1&quot;</span><span class="kw">&gt;</span>Option 1<span class="kw">&lt;/label&gt;</span></a>
+<a class="sourceLine" id="cb14-18" title="18">  <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb14-19" title="19">  <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item&quot;</span><span class="ot"> role=</span><span class="st">&quot;radio&quot;</span><span class="ot"> aria-checked=</span><span class="st">&quot;true&quot;</span><span class="ot"> tabindex=</span><span class="st">&quot;0&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb14-20" title="20">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__ripple&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb14-21" title="21">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__graphic&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb14-22" title="22">      <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-radio&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb14-23" title="23">        <span class="kw">&lt;input</span><span class="ot"> class=</span><span class="st">&quot;mdc-radio__native-control&quot;</span></a>
+<a class="sourceLine" id="cb14-24" title="24"><span class="ot">              type=</span><span class="st">&quot;radio&quot;</span></a>
+<a class="sourceLine" id="cb14-25" title="25"><span class="ot">              id=</span><span class="st">&quot;demo-list-radio-item-2&quot;</span></a>
+<a class="sourceLine" id="cb14-26" title="26"><span class="ot">              name=</span><span class="st">&quot;demo-list-radio-item-group&quot;</span></a>
+<a class="sourceLine" id="cb14-27" title="27"><span class="ot">              value=</span><span class="st">&quot;2&quot;</span></a>
+<a class="sourceLine" id="cb14-28" title="28"><span class="ot">              checked</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb14-29" title="29">        <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-radio__background&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb14-30" title="30">          <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-radio__outer-circle&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb14-31" title="31">          <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-radio__inner-circle&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb14-32" title="32">        <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb14-33" title="33">      <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb14-34" title="34">    <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb14-35" title="35">    <span class="kw">&lt;label</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__text&quot;</span><span class="ot"> for=</span><span class="st">&quot;demo-list-radio-item-2&quot;</span><span class="kw">&gt;</span>Option 2<span class="kw">&lt;/label&gt;</span></a>
+<a class="sourceLine" id="cb14-36" title="36">  <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb14-37" title="37">  <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item&quot;</span><span class="ot"> role=</span><span class="st">&quot;radio&quot;</span><span class="ot"> aria-checked=</span><span class="st">&quot;false&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb14-38" title="38">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__ripple&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb14-39" title="39">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__graphic&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb14-40" title="40">      <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-radio&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb14-41" title="41">        <span class="kw">&lt;input</span><span class="ot"> class=</span><span class="st">&quot;mdc-radio__native-control&quot;</span></a>
+<a class="sourceLine" id="cb14-42" title="42"><span class="ot">              type=</span><span class="st">&quot;radio&quot;</span></a>
+<a class="sourceLine" id="cb14-43" title="43"><span class="ot">              id=</span><span class="st">&quot;demo-list-radio-item-3&quot;</span></a>
+<a class="sourceLine" id="cb14-44" title="44"><span class="ot">              name=</span><span class="st">&quot;demo-list-radio-item-group&quot;</span></a>
+<a class="sourceLine" id="cb14-45" title="45"><span class="ot">              value=</span><span class="st">&quot;3&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb14-46" title="46">        <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-radio__background&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb14-47" title="47">          <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-radio__outer-circle&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb14-48" title="48">          <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-radio__inner-circle&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb14-49" title="49">        <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb14-50" title="50">      <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb14-51" title="51">    <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb14-52" title="52">    <span class="kw">&lt;label</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__text&quot;</span><span class="ot"> for=</span><span class="st">&quot;demo-list-radio-item-3&quot;</span><span class="kw">&gt;</span>Option 3<span class="kw">&lt;/label&gt;</span></a>
+<a class="sourceLine" id="cb14-53" title="53">  <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb14-54" title="54"><span class="kw">&lt;/ul&gt;</span></a></code></pre></div>
+<h3 id="list-with-checkbox-items">List with checkbox items</h3>
+<p>When rendering list with checkbox items all pre-selected list items should contain <code>aria-checked</code> set to <code>true</code> and the native checkbox input element should contain <code>checked</code> attribute, all other list items should have <code>aria-checked</code> set to <code>false</code>. Each list item in checkbox list contains <code>role="checkbox"</code> attribute and the list root should contain <code>role="group"</code> and <code>aria-label</code> attributes.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">&lt;ul</span><span class="ot"> class=</span><span class="st">&quot;mdc-list&quot;</span><span class="ot"> role=</span><span class="st">&quot;group&quot;</span><span class="ot"> aria-label=</span><span class="st">&quot;List with checkbox items&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb15-2" title="2">  <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item&quot;</span><span class="ot"> role=</span><span class="st">&quot;checkbox&quot;</span><span class="ot"> aria-checked=</span><span class="st">&quot;false&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb15-3" title="3">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__ripple&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb15-4" title="4">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__graphic&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb15-5" title="5">      <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb15-6" title="6">        <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;checkbox&quot;</span></a>
+<a class="sourceLine" id="cb15-7" title="7"><span class="ot">                class=</span><span class="st">&quot;mdc-checkbox__native-control&quot;</span></a>
+<a class="sourceLine" id="cb15-8" title="8"><span class="ot">                id=</span><span class="st">&quot;demo-list-checkbox-item-1&quot;</span>  <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb15-9" title="9">        <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox__background&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb15-10" title="10">          <span class="kw">&lt;svg</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox__checkmark&quot;</span></a>
+<a class="sourceLine" id="cb15-11" title="11"><span class="ot">                viewBox=</span><span class="st">&quot;0 0 24 24&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb15-12" title="12">            <span class="kw">&lt;path</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox__checkmark-path&quot;</span></a>
+<a class="sourceLine" id="cb15-13" title="13"><span class="ot">                  fill=</span><span class="st">&quot;none&quot;</span></a>
+<a class="sourceLine" id="cb15-14" title="14"><span class="ot">                  d=</span><span class="st">&quot;M1.73,12.91 8.1,19.28 22.79,4.59&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb15-15" title="15">          <span class="kw">&lt;/svg&gt;</span></a>
+<a class="sourceLine" id="cb15-16" title="16">          <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox__mixedmark&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb15-17" title="17">        <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb15-18" title="18">      <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb15-19" title="19">    <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb15-20" title="20">    <span class="kw">&lt;label</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__text&quot;</span><span class="ot"> for=</span><span class="st">&quot;demo-list-checkbox-item-1&quot;</span><span class="kw">&gt;</span>Option 1<span class="kw">&lt;/label&gt;</span></a>
+<a class="sourceLine" id="cb15-21" title="21">  <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb15-22" title="22">  <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item&quot;</span><span class="ot"> role=</span><span class="st">&quot;checkbox&quot;</span><span class="ot"> aria-checked=</span><span class="st">&quot;true&quot;</span><span class="ot"> tabindex=</span><span class="st">&quot;0&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb15-23" title="23">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__ripple&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb15-24" title="24">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__graphic&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb15-25" title="25">        <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb15-26" title="26">            <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;checkbox&quot;</span></a>
+<a class="sourceLine" id="cb15-27" title="27"><span class="ot">                    class=</span><span class="st">&quot;mdc-checkbox__native-control&quot;</span></a>
+<a class="sourceLine" id="cb15-28" title="28"><span class="ot">                    id=</span><span class="st">&quot;demo-list-checkbox-item-2&quot;</span></a>
+<a class="sourceLine" id="cb15-29" title="29"><span class="ot">                    checked</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb15-30" title="30">            <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox__background&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb15-31" title="31">              <span class="kw">&lt;svg</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox__checkmark&quot;</span></a>
+<a class="sourceLine" id="cb15-32" title="32"><span class="ot">                    viewBox=</span><span class="st">&quot;0 0 24 24&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb15-33" title="33">                <span class="kw">&lt;path</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox__checkmark-path&quot;</span></a>
+<a class="sourceLine" id="cb15-34" title="34"><span class="ot">                      fill=</span><span class="st">&quot;none&quot;</span></a>
+<a class="sourceLine" id="cb15-35" title="35"><span class="ot">                      d=</span><span class="st">&quot;M1.73,12.91 8.1,19.28 22.79,4.59&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb15-36" title="36">              <span class="kw">&lt;/svg&gt;</span></a>
+<a class="sourceLine" id="cb15-37" title="37">              <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox__mixedmark&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb15-38" title="38">            <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb15-39" title="39">          <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb15-40" title="40">    <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb15-41" title="41">    <span class="kw">&lt;label</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__text&quot;</span><span class="ot"> for=</span><span class="st">&quot;demo-list-checkbox-item-2&quot;</span><span class="kw">&gt;</span>Option 2<span class="kw">&lt;/label&gt;</span></a>
+<a class="sourceLine" id="cb15-42" title="42">  <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb15-43" title="43">  <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item&quot;</span><span class="ot"> role=</span><span class="st">&quot;checkbox&quot;</span><span class="ot"> aria-checked=</span><span class="st">&quot;false&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb15-44" title="44">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__ripple&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb15-45" title="45">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__graphic&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb15-46" title="46">        <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb15-47" title="47">            <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;checkbox&quot;</span></a>
+<a class="sourceLine" id="cb15-48" title="48"><span class="ot">                    class=</span><span class="st">&quot;mdc-checkbox__native-control&quot;</span></a>
+<a class="sourceLine" id="cb15-49" title="49"><span class="ot">                    id=</span><span class="st">&quot;demo-list-checkbox-item-3&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb15-50" title="50">            <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox__background&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb15-51" title="51">              <span class="kw">&lt;svg</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox__checkmark&quot;</span></a>
+<a class="sourceLine" id="cb15-52" title="52"><span class="ot">                    viewBox=</span><span class="st">&quot;0 0 24 24&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb15-53" title="53">                <span class="kw">&lt;path</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox__checkmark-path&quot;</span></a>
+<a class="sourceLine" id="cb15-54" title="54"><span class="ot">                      fill=</span><span class="st">&quot;none&quot;</span></a>
+<a class="sourceLine" id="cb15-55" title="55"><span class="ot">                      d=</span><span class="st">&quot;M1.73,12.91 8.1,19.28 22.79,4.59&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb15-56" title="56">              <span class="kw">&lt;/svg&gt;</span></a>
+<a class="sourceLine" id="cb15-57" title="57">              <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox__mixedmark&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb15-58" title="58">            <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb15-59" title="59">          <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb15-60" title="60">    <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb15-61" title="61">    <span class="kw">&lt;label</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__text&quot;</span><span class="ot"> for=</span><span class="st">&quot;demo-list-checkbox-item-3&quot;</span><span class="kw">&gt;</span>Option 3<span class="kw">&lt;/label&gt;</span></a>
+<a class="sourceLine" id="cb15-62" title="62">  <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb15-63" title="63"><span class="kw">&lt;/ul&gt;</span></a></code></pre></div>
+<p>The <code>selectedIndex</code> (that proxies foundation’s <code>setSelectedState()</code>) accepts list of indexes in array format for list with checkbox items to set the selection state. It overwrites the current state with new selected state.</p>
+<h2 id="style-customization">Style Customization</h2>
+<h3 id="css-classes">CSS Classes</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>CSS Class</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>mdc-list</code></td>
+<td>Mandatory, for the list element.</td>
+</tr>
+<tr class="even">
+<td><code>mdc-list--dense</code></td>
+<td>Optional, styles the density of the list, making it appear more compact.</td>
+</tr>
+<tr class="odd">
+<td><code>mdc-list--textual-list</code></td>
+<td>Optional, configures lists that start with text</td>
+</tr>
+</tbody>
+</table>
+<p>(e.g., do not have a leading tile). <code>mdc-list--avatar-list</code> | Optional, configures the leading tile of each row to display avatars. <code>mdc-list--icon-list</code> | Optional, configures the leading tile of each row to display icons. <code>mdc-list--image-list</code> | Optional, configures the leading tile of each row to display images. <code>mdc-list--thumbnail-list</code> | Optional, configures the leading tile of each row to display smaller images (this is analogous to an avatar list but the image will not be rounded). <code>mdc-list--video-list</code> | Optional, configures the leading tile of each row to display videos. <code>mdc-list--two-line</code> | Optional, modifier to style list with two lines (primary and secondary lines). <code>mdc-list-item</code> | Mandatory, for the list item element. <code>mdc-list-item__text</code> | Mandatory. Wrapper for list item text content (displayed as middle column of the list item). <code>mdc-list-item__primary-text</code> | Optional, primary text for the list item. Should be the child of <code>mdc-list-item__text</code>. <code>mdc-list-item__secondary-text</code> | Optional, secondary text for the list item. Displayed below the primary text. Should be the child of <code>mdc-list-item__text</code>. <code>mdc-list-item--disabled</code> | Optional, styles the row in the disabled state. <code>mdc-list-item--selected</code> | Optional, styles the row in the selected* state. <code>mdc-list-item--activated</code> | Optional, styles the row in the activated* state. <code>mdc-list-item__graphic</code> | Optional, the first tile in the row (in LTR languages, the first column of the list item). Defaults to an icon, but renders as an avatar in an avatar list, or an image or video in the corresponding list. <code>mdc-list-item__meta</code> | Optional, the last tile in the row (in LTR languages, the last column of the list item). Typically small text, icon, or image. <code>mdc-list-group</code> | Optional, wrapper around two or more mdc-list elements to be grouped together. <code>mdc-list-group__subheader</code> | Optional, heading text displayed above each list in a group. <code>mdc-list-divider</code> | Optional, for list divider element. <code>mdc-list-divider--padded</code> | Optional, leaves gaps on each side of divider to match padding of <code>list-item__meta</code>. Deprecated: use the more flexible “inset-” classes, instead. <code>mdc-list-divider--inset</code> | Optional, increases the leading and trailing margins of the divider so that it doesn’t intersect with an avatar. Deprecated: use the more flexible “inset-” classes instead. <code>mdc-list-divider--inset-leading</code> | Optional, increases the leading margin of the divider so that it does not intersect the graphics column. <code>mdc-list-divider--inset-trailing</code> | Optional, increases the trailing margin of the divider so that it coincides with the item’s padding. <code>mdc-list-divider--inset-padding</code> | Optional, alters the inset to correspond to the item’s padding rather than the leading graphics column.</p>
+<p><strong>Note: The <code>mdc-list-divider</code> class can be used between list items <em>OR</em> between two lists (see respective examples under <a href="#list-dividers">List Dividers</a>).</strong></p>
+<p><strong>Note: In Material Design, the selected and activated states apply in different, mutually-exclusive situations:</strong> * <em>Selected</em> state should be applied on the <code>.mdc-list-item</code> when it is likely to frequently change due to user choice. E.g., selecting one or more photos to share in Google Photos. * <em>Activated</em> state is more permanent than selected state, and will <strong>NOT</strong> change soon relative to the lifetime of the page. Common examples are navigation components such as the list within a navigation drawer.</p>
+<h3 id="sass-mixins">Sass Mixins</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mixin</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>item-primary-text-ink-color($color)</code></td>
+<td>Sets the ink color of the primary text of the list item.</td>
+</tr>
+<tr class="even">
+<td><code>item-secondary-text-ink-color($color)</code></td>
+<td>Sets the ink color of the secondary text of the list item.</td>
+</tr>
+<tr class="odd">
+<td><code>item-graphic-fill-color($color)</code></td>
+<td>Sets background ink color of the graphic element within list item.</td>
+</tr>
+<tr class="even">
+<td><code>item-graphic-ink-color($color)</code></td>
+<td>Sets ink color of the graphic element within list item.</td>
+</tr>
+<tr class="odd">
+<td><code>item-meta-ink-color($color)</code></td>
+<td>Sets ink color of the meta element within list item.</td>
+</tr>
+<tr class="even">
+<td><code>single-line-shape-radius($radius, $rtl-reflexive, $density-scale)</code></td>
+<td>Sets the rounded shape to list item with given radius size. Set <code>$rtl-reflexive</code> to true to flip radius values in RTL context, defaults to false. Set <code>$density-scale</code> only when custom density is applied, defaults to <code>$mdc-list-single-line-density-scale</code>.</td>
+</tr>
+<tr class="odd">
+<td><code>divider-color($color)</code></td>
+<td>Sets divider ink color.</td>
+</tr>
+<tr class="even">
+<td><code>group-subheader-ink-color($color)</code></td>
+<td>Sets ink color of subheader text within list group.</td>
+</tr>
+<tr class="odd">
+<td><code>item-selected-text-color($color)</code></td>
+<td>Sets the color of the text when the list item is selected/activated.</td>
+</tr>
+<tr class="even">
+<td><code>item-disabled-text-color($color)</code></td>
+<td>Sets the color of the text when the list item is disabled.</td>
+</tr>
+<tr class="odd">
+<td><code>item-disabled-text-opacity($opacity)</code></td>
+<td>Sets the opacity of the text when the list item is disabled.</td>
+</tr>
+<tr class="even">
+<td><code>single-line-density($density-scale)</code></td>
+<td>Sets density scale to single line list variant. Supported density scales are <code>-4</code>, <code>-3</code>, <code>-2</code>, <code>-1</code> and <code>0</code>.</td>
+</tr>
+<tr class="odd">
+<td><code>single-line-height($height)</code></td>
+<td>Sets height to single line list variant.</td>
+</tr>
+<tr class="even">
+<td><code>list-item-padding($leading-padding)</code></td>
+<td>Sets the padding used by each list item.</td>
+</tr>
+<tr class="odd">
+<td><code>list-item-height($height)</code></td>
+<td>Sets the height used by each list item.</td>
+</tr>
+<tr class="even">
+<td><code>icon-margin($margin)</code></td>
+<td>Sets the trailing margin used by icons.</td>
+</tr>
+<tr class="odd">
+<td><code>divider-insets($leading-padding, $text-offset)</code></td>
+<td>Creates the full set of</td>
+</tr>
+</tbody>
+</table>
+<p>divider inset styles using the provided padding and text offset. <code>divider-insets($leading-padding, $text-offset)</code> | Sets a single divider’s inset using the provided padding, text offset, and configuration. <code>graphic-size($leading-padding, $text-offset, $width, $height)</code> | Sets the size and trailing margin of a leading graphic.</p>
+<h2 id="mdclist-properties-and-methods"><code>MDCList</code> Properties and Methods</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Property</th>
+<th>Value Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>vertical</code></td>
+<td><code>boolean</code> (write-only)</td>
+<td>Proxies to the foundation’s <code>setVerticalOrientation()</code> method.</td>
+</tr>
+<tr class="even">
+<td><code>listElements</code></td>
+<td><code>Array&lt;Element&gt;</code> (read-only)</td>
+<td>Returns all list item elements including disabled list items.</td>
+</tr>
+<tr class="odd">
+<td><code>wrapFocus</code></td>
+<td><code>boolean</code> (write-only)</td>
+<td>Proxies to the foundation’s <code>setWrapFocus()</code> method.</td>
+</tr>
+<tr class="even">
+<td><code>typeaheadInProgress</code></td>
+<td><code>boolean</code> (read-only)</td>
+<td>Proxies to foundation’s <code>isTypeaheadInProgress</code> method.</td>
+</tr>
+<tr class="odd">
+<td><code>hasTypeahead</code></td>
+<td><code>boolean</code> (write-only)</td>
+<td>Proxies to the foundation’s <code>setHasTypeahead()</code> method.</td>
+</tr>
+<tr class="even">
+<td><code>singleSelection</code></td>
+<td><code>boolean</code> (write-only)</td>
+<td>Proxies to the foundation’s <code>setSingleSelection()</code> method.</td>
+</tr>
+<tr class="odd">
+<td><code>selectedIndex</code></td>
+<td><code>MDCListIndex</code></td>
+<td>Proxies to the foundation’s <code>getSelectedIndex()</code> and <code>setSelectedIndex()</code> methods.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method Signature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>layout() =&gt; void</code></td>
+<td>Recalculates layout and orientation.</td>
+</tr>
+<tr class="even">
+<td><code>getPrimaryText(item: Element) =&gt; string</code></td>
+<td>Fetches the primary text in the given element.</td>
+</tr>
+<tr class="odd">
+<td><code>initializeListType() =&gt; void</code></td>
+<td>Initialize <code>selectedIndex</code> value based on pre-selected checkbox list items, single selection or radio.</td>
+</tr>
+<tr class="even">
+<td><code>setEnabled(itemIndex: number, isEnabled: boolean) =&gt; void</code></td>
+<td>Updates the list item at <code>itemIndex</code> to the desired <code>isEnabled</code> state.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="events">Events</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Event Name</th>
+<th><code>event.detail</code></th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>MDCList:action</code></td>
+<td><code>{index: number}</code></td>
+<td>Indicates that a list item with the specified index has been activated.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="usage-within-web-frameworks">Usage within Web Frameworks</h2>
+<p>If you are using a JavaScript framework, such as React or Angular, you can create a List for your framework. Depending on your needs, you can use the <em>Simple Approach: Wrapping MDC Web Vanilla Components</em>, or the <em>Advanced Approach: Using Foundations and Adapters</em>. Please follow the instructions <a href="../../docs/integrating-into-frameworks.md">here</a>.</p>
+<h3 id="considerations-for-advanced-approach">Considerations for Advanced Approach</h3>
+<p>The <code>MDCListFoundation</code> expects the HTML to be setup a certain way before being used. This setup is a part of the <code>layout()</code> and <code>singleSelection()</code> functions within the <code>index.js</code>.</p>
+<h4 id="setup-in-layout">Setup in <code>layout()</code></h4>
+<p>The default component requires that every list item receives a <code>tabindex</code> value so that it can receive focus (<code>li</code> elements cannot receive focus at all without a <code>tabindex</code> value). Any element not already containing a <code>tabindex</code> attribute will receive <code>tabindex=-1</code>. The first list item should have <code>tabindex="0"</code> so that the user can find the first element using the <code>tab</code> key, but subsequent <code>tab</code> keys strokes will cause focus to skip over the entire list. If the list items contain sub-elements that are focusable (<code>button</code> and <code>a</code> elements), these should also receive <code>tabIndex="-1"</code>.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb16-1" title="1"><span class="kw">&lt;ul</span><span class="ot"> id=</span><span class="st">&quot;my-list&quot;</span><span class="ot"> class=</span><span class="st">&quot;mdc-list&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb16-2" title="2">  <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item&quot;</span><span class="ot"> tabindex=</span><span class="st">&quot;0&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb16-3" title="3">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__ripple&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb16-4" title="4">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__text&quot;</span><span class="kw">&gt;</span>Single-line item<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb16-5" title="5">    <span class="kw">&lt;button</span><span class="ot"> tabindex=</span><span class="st">&quot;-1&quot;</span><span class="kw">&gt;&lt;/button&gt;</span></a>
+<a class="sourceLine" id="cb16-6" title="6">  <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb16-7" title="7">  <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item&quot;</span><span class="ot"> tabindex=</span><span class="st">&quot;-1&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb16-8" title="8">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__ripple&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb16-9" title="9">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__text&quot;</span><span class="kw">&gt;</span>Single-line item<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb16-10" title="10">  <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb16-11" title="11">  <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item&quot;</span><span class="ot"> tabindex=</span><span class="st">&quot;-1&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb16-12" title="12">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__ripple&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb16-13" title="13">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__text&quot;</span><span class="kw">&gt;</span>Single-line item<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb16-14" title="14">  <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb16-15" title="15"><span class="kw">&lt;/ul&gt;</span></a></code></pre></div>
+<h4 id="setup-in-singleselection">Setup in <code>singleSelection()</code></h4>
+<p>When implementing a component that will use the single selection variant, the HTML should be modified to include the <code>mdc-list-item--selected</code> or <code>mdc-list-item--activated</code> class name, and the <code>tabindex</code> of the selected element should be <code>0</code>. The first list item should have the <code>tabindex</code> updated to <code>-1</code>. The foundation method <code>setSelectedIndex()</code> should be called with the initially selected element immediately after the foundation is instantiated. Please see <a href="#Accessibility">Accessibility</a> section for appropriate aria attributes.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb17-1" title="1"><span class="kw">&lt;ul</span><span class="ot"> id=</span><span class="st">&quot;my-list&quot;</span><span class="ot"> class=</span><span class="st">&quot;mdc-list&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb17-2" title="2">  <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item&quot;</span><span class="ot"> tabindex=</span><span class="st">&quot;-1&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb17-3" title="3">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__ripple&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb17-4" title="4">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__text&quot;</span><span class="kw">&gt;</span>Single-line item<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb17-5" title="5">    <span class="kw">&lt;button</span><span class="ot"> tabindex=</span><span class="st">&quot;-1&quot;</span><span class="kw">&gt;&lt;/button&gt;</span></a>
+<a class="sourceLine" id="cb17-6" title="6">    <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb17-7" title="7">  <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item mdc-list-item--selected&quot;</span><span class="ot"> aria-selected=</span><span class="st">&quot;true&quot;</span><span class="ot"> tabindex=</span><span class="st">&quot;0&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb17-8" title="8">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__ripple&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb17-9" title="9">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__text&quot;</span><span class="kw">&gt;</span>Single-line item<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb17-10" title="10">  <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb17-11" title="11">  <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item&quot;</span><span class="ot"> tabindex=</span><span class="st">&quot;-1&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb17-12" title="12">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__ripple&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb17-13" title="13">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item__text&quot;</span><span class="kw">&gt;</span>Single-line item<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb17-14" title="14">  <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb17-15" title="15"><span class="kw">&lt;/ul&gt;</span></a></code></pre></div>
+<h3 id="mdclistadapter"><code>MDCListAdapter</code></h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method Signature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>getListItemCount() =&gt; Number</code></td>
+<td>Returns the total number of list items (elements with <code>mdc-list-item</code> class) that are direct children of the <code>root_</code> element.</td>
+</tr>
+<tr class="even">
+<td><code>getFocusedElementIndex() =&gt; Number</code></td>
+<td>Returns the <code>index</code> value of the currently focused element.</td>
+</tr>
+<tr class="odd">
+<td><code>getAttributeForElementIndex(index: number, attribute: string) =&gt; string | null</code></td>
+<td>Returns the attribute value of list item at given <code>index</code>.</td>
+</tr>
+<tr class="even">
+<td><code>setAttributeForElementIndex(index: Number, attr: String, value: String) =&gt; void</code></td>
+<td>Sets the <code>attr</code> attribute to <code>value</code> for the list item at <code>index</code>.</td>
+</tr>
+<tr class="odd">
+<td><code>addClassForElementIndex(index: Number, className: String) =&gt; void</code></td>
+<td>Adds the <code>className</code> class to the list item at <code>index</code>.</td>
+</tr>
+<tr class="even">
+<td><code>removeClassForElementIndex(index: Number, className: String) =&gt; void</code></td>
+<td>Removes the <code>className</code> class to the list item at <code>index</code>.</td>
+</tr>
+<tr class="odd">
+<td><code>focusItemAtIndex(index: Number) =&gt; void</code></td>
+<td>Focuses the list item at the <code>index</code> value specified.</td>
+</tr>
+<tr class="even">
+<td><code>setTabIndexForListItemChildren(index: Number, value: Number) =&gt; void</code></td>
+<td>Sets the <code>tabindex</code> attribute to <code>value</code> for each child button or anchor element in the list item at the <code>index</code> specified.</td>
+</tr>
+<tr class="odd">
+<td><code>hasRadioAtIndex(index: number) =&gt; boolean</code></td>
+<td>Returns true if radio button is present at given list item index.</td>
+</tr>
+<tr class="even">
+<td><code>hasCheckboxAtIndex(index: number) =&gt; boolean</code></td>
+<td>Returns true if checkbox is present at given list item index.</td>
+</tr>
+<tr class="odd">
+<td><code>isCheckboxCheckedAtIndex(index: number) =&gt; boolean</code></td>
+<td>Returns true if checkbox inside a list item is checked.</td>
+</tr>
+<tr class="even">
+<td><code>setCheckedCheckboxOrRadioAtIndex(index: number, isChecked: boolean) =&gt; void</code></td>
+<td>Sets the checked status of checkbox or radio at given list item index.</td>
+</tr>
+<tr class="odd">
+<td><code>notifyAction(index: number) =&gt; void</code></td>
+<td>Notifies user action on list item including keyboard and mouse actions.</td>
+</tr>
+<tr class="even">
+<td><code>isFocusInsideList() =&gt; boolean</code></td>
+<td>Returns true if the current focused element is inside list root.</td>
+</tr>
+<tr class="odd">
+<td><code>isRootFocused() =&gt; boolean</code></td>
+<td>Returns true if root element is focused.</td>
+</tr>
+<tr class="even">
+<td><code>listItemAtIndexHasClass(index: number, className: string) =&gt; boolean</code></td>
+<td>Returns true if list item at <code>index</code> has class <code>className</code>.</td>
+</tr>
+<tr class="odd">
+<td><code>getPrimaryTextAtIndex(index: number)</code></td>
+<td>Returns the primary text content of the list item at index.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mdclistfoundation"><code>MDCListFoundation</code></h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method Signature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>setWrapFocus(value: Boolean) =&gt; void</code></td>
+<td>Sets the list to allow the up arrow on the first element to focus the last element of the list and vice versa.</td>
+</tr>
+<tr class="even">
+<td><code>setVerticalOrientation(value: Boolean) =&gt; void</code></td>
+<td>Sets the list to an orientation causing the keys used for navigation to change. <code>true</code> results in the Up/Down arrow keys being used. <code>false</code> results in the Left/Right arrow keys being used.</td>
+</tr>
+<tr class="odd">
+<td><code>setSingleSelection(value: Boolean) =&gt; void</code></td>
+<td>Sets the list to be a selection list. Enables the <code>enter</code> and <code>space</code> keys for selecting/deselecting a list item.</td>
+</tr>
+<tr class="even">
+<td><code>getSelectedIndex() =&gt; MDCListIndex</code></td>
+<td>Gets the current selection state by returning selected index or list of indexes for checkbox based list. See <a href="./types.ts">types.ts</a> for <code>MDCListIndex</code> type definition.</td>
+</tr>
+<tr class="odd">
+<td><code>setSelectedIndex(index: MDCListIndex) =&gt; void</code></td>
+<td>Sets the selection state to given index or list of indexes if it is checkbox based list. See <a href="./types.ts">types.ts</a> for <code>MDCListIndex</code> type definition.</td>
+</tr>
+<tr class="even">
+<td><code>setUseActivatedClass(useActivated: boolean) =&gt; void</code></td>
+<td>Sets the selection logic to apply/remove the <code>mdc-list-item--activated</code> class.</td>
+</tr>
+<tr class="odd">
+<td><code>handleFocusIn(evt: Event) =&gt; void</code></td>
+<td>Handles the changing of <code>tabindex</code> to <code>0</code> for all button and anchor elements when a list item receives focus.</td>
+</tr>
+<tr class="even">
+<td><code>handleFocusOut(evt: Event) =&gt; void</code></td>
+<td>Handles the changing of <code>tabindex</code> to <code>-1</code> for all button and anchor elements when a list item loses focus.</td>
+</tr>
+<tr class="odd">
+<td><code>handleKeydown(evt: Event) =&gt; void</code></td>
+<td>Handles determining if a focus action should occur when a key event is triggered.</td>
+</tr>
+<tr class="even">
+<td><code>handleClick(evt: Event) =&gt; void</code></td>
+<td>Handles toggling the selected/deselected state for a list item when clicked. This method is only used by the single selection list.</td>
+</tr>
+<tr class="odd">
+<td><code>focusNextElement(index: number) =&gt; number</code></td>
+<td>Handles focusing the next element using the current <code>index</code>. Returns focused element index.</td>
+</tr>
+<tr class="even">
+<td><code>focusPrevElement(index: number) =&gt; number</code></td>
+<td>Handles focusing the previous element using the current <code>index</code>. Returns focused element index.</td>
+</tr>
+<tr class="odd">
+<td><code>focusFirstElement() =&gt; number</code></td>
+<td>Handles focusing the first element in a list. Returns focused element index.</td>
+</tr>
+<tr class="even">
+<td><code>focusLastElement() =&gt; number</code></td>
+<td>Handles focusing the last element in a list. Returns focused element index.</td>
+</tr>
+<tr class="odd">
+<td><code>setEnabled(itemIndex: number, isEnabled: Boolean) =&gt; void</code></td>
+<td>Updates the list item’s disabled state.</td>
+</tr>
+<tr class="even">
+<td><code>setHasTypeahead(hasTypeahead: Boolean) =&gt; void</code></td>
+<td>Sets whether typeahead is enabled on the list.</td>
+</tr>
+<tr class="odd">
+<td><code>isTypeaheadInProgress() =&gt; Boolean</code></td>
+<td>Returns whether typeahead is currently matching a user-specified prefix.</td>
+</tr>
+<tr class="even">
+<td><code>typeaheadMatchItem(nextChar: string) =&gt; number</code></td>
+<td>Adds a character to the typeahead buffer and returns index of the next item in the list matching the buffer.</td>
+</tr>
+<tr class="odd">
+<td><code>clearTypeaheadBuffer() =&gt; void</code></td>
+<td>Clears the typeahead buffer.</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

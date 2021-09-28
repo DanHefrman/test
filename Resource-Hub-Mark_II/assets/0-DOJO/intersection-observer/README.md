@@ -1,10 +1,8 @@
-Infinite Scrolling Demo
-=======================
+# Infinite Scrolling Demo
 
 A demo implementation of an infinite scrolling list, using the `Intersection` meta.
 
-Usage
------
+## Usage
 
 To use `intersection-observer`, clone the `examples` repository and install the npm dependencies:
 
@@ -20,13 +18,11 @@ To watch and serve the application source, then run the build with the `-w` comm
 
     dojo build -w -s
 
-What’s Going On?
-----------------
+## What’s Going On?
 
 The `InfiniteList` widget uses the [Intersection meta](https://github.com/dojo/widget-core#intersection) to determine when its bottom element is in the viewport. If it is, then the bottom of the list is visible and more content needs to be loaded.
 
-How do I contribute?
---------------------
+## How do I contribute?
 
 We appreciate your interest! Please see the [Dojo Meta Repository](https://github.com/dojo/meta#readme) for the Contributing Guidelines and Style Guide.
 
@@ -36,7 +32,6 @@ To start working with this package, clone the repository and run `npm install`.
 
 In order to build the project run `npm run build`.
 
-Licensing Information
----------------------
+## Licensing Information
 
 © 2018 [JS Foundation](https://js.foundation/). [New BSD](http://opensource.org/licenses/BSD-3-Clause) license.

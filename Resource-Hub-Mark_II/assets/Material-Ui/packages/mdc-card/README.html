@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>README</title>
+    <style type="text/css">
+      code {
+        white-space: pre-wrap;
+      }
+      span.smallcaps {
+        font-variant: small-caps;
+      }
+      span.underline {
+        text-decoration: underline;
+      }
+      div.column {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+      }
+    </style>
+    <style type="text/css">
+      a.sourceLine {
+        display: inline-block;
+        line-height: 1.25;
+      }
+      a.sourceLine {
+        pointer-events: none;
+        color: inherit;
+        text-decoration: inherit;
+      }
+      a.sourceLine:empty {
+        height: 1.2em;
+      }
+      .sourceCode {
+        overflow: visible;
+      }
+      code.sourceCode {
+        white-space: pre;
+        position: relative;
+      }
+      div.sourceCode {
+        margin: 1em 0;
+      }
+      pre.sourceCode {
+        margin: 0;
+      }
+      @media screen {
+        div.sourceCode {
+          overflow: auto;
+        }
+      }
+      @media print {
+        code.sourceCode {
+          white-space: pre-wrap;
+        }
+        a.sourceLine {
+          text-indent: -1em;
+          padding-left: 1em;
+        }
+      }
+      pre.numberSource a.sourceLine {
+        position: relative;
+        left: -4em;
+      }
+      pre.numberSource a.sourceLine::before {
+        content: attr(title);
+        position: relative;
+        left: -1em;
+        text-align: right;
+        vertical-align: baseline;
+        border: none;
+        pointer-events: all;
+        display: inline-block;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        padding: 0 4px;
+        width: 4em;
+        color: #aaaaaa;
+      }
+      pre.numberSource {
+        margin-left: 3em;
+        border-left: 1px solid #aaaaaa;
+        padding-left: 4px;
+      }
+      div.sourceCode {
+      }
+      @media screen {
+        a.sourceLine::before {
+          text-decoration: underline;
+        }
+      }
+      code span.al {
+        color: #ff0000;
+        font-weight: bold;
+      } /* Alert */
+      code span.an {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* Annotation */
+      code span.at {
+        color: #7d9029;
+      } /* Attribute */
+      code span.bn {
+        color: #40a070;
+      } /* BaseN */
+      code span.bu {
+      } /* BuiltIn */
+      code span.cf {
+        color: #007020;
+        font-weight: bold;
+      } /* ControlFlow */
+      code span.ch {
+        color: #4070a0;
+      } /* Char */
+      code span.cn {
+        color: #880000;
+      } /* Constant */
+      code span.co {
+        color: #60a0b0;
+        font-style: italic;
+      } /* Comment */
+      code span.cv {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* CommentVar */
+      code span.do {
+        color: #ba2121;
+        font-style: italic;
+      } /* Documentation */
+      code span.dt {
+        color: #902000;
+      } /* DataType */
+      code span.dv {
+        color: #40a070;
+      } /* DecVal */
+      code span.er {
+        color: #ff0000;
+        font-weight: bold;
+      } /* Error */
+      code span.ex {
+      } /* Extension */
+      code span.fl {
+        color: #40a070;
+      } /* Float */
+      code span.fu {
+        color: #06287e;
+      } /* Function */
+      code span.im {
+      } /* Import */
+      code span.in {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* Information */
+      code span.kw {
+        color: #007020;
+        font-weight: bold;
+      } /* Keyword */
+      code span.op {
+        color: #666666;
+      } /* Operator */
+      code span.ot {
+        color: #007020;
+      } /* Other */
+      code span.pp {
+        color: #bc7a00;
+      } /* Preprocessor */
+      code span.sc {
+        color: #4070a0;
+      } /* SpecialChar */
+      code span.ss {
+        color: #bb6688;
+      } /* SpecialString */
+      code span.st {
+        color: #4070a0;
+      } /* String */
+      code span.va {
+        color: #19177c;
+      } /* Variable */
+      code span.vs {
+        color: #4070a0;
+      } /* VerbatimString */
+      code span.wa {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* Warning */
+    </style>
+  </head>
+  <body>
+    <!--docs:
+title: "Cards"
+layout: detail
+section: components
+excerpt: "Cards contain content and actions about a single subject."
+iconId: card
+path: /catalog/cards/
+-->
+    <h1 id="cards">Cards</h1>
+    <p>
+      <a href="https://material.io/components/cards/">Cards</a> contain content
+      and actions about a single subject.
+    </p>
+    <p>For additional information, see the <a href="#api">API</a>.</p>
+    <figure>
+      <img
+        src="images/card-elevated.png"
+        alt="Elevated card with a secondary title and two actions: Action 1 and Action 2 in purple"
+      />
+      <figcaption>
+        Elevated card with a secondary title and two actions: Action 1 and
+        Action 2 in purple
+      </figcaption>
+    </figure>
+    <h2 id="using-cards">Using cards</h2>
+    <h3 id="installation">Installation</h3>
+    <pre><code>npm install @material/card</code></pre>
+    <h3 id="styles">Styles</h3>
+    <div class="sourceCode" id="cb2">
+      <pre
+        class="sourceCode css"
+      ><code class="sourceCode css"><a class="sourceLine" id="cb2-1" title="1"><span class="im">@use</span> <span class="st">&quot;@material/card&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-2" title="2"></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="im">@include</span> card<span class="dv">.</span>core-styles<span class="op">;</span></a></code></pre>
+    </div>
+    <p>
+      In order to remain general-purpose and support e.g. images spanning the
+      full width of the card, MDC Card does not include padding styles on the
+      root element. When adding free-form text content to cards, padding should
+      be set to <code>16px</code>:
+    </p>
+    <div class="sourceCode" id="cb3">
+      <pre
+        class="sourceCode css"
+      ><code class="sourceCode css"><a class="sourceLine" id="cb3-1" title="1"><span class="fu">.my-card-content</span> {</a>
+<a class="sourceLine" id="cb3-2" title="2">  <span class="kw">padding</span>: <span class="dv">16</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-3" title="3">}</a></code></pre>
+    </div>
+    <p>
+      <strong
+        >Note: MDC Card’s predefined classes for content areas
+        (e.g. <code>mdc-card__actions</code>) take care of their own
+        padding.</strong
+      >
+    </p>
+    <p>
+      By default, cards expand horizontally to fill all available space, and
+      vertically to fit their contents. If you’d like to maintain a consistent
+      width and height across cards, you’ll need to set it in your styles:
+    </p>
+    <div class="sourceCode" id="cb4">
+      <pre
+        class="sourceCode css"
+      ><code class="sourceCode css"><a class="sourceLine" id="cb4-1" title="1"><span class="fu">.my-card</span> {</a>
+<a class="sourceLine" id="cb4-2" title="2">  <span class="kw">height</span>: <span class="dv">350</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-3" title="3">  <span class="kw">width</span>: <span class="dv">350</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-4" title="4">}</a></code></pre>
+    </div>
+    <p>
+      You can also place cards within layout containers, such as
+      <a href="../mdc-layout-grid">MDC Layout Grid</a> or CSS Flexbox or Grid.
+    </p>
+    <h3 id="javascript">JavaScript</h3>
+    <p>
+      MDC Card itself does not require JavaScript. However, if you place
+      interactive components inside your cards, you may want to instantiate
+      ripples or other components. For example:
+    </p>
+    <div class="sourceCode" id="cb5">
+      <pre
+        class="sourceCode js"
+      ><code class="sourceCode javascript"><a class="sourceLine" id="cb5-1" title="1"><span class="im">import</span> <span class="op">{</span>MDCRipple<span class="op">}</span> <span class="im">from</span> <span class="st">&#39;@material/ripple&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb5-2" title="2"></a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="kw">const</span> selector <span class="op">=</span> <span class="st">&#39;.mdc-button, .mdc-icon-button, .mdc-card__primary-action&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb5-4" title="4"><span class="kw">const</span> ripples <span class="op">=</span> [].<span class="va">map</span>.<span class="at">call</span>(<span class="va">document</span>.<span class="at">querySelectorAll</span>(selector)<span class="op">,</span> <span class="kw">function</span>(el) <span class="op">{</span></a>
+<a class="sourceLine" id="cb5-5" title="5">  <span class="cf">return</span> <span class="kw">new</span> <span class="at">MDCRipple</span>(el)<span class="op">;</span></a>
+<a class="sourceLine" id="cb5-6" title="6"><span class="op">}</span>)<span class="op">;</span></a></code></pre>
+    </div>
+    <p>
+      <strong
+        >Note: If your card includes any
+        <a href="../mdc-icon-button#icon-button-toggle">icon button toggles</a>,
+        you will want to instantiate <code>MDCIconButtonToggle</code> instead of
+        <code>MDCRipple</code>.</strong
+      >
+    </p>
+    <h2 id="card">Card</h2>
+    <h3 id="card-example">Card example</h3>
+    <div class="sourceCode" id="cb6">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-card&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb6-2" title="2">  <span class="co">&lt;!-- ... content ... --&gt;</span></a>
+<a class="sourceLine" id="cb6-3" title="3"><span class="kw">&lt;/div&gt;</span></a></code></pre>
+    </div>
+    <p>
+      <strong
+        >Note: MDC Card is designed to accommodate a wide variety of use cases.
+        See the <a href="#card-contents">Card Contents</a> section for
+        information on helpers for specific types of content within
+        cards.</strong
+      >
+    </p>
+    <h2 id="other-variants">Other variants</h2>
+    <h3 id="outlined-card">Outlined card</h3>
+    <figure>
+      <img
+        src="images/card-outlined.png"
+        alt="Outlined card with a secondary title and two actions: Action 1 and Action 2 in purple"
+      />
+      <figcaption>
+        Outlined card with a secondary title and two actions: Action 1 and
+        Action 2 in purple
+      </figcaption>
+    </figure>
+    <p>
+      By default, cards are elevated with no outline. You can render unelevated,
+      outlined cards instead by adding the
+      <code>mdc-card--outlined</code> modifier class.
+    </p>
+    <div class="sourceCode" id="cb7">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-card mdc-card--outlined&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb7-2" title="2">  <span class="co">&lt;!-- ... content ... --&gt;</span></a>
+<a class="sourceLine" id="cb7-3" title="3"><span class="kw">&lt;/div&gt;</span></a></code></pre>
+    </div>
+    <h3 id="card-contents">Card contents</h3>
+    <p>
+      MDC Card can be used for a wide variety of use cases, but it includes
+      styles for a few common ones.
+    </p>
+    <h4 id="primary-action">Primary action</h4>
+    <p>
+      If a majority of the card (or even the entire card) should be actionable,
+      you can add the <code>mdc-card__primary-action</code> class to the region
+      to give it MDC Ripple styles. You should also assign
+      <code>tabindex="0"</code> to ensure it can also be interacted with via
+      keyboard.
+    </p>
+    <div class="sourceCode" id="cb8">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-card&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb8-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-card__primary-action&quot;</span><span class="ot"> tabindex=</span><span class="st">&quot;0&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb8-3" title="3">    <span class="co">&lt;!-- content within actionable area --&gt;</span></a>
+<a class="sourceLine" id="cb8-4" title="4">  <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb8-5" title="5">  <span class="co">&lt;!-- ... content ... --&gt;</span></a>
+<a class="sourceLine" id="cb8-6" title="6"><span class="kw">&lt;/div&gt;</span></a></code></pre>
+    </div>
+    <p>
+      <strong
+        >Note: We recommend avoiding adding other actionable items within
+        <code>mdc-card__primary-action</code>, due to the overlapping effect of
+        multiple nested elements with ripple and states applied at once.</strong
+      >
+    </p>
+    <h4 id="rich-media">Rich media</h4>
+    <p>
+      This area is used for showing rich media in cards, and optionally as a
+      container. Use the <code>mdc-card__media</code> CSS class and the
+      <a href="#css-classes">optional modifier classes</a>.
+    </p>
+    <div class="sourceCode" id="cb9">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;my-card__media mdc-card__media mdc-card__media--16-9&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb9-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-card__media-content&quot;</span><span class="kw">&gt;</span>Title<span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb9-3" title="3"><span class="kw">&lt;/div&gt;</span></a></code></pre>
+    </div>
+    <div class="sourceCode" id="cb10">
+      <pre
+        class="sourceCode css"
+      ><code class="sourceCode css"><a class="sourceLine" id="cb10-1" title="1"><span class="fu">.my-card__media</span> {</a>
+<a class="sourceLine" id="cb10-2" title="2">  <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">&quot;pretty.jpg&quot;</span><span class="fu">)</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb10-3" title="3">}</a></code></pre>
+    </div>
+    <h4 id="actions">Actions</h4>
+    <p>
+      This area is used to show different actions the user can take, typically
+      at the bottom of a card. It’s often used with
+      <a href="../mdc-button">buttons</a>:
+    </p>
+    <div class="sourceCode" id="cb11">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-card__actions&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb11-2" title="2">  <span class="kw">&lt;button</span><span class="ot"> class=</span><span class="st">&quot;mdc-button mdc-card__action mdc-card__action--button&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb11-3" title="3">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-button__ripple&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb11-4" title="4">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-button__label&quot;</span><span class="kw">&gt;</span>Action 1<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb11-5" title="5">  <span class="kw">&lt;/button&gt;</span></a>
+<a class="sourceLine" id="cb11-6" title="6">  <span class="kw">&lt;button</span><span class="ot"> class=</span><span class="st">&quot;mdc-button mdc-card__action mdc-card__action--button&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb11-7" title="7">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-button__ripple&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb11-8" title="8">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-button__label&quot;</span><span class="kw">&gt;</span>Action 2<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb11-9" title="9">  <span class="kw">&lt;/button&gt;</span></a>
+<a class="sourceLine" id="cb11-10" title="10"><span class="kw">&lt;/div&gt;</span></a></code></pre>
+    </div>
+    <p>
+      It can also be used with <a href="../mdc-icon-button">icon buttons</a>:
+    </p>
+    <div class="sourceCode" id="cb12">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb12-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-card__actions&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb12-2" title="2">  <span class="kw">&lt;button</span><span class="ot"> class=</span><span class="st">&quot;mdc-icon-button mdc-card__action mdc-card__action--icon&quot;</span></a>
+<a class="sourceLine" id="cb12-3" title="3"><span class="ot">     aria-pressed=</span><span class="st">&quot;false&quot;</span></a>
+<a class="sourceLine" id="cb12-4" title="4"><span class="ot">     aria-label=</span><span class="st">&quot;Add to favorites&quot;</span></a>
+<a class="sourceLine" id="cb12-5" title="5"><span class="ot">     title=</span><span class="st">&quot;Add to favorites&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb12-6" title="6">   <span class="kw">&lt;i</span><span class="ot"> class=</span><span class="st">&quot;material-icons mdc-icon-button__icon mdc-icon-button__icon--on&quot;</span><span class="kw">&gt;</span>favorite<span class="kw">&lt;/i&gt;</span></a>
+<a class="sourceLine" id="cb12-7" title="7">   <span class="kw">&lt;i</span><span class="ot"> class=</span><span class="st">&quot;material-icons mdc-icon-button__icon&quot;</span><span class="kw">&gt;</span>favorite_border<span class="kw">&lt;/i&gt;</span></a>
+<a class="sourceLine" id="cb12-8" title="8">  <span class="kw">&lt;/button&gt;</span></a>
+<a class="sourceLine" id="cb12-9" title="9">  <span class="kw">&lt;button</span><span class="ot"> class=</span><span class="st">&quot;material-icons mdc-icon-button mdc-card__action mdc-card__action--icon&quot;</span><span class="ot"> title=</span><span class="st">&quot;Share&quot;</span><span class="kw">&gt;</span>share<span class="kw">&lt;/button&gt;</span></a>
+<a class="sourceLine" id="cb12-10" title="10">  <span class="kw">&lt;button</span><span class="ot"> class=</span><span class="st">&quot;material-icons mdc-icon-button mdc-card__action mdc-card__action--icon&quot;</span><span class="ot"> title=</span><span class="st">&quot;More options&quot;</span><span class="kw">&gt;</span>more_vert<span class="kw">&lt;/button&gt;</span></a>
+<a class="sourceLine" id="cb12-11" title="11"><span class="kw">&lt;/div&gt;</span></a></code></pre>
+    </div>
+    <p>
+      Be sure to include the <code>mdc-card__action</code> class on every action
+      for correct positioning. In addition, <em>button</em> icons should use the
+      <code>mdc-card__action--button</code> class, and <em>icon</em> actions
+      should use the <code>mdc-card__action--icon</code> class.
+    </p>
+    <p>
+      To have a single action button take up the entire width of the action row,
+      use the <code>--full-bleed</code> modifier on the row:
+    </p>
+    <div class="sourceCode" id="cb13">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb13-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-card__actions mdc-card__actions--full-bleed&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb13-2" title="2">  <span class="kw">&lt;a</span><span class="ot"> class=</span><span class="st">&quot;mdc-button mdc-card__action mdc-card__action--button&quot;</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb13-3" title="3">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-button__ripple&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb13-4" title="4">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-button__label&quot;</span><span class="kw">&gt;</span>All Business Headlines<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb13-5" title="5">    <span class="kw">&lt;i</span><span class="ot"> class=</span><span class="st">&quot;material-icons mdc-button__icon&quot;</span><span class="ot"> aria-hidden=</span><span class="st">&quot;true&quot;</span><span class="kw">&gt;</span>arrow_forward<span class="kw">&lt;/i&gt;</span></a>
+<a class="sourceLine" id="cb13-6" title="6">  <span class="kw">&lt;/a&gt;</span></a>
+<a class="sourceLine" id="cb13-7" title="7"><span class="kw">&lt;/div&gt;</span></a></code></pre>
+    </div>
+    <p>
+      To display buttons <em>and</em> icons in the same row, wrap them in
+      <code>mdc-card__action-buttons</code> and
+      <code>mdc-card__action-icons</code> elements:
+    </p>
+    <div class="sourceCode" id="cb14">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-card__actions&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb14-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-card__action-buttons&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb14-3" title="3">    <span class="kw">&lt;button</span><span class="ot"> class=</span><span class="st">&quot;mdc-button mdc-card__action mdc-card__action--button&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb14-4" title="4">      <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-button__ripple&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb14-5" title="5">      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-button__label&quot;</span><span class="kw">&gt;</span>Read<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb14-6" title="6">    <span class="kw">&lt;/button&gt;</span></a>
+<a class="sourceLine" id="cb14-7" title="7">    <span class="kw">&lt;button</span><span class="ot"> class=</span><span class="st">&quot;mdc-button mdc-card__action mdc-card__action--button&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb14-8" title="8">      <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-button__ripple&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb14-9" title="9">      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-button__label&quot;</span><span class="kw">&gt;</span>Bookmark<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb14-10" title="10">    <span class="kw">&lt;/button&gt;</span></a>
+<a class="sourceLine" id="cb14-11" title="11">  <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb14-12" title="12">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-card__action-icons&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb14-13" title="13">   <span class="kw">&lt;button</span><span class="ot"> class=</span><span class="st">&quot;material-icons mdc-icon-button mdc-card__action mdc-card__action--icon&quot;</span><span class="ot"> title=</span><span class="st">&quot;Share&quot;</span><span class="kw">&gt;</span>share<span class="kw">&lt;/button&gt;</span></a>
+<a class="sourceLine" id="cb14-14" title="14">    <span class="kw">&lt;button</span><span class="ot"> class=</span><span class="st">&quot;material-icons mdc-icon-button mdc-card__action mdc-card__action--icon&quot;</span><span class="ot"> title=</span><span class="st">&quot;More options&quot;</span><span class="kw">&gt;</span>more_vert<span class="kw">&lt;/button&gt;</span></a>
+<a class="sourceLine" id="cb14-15" title="15">  <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb14-16" title="16"><span class="kw">&lt;/div&gt;</span></a></code></pre>
+    </div>
+    <h5 id="icons">Icons</h5>
+    <p>
+      We recommend using
+      <a href="https://material.io/tools/icons/">Material Icons</a> from Google
+      Fonts:
+    </p>
+    <div class="sourceCode" id="cb15">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">&lt;head&gt;</span></a>
+<a class="sourceLine" id="cb15-2" title="2">  <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href=</span><span class="st">&quot;https://fonts.googleapis.com/icon?family=Material+Icons&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb15-3" title="3"><span class="kw">&lt;/head&gt;</span></a></code></pre>
+    </div>
+    <p>
+      However, you can also use SVG,
+      <a href="https://fontawesome.com/">Font Awesome</a>, or any other icon
+      library you wish.
+    </p>
+    <h4 id="combined-example">Combined example</h4>
+    <p>The following is an example incorporating all of the above elements:</p>
+    <div class="sourceCode" id="cb16">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb16-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-card&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb16-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-card__primary-action&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb16-3" title="3">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-card__media mdc-card__media--square&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb16-4" title="4">      <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-card__media-content&quot;</span><span class="kw">&gt;</span>Title<span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb16-5" title="5">    <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb16-6" title="6">    <span class="co">&lt;!-- ... additional primary action content ... --&gt;</span></a>
+<a class="sourceLine" id="cb16-7" title="7">  <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb16-8" title="8">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-card__actions&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb16-9" title="9">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-card__action-buttons&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb16-10" title="10">      <span class="kw">&lt;button</span><span class="ot"> class=</span><span class="st">&quot;mdc-button mdc-card__action mdc-card__action--button&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb16-11" title="11">        <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-button__ripple&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb16-12" title="12">        <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-button__label&quot;</span><span class="kw">&gt;</span>Action 1<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb16-13" title="13">      <span class="kw">&lt;/button&gt;</span></a>
+<a class="sourceLine" id="cb16-14" title="14">      <span class="kw">&lt;button</span><span class="ot"> class=</span><span class="st">&quot;mdc-button mdc-card__action mdc-card__action--button&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb16-15" title="15">        <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-button__ripple&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb16-16" title="16">        <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-button__label&quot;</span><span class="kw">&gt;</span>Action 2<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb16-17" title="17">      <span class="kw">&lt;/button&gt;</span></a>
+<a class="sourceLine" id="cb16-18" title="18">    <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb16-19" title="19">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-card__action-icons&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb16-20" title="20">      <span class="kw">&lt;button</span><span class="ot"> class=</span><span class="st">&quot;material-icons mdc-icon-button mdc-card__action mdc-card__action--icon&quot;</span><span class="ot"> title=</span><span class="st">&quot;Share&quot;</span><span class="kw">&gt;</span>share<span class="kw">&lt;/button&gt;</span></a>
+<a class="sourceLine" id="cb16-21" title="21">      <span class="kw">&lt;button</span><span class="ot"> class=</span><span class="st">&quot;material-icons mdc-icon-button mdc-card__action mdc-card__action--icon&quot;</span><span class="ot"> title=</span><span class="st">&quot;More options&quot;</span><span class="kw">&gt;</span>more_vert<span class="kw">&lt;/button&gt;</span></a>
+<a class="sourceLine" id="cb16-22" title="22">    <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb16-23" title="23">  <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb16-24" title="24"><span class="kw">&lt;/div&gt;</span></a></code></pre>
+    </div>
+    <h4 id="non-semantic-content">Non-semantic content</h4>
+    <p>
+      It can occasionally be useful to add non-semantic elements to a card. For
+      instance, some implementations might do this to add an overlay layer.
+    </p>
+    <p>
+      In this case, it’s important to delineate between semantic (real) content
+      and non-semantic content added by the implementation. To achieve this,
+      simply wrap the semantic content in an
+      <code>mdc-card__content</code> element. The non-semantic content can
+      remain at the card’s top level:
+    </p>
+    <div class="sourceCode" id="cb17">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb17-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-card&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb17-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-card__content&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb17-3" title="3">    <span class="co">&lt;!-- ... semantic content ... --&gt;</span></a>
+<a class="sourceLine" id="cb17-4" title="4">  <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb17-5" title="5">  <span class="co">&lt;!-- ... non-semantic content ... --&gt;</span></a>
+<a class="sourceLine" id="cb17-6" title="6"><span class="kw">&lt;/div&gt;</span></a></code></pre>
+    </div>
+    <h2 id="api">API</h2>
+    <h3 id="css-classes">CSS classes</h3>
+    <table>
+      <colgroup>
+        <col style="width: 50%" />
+        <col style="width: 50%" />
+      </colgroup>
+      <thead>
+        <tr class="header">
+          <th>CSS Class</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="odd">
+          <td><code>mdc-card</code></td>
+          <td>Mandatory. The main card element.</td>
+        </tr>
+        <tr class="even">
+          <td><code>mdc-card--outlined</code></td>
+          <td>
+            Optional. Removes the shadow and displays a hairline outline
+            instead.
+          </td>
+        </tr>
+        <tr class="odd">
+          <td><code>mdc-card__primary-action</code></td>
+          <td>
+            Optional. The main tappable area of the card. Typically contains
+            most (or all) card content <em>except</em>
+            <code>mdc-card__actions</code>. Only applicable to cards that have a
+            primary action that the main surface should trigger.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>mdc-card__media</code></td>
+          <td>
+            Optional. Media area that displays a custom
+            <code>background-image</code> with
+            <code>background-size: cover</code>.
+          </td>
+        </tr>
+        <tr class="odd">
+          <td><code>mdc-card__media--square</code></td>
+          <td>
+            Optional. Automatically scales the media area’s height to equal its
+            width.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>mdc-card__media--16-9</code></td>
+          <td>
+            Optional. Automatically scales the media area’s height according to
+            its width, maintaining a 16:9 aspect ratio.
+          </td>
+        </tr>
+        <tr class="odd">
+          <td><code>mdc-card__media-content</code></td>
+          <td>
+            Optional. An absolutely-positioned box the same size as the media
+            area, for displaying a title or icon on top of the
+            <code>background-image</code>.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>mdc-card__actions</code></td>
+          <td>Optional. Row containing action buttons and/or icons.</td>
+        </tr>
+        <tr class="odd">
+          <td><code>mdc-card__actions--full-bleed</code></td>
+          <td>
+            Optional. Removes the action area’s padding and causes its only
+            child (an <code>mdc-card__action</code> element) to consume 100% of
+            the action area’s width.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>mdc-card__action-buttons</code></td>
+          <td>
+            Optional. A group of action buttons, displayed on the left side of
+            the card (in LTR), adjacent to <code>mdc-card__action-icons</code>.
+          </td>
+        </tr>
+        <tr class="odd">
+          <td><code>mdc-card__action-icons</code></td>
+          <td>
+            Optional. A group of supplemental action icons, displayed on the
+            right side of the card (in LTR), adjacent to
+            <code>__action-buttons</code>.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>mdc-card__action</code></td>
+          <td>Optional. An individual action button or icon.</td>
+        </tr>
+        <tr class="odd">
+          <td><code>mdc-card__action--button</code></td>
+          <td>Optional. An action button with text.</td>
+        </tr>
+        <tr class="even">
+          <td><code>mdc-card__action--icon</code></td>
+          <td>
+            Optional. An action icon with no text. We recommend using
+            <a href="https://material.io/tools/icons/">Material Icons</a> from
+            Google Fonts.
+          </td>
+        </tr>
+        <tr class="odd">
+          <td><code>mdc-card__content</code></td>
+          <td>
+            Optional. Used to delineate the card’s semantic contents from any
+            non-semantic elements (e.g., those used to implement an overlay).
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h3 id="sass-mixins">Sass mixins</h3>
+    <table>
+      <colgroup>
+        <col style="width: 50%" />
+        <col style="width: 50%" />
+      </colgroup>
+      <thead>
+        <tr class="header">
+          <th>Mixin</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="odd">
+          <td><code>fill-color($color)</code></td>
+          <td>Sets the fill color of a card.</td>
+        </tr>
+        <tr class="even">
+          <td><code>outline($color, $thickness)</code></td>
+          <td>
+            Sets the color and thickness of a card’s outline (but does
+            <em>not</em> remove its shadow).
+          </td>
+        </tr>
+        <tr class="odd">
+          <td><code>shape-radius($radius, $rtl-reflexive)</code></td>
+          <td>
+            Sets the rounded shape to card with given radius size. Set
+            <code>$rtl-reflexive</code> to true to flip radius values in RTL
+            context, defaults to false.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>media-aspect-ratio($x, $y)</code></td>
+          <td>
+            Maintains the given aspect ratio on a
+            <code>mdc-card__media</code> subelement by dynamically scaling its
+            height relative to its width.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

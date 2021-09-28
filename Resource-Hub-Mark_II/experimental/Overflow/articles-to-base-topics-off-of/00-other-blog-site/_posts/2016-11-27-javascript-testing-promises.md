@@ -125,11 +125,11 @@ Isn’t this error message better for programmers to debug the failure.
 
 ### UPDATE : 2017-01-22
 
-There is even better way, Thanks to <span class="citation" data-cites="blakeembrey">\[@blakeembrey\]</span>(https://twitter.com/blakeembrey).
+There is even better way, Thanks to <span class="citation" data-cites="blakeembrey">\[<span class="citation" data-cites="blakeembrey">@blakeembrey</span>\]</span>(https://twitter.com/blakeembrey).
 
-> [<span class="citation" data-cites="revathskumar">@revathskumar</span>](https://twitter.com/revathskumar) FWIW, you shouldn't use `done` at all with mocha (<https://t.co/ijOcbpydV3>) - you should just return the promise directly
+> [<span class="citation" data-cites="revathskumar"><span class="citation" data-cites="revathskumar">@revathskumar</span></span>](https://twitter.com/revathskumar) FWIW, you shouldn’t use `done` at all with mocha (<a href="https://t.co/ijOcbpydV3" class="uri">https://t.co/ijOcbpydV3</a>) - you should just return the promise directly
 >
-> — Blake Embrey (<span class="citation" data-cites="blakeembrey">@blakeembrey</span>) [November 28, 2016](https://twitter.com/blakeembrey/status/803386495180472320)
+> — Blake Embrey (<span class="citation" data-cites="blakeembrey"><span class="citation" data-cites="blakeembrey">@blakeembrey</span></span>) [November 28, 2016](https://twitter.com/blakeembrey/status/803386495180472320)
 
 We don’t need to use `done` at all, instead we can just [return the promise](http://mochajs.org/#working-with-promises) from `it` block.
 

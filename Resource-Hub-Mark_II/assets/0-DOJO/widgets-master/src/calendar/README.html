@@ -1,43 +1,89 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>README</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
-</head>
-<body>
-<h1 id="dojowidgetscalendar"><span class="citation" data-cites="dojo/widgets/calendar"><span class="citation" data-cites="dojo/widgets/calendar"><span class="citation" data-cites="dojo/widgets/calendar"><span class="citation" data-cites="dojo/widgets/calendar"><span class="citation" data-cites="dojo/widgets/calendar">@dojo/widgets/calendar</span></span></span></span></span></h1>
-<p>Dojo’s <code>Calendar</code> renders a date grid with a dropdown month and year picker. The displayed month and year are controlled via properties, defaulting to the current day. Given the limitations of scaling the date grid while maintaining usability, the calendar is not fully responsive at small screen sizes; it is instead recommended to use an alternative date picker for mobile.</p>
-<h2 id="features">Features</h2>
-<ul>
-<li>Defaults to the current month</li>
-<li>Renders a date grid with weekday headers</li>
-<li>Clicking on the current month or year label opens a picker that allows you to select a new value</li>
-</ul>
-<h3 id="keyboard-usage">Keyboard Usage</h3>
-<ul>
-<li>All controls are in the tab order and accessible by keyboard</li>
-<li>Arrow keys move focus in the date grid, and navigating to a disabled date updates the month</li>
-<li>Page up and page down move to the first and last date in the month</li>
-<li>Arrow keys change the selection within the month and year popup</li>
-</ul>
-<h3 id="accessibility-features">Accessibility Features</h3>
-<ul>
-<li>The <code>month</code> label is read by screen readers when updated through <code>aria-live: polite</code></li>
-<li>The month popup label, year control, month radios, and previous/next month arrows all have screen-reader-accessible labels and instructions</li>
-<li>The weekdays and month radios are marked up with <code>&lt;abbr&gt;</code> tags that contain unabbreviated titles</li>
-<li>Focus is controlled when opening and closing the month popup</li>
-</ul>
-<h3 id="i18n-features">i18n Features</h3>
-<ul>
-<li>Localized versions of <code>CalendarMessages</code>, <code>monthNames</code>, and <code>weekdayNames</code> can be passed in via properties.</li>
-</ul>
-</body>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="generator" content="pandoc" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+		<title>README</title>
+		<style type="text/css">
+			code {
+				white-space: pre-wrap;
+			}
+			span.smallcaps {
+				font-variant: small-caps;
+			}
+			span.underline {
+				text-decoration: underline;
+			}
+			div.column {
+				display: inline-block;
+				vertical-align: top;
+				width: 50%;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 id="dojowidgetscalendar">
+			<span class="citation" data-cites="dojo/widgets/calendar"
+				><span class="citation" data-cites="dojo/widgets/calendar"
+					><span class="citation" data-cites="dojo/widgets/calendar"
+						><span class="citation" data-cites="dojo/widgets/calendar"
+							><span class="citation" data-cites="dojo/widgets/calendar"
+								>@dojo/widgets/calendar</span
+							></span
+						></span
+					></span
+				></span
+			>
+		</h1>
+		<p>
+			Dojo’s <code>Calendar</code> renders a date grid with a dropdown month and year picker.
+			The displayed month and year are controlled via properties, defaulting to the current
+			day. Given the limitations of scaling the date grid while maintaining usability, the
+			calendar is not fully responsive at small screen sizes; it is instead recommended to use
+			an alternative date picker for mobile.
+		</p>
+		<h2 id="features">Features</h2>
+		<ul>
+			<li>Defaults to the current month</li>
+			<li>Renders a date grid with weekday headers</li>
+			<li>
+				Clicking on the current month or year label opens a picker that allows you to select
+				a new value
+			</li>
+		</ul>
+		<h3 id="keyboard-usage">Keyboard Usage</h3>
+		<ul>
+			<li>All controls are in the tab order and accessible by keyboard</li>
+			<li>
+				Arrow keys move focus in the date grid, and navigating to a disabled date updates
+				the month
+			</li>
+			<li>Page up and page down move to the first and last date in the month</li>
+			<li>Arrow keys change the selection within the month and year popup</li>
+		</ul>
+		<h3 id="accessibility-features">Accessibility Features</h3>
+		<ul>
+			<li>
+				The <code>month</code> label is read by screen readers when updated through
+				<code>aria-live: polite</code>
+			</li>
+			<li>
+				The month popup label, year control, month radios, and previous/next month arrows
+				all have screen-reader-accessible labels and instructions
+			</li>
+			<li>
+				The weekdays and month radios are marked up with <code>&lt;abbr&gt;</code> tags that
+				contain unabbreviated titles
+			</li>
+			<li>Focus is controlled when opening and closing the month popup</li>
+		</ul>
+		<h3 id="i18n-features">i18n Features</h3>
+		<ul>
+			<li>
+				Localized versions of <code>CalendarMessages</code>, <code>monthNames</code>, and
+				<code>weekdayNames</code> can be passed in via properties.
+			</li>
+		</ul>
+	</body>
 </html>

@@ -35,7 +35,6 @@ So here I am gonna address 3 shift operators which revised recently, which are
 -   `<<` (Signed left shift)
 -   `>>>` (Unsigned right shift)
 
-  
 \# `>>` (Signed right shift) On `10 >> 1`, here 10 is converted to binary as `00001010` and shit the bits 1 position to the right. Which results `00000101` equalant of 5 in decimal.
 
 On `-10 >> 1`, -10 is converted to binary as `11110110` and when shifts to 1 position to right it becomes `11111011` which is equalant to -5.

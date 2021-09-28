@@ -11,108 +11,22 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
-  <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
 </head>
 <body>
-<!--
-
-
----
- "Express.js : respect DNT header"
-excerpt: "Express.js : respect DNT header"
-date: 2015-01-02 00:00:00 IST
-updated: 2015-01-02 00:00:00 IST
-categories: javascript, express, nodejs
----
-
--->
-&lt;!DOCTYPE html&gt;
-<html>
-<head>
-<title>
-basic-git-workflow
-</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./css/bootstrap.css"> <link rel="stylesheet" href="./css/bootstrap.grid.css"> <link rel="stylesheet" href="./css/bootstrap.min.css"> <link rel="stylesheet" href="./css/bootstrap-reboot.min.css"> <link rel="stylesheet" href="./css/bootstrap.css.map"> <link rel="stylesheet" href="./css/blog-home.css"> <link rel="stylesheet" href="./css/prism.css">
-<script async defer src="./css/prism.js"></script>
-</head>
-<body>
+<p>&lt;!DOCTYPE html&gt;</p>
 <p>Nowadays big companies like google and facebook are tracking uses even they are logged out. Most of the sites are now installed with facebook like button and google analytics which help them to track users easily.</p>
 <p>We might need Google analytics and Facebook like button for our apps to reach and target users. Many users really don’t want to be tracked and care about their privacy. Installing these trackers for those users is against our ethics. Its our duty to respect the privacy of our users.</p>
 <p>But how we will know whether users don’t want to be tracked when they visit our website?</p>
 <p>Now every popular browsers are equipped with a <strong>Do not track (DNT)</strong> settings. The people who care about privacy, will have DNT enabled in their browsers. If the user is enabled Do not Track, the browser will send a <strong>DNT</strong> flag with headers. Using this flag you can identify the users who care for privacy and can be opt out from installing tracker for them.</p>
 <p>Recently, when I released <a href="http://gistreader.herokuapp.com/">Gist reader</a>, a toy app for reading gists written in markdown, I thought I don’t want to install any tracker for those users who send <strong>DNT</strong> header. Since <em>Gist reader</em> was build with <a href="http://expressjs.com">Express.js</a> I can show you how I opt out Google Analytics for users with DNT flag.</p>
 <p>Since DNT should be implement though out all the pages, I implemented it as a middleware. You can get the value of DNT header from <code>req.headers.dnt</code>. I used the value from <code>req.headers.dnt</code> and passed to view using <a href="http://expressjs.com/api.html#app.set">app.set</a>. The value of <code>req.headers.dnt</code> will <strong><code>1</code></strong> if the user enable DNT and <strong><code>0</code></strong> if they didn’t.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="co">// In app.js</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="va">app</span>.<span class="at">use</span>(<span class="kw">function</span> (req<span class="op">,</span> res<span class="op">,</span> next) <span class="op">{</span></a>
-<a class="sourceLine" id="cb1-3" title="3">  <span class="va">app</span>.<span class="at">set</span>(<span class="st">&quot;dnt&quot;</span><span class="op">,</span> <span class="va">req</span>.<span class="va">headers</span>.<span class="at">dnt</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb1-4" title="4">  <span class="at">next</span>()<span class="op">;</span></a>
-<a class="sourceLine" id="cb1-5" title="5"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
+<pre><code>// In app.js
+app.use(function (req, res, next) {
+  app.set(&quot;dnt&quot;, req.headers.dnt);
+  next();
+});</code></pre>
 <p>Now the value of DNT header will be available in views via <code>settings</code> variable and we can install Google Analytics tracker for those DNT header value is <strong><code>0</code></strong>.</p>
-<pre class="jade"><code>// layout.jade
+<pre><code>// layout.jade
 unless settings.dnt
   script
     | (function(i,s,o,g,r,a,m){i[&#39;GoogleAnalyticsObject&#39;]=r;i[r]=i[r]||function(){

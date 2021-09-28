@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<!--docs:
+title: "Layout Grid"
+layout: detail
+section: components
+excerpt: "A CSS only responsive grid."
+iconId: responsive_layout
+path: /catalog/layout-grid/
+-->
+<h1 id="layout-grid">Layout Grid</h1>
+<!--<div class="article__asset">
+  <a class="article__asset-link"
+     href="https://material-components.github.io/material-components-web-catalog/#/component/layout-grid">
+    <img src="{{ site.rootpath }}/images/mdc_web_screenshots/layout.png" width="256" alt="Layout grid screenshot">
+  </a>
+</div>-->
+<p>Material design’s responsive UI is based on a column-variate grid layout. It has 12 columns on desktop, 8 columns on tablet and 4 columns on phone.</p>
+<h2 id="design-api-documentation">Design &amp; API Documentation</h2>
+<ul class="icon-list">
+<li class="icon-list-item icon-list-item--spec">
+<a href="https://material.io/guidelines/layout/responsive-ui.html#responsive-ui-grid">Material Design guidelines: Layout grid</a>
+</li>
+<li class="icon-list-item icon-list-item--link">
+<a href="https://material-components.github.io/material-components-web-catalog/#/component/layout-grid">Demo</a>
+</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<pre><code>npm install @material/layout-grid</code></pre>
+<h2 id="usage">Usage</h2>
+<h3 id="html-structure">HTML Structure</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-layout-grid&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-layout-grid__inner&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-3" title="3">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-layout-grid__cell&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb2-4" title="4">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-layout-grid__cell&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb2-5" title="5">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-layout-grid__cell&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb2-6" title="6">  <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb2-7" title="7"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
+<h4 id="nested-grid">Nested grid</h4>
+<p>When your contents need extra structure that cannot be supported by single layout grid, you can nest layout grid within each other. To nest layout grid, add a new <code>mdc-layout-grid__inner</code> to wrap around nested <code>mdc-layout-grid__cell</code> within an existing <code>mdc-layout-grid__cell</code>.</p>
+<p>The nested layout grid behaves exactly like when they are not nested, e.g, they have 12 columns on desktop, 8 columns on tablet and 4 columns on phone. They also use the <strong>same gutter size</strong> as their parents, but margins are not re-introduced since they are living within another cell.</p>
+<p>However, the Material Design guidelines do not recommend having a deeply nested grid as it might mean an over complicated UX.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-layout-grid&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb3-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-layout-grid__inner&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb3-3" title="3">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-layout-grid__cell&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb3-4" title="4">      <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-layout-grid__inner&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb3-5" title="5">        <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-layout-grid__cell&quot;</span><span class="kw">&gt;&lt;span&gt;</span>Second level<span class="kw">&lt;/span&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb3-6" title="6">        <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-layout-grid__cell&quot;</span><span class="kw">&gt;&lt;span&gt;</span>Second level<span class="kw">&lt;/span&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb3-7" title="7">      <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb3-8" title="8">    <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb3-9" title="9">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-layout-grid__cell&quot;</span><span class="kw">&gt;</span>First level<span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb3-10" title="10">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-layout-grid__cell&quot;</span><span class="kw">&gt;</span>First level<span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb3-11" title="11">  <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb3-12" title="12"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
+<h3 id="styles">Styles</h3>
+<pre class="scss"><code>@use &quot;@material/layout-grid/mdc-layout-grid&quot;;</code></pre>
+<h3 id="css-classes">CSS Classes</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>CSS Class</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>mdc-layout-grid</code></td>
+<td>Mandatory, for the layout grid element</td>
+</tr>
+<tr class="even">
+<td><code>mdc-layout-grid__inner</code></td>
+<td>Mandatory, for wrapping grid cell</td>
+</tr>
+<tr class="odd">
+<td><code>mdc-layout-grid__cell</code></td>
+<td>Mandatory, for the layout grid cell</td>
+</tr>
+<tr class="even">
+<td><code>mdc-layout-grid__cell--span-&lt;NUMBER_OF_COLUMNS&gt;</code></td>
+<td>Optional, specifies the number of columns the cell spans</td>
+</tr>
+<tr class="odd">
+<td><code>mdc-layout-grid__cell--span-&lt;NUMBER_OF_COLUMNS&gt;-&lt;TYPE_OF_DEVICE&gt;</code></td>
+<td>Optional, specifies the number of columns the cell spans on a type of device (desktop, tablet, phone)</td>
+</tr>
+<tr class="even">
+<td><code>mdc-layout-grid__cell--order-&lt;INDEX&gt;</code></td>
+<td>Optional, specifies the order of the cell</td>
+</tr>
+<tr class="odd">
+<td><code>mdc-layout-grid__cell--align-&lt;POSITION&gt;</code></td>
+<td>Optional, specifies the alignment of cell</td>
+</tr>
+<tr class="even">
+<td><code>mdc-layout-grid--fixed-column-width</code></td>
+<td>Optional, specifies the grid should have fixed column width</td>
+</tr>
+<tr class="odd">
+<td><code>mdc-layout-grid--align-&lt;GRID_POSITION&gt;</code></td>
+<td>Optional, specifies the alignment of the whole grid</td>
+</tr>
+</tbody>
+</table>
+<h4 id="mdc-layout-grid__cell--span-number_of_columns"><code>mdc-layout-grid__cell--span-&lt;NUMBER_OF_COLUMNS&gt;</code></h4>
+<p>You can set the cells span by applying one of the span classes, of the form <code>mdc-layout-grid__cell--span-{columns}</code>, where <code>{columns}</code> is an integer between 1 and 12. If the chosen span size is larger than the available number of columns at the current screen size, the cell behaves as if its chosen span size were equal to the available number of columns at that screen size. If the span classes are not set, <code>mdc-layout-grid__cell</code> will fallback to a default span size of 4 columns.</p>
+<h4 id="mdc-layout-grid__cell--span-number_of_columns-type_of_device"><code>mdc-layout-grid__cell--span-&lt;NUMBER_OF_COLUMNS&gt;-&lt;TYPE_OF_DEVICE&gt;</code></h4>
+<p>The same as <code>mdc-layout-grid__cell--span-&lt;NUMBER_OF_COLUMNS&gt;</code> but for a specific type of device(<code>desktop</code>, <code>tablet</code> or <code>phone</code>).</p>
+<h4 id="mdc-layout-grid__cell--order-index"><code>mdc-layout-grid__cell--order-&lt;INDEX&gt;</code></h4>
+<p>By default, items are positioned in the source order. However, you can reorder them by using the <code>mdc-layout-grid__cell--order-&lt;INDEX&gt;</code> classes, where <code>&lt;INDEX&gt;</code> is an integer between 1 and 12. Please bear in mind that this may have an impact on accessibility, since screen readers and other tools tend to follow source order.</p>
+<h4 id="mdc-layout-grid__cell--align-position"><code>mdc-layout-grid__cell--align-&lt;POSITION&gt;</code></h4>
+<p>Items are defined to stretch, by default, taking up the height of their corresponding row. You can switch to a different behavior by using one of the <code>mdc-layout-grid__cell--align-&lt;POSITION&gt;</code> alignment classes, where <code>&lt;POSITION&gt;</code> is one of <code>top</code>, <code>middle</code> or <code>bottom</code>.</p>
+<h4 id="mdc-layout-grid--fixed-column-width"><code>mdc-layout-grid--fixed-column-width</code></h4>
+<p>You can designate each column to have a certain width by using <code>mdc-layout-grid--fixed-column-width</code> modifier. The column width can be specified through sass map <code>$mdc-layout-grid-column-width</code> or css custom properties <code>--mdc-layout-grid-column-width-{screen_size}</code>. The column width is set to 72px on all devices by default.</p>
+<h4 id="mdc-layout-grid--align-grid_position"><code>mdc-layout-grid--align-&lt;GRID_POSITION&gt;</code></h4>
+<p>The grid is by default center aligned. You can add <code>mdc-layout-grid--align-left</code> or <code>mdc-layout-grid--align-right</code> modifier class to change this behavior. Note, these modifiers will have no effect when the grid already fills its container.</p>
+<h3 id="sass-mixins">Sass Mixins</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mixin</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>mdc-layout-grid($size, $margin, $max-width)</code></td>
+<td>Generates CSS for a grid container on certain device type</td>
+</tr>
+<tr class="even">
+<td><code>mdc-layout-grid-inner($size, $margin, $gutter)</code></td>
+<td>Generates CSS for a grid cell wrapper on certain device type</td>
+</tr>
+<tr class="odd">
+<td><code>mdc-layout-grid-cell($size, $default-span, $gutter)</code></td>
+<td>Generates CSS for a grid cell on certain device type</td>
+</tr>
+<tr class="even">
+<td><code>mdc-layout-grid-fixed-column-width($size, $margin, $gutter, $column-width)</code></td>
+<td>Generates CSS for a fixed column width container on certain device type</td>
+</tr>
+<tr class="odd">
+<td><code>mdc-layout-grid-cell-order($order)</code></td>
+<td>Reorders a cell inside a grid</td>
+</tr>
+<tr class="even">
+<td><code>mdc-layout-grid-cell-align($position)</code></td>
+<td>Aligns a cell vertically inside a grid</td>
+</tr>
+</tbody>
+</table>
+<h4 id="mdc-layout-gridsize-margin-max-width"><code>mdc-layout-grid($size, $margin, $max-width)</code></h4>
+<p>Generates CSS for a grid container on certain device type. The mixin takes three parameters:</p>
+<ul>
+<li><code>$size</code>: the target platform: <code>desktop</code>, <code>tablet</code> or <code>phone</code>.</li>
+<li><code>$margin</code>: the size of the grid margin.</li>
+<li><code>$max-width</code> (optional): the maximum width of the grid, at which point space stops being distributed by the columns.</li>
+</ul>
+<h4 id="mdc-layout-grid-innersize-margin-gutter"><code>mdc-layout-grid-inner($size, $margin, $gutter)</code></h4>
+<p>Generates CSS for a grid cell wrapper on certain device type. The mixin takes three parameters: - <code>$size</code>: the target platform: <code>desktop</code>, <code>tablet</code> or <code>phone</code>. - <code>$margin</code>: the size of the grid margin. - <code>$gutter</code>: the size of the gutter between cells.</p>
+<h4 id="mdc-layout-grid-cellsize-default-span-gutter"><code>mdc-layout-grid-cell($size, $default-span, $gutter)</code></h4>
+<p>Generates CSS for a grid cell on certain device type. The mixin takes three parameters: - <code>$size</code>: the target platform: <code>desktop</code>, <code>tablet</code> or <code>phone</code>. - <code>$default-span</code> (optional, default 4): how many columns this cell should span (1 to 12). - <code>$gutter</code>: the size of the gutter between cells. Be sure to use the same value as for the parent grid.</p>
+<blockquote>
+<p>Note even though size is passed in as one of the arguments, it won’t apply any <code>media-query</code> rules. It is set for using the correct CSS custom properties to overriden the margin and gutter at runtime (See <a href="#margins-and-gutters">Margins and gutters</a> section for detail).</p>
+</blockquote>
+<h4 id="mdc-layout-grid-fixed-column-widthsize-margin-gutter-column-width"><code>mdc-layout-grid-fixed-column-width($size, $margin, $gutter, $column-width)</code></h4>
+<p>Generates CSS for a fixed column width container on certain device type. The mixin takes four parameters: - <code>$size</code>: the target platform: <code>desktop</code>, <code>tablet</code> or <code>phone</code>. - <code>$margin</code>: the size of the grid margin. - <code>$gutter</code>: the size of the gutter between cells. - <code>$column-width</code>: the width of the column within the grid.</p>
+<h3 id="sass-variables">Sass Variables</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variables</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>mdc-layout-grid-breakpoints</code></td>
+<td>A SASS Map specifies the breakpoints width</td>
+</tr>
+<tr class="even">
+<td><code>mdc-layout-grid-columns</code></td>
+<td>A SASS Map specifies the number of columns</td>
+</tr>
+<tr class="odd">
+<td><code>mdc-layout-grid-default-margin</code></td>
+<td>A SASS Map specifies the space between the edge of the grid and the edge of the first cell</td>
+</tr>
+<tr class="even">
+<td><code>mdc-layout-grid-default-gutter</code></td>
+<td>A SASS Map specifies the space between edges of adjacent cells</td>
+</tr>
+<tr class="odd">
+<td><code>mdc-layout-grid-column-width</code></td>
+<td>A SASS Map specifies the column width of grid columns</td>
+</tr>
+<tr class="even">
+<td><code>mdc-layout-grid-default-column-span</code></td>
+<td>Specifies a cell’s default span</td>
+</tr>
+<tr class="odd">
+<td><code>mdc-layout-grid-max-width</code></td>
+<td>Restricts max width of the layout grid</td>
+</tr>
+</tbody>
+</table>
+<h3 id="css-custom-properties">CSS Custom Properties</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>CSS Custom Properties</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>mdc-layout-grid-margin-&lt;TYPE_OF_DEVICE&gt;</code></td>
+<td>Specifies the space between the edge of the grid and the edge of the first cell</td>
+</tr>
+<tr class="even">
+<td><code>mdc-layout-grid-gutter-&lt;TYPE_OF_DEVICE&gt;</code></td>
+<td>Specifies the space between edges of adjacent cells</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

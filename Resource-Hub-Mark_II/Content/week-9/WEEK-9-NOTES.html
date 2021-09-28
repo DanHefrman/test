@@ -11,23 +11,86 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
 </head>
 <body>
 <h1 id="tuesday">Tuesday</h1>
 <h1 id="notes"><strong>Notes</strong></h1>
 <h2 id="getting-css-into-your-html"><strong>Getting CSS Into Your HTML</strong></h2>
-<pre><code>&lt;!-- example.html --&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;link
-      rel=&quot;stylesheet&quot;
-      href=&quot;https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css&quot;
-    /&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;/styles/site.css&quot; /&gt;
-  &lt;/head&gt;
-  &lt;body&gt;&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb1-1" title="1"><span class="co">&lt;!-- example.html --&gt;</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="kw">&lt;html&gt;</span></a>
+<a class="sourceLine" id="cb1-4" title="4">  <span class="kw">&lt;head&gt;</span></a>
+<a class="sourceLine" id="cb1-5" title="5">    <span class="kw">&lt;link</span></a>
+<a class="sourceLine" id="cb1-6" title="6"><span class="ot">      rel=</span><span class="st">&quot;stylesheet&quot;</span></a>
+<a class="sourceLine" id="cb1-7" title="7"><span class="ot">      href=</span><span class="st">&quot;https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css&quot;</span></a>
+<a class="sourceLine" id="cb1-8" title="8">    <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb1-9" title="9">    <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href=</span><span class="st">&quot;/styles/site.css&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb1-10" title="10">  <span class="kw">&lt;/head&gt;</span></a>
+<a class="sourceLine" id="cb1-11" title="11">  <span class="kw">&lt;body&gt;&lt;/body&gt;</span></a>
+<a class="sourceLine" id="cb1-12" title="12"><span class="kw">&lt;/html&gt;</span></a></code></pre></div>
 <ul>
 <li><em>To connect your CSS sheet to your HTML page, use the link tag like so.</em></li>
 <li>Many developers use External pre-written CSS stylesheets for consistent design.</li>
@@ -43,16 +106,32 @@
 <li><strong><code>ID Selectors</code></strong> : Matches by ID name.</li>
 <li><strong><code>Universal Selectors</code></strong> : Selects all HTML elements on a page.</li>
 <li><strong><code>Attribute Selectors</code></strong> : Matches elements based on the prescence or value of a given attribute. (i.e. a[title] will match all a elements with a title attribute)</li>
+</ul></li>
 </ul>
-<p>/* Type selector */ div { background-color: #000000; }</p>
-<p>/* Class selector */ .active { color: #ffffff; }</p>
-<p>/* ID selector */ #list-1 { border: 1px solid gray; }</p>
-/* Universal selector */
-<ul>
-<li>{ padding: 10px; }</li>
-</ul>
-<p>/* Attribute selector */ a[title] { font-size: 2em; }</p></li>
-</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb2-1" title="1"><span class="co">/* Type selector */</span></a>
+<a class="sourceLine" id="cb2-2" title="2">div {</a>
+<a class="sourceLine" id="cb2-3" title="3">  <span class="kw">background-color</span>: <span class="cn">#000000</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-4" title="4">}</a>
+<a class="sourceLine" id="cb2-5" title="5"></a>
+<a class="sourceLine" id="cb2-6" title="6"><span class="co">/* Class selector */</span></a>
+<a class="sourceLine" id="cb2-7" title="7"><span class="fu">.active</span> {</a>
+<a class="sourceLine" id="cb2-8" title="8">  <span class="kw">color</span>: <span class="cn">#ffffff</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-9" title="9">}</a>
+<a class="sourceLine" id="cb2-10" title="10"></a>
+<a class="sourceLine" id="cb2-11" title="11"><span class="co">/* ID selector */</span></a>
+<a class="sourceLine" id="cb2-12" title="12"><span class="pp">#list-1</span> {</a>
+<a class="sourceLine" id="cb2-13" title="13">  <span class="kw">border</span>: <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">gray</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-14" title="14">}</a>
+<a class="sourceLine" id="cb2-15" title="15"></a>
+<a class="sourceLine" id="cb2-16" title="16"><span class="co">/* Universal selector */</span></a>
+<a class="sourceLine" id="cb2-17" title="17"><span class="op">*</span> {</a>
+<a class="sourceLine" id="cb2-18" title="18">  <span class="kw">padding</span>: <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-19" title="19">}</a>
+<a class="sourceLine" id="cb2-20" title="20"></a>
+<a class="sourceLine" id="cb2-21" title="21"><span class="co">/* Attribute selector */</span></a>
+<a class="sourceLine" id="cb2-22" title="22">a<span class="ex">[title]</span> {</a>
+<a class="sourceLine" id="cb2-23" title="23">  <span class="kw">font-size</span>: <span class="dv">2</span><span class="dt">em</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-24" title="24">}</a></code></pre></div>
 <p><strong>Class Selectors</strong></p>
 <ul>
 <li>Used to select all elements of a certain class denoted with a <code>.[class name]</code></li>
@@ -61,20 +140,21 @@
 <p><strong>Compound Class Selectors</strong></p>
 <ul>
 <li>To get around accidentally selecting elements with multiple classes beyond what we want to grab we can chain dots.</li>
-<li><p>TO use a compound class selector just append the classes together when referencing them in the CSS.</p>
-<div class="box yellow">
-
-</div>
-<div class="box orange">
-
-</div>
-<div class="circle orange">
-
-</div></li>
+<li>TO use a compound class selector just append the classes together when referencing them in the CSS.</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;box yellow&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;box orange&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;circle orange&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a></code></pre></div>
+<ul>
 <li>i.e. .box.yellow will select only the first element.</li>
-<li><p>KEEP IN MIND that if you do include a space it will make the selector into a <em>descendant selector</em>.</p>
-<p>h1#heading, h2.subheading { font-style: italic; }</p></li>
-<li><p>When we want to target all <code>h1</code> tags with the id of <code>heading</code>.</p></li>
+<li>KEEP IN MIND that if you do include a space it will make the selector into a <em>descendant selector</em>.</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1">h1#heading<span class="op">,</span></a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="va">h2</span>.<span class="at">subheading</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb4-3" title="3">  font<span class="op">-</span><span class="dt">style</span><span class="op">:</span> italic<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-4" title="4"><span class="op">}</span></a></code></pre></div>
+<ul>
+<li>When we want to target all <code>h1</code> tags with the id of <code>heading</code>.</li>
 </ul>
 <p><strong>CSS Combinators</strong></p>
 <ul>
@@ -90,32 +170,34 @@
 <ul>
 <li>Indicated with a <code>&gt;</code>.</li>
 <li>Different from descendants because it only affects the direct children of an element.</li>
-<li><p>.menu &gt; .is-active { background-color: #ffe0b2; }</p></li>
-<li><body>
-<div class="menu">
-<pre><code>    &lt;div class=&quot;is-active&quot;&gt;Belka&lt;/div&gt;
-    &lt;div&gt;
-      &lt;div class=&quot;is-active&quot;&gt;Strelka&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/body&gt;
-&lt;div class=&quot;is-active&quot;&gt;
-  Laika
-&lt;/div&gt;
-&lt;/body&gt;</code></pre></li>
-<li><p>Belka would be the only element selected.</p></li>
+<li><div class="sourceCode" id="cb5"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb5-1" title="1"><span class="fu">.menu</span> <span class="op">&gt;</span> <span class="fu">.is-active</span> {</a>
+<a class="sourceLine" id="cb5-2" title="2">  <span class="kw">background-color</span>: <span class="cn">#ffe0b2</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb5-3" title="3">}</a></code></pre></div></li>
+<li><div class="sourceCode" id="cb6"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">&lt;body&gt;</span></a>
+<a class="sourceLine" id="cb6-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;menu&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb6-3" title="3">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;is-active&quot;</span><span class="kw">&gt;</span>Belka<span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb6-4" title="4">    <span class="kw">&lt;div&gt;</span></a>
+<a class="sourceLine" id="cb6-5" title="5">      <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;is-active&quot;</span><span class="kw">&gt;</span>Strelka<span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb6-6" title="6">    <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb6-7" title="7">  <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb6-8" title="8"><span class="kw">&lt;/body&gt;</span></a>
+<a class="sourceLine" id="cb6-9" title="9"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;is-active&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb6-10" title="10">  Laika</a>
+<a class="sourceLine" id="cb6-11" title="11"><span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb6-12" title="12"><span class="kw">&lt;/body&gt;</span></a></code></pre></div></li>
+<li>Belka would be the only element selected.</li>
 </ul></li>
 <li><p><strong><code>Adjacent Sibling Selectors</code></strong></p>
 <ul>
 <li>Uses the <code>+</code> symbol.</li>
 <li>Used for elements that directly follow one another and who both have the same parent.</li>
-<li><pre><code>h1 + h2 {
-  font-style: italic;
-    }
+<li><pre><code>  h1 + h2 {
+font-style: italic;
+  }
 
-  &lt;h1&gt;Big header&lt;/h1&gt;
-  &lt;h2&gt;This one is styled because it is directly adjacent to the H1&lt;/h2&gt;
-  &lt;h2&gt;This one is NOT styled because there is no H1 right before it&lt;/h2&gt;</code></pre></li>
+&lt;h1&gt;Big header&lt;/h1&gt;
+&lt;h2&gt;This one is styled because it is directly adjacent to the H1&lt;/h2&gt;
+&lt;h2&gt;This one is NOT styled because there is no H1 right before it&lt;/h2&gt;</code></pre></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -123,8 +205,15 @@
 <ul>
 <li><strong><code>Pseudo-Class</code></strong> : Specifies a special state of the seleted element(s) and does not refer to any elements or attributes contained in the DOM.
 <ul>
-<li><p>Format is a <code>Selector:Pseudo-Class Name</code> or <code>A:B</code></p>
-<p>a:hover { font-family: “Roboto Condensed”, sans-serif; color: #4fc3f7; text-decoration: none; border-bottom: 2px solid #4fc3f7; }</p></li>
+<li>Format is a <code>Selector:Pseudo-Class Name</code> or <code>A:B</code></li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb8-1" title="1">a<span class="in">:hover</span> {</a>
+<a class="sourceLine" id="cb8-2" title="2">  <span class="kw">font-family</span>: <span class="st">&quot;Roboto Condensed&quot;</span><span class="op">,</span> <span class="dv">sans-serif</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb8-3" title="3">  <span class="kw">color</span>: <span class="cn">#4fc3f7</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb8-4" title="4">  <span class="kw">text-decoration</span>: <span class="dv">none</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb8-5" title="5">  <span class="kw">border-bottom</span>: <span class="dv">2</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#4fc3f7</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb8-6" title="6">}</a></code></pre></div>
+<ul>
 <li>Some common pseudo-classes that are frequently used are:
 <ul>
 <li><strong><code>active</code></strong> : ‘push down’, when ele are activated.</li>
@@ -148,25 +237,21 @@
 <ul>
 <li><code>::after</code></li>
 <li><code>::before</code></li>
+</ul></li>
 </ul>
-<style>
-  p::before {
-    background-color: lightblue;
-    border-right: 4px solid violet;
-    content: ":-) ";
-    margin-right: 4px;
-    padding-left: 4px;
-  }
-</style>
-<p>
-This is the first paragraph
-</p>
-<p>
-This is the second paragraph
-</p>
-<p>
-This is the third paragraph
-</p></li>
+<div class="sourceCode" id="cb9"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">&lt;style&gt;</span></a>
+<a class="sourceLine" id="cb9-2" title="2">  p<span class="in">::before</span> {</a>
+<a class="sourceLine" id="cb9-3" title="3">    <span class="kw">background-color</span>: <span class="cn">lightblue</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb9-4" title="4">    <span class="kw">border-right</span>: <span class="dv">4</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">violet</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb9-5" title="5">    <span class="kw">content</span>: <span class="st">&quot;:-) &quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb9-6" title="6">    <span class="kw">margin-right</span>: <span class="dv">4</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb9-7" title="7">    <span class="kw">padding-left</span>: <span class="dv">4</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb9-8" title="8">  }</a>
+<a class="sourceLine" id="cb9-9" title="9"><span class="kw">&lt;/style&gt;</span></a>
+<a class="sourceLine" id="cb9-10" title="10"><span class="kw">&lt;p&gt;</span>This is the first paragraph<span class="kw">&lt;/p&gt;</span></a>
+<a class="sourceLine" id="cb9-11" title="11"><span class="kw">&lt;p&gt;</span>This is the second paragraph<span class="kw">&lt;/p&gt;</span></a>
+<a class="sourceLine" id="cb9-12" title="12"><span class="kw">&lt;p&gt;</span>This is the third paragraph<span class="kw">&lt;/p&gt;</span></a></code></pre></div>
+<ul>
 <li>Will add some blue smiley faces before the p tag elements.</li>
 </ul>
 <p><strong>CSS Rules</strong></p>
@@ -178,36 +263,34 @@ This is the third paragraph
 <li><ol type="1">
 <li>Who has the most IDs? If no one, continue.</li>
 </ol></li>
-<li><ol type="1">
+<li><ol start="2" type="1">
 <li>Who has the most classes? If no one, continue.</li>
 </ol></li>
-<li><ol type="1">
+<li><ol start="3" type="1">
 <li>Who has the most tags? If no one, continue.</li>
 </ol></li>
-<li><ol type="1">
+<li><ol start="4" type="1">
 <li>Last Read in the browser wins. <img src="https://i.gyazo.com/791874ae4dc749b84d901403a4c32776.png" alt="4num" /> <img src="https://i.gyazo.com/ca8542e4d17baa50b858ff0fe750e23b.png" alt="4numResults" /></li>
 </ol></li>
+</ul></li>
 </ul>
-<style>
-  .box {
-    width: 50px;
-    height: 50px;
-    border: 1px solid black;
-  }
-  .orange {
-    background-color: orange;
-  }
-  .yellow {
-    background-color: yellow;
-    border: 1px solid purple;
-  }
-</style>
-<div class="box yellow">
-
-</div>
-<div class="box orange">
-
-</div></li>
+<div class="sourceCode" id="cb10"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">&lt;style&gt;</span></a>
+<a class="sourceLine" id="cb10-2" title="2">  <span class="fu">.box</span> {</a>
+<a class="sourceLine" id="cb10-3" title="3">    <span class="kw">width</span>: <span class="dv">50</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb10-4" title="4">    <span class="kw">height</span>: <span class="dv">50</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb10-5" title="5">    <span class="kw">border</span>: <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">black</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb10-6" title="6">  }</a>
+<a class="sourceLine" id="cb10-7" title="7">  <span class="fu">.orange</span> {</a>
+<a class="sourceLine" id="cb10-8" title="8">    <span class="kw">background-color</span>: <span class="cn">orange</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb10-9" title="9">  }</a>
+<a class="sourceLine" id="cb10-10" title="10">  <span class="fu">.yellow</span> {</a>
+<a class="sourceLine" id="cb10-11" title="11">    <span class="kw">background-color</span>: <span class="cn">yellow</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb10-12" title="12">    <span class="kw">border</span>: <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">purple</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb10-13" title="13">  }</a>
+<a class="sourceLine" id="cb10-14" title="14"><span class="kw">&lt;/style&gt;</span></a>
+<a class="sourceLine" id="cb10-15" title="15"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;box yellow&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb10-16" title="16"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;box orange&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a></code></pre></div>
+<ul>
 <li>Coming back to our example where all the CSS Rules have tied, the last step 4 wins out so our element will have a <code>purple border</code>.</li>
 </ul>
 <hr />
@@ -286,13 +369,13 @@ This is the third paragraph
 <li><ol type="1">
 <li>Submit a requedt to the server.</li>
 </ol></li>
-<li><ol type="1">
+<li><ol start="2" type="1">
 <li>Server makes necessary changes to the database.</li>
 </ol></li>
-<li><ol type="1">
+<li><ol start="3" type="1">
 <li>Server prepares the entire HTML page for your request.</li>
 </ol></li>
-<li><ol type="1">
+<li><ol start="4" type="1">
 <li>Browser loads up the new document to reflect the change.</li>
 </ol></li>
 </ul></li>
@@ -306,11 +389,43 @@ This is the third paragraph
 <h2 id="the-steps-of-ajax"><strong>The Steps of AJAX</strong></h2>
 <ul>
 <li>To Recap: <strong><code>Fetch</code></strong> is used to make HTTP Requests, it uses Promises to handle the async nature of HTTP requests and responses.</li>
-<li><p><strong><code>GET</code></strong> : Request used to retrieve information from the server.</p>
-<p>fetch(“https://jservice.xyz/api/games”) .then(function (res) { console.log(“response:”, res); return res.json(); }) .then(function (data) { console.log(“data:”, data); });</p></li>
+<li><strong><code>GET</code></strong> : Request used to retrieve information from the server.</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb11-1" title="1"><span class="at">fetch</span>(<span class="st">&quot;https://jservice.xyz/api/games&quot;</span>)</a>
+<a class="sourceLine" id="cb11-2" title="2">  .<span class="at">then</span>(<span class="kw">function</span> (res) <span class="op">{</span></a>
+<a class="sourceLine" id="cb11-3" title="3">    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;response: &quot;</span><span class="op">,</span> res)<span class="op">;</span></a>
+<a class="sourceLine" id="cb11-4" title="4">    <span class="cf">return</span> <span class="va">res</span>.<span class="at">json</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb11-5" title="5">  <span class="op">}</span>)</a>
+<a class="sourceLine" id="cb11-6" title="6">  .<span class="at">then</span>(<span class="kw">function</span> (data) <span class="op">{</span></a>
+<a class="sourceLine" id="cb11-7" title="7">    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;data:&quot;</span><span class="op">,</span> data)<span class="op">;</span></a>
+<a class="sourceLine" id="cb11-8" title="8">  <span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
+<ul>
 <li>The second optional argument of a fetch request is the <code>options</code> argument, which can be used to add additional header information.</li>
-<li><p><strong><code>POST</code></strong> : Used to create data on the server.</p>
-<p>fetch(“https://jservice.xyz/api/categories”, { method: “POST”, headers: { “Content-Type”: “application/json”, }, body: JSON.stringify({ title: “ACTORS &amp; THEIR FILMS”, }), }) .then(function (res) { console.log(res); if (!res.ok) { throw Error(res.statusText); } return res.json(); }) .then(function (data) { console.log(data); }) .catch(function (error) { console.log(error); });</p></li>
+<li><strong><code>POST</code></strong> : Used to create data on the server.</li>
+</ul>
+<div class="sourceCode" id="cb12"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb12-1" title="1"><span class="at">fetch</span>(<span class="st">&quot;https://jservice.xyz/api/categories&quot;</span><span class="op">,</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb12-2" title="2">  <span class="dt">method</span><span class="op">:</span> <span class="st">&quot;POST&quot;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb12-3" title="3">  <span class="dt">headers</span><span class="op">:</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb12-4" title="4">    <span class="st">&quot;Content-Type&quot;</span><span class="op">:</span> <span class="st">&quot;application/json&quot;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb12-5" title="5">  <span class="op">},</span></a>
+<a class="sourceLine" id="cb12-6" title="6">  <span class="dt">body</span><span class="op">:</span> <span class="va">JSON</span>.<span class="at">stringify</span>(<span class="op">{</span></a>
+<a class="sourceLine" id="cb12-7" title="7">    <span class="dt">title</span><span class="op">:</span> <span class="st">&quot;ACTORS &amp; THEIR FILMS&quot;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb12-8" title="8">  <span class="op">}</span>)<span class="op">,</span></a>
+<a class="sourceLine" id="cb12-9" title="9"><span class="op">}</span>)</a>
+<a class="sourceLine" id="cb12-10" title="10">  .<span class="at">then</span>(<span class="kw">function</span> (res) <span class="op">{</span></a>
+<a class="sourceLine" id="cb12-11" title="11">    <span class="va">console</span>.<span class="at">log</span>(res)<span class="op">;</span></a>
+<a class="sourceLine" id="cb12-12" title="12">    <span class="cf">if</span> (<span class="op">!</span><span class="va">res</span>.<span class="at">ok</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb12-13" title="13">      <span class="cf">throw</span> <span class="at">Error</span>(<span class="va">res</span>.<span class="at">statusText</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb12-14" title="14">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb12-15" title="15">    <span class="cf">return</span> <span class="va">res</span>.<span class="at">json</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb12-16" title="16">  <span class="op">}</span>)</a>
+<a class="sourceLine" id="cb12-17" title="17">  .<span class="at">then</span>(<span class="kw">function</span> (data) <span class="op">{</span></a>
+<a class="sourceLine" id="cb12-18" title="18">    <span class="va">console</span>.<span class="at">log</span>(data)<span class="op">;</span></a>
+<a class="sourceLine" id="cb12-19" title="19">  <span class="op">}</span>)</a>
+<a class="sourceLine" id="cb12-20" title="20">  .<span class="at">catch</span>(<span class="kw">function</span> (error) <span class="op">{</span></a>
+<a class="sourceLine" id="cb12-21" title="21">    <span class="va">console</span>.<span class="at">log</span>(error)<span class="op">;</span></a>
+<a class="sourceLine" id="cb12-22" title="22">  <span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
+<ul>
 <li>IMPORTANT! Fetch API will not reject HTTP status codes between 400 &amp; 600 - it will only reject on errors like network errors.
 <ul>
 <li>Instead, Fetch REQUIRES you to check the <code>ok</code> key inside of the Response Object, and if the key is false then the fetch can properly handle the error.</li>
@@ -321,40 +436,40 @@ This is the third paragraph
 <figure>
 <img src="https://assets.aaonline.io/Module-Web/ajax/ajax.svg" alt="AJAX diagram" /><figcaption>AJAX diagram</figcaption>
 </figure>
-<pre><code>&lt;button class=&quot;want-to-read&quot;&gt;Want to Read&lt;/button&gt;
-
-&lt;script async&gt;
-  document.querySelector(&quot;.want-to-read&quot;).addEventListener(&quot;click&quot;, function() {
-    fetch(`https://api.goodreads.com/books/${BOOK_ID}/update-status`, {
-      method: &quot;PATCH&quot;, // using PATCH since we&#39;ll just be modifying the book&#39;s status
-      headers: {
-        &quot;Content-Type&quot;: &quot;application/json&quot;
-      },
-      body: JSON.stringify({
-        status: &quot;Want to Read&quot;
-      })
-    })
-      .then(function(res) {
-        if (!res.ok) {
-          throw Error(res.statusText); // handle any potential server errors
-        }
-        return res.json(); // extract JSON from the response
-      })
-      .then(function(data) {
-        document.querySelector(&quot;.want-to-read&quot;).innerHTML = &quot;✓ Want To Read&quot;;
-      })
-      .catch(function(error) {
-        const errorMessage = document.createElement(&quot;p&quot;);
-        errorMessage.appendChild(
-          document.createTextNode(&quot;Something went wrong. Please try again!&quot;)
-        );
-
-        // This example appends an error message to the body for simplicity&#39;s sake.
-        // Please do not copy this kind of DOM manipulation in your own projects:
-        document.querySelector(&quot;body&quot;).appendChild(errorMessage);
-      });
-  });
-&lt;/script&gt;</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb13-1" title="1"><span class="op">&lt;</span>button <span class="kw">class</span><span class="op">=</span><span class="st">&quot;want-to-read&quot;</span><span class="op">&gt;</span>Want to Read&lt;/button<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb13-2" title="2"></a>
+<a class="sourceLine" id="cb13-3" title="3"><span class="op">&lt;</span>script <span class="kw">async</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb13-4" title="4">  <span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&quot;.want-to-read&quot;</span>).<span class="at">addEventListener</span>(<span class="st">&quot;click&quot;</span><span class="op">,</span> <span class="kw">function</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb13-5" title="5">    <span class="at">fetch</span>(<span class="vs">`https://api.goodreads.com/books/</span><span class="sc">${</span>BOOK_ID<span class="sc">}</span><span class="vs">/update-status`</span><span class="op">,</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb13-6" title="6">      <span class="dt">method</span><span class="op">:</span> <span class="st">&quot;PATCH&quot;</span><span class="op">,</span> <span class="co">// using PATCH since we&#39;ll just be modifying the book&#39;s status</span></a>
+<a class="sourceLine" id="cb13-7" title="7">      <span class="dt">headers</span><span class="op">:</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb13-8" title="8">        <span class="st">&quot;Content-Type&quot;</span><span class="op">:</span> <span class="st">&quot;application/json&quot;</span></a>
+<a class="sourceLine" id="cb13-9" title="9">      <span class="op">},</span></a>
+<a class="sourceLine" id="cb13-10" title="10">      <span class="dt">body</span><span class="op">:</span> <span class="va">JSON</span>.<span class="at">stringify</span>(<span class="op">{</span></a>
+<a class="sourceLine" id="cb13-11" title="11">        <span class="dt">status</span><span class="op">:</span> <span class="st">&quot;Want to Read&quot;</span></a>
+<a class="sourceLine" id="cb13-12" title="12">      <span class="op">}</span>)</a>
+<a class="sourceLine" id="cb13-13" title="13">    <span class="op">}</span>)</a>
+<a class="sourceLine" id="cb13-14" title="14">      .<span class="at">then</span>(<span class="kw">function</span>(res) <span class="op">{</span></a>
+<a class="sourceLine" id="cb13-15" title="15">        <span class="cf">if</span> (<span class="op">!</span><span class="va">res</span>.<span class="at">ok</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb13-16" title="16">          <span class="cf">throw</span> <span class="at">Error</span>(<span class="va">res</span>.<span class="at">statusText</span>)<span class="op">;</span> <span class="co">// handle any potential server errors</span></a>
+<a class="sourceLine" id="cb13-17" title="17">        <span class="op">}</span></a>
+<a class="sourceLine" id="cb13-18" title="18">        <span class="cf">return</span> <span class="va">res</span>.<span class="at">json</span>()<span class="op">;</span> <span class="co">// extract JSON from the response</span></a>
+<a class="sourceLine" id="cb13-19" title="19">      <span class="op">}</span>)</a>
+<a class="sourceLine" id="cb13-20" title="20">      .<span class="at">then</span>(<span class="kw">function</span>(data) <span class="op">{</span></a>
+<a class="sourceLine" id="cb13-21" title="21">        <span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&quot;.want-to-read&quot;</span>).<span class="at">innerHTML</span> <span class="op">=</span> <span class="st">&quot;✓ Want To Read&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb13-22" title="22">      <span class="op">}</span>)</a>
+<a class="sourceLine" id="cb13-23" title="23">      .<span class="at">catch</span>(<span class="kw">function</span>(error) <span class="op">{</span></a>
+<a class="sourceLine" id="cb13-24" title="24">        <span class="kw">const</span> errorMessage <span class="op">=</span> <span class="va">document</span>.<span class="at">createElement</span>(<span class="st">&quot;p&quot;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb13-25" title="25">        <span class="va">errorMessage</span>.<span class="at">appendChild</span>(</a>
+<a class="sourceLine" id="cb13-26" title="26">          <span class="va">document</span>.<span class="at">createTextNode</span>(<span class="st">&quot;Something went wrong. Please try again!&quot;</span>)</a>
+<a class="sourceLine" id="cb13-27" title="27">        )<span class="op">;</span></a>
+<a class="sourceLine" id="cb13-28" title="28"></a>
+<a class="sourceLine" id="cb13-29" title="29">        <span class="co">// This example appends an error message to the body for simplicity&#39;s sake.</span></a>
+<a class="sourceLine" id="cb13-30" title="30">        <span class="co">// Please do not copy this kind of DOM manipulation in your own projects:</span></a>
+<a class="sourceLine" id="cb13-31" title="31">        <span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&quot;body&quot;</span>).<span class="at">appendChild</span>(errorMessage)<span class="op">;</span></a>
+<a class="sourceLine" id="cb13-32" title="32">      <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb13-33" title="33">  <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb13-34" title="34">&lt;/script<span class="op">&gt;</span></a></code></pre></div>
 <ol type="1">
 <li><p>When we first send out the event listener and fetch with filled out options this is ths segment where we are conducting the <code>Javascript Call</code>.</p></li>
 <li><p>When the request is sent out it is the arrow leading from the AJAX engine to the Web Server.</p></li>
@@ -367,131 +482,73 @@ This is the third paragraph
 <hr />
 <h2 id="section-1">——</h2>
 <h2 id="thursday"># Thursday</h2>
-<table style="width:9%;">
+<table style="width:10%;">
 <colgroup>
 <col style="width: 9%" />
 </colgroup>
 <tbody>
 <tr class="odd">
-<td>
-# <strong>Notes</strong>
-</td>
+<td># <strong>Notes</strong></td>
 </tr>
 <tr class="even">
-<td>
-## <strong>The Box Model</strong>
-</td>
+<td>## <strong>The Box Model</strong></td>
 </tr>
 <tr class="odd">
-<td>
-<ul>
-<li><strong>Box Model</strong> : A concept that basically boils down that every DOM element has a box around it.
-</td>
+<td>- <strong>Box Model</strong> : A concept that basically boils down that every DOM element has a box around it.</td>
 </tr>
 <tr class="even">
-<td>
-<img src="https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/layout/assets/the-box-model.svg" alt="boxmodel" />
-</td>
+<td><img src="https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/layout/assets/the-box-model.svg" alt="boxmodel" /></td>
 </tr>
 <tr class="odd">
-<td>
-&gt; Imagine a gift, inside is the gift, wrapped in foam all around (padding), and the giftbox outside of it (border) and then a wrapping paper on the giftbox (margin).
-</td>
+<td>&gt; Imagine a gift, inside is the gift, wrapped in foam all around (padding), and the giftbox outside of it (border) and then a wrapping paper on the giftbox (margin).</td>
 </tr>
 <tr class="even">
-<td>
-<ul>
-<li>For items that are using <code>block</code> as it’s display, the browser will follow these rules to layout the element: - The box fills 100% of the available container space. - Every new box takes on a new line/row. - Width and Height properties are respected. - Padding, Margin, and Border will push other elements away from the box. - Certain elements have <code>block</code> as their default display, such as: divs, headers, and paragraphs.
-</td>
+<td>- For items that are using <code>block</code> as it’s display, the browser will follow these rules to layout the element: - The box fills 100% of the available container space. - Every new box takes on a new line/row. - Width and Height properties are respected. - Padding, Margin, and Border will push other elements away from the box. - Certain elements have <code>block</code> as their default display, such as: divs, headers, and paragraphs.</td>
 </tr>
 <tr class="odd">
-<td>
-<ul>
-<li>For items that are using <code>inline</code> as it’s display, the browser will follow these rules to layout the element: - Each box appears in a single line until it fills up the space. - Width and height are <strong>not</strong> respected. - Padding, Margin, and Border are applied but they <strong>do not</strong> push other elements away from the box. - Certain elements have <code>inline</code> as their default display, such as: span tags, anchors, and images.
-</td>
+<td>- For items that are using <code>inline</code> as it’s display, the browser will follow these rules to layout the element: - Each box appears in a single line until it fills up the space. - Width and height are <strong>not</strong> respected. - Padding, Margin, and Border are applied but they <strong>do not</strong> push other elements away from the box. - Certain elements have <code>inline</code> as their default display, such as: span tags, anchors, and images.</td>
 </tr>
 <tr class="even">
-<td>
-<strong>Standard Box Model vs Border-Box</strong>
-</td>
+<td><strong>Standard Box Model vs Border-Box</strong></td>
 </tr>
 <tr class="odd">
-<td>
-<ul>
-<li>As per the standard Box Model, the width and height pertains to the content of the box and excludes any additional padding, borders, and margins.
-</td>
+<td>- As per the standard Box Model, the width and height pertains to the content of the box and excludes any additional padding, borders, and margins.</td>
 </tr>
 <tr class="even">
-<td>
-<img src="https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/layout/assets/standard-box.svg" alt="example" />
-</td>
+<td><img src="https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/layout/assets/standard-box.svg" alt="example" /></td>
 </tr>
 <tr class="odd">
-<td>
-<ul>
-<li>This bothered many programmers so they created the <strong>border box</strong> to include the calculation of the entire box’s height and width.
-</td>
+<td>- This bothered many programmers so they created the <strong>border box</strong> to include the calculation of the entire box’s height and width.</td>
 </tr>
 <tr class="even">
-<td>
-<img src="https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/layout/assets/border-box.svg" alt="ex" />
-</td>
+<td><img src="https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/layout/assets/border-box.svg" alt="ex" /></td>
 </tr>
 <tr class="odd">
-<td>
-<strong>Inline-Block</strong>
-</td>
+<td><strong>Inline-Block</strong></td>
 </tr>
 <tr class="even">
-<td>
-<ul>
-<li>Inline-block uses the best features of both <code>block</code> and <code>inline</code>. - Elements still get laid out left to right. - Layout takes into account specified width and height.
-</td>
+<td>- Inline-block uses the best features of both <code>block</code> and <code>inline</code>. - Elements still get laid out left to right. - Layout takes into account specified width and height.</td>
 </tr>
 <tr class="odd">
-<td>
-<strong>Padding</strong>
-</td>
+<td><strong>Padding</strong></td>
 </tr>
 <tr class="even">
-<td>
-<ul>
-<li>Padding applies padding to every side of a box. It is shorthand for four padding properties in this order: <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, <code>padding-left</code> (clockwise!)
-</td>
+<td>- Padding applies padding to every side of a box. It is shorthand for four padding properties in this order: <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, <code>padding-left</code> (clockwise!)</td>
 </tr>
 <tr class="odd">
-<td>
-<strong>Border</strong>
-</td>
+<td><strong>Border</strong></td>
 </tr>
 <tr class="even">
-<td>
-<ul>
-<li>Border applies a border on all sides of an element. It takes three values in this order: <code>border-width</code>, <code>border-style</code>, <code>border-color</code>. - All three properties can be broken down in the four sides clockwise: top, right, bottom, left.
-</td>
+<td>- Border applies a border on all sides of an element. It takes three values in this order: <code>border-width</code>, <code>border-style</code>, <code>border-color</code>. - All three properties can be broken down in the four sides clockwise: top, right, bottom, left.</td>
 </tr>
 <tr class="odd">
-<td>
-<strong>Margin</strong>
-</td>
+<td><strong>Margin</strong></td>
 </tr>
 <tr class="even">
-<td>
-<ul>
-<li>Margin sets margins on every side of an element. It takes four values in this order: <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, <code>margin-left</code>. - You can use <code>margin: 0 auto</code> to center an element.
-</td>
+<td>- Margin sets margins on every side of an element. It takes four values in this order: <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, <code>margin-left</code>. - You can use <code>margin: 0 auto</code> to center an element.</td>
 </tr>
 </tbody>
-</table></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
+</table>
 <h2 id="positioning"><strong>Positioning</strong></h2>
 <ul>
 <li>The <code>position</code> property allows us to set the position of elements on a page and is an integral part of creatnig a Web page layout.</li>
@@ -507,45 +564,84 @@ This is the third paragraph
 <ul>
 <li>Remains in it’s original position in the page flow.</li>
 <li>It is positioned <em>RELATIVE</em> to the it’s <em>ORIGINAL PLACE</em> on the page flow.</li>
-<li><p>Creates a <strong>stacking context</strong> : overlapping elements whose order can be set by the z-index property.</p>
-<p>#pink-box { background-color: #ff69b4; bottom: 0; left: -20px; position: relative; right: 0; top: 0; }</p></li>
+<li>Creates a <strong>stacking context</strong> : overlapping elements whose order can be set by the z-index property.</li>
 </ul>
+<div class="sourceCode" id="cb14"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb14-1" title="1"><span class="pp">#pink-box</span> {</a>
+<a class="sourceLine" id="cb14-2" title="2">  <span class="kw">background-color</span>: <span class="cn">#ff69b4</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb14-3" title="3">  <span class="kw">bottom</span>: <span class="dv">0</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb14-4" title="4">  <span class="kw">left</span>: <span class="dv">-20</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb14-5" title="5">  <span class="kw">position</span>: <span class="dv">relative</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb14-6" title="6">  <span class="kw">right</span>: <span class="dv">0</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb14-7" title="7">  <span class="kw">top</span>: <span class="dv">0</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb14-8" title="8">}</a></code></pre></div>
 <figure>
 <img src="https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/layout/assets/relative-pink-box.png" alt="rel" /><figcaption>rel</figcaption>
 </figure>
 <p><strong>Absolute Positioning</strong></p>
 <ul>
 <li>Absolute elements are removed from the normal page flow and other elements around it act like it’s not there. (how we can easily achieve some layering)</li>
-<li><p>Here are some examples to illustration absolute positioning:</p>
-<p>.container { background-color: #2b2d2f; position: relative; }</p>
-<p>#pink-box { position: absolute; top: 60px; }</p></li>
+<li>Here are some examples to illustration absolute positioning:</li>
 </ul>
+<div class="sourceCode" id="cb15"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb15-1" title="1"><span class="fu">.container</span> {</a>
+<a class="sourceLine" id="cb15-2" title="2">  <span class="kw">background-color</span>: <span class="cn">#2b2d2f</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb15-3" title="3">  <span class="kw">position</span>: <span class="dv">relative</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb15-4" title="4">}</a>
+<a class="sourceLine" id="cb15-5" title="5"></a>
+<a class="sourceLine" id="cb15-6" title="6"><span class="pp">#pink-box</span> {</a>
+<a class="sourceLine" id="cb15-7" title="7">  <span class="kw">position</span>: <span class="dv">absolute</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb15-8" title="8">  <span class="kw">top</span>: <span class="dv">60</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb15-9" title="9">}</a></code></pre></div>
 <figure>
 <img src="https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/layout/assets/absolute-pink-box.png" alt="img" /><figcaption>img</figcaption>
 </figure>
 <ul>
 <li>Note that the container ele has a relative positioning - this is so that any changes made to the absolute positioned children will be positioned from it’s top-left corner.</li>
-<li><p>Note that because we removed the pink from the normal page flow, the container has now shifted the blue box to where the pink box should have been - which is why it is now layered beneath the pink.</p>
-<p>.container { background-color: #2b2d2f; position: relative; }</p>
-<p>#pink-box { position: absolute; top: 60px; }</p>
-<p>#blue-box { position: absolute; }</p></li>
+<li>Note that because we removed the pink from the normal page flow, the container has now shifted the blue box to where the pink box should have been - which is why it is now layered beneath the pink.</li>
 </ul>
+<div class="sourceCode" id="cb16"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb16-1" title="1"><span class="fu">.container</span> {</a>
+<a class="sourceLine" id="cb16-2" title="2">  <span class="kw">background-color</span>: <span class="cn">#2b2d2f</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb16-3" title="3">  <span class="kw">position</span>: <span class="dv">relative</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb16-4" title="4">}</a>
+<a class="sourceLine" id="cb16-5" title="5"></a>
+<a class="sourceLine" id="cb16-6" title="6"><span class="pp">#pink-box</span> {</a>
+<a class="sourceLine" id="cb16-7" title="7">  <span class="kw">position</span>: <span class="dv">absolute</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb16-8" title="8">  <span class="kw">top</span>: <span class="dv">60</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb16-9" title="9">}</a>
+<a class="sourceLine" id="cb16-10" title="10"></a>
+<a class="sourceLine" id="cb16-11" title="11"><span class="pp">#blue-box</span> {</a>
+<a class="sourceLine" id="cb16-12" title="12">  <span class="kw">position</span>: <span class="dv">absolute</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb16-13" title="13">}</a></code></pre></div>
 <figure>
 <img src="https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/layout/assets/absolute-blue-box.png" alt="img" /><figcaption>img</figcaption>
 </figure>
 <ul>
-<li><p>As you can see here, since we have also taken the blue box out of the normal page flow by declaring it as absoutely positioned it now overlaps over the pink box.</p>
-<p>.container { background-color: #2b2d2f; position: relative; }</p>
-<p>#pink-box { background-color: #ff69b4; bottom: 60px; position: absolute; }</p></li>
+<li>As you can see here, since we have also taken the blue box out of the normal page flow by declaring it as absoutely positioned it now overlaps over the pink box.</li>
 </ul>
+<div class="sourceCode" id="cb17"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb17-1" title="1"><span class="fu">.container</span> {</a>
+<a class="sourceLine" id="cb17-2" title="2">  <span class="kw">background-color</span>: <span class="cn">#2b2d2f</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb17-3" title="3">  <span class="kw">position</span>: <span class="dv">relative</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb17-4" title="4">}</a>
+<a class="sourceLine" id="cb17-5" title="5"></a>
+<a class="sourceLine" id="cb17-6" title="6"><span class="pp">#pink-box</span> {</a>
+<a class="sourceLine" id="cb17-7" title="7">  <span class="kw">background-color</span>: <span class="cn">#ff69b4</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb17-8" title="8">  <span class="kw">bottom</span>: <span class="dv">60</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb17-9" title="9">  <span class="kw">position</span>: <span class="dv">absolute</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb17-10" title="10">}</a></code></pre></div>
 <figure>
 <img src="https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/layout/assets/relative-parent-absolute-child.png" alt="img" /><figcaption>img</figcaption>
 </figure>
 <ul>
-<li><p>Example where the absolute element has it’s bottom property modified.</p>
-<p>.container { background-color: #2b2d2f; }</p>
-<p>#pink-box { background-color: #ff69b4; bottom: 60px; position: absolute; }</p></li>
+<li>Example where the absolute element has it’s bottom property modified.</li>
 </ul>
+<div class="sourceCode" id="cb18"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb18-1" title="1"><span class="fu">.container</span> {</a>
+<a class="sourceLine" id="cb18-2" title="2">  <span class="kw">background-color</span>: <span class="cn">#2b2d2f</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb18-3" title="3">}</a>
+<a class="sourceLine" id="cb18-4" title="4"></a>
+<a class="sourceLine" id="cb18-5" title="5"><span class="pp">#pink-box</span> {</a>
+<a class="sourceLine" id="cb18-6" title="6">  <span class="kw">background-color</span>: <span class="cn">#ff69b4</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb18-7" title="7">  <span class="kw">bottom</span>: <span class="dv">60</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb18-8" title="8">  <span class="kw">position</span>: <span class="dv">absolute</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb18-9" title="9">}</a></code></pre></div>
 <figure>
 <img src="https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/layout/assets/static-parent-absolute-child.png" alt="img" /><figcaption>img</figcaption>
 </figure>
@@ -578,8 +674,14 @@ This is the third paragraph
 <p><strong>Using Flexbox</strong></p>
 <ul>
 <li><p>Flexbox automatically resizes a container element to fit the viewport size without needing to use breakpoints. <img src="https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/flexbox/assets/flexbox-elements.png" alt="flex" /></p></li>
-<li><p>Flexbox layout applies styles to the parent element, and it’s children.</p>
-<p>.container { display: flex; /<em>sets display to use flex</em>/ flex-wrap: wrap; /<em>bc flex tries to fit everything into one line, use wrap to have the elements wrap to the next line</em>/ flex-direction: row; /<em>lets us create either rows or columns</em>/ }</p></li>
+<li><p>Flexbox layout applies styles to the parent element, and it’s children.</p></li>
+</ul>
+<div class="sourceCode" id="cb19"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb19-1" title="1"><span class="fu">.container</span> {</a>
+<a class="sourceLine" id="cb19-2" title="2">  <span class="kw">display</span>: flex<span class="op">;</span> <span class="co">/*sets display to use flex*/</span></a>
+<a class="sourceLine" id="cb19-3" title="3">  <span class="kw">flex-wrap</span>: wrap<span class="op">;</span> <span class="co">/*bc flex tries to fit everything into one line, use wrap to have the elements wrap to the next line*/</span></a>
+<a class="sourceLine" id="cb19-4" title="4">  <span class="kw">flex-direction</span>: row<span class="op">;</span> <span class="co">/*lets us create either rows or columns*/</span></a>
+<a class="sourceLine" id="cb19-5" title="5">}</a></code></pre></div>
+<ul>
 <li><strong><code>flex-flow</code></strong> can be used to combine wrap and direction.</li>
 <li><strong><code>justify-content</code></strong> used to define the alignment of flex items along the main axis.</li>
 <li><strong><code>align-items</code></strong> used to define the alignment on the Y-axis.</li>
@@ -602,18 +704,54 @@ This is the third paragraph
 <p><strong>Bootstrap vs CSS Grid</strong></p>
 <ul>
 <li>Bootstrap was a front-end library commonly used to create grid layouts but now CSS grid provides greater flexibility and control.</li>
-<li><p>Grid applies style to a parent container and it’s child elements.</p>
-<p>.grid-container { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: auto; grid-template-areas: “header header header” “main . sidebar” “footer footer footer”;</p>
-<p>grid-column-gap: 20px; grid-row-gap: 30px; justify-items: stretch; align-items: stretch; justify-content: stretch; align-content: stretch; }</p>
-<p>.item-1 { grid-area: header; } .item-2 { grid-area: main; } .item-3 { grid-area: sidebar; } .item-4 { grid-area: footer; }</p></li>
+<li>Grid applies style to a parent container and it’s child elements.</li>
+</ul>
+<div class="sourceCode" id="cb20"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb20-1" title="1"><span class="fu">.grid-container</span> {</a>
+<a class="sourceLine" id="cb20-2" title="2">  <span class="kw">display</span>: grid<span class="op">;</span></a>
+<a class="sourceLine" id="cb20-3" title="3">  <span class="kw">grid-template-columns</span>: <span class="fu">repeat(</span><span class="dv">3</span><span class="op">,</span> <span class="dv">1</span>fr<span class="fu">)</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb20-4" title="4">  <span class="kw">grid-template-rows</span>: <span class="bu">auto</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb20-5" title="5">  <span class="kw">grid-template-areas</span>:</a>
+<a class="sourceLine" id="cb20-6" title="6">    <span class="st">&quot;header header header&quot;</span></a>
+<a class="sourceLine" id="cb20-7" title="7">    <span class="st">&quot;main . sidebar&quot;</span></a>
+<a class="sourceLine" id="cb20-8" title="8">    <span class="st">&quot;footer footer footer&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb20-9" title="9"></a>
+<a class="sourceLine" id="cb20-10" title="10">  <span class="kw">grid-column-gap</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb20-11" title="11">  <span class="kw">grid-row-gap</span>: <span class="dv">30</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb20-12" title="12">  <span class="kw">justify-items</span>: stretch<span class="op">;</span></a>
+<a class="sourceLine" id="cb20-13" title="13">  <span class="kw">align-items</span>: stretch<span class="op">;</span></a>
+<a class="sourceLine" id="cb20-14" title="14">  <span class="kw">justify-content</span>: stretch<span class="op">;</span></a>
+<a class="sourceLine" id="cb20-15" title="15">  <span class="kw">align-content</span>: stretch<span class="op">;</span></a>
+<a class="sourceLine" id="cb20-16" title="16">}</a>
+<a class="sourceLine" id="cb20-17" title="17"></a>
+<a class="sourceLine" id="cb20-18" title="18"><span class="fu">.item-1</span> {</a>
+<a class="sourceLine" id="cb20-19" title="19">  <span class="kw">grid-area</span>: header<span class="op">;</span></a>
+<a class="sourceLine" id="cb20-20" title="20">}</a>
+<a class="sourceLine" id="cb20-21" title="21"><span class="fu">.item-2</span> {</a>
+<a class="sourceLine" id="cb20-22" title="22">  <span class="kw">grid-area</span>: main<span class="op">;</span></a>
+<a class="sourceLine" id="cb20-23" title="23">}</a>
+<a class="sourceLine" id="cb20-24" title="24"><span class="fu">.item-3</span> {</a>
+<a class="sourceLine" id="cb20-25" title="25">  <span class="kw">grid-area</span>: sidebar<span class="op">;</span></a>
+<a class="sourceLine" id="cb20-26" title="26">}</a>
+<a class="sourceLine" id="cb20-27" title="27"><span class="fu">.item-4</span> {</a>
+<a class="sourceLine" id="cb20-28" title="28">  <span class="kw">grid-area</span>: footer<span class="op">;</span></a>
+<a class="sourceLine" id="cb20-29" title="29">}</a></code></pre></div>
+<ul>
 <li>Columns and Rows can be defined with: pixels, percentages, auto, named grid lines, using <code>repeat</code>, fractions.</li>
 <li><strong><code>Grid Template Areas</code></strong> gives us a handy way to map out and visualize areas of the grid layout.</li>
 <li>Combine areas with templates to define how much space an area should take up.</li>
 <li><p><strong><code>Grid Gaps</code></strong> can be used to create ‘gutters’ between grid item.s</p></li>
 <li><p>The way we have defined our grid with <code>grid-templates</code> and <code>areas</code> are condidered <strong>explicit</strong>.</p></li>
-<li><p>We can also <strong><code>implicitly</code></strong> define grids.</p>
-<p>.grid-container { display: grid; grid-template-columns: 100px 100px 100px 100px; grid-template-rows: 50px 50px 50px; grid-auto-columns: 100px; grid-auto-rows: 50px; }</p></li>
-<li><p>Any grid items that aren’t explicity placed are automatically placed or <em>re-flowed</em></p></li>
+<li><p>We can also <strong><code>implicitly</code></strong> define grids.</p></li>
+</ul>
+<div class="sourceCode" id="cb21"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb21-1" title="1"><span class="fu">.grid-container</span> {</a>
+<a class="sourceLine" id="cb21-2" title="2">  <span class="kw">display</span>: grid<span class="op">;</span></a>
+<a class="sourceLine" id="cb21-3" title="3">  <span class="kw">grid-template-columns</span>: <span class="dv">100</span><span class="dt">px</span> <span class="dv">100</span><span class="dt">px</span> <span class="dv">100</span><span class="dt">px</span> <span class="dv">100</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb21-4" title="4">  <span class="kw">grid-template-rows</span>: <span class="dv">50</span><span class="dt">px</span> <span class="dv">50</span><span class="dt">px</span> <span class="dv">50</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb21-5" title="5">  <span class="kw">grid-auto-columns</span>: <span class="dv">100</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb21-6" title="6">  <span class="kw">grid-auto-rows</span>: <span class="dv">50</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb21-7" title="7">}</a></code></pre></div>
+<ul>
+<li>Any grid items that aren’t explicity placed are automatically placed or <em>re-flowed</em></li>
 </ul>
 <p><strong>Spanning Columns &amp; Rows</strong></p>
 <ul>
@@ -624,10 +762,21 @@ This is the third paragraph
 <li><strong><code>grid-row-start</code></strong></li>
 <li><strong><code>grid-row-end</code></strong></li>
 </ul></li>
-<li><p>All four properties can take any of the following values: the line number, span #, span name, auto.</p>
-<p>.item-1 { grid-row-start: row2-start; /* Item starts at row line named “row2-start” <em>/ grid-row-end: 5; /</em> Item ends at row line 5 <em>/ grid-column-start: 1; /</em> Item starts at column line 1 <em>/ grid-column-end: three; /</em> Item ends at column line named “three” */ }</p>
-<p>.item-2 { grid-row-start: 1; /* Item starts at row line 1 <em>/ grid-row-end: span 2; /</em> Item spans two rows and ends at row line 3 <em>/ grid-column-start: 3; /</em> Item starts at column line 3 <em>/ grid-column-end: span col5-start; /</em> Item spans and ends at line named “col5-start” */ }</p></li>
+<li><p>All four properties can take any of the following values: the line number, span #, span name, auto.</p></li>
 </ul>
+<div class="sourceCode" id="cb22"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb22-1" title="1"><span class="fu">.item-1</span> {</a>
+<a class="sourceLine" id="cb22-2" title="2">  <span class="kw">grid-row-start</span>: row2-start<span class="op">;</span> <span class="co">/* Item starts at row line named &quot;row2-start&quot; */</span></a>
+<a class="sourceLine" id="cb22-3" title="3">  <span class="kw">grid-row-end</span>: <span class="dv">5</span><span class="op">;</span> <span class="co">/* Item ends at row line 5 */</span></a>
+<a class="sourceLine" id="cb22-4" title="4">  <span class="kw">grid-column-start</span>: <span class="dv">1</span><span class="op">;</span> <span class="co">/* Item starts at column line 1 */</span></a>
+<a class="sourceLine" id="cb22-5" title="5">  <span class="kw">grid-column-end</span>: three<span class="op">;</span> <span class="co">/* Item ends at column line named &quot;three&quot; */</span></a>
+<a class="sourceLine" id="cb22-6" title="6">}</a>
+<a class="sourceLine" id="cb22-7" title="7"></a>
+<a class="sourceLine" id="cb22-8" title="8"><span class="fu">.item-2</span> {</a>
+<a class="sourceLine" id="cb22-9" title="9">  <span class="kw">grid-row-start</span>: <span class="dv">1</span><span class="op">;</span> <span class="co">/* Item starts at row line 1 */</span></a>
+<a class="sourceLine" id="cb22-10" title="10">  <span class="kw">grid-row-end</span>: span <span class="dv">2</span><span class="op">;</span> <span class="co">/* Item spans two rows and ends at row line 3 */</span></a>
+<a class="sourceLine" id="cb22-11" title="11">  <span class="kw">grid-column-start</span>: <span class="dv">3</span><span class="op">;</span> <span class="co">/* Item starts at column line 3 */</span></a>
+<a class="sourceLine" id="cb22-12" title="12">  <span class="kw">grid-column-end</span>: span col5-start<span class="op">;</span> <span class="co">/* Item spans and ends at line named &quot;col5-start&quot; */</span></a>
+<a class="sourceLine" id="cb22-13" title="13">}</a></code></pre></div>
 <p><strong>Grid Areas</strong></p>
 <ul>
 <li>We use the grid areas in conjunction with grid-container property to <strong>define sections of the layout</strong>.</li>
@@ -648,47 +797,31 @@ This is the third paragraph
 <hr />
 <h2 id="section-2">——</h2>
 <h2 id="friday"># Friday</h2>
-<table style="width:9%;">
+<table style="width:10%;">
 <colgroup>
 <col style="width: 9%" />
 </colgroup>
 <tbody>
 <tr class="odd">
-<td>
-# <strong>Notes</strong>
-</td>
+<td># <strong>Notes</strong></td>
 </tr>
 <tr class="even">
-<td>
-## <strong>CSS Hover Effect and Handling Overflow</strong>
-</td>
+<td>## <strong>CSS Hover Effect and Handling Overflow</strong></td>
 </tr>
 <tr class="odd">
-<td>
-<code>css .btn { background-color: #00bfff; color: #ffffff; border-radius: 10px; padding: 1.5rem; } .btn–active:hover { cursor: pointer; transform: translateY(-0.25rem); /* Moves our button up/down on the Y axis */ }</code>
-</td>
+<td><code>css .btn { background-color: #00bfff; color: #ffffff; border-radius: 10px; padding: 1.5rem; } .btn--active:hover { cursor: pointer; transform: translateY(-0.25rem); /* Moves our button up/down on the Y axis */ }</code></td>
 </tr>
 <tr class="even">
-<td>
-<ul>
-<li>The Pseudo Class Selector <strong><code>hover</code></strong> activates when the cursor goes over the selected element.
-</td>
+<td>- The Pseudo Class Selector <strong><code>hover</code></strong> activates when the cursor goes over the selected element.</td>
 </tr>
 <tr class="odd">
-<td>
-<strong>Content Overflow</strong>
-</td>
+<td><strong>Content Overflow</strong></td>
 </tr>
 <tr class="even">
-<td>
-<ul>
-<li>You can apply an <code>overflow</code> content property to an element if it’s inner contents are spilling over. - There are three members in the overflow family: - <strong><code>overflow-x</code></strong> : Apply horizontally. - <strong><code>overflow-y</code></strong> : Apply vertically. - <strong><code>overflow</code></strong> : Apply both directions.
-</td>
+<td>- You can apply an <code>overflow</code> content property to an element if it’s inner contents are spilling over. - There are three members in the overflow family: - <strong><code>overflow-x</code></strong> : Apply horizontally. - <strong><code>overflow-y</code></strong> : Apply vertically. - <strong><code>overflow</code></strong> : Apply both directions.</td>
 </tr>
 </tbody>
-</table></li>
-</ul></li>
-</ul>
+</table>
 <h2 id="transitions"><strong>Transitions</strong></h2>
 <ul>
 <li>Transitions provide a way to control animation speed when changing CSS properties.</li>
@@ -701,24 +834,38 @@ This is the third paragraph
 <li><strong><code>transition-delay</code></strong> : time before the transition should start.</li>
 </ul>
 <p><strong>Examples</strong> :</p>
-<pre><code>#delay {
-  font-size: 14px;
-  transition-property: font-size;
-  transition-duration: 4s;
-  transition-delay: 2s;
-}
-
-#delay:hover {
-  font-size: 36px;
-}</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb23-1" title="1"><span class="pp">#delay</span> {</a>
+<a class="sourceLine" id="cb23-2" title="2">  <span class="kw">font-size</span>: <span class="dv">14</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb23-3" title="3">  <span class="kw">transition-property</span>: font-size<span class="op">;</span></a>
+<a class="sourceLine" id="cb23-4" title="4">  <span class="kw">transition-duration</span>: <span class="dv">4</span><span class="dt">s</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb23-5" title="5">  <span class="kw">transition-delay</span>: <span class="dv">2</span><span class="dt">s</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb23-6" title="6">}</a>
+<a class="sourceLine" id="cb23-7" title="7"></a>
+<a class="sourceLine" id="cb23-8" title="8"><span class="pp">#delay</span><span class="in">:hover</span> {</a>
+<a class="sourceLine" id="cb23-9" title="9">  <span class="kw">font-size</span>: <span class="dv">36</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb23-10" title="10">}</a></code></pre></div>
 <figure>
 <img src="https://assets.aaonline.io/Module-Solo-Prep-Work/assets/example-css-transition-simple.gif" alt="tran" /><figcaption>tran</figcaption>
 </figure>
 <ul>
-<li><p>After a delay of two seconds, a four second transition begins where the font size goes from 36px to 14px.</p>
-<p>.box { border-style: solid; border-width: 1px; display: block; width: 100px; height: 100px; background-color: #0000ff; transition: width 2s, height 2s, background-color 2s, transform 2s; }</p>
-<p>.box:hover { background-color: #ffcccc; width: 200px; height: 200px; transform: rotate(180deg); }</p></li>
+<li>After a delay of two seconds, a four second transition begins where the font size goes from 36px to 14px.</li>
 </ul>
+<div class="sourceCode" id="cb24"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb24-1" title="1"><span class="fu">.box</span> {</a>
+<a class="sourceLine" id="cb24-2" title="2">  <span class="kw">border-style</span>: <span class="dv">solid</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb24-3" title="3">  <span class="kw">border-width</span>: <span class="dv">1</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb24-4" title="4">  <span class="kw">display</span>: <span class="dv">block</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb24-5" title="5">  <span class="kw">width</span>: <span class="dv">100</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb24-6" title="6">  <span class="kw">height</span>: <span class="dv">100</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb24-7" title="7">  <span class="kw">background-color</span>: <span class="cn">#0000ff</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb24-8" title="8">  <span class="kw">transition</span>: width <span class="dv">2</span><span class="dt">s</span><span class="op">,</span> height <span class="dv">2</span><span class="dt">s</span><span class="op">,</span> background-color <span class="dv">2</span><span class="dt">s</span><span class="op">,</span> transform <span class="dv">2</span><span class="dt">s</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb24-9" title="9">}</a>
+<a class="sourceLine" id="cb24-10" title="10"></a>
+<a class="sourceLine" id="cb24-11" title="11"><span class="fu">.box</span><span class="in">:hover</span> {</a>
+<a class="sourceLine" id="cb24-12" title="12">  <span class="kw">background-color</span>: <span class="cn">#ffcccc</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb24-13" title="13">  <span class="kw">width</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb24-14" title="14">  <span class="kw">height</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb24-15" title="15">  <span class="kw">transform</span>: <span class="fu">rotate(</span><span class="dv">180</span><span class="dt">deg</span><span class="fu">)</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb24-16" title="16">}</a></code></pre></div>
 <figure>
 <img src="https://assets.aaonline.io/Module-Solo-Prep-Work/assets/example-css-transition-multiple.gif" alt="pic" /><figcaption>pic</figcaption>
 </figure>
@@ -757,34 +904,33 @@ This is the third paragraph
 </ul></li>
 </ul>
 <p><strong>BEM Example</strong></p>
-<pre><code>&lt;form class=&quot;form form--theme-xmas form--simple&quot;&gt;
-  &lt;input class=&quot;form__input&quot; type=&quot;text&quot; /&gt;
-  &lt;input class=&quot;form__submit form__submit--disabled&quot; type=&quot;submit&quot; /&gt;
-&lt;/form&gt;
-
-/* block selector */
-.form {
-}
-
-/* block modifier selector */
-.form--theme-xmas {
-}
-
-/* block modifier selector */
-.form--simple {
-}
-
-/* element selector */
-.form__input {
-}
-
-/* element selector */
-.form__submit {
-}
-
-/* element modifier selector */
-.form__submit--disabled {
-}</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb25-1" title="1"><span class="kw">&lt;form</span><span class="ot"> class=</span><span class="st">&quot;form form--theme-xmas form--simple&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb25-2" title="2">  <span class="kw">&lt;input</span><span class="ot"> class=</span><span class="st">&quot;form__input&quot;</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb25-3" title="3">  <span class="kw">&lt;input</span><span class="ot"> class=</span><span class="st">&quot;form__submit form__submit--disabled&quot;</span><span class="ot"> type=</span><span class="st">&quot;submit&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb25-4" title="4"><span class="kw">&lt;/form&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb26-1" title="1"><span class="co">/* block selector */</span></a>
+<a class="sourceLine" id="cb26-2" title="2"><span class="fu">.form</span> {</a>
+<a class="sourceLine" id="cb26-3" title="3">}</a>
+<a class="sourceLine" id="cb26-4" title="4"></a>
+<a class="sourceLine" id="cb26-5" title="5"><span class="co">/* block modifier selector */</span></a>
+<a class="sourceLine" id="cb26-6" title="6"><span class="fu">.form--theme-xmas</span> {</a>
+<a class="sourceLine" id="cb26-7" title="7">}</a>
+<a class="sourceLine" id="cb26-8" title="8"></a>
+<a class="sourceLine" id="cb26-9" title="9"><span class="co">/* block modifier selector */</span></a>
+<a class="sourceLine" id="cb26-10" title="10"><span class="fu">.form--simple</span> {</a>
+<a class="sourceLine" id="cb26-11" title="11">}</a>
+<a class="sourceLine" id="cb26-12" title="12"></a>
+<a class="sourceLine" id="cb26-13" title="13"><span class="co">/* element selector */</span></a>
+<a class="sourceLine" id="cb26-14" title="14"><span class="fu">.form__input</span> {</a>
+<a class="sourceLine" id="cb26-15" title="15">}</a>
+<a class="sourceLine" id="cb26-16" title="16"></a>
+<a class="sourceLine" id="cb26-17" title="17"><span class="co">/* element selector */</span></a>
+<a class="sourceLine" id="cb26-18" title="18"><span class="fu">.form__submit</span> {</a>
+<a class="sourceLine" id="cb26-19" title="19">}</a>
+<a class="sourceLine" id="cb26-20" title="20"></a>
+<a class="sourceLine" id="cb26-21" title="21"><span class="co">/* element modifier selector */</span></a>
+<a class="sourceLine" id="cb26-22" title="22"><span class="fu">.form__submit--disabled</span> {</a>
+<a class="sourceLine" id="cb26-23" title="23">}</a></code></pre></div>
 <hr />
 </body>
 </html>

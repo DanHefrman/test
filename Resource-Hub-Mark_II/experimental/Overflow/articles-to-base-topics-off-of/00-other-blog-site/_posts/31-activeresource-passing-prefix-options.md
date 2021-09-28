@@ -26,7 +26,7 @@ For `save()` you can’t pass it as second parameter. So you need to explicitly 
 .save()
 =======
 
-<span class="citation" data-cites="inventory">@inventory</span> = Inventory.new(params\[:inventory\]) <span class="citation" data-cites="inventory.prefix_options">@inventory.prefix\_options \[:store\_id\]</span> = <span class="citation" data-cites="store.id">@store.id</span> <span class="citation" data-cites="inventory.save">@inventory.save</span> {% endhighlight %}
+<span class="citation" data-cites="inventory"><span class="citation" data-cites="inventory">@inventory</span></span> = Inventory.new(params\[:inventory\]) <span class="citation" data-cites="inventory.prefix_options"><span class="citation" data-cites="inventory.prefix">@inventory.prefix</span>\_options \[:store\_id\]</span> = <span class="citation" data-cites="store.id"><span class="citation" data-cites="store.id">@store.id</span></span> <span class="citation" data-cites="inventory.save"><span class="citation" data-cites="inventory.save">@inventory.save</span></span> {% endhighlight %}
 
 On update\_attributes()
 =======================
@@ -38,4 +38,4 @@ On update\_attributes()
 .update\_attibutes()
 ====================
 
-params\[:inventory\]\[:store\_id\] = <span class="citation" data-cites="store.id">@store.id</span> <span class="citation" data-cites="inventory.update_attributes">@inventory.update\_attributes</span>(params\[:inventory\]) {% endhighlight %}
+params\[:inventory\]\[:store\_id\] = <span class="citation" data-cites="store.id"><span class="citation" data-cites="store.id">@store.id</span></span> <span class="citation" data-cites="inventory.update_attributes"><span class="citation" data-cites="inventory.update">@inventory.update</span>\_attributes</span>(params\[:inventory\]) {% endhighlight %}

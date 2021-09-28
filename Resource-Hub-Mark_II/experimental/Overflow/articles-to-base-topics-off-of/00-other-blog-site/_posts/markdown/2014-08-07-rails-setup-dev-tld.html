@@ -11,107 +11,17 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
-  <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
 </head>
 <body>
-<!--
-
-
----
- "Rails : Setup .dev TLD"
-excerpt: "Rails : Setup .dev TLD"
-date: 2014-08-07 00:00:00 IST
-updated: 2014-08-07 00:00:00 IST
-categories: rails
-tags: rails
----
-
--->
-&lt;!DOCTYPE html&gt;
-<html>
-<head>
-<title>
-basic-git-workflow
-</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./css/bootstrap.css"> <link rel="stylesheet" href="./css/bootstrap.grid.css"> <link rel="stylesheet" href="./css/bootstrap.min.css"> <link rel="stylesheet" href="./css/bootstrap-reboot.min.css"> <link rel="stylesheet" href="./css/bootstrap.css.map"> <link rel="stylesheet" href="./css/blog-home.css"> <link rel="stylesheet" href="./css/prism.css">
-<script async defer src="./css/prism.js"></script>
-</head>
-<body>
+<p>&lt;!DOCTYPE html&gt;</p>
 <p>While I was working with PHP, I used to setup <em>.dev</em> domain with <a href="http://www.phprepo.in/2011/09/adding-virtual-host-in-apache-on-ubuntu/">Apache VirtualHost</a> for my development. But after I moved to Ruby on Rails, I never used it since Rails were not using apache server and port 80.</p>
 <p>In the begining I tried to set domain with <code>/etc/hosts</code>, but I came to know that hosts file won’t accept PORT. They only map IP address. But now I managed to find a way to setup <em>.dev</em> domain for rails development.</p>
 <p>You can either setup this manually or <a href="#invoker">use invoker</a> gem.</p>
-<div id="manual">
-
-</div>
 <h2 id="manual-setup">1. Manual Setup</h2>
 <p>To setup <em>.dev</em> domain, the prerequisites are <a href="http://www.thekelleys.org.uk/dnsmasq/doc.html">dnsmasq</a> and <a href="http://www.boutell.com/rinetd/">rinetd</a>. <strong>dnsmasq</strong> is a DNS subsystem provides a local DNS server for the network, with forwarding of all query types to upstream recursive DNS servers and cacheing of common record types. <strong>rinetd</strong> is a internet redirection server rinetd redirects TCP connections from one IP address and port to another</p>
 <h3 id="installation">Installation</h3>
 <p>On ubuntu use <code>apt-get</code> to install both dnsmasq &amp; rinetd</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> apt-get install dnsmasq rinetd</a></code></pre></div>
+<pre><code>sudo apt-get install dnsmasq rinetd</code></pre>
 <h3 id="configure-dnsmasq">Configure dnsmasq</h3>
 <p>create <code>/etc/dnsmasq.d/dev-tld</code> and add the below configuration into it.</p>
 <pre><code>local=/dev/
@@ -123,13 +33,10 @@ address=/dev/127.0.0.1</code></pre>
 <pre><code>0.0.0.0 80 0.0.0.0 4000
 0.0.0.0 443 0.0.0.0 3003</code></pre>
 <p>The second line in above config is needed only if you use SSL. After saving the config restart the rinetd, dnsmasq &amp; network.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="fu">sudo</span> service rinetd restart</a>
-<a class="sourceLine" id="cb5-2" title="2"><span class="fu">sudo</span> service dnsmasq restart</a>
-<a class="sourceLine" id="cb5-3" title="3"><span class="fu">sudo</span> /etc/init.d/networking restart</a></code></pre></div>
+<pre><code>sudo service rinetd restart
+sudo service dnsmasq restart
+sudo /etc/init.d/networking restart</code></pre>
 <p>If you think these steps are hassle, you can set things with invoker gem.</p>
-<div id="invoker">
-
-</div>
 <h2 id="setup-with-invoker">2. Setup with invoker</h2>
 <p>You can automate all these <strong>dnsmasq</strong> &amp; <strong>rinetd</strong> setup using <a href="http://invoker.codemancers.com/">invoker</a> gem.</p>
 <p>{% highlight sh %} gem install invoker {% endhighlight %}</p>

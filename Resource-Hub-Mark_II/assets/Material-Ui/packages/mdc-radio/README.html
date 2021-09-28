@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<!--docs:
+title: "Radio Buttons"
+layout: detail
+section: components
+iconId: radio_button
+path: /catalog/input-controls/radio-buttons/
+-->
+<h1 id="selection-controls-radio-buttons">Selection controls: radio buttons</h1>
+<p><a href="https://material.io/components/selection-controls#usage">Selection controls</a> allow the user to select options.</p>
+<p>Use radio buttons to:</p>
+<ul>
+<li>Select a single option from a list</li>
+<li>Expose all available options</li>
+<li>If available options can be collapsed, consider using a dropdown menu instead, as it uses less space.</li>
+</ul>
+<figure>
+<img src="images/radio-button-hero.png" alt="Radio button hero example for menu options" /><figcaption>Radio button hero example for menu options</figcaption>
+</figure>
+<p><strong>Contents</strong></p>
+<ul>
+<li><a href="#using-radio-buttons">Using radio buttons</a></li>
+<li><a href="#radio-buttons">Radio buttons</a></li>
+<li><a href="#other-variants">Other variants</a></li>
+<li><a href="#api">API</a></li>
+<li><a href="#usage-within-web-frameworks">Usage within web frameworks</a></li>
+</ul>
+<h2 id="using-radio-buttons">Using radio buttons</h2>
+<p>Radio buttons allow the user to select one option from a set. Use radio buttons when the user needs to see all available options. If available options can be collapsed, consider using a dropdown menu because it uses less space.</p>
+<h3 id="installing-radio-buttons">Installing radio buttons</h3>
+<pre><code>npm install @material/radio</code></pre>
+<h3 id="styles">Styles</h3>
+<pre class="scss"><code>@use &quot;@material/radio/styles&quot;;
+@use &quot;@material/form-field&quot;;
+
+@include form-field.core-styles;</code></pre>
+<p><strong>Note: The form field styles are only required when the radio button is used with the form field.</strong></p>
+<h3 id="javascript-instantiation">JavaScript instantiation</h3>
+<p>The radio button will work without JavaScript, but you can enhance it with a ripple interaction effect by instantiating <code>MDCRadio</code> on the <code>mdc-radio</code> element. To activate the ripple effect upon interacting with the label, you must also instantiate <code>MDCFormField</code> on the <code>mdc-form-field</code> element and set the <code>MDCRadio</code> instance as its <code>input</code>.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="im">import</span> <span class="op">{</span>MDCFormField<span class="op">}</span> <span class="im">from</span> <span class="st">&#39;@material/form-field&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="im">import</span> <span class="op">{</span>MDCRadio<span class="op">}</span> <span class="im">from</span> <span class="st">&#39;@material/radio&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-3" title="3"></a>
+<a class="sourceLine" id="cb3-4" title="4"><span class="kw">const</span> radio <span class="op">=</span> <span class="kw">new</span> <span class="at">MDCRadio</span>(<span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&#39;.mdc-radio&#39;</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-5" title="5"><span class="kw">const</span> formField <span class="op">=</span> <span class="kw">new</span> <span class="at">MDCFormField</span>(<span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&#39;.mdc-form-field&#39;</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-6" title="6"><span class="va">formField</span>.<span class="at">input</span> <span class="op">=</span> radio<span class="op">;</span></a></code></pre></div>
+<p><strong>Note: See <a href="../../docs/importing-js.md">Importing the JS component</a> for more information on how to import JavaScript.</strong></p>
+<h3 id="making-radio-buttons-accessible">Making radio buttons accessible</h3>
+<p>Material Design spec advises that touch targets should be at least 48px x 48px. To meet this requirement, add the <code>mdc-radio--touch</code> class to your radio as follows:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-touch-target-wrapper&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb4-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-radio mdc-radio--touch&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb4-3" title="3">    <span class="kw">&lt;input</span><span class="ot"> class=</span><span class="st">&quot;mdc-radio__native-control&quot;</span><span class="ot"> type=</span><span class="st">&quot;radio&quot;</span><span class="ot"> id=</span><span class="st">&quot;radio-1&quot;</span><span class="ot"> name=</span><span class="st">&quot;radios&quot;</span><span class="ot"> checked</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb4-4" title="4">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-radio__background&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb4-5" title="5">      <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-radio__outer-circle&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb4-6" title="6">      <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-radio__inner-circle&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb4-7" title="7">    <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb4-8" title="8">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-radio__ripple&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb4-9" title="9">  <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb4-10" title="10"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
+<p>Note that the outer <code>mdc-touch-target-wrapper</code> element is only necessary if you want to avoid potentially overlapping touch targets on adjacent elements (due to collapsing margins).</p>
+<h2 id="radio-buttons">Radio buttons</h2>
+<p>We recommend using MDC Radio with <a href="../mdc-form-field">MDC Form Field</a> for enhancements such as label alignment, label activation of the ripple interaction effect, and RTL-awareness.</p>
+<h3 id="radio-button-example">Radio button example</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-form-field&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb5-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-radio&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb5-3" title="3">    <span class="kw">&lt;input</span><span class="ot"> class=</span><span class="st">&quot;mdc-radio__native-control&quot;</span><span class="ot"> type=</span><span class="st">&quot;radio&quot;</span><span class="ot"> id=</span><span class="st">&quot;radio-1&quot;</span><span class="ot"> name=</span><span class="st">&quot;radios&quot;</span><span class="ot"> checked</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb5-4" title="4">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-radio__background&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb5-5" title="5">      <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-radio__outer-circle&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb5-6" title="6">      <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-radio__inner-circle&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb5-7" title="7">    <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb5-8" title="8">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-radio__ripple&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb5-9" title="9">  <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb5-10" title="10">  <span class="kw">&lt;label</span><span class="ot"> for=</span><span class="st">&quot;radio-1&quot;</span><span class="kw">&gt;</span>Radio 1<span class="kw">&lt;/label&gt;</span></a>
+<a class="sourceLine" id="cb5-11" title="11"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
+<h3 id="radio-button-states">Radio button states</h3>
+<p>Radio buttons can be selected or unselected. Radio buttons have enabled, disabled, hover, focused, and pressed states.</p>
+<figure>
+<img src="images/radio-button-states.png" alt="Radio button states in a table. Columns are enabled, disabled, hover, focused, pressed. Rows are selected or unselected" /><figcaption>Radio button states in a table. Columns are enabled, disabled, hover, focused, pressed. Rows are selected or unselected</figcaption>
+</figure>
+<h2 id="other-variants">Other variants</h2>
+<h3 id="disabled-radio-buttons">Disabled radio buttons</h3>
+<p>To disable a radio button, add the <code>mdc-radio--disabled</code> class to the root element and set the <code>disabled</code> attribute on the <code>&lt;input&gt;</code> element. Disabled radio buttons cannot be interacted with and have no visual interaction effect.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-form-field&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb6-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-radio mdc-radio--disabled&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb6-3" title="3">    <span class="kw">&lt;input</span><span class="ot"> class=</span><span class="st">&quot;mdc-radio__native-control&quot;</span><span class="ot"> type=</span><span class="st">&quot;radio&quot;</span><span class="ot"> id=</span><span class="st">&quot;radio-1&quot;</span><span class="ot"> name=</span><span class="st">&quot;radios&quot;</span><span class="ot"> disabled</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb6-4" title="4">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-radio__background&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb6-5" title="5">      <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-radio__outer-circle&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb6-6" title="6">      <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-radio__inner-circle&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb6-7" title="7">    <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb6-8" title="8">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-radio__ripple&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb6-9" title="9">  <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb6-10" title="10">  <span class="kw">&lt;label</span><span class="ot"> for=</span><span class="st">&quot;radio-1&quot;</span><span class="kw">&gt;</span>Radio 1<span class="kw">&lt;/label&gt;</span></a>
+<a class="sourceLine" id="cb6-11" title="11"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
+<h2 id="api">API</h2>
+<h3 id="sass-mixins">Sass mixins</h3>
+<p>MDC Radio uses <a href="../mdc-theme">MDC Theme</a>’s <code>secondary</code> color by default. Use the following mixins to customize it.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mixin</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>unchecked-stroke-color($color)</code></td>
+<td>Sets the stroke color of an unchecked, enabled radio button</td>
+</tr>
+<tr class="even">
+<td><code>checked-stroke-color($color)</code></td>
+<td>Sets the stroke color of a checked, enabled radio button</td>
+</tr>
+<tr class="odd">
+<td><code>ink-color($color)</code></td>
+<td>Sets the ink color of an enabled radio button</td>
+</tr>
+<tr class="even">
+<td><code>disabled-unchecked-stroke-color($color)</code></td>
+<td>Sets the stroke color of an unchecked, disabled radio button</td>
+</tr>
+<tr class="odd">
+<td><code>disabled-checked-stroke-color($color)</code></td>
+<td>Sets the stroke color of a checked, disabled radio button</td>
+</tr>
+<tr class="even">
+<td><code>disabled-ink-color($color)</code></td>
+<td>Sets the ink color of a disabled radio button</td>
+</tr>
+<tr class="odd">
+<td><code>focus-indicator-color($color)</code></td>
+<td>Sets the color of the focus indicator</td>
+</tr>
+<tr class="even">
+<td><code>touch-target($size, $ripple-size)</code></td>
+<td>Sets radio touch target size which can be more than the ripple size. Param <code>$ripple-size</code> is required for custom ripple size, defaults to <code>$ripple-size</code>.</td>
+</tr>
+<tr class="odd">
+<td><code>ripple-size($size)</code></td>
+<td>Sets custom ripple size of radio.</td>
+</tr>
+<tr class="even">
+<td><code>density($density-scale)</code></td>
+<td>Sets density scale for radio. Supported density scale values are <code>-3</code>, <code>-2</code>, <code>-1</code> and <code>0</code> (default).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mdcradio-properties-and-methods"><code>MDCRadio</code> properties and methods</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Property</th>
+<th>Value Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>checked</code></td>
+<td>Boolean</td>
+<td>Setter/getter for the radio’s checked state</td>
+</tr>
+<tr class="even">
+<td><code>disabled</code></td>
+<td>Boolean</td>
+<td>Setter/getter for the radio’s disabled state. Setter proxies to foundation’s <code>setDisabled</code> method</td>
+</tr>
+<tr class="odd">
+<td><code>value</code></td>
+<td>String</td>
+<td>Setter/getter for the radio’s value</td>
+</tr>
+</tbody>
+</table>
+<h2 id="usage-within-web-frameworks">Usage within web frameworks</h2>
+<p>If you are using a JavaScript framework, such as React or Angular, you can create a Radio button for your framework. Depending on your needs, you can use the <em>Simple Approach: Wrapping MDC Web Vanilla Components</em>, or the <em>Advanced Approach: Using Foundations and Adapters</em>. Please follow the instructions <a href="../../docs/integrating-into-frameworks.md">here</a>.</p>
+<h3 id="mdcradioadapter"><code>MDCRadioAdapter</code></h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method Signature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>setNativeControlDisabled(disabled: boolean) =&gt; void</code></td>
+<td>Sets the input’s <code>disabled</code> property to the given value</td>
+</tr>
+<tr class="even">
+<td><code>addClass(className: string) =&gt; void</code></td>
+<td>Adds a class to the root element</td>
+</tr>
+<tr class="odd">
+<td><code>removeClass(className: string) =&gt; void</code></td>
+<td>Removes a class from the root element</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mdcradiofoundation"><code>MDCRadioFoundation</code></h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method Signature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>setDisabled(disabled: boolean) =&gt; void</code></td>
+<td>Sets the disabled value of the native control</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

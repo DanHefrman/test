@@ -1,10 +1,8 @@
-<span class="citation" data-cites="dojo/widgets/number-input"><span class="citation" data-cites="dojo/widgets/number-input"><span class="citation" data-cites="dojo/widgets/number-input">@dojo/widgets/number-input</span></span></span>
-=========================================================================================================================================================================================================================================
+# <span class="citation" data-cites="dojo/widgets/number-input"><span class="citation" data-cites="dojo/widgets/number-input"><span class="citation" data-cites="dojo/widgets/number-input">@dojo/widgets/number-input</span></span></span>
 
 Dojo’s `NumberInput` widget provides a basic number input widget with an optional label.
 
-Features
---------
+## Features
 
 -   Correctly handles a11y attributes
 -   Allows leading / trailing icons / text to be added

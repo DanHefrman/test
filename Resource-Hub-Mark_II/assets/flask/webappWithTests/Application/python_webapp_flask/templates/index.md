@@ -10,22 +10,19 @@ Azure DevOps Project has been successfully setup
 
 Your Python Flask app is up and running on Azure
 
-Get started right away
-----------------------
+## Get started right away
 
 Clone your code repository and start developing your application on IDE of your choice
 
 <a href="https://go.microsoft.com/fwlink/?linkid=862409" class="btn btn-default">Learn more »</a>
 
-Continuous Delivery
--------------------
+## Continuous Delivery
 
 View your CI/CD pipeline on Azure Devops and customize it as per your needs
 
 <a href="https://go.microsoft.com/fwlink/?linkid=862410" class="btn btn-default">Learn more »</a>
 
-Azure DevOps Project
---------------------
+## Azure DevOps Project
 
 Learn more about all you can do with Azure DevOps project by visiting the documentation
 

@@ -40,7 +40,7 @@ sudo: required dist: trusty
 
 branches: only: - master
 
-matrix: fast\_finish: true include: - node\_js: 5.5 language: node\_js env: NODE\_ENV=test cache: directories: - “<span class="math inline">$HOME/.nvm" - "$</span>HOME/.npm” before\_install: - nvm install v5.5 install: - npm install script: - npm test - rvm: 2.1.2 language: ruby env: RAILS\_ENV=test cache: bundler: true before\_install: - sudo apt-get update -qq - sudo apt-get install -qq mysql-server mysql-client unzip before\_script: - mysql -u root -e ‘create database app\_test;’ - cp config/database.travis.yml config/database.yml - bundle exec rake db:test:load app:generate\_secret\_token script: - bundle exec parallel\_rspec spec {% endhighlight %}
+matrix: fast\_finish: true include: - node\_js: 5.5 language: node\_js env: NODE\_ENV=test cache: directories: - “<span class="math inline"><span class="math inline">$HOME/.nvm" - "$</span></span>HOME/.npm” before\_install: - nvm install v5.5 install: - npm install script: - npm test - rvm: 2.1.2 language: ruby env: RAILS\_ENV=test cache: bundler: true before\_install: - sudo apt-get update -qq - sudo apt-get install -qq mysql-server mysql-client unzip before\_script: - mysql -u root -e ‘create database app\_test;’ - cp config/database.travis.yml config/database.yml - bundle exec rake db:test:load app:generate\_secret\_token script: - bundle exec parallel\_rspec spec {% endhighlight %}
 
 Now for frontend spec we dont need to setup anything related to ruby.
 

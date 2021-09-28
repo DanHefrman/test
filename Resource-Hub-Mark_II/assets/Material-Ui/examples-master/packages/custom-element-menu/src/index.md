@@ -1,11 +1,9 @@
-Dojo Widget Menu
-----------------
+## Dojo Widget Menu
 
 ### Demo
 
 ### Code
 
-                    
     class Example extends WidgetBase {
 
       private _onSelected(data: any) {
@@ -20,17 +18,15 @@ Dojo Widget Menu
         ]);
       }
     }
-                    
-                
 
-Custom Element Menu
--------------------
+
+
+## Custom Element Menu
 
 ### Demo
 
 ### Code
 
-                    
     <demo-menu id="menu">
       <demo-menu-item id="a" title="Menu Item A"></demo-menu-item>
       <demo-menu-item id="b" title="Menu Item B"></demo-menu-item>
@@ -44,5 +40,5 @@ Custom Element Menu
         console.log(detail);
       });
     </script>
-                    
-                
+
+

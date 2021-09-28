@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<!--docs:
+title: "Progress Indicator"
+layout: detail
+section: components
+excerpt: "Material Design-styled progress indicators."
+iconId: progress_linear
+path: /catalog/progress-indicator/
+-->
+<h1 id="progress-indicators">Progress Indicators</h1>
+<p>The MDC Progress Indicator component exposes common foundation and component interfaces for a progress indicator. Components that implement these interfaces include <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-linear-progress">linear progress</a> and <a href="https://github.com/material-components/material-components-web/tree/master/packages/mdc-circular-progress">circular progress</a>. <a href="https://material.io/go/design-progress-indicators">Material Design progress &amp; activity requirements</a>.</p>
+<h2 id="installation">Installation</h2>
+<pre><code>npm install @material/progress-indicator</code></pre>
+<h2 id="basic-usage">Basic Usage</h2>
+<h3 id="mdcprogressindicatorfoundation-api">MDCProgressIndicatorFoundation API</h3>
+<p>MDC Progress Indicator Foundation exposes the following methods:</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method Signature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>setDeterminate(value: boolean) =&gt; void</code></td>
+<td>Toggles the component between the determinate and indeterminate state.</td>
+</tr>
+<tr class="even">
+<td><code>setProgress(value: number) =&gt; void</code></td>
+<td>Sets the progress to this value. Value should be between [0, 1].</td>
+</tr>
+<tr class="odd">
+<td><code>open() =&gt; void</code></td>
+<td>Puts the component in the open state.</td>
+</tr>
+<tr class="even">
+<td><code>close() =&gt; void</code></td>
+<td>Puts the component in the closed state.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mdcprogressindicator-component-api">MDCProgressIndicator Component API</h3>
+<p>MDC Progress Indicator exposes the following API:</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method Signature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>determinate: boolean</code></td>
+<td>Whether the indicator is in the determinate or indeterminate state.</td>
+</tr>
+<tr class="even">
+<td><code>progress: number</code></td>
+<td>The current progress. Value should be between [0, 1].</td>
+</tr>
+<tr class="odd">
+<td><code>open() =&gt; void</code></td>
+<td>Puts the component in the open state.</td>
+</tr>
+<tr class="even">
+<td><code>close() =&gt; void</code></td>
+<td>Puts the component in the closed state.</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

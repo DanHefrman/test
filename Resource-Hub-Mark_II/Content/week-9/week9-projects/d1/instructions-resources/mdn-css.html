@@ -64,7 +64,7 @@
 }</code></pre>
 <h3 id="different-types-of-selectors">Different types of selectors</h3>
 <p>There are many different types of selectors. The examples above use <strong>element selectors</strong>, which select all elements of a given type. But we can make more specific selections as well. Here are some of the more common types of selectors:</p>
-<table>
+<table style="width:99%;">
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -72,61 +72,117 @@
 </colgroup>
 <thead>
 <tr class="header">
-<th>Selector name</th>
-<th>What does it select</th>
-<th>Example</th>
+<th>
+Selector name
+</th>
+<th>
+What does it select
+</th>
+<th>
+Example
+</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Element selector (sometimes called a tag or type selector)</td>
-<td>All HTML elements of the specified type.</td>
-<td><code>p</code></td>
+<td>
+Element selector (sometimes called a tag or type selector)
+</td>
+<td>
+All HTML elements of the specified type.
+</td>
+<td>
+<code>p</code>
+</td>
 </tr>
 <tr class="even">
-<td>selects <code>&lt;p&gt;</code></td>
-<td></td>
-<td></td>
+<td>
+selects <code>&lt;p&gt;</code>
+</td>
+<td>
+</td>
+<td>
+</td>
 </tr>
 <tr class="odd">
-<td>ID selector</td>
-<td>The element on the page with the specified ID. On a given HTML page, each id value should be unique.</td>
-<td><code>#my-id</code></td>
+<td>
+ID selector
+</td>
+<td>
+The element on the page with the specified ID. On a given HTML page, each id value should be unique.
+</td>
+<td>
+<code>#my-id</code>
+</td>
 </tr>
 <tr class="even">
-<td>selects <code>&lt;p id="my-id"&gt;</code> or <code>&lt;a id="my-id"&gt;</code></td>
-<td></td>
-<td></td>
+<td>
+selects <code>&lt;p id=“my-id”&gt;</code> or <code>&lt;a id=“my-id”&gt;</code>
+</td>
+<td>
+</td>
+<td>
+</td>
 </tr>
 <tr class="odd">
-<td>Class selector</td>
-<td>The element(s) on the page with the specified class. Multiple instances of the same class can appear on a page.</td>
-<td><code>.my-class</code></td>
+<td>
+Class selector
+</td>
+<td>
+The element(s) on the page with the specified class. Multiple instances of the same class can appear on a page.
+</td>
+<td>
+<code>.my-class</code>
+</td>
 </tr>
 <tr class="even">
-<td>selects <code>&lt;p class="my-class"&gt;</code> and <code>&lt;a class="my-class"&gt;</code></td>
-<td></td>
-<td></td>
+<td>
+selects <code>&lt;p class=“my-class”&gt;</code> and <code>&lt;a class=“my-class”&gt;</code>
+</td>
+<td>
+</td>
+<td>
+</td>
 </tr>
 <tr class="odd">
-<td>Attribute selector</td>
-<td>The element(s) on the page with the specified attribute.</td>
-<td><code>img[src]</code></td>
+<td>
+Attribute selector
+</td>
+<td>
+The element(s) on the page with the specified attribute.
+</td>
+<td>
+<code>img[src]</code>
+</td>
 </tr>
 <tr class="even">
-<td>selects <code>&lt;img src="myimage.png"&gt;</code> but not <code>&lt;img&gt;</code></td>
-<td></td>
-<td></td>
+<td>
+selects <code>&lt;img src=“myimage.png”&gt;</code> but not <code>&lt;img&gt;</code>
+</td>
+<td>
+</td>
+<td>
+</td>
 </tr>
 <tr class="odd">
-<td>Pseudo-class selector</td>
-<td>The specified element(s), but only when in the specified state. (For example, when a cursor hovers over a link.)</td>
-<td><code>a:hover</code></td>
+<td>
+Pseudo-class selector
+</td>
+<td>
+The specified element(s), but only when in the specified state. (For example, when a cursor hovers over a link.)
+</td>
+<td>
+<code>a:hover</code>
+</td>
 </tr>
 <tr class="even">
-<td>selects <code>&lt;a&gt;</code>, but only when the mouse pointer is hovering over the link.</td>
-<td></td>
-<td></td>
+<td>
+selects <code>&lt;a&gt;</code>, but only when the mouse pointer is hovering over the link.
+</td>
+<td>
+</td>
+<td>
+</td>
 </tr>
 </tbody>
 </table>
@@ -136,7 +192,7 @@
 <ol type="1">
 <li><p>First, find the <a href="chrome-extension://cjedbglnccaioiolemnfhjncicchinao/en-US/Learn/Getting_started_with_the_web/What_should_your_web_site_be_like#Font">output from Google Fonts</a> that you previously saved from <a href="chrome-extension://cjedbglnccaioiolemnfhjncicchinao/en-US/Learn/Getting_started_with_the_web/What_should_your_web_site_be_like">What will your website look like?</a>. Add the <a href="chrome-extension://cjedbglnccaioiolemnfhjncicchinao/en-US/docs/Web/HTML/Element/link" title="The HTML External Resource Link element (&lt;link&gt;) specifies relationships between the current document and an external resource. This element is most commonly used to link to stylesheets, but is also used to establish site icons (both &quot;favicon&quot; style icons and icons for the home screen and apps on mobile devices) among other things."><code>&lt;link&gt;</code></a> element somewhere inside your <code>index.html</code>’s head (anywhere between the <a href="chrome-extension://cjedbglnccaioiolemnfhjncicchinao/en-US/docs/Web/HTML/Element/head" title="The HTML &lt;head&gt; element contains machine-readable information (metadata) about the document, like its title, scripts, and style sheets."><code>&lt;head&gt;</code></a> and <code>&lt;/head&gt;</code> tags). It looks something like this:</p>
 <pre><code>&lt;link href=&quot;https://fonts.googleapis.com/css?family=Open+Sans&quot; rel=&quot;stylesheet&quot;&gt;</code></pre>
-This code links your page to a style sheet that loads the Open Sans font family with your webpage.</li>
+<p>This code links your page to a style sheet that loads the Open Sans font family with your webpage.</p></li>
 <li>Next, delete the existing rule you have in your <code>style.css</code> file. It was a good test, but let’s not continue with lots of red text.</li>
 <li><p>Add the following lines (shown below), replacing the <code>font-family</code> assignment with your <code>font-family</code> selection from <a href="chrome-extension://cjedbglnccaioiolemnfhjncicchinao/en-US/Learn/Getting_started_with_the_web/What_should_your_web_site_be_like#Font">What will your website look like?</a>. The property <code>font-family</code> refers to the font(s) you want to use for text. This rule defines a global base font and font size for the whole page. Since <a href="chrome-extension://cjedbglnccaioiolemnfhjncicchinao/en-US/docs/Web/HTML/Element/html" title="The HTML &lt;html&gt; element represents the root (top-level element) of an HTML document, so it is also referred to as the root element. All other elements must be descendants of this element."><code>&lt;html&gt;</code></a> is the parent element of the whole page, all elements inside it inherit the same <code>font-size</code> and <code>font-family</code>.</p>
 <pre><code>html {

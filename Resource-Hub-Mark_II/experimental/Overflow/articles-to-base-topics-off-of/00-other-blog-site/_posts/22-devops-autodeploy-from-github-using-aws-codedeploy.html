@@ -27,7 +27,7 @@
 <li>In Attach Policy select -&gt; <code>AWSCodeDeployRole</code></li>
 <li>Create Role</li>
 <li><p>Edit the <code>Trust relationship</code> and update the content to the following one</p>
-<p>{ “Version”: “2012-10-17”, “Statement”: [ { “Sid”: "“,”Effect“:”Allow“,”Principal“: {”Service“:”codedeploy.amazonaws.com" }, “Action”: “sts:AssumeRole” } ] }</p></li>
+<p>{ “Version”: “2012-10-17”, “Statement”: [ { “Sid”: ““,”Effect“:”Allow“,”Principal“: {”Service“:”codedeploy.amazonaws.com" }, “Action”: “sts:AssumeRole” } ] }</p></li>
 </ul>
 <p>Now we can create the second role to give EC2 instance to access s3.</p>
 <ul>

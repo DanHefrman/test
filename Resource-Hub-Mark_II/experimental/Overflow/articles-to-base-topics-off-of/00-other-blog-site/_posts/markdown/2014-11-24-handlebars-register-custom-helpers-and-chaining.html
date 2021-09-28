@@ -11,128 +11,42 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
-  <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
 </head>
 <body>
-<!--
-
-
----
- "handlebars.js : Register custom helpers and chaining"
-excerpt: "handlebars.js : Register custom helpers and chaining"
-date: 2014-11-24 00:00:00 IST
-updated: 2014-11-24 00:00:00 IST
-categories: javascript, handlebars
----
-
--->
-&lt;!DOCTYPE html&gt;
-<html>
-<head>
-<title>
-basic-git-workflow
-</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./css/bootstrap.css"> <link rel="stylesheet" href="./css/bootstrap.grid.css"> <link rel="stylesheet" href="./css/bootstrap.min.css"> <link rel="stylesheet" href="./css/bootstrap-reboot.min.css"> <link rel="stylesheet" href="./css/bootstrap.css.map"> <link rel="stylesheet" href="./css/blog-home.css"> <link rel="stylesheet" href="./css/prism.css">
-<script async defer src="./css/prism.js"></script>
-</head>
-<body>
+<p>&lt;!DOCTYPE html&gt;</p>
 <p><a href="https://github.com/wycats/handlebars.js">Handlebars.js</a> won’t allow you do any data manipulation from the view. So if you didn’t use presenter or manipulated data before bringing to view, you will be in trouble. One way you can get though this is by defining custom helpers for data manipulation. I personaly prefer not to use lot of helpers and use only if I can’t avoid.</p>
 <h2 id="register-helper">Register Helper</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="va">Handlebars</span>.<span class="at">registerHelper</span>(<span class="st">&quot;total_price&quot;</span><span class="op">,</span> <span class="kw">function</span> (price<span class="op">,</span> quantity) <span class="op">{</span></a>
-<a class="sourceLine" id="cb1-2" title="2">  total <span class="op">=</span> price<span class="op">;</span></a>
-<a class="sourceLine" id="cb1-3" title="3">  <span class="cf">if</span> (<span class="kw">typeof</span> quantity <span class="op">==</span> <span class="st">&quot;number&quot;</span>) <span class="op">{</span></a>
-<a class="sourceLine" id="cb1-4" title="4">    total <span class="op">=</span> price <span class="op">*</span> quantity<span class="op">;</span></a>
-<a class="sourceLine" id="cb1-5" title="5">  <span class="op">}</span></a>
-<a class="sourceLine" id="cb1-6" title="6">  <span class="cf">return</span> total<span class="op">;</span></a>
-<a class="sourceLine" id="cb1-7" title="7"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
+<pre><code>Handlebars.registerHelper(&quot;total_price&quot;, function (price, quantity) {
+  total = price;
+  if (typeof quantity == &quot;number&quot;) {
+    total = price * quantity;
+  }
+  return total;
+});</code></pre>
 <p>Now you can use this as</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="op">{</span> <span class="op">{</span> total_price <span class="kw">this</span>.<span class="va">product</span>.<span class="at">price</span> <span class="kw">this</span>.<span class="at">quantity</span> <span class="op">}</span> <span class="op">}</span></a></code></pre></div>
+<pre><code>{ { total_price this.product.price this.quantity } }</code></pre>
 <h2 id="chaining-helpers">Chaining helpers</h2>
-<p>Handlebars won’t allow you to chain the helpers. And as per the <span class="citation" data-cites="wycats">[@wycats]</span>(https://github.com/wycats/), he doesn’t have any <a href="https://github.com/wycats/handlebars.js/issues/304#issuecomment-8416546">plan to add this feature</a>. But some handlerbars fans have done some workarounds to support this.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="co">// https://github.com/wycats/handlebars.js/issues/304#issuecomment-15635762</span></a>
-<a class="sourceLine" id="cb3-2" title="2"></a>
-<a class="sourceLine" id="cb3-3" title="3"><span class="va">Handlebars</span>.<span class="at">registerHelper</span>(<span class="st">&quot;chain&quot;</span><span class="op">,</span> <span class="kw">function</span> () <span class="op">{</span></a>
-<a class="sourceLine" id="cb3-4" title="4">  <span class="kw">var</span> helpers <span class="op">=</span> []<span class="op">,</span></a>
-<a class="sourceLine" id="cb3-5" title="5">    value<span class="op">;</span></a>
-<a class="sourceLine" id="cb3-6" title="6">  <span class="va">$</span>.<span class="at">each</span>(<span class="kw">arguments</span><span class="op">,</span> <span class="kw">function</span> (i<span class="op">,</span> arg) <span class="op">{</span></a>
-<a class="sourceLine" id="cb3-7" title="7">    <span class="cf">if</span> (<span class="va">Handlebars</span>.<span class="at">helpers</span>[arg]) <span class="op">{</span></a>
-<a class="sourceLine" id="cb3-8" title="8">      <span class="va">helpers</span>.<span class="at">push</span>(<span class="va">Handlebars</span>.<span class="at">helpers</span>[arg])<span class="op">;</span></a>
-<a class="sourceLine" id="cb3-9" title="9">    <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb3-10" title="10">      value <span class="op">=</span> arg<span class="op">;</span></a>
-<a class="sourceLine" id="cb3-11" title="11">      <span class="va">$</span>.<span class="at">each</span>(helpers<span class="op">,</span> <span class="kw">function</span> (j<span class="op">,</span> helper) <span class="op">{</span></a>
-<a class="sourceLine" id="cb3-12" title="12">        value <span class="op">=</span> <span class="at">helper</span>(value<span class="op">,</span> <span class="kw">arguments</span>[i <span class="op">+</span> <span class="dv">1</span>])<span class="op">;</span></a>
-<a class="sourceLine" id="cb3-13" title="13">      <span class="op">}</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb3-14" title="14">      <span class="cf">return</span> <span class="kw">false</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb3-15" title="15">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb3-16" title="16">  <span class="op">}</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb3-17" title="17">  <span class="cf">return</span> value<span class="op">;</span></a>
-<a class="sourceLine" id="cb3-18" title="18"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
+<p>Handlebars won’t allow you to chain the helpers. And as per the <span class="citation" data-cites="wycats">[<span class="citation" data-cites="wycats">@wycats</span>]</span>(https://github.com/wycats/), he doesn’t have any <a href="https://github.com/wycats/handlebars.js/issues/304#issuecomment-8416546">plan to add this feature</a>. But some handlerbars fans have done some workarounds to support this.</p>
+<pre><code>// https://github.com/wycats/handlebars.js/issues/304#issuecomment-15635762
+
+Handlebars.registerHelper(&quot;chain&quot;, function () {
+  var helpers = [],
+    value;
+  $.each(arguments, function (i, arg) {
+    if (Handlebars.helpers[arg]) {
+      helpers.push(Handlebars.helpers[arg]);
+    } else {
+      value = arg;
+      $.each(helpers, function (j, helper) {
+        value = helper(value, arguments[i + 1]);
+      });
+      return false;
+    }
+  });
+  return value;
+});</code></pre>
 <p>which can be used as</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="op">{</span> <span class="op">{</span> chain <span class="st">&quot;taxAdd&quot;</span> <span class="st">&quot;formatPrice&quot;</span> <span class="kw">this</span>.<span class="va">product</span>.<span class="at">price</span> <span class="op">}</span> <span class="op">}</span></a></code></pre></div>
+<pre><code>{ { chain &quot;taxAdd&quot; &quot;formatPrice&quot; this.product.price } }</code></pre>
 <p>You can see the detailed discussion over <a href="https://github.com/wycats/handlebars.js/issues/304">wycats@handlebars.js#304</a></p>
 </body>
 </html>

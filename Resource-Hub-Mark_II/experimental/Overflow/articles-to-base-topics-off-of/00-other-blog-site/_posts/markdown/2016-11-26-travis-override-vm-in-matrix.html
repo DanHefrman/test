@@ -13,32 +13,7 @@
   </style>
 </head>
 <body>
-<!--
-
-
----
- "Travis : Parallel jobs and override vm in matrix"
-excerpt: "Travis has some undocumented features related to matrix which allows us to override vm"
-date: 2016-11-26 00:00:00 IST
-updated: 2016-11-26 00:00:00 IST
-categories: travis
-tags: travis, ci
-image: http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2016/11/359299c8-a1e0-4c9f-9da8-9428e7ae3ee6_zpsatkbyx2a.png
----
-
--->
-&lt;!DOCTYPE html&gt;
-<html>
-<head>
-<title>
-basic-git-workflow
-</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./css/bootstrap.css"> <link rel="stylesheet" href="./css/bootstrap.grid.css"> <link rel="stylesheet" href="./css/bootstrap.min.css"> <link rel="stylesheet" href="./css/bootstrap-reboot.min.css"> <link rel="stylesheet" href="./css/bootstrap.css.map"> <link rel="stylesheet" href="./css/blog-home.css"> <link rel="stylesheet" href="./css/prism.css">
-<script async defer src="./css/prism.js"></script>
-</head>
-<body>
+<p>&lt;!DOCTYPE html&gt;</p>
 <p>Recently in an effort to separate the frontend test and backend test on travis, we came to know about the travis feature called <a href="https://docs.travis-ci.com/user/customizing-the-build/#Build-Matrix">matrix</a>, Which helps us to define parallel jobs in the build.</p>
 <p>Our initial idea was to define separate <code>ENV</code> varaibles using matrix and conditionally run the scripts. Our <code>.travis.yml</code> file looked like below one.</p>
 <h2 id="highlight-yaml">{% highlight yaml %}</h2>
@@ -61,11 +36,9 @@ basic-git-workflow
 <h2 id="highlight-yaml-1">{% highlight yaml %}</h2>
 <p>sudo: required dist: trusty</p>
 <p>branches: only: - master</p>
-<p>matrix: fast_finish: true include: - node_js: 5.5 language: node_js env: NODE_ENV=test cache: directories: - “<span class="math inline">$HOME/.nvm"  - "$</span>HOME/.npm” before_install: - nvm install v5.5 install: - npm install script: - npm test - rvm: 2.1.2 language: ruby env: RAILS_ENV=test cache: bundler: true before_install: - sudo apt-get update -qq - sudo apt-get install -qq mysql-server mysql-client unzip before_script: - mysql -u root -e ‘create database app_test;’ - cp config/database.travis.yml config/database.yml - bundle exec rake db:test:load app:generate_secret_token script: - bundle exec parallel_rspec spec {% endhighlight %}</p>
+<p>matrix: fast_finish: true include: - node_js: 5.5 language: node_js env: NODE_ENV=test cache: directories: - “<span class="math inline"><span class="math inline">$HOME/.nvm" - "$</span></span>HOME/.npm” before_install: - nvm install v5.5 install: - npm install script: - npm test - rvm: 2.1.2 language: ruby env: RAILS_ENV=test cache: bundler: true before_install: - sudo apt-get update -qq - sudo apt-get install -qq mysql-server mysql-client unzip before_script: - mysql -u root -e ‘create database app_test;’ - cp config/database.travis.yml config/database.yml - bundle exec rake db:test:load app:generate_secret_token script: - bundle exec parallel_rspec spec {% endhighlight %}</p>
 <p>Now for frontend spec we dont need to setup anything related to ruby.</p>
-<figure>
-<embed src="%7B%7B%20page.image%20%7D%7D" /><figcaption>Travis Version 2</figcaption>
-</figure>
+<p>Travis Version 2</p>
 <p>Now the frontend job uses <strong>node_js</strong> vm where as backend job uses <strong>ruby</strong> vm. Also our frontend job finished with in 3 minutes which is 5 minutes gain from previous version since we removed all the ruby and rails setup for this job.</p>
 <p>Even though now we have multiple jobs, github integration will show only build status not per job status.</p>
 <p><strong>Disclaimer : The above feature is undocumented by travis and may change in future.</strong></p>

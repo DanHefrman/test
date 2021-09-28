@@ -11,160 +11,73 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
-  <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
 </head>
 <body>
-<!--
-
-
----
- 'NodeJS : Writing your first telegram bot'
-excerpt: 'This post will guide you to create your first inline telegram bot using nodejs'
-date: 2018-06-22 00:00:00 IST
-updated: 2018-06-22 00:00:00 IST
-categories: nodejs
-tags: nodejs, telegram, bots
----
-
--->
-&lt;!DOCTYPE html&gt;
-<html>
-<head>
-<title>
-basic-git-workflow
-</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./css/bootstrap.css"> <link rel="stylesheet" href="./css/bootstrap.grid.css"> <link rel="stylesheet" href="./css/bootstrap.min.css"> <link rel="stylesheet" href="./css/bootstrap-reboot.min.css"> <link rel="stylesheet" href="./css/bootstrap.css.map"> <link rel="stylesheet" href="./css/blog-home.css"> <link rel="stylesheet" href="./css/prism.css">
-<script async defer src="./css/prism.js"></script>
-</head>
-<body>
+<p>&lt;!DOCTYPE html&gt;</p>
 <p><a href="https://core.telegram.org/bots">Telegram bots</a> helps to add you own custom functionality to telegram by running your own third party applications. It can help to <a href="https://t.me/gif">communicate</a> or share information, do some fun/informative tasks with in the telegram, can help groups to avoid spam messages or may be take a poll in the group.</p>
 <p>In this tutorial we will look into <a href="https://core.telegram.org/bots#inline-mode">inline mode</a> bots which users can use them in the text field itself.</p>
-<h3 id="register-bot"><a class="anchor" name="register-bot" href="#register-bot"><i class="anchor-icon"></i></a>Register bot</h3>
-<p>Writing an telegram bot starts with the simple task of registering your bot with <span class="citation" data-cites="BotFather">[@BotFather]</span><a href="https://telegram.me/botfather">bot_father</a> and get the bot token. You can create a new bot by sending the command <code>/newbot</code> to BotFather.Then BotFather will take you though a interactive chat to set the username, description etc and give back the bot token. Once you have the bot token keep it confidential and don’t share it with anyone. In this blog post we are creating an <code>Inline mode</code> bot. For this we have to enable inline mode by sending <code>/setinline</code> command to BotFather and provide a placeholder text.</p>
-<h3 id="setup-project"><a class="anchor" name="setup-project" href="#setup-project"><i class="anchor-icon"></i></a>Setup project</h3>
+<h3 id="register-bot"><a href="#register-bot" id="register-bot" class="anchor"><em></em></a>Register bot</h3>
+<p>Writing an telegram bot starts with the simple task of registering your bot with <span class="citation" data-cites="BotFather">[<span class="citation" data-cites="BotFather">@BotFather</span>]</span><a href="https://telegram.me/botfather">bot_father</a> and get the bot token. You can create a new bot by sending the command <code>/newbot</code> to BotFather.Then BotFather will take you though a interactive chat to set the username, description etc and give back the bot token. Once you have the bot token keep it confidential and don’t share it with anyone. In this blog post we are creating an <code>Inline mode</code> bot. For this we have to enable inline mode by sending <code>/setinline</code> command to BotFather and provide a placeholder text.</p>
+<h3 id="setup-project"><a href="#setup-project" id="setup-project" class="anchor"><em></em></a>Setup project</h3>
 <p>Lets setup up a nodejs project using command <a href="/2018/03/nodejs-npm-init-with-custom-values.html">npm init -y</a> and install the first and main package <a href="https://npmjs.org/package/telegram-node-bot">telegram-node-bot</a> using</p>
 <pre><code>npm i telegram-node-bot</code></pre>
 <p>This package uses MVC kind of architecture with router, controller etc.</p>
 <p>Then setup your main controller and router. For inline mode bot the contoller should extend from <code>Telegram.TelegramBaseInlineQueryController</code>.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="st">&#39;use strict&#39;</span></a>
-<a class="sourceLine" id="cb2-2" title="2"></a>
-<a class="sourceLine" id="cb2-3" title="3"><span class="kw">const</span> Telegram <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;telegram-node-bot&#39;</span>)</a>
-<a class="sourceLine" id="cb2-4" title="4"></a>
-<a class="sourceLine" id="cb2-5" title="5"><span class="kw">const</span> TelegramBaseInlineQueryController <span class="op">=</span> <span class="va">Telegram</span>.<span class="at">TelegramBaseInlineQueryController</span></a>
-<a class="sourceLine" id="cb2-6" title="6"><span class="kw">const</span> tg <span class="op">=</span> <span class="kw">new</span> <span class="va">Telegram</span>.<span class="at">Telegram</span>(<span class="va">process</span>.<span class="va">env</span>.<span class="at">TELEGRAM_BOT_TOKEN</span><span class="op">,</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb2-7" title="7">    <span class="dt">workers</span><span class="op">:</span> <span class="dv">1</span></a>
-<a class="sourceLine" id="cb2-8" title="8"><span class="op">}</span>)</a>
-<a class="sourceLine" id="cb2-9" title="9"></a>
-<a class="sourceLine" id="cb2-10" title="10"><span class="kw">class</span> DuckController <span class="kw">extends</span> TelegramBaseInlineQueryController <span class="op">{</span></a>
-<a class="sourceLine" id="cb2-11" title="11">    <span class="at">handle</span>($) <span class="op">{</span></a>
-<a class="sourceLine" id="cb2-12" title="12">        <span class="co">// handle the query</span></a>
-<a class="sourceLine" id="cb2-13" title="13">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb2-14" title="14"><span class="op">}</span></a>
-<a class="sourceLine" id="cb2-15" title="15"></a>
-<a class="sourceLine" id="cb2-16" title="16"><span class="va">tg</span>.<span class="at">router</span></a>
-<a class="sourceLine" id="cb2-17" title="17">    .<span class="at">inlineQuery</span>(<span class="kw">new</span> <span class="at">DuckController</span>())</a></code></pre></div>
+<pre><code>&#39;use strict&#39;
+
+const Telegram = require(&#39;telegram-node-bot&#39;)
+
+const TelegramBaseInlineQueryController = Telegram.TelegramBaseInlineQueryController
+const tg = new Telegram.Telegram(process.env.TELEGRAM_BOT_TOKEN, {
+    workers: 1
+})
+
+class DuckController extends TelegramBaseInlineQueryController {
+    handle($) {
+        // handle the query
+    }
+}
+
+tg.router
+    .inlineQuery(new DuckController())</code></pre>
 <p>By default <code>telegram-node-bot</code> uses long-polling to get the updates. If you want to setup the webhook, you can use the option <code>webhook</code> along with <code>workers</code> option.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">const</span> tg <span class="op">=</span> <span class="kw">new</span> <span class="va">Telegram</span>.<span class="at">Telegram</span>(<span class="va">process</span>.<span class="va">env</span>.<span class="at">TELEGRAM_BOT_TOKEN</span><span class="op">,</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb3-2" title="2">    <span class="dt">workers</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb3-3" title="3">    <span class="dt">webhook</span><span class="op">:</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb3-4" title="4">        <span class="dt">url</span><span class="op">:</span> <span class="va">process</span>.<span class="va">env</span>.<span class="at">WEBHOOK_URL</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb3-5" title="5">        <span class="dt">port</span><span class="op">:</span> <span class="va">process</span>.<span class="va">env</span>.<span class="at">PORT</span> <span class="op">||</span> <span class="dv">3000</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb3-6" title="6">        <span class="dt">host</span><span class="op">:</span> <span class="va">process</span>.<span class="va">env</span>.<span class="at">WEBHOOK_HOST</span> <span class="op">||</span> <span class="st">&#39;localhost&#39;</span></a>
-<a class="sourceLine" id="cb3-7" title="7">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb3-8" title="8"><span class="op">}</span>)</a></code></pre></div>
+<pre><code>const tg = new Telegram.Telegram(process.env.TELEGRAM_BOT_TOKEN, {
+    workers: 1,
+    webhook: {
+        url: process.env.WEBHOOK_URL,
+        port: process.env.PORT || 3000,
+        host: process.env.WEBHOOK_HOST || &#39;localhost&#39;
+    }
+})</code></pre>
 <p>In my opinion, <code>webhook</code> is needed only on <code>production</code>. If you want to use <code>webhook</code> in development, then you need to expose the local webserver to internet via <a href="https://ngrok.com/">ngrok</a> or some other similar services.</p>
-<h3 id="handling-query"><a class="anchor" name="handling-query" href="#handling-query"><i class="anchor-icon"></i></a>Handling query</h3>
+<h3 id="handling-query"><a href="#handling-query" id="handling-query" class="anchor"><em></em></a>Handling query</h3>
 <p>Handling query is the part where we want our bot to do the main task which they are intended to do. like search for images, search for google results etc. For this demo we will convert the user query into <a href="https://duckduckgo.com/">duckduckgo.com</a> search url.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">class</span> DuckController <span class="kw">extends</span> TelegramBaseInlineQueryController <span class="op">{</span></a>
-<a class="sourceLine" id="cb4-2" title="2">    <span class="at">handle</span>($) <span class="op">{</span></a>
-<a class="sourceLine" id="cb4-3" title="3">        <span class="kw">const</span> query <span class="op">=</span> <span class="va">$</span>.<span class="va">_inlineQuery</span>.<span class="at">query</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb4-4" title="4">        <span class="kw">let</span> results <span class="op">=</span> []<span class="op">;</span></a>
-<a class="sourceLine" id="cb4-5" title="5">        <span class="cf">if</span> (query) <span class="op">{</span></a>
-<a class="sourceLine" id="cb4-6" title="6">            results <span class="op">=</span> [<span class="op">{</span></a>
-<a class="sourceLine" id="cb4-7" title="7">                <span class="dt">id</span><span class="op">:</span> <span class="va">Math</span>.<span class="at">random</span>().<span class="at">toString</span>(<span class="dv">36</span>).<span class="at">substring</span>(<span class="dv">7</span>)<span class="op">,</span></a>
-<a class="sourceLine" id="cb4-8" title="8">                <span class="dt">type</span><span class="op">:</span><span class="st">&#39;article&#39;</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb4-9" title="9">                <span class="dt">message_text</span><span class="op">:</span> <span class="vs">`https://duckduckgo.com/?q=</span><span class="sc">${</span><span class="at">encodeURIComponent</span>(query)<span class="sc">}</span><span class="vs">`</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb4-10" title="10">                <span class="dt">title</span><span class="op">:</span> <span class="st">&#39;Duck It&#39;</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb4-11" title="11">                <span class="dt">description</span><span class="op">:</span> <span class="vs">`</span><span class="sc">${</span>query<span class="sc">}</span><span class="vs">`</span></a>
-<a class="sourceLine" id="cb4-12" title="12">            <span class="op">}</span>]<span class="op">;</span></a>
-<a class="sourceLine" id="cb4-13" title="13">        <span class="op">}</span></a>
-<a class="sourceLine" id="cb4-14" title="14">        <span class="va">$</span>.<span class="at">answer</span>(results<span class="op">,</span> <span class="op">{},</span> <span class="kw">function</span>(result) <span class="op">{</span></a>
-<a class="sourceLine" id="cb4-15" title="15">        <span class="op">}</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb4-16" title="16">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb4-17" title="17"><span class="op">}</span></a></code></pre></div>
+<pre><code>class DuckController extends TelegramBaseInlineQueryController {
+    handle($) {
+        const query = $._inlineQuery.query;
+        let results = [];
+        if (query) {
+            results = [{
+                id: Math.random().toString(36).substring(7),
+                type:&#39;article&#39;,
+                message_text: `https://duckduckgo.com/?q=${encodeURIComponent(query)}`,
+                title: &#39;Duck It&#39;,
+                description: `${query}`
+            }];
+        }
+        $.answer(results, {}, function(result) {
+        });
+    }
+}</code></pre>
 <p>The <code>handle</code> method will be called with first argument (<code>$</code>) which has the context of message like, what’s the user query, who is the user and other details. In our case we need only the query send by the user which we can get from <code>$._inlineQuery.query</code>.</p>
 <p>Next, constuct the results array using appropriate <a href="https://core.telegram.org/bots/api#inlinequeryresult">inline query result type</a>, In this case <a href="https://core.telegram.org/bots/api#inlinequeryresultarticle">article</a>. Once we have the results constructed, pass it to <code>$.answer</code> method and the result will be shown to the users in telegram.</p>
 <p>To see our inline bot in action,</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="va">TELEGRAM_BOT_TOKEN=</span><span class="op">&lt;</span><span class="ex">bot</span> token<span class="op">&gt;</span> node index.js</a></code></pre></div>
+<pre><code>TELEGRAM_BOT_TOKEN=&lt;bot token&gt; node index.js</code></pre>
 <p>You can optionally add start command (<code>node index.js</code>) to npm scripts.</p>
 <figure>
 <img src="https://raw.githubusercontent.com/revathskumar/lmdtfy_bot/master/images/lmdtfy.gif" alt="lmdtf_bot" /><figcaption>lmdtf_bot</figcaption>
 </figure>
-<h3 id="hosting-your-bot"><a class="anchor" name="hosting-your-bot" href="#hosting-your-bot"><i class="anchor-icon"></i></a>Hosting your bot</h3>
+<h3 id="hosting-your-bot"><a href="#hosting-your-bot" id="hosting-your-bot" class="anchor"><em></em></a>Hosting your bot</h3>
 <p>You can use any hosting provider to host our bot. For me the easiest to host node project is <a href="http://heroku.com/">heroku</a>. You can setup a new project there and get the public url. like <code>https://yourbot.herokuapp.com</code> and then setup the <code>ENV</code> variable in the project settings.</p>
 <p>In this make sure you provide</p>
 <ul>
@@ -176,7 +89,7 @@ basic-git-workflow
 </figure>
 <p>After this go to <strong>BotFather</strong> and set webhookurl using the command <code>/setwebhookurl</code> or use the api url</p>
 <pre><code>https://api.telegram.org/bot&lt;bot token&gt;/setwebhook?url=https://yourbot.herokuapp.com</code></pre>
-<p>This bot is available as <span class="citation" data-cites="lmdtfy_bot">[@lmdtfy_bot]</span><a href="https://t.me/lmdtfy_bot">lmdtfy_bot</a> for telegram users and code on <a href="https://github.com/revathskumar/lmdtfy_bot">github</a></p>
+<p>This bot is available as <span class="citation" data-cites="lmdtfy_bot">[<span class="citation" data-cites="lmdtfy">@lmdtfy</span>_bot]</span><a href="https://t.me/lmdtfy_bot">lmdtfy_bot</a> for telegram users and code on <a href="https://github.com/revathskumar/lmdtfy_bot">github</a></p>
 <p>Hope it helped.</p>
 <pre><code>Versions of Language/packages used in this post.
 

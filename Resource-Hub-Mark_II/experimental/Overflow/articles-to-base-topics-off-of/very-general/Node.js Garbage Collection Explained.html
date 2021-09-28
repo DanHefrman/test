@@ -13,7 +13,7 @@
   </style>
 </head>
 <body>
-<h1 id="node.js-garbage-collection-explained-risingstack">Node.js Garbage Collection Explained | <span class="citation" data-cites="RisingStack">@RisingStack</span></h1>
+<h1 id="node.js-garbage-collection-explained-risingstack">Node.js Garbage Collection Explained | <span class="citation" data-cites="RisingStack"><span class="citation" data-cites="RisingStack">@RisingStack</span></span></h1>
 <blockquote>
 <p>Learn how Node.js garbage collection and memory management works in practice. Code-level explanation and garbage collection examples inside.</p>
 </blockquote>
@@ -40,7 +40,7 @@ int main() {
 
    strcpy(name, &quot;RisingStack&quot;);
 
-   
+
    description = malloc( 30 * sizeof(char) );
     
    if( description == NULL ) {
@@ -52,7 +52,7 @@ int main() {
    printf(&quot;Company name = %s\n&quot;, name );
    printf(&quot;Description: %s\n&quot;, description );
 
-   
+
    free(description);
 }</code></pre>
 <p>In <strong>manual memory management</strong>, it is the responsibility of the developer to free up the unused memory portions. Managing your memory this way can introduce several major bugs to your applications:</p>

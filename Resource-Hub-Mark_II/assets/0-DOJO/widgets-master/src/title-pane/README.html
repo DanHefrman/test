@@ -1,38 +1,69 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>README</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
-</head>
-<body>
-<h1 id="dojowidgetstitle-pane"><span class="citation" data-cites="dojo/widgets/title-pane"><span class="citation" data-cites="dojo/widgets/title-pane">@dojo/widgets/title-pane</span></span></h1>
-<p>Dojo’s <code>TitlePane</code> component can be used to display content inside a window with a titlebar. When the titlebar is clicked, the content collapses.</p>
-<h2 id="features">Features</h2>
-<ul>
-<li>Content can be prevented from collapsing</li>
-<li>Provides default styling for the titlebar and content area that responds responsively to different screen sizes</li>
-</ul>
-<h3 id="keyboard-usage">Keyboard Usage</h3>
-<p><code>TitlePane</code> supports standard keyboard navigation for toggling the content open or closed.</p>
-<p><strong>TitleBar Events</strong>:</p>
-<ul>
-<li>Space bar: toggles the pane content of a closeable <code>TitlePane</code></li>
-</ul>
-<h3 id="accessibility-features">Accessibility Features</h3>
-<ul>
-<li>The titlebar has a role of heading and accepts a <code>headingLevel</code> property to set the correct heading level</li>
-<li>The accordion panel has <code>aria-labelledby</code> set to the titlebar</li>
-<li>The accordion opens on Enter and Space</li>
-<li><code>aria-expanded</code> is set to <code>true</code> or <code>false</code> on the toggle button depending on the <code>open</code> property</li>
-<li><code>aria-controls</code> on the toggle button points to the accordion content</li>
-</ul>
-</body>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="generator" content="pandoc" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+		<title>README</title>
+		<style type="text/css">
+			code {
+				white-space: pre-wrap;
+			}
+			span.smallcaps {
+				font-variant: small-caps;
+			}
+			span.underline {
+				text-decoration: underline;
+			}
+			div.column {
+				display: inline-block;
+				vertical-align: top;
+				width: 50%;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 id="dojowidgetstitle-pane">
+			<span class="citation" data-cites="dojo/widgets/title-pane"
+				><span class="citation" data-cites="dojo/widgets/title-pane"
+					>@dojo/widgets/title-pane</span
+				></span
+			>
+		</h1>
+		<p>
+			Dojo’s <code>TitlePane</code> component can be used to display content inside a window
+			with a titlebar. When the titlebar is clicked, the content collapses.
+		</p>
+		<h2 id="features">Features</h2>
+		<ul>
+			<li>Content can be prevented from collapsing</li>
+			<li>
+				Provides default styling for the titlebar and content area that responds
+				responsively to different screen sizes
+			</li>
+		</ul>
+		<h3 id="keyboard-usage">Keyboard Usage</h3>
+		<p>
+			<code>TitlePane</code> supports standard keyboard navigation for toggling the content
+			open or closed.
+		</p>
+		<p><strong>TitleBar Events</strong>:</p>
+		<ul>
+			<li>Space bar: toggles the pane content of a closeable <code>TitlePane</code></li>
+		</ul>
+		<h3 id="accessibility-features">Accessibility Features</h3>
+		<ul>
+			<li>
+				The titlebar has a role of heading and accepts a <code>headingLevel</code> property
+				to set the correct heading level
+			</li>
+			<li>The accordion panel has <code>aria-labelledby</code> set to the titlebar</li>
+			<li>The accordion opens on Enter and Space</li>
+			<li>
+				<code>aria-expanded</code> is set to <code>true</code> or <code>false</code> on the
+				toggle button depending on the <code>open</code> property
+			</li>
+			<li><code>aria-controls</code> on the toggle button points to the accordion content</li>
+		</ul>
+	</body>
 </html>

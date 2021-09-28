@@ -62,33 +62,23 @@
 <h2 id="how-to-load-js-in-our-html-pages">How to load JS in our HTML pages</h2>
 <ul>
 <li><p>using script tags</p>
-&lt;!DOCTYPE html&gt;
-<html lang="en">
-<head>
-<script type="text/javascript" src="entry.js"></script>
-</head>
-<body>
-</body>
-</html></li>
+<p>&lt;!DOCTYPE html&gt;</p></li>
 </ul>
 <h3 id="remove-render-blocking">Remove Render-Blocking</h3>
 <ul>
-<li><p>without render-blocking in script tags will wait for script to load and execute before parsing HTML and rendering it</p>
-<script type="text/javascript" src="entry.js"></script></li>
+<li>without render-blocking in script tags will wait for script to load and execute before parsing HTML and rendering it</li>
 </ul>
 <figure>
 <img src="./no_async_defer.png" alt="No Async or Defer" /><figcaption>No Async or Defer</figcaption>
 </figure>
 <ul>
-<li><p><strong><code>async</code></strong> keyword in a script will fetch the script asynchronously and order of scripts run may be different than specified (whatever script gets loaded first)</p>
-<script async type="text/javascript" src="entry.js"></script></li>
+<li><strong><code>async</code></strong> keyword in a script will fetch the script asynchronously and order of scripts run may be different than specified (whatever script gets loaded first)</li>
 </ul>
 <figure>
 <img src="./async.png" alt="Async" /><figcaption>Async</figcaption>
 </figure>
 <ul>
-<li><p><strong><code>defer</code></strong> keyword in a script will make it so the script executes only after page has been loaded</p>
-<script defer type="text/javascript" src="entry.js"></script></li>
+<li><strong><code>defer</code></strong> keyword in a script will make it so the script executes only after page has been loaded</li>
 </ul>
 <figure>
 <img src="./defer.png" alt="Defer" /><figcaption>Defer</figcaption>
@@ -113,25 +103,9 @@
 </ul>
 <ol type="1">
 <li><p>Adding a script tag after the <code>body</code> of a page</p>
-&lt;!DOCTYPE html&gt;
-<html lang="en">
-<head>
-</head>
-<body>
-</body>
-<script async>
-    console.log('this is printed only after all the HTML elements are displayed');
-  </script>
-</html></li>
+<p>&lt;!DOCTYPE html&gt;</p></li>
 <li><p><code>defer</code> keyword in a <code>script</code> tag</p>
-&lt;!DOCTYPE html&gt;
-<html lang="en">
-<head>
-<script defer type="text/javascript" src="entry.js"></script>
-</head>
-<body>
-</body>
-</html></li>
+<p>&lt;!DOCTYPE html&gt;</p></li>
 </ol>
 <h2 id="cookies">Cookies</h2>
 <ul>

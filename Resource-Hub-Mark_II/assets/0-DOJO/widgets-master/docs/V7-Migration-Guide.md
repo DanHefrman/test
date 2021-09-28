@@ -1,8 +1,6 @@
-Widgets 6 to 7 Migration Guide
-==============================
+# Widgets 6 to 7 Migration Guide
 
-Breaking changes
-----------------
+## Breaking changes
 
 ### Removal of touch/mouse/pointer events
 
@@ -22,10 +20,9 @@ In an effort to make widgets easier and simpler to use out of the box we have ch
 
 Many of our form widgets are now capable of validating themselves. In many cases this is done in an uncontrolled way meaning the widget will display its valid state / error message and will call the `onValidate` callback when valid state changes.
 
-------------------------------------------------------------------------
+---
 
-Individual Widget Changes
--------------------------
+## Individual Widget Changes
 
 ### AccordionPane
 
@@ -94,7 +91,7 @@ The `Accordion` now uses a child renderer function to determine its child panes.
 
 Latest example can be found at [widgets.dojo.io/\#widget/accordion/overview](https://widgets.dojo.io/#widget/accordion/overview)
 
-------------------------------------------------------------------------
+---
 
 ### Button
 
@@ -151,7 +148,7 @@ Latest example can be found at [widgets.dojo.io/\#widget/accordion/overview](htt
 
 Latest example can be found at [widgets.dojo.io/\#widget/button/overview](https://widgets.dojo.io/#widget/button/overview)
 
-------------------------------------------------------------------------
+---
 
 ### Calendar
 
@@ -214,7 +211,7 @@ The calendar widget is now uncontrolled by default. Initial values can be provid
 
 Latest example can be found at [widgets.dojo.io/\#widget/calendar/overview](https://widgets.dojo.io/#widget/calendar/overview)
 
-------------------------------------------------------------------------
+---
 
 ### Checkbox
 
@@ -295,7 +292,7 @@ Latest example can be found at [widgets.dojo.io/\#widget/calendar/overview](http
 
 Latest example can be found at [widgets.dojo.io/\#widget/checkbox/overview](https://widgets.dojo.io/#widget/checkbox/overview)
 
-------------------------------------------------------------------------
+---
 
 ### Dialog
 
@@ -356,7 +353,7 @@ Dialog contents, title, and actions are now specified via a child function. Prev
 
 Latest example can be found at [widgets.dojo.io/\#widget/dialog/overview](https://widgets.dojo.io/#widget/dialog/overview)
 
-------------------------------------------------------------------------
+---
 
 ### Toolbar
 
@@ -502,7 +499,7 @@ The `Header` no longer auto-collapses action items into a `SlidePane`. Instead, 
 
 Latest example can be found at [widgets.dojo.io/\#widget/header/overview](https://widgets.dojo.io/#widget/header/overview)
 
-------------------------------------------------------------------------
+---
 
 ### Label
 
@@ -526,7 +523,7 @@ Latest example can be found at [widgets.dojo.io/\#widget/header/overview](https:
 
 Latest example can be found at [widgets.dojo.io/\#widget/label/overview](https://widgets.dojo.io/#widget/label/overview)
 
-------------------------------------------------------------------------
+---
 
 ### ListBox
 
@@ -617,7 +614,7 @@ Latest example can be found at [widgets.dojo.io/\#widget/label/overview](https:/
 
 Latest example can be found at [widgets.dojo.io/\#widget/list/overview](https://widgets.dojo.io/#widget/list/overview)
 
-------------------------------------------------------------------------
+---
 
 ### Progress
 
@@ -652,7 +649,7 @@ Output is now handled via an optional child renderer of type RenderResult.
 
 Latest example can be found at [widgets.dojo.io/\#widget/progress/overview](https://widgets.dojo.io/#widget/progress/overview)
 
-------------------------------------------------------------------------
+---
 
 ### Radio
 
@@ -684,7 +681,7 @@ Label is now handled via an optional child renderer of type RenderResult.
 
 Latest example can be found at [widgets.dojo.io/\#widget/radio/overview](https://widgets.dojo.io/#widget/radio/overview)
 
-------------------------------------------------------------------------
+---
 
 ### RangeSlider
 
@@ -739,7 +736,7 @@ The range slider widget now internally manages its own value by default and can 
 
 Latest example can be found at [widgets.dojo.io/\#widget/range-slider/overview](https://widgets.dojo.io/#widget/range-slider/overview)
 
-------------------------------------------------------------------------
+---
 
 ### Select
 
@@ -865,7 +862,7 @@ To use a widget that requires a resource within a class-bassed widget, you must 
     const r = renderer(() => w(App, {}));
     r.mount({ registry });
 
-------------------------------------------------------------------------
+---
 
 ### SlidePane
 
@@ -902,7 +899,7 @@ The `SlidePane` no longer supports an `onOpen` property and instead only uses `o
 
 Latest example can be found at [widgets.dojo.io/\#widget/slide-pane/overview](https://widgets.dojo.io/#widget/slide-pane/overview)
 
-------------------------------------------------------------------------
+---
 
 ### Slider
 
@@ -996,7 +993,7 @@ Latest example can be found at [widgets.dojo.io/\#widget/slide-pane/overview](ht
 
 Latest example can be found at [widgets.dojo.io/\#widget/slider/overview](https://widgets.dojo.io/#widget/slider/overview)
 
-------------------------------------------------------------------------
+---
 
 ### Snackbar
 
@@ -1026,7 +1023,7 @@ Latest example can be found at [widgets.dojo.io/\#widget/slider/overview](https:
 
 Latest example can be found at [widgets.dojo.io/\#widget/snackbar/overview](https://widgets.dojo.io/#widget/snackbar/overview)
 
-------------------------------------------------------------------------
+---
 
 ### Switch
 
@@ -1069,7 +1066,7 @@ Latest example can be found at [widgets.dojo.io/\#widget/snackbar/overview](http
 
 Latest example can be found at [widgets.dojo.io/\#widget/switch/overview](https://widgets.dojo.io/#widget/switch/overview)
 
-------------------------------------------------------------------------
+---
 
 ### TabController
 
@@ -1181,7 +1178,7 @@ Latest example can be found at [widgets.dojo.io/\#widget/switch/overview](https:
 
 Latest example can be found at [widgets.dojo.io/\#widget/tab-controller/overview](https://widgets.dojo.io/#widget/tab-controller/overview)
 
-------------------------------------------------------------------------
+---
 
 ### TextArea
 
@@ -1213,7 +1210,7 @@ Latest example can be found at [widgets.dojo.io/\#widget/tab-controller/overview
 
 Latest example can be found at [widgets.dojo.io/\#widget/text-area/overview](https://widgets.dojo.io/#widget/text-area/overview)
 
-------------------------------------------------------------------------
+---
 
 ### TextInput
 
@@ -1264,7 +1261,7 @@ Latest example can be found at [widgets.dojo.io/\#widget/text-area/overview](htt
 
 Latest example can be found at [widgets.dojo.io/\#widget/text-input/overview](https://widgets.dojo.io/#widget/text-input/overview)
 
-------------------------------------------------------------------------
+---
 
 ### TimePicker
 
@@ -1355,7 +1352,7 @@ The time picker will generate its own time options manually now, and therefore d
 
 Latest example can be found at [widgets.dojo.io/\#widget/time-picker/overview](https://widgets.dojo.io/#widget/time-picker/overview)
 
-------------------------------------------------------------------------
+---
 
 ### TitlePane
 
@@ -1414,7 +1411,7 @@ The `TitlePane` now uses a child renderer object to determine its title and cont
 
 Latest example can be found at [widgets.dojo.io/\#widget/title-pane/overview](https://widgets.dojo.io/#widget/title-pane/overview)
 
-------------------------------------------------------------------------
+---
 
 ### Tooltip
 

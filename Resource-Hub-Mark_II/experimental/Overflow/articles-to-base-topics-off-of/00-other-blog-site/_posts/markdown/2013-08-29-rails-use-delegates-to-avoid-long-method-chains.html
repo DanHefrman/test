@@ -13,29 +13,7 @@
   </style>
 </head>
 <body>
-<!--
-
-
----
- "Rails : use delegate to avoid long method chains"
-date: 2013-08-29 10:00:00 IST
-updated: 2013-08-29 10:00:00 IST
-categories: rails
----
-
--->
-&lt;!DOCTYPE html&gt;
-<html>
-<head>
-<title>
-basic-git-workflow
-</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./css/bootstrap.css"> <link rel="stylesheet" href="./css/bootstrap.grid.css"> <link rel="stylesheet" href="./css/bootstrap.min.css"> <link rel="stylesheet" href="./css/bootstrap-reboot.min.css"> <link rel="stylesheet" href="./css/bootstrap.css.map"> <link rel="stylesheet" href="./css/blog-home.css"> <link rel="stylesheet" href="./css/prism.css">
-<script async defer src="./css/prism.js"></script>
-</head>
-<body>
+<p>&lt;!DOCTYPE html&gt;</p>
 <p>Consider you have two tables products and Oraganisation, where product belongs to a particular organisation.</p>
 <pre><code>Product                   Organisation
   - id                      - id
@@ -45,7 +23,7 @@ basic-git-workflow
 <p>{% highlight ruby %}</p>
 <h1 id="please-note-that-thoughtout-this-post-i-will-be-refereing-to-product-which">Please note that thoughtout this post I will be refereing to <code>@product</code> which</h1>
 <h1 id="assumed-as-object-of-product-model.">assumed as object of Product model.</h1>
-<p><span class="citation" data-cites="product.organisation.name">@product.organisation.name</span> {% endhighlight %}</p>
+<p><span class="citation" data-cites="product.organisation.name"><span class="citation" data-cites="product.organisation.name">@product.organisation.name</span></span> {% endhighlight %}</p>
 <p>But according to “Rails Anti-patterns” more than one dot notation in a statement is an example of anti pattern.</p>
 <h1 id="normal-fix">Normal fix</h1>
 <p>So How we can fix it, In Product model write a instance method <code>organisation_name</code> just like below.</p>

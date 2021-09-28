@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<!--docs:
+title: "Linear Progress"
+layout: detail
+section: components
+excerpt: "Material Design-styled linear progress indicators."
+iconId: progress_linear
+path: /catalog/linear-progress/
+-->
+<h1 id="linear-progress">Linear Progress</h1>
+<!--<div class="article__asset">
+  <a class="article__asset-link"
+      href="https://material-components.github.io/material-components-web-catalog/#/component/linear-progress-indicator">
+    <img src="{{ site.rootpath }}/images/mdc_web_screenshots/linear-progress.png" width="586" alt="Linear progress screenshot">
+  </a>
+</div>-->
+<p>The MDC Linear Progress component is a spec-aligned linear progress indicator component adhering to the <a href="https://material.io/go/design-progress-indicators">Material Design progress &amp; activity requirements</a>.</p>
+<h2 id="design-api-documentation">Design &amp; API Documentation</h2>
+<ul class="icon-list">
+<li class="icon-list-item icon-list-item--spec">
+<a href="https://material.io/go/design-progress-indicators">Guidelines</a>
+</li>
+<li class="icon-list-item icon-list-item--link">
+<a href="https://material-components.github.io/material-components-web-catalog/#/component/linear-progress-indicator">Demo</a>
+</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<pre><code>npm install @material/linear-progress</code></pre>
+<h2 id="basic-usage">Basic Usage</h2>
+<h3 id="html-structure">HTML Structure</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">&lt;div</span><span class="ot"> role=</span><span class="st">&quot;progressbar&quot;</span><span class="ot"> class=</span><span class="st">&quot;mdc-linear-progress&quot;</span><span class="ot"> aria-label=</span><span class="st">&quot;Example Progress Bar&quot;</span><span class="ot"> aria-valuemin=</span><span class="st">&quot;0&quot;</span><span class="ot"> aria-valuemax=</span><span class="st">&quot;1&quot;</span><span class="ot"> aria-valuenow=</span><span class="st">&quot;0&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-linear-progress__buffer&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-3" title="3">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-linear-progress__buffer-bar&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb2-4" title="4">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-linear-progress__buffer-dots&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb2-5" title="5">  <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb2-6" title="6">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-linear-progress__bar mdc-linear-progress__primary-bar&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-7" title="7">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-linear-progress__bar-inner&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb2-8" title="8">  <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb2-9" title="9">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-linear-progress__bar mdc-linear-progress__secondary-bar&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-10" title="10">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-linear-progress__bar-inner&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb2-11" title="11">  <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb2-12" title="12"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
+<h3 id="accessibility">Accessibility</h3>
+<p>Progress bars conform to the <a href="https://www.w3.org/TR/wai-aria/#progressbar">WAI-ARIA Progressbar Specification</a>. The supported ARIA attributes for this progress bar are:</p>
+<table>
+<colgroup>
+<col style="width: 45%" />
+<col style="width: 55%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>aria-label</code></td>
+<td>Label indicating how the progress bar should be announced to the user.</td>
+</tr>
+<tr class="even">
+<td><code>aria-valuemin</code></td>
+<td>The minimum numeric value of the progress bar, which should always be <code>0</code>.</td>
+</tr>
+<tr class="odd">
+<td><code>aria-valuemax</code></td>
+<td>The maximum numeric value of the progress bar, which should always be <code>1</code>.</td>
+</tr>
+<tr class="even">
+<td><code>aria-valuenow</code></td>
+<td>A numeric value between <code>aria-valuemin</code> and <code>aria-valuemax</code> indicating the progress value of the primary progress bar. This attribute is removed in indeterminate progress bars.</td>
+</tr>
+</tbody>
+</table>
+<p>Note that <code>aria-label</code>, <code>aria-valuemin</code>, and <code>aria-valuemax</code> are static and must be configured in the HTML. <code>aria-valuenow</code> is updated dynamically by the foundation when the progress value is updated in determinate progress bars.</p>
+<h3 id="styles">Styles</h3>
+<pre class="scss"><code>@use &quot;@material/linear-progress&quot;;
+
+@include linear-progress.core-styles;</code></pre>
+<h3 id="javascript-instantiation">JavaScript Instantiation</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="im">import</span> <span class="op">{</span> MDCLinearProgress <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;@material/linear-progress&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-2" title="2"></a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="kw">const</span> linearProgress <span class="op">=</span> <span class="kw">new</span> <span class="at">MDCLinearProgress</span>(<span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&#39;.mdc-linear-progress&#39;</span>))<span class="op">;</span></a></code></pre></div>
+<blockquote>
+<p>See <a href="../../docs/importing-js.md">Importing the JS component</a> for more information on how to import JavaScript.</p>
+</blockquote>
+<h3 id="css-modifiers">CSS Modifiers</h3>
+<p>The provided modifiers are:</p>
+<table>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 72%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Class</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>mdc-linear-progress--indeterminate</code></td>
+<td>Puts the linear progress indicator in an indeterminate state.</td>
+</tr>
+<tr class="even">
+<td><code>mdc-linear-progress--reversed</code></td>
+<td>Reverses the direction of the linear progress indicator.</td>
+</tr>
+<tr class="odd">
+<td><code>mdc-linear-progress--closed</code></td>
+<td>Hides the linear progress indicator.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sass-mixins">Sass Mixins</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Mixin</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>bar-color($color)</code></td>
+<td>Sets the color of the progress bar</td>
+</tr>
+<tr class="even">
+<td><code>buffer-color($color)</code></td>
+<td>Sets the color of the buffer bar and dots</td>
+</tr>
+</tbody>
+</table>
+<h3 id="using-the-foundation-class">Using the Foundation Class</h3>
+<p>MDC Linear Progress ships with an <code>MDCLinearProgressFoundation</code> class that external frameworks and libraries can use to integrate the component. As with all foundation classes, an adapter object must be provided. The adapter for linear progress must provide the following functions, with correct signatures:</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method Signature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>addClass(className: string) =&gt; void</code></td>
+<td>Adds a class to the root element.</td>
+</tr>
+<tr class="even">
+<td><code>removeAttribute(attributeName: string) =&gt; void</code></td>
+<td>Removes the specified attribute from the root element.</td>
+</tr>
+<tr class="odd">
+<td><code>removeClass(className: string) =&gt; void</code></td>
+<td>Removes a class from the root element.</td>
+</tr>
+<tr class="even">
+<td><code>hasClass(className: string) =&gt; boolean</code></td>
+<td>Returns boolean indicating whether the root element has a given class.</td>
+</tr>
+<tr class="odd">
+<td><code>forceLayout() =&gt; void</code></td>
+<td>Force-trigger a layout on the root element. This is needed to restart animations correctly.</td>
+</tr>
+<tr class="even">
+<td><code>setAttribute(attributeName: string, value: string) =&gt; void</code></td>
+<td>Sets the specified attribute on the root element.</td>
+</tr>
+<tr class="odd">
+<td><code>setBufferBarStyle(styleProperty: string, value: string) =&gt; void</code></td>
+<td>Sets the inline style on the buffer bar.</td>
+</tr>
+<tr class="even">
+<td><code>setPrimaryBarStyle(styleProperty: string, value: string) =&gt; void</code></td>
+<td>Sets the inline style on the primary bar.</td>
+</tr>
+<tr class="odd">
+<td><code>attachResizeObserver(callback: ResizeObserverCallback) =&gt; ResizeObserver|null</code></td>
+<td>Returns a <code>ResizeObserver</code> that has had <code>observe</code> called on the root with the given callback (for animation performance gains on modern browsers). <code>null</code> if <code>ResizeObserver</code> is not implemented or polyfilled.</td>
+</tr>
+<tr class="even">
+<td><code>setStyle(styleProperty: string, value: string) =&gt; void</code></td>
+<td>Sets the inline style on the root element.</td>
+</tr>
+<tr class="odd">
+<td><code>getWidth() =&gt; number</code></td>
+<td>Returns the width of the root.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mdclinearprogressfoundation-api">MDCLinearProgressFoundation API</h3>
+<p>MDC Linear Progress Foundation exposes the following methods:</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method Signature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>setDeterminate(value: boolean) =&gt; void</code></td>
+<td>Toggles the component between the determinate and indeterminate state.</td>
+</tr>
+<tr class="even">
+<td><code>setProgress(value: number) =&gt; void</code></td>
+<td>Sets the progress bar to this value. Value should be between [0, 1].</td>
+</tr>
+<tr class="odd">
+<td><code>setBuffer(value: number) =&gt; void</code></td>
+<td>Sets the buffer bar to this value. Value should be between [0, 1].</td>
+</tr>
+<tr class="even">
+<td><code>setReverse(value: boolean) =&gt; void</code></td>
+<td>Reverses the direction of the linear progress indicator.</td>
+</tr>
+<tr class="odd">
+<td><code>open() =&gt; void</code></td>
+<td>Puts the component in the open state.</td>
+</tr>
+<tr class="even">
+<td><code>close() =&gt; void</code></td>
+<td>Puts the component in the closed state.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mdclinearprogress-api">MDCLinearProgress API</h3>
+<p>MDC Linear Progress exposes the following methods:</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method Signature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>set determinate(value: boolean) =&gt; void</code></td>
+<td>Toggles the component between the determinate and indeterminate state.</td>
+</tr>
+<tr class="even">
+<td><code>set progress(value: number) =&gt; void</code></td>
+<td>Sets the progress bar to this value. Value should be between [0, 1].</td>
+</tr>
+<tr class="odd">
+<td><code>set buffer(value: number) =&gt; void</code></td>
+<td>Sets the buffer bar to this value. Value should be between [0, 1].</td>
+</tr>
+<tr class="even">
+<td><code>set reverse(value: boolean) =&gt; void</code></td>
+<td>Reverses the direction of the linear progress indicator.</td>
+</tr>
+<tr class="odd">
+<td><code>open() =&gt; void</code></td>
+<td>Puts the component in the open state.</td>
+</tr>
+<tr class="even">
+<td><code>close() =&gt; void</code></td>
+<td>Puts the component in the closed state.</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

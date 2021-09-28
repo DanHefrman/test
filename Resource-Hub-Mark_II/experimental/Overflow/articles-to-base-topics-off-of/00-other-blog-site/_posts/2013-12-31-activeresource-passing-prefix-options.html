@@ -25,11 +25,11 @@
 <p>For <code>save()</code> you can’t pass it as second parameter. So you need to explicitly set on the object before calling the <code>.save()</code> method.</p>
 <p>{% highlight ruby %}</p>
 <h1 id="save">.save()</h1>
-<p><span class="citation" data-cites="inventory"><span class="citation" data-cites="inventory">@inventory</span></span> = Inventory.new(params[:inventory]) <span class="citation" data-cites="inventory.prefix_options"><span class="citation" data-cites="inventory.prefix">@inventory.prefix</span>_options [:store_id]</span> = <span class="citation" data-cites="store.id"><span class="citation" data-cites="store.id">@store.id</span></span> <span class="citation" data-cites="inventory.save"><span class="citation" data-cites="inventory.save">@inventory.save</span></span> {% endhighlight %}</p>
+<p><span class="citation" data-cites="inventory"><span class="citation" data-cites="inventory"><span class="citation" data-cites="inventory">@inventory</span></span></span> = Inventory.new(params[:inventory]) <span class="citation" data-cites="inventory.prefix_options"><span class="citation" data-cites="inventory.prefix"><span class="citation" data-cites="inventory.prefix">@inventory.prefix</span></span>_options [:store_id]</span> = <span class="citation" data-cites="store.id"><span class="citation" data-cites="store.id"><span class="citation" data-cites="store.id">@store.id</span></span></span> <span class="citation" data-cites="inventory.save"><span class="citation" data-cites="inventory.save"><span class="citation" data-cites="inventory.save">@inventory.save</span></span></span> {% endhighlight %}</p>
 <h1 id="on-update_attributes">On update_attributes()</h1>
 <p><code>.update_attributes()</code> won’t accept any second parameter, so you need to pass it with other params.</p>
 <p>{% highlight ruby %}</p>
 <h1 id="update_attibutes">.update_attibutes()</h1>
-<p>params[:inventory][:store_id] = <span class="citation" data-cites="store.id"><span class="citation" data-cites="store.id">@store.id</span></span> <span class="citation" data-cites="inventory.update_attributes"><span class="citation" data-cites="inventory.update">@inventory.update</span>_attributes</span>(params[:inventory]) {% endhighlight %}</p>
+<p>params[:inventory][:store_id] = <span class="citation" data-cites="store.id"><span class="citation" data-cites="store.id"><span class="citation" data-cites="store.id">@store.id</span></span></span> <span class="citation" data-cites="inventory.update_attributes"><span class="citation" data-cites="inventory.update"><span class="citation" data-cites="inventory.update">@inventory.update</span></span>_attributes</span>(params[:inventory]) {% endhighlight %}</p>
 </body>
 </html>

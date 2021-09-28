@@ -4,7 +4,7 @@ In this tutorial we will look into [inline mode](https://core.telegram.org/bots#
 
 ### <a href="#register-bot" id="register-bot" class="anchor"><em></em></a>Register bot
 
-Writing an telegram bot starts with the simple task of registering your bot with <span class="citation" data-cites="BotFather">\[@BotFather\]</span>[bot\_father](https://telegram.me/botfather) and get the bot token. You can create a new bot by sending the command `/newbot` to BotFather.Then BotFather will take you though a interactive chat to set the username, description etc and give back the bot token. Once you have the bot token keep it confidential and don’t share it with anyone. In this blog post we are creating an `Inline         mode` bot. For this we have to enable inline mode by sending `/setinline` command to BotFather and provide a placeholder text.
+Writing an telegram bot starts with the simple task of registering your bot with <span class="citation" data-cites="BotFather">\[<span class="citation" data-cites="BotFather">@BotFather</span>\]</span>[bot\_father](https://telegram.me/botfather) and get the bot token. You can create a new bot by sending the command `/newbot` to BotFather.Then BotFather will take you though a interactive chat to set the username, description etc and give back the bot token. Once you have the bot token keep it confidential and don’t share it with anyone. In this blog post we are creating an `Inline         mode` bot. For this we have to enable inline mode by sending `/setinline` command to BotFather and provide a placeholder text.
 
 ### <a href="#setup-project" id="setup-project" class="anchor"><em></em></a>Setup project
 
@@ -96,7 +96,7 @@ After this go to **BotFather** and set webhookurl using the command `/setwebhook
 
     https://api.telegram.org/bot<bot token>/setwebhook?url=https://yourbot.herokuapp.com
 
-This bot is available as <span class="citation" data-cites="lmdtfy_bot">\[@lmdtfy\_bot\]</span>[lmdtfy\_bot](https://t.me/lmdtfy_bot) for telegram users and code on [github](https://github.com/revathskumar/lmdtfy_bot)
+This bot is available as <span class="citation" data-cites="lmdtfy_bot">\[<span class="citation" data-cites="lmdtfy">@lmdtfy</span>\_bot\]</span>[lmdtfy\_bot](https://t.me/lmdtfy_bot) for telegram users and code on [github](https://github.com/revathskumar/lmdtfy_bot)
 
 Hope it helped.
 

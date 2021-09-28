@@ -1,10 +1,8 @@
-<span class="citation" data-cites="dojo/widgets/tab-container"><span class="citation" data-cites="dojo/widgets/tab-container">@dojo/widgets/tab-container</span></span>
-=======================================================================================================================================================================
+# <span class="citation" data-cites="dojo/widgets/tab-container"><span class="citation" data-cites="dojo/widgets/tab-container">@dojo/widgets/tab-container</span></span>
 
 Dojo’s `TabContainer` widget provides a user interface capable of displaying tabbed content. The content shown at any given time is based on the children of the currently-selected tab button.
 
-Features
---------
+## Features
 
 -   Tab buttons can be positioned above, below, before, or after tab content
 -   Tabs can be closeable and disabled

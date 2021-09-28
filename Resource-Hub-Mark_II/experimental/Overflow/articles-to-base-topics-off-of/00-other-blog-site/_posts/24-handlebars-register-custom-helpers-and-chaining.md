@@ -18,7 +18,7 @@ Now you can use this as
 Chaining helpers
 ----------------
 
-Handlebars won’t allow you to chain the helpers. And as per the <span class="citation" data-cites="wycats">\[@wycats\]</span>(https://github.com/wycats/), he doesn’t have any [plan to add this feature](https://github.com/wycats/handlebars.js/issues/304#issuecomment-8416546). But some handlerbars fans have done some workarounds to support this.
+Handlebars won’t allow you to chain the helpers. And as per the <span class="citation" data-cites="wycats">\[<span class="citation" data-cites="wycats">@wycats</span>\]</span>(https://github.com/wycats/), he doesn’t have any [plan to add this feature](https://github.com/wycats/handlebars.js/issues/304#issuecomment-8416546). But some handlerbars fans have done some workarounds to support this.
 
     // https://github.com/wycats/handlebars.js/issues/304#issuecomment-15635762
 

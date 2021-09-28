@@ -44,21 +44,39 @@
 <table>
 <thead>
 <tr class="header">
-<th>Column name</th>
-<th>Column type</th>
-<th>Constraints</th>
+<th>
+Column name
+</th>
+<th>
+Column type
+</th>
+<th>
+Constraints
+</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>id</td>
-<td>SERIAL</td>
-<td>PK, NOT NULL</td>
+<td>
+id
+</td>
+<td>
+SERIAL
+</td>
+<td>
+PK, NOT NULL
+</td>
 </tr>
 <tr class="even">
-<td>type</td>
-<td>VARCHAR(20)</td>
-<td>NOT NULL</td>
+<td>
+type
+</td>
+<td>
+VARCHAR(20)
+</td>
+<td>
+NOT NULL
+</td>
 </tr>
 </tbody>
 </table>
@@ -68,26 +86,50 @@
 <table>
 <thead>
 <tr class="header">
-<th>Column name</th>
-<th>Column type</th>
-<th>Constraints</th>
+<th>
+Column name
+</th>
+<th>
+Column type
+</th>
+<th>
+Constraints
+</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>id</td>
-<td>SERIAL</td>
-<td>PK, NOT NULL</td>
+<td>
+id
+</td>
+<td>
+SERIAL
+</td>
+<td>
+PK, NOT NULL
+</td>
 </tr>
 <tr class="even">
-<td>name</td>
-<td>VARCHAR(100)</td>
-<td>NOT NULL</td>
+<td>
+name
+</td>
+<td>
+VARCHAR(100)
+</td>
+<td>
+NOT NULL
+</td>
 </tr>
 <tr class="odd">
-<td>continent_name</td>
-<td>VARCHAR(20)</td>
-<td>NOT NULL</td>
+<td>
+continent_name
+</td>
+<td>
+VARCHAR(20)
+</td>
+<td>
+NOT NULL
+</td>
 </tr>
 </tbody>
 </table>
@@ -97,41 +139,83 @@
 <table>
 <thead>
 <tr class="header">
-<th>Column name</th>
-<th>Column type</th>
-<th>Constraints</th>
+<th>
+Column name
+</th>
+<th>
+Column type
+</th>
+<th>
+Constraints
+</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>id</td>
-<td>SERIAL</td>
-<td>PK, NOT NULL</td>
+<td>
+id
+</td>
+<td>
+SERIAL
+</td>
+<td>
+PK, NOT NULL
+</td>
 </tr>
 <tr class="even">
-<td>merchant_name</td>
-<td>VARCHAR(255)</td>
-<td>NOT NULL</td>
+<td>
+merchant_name
+</td>
+<td>
+VARCHAR(255)
+</td>
+<td>
+NOT NULL
+</td>
 </tr>
 <tr class="odd">
-<td>country_id</td>
-<td>INTEGER</td>
-<td>FK, NOT NULL</td>
+<td>
+country_id
+</td>
+<td>
+INTEGER
+</td>
+<td>
+FK, NOT NULL
+</td>
 </tr>
 <tr class="even">
-<td>created_at</td>
-<td>TIMESTAMP</td>
-<td>NOT NULL</td>
+<td>
+created_at
+</td>
+<td>
+TIMESTAMP
+</td>
+<td>
+NOT NULL
+</td>
 </tr>
 <tr class="odd">
-<td>admin_id</td>
-<td>INTEGER</td>
-<td>FK (to users id), NOT NULL</td>
+<td>
+admin_id
+</td>
+<td>
+INTEGER
+</td>
+<td>
+FK (to users id), NOT NULL
+</td>
 </tr>
 <tr class="even">
-<td>merchant_type_id</td>
-<td>INTEGER</td>
-<td>FK, NOT NULL</td>
+<td>
+merchant_type_id
+</td>
+<td>
+INTEGER
+</td>
+<td>
+FK, NOT NULL
+</td>
 </tr>
 </tbody>
 </table>
@@ -146,18 +230,30 @@
 <table>
 <thead>
 <tr class="header">
-<th>full_name</th>
-<th>created_at</th>
+<th>
+full_name
+</th>
+<th>
+created_at
+</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>‘Zaphod Beeblebrox’</td>
-<td>CURRENT_TIMESTAMP</td>
+<td>
+‘Zaphod Beeblebrox’
+</td>
+<td>
+CURRENT_TIMESTAMP
+</td>
 </tr>
 <tr class="even">
-<td>‘Blart Versenwald III’ **</td>
-<td>CURRENT_TIMESTAMP</td>
+<td>
+‘Blart Versenwald III’ **
+</td>
+<td>
+CURRENT_TIMESTAMP
+</td>
 </tr>
 </tbody>
 </table>
@@ -168,15 +264,21 @@
 <table>
 <thead>
 <tr class="header">
-<th>type</th>
+<th>
+type
+</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>‘Retail’</td>
+<td>
+‘Retail’
+</td>
 </tr>
 <tr class="even">
-<td>‘Wholesale’</td>
+<td>
+‘Wholesale’
+</td>
 </tr>
 </tbody>
 </table>
@@ -186,22 +288,38 @@
 <table>
 <thead>
 <tr class="header">
-<th>name</th>
-<th>continent_name</th>
+<th>
+name
+</th>
+<th>
+continent_name
+</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>‘Brazil’</td>
-<td>‘South America’</td>
+<td>
+‘Brazil’
+</td>
+<td>
+‘South America’
+</td>
 </tr>
 <tr class="even">
-<td>‘China’</td>
-<td>‘Asia’</td>
+<td>
+‘China’
+</td>
+<td>
+‘Asia’
+</td>
 </tr>
 <tr class="odd">
-<td>‘USA’</td>
-<td>‘North America’</td>
+<td>
+‘USA’
+</td>
+<td>
+‘North America’
+</td>
 </tr>
 </tbody>
 </table>
@@ -214,41 +332,91 @@
 <table>
 <thead>
 <tr class="header">
-<th>merchant_name</th>
-<th>country_id</th>
-<th>created_at</th>
-<th>admin_id</th>
-<th>merchant_type_id</th>
+<th>
+merchant_name
+</th>
+<th>
+country_id
+</th>
+<th>
+created_at
+</th>
+<th>
+admin_id
+</th>
+<th>
+merchant_type_id
+</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>‘Zingo’</td>
-<td>(Brazil)</td>
-<td>CURRENT_TIMESTAMP</td>
-<td>(Zaphod)</td>
-<td>(Retail)</td>
+<td>
+‘Zingo’
+</td>
+<td>
+(Brazil)
+</td>
+<td>
+CURRENT_TIMESTAMP
+</td>
+<td>
+(Zaphod)
+</td>
+<td>
+(Retail)
+</td>
 </tr>
 <tr class="even">
-<td>‘Widgets International’</td>
-<td>(China)</td>
-<td>CURRENT_TIMESTAMP</td>
-<td>(Blart)</td>
-<td>(Wholesale)</td>
+<td>
+‘Widgets International’
+</td>
+<td>
+(China)
+</td>
+<td>
+CURRENT_TIMESTAMP
+</td>
+<td>
+(Blart)
+</td>
+<td>
+(Wholesale)
+</td>
 </tr>
 <tr class="odd">
-<td>‘Snglrify’</td>
-<td>(USA)</td>
-<td>CURRENT_TIMESTAMP</td>
-<td>(Zaphod)</td>
-<td>(Retail)</td>
+<td>
+‘Snglrify’
+</td>
+<td>
+(USA)
+</td>
+<td>
+CURRENT_TIMESTAMP
+</td>
+<td>
+(Zaphod)
+</td>
+<td>
+(Retail)
+</td>
 </tr>
 <tr class="even">
-<td>‘Better Products 4 U’</td>
-<td>(USA)</td>
-<td>CURRENT_TIMESTAMP</td>
-<td>(Zaphod)</td>
-<td>(Wholesale)</td>
+<td>
+‘Better Products 4 U’
+</td>
+<td>
+(USA)
+</td>
+<td>
+CURRENT_TIMESTAMP
+</td>
+<td>
+(Zaphod)
+</td>
+<td>
+(Wholesale)
+</td>
 </tr>
 </tbody>
 </table>
@@ -267,36 +435,76 @@
 <table>
 <thead>
 <tr class="header">
-<th>full_name</th>
-<th>type</th>
-<th>name</th>
-<th>merchant_name</th>
+<th>
+full_name
+</th>
+<th>
+type
+</th>
+<th>
+name
+</th>
+<th>
+merchant_name
+</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Zaphod Beeblebrox</td>
-<td>Wholesale</td>
-<td>USA</td>
-<td>Better Products 4 U</td>
+<td>
+Zaphod Beeblebrox
+</td>
+<td>
+Wholesale
+</td>
+<td>
+USA
+</td>
+<td>
+Better Products 4 U
+</td>
 </tr>
 <tr class="even">
-<td>Zaphod Beeblebrox</td>
-<td>Retail</td>
-<td>USA</td>
-<td>Snglrify</td>
+<td>
+Zaphod Beeblebrox
+</td>
+<td>
+Retail
+</td>
+<td>
+USA
+</td>
+<td>
+Snglrify
+</td>
 </tr>
 <tr class="odd">
-<td>Blart Versenwald III</td>
-<td>Wholesale</td>
-<td>China</td>
-<td>Widgets International</td>
+<td>
+Blart Versenwald III
+</td>
+<td>
+Wholesale
+</td>
+<td>
+China
+</td>
+<td>
+Widgets International
+</td>
 </tr>
 <tr class="even">
-<td>Zaphod Beeblebrox</td>
-<td>Retail</td>
-<td>Brazil</td>
-<td>Zingo</td>
+<td>
+Zaphod Beeblebrox
+</td>
+<td>
+Retail
+</td>
+<td>
+Brazil
+</td>
+<td>
+Zingo
+</td>
 </tr>
 </tbody>
 </table>

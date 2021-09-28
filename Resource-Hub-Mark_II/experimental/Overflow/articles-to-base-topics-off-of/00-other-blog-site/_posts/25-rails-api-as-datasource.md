@@ -6,7 +6,7 @@ Here is my sample data from the JSON API.
 
 ActiveResource will deal with the data pretty well except `contacts`. It tends to create an object for contacts. The ActiveResource object will be something similar to
 
-> \#&lt;Store:0xb4aaec4 <span class="citation" data-cites="attributes">@attributes</span>={ “store” =&gt; { “description” =&gt; “some description”, “contacts” =&gt; \#&lt;Store::Contact:0xb4aa884 <span class="citation" data-cites="attributes">@attributes</span>={ “contact” =&gt; {“opening\_time” =&gt; “09:00”, “clo sing\_time” =&gt;“18:00”,“holidays”=&gt;\[“Sunday”\], “message” =&gt;"" } },<span class="citation" data-cites="prefix_options">@prefix\_options</span>={}, <span class="citation" data-cites="persisted">@persisted</span>=false&gt;, “name”=&gt; “some store” } } , <span class="citation" data-cites="prefix_options">@prefix\_options</span>={}, <span class="citation" data-cites="persisted">@persisted</span>=false&gt;
+> \#&lt;Store:0xb4aaec4 <span class="citation" data-cites="attributes"><span class="citation" data-cites="attributes">@attributes</span></span>={ “store” =&gt; { “description” =&gt; “some description”, “contacts” =&gt; \#&lt;Store::Contact:0xb4aa884 <span class="citation" data-cites="attributes"><span class="citation" data-cites="attributes">@attributes</span></span>={ “contact” =&gt; {“opening\_time” =&gt; “09:00”, “clo sing\_time” =&gt;“18:00”,“holidays”=&gt;\[“Sunday”\], “message” =&gt;"" } },<span class="citation" data-cites="prefix_options"><span class="citation" data-cites="prefix">@prefix</span>\_options</span>={}, <span class="citation" data-cites="persisted"><span class="citation" data-cites="persisted">@persisted</span></span>=false&gt;, “name”=&gt; “some store” } } , <span class="citation" data-cites="prefix_options"><span class="citation" data-cites="prefix">@prefix</span>\_options</span>={}, <span class="citation" data-cites="persisted"><span class="citation" data-cites="persisted">@persisted</span></span>=false&gt;
 
 So I hope you have noticed that contacts is an object of `Store::Contact`. This is pretty handy anyway but the main issue was `contacts` attributes are are enclosed inside a root element `contact`. This is not an issue if you are just finding and displaying data. But its a real issue when you try to create or update.
 
@@ -19,8 +19,8 @@ Since we are using MongoDB to store data, the whole store and contact is a singl
 1.  Create a model for `Store::Contact` with `self.include_root_in_json = false`
 2.  Monkey patch `ActiveResource::Base.create_resource_for` method
 
-1. Create a model
-=================
+3.  Create a model
+    ==============
 
 This will work out perfectly only if you have one or two situations like `Store::Contact` or else you need to create a model for every attributes holding a hash value.
 

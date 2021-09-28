@@ -13,29 +13,7 @@
   </style>
 </head>
 <body>
-<!--
-
-
----
- "JavaScript : Setup testing with mocha"
-date: 2013-12-24 00:00:00 IST
-updated: 2013-12-24 00:00:00 IST
-categories: github
----
-
--->
-&lt;!DOCTYPE html&gt;
-<html>
-<head>
-<title>
-basic-git-workflow
-</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./css/bootstrap.css"> <link rel="stylesheet" href="./css/bootstrap.grid.css"> <link rel="stylesheet" href="./css/bootstrap.min.css"> <link rel="stylesheet" href="./css/bootstrap-reboot.min.css"> <link rel="stylesheet" href="./css/bootstrap.css.map"> <link rel="stylesheet" href="./css/blog-home.css"> <link rel="stylesheet" href="./css/prism.css">
-<script async defer src="./css/prism.js"></script>
-</head>
-<body>
+<p>&lt;!DOCTYPE html&gt;</p>
 <p><a href="http://visionmedia.github.io/mocha/">Mocha</a> is the one of the testing framework available in JavaScript. It supports both tdd and bdd and we can run tests from both browser and CLI.</p>
 <h1 id="setup-for-testing-in-browser">Setup for testing in Browser</h1>
 <p>Every release of the Mocha will contain a <a href="https://github.com/visionmedia/mocha/blob/master/mocha.js">mocha.js</a> to enable testing in browser. We can use <a href="http://chaijs.com/">chai.js</a> or <a href="https://github.com/LearnBoost/expect.js">expect.js</a> for assertions. If you are using <code>tdd</code> you need mocha to setup by,</p>
@@ -43,23 +21,6 @@ basic-git-workflow
 <p>or else you can use <code>mocha.setup('bdd')</code>. Here is the boilerplate html for mocha testing. After including your scripts and tests, you can open up in a browser to run tests.</p>
 <p>Don’t forget to include <code>mocha.run()</code> which will initiate the test runner.</p>
 <p>{% highlight html %}</p>
-<body>
-<div id="mocha">
-
-</div>
-<script src="bower_components/mocha/mocha.js"></script>
-<script>mocha.setup('bdd')</script>
-<script src="bower_components/chai/chai.js"></script>
-<script>
-        var assert = chai.assert;
-        var expect = chai.expect;
-        var should = chai.should();
-    </script>
-<!-- include source files here... -->
-<!-- include spec files here... -->
-<script src="spec/test.js"></script>
-<script>mocha.run()</script>
-</body>
 <p>{% endhighlight %}</p>
 <h1 id="setup-for-testing-in-cli">Setup for testing in CLI</h1>
 <p>When it comes to testing, I like CLI more than browser. So here is how you can run your mocha tests from CLI. At first you need to install npm module mocha.</p>

@@ -11,134 +11,47 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
-  <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
 </head>
 <body>
-<!--
-
-
----
- "Nodejs : simple http server"
-excerpt: "Nodejs : simple http server"
-date: 2015-08-20 00:00:00 IST
-updated: 2015-08-20 00:00:00 IST
-categories: nodejs
-tags: nodejs
----
-
--->
-&lt;!DOCTYPE html&gt;
-<html>
-<head>
-<title>
-basic-git-workflow
-</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./css/bootstrap.css"> <link rel="stylesheet" href="./css/bootstrap.grid.css"> <link rel="stylesheet" href="./css/bootstrap.min.css"> <link rel="stylesheet" href="./css/bootstrap-reboot.min.css"> <link rel="stylesheet" href="./css/bootstrap.css.map"> <link rel="stylesheet" href="./css/blog-home.css"> <link rel="stylesheet" href="./css/prism.css">
-<script async defer src="./css/prism.js"></script>
-</head>
-<body>
+<p>&lt;!DOCTYPE html&gt;</p>
 <p>Building a simple http server is pretty easy in nodejs, we can use <code>createServer</code> method in <a href="https://nodejs.org/api/all.html#all_http">http</a> module for this. The <code>createServer</code> method will take a function as argument and return the object of <code>http.Server</code>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">var</span> server <span class="op">=</span> <span class="at">require</span>(<span class="st">&quot;http&quot;</span>).<span class="at">createServer</span>(<span class="kw">function</span> (req<span class="op">,</span> res) <span class="op">{}</span>)<span class="op">;</span></a></code></pre></div>
+<pre><code>var server = require(&quot;http&quot;).createServer(function (req, res) {});</code></pre>
 <p>The <code>createServer</code> callback will be executed when ever a request is received, and a object of <code>request</code> and <code>response</code> will be passes to it.</p>
 <p>You can also listen to <code>request</code> event on server.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">var</span> http <span class="op">=</span> <span class="at">require</span>(<span class="st">&quot;http&quot;</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="kw">var</span> server <span class="op">=</span> <span class="va">http</span>.<span class="at">createServer</span>()<span class="op">;</span></a>
-<a class="sourceLine" id="cb2-3" title="3"></a>
-<a class="sourceLine" id="cb2-4" title="4"><span class="va">server</span>.<span class="at">on</span>(<span class="st">&quot;request&quot;</span><span class="op">,</span> <span class="kw">function</span> (req<span class="op">,</span> res) <span class="op">{}</span>)<span class="op">;</span></a></code></pre></div>
+<pre><code>var http = require(&quot;http&quot;);
+var server = http.createServer();
+
+server.on(&quot;request&quot;, function (req, res) {});</code></pre>
 <p>Next in order to accept connection you need to bind it to a port. You can use <code>listen</code> method for it.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="va">server</span>.<span class="at">listen</span>(port)<span class="op">;</span></a></code></pre></div>
+<pre><code>server.listen(port);</code></pre>
 <p>You can either pass a callback, or can bind to <code>listening</code> event to do something soon after a server is bound to the port.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="va">server</span>.<span class="at">on</span>(<span class="st">&quot;listening&quot;</span><span class="op">,</span> <span class="kw">function</span> () <span class="op">{</span></a>
-<a class="sourceLine" id="cb4-2" title="2">  <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;Listening to &quot;</span><span class="op">,</span> port)<span class="op">;</span></a>
-<a class="sourceLine" id="cb4-3" title="3"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
+<pre><code>server.on(&quot;listening&quot;, function () {
+  console.log(&quot;Listening to &quot;, port);
+});</code></pre>
 <p>You can also set the port using the <a href="/2015/08/nodejs-read-env-variables.html">environment variable</a>.</p>
 <p>For error handling you can you <code>error</code> event.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb5-1" title="1"><span class="va">server</span>.<span class="at">on</span>(<span class="st">&quot;error&quot;</span><span class="op">,</span> <span class="kw">function</span> (err) <span class="op">{}</span>)<span class="op">;</span></a></code></pre></div>
+<pre><code>server.on(&quot;error&quot;, function (err) {});</code></pre>
 <p>An error object will be passed to the callback on error. Now the code for the simple server will be</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="co">// server.js</span></a>
-<a class="sourceLine" id="cb6-2" title="2"><span class="kw">var</span> http <span class="op">=</span> <span class="at">require</span>(<span class="st">&quot;http&quot;</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb6-3" title="3"><span class="kw">var</span> server <span class="op">=</span> <span class="va">http</span>.<span class="at">createServer</span>()<span class="op">;</span></a>
-<a class="sourceLine" id="cb6-4" title="4"><span class="kw">var</span> port <span class="op">=</span> <span class="va">process</span>.<span class="va">env</span>.<span class="at">PORT</span> <span class="op">||</span> <span class="dv">9001</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb6-5" title="5"></a>
-<a class="sourceLine" id="cb6-6" title="6"><span class="va">server</span>.<span class="at">listen</span>(port)<span class="op">;</span></a>
-<a class="sourceLine" id="cb6-7" title="7"></a>
-<a class="sourceLine" id="cb6-8" title="8"><span class="va">server</span>.<span class="at">on</span>(<span class="st">&quot;request&quot;</span><span class="op">,</span> <span class="kw">function</span> (req<span class="op">,</span> res) <span class="op">{</span></a>
-<a class="sourceLine" id="cb6-9" title="9">  <span class="va">req</span>.<span class="at">write</span>(<span class="st">&quot;&lt;h1&gt;Hello World :: &lt;/h1&gt;&quot;</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb6-10" title="10"></a>
-<a class="sourceLine" id="cb6-11" title="11">  <span class="va">res</span>.<span class="at">end</span>()<span class="op">;</span></a>
-<a class="sourceLine" id="cb6-12" title="12"><span class="op">}</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb6-13" title="13"></a>
-<a class="sourceLine" id="cb6-14" title="14"><span class="va">server</span>.<span class="at">on</span>(<span class="st">&quot;listening&quot;</span><span class="op">,</span> <span class="kw">function</span> () <span class="op">{</span></a>
-<a class="sourceLine" id="cb6-15" title="15">  <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;Listening to &quot;</span><span class="op">,</span> port)<span class="op">;</span></a>
-<a class="sourceLine" id="cb6-16" title="16"><span class="op">}</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb6-17" title="17"></a>
-<a class="sourceLine" id="cb6-18" title="18"><span class="va">server</span>.<span class="at">on</span>(<span class="st">&quot;error&quot;</span><span class="op">,</span> <span class="kw">function</span> (err) <span class="op">{</span></a>
-<a class="sourceLine" id="cb6-19" title="19">  <span class="va">console</span>.<span class="at">log</span>(err)<span class="op">;</span></a>
-<a class="sourceLine" id="cb6-20" title="20"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
+<pre><code>// server.js
+var http = require(&quot;http&quot;);
+var server = http.createServer();
+var port = process.env.PORT || 9001;
+
+server.listen(port);
+
+server.on(&quot;request&quot;, function (req, res) {
+  req.write(&quot;&lt;h1&gt;Hello World :: &lt;/h1&gt;&quot;);
+
+  res.end();
+});
+
+server.on(&quot;listening&quot;, function () {
+  console.log(&quot;Listening to &quot;, port);
+});
+
+server.on(&quot;error&quot;, function (err) {
+  console.log(err);
+});</code></pre>
 <p>Now when you run <code>node server.js</code> the application will run on port <code>9001</code> and you can request <code>localhost:9001</code> on you browser to see the result.</p>
 <p>You can also bind other events like <code>connection</code> which is emitted when a new connection is made and <code>close</code> which will emit when server closes. The close event is emitted only when all the connections are ended.</p>
 <p>Hope that helps.</p>

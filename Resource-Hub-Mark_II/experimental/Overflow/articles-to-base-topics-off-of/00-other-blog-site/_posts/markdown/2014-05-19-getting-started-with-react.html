@@ -11,118 +11,32 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
-  <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
 </head>
 <body>
-<!--
-
-
----
- "Getting started with React"
-excerpt: "Getting started with React.js and precopiling jsx with gulp"
-date: 2014-05-19 00:00:00 IST
-updated: 2014-05-19 00:00:00 IST
-categories: javascript
----
-
--->
-&lt;!DOCTYPE html&gt;
-<html>
-<head>
-<title>
-basic-git-workflow
-</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./css/bootstrap.css"> <link rel="stylesheet" href="./css/bootstrap.grid.css"> <link rel="stylesheet" href="./css/bootstrap.min.css"> <link rel="stylesheet" href="./css/bootstrap-reboot.min.css"> <link rel="stylesheet" href="./css/bootstrap.css.map"> <link rel="stylesheet" href="./css/blog-home.css"> <link rel="stylesheet" href="./css/prism.css">
-<script async defer src="./css/prism.js"></script>
-</head>
-<body>
+<p>&lt;!DOCTYPE html&gt;</p>
 <p>Recently when I saw a tweet saying “its super easy to build UI components with <a href="http://facebook.github.io/react/">React.js</a>” I thought I should try it as well.</p>
 <h1 id="react">React</h1>
 <p>React is a JavaScript library from Facebook to create UI components. React uses <code>*.jsx</code> extention. We write both the HTML template and its logic in the same .jsx file. You can either precompile it with react npm module or in the browser with <code>JSXTransformer.js</code>.</p>
 <p>I started with installing react with bower.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">bower</span> install react</a></code></pre></div>
+<pre><code>bower install react</code></pre>
 <p>After installing with bower I added react.js into my index.html.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;bower_components/react/react.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></a></code></pre></div>
+<pre><code>&lt;script src=&quot;bower_components/react/react.js&quot;&gt;&lt;/script&gt;</code></pre>
 <p>Since I prefer to precompile the jsx files, I installed react-tools npm module and gulp plugin for it.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="ex">npm</span> install react-tools gulp-react --save</a></code></pre></div>
+<pre><code>npm install react-tools gulp-react --save</code></pre>
 <h1 id="first-component">First component</h1>
 <p>My first component was a simple HelloMessage with name and click handler.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="co">/** </span><span class="an">@jsx</span><span class="co"> React.DOM */</span></a>
-<a class="sourceLine" id="cb4-2" title="2"><span class="kw">var</span> HelloMessage <span class="op">=</span> <span class="va">React</span>.<span class="at">createClass</span>(<span class="op">{</span></a>
-<a class="sourceLine" id="cb4-3" title="3">  <span class="dt">click</span><span class="op">:</span> <span class="kw">function</span> () <span class="op">{</span></a>
-<a class="sourceLine" id="cb4-4" title="4">    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;clicked&quot;</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb4-5" title="5">  <span class="op">},</span></a>
-<a class="sourceLine" id="cb4-6" title="6">  <span class="dt">render</span><span class="op">:</span> <span class="kw">function</span> () <span class="op">{</span></a>
-<a class="sourceLine" id="cb4-7" title="7">    <span class="cf">return</span> <span class="op">&lt;</span>div onClick<span class="op">={</span><span class="kw">this</span>.<span class="at">click</span><span class="op">}&gt;</span>Hello <span class="op">{</span><span class="kw">this</span>.<span class="va">props</span>.<span class="at">name</span><span class="op">}</span> &lt;/div<span class="op">&gt;;</span></a>
-<a class="sourceLine" id="cb4-8" title="8">  <span class="op">},</span></a>
-<a class="sourceLine" id="cb4-9" title="9"><span class="op">}</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb4-10" title="10"></a>
-<a class="sourceLine" id="cb4-11" title="11"><span class="kw">var</span> parent <span class="op">=</span> <span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&quot;.jumbotron&quot;</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb4-12" title="12"><span class="va">React</span>.<span class="at">renderComponent</span>(<span class="op">&lt;</span>HelloMessage name<span class="op">=</span><span class="st">&quot;Revath&quot;</span> /&gt;<span class="op">,</span> parent)<span class="op">;</span></a></code></pre></div>
+<pre><code>/** @jsx React.DOM */
+var HelloMessage = React.createClass({
+  click: function () {
+    console.log(&quot;clicked&quot;);
+  },
+  render: function () {
+    return &lt;div onClick={this.click}&gt;Hello {this.props.name} &lt;/div&gt;;
+  },
+});
+
+var parent = document.querySelector(&quot;.jumbotron&quot;);
+React.renderComponent(&lt;HelloMessage name=&quot;Revath&quot; /&gt;, parent);</code></pre>
 <p>To create a new component you need to extend <code>React.createClass</code></p>
 <p>The <code>React.renderComponent</code> method accepts two arguments</p>
 <ol type="1">
@@ -135,43 +49,43 @@ basic-git-workflow
 <p>The <code>render</code> method is where you will define the HTML template.</p>
 <p>It is optional to use <code>/** @jsx React.DOM */</code> as the first line when you use <a href="">gulp-react</a> to precompile.</p>
 <p>To precompile this, I configured the gulpfile.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb5-1" title="1"><span class="co">// gulpfile.js</span></a>
-<a class="sourceLine" id="cb5-2" title="2"><span class="kw">var</span> react <span class="op">=</span> <span class="at">require</span>(<span class="st">&quot;gulp-react&quot;</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb5-3" title="3"></a>
-<a class="sourceLine" id="cb5-4" title="4"><span class="va">gulp</span>.<span class="at">task</span>(<span class="st">&quot;react&quot;</span><span class="op">,</span> <span class="kw">function</span> () <span class="op">{</span></a>
-<a class="sourceLine" id="cb5-5" title="5">  <span class="cf">return</span> gulp</a>
-<a class="sourceLine" id="cb5-6" title="6">    .<span class="at">src</span>(<span class="st">&quot;app/scripts/*.jsx&quot;</span>)</a>
-<a class="sourceLine" id="cb5-7" title="7">    .<span class="at">pipe</span>(<span class="at">react</span>())</a>
-<a class="sourceLine" id="cb5-8" title="8">    .<span class="at">pipe</span>(<span class="va">gulp</span>.<span class="at">dest</span>(<span class="st">&quot;.tmp/scripts/&quot;</span>))<span class="op">;</span></a>
-<a class="sourceLine" id="cb5-9" title="9"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
+<pre><code>// gulpfile.js
+var react = require(&quot;gulp-react&quot;);
+
+gulp.task(&quot;react&quot;, function () {
+  return gulp
+    .src(&quot;app/scripts/*.jsx&quot;)
+    .pipe(react())
+    .pipe(gulp.dest(&quot;.tmp/scripts/&quot;));
+});</code></pre>
 <p>This will precompile all the <code>*.jsx</code> files in <code>app/scripts/</code> and put it in <code>.tmp/scripts/</code>.</p>
 <h1 id="compile-from-browser">Compile from browser</h1>
 <p>If you don’t wanna precompile, then load <code>JSXTransformer.js</code> along with <code>react</code>. Then write your component in a script tag with type <code>text/jsx</code>.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;bower_components/react/react.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></a>
-<a class="sourceLine" id="cb6-2" title="2"><span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;bower_components/react/JSXTransformer.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></a>
-<a class="sourceLine" id="cb6-3" title="3"><span class="kw">&lt;body&gt;</span></a>
-<a class="sourceLine" id="cb6-4" title="4">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;change-text&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
-<a class="sourceLine" id="cb6-5" title="5">  <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/jsx&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb6-6" title="6">    <span class="kw">var</span> UpdateText <span class="op">=</span> <span class="va">React</span>.<span class="at">createClass</span>(<span class="op">{</span></a>
-<a class="sourceLine" id="cb6-7" title="7">      <span class="dt">getInitialState</span><span class="op">:</span> <span class="kw">function</span>()<span class="op">{</span></a>
-<a class="sourceLine" id="cb6-8" title="8">        <span class="cf">return</span> <span class="op">{</span><span class="dt">name</span><span class="op">:</span> <span class="st">&#39;&#39;</span><span class="op">}</span></a>
-<a class="sourceLine" id="cb6-9" title="9">      <span class="op">},</span></a>
-<a class="sourceLine" id="cb6-10" title="10">      <span class="dt">change</span><span class="op">:</span> <span class="kw">function</span>(e)<span class="op">{</span></a>
-<a class="sourceLine" id="cb6-11" title="11">        <span class="kw">this</span>.<span class="at">setState</span>(<span class="op">{</span><span class="dt">name</span><span class="op">:</span> <span class="va">e</span>.<span class="va">target</span>.<span class="at">value</span><span class="op">}</span>)</a>
-<a class="sourceLine" id="cb6-12" title="12">      <span class="op">},</span></a>
-<a class="sourceLine" id="cb6-13" title="13">      <span class="dt">render</span><span class="op">:</span> <span class="kw">function</span>()<span class="op">{</span></a>
-<a class="sourceLine" id="cb6-14" title="14">        <span class="cf">return</span> (</a>
-<a class="sourceLine" id="cb6-15" title="15">          <span class="op">&lt;</span>div<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb6-16" title="16">            <span class="op">&lt;</span>input type<span class="op">=</span><span class="st">&quot;text&quot;</span> name<span class="op">=</span><span class="st">&quot;name&quot;</span> onChange<span class="op">={</span><span class="kw">this</span>.<span class="at">change</span><span class="op">}</span> /&gt;</a>
-<a class="sourceLine" id="cb6-17" title="17">            <span class="op">&lt;</span>h1<span class="op">&gt;</span> Hello <span class="op">{</span><span class="kw">this</span>.<span class="va">state</span>.<span class="at">name</span><span class="op">}!!!</span>&lt;/h1<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb6-18" title="18">          &lt;/div<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb6-19" title="19">        )</a>
-<a class="sourceLine" id="cb6-20" title="20">      <span class="op">}</span></a>
-<a class="sourceLine" id="cb6-21" title="21">    <span class="op">}</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb6-22" title="22"></a>
-<a class="sourceLine" id="cb6-23" title="23">    <span class="va">React</span>.<span class="at">renderComponent</span>(<span class="op">&lt;</span>UpdateText/<span class="op">&gt;,</span> <span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&#39;.change-text&#39;</span>))<span class="op">;</span></a>
-<a class="sourceLine" id="cb6-24" title="24">  <span class="kw">&lt;/script&gt;</span></a>
-<a class="sourceLine" id="cb6-25" title="25"><span class="kw">&lt;/body&gt;</span></a></code></pre></div>
+<pre><code>&lt;script src=&quot;bower_components/react/react.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;bower_components/react/JSXTransformer.js&quot;&gt;&lt;/script&gt;
+&lt;body&gt;
+  &lt;div class=&quot;change-text&quot;&gt;&lt;/div&gt;
+  &lt;script type=&quot;text/jsx&quot;&gt;
+    var UpdateText = React.createClass({
+      getInitialState: function(){
+        return {name: &#39;&#39;}
+      },
+      change: function(e){
+        this.setState({name: e.target.value})
+      },
+      render: function(){
+        return (
+          &lt;div&gt;
+            &lt;input type=&quot;text&quot; name=&quot;name&quot; onChange={this.change} /&gt;
+            &lt;h1&gt; Hello {this.state.name}!!!&lt;/h1&gt;
+          &lt;/div&gt;
+        )
+      }
+    });
+
+    React.renderComponent(&lt;UpdateText/&gt;, document.querySelector(&#39;.change-text&#39;));
+  &lt;/script&gt;
+&lt;/body&gt;</code></pre>
 <p>The above example will update the <code>&lt;h1&gt;</code> tag with the name entered in the textbox. This utilises the concept of <code>state</code> in react. <code>this.state</code> will store the internal state of the application. When ever the state change the react will reinvoke the <code>render</code> method and change in the data will be displyed to the user.</p>
 <h1 id="conclusion">Conclusion</h1>
 <p>In conclusion, I feel super easily to build the UI components with react, but I don’t really intrested in mixing up of component logic and template (personal preference).</p>

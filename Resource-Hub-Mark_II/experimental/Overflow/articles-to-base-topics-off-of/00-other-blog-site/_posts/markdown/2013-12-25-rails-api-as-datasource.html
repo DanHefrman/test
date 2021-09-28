@@ -13,35 +13,13 @@
   </style>
 </head>
 <body>
-<!--
-
-
----
- "Rails : API as datasource"
-date: 2013-12-25 00:00:00 IST
-updated: 2013-12-25 00:00:00 IST
-categories: rails
----
-
--->
-&lt;!DOCTYPE html&gt;
-<html>
-<head>
-<title>
-basic-git-workflow
-</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./css/bootstrap.css"> <link rel="stylesheet" href="./css/bootstrap.grid.css"> <link rel="stylesheet" href="./css/bootstrap.min.css"> <link rel="stylesheet" href="./css/bootstrap-reboot.min.css"> <link rel="stylesheet" href="./css/bootstrap.css.map"> <link rel="stylesheet" href="./css/blog-home.css"> <link rel="stylesheet" href="./css/prism.css">
-<script async defer src="./css/prism.js"></script>
-</head>
-<body>
+<p>&lt;!DOCTYPE html&gt;</p>
 <p>Recently I was working on a rails app where its datasource was a API instead of a database. My team wants all the components to be seperate, thats the reason we go with this kind of architecture. We were using Rails 3.2 and ActiveResource for the frontend and of course our API is build with <a href="https://github.com/rails-api/rails-api">rails-api</a>.</p>
 <p>Here is my sample data from the JSON API.</p>
 <p>{% highlight js %} { store: { name: ‘some store’, description: ‘some description’, contacts: { phone: ‘0495-2414123’, email: ‘test@somestore.com’, mobile: ‘99950123456’ } } } {% endhighlight %}</p>
 <p>ActiveResource will deal with the data pretty well except <code>contacts</code>. It tends to create an object for contacts. The ActiveResource object will be something similar to</p>
 <blockquote>
-<p>#&lt;Store:0xb4aaec4 <span class="citation" data-cites="attributes">@attributes</span>={ “store” =&gt; { “description” =&gt; “some description”, “contacts” =&gt; #&lt;Store::Contact:0xb4aa884 <span class="citation" data-cites="attributes">@attributes</span>={ “contact” =&gt; {“opening_time” =&gt; “09:00”, “clo sing_time” =&gt;“18:00”,“holidays”=&gt;[“Sunday”], “message” =&gt;"" } },<span class="citation" data-cites="prefix_options">@prefix_options</span>={}, <span class="citation" data-cites="persisted">@persisted</span>=false&gt;, “name”=&gt; “some store” } } , <span class="citation" data-cites="prefix_options">@prefix_options</span>={}, <span class="citation" data-cites="persisted">@persisted</span>=false&gt;</p>
+<p>#&lt;Store:0xb4aaec4 <span class="citation" data-cites="attributes"><span class="citation" data-cites="attributes">@attributes</span></span>={ “store” =&gt; { “description” =&gt; “some description”, “contacts” =&gt; #&lt;Store::Contact:0xb4aa884 <span class="citation" data-cites="attributes"><span class="citation" data-cites="attributes">@attributes</span></span>={ “contact” =&gt; {“opening_time” =&gt; “09:00”, “clo sing_time” =&gt;“18:00”,“holidays”=&gt;[“Sunday”], “message” =&gt;"" } },<span class="citation" data-cites="prefix_options"><span class="citation" data-cites="prefix">@prefix</span>_options</span>={}, <span class="citation" data-cites="persisted"><span class="citation" data-cites="persisted">@persisted</span></span>=false&gt;, “name”=&gt; “some store” } } , <span class="citation" data-cites="prefix_options"><span class="citation" data-cites="prefix">@prefix</span>_options</span>={}, <span class="citation" data-cites="persisted"><span class="citation" data-cites="persisted">@persisted</span></span>=false&gt;</p>
 </blockquote>
 <p>So I hope you have noticed that contacts is an object of <code>Store::Contact</code>. This is pretty handy anyway but the main issue was <code>contacts</code> attributes are are enclosed inside a root element <code>contact</code>. This is not an issue if you are just finding and displaying data. But its a real issue when you try to create or update.</p>
 <p>If we continue the same structure and use <code>Store.create</code> it will create the record like</p>
@@ -49,9 +27,9 @@ basic-git-workflow
 <p>Since we are using MongoDB to store data, the whole store and contact is a single document, the un-nessassory nesting for contacts was the real problem for us. So we thought of diveing into ActiveResource source code to get a solution. Atlast we had two ways to solve this issue.</p>
 <ol type="1">
 <li>Create a model for <code>Store::Contact</code> with <code>self.include_root_in_json = false</code></li>
-<li>Monkey patch <code>ActiveResource::Base.create_resource_for</code> method</li>
+<li><p>Monkey patch <code>ActiveResource::Base.create_resource_for</code> method</p></li>
+<li><h1 id="create-a-model">Create a model</h1></li>
 </ol>
-<h1 id="create-a-model">1. Create a model</h1>
 <p>This will work out perfectly only if you have one or two situations like <code>Store::Contact</code> or else you need to create a model for every attributes holding a hash value.</p>
 <p>It will be better to create the model in the parent model file itself so that it will load the class when ever the parent model loads.</p>
 <p>{% highlight ruby %}</p>

@@ -1,10 +1,8 @@
-<span class="citation" data-cites="dojo/widgets/range-slider"><span class="citation" data-cites="dojo/widgets/range-slider"><span class="citation" data-cites="dojo/widgets/range-slider">@dojo/widgets/range-slider</span></span></span>
-=========================================================================================================================================================================================================================================
+# <span class="citation" data-cites="dojo/widgets/range-slider"><span class="citation" data-cites="dojo/widgets/range-slider"><span class="citation" data-cites="dojo/widgets/range-slider">@dojo/widgets/range-slider</span></span></span>
 
 Dojo’s `RangeSlider` widget creates a range slider control with a styleable track, fill, and draggable thumb controls.
 
-Features
---------
+## Features
 
 -   Horizontal slider with a track, fill, and two thumbs
 -   Output node with customizable text that can be used to display the current minimum/maximum values.

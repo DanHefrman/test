@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="generator" content="pandoc" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+		<title>README</title>
+		<style type="text/css">
+			code {
+				white-space: pre-wrap;
+			}
+			span.smallcaps {
+				font-variant: small-caps;
+			}
+			span.underline {
+				text-decoration: underline;
+			}
+			div.column {
+				display: inline-block;
+				vertical-align: top;
+				width: 50%;
+			}
+		</style>
+	</head>
+	<body>
+		<blockquote>
+			<h3 id="hacker-news-progressive-web-application-written-to-the-specifications-from-hnpwa.com">
+				Hacker News Progressive Web Application written to the specifications from
+				<a href="https://hnpwa.com/">hnpwa.com</a>
+			</h3>
+		</blockquote>
+		<h3 id="demo"><a href="https://dojo-2-hnpwa-d668d.firebaseapp.com/">Demo</a></h3>
+		<p>This codebase was created to demonstrate an application built with Dojo.</p>
+		<ul>
+			<li>
+				<strong>Build Time Rendering</strong>: Uses the <code>.dojorc</code> to configure static html and
+				critical CSS injection at build time.
+			</li>
+			<li>
+				<strong>Progress Web Application</strong>: Uses the <code>.dojorc</code> to configure PWA capabilities
+				such as manifests and service workers.
+			</li>
+			<li>
+				<strong>Evergreen builds</strong>: Generates application bundles using esmodules targeted for evergreen
+				browser to produce main application bundle less than 20kb gzipped.
+			</li>
+			<li>
+				<strong>Lazy Loading (Code Splitting)</strong>: Automatically code splits for widgets/outlets or
+				containers that are defined in an application registry using the dynamic <code>import</code> syntax.
+			</li>
+		</ul>
+		<h1 id="getting-started">Getting started</h1>
+		<p>View the <a href="https://dojo-2-hnpwa-d668d.firebaseapp.com/">Dojo HNPWA</a></p>
+		<p>To get the frontend running locally:</p>
+		<ul>
+			<li>Clone this repo</li>
+			<li><code>npm install</code> to install all required dependencies</li>
+			<li>
+				<code>npm run dev</code> to build the application with watch and start a local server (<a
+					href="http:localhost:9999"
+					>http:localhost:9999</a
+				>)
+			</li>
+		</ul>
+		<p>Local web server will use port 9999.</p>
+		<p>For a production build of the application:</p>
+		<ul>
+			<li><code>npm run build</code> to build the output into the <code>output/dist</code> directory.</li>
+		</ul>
+		<h2 id="licensing-information">Licensing Information</h2>
+		<p>
+			The Dojo-specific portions of this example are © 2018 <a href="https://js.foundation/">JS Foundation</a>.
+			<a href="http://opensource.org/licenses/BSD-3-Clause">New BSD</a> license.
+		</p>
+	</body>
+</html>

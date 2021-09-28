@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<!--docs:
+title: "Feature Targeting"
+layout: detail
+section: components
+excerpt: "Provides infrastructure to allow CSS styles to be included or excluded categorically."
+path: /catalog/feature-targeting/
+-->
+<h1 id="feature-targeting">Feature Targeting</h1>
+<p>MDC Feature Targeting provides infrastructure to allow CSS styles to be included or excluded categorically.</p>
+<p>Most of the time, you shouldn’t need to depend on <code>mdc-feature-targeting</code> directly. However, understanding it can be useful if you’re interested in having more control over when certain types of MDC styles are emitted.</p>
+<h2 id="installation">Installation</h2>
+<pre><code>npm install @material/feature-targeting</code></pre>
+<h2 id="basic-usage">Basic Usage</h2>
+<h3 id="styles">Styles</h3>
+<p>Authoring component styles:</p>
+<pre class="scss"><code>@use &quot;@material/feature-targeting&quot;;
+
+@mixin my-component-core-styles($query: feature-targeting.all()) {
+  $feat-structure: feature-targeting.create-target($query, structure);
+
+  @include feature-targeting.targets($feat-structure) {
+    // ...
+  }
+}</code></pre>
+<p>Consuming component styles:</p>
+<pre class="scss"><code>@use &quot;@material/feature-targeting&quot;;
+@use &quot;my-component-mixins&quot;;
+
+// To include all styles (using the default of mdc-feature-all() defined above):
+@include my-component-core-styles;
+
+// Or, to include a specific subset of styles:
+@include my-component-core-styles(structure);
+@include my-component-core-styles(feature-targeting.any(color, typography));
+// The above two @includes and the following @include would produce equivalent results:
+@include my-component-core-styles(feature-targeting.without(animation));</code></pre>
+<h2 id="sass-mixins-and-functions">Sass Mixins and Functions</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mixin</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>targets($feature-targets...)</code></td>
+<td>Conditionalizes content to only be emitted if the given feature target(s) is/are queried.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>create-target($feature-query, $targeted-feature)</code></td>
+<td>Returns a variable to be passed to <code>targets</code> in order to filter emitted styles.</td>
+</tr>
+<tr class="even">
+<td><code>all($feature-queries...)</code></td>
+<td>Returns a query object which will result in emitting <code>targets</code> blocks that match <em>all</em> of the specified features. Passing no arguments results in all blocks being emitted, which is the most common use case.</td>
+</tr>
+<tr class="odd">
+<td><code>any($feature-queries...)</code></td>
+<td>Returns a query object which will result in emitting <code>targets</code> blocks that match <em>any</em> of the specified features. Passing no arguments results in no blocks being emitted.</td>
+</tr>
+<tr class="even">
+<td><code>without($feature-query)</code></td>
+<td>Returns a query object which will result in emitting <code>targets</code> blocks that do <em>not</em> match the specified feature.</td>
+</tr>
+</tbody>
+</table>
+<p><code>$feature-query</code> and <code>$feature-queries</code> refer to one or more of the values listed below under Supported Features.</p>
+<h3 id="supported-features">Supported Features</h3>
+<p>MDC Web’s styles are currently split according to the following features:</p>
+<ul>
+<li><code>structure</code> - All baseline styles that don’t fit into any other category</li>
+<li><code>animation</code> - Styles responsible for causing animations and transitions to occur</li>
+<li><code>color</code> - Color-specific styles which rely on <code>mdc-theme</code> variables</li>
+<li><code>typography</code> - Typography-specific styles which rely on <code>mdc-typography</code></li>
+</ul>
+</body>
+</html>

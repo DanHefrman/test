@@ -22,16 +22,14 @@
 <h1 id="http-requests">HTTP REQUESTS</h1>
 <p>Overview - the web is made up of computers asking each other for things - you teell your browser which website you want to access - your browser hands that reequeset off to a server that can get what you asked for</p>
 <p>Structure of HTTP request</p>
-<pre><code>
-GET / HTTP/1.1
+<pre><code>GET / HTTP/1.1
 Host: appacademy.io
 Connection: keep-alive
 Upgrade-Insecure-Requests: 1
 User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3
 Accept-Encoding: gzip, deflate
-Accept-Language: en-US,en;q=0.9
-</code></pre>
+Accept-Language: en-US,en;q=0.9</code></pre>
 <p>HTTP Verbs 1. <code>GET</code> - used for direct requests - only require server to return resources, like retrieve website - never have a body, any data needed must be shared via the URI 2. <code>POST</code> - used for creating new resources on the server - can have body containing data server might need to complete request (username/passwrd) 3. <code>PUT</code> - used to update a resource on the server - contain whole resource you want to update - updating name request will contain new name and userId and email, etc 4. <code>PATCH</code> - similar to <code>PUT</code> but dont require whole resource to perform update 5. <code>DELETE</code> - destroys resources on the server</p>
 <p>HTTP Request Structure 1. Request-line and http verbs 2. Header 3. Body</p>
 <p>Request-line &amp; HTTP Verbs - first line, made up of three parts 1. the method, indicated by an HTTP verb 2. the URI (uniform resources indicator) that identifies what we’ve requested 3. the HTTP version we expect to use (usually HTTP/1.1 OR HTTP/2) ex: <code>GET / HTTP/1.1</code></p>
@@ -54,14 +52,14 @@ Accept-Language: en-US,en;q=0.9
 <li>headers so server has data it needs to process request</li>
 <li>body to transmit any additional data that is necessary</li>
 </ul>
-<ol start="2" type="1">
+<ol type="1">
 <li>request transmitted</li>
 </ol>
 <ul>
 <li>crosses proxies, tunnels gateways</li>
 <li>eventually reaches server</li>
 </ul>
-<ol start="3" type="1">
+<ol type="1">
 <li>server processes request</li>
 </ol>
 <ul>

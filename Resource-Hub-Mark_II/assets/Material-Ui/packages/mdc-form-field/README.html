@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<!--docs:
+title: "Form Fields"
+layout: detail
+section: components
+path: /catalog/input-controls/form-fields/
+-->
+<h1 id="form-fields">Form Fields</h1>
+<p>MDC Form Field aligns an MDC Web form field (for example, a checkbox) with its label and makes it RTL-aware. It also activates a <a href="../mdc-ripple">ripple</a> effect upon interacting with the label.</p>
+<h2 id="installation">Installation</h2>
+<pre><code>npm install @material/form-field</code></pre>
+<h2 id="demos">Demos</h2>
+<ul class="icon-list">
+<li class="icon-list-item icon-list-item--link">
+<a href="https://material-components.github.io/material-components-web-catalog/#/component/radio">Demo with radio button</a>
+</li>
+</ul>
+<h2 id="basic-usage">Basic Usage</h2>
+<h3 id="html-structure">HTML Structure</h3>
+<p>Use the <code>mdc-form-field</code> element to wrap any combination of adjacent <em>input</em> and <em>label</em> elements of MDC Web form controls, such as <a href="../mdc-checkbox">MDC Checkbox</a> or <a href="../mdc-radio">MDC Radio</a>. Here’s an example with MDC Checkbox:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-form-field&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-3" title="3">    <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;checkbox&quot;</span><span class="ot"> id=</span><span class="st">&quot;my-checkbox&quot;</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox__native-control&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb2-4" title="4">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox__background&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-5" title="5">      ...</a>
+<a class="sourceLine" id="cb2-6" title="6">    <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb2-7" title="7">  <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb2-8" title="8">  <span class="kw">&lt;label</span><span class="ot"> for=</span><span class="st">&quot;my-checkbox&quot;</span><span class="kw">&gt;</span>This is my checkbox<span class="kw">&lt;/label&gt;</span></a>
+<a class="sourceLine" id="cb2-9" title="9"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
+<blockquote>
+<p><em>NOTE</em>: MDC Form Field is <strong>not</strong> intended for cases where a label and input are already handled together in a component’s styles and logic. For example, <a href="../mdc-textfield">MDC Text Field</a> already manages a label and input together under its own root element.</p>
+</blockquote>
+<h3 id="javascript-instantiation">JavaScript Instantiation</h3>
+<p>If you are using MDC Form Field with an MDC Web component that has a <a href="../mdc-ripple">ripple</a> effect, you can instantiate <code>MDCFormField</code> and set its <a href="#mdcformfield-properties-and-methods"><code>input</code> property</a> to activate the ripple effect upon interacting with the label. Here is an example with <a href="../mdc-checkbox">MDC Checkbox</a>:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="im">import</span> <span class="op">{</span>MDCFormField<span class="op">}</span> <span class="im">from</span> <span class="st">&#39;@material/form-field&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="im">import</span> <span class="op">{</span>MDCCheckbox<span class="op">}</span> <span class="im">from</span> <span class="st">&#39;@material/checkbox&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-3" title="3"></a>
+<a class="sourceLine" id="cb3-4" title="4"><span class="kw">const</span> formField <span class="op">=</span> <span class="kw">new</span> <span class="at">MDCFormField</span>(<span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&#39;.mdc-form-field&#39;</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-5" title="5"><span class="kw">const</span> checkbox <span class="op">=</span> <span class="kw">new</span> <span class="at">MDCCheckbox</span>(<span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&#39;.mdc-checkbox&#39;</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-6" title="6"><span class="va">formField</span>.<span class="at">input</span> <span class="op">=</span> checkbox<span class="op">;</span></a></code></pre></div>
+<blockquote>
+<p>See <a href="../../docs/importing-js.md">Importing the JS component</a> for more information on how to import JavaScript.</p>
+</blockquote>
+<h2 id="variants">Variants</h2>
+<h3 id="label-position">Label position</h3>
+<p>By default, the input will be positioned before the label. You can position the input after the label by adding the <code>mdc-form-field--align-end</code> class:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-form-field mdc-form-field--align-end&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb4-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb4-3" title="3">    <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;checkbox&quot;</span><span class="ot"> id=</span><span class="st">&quot;my-checkbox&quot;</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox__native-control&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb4-4" title="4">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox__background&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb4-5" title="5">      ...</a>
+<a class="sourceLine" id="cb4-6" title="6">    <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb4-7" title="7">  <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb4-8" title="8">  <span class="kw">&lt;label</span><span class="ot"> for=</span><span class="st">&quot;my-checkbox&quot;</span><span class="kw">&gt;</span>This is my checkbox<span class="kw">&lt;/label&gt;</span></a>
+<a class="sourceLine" id="cb4-9" title="9"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
+<h3 id="nowrap">Nowrap</h3>
+<p>If the label text is too long for a single line, it will wrap the text by default. You can force the text to stay on a single line and ellipse the overflow text by adding the <code>mdc-form-field--nowrap</code> class:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-form-field mdc-form-field--nowrap&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb5-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb5-3" title="3">    <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;checkbox&quot;</span><span class="ot"> id=</span><span class="st">&quot;my-checkbox&quot;</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox__native-control&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb5-4" title="4">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-checkbox__background&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb5-5" title="5">      ...</a>
+<a class="sourceLine" id="cb5-6" title="6">    <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb5-7" title="7">  <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb5-8" title="8">  <span class="kw">&lt;label</span><span class="ot"> for=</span><span class="st">&quot;my-checkbox&quot;</span><span class="kw">&gt;</span>This some really really really long text<span class="kw">&lt;/label&gt;</span></a>
+<a class="sourceLine" id="cb5-9" title="9"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
+<h2 id="mdcformfield-properties-and-methods"><code>MDCFormField</code> Properties and Methods</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Property</th>
+<th>Value Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>input</code></td>
+<td>String</td>
+<td>Gets and sets the form field input.</td>
+</tr>
+</tbody>
+</table>
+<p>In order for the label ripple integration to work correctly, the <code>input</code> property needs to be set to a valid instance of an MDC Web input element which exposes a <code>ripple</code> getter. No action is taken if the <code>input</code> property is not set or the input instance doesn’t expose a <code>ripple</code> getter.</p>
+<h2 id="usage-within-web-frameworks">Usage within Web Frameworks</h2>
+<p>If you are using a JavaScript framework, such as React or Angular, you can create a Form Field for your framework. Depending on your needs, you can use the <em>Simple Approach: Wrapping MDC Web Vanilla Components</em>, or the <em>Advanced Approach: Using Foundations and Adapters</em>. Please follow the instructions <a href="../../docs/integrating-into-frameworks.md">here</a>.</p>
+<h3 id="mdcformfieldadapter"><code>MDCFormFieldAdapter</code></h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method Signature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>registerInteractionHandler(type: string, handler: EventListener) =&gt; void</code></td>
+<td>Adds an event listener <code>handler</code> for event type <code>type</code> to the label.</td>
+</tr>
+<tr class="even">
+<td><code>deregisterInteractionHandler(type: string, handler: EventListener) =&gt; void</code></td>
+<td>Removes an event listener <code>handler</code> for event type <code>type</code> to the label.</td>
+</tr>
+<tr class="odd">
+<td><code>activateInputRipple() =&gt; void</code></td>
+<td>Activates the ripple on the input element. Should call <code>activate</code> on the input element’s <code>ripple</code> property.</td>
+</tr>
+<tr class="even">
+<td><code>deactivateInputRipple() =&gt; void</code></td>
+<td>Deactivates the ripple on the input element. Should call <code>deactivate</code> on the input element’s <code>ripple</code> property.</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

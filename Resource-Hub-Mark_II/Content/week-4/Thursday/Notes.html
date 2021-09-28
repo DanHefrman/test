@@ -44,7 +44,7 @@
 <li>Deleted when clearing the browser cache</li>
 <li>Has the maxiumum storage limit in the browser</li>
 </ul></li>
-<li><strong>Session Storage</strong> :
+<li><p><strong>Session Storage</strong> :</p>
 <ul>
 <li>Stores data only for a single session</li>
 <li>Stores until a browser window or tab is closed</li>
@@ -148,8 +148,8 @@ null
 <ul>
 <li><strong>JSON.stringify(value)</strong> : truns the value passed into it into a string.</li>
 <li><p><strong>JSON.parse(str)</strong> : turns a JSON-formatted string into a JS object.</p>
-<p>const array = [1, ‘hello, “world”’, 3.14, { id: 17 }]; console.log(JSON.stringify(array)); // prints [1, “hello, "world"”, 3.14, {“id”:17}]</p>
-<p>const str = ‘[1,“hello, \”world\"“,3.14,{”id":17}]’; console.log(JSON.parse(str)); // prints an array with the following entries: // 0: 1 // 1: “hello, "world"” // 2: 3.14 // 3: { id: 17 }</p></li>
+<p>const array = [1, ‘hello, “world”’, 3.14, { id: 17 }]; console.log(JSON.stringify(array)); // prints [1, “hello,”world"”, 3.14, {“id”:17}]</p>
+<p>const str = ‘[1,“hello, \”world\““,3.14,{”id“:17}]’; console.log(JSON.parse(str)); // prints an array with the following entries: // 0: 1 // 1: “hello,”world"” // 2: 3.14 // 3: { id: 17 }</p></li>
 <li><p>You will almost never write raw JSON, most of the times you will just use JSON.stringify(), or call a data service that returns JSON formatted content.</p></li>
 </ul>
 <p><strong>Brain Teaser</strong> What will the following print?</p>

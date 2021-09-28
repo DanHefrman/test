@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<!--docs:
+title: "Image List"
+layout: detail
+section: components
+excerpt: "An RTL-aware Material Design image list component."
+iconId: card
+path: /catalog/image-lists/
+-->
+<h1 id="image-list">Image List</h1>
+<!--<div class="article__asset">
+  <a class="article__asset-link"
+     href="https://material-components.github.io/material-components-web-catalog/#/component/image-list">
+    <img src="{{ site.rootpath }}/images/mdc_web_screenshots/image-list.png" width="294" alt="Image list screenshot">
+  </a>
+</div>-->
+<p>MDC Image List provides a RTL-aware Material Design image list component. An Image List consists of several items, each containing an image and optionally supporting content (i.e. a text label).</p>
+<h2 id="design-api-documentation">Design &amp; API Documentation</h2>
+<ul class="icon-list">
+<li class="icon-list-item icon-list-item--spec">
+<a href="https://material.io/go/design-image-list">Material Design guidelines: Image list</a>
+</li>
+<li class="icon-list-item icon-list-item--link">
+<a href="https://material-components.github.io/material-components-web-catalog/#/component/image-list">Demo</a>
+</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<pre><code>npm install @material/image-list</code></pre>
+<h2 id="basic-usage">Basic Usage</h2>
+<h3 id="html-structure">HTML Structure</h3>
+<p>The HTML structure for a Standard Image List is as follows:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">&lt;ul</span><span class="ot"> class=</span><span class="st">&quot;mdc-image-list my-image-list&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-2" title="2">  <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-image-list__item&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-3" title="3">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-image-list__image-aspect-container&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-4" title="4">      <span class="kw">&lt;img</span><span class="ot"> class=</span><span class="st">&quot;mdc-image-list__image&quot;</span><span class="ot"> src=</span><span class="st">&quot;...&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-5" title="5">    <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb2-6" title="6">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-image-list__supporting&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-7" title="7">      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-image-list__label&quot;</span><span class="kw">&gt;</span>Text label<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb2-8" title="8">    <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb2-9" title="9">  <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb2-10" title="10">  ...</a>
+<a class="sourceLine" id="cb2-11" title="11"><span class="kw">&lt;/ul&gt;</span></a></code></pre></div>
+<h3 id="styles">Styles</h3>
+<pre class="scss"><code>@use &quot;@material/image-list/mdc-image-list&quot;;</code></pre>
+<p>The HTML structure above would be combined with an invocation of the <code>standard-columns</code> mixin, to establish how many columns should be displayed per line:</p>
+<pre class="scss"><code>@use &quot;@material/image-list&quot;;
+
+.my-image-list {
+  @include image-list.standard-columns(5);
+}</code></pre>
+<p>Images in a Standard Image list are constrained to 1:1 aspect ratio by default; this can be overridden using the <code>aspect</code> mixin documented below.</p>
+<h2 id="variants">Variants</h2>
+<h3 id="masonry-image-list">Masonry Image List</h3>
+<p>The Masonry Image List variant presents images vertically arranged into several columns, using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Columns">CSS Columns</a>. In this layout, images may be any combination of aspect ratios.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">&lt;ul</span><span class="ot"> class=</span><span class="st">&quot;mdc-image-list mdc-image-list--masonry my-masonry-image-list&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb5-2" title="2">  <span class="kw">&lt;li</span><span class="ot"> class=</span><span class="st">&quot;mdc-image-list__item&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb5-3" title="3">    <span class="kw">&lt;img</span><span class="ot"> class=</span><span class="st">&quot;mdc-image-list__image&quot;</span><span class="ot"> src=</span><span class="st">&quot;...&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb5-4" title="4">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-image-list__supporting&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb5-5" title="5">      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-image-list__label&quot;</span><span class="kw">&gt;</span>Text label<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb5-6" title="6">    <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb5-7" title="7">  <span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb5-8" title="8">  ...</a>
+<a class="sourceLine" id="cb5-9" title="9"><span class="kw">&lt;/ul&gt;</span></a></code></pre></div>
+<blockquote>
+<p><strong>Note:</strong> Masonry Image List items <em>do not</em> include the <code>mdc-image-list__image-aspect-container</code> element, since images in the list are not expected to be locked to a common aspect ratio.</p>
+</blockquote>
+<p>This would be combined with an invocation of the <code>mdc-image-list-masonry-columns</code> mixin, to establish how many columns should be displayed:</p>
+<pre class="scss"><code>.my-masonry-image-list {
+  @include image-list.masonry-columns(5);
+}</code></pre>
+<h2 id="style-customization">Style Customization</h2>
+<h3 id="css-classes">CSS Classes</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>CSS Class</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>mdc-image-list</code></td>
+<td>Mandatory. Indicates the root Image List element.</td>
+</tr>
+<tr class="even">
+<td><code>mdc-image-list--masonry</code></td>
+<td>Optional. Indicates that this Image List should use the Masonry variant.</td>
+</tr>
+<tr class="odd">
+<td><code>mdc-image-list--with-text-protection</code></td>
+<td>Optional. Indicates that supporting content should be positioned in a scrim overlaying each image (instead of positioned separately under each image).</td>
+</tr>
+<tr class="even">
+<td><code>mdc-image-list__item</code></td>
+<td>Mandatory. Indicates each item in an Image List.</td>
+</tr>
+<tr class="odd">
+<td><code>mdc-image-list__image-aspect-container</code></td>
+<td>Optional. Parent of each item’s image element, responsible for constraining aspect ratio. This element may be omitted entirely if images are already sized to the correct aspect ratio.</td>
+</tr>
+<tr class="even">
+<td><code>mdc-image-list__image</code></td>
+<td>Mandatory. Indicates the image element in each item.</td>
+</tr>
+<tr class="odd">
+<td><code>mdc-image-list__supporting</code></td>
+<td>Optional. Indicates the area within each item containing the supporting text label, if the Image List contains text labels.</td>
+</tr>
+<tr class="even">
+<td><code>mdc-image-list__label</code></td>
+<td>Optional. Indicates the text label in each item, if the Image List contains text labels.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sass-mixins">Sass Mixins</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mixin</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>aspect($width-height-ratio)</code></td>
+<td>Styles the aspect container elements within an Image List to conform to the given ratio, where 1 is 1:1, greater than 1 is wider, and less than 1 is taller.</td>
+</tr>
+<tr class="even">
+<td><code>shape-radius($radius, $rtl-reflexive)</code></td>
+<td>Sets the rounded shape to image list item with given radius size. Set <code>$rtl-reflexive</code> to true to flip radius values in RTL context, defaults to false.</td>
+</tr>
+<tr class="odd">
+<td><code>standard-columns($column-count, $gutter-size)</code></td>
+<td>Styles a Standard Image List to display the given number of columns. <code>$gutter-size</code> is optional and overrides the default amount of space between items.</td>
+</tr>
+<tr class="even">
+<td><code>masonry-columns($column-count, $gutter-size)</code></td>
+<td>Styles a Masonry Image List to display the given number of columns. <code>$gutter-size</code> is optional and overrides the default amount of space between items.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Note:</strong> Only one of the <code>*-columns</code> mixins should be used for any given Image List. Use the mixin appropriate to the variant being used.</p>
+</blockquote>
+<h3 id="additional-information">Additional Information</h3>
+<h4 id="constraining-width">Constraining width</h4>
+<p>The <code>*-columns</code> mixins will grow and shrink items based on the Image List’s overall width. Depending on placement, this could be directly related to the viewport width, and images could become exceedingly large compared to their actual rendered size. This can be restricted by using any of <code>min-width</code>, <code>width</code>, or <code>max-width</code> on the Image List:</p>
+<pre class="scss"><code>@use &quot;@material/image-list&quot;;
+
+.my-image-list {
+  @include image-list.standard-columns(5);
+
+  max-width: 960px;
+}</code></pre>
+<blockquote>
+<p><strong>Note:</strong> Remember that any specified width will apply to the <em>entire</em> list, so be sure to account for the gutters as well.</p>
+</blockquote>
+<h4 id="changing-number-of-columns-across-breakpoints">Changing number of columns across breakpoints</h4>
+<p>Presenting a different number of columns for different viewport sizes is straightforward, since the only thing that needs to be changed are styles:</p>
+<pre class="scss"><code>.my-image-list {
+  @include image-list.standard-columns(5);
+}
+
+@media (max-width: 599px) {
+  .my-image-list {
+    @include image-list.standard-columns(3);
+  }
+}</code></pre>
+<h4 id="using-div-in-place-of-img-to-enforce-aspect-ratio">Using div in place of img to enforce aspect ratio</h4>
+<blockquote>
+<p><strong>Note:</strong> This advice is not applicable to Masonry Image List, where images do not share a common aspect ratio.</p>
+</blockquote>
+<p>Images in an Image List typically use the <code>img</code> element. However, if your assets don’t have the same aspect ratio as specified for list items, they will become distorted. In these cases, you can use a <code>div</code> element in place of <code>img</code>, and set the <code>background-image</code> of each.</p>
+<blockquote>
+<p><strong>Note:</strong> Ensuring your images are appropriately-sized prior to serving them to browsers is the most efficient and ideal approach to using MDC Image List. The <code>div</code> alternative is provided as a convenience. If you use this alternative, make sure to also include the <code>mdc-image-list__image-aspect-container</code> element around each item’s image.</p>
+</blockquote>
+</body>
+</html>

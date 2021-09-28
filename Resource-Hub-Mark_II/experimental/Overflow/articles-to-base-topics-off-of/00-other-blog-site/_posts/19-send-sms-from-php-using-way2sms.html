@@ -22,9 +22,9 @@ to use it simpler i made the code into class and member functions.</p>
 <p>the only change this sesction</p>
 <blockquote>
 <blockquote>
-<p>curl_setopt (<span class="math inline">$curl, CURLOPT\_URL, "http://wwwd.way2sms.com/FirstServletsms?custid=");                   curl\_setopt ($</span>curl, CURLOPT_REFERER, curl_getinfo(<span class="math inline"><em>c</em><em>u</em><em>r</em><em>l</em>, <em>C</em><em>U</em><em>R</em><em>L</em><em>I</em><em>N</em><em>F</em><em>O</em>_<em>E</em><em>F</em><em>F</em><em>E</em><em>C</em><em>T</em><em>I</em><em>V</em><em>E</em>_<em>U</em><em>R</em><em>L</em>)); <em>c</em><em>u</em><em>r</em><em>l</em>_<em>s</em><em>e</em><em>t</em><em>o</em><em>p</em><em>t</em>(</span>curl, CURLOPT_POST, 1);<br />
+<p>curl_setopt (<span class="math inline"><span class="math inline">$curl, CURLOPT\\\_URL, "http://wwwd.way2sms.com/FirstServletsms?custid=");                   curl\\\_setopt ($</span></span>curl, CURLOPT_REFERER, curl_getinfo(<span class="math inline"><em>curl</em>, <em>CURLINFO</em>_<em>EFFECTIVE</em>_<em>URL</em>)); <em>curl</em>_<em>setopt</em>(</span>curl, CURLOPT_POST, 1);<br />
                   curl_setopt ($curl, CURLOPT_POSTFIELDS, “HiddenAction=instantsms&amp;login=&amp;pass=&amp;custid=undefined&amp;MobNo=” . $p . “&amp;textArea=” . $msg);<br />
-                  <span class="math inline"><em>t</em><em>e</em><em>x</em><em>t</em> = <em>c</em><em>u</em><em>r</em><em>l</em>_<em>e</em><em>x</em><em>e</em><em>c</em>(</span>curl);</p>
+                  <span class="math inline"><em>text</em> = <em>curl</em>_<em>exec</em>(</span>curl);</p>
 </blockquote>
 </blockquote>
 <p> the new code is</p>
@@ -33,12 +33,12 @@ to use it simpler i made the code into class and member functions.</p>
 </blockquote>
 <p> \“&amp;sponserid=\”+sponserid+\"");</p>
 <blockquote>
-<p>                  curl_setopt (<span class="math inline"><em>c</em><em>u</em><em>r</em><em>l</em>, <em>C</em><em>U</em><em>R</em><em>L</em><em>O</em><em>P</em><em>T</em>_<em>R</em><em>E</em><em>F</em><em>E</em><em>R</em><em>E</em><em>R</em>, <em>c</em><em>u</em><em>r</em><em>l</em>_<em>g</em><em>e</em><em>t</em><em>i</em><em>n</em><em>f</em><em>o</em>(</span>curl, CURLINFO_EFFECTIVE_URL));<br />
-                  curl_setopt (<span class="math inline"><em>c</em><em>u</em><em>r</em><em>l</em>, <em>C</em><em>U</em><em>R</em><em>L</em><em>O</em><em>P</em><em>T</em>_<em>P</em><em>O</em><em>S</em><em>T</em>, 1); <em>c</em><em>u</em><em>r</em><em>l</em>_<em>s</em><em>e</em><em>t</em><em>o</em><em>p</em><em>t</em>(</span>curl, CURLOPT_POSTFIELDS, "MobNo=<span class="math inline">$p&amp;textArea=$</span>msg&amp;HiddenAction=instantsms</p>
+<p>                  curl_setopt (<span class="math inline"><em>curl</em>, <em>CURLOPT</em>_<em>REFERER</em>, <em>curl</em>_<em>getinfo</em>(</span>curl, CURLINFO_EFFECTIVE_URL));<br />
+                  curl_setopt (<span class="math inline"><em>curl</em>, <em>CURLOPT</em>_<em>POST</em>, 1); <em>curl</em>_<em>setopt</em>(</span>curl, CURLOPT_POSTFIELDS, "MobNo=<span class="math inline"><span class="math inline">$p&amp;textArea=$</span></span>msg&amp;HiddenAction=instantsms</p>
 </blockquote>
 <blockquote>
 <p>&amp;login=&amp;pass=&amp;Action=custfrom300000");<br />
-                  <span class="math inline"><em>t</em><em>e</em><em>x</em><em>t</em> = <em>c</em><em>u</em><em>r</em><em>l</em>_<em>e</em><em>x</em><em>e</em><em>c</em>(</span>curl);</p>
+                  <span class="math inline"><em>text</em> = <em>curl</em>_<em>exec</em>(</span>curl);</p>
 </blockquote>
 <p>Don’t forget to comment on this changes.<br />
 Any problems please keep informing<br />

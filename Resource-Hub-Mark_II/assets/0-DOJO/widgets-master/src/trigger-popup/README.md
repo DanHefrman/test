@@ -1,5 +1,4 @@
-<span class="citation" data-cites="dojo/widgets/trigger-popup">@dojo/widgets/trigger-popup</span>
-=================================================================================================
+# <span class="citation" data-cites="dojo/widgets/trigger-popup">@dojo/widgets/trigger-popup</span>
 
 Dojo’s `TriggerPopup` widget allows popup content to be shown relative to a trigger widget. The popup can be positioned `above` or `below` the trigger, and handles adjusting its position to make sure it is fully visible.
 

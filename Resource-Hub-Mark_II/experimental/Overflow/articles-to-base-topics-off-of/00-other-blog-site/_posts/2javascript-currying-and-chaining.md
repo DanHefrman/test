@@ -1,4 +1,4 @@
-id="currying"&gt;Currying
+id=“currying”&gt;Currying
 
 A function which accepts a one or more arguments of func which wither invoked when all the arguments are passed or return a function which accepts one or remaining arguments.
 

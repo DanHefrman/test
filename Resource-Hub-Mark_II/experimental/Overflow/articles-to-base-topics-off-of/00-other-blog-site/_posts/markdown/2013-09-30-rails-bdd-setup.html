@@ -13,29 +13,7 @@
   </style>
 </head>
 <body>
-<!--
-
-
----
- "Rails : Bdd setup"
-date: 2013-09-30 11:00:00 IST
-updated: 2013-09-30 11:00:00 IST
-categories: rails
----
-
--->
-&lt;!DOCTYPE html&gt;
-<html>
-<head>
-<title>
-basic-git-workflow
-</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./css/bootstrap.css"> <link rel="stylesheet" href="./css/bootstrap.grid.css"> <link rel="stylesheet" href="./css/bootstrap.min.css"> <link rel="stylesheet" href="./css/bootstrap-reboot.min.css"> <link rel="stylesheet" href="./css/bootstrap.css.map"> <link rel="stylesheet" href="./css/blog-home.css"> <link rel="stylesheet" href="./css/prism.css">
-<script async defer src="./css/prism.js"></script>
-</head>
-<body>
+<p>&lt;!DOCTYPE html&gt;</p>
 <p>This post will demonstrate how I setup rails for bdd. I mainly use 3 gems spork, rspec and cucumber.</p>
 <h2 id="why-spork">Why Spork?</h2>
 <p>I use spork to <strong>run my tests faster</strong>. I experianced 2x to 5x faster test running time when I use spork. My Gemfile look similar to the below one.</p>
@@ -54,7 +32,7 @@ basic-git-workflow
 <p>This above command will generate <strong>Guardfile</strong> and add configuration for spork, rspec and cucumber.</p>
 <p>Then you need to add <code>cli: '--drb'</code> to rspec and cucmber guard configuration, to run them over the Spork DRb server.</p>
 <p>An example configuration with cli option will look like,</p>
-<p>{% highlight ruby %} guard ‘cucumber’, cli: ‘–drb’ do watch(%r{^features/.+.feature<span class="math inline">$})  watch(%r{^features/support/.+$</span>}) { ‘features’ } watch(%r{^features/step_definitions/(.+)_steps.rb$}) { |m| Dir[File.join(“**/#{m[1]}.feature”)][0] || ‘features’ } end {% endhighlight %}</p>
+<p>{% highlight ruby %} guard ‘cucumber’, cli: ‘–drb’ do watch(%r{^features/.+.feature<span class="math inline"><span class="math inline">$}) watch(%r{^features/support/.+$</span></span>}) { ‘features’ } watch(%r{^features/step_definitions/(.+)_steps.rb$}) { |m| Dir[File.join(“**/#{m[1]}.feature”)][0] || ‘features’ } end {% endhighlight %}</p>
 <p>Thats it. My bdd setup for rails is done.</p>
 </body>
 </html>

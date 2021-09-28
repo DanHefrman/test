@@ -316,4 +316,4 @@ Now we can setup the route to fetch the data and render the component.
 
 Thats it. We successfully rendered our react components from server side with and without data, so that user don’t have to wait for another ajax request after loading the page to see the data.
 
-Thanks to codemancers team especially <span class="citation" data-cites="emil">\[@emil\]</span>(https://twitter.com/emilsoman), <span class="citation" data-cites="kashyap">\[@kashyap\]</span>(https://twitter.com/kgrz) and <span class="citation" data-cites="yuva">\[@yuva\]</span>(https://twitter.com/iffyuva) for helping to fix spelling and grammer mistakes.
+Thanks to codemancers team especially <span class="citation" data-cites="emil">\[<span class="citation" data-cites="emil">@emil</span>\]</span>(https://twitter.com/emilsoman), <span class="citation" data-cites="kashyap">\[<span class="citation" data-cites="kashyap">@kashyap</span>\]</span>(https://twitter.com/kgrz) and <span class="citation" data-cites="yuva">\[<span class="citation" data-cites="yuva">@yuva</span>\]</span>(https://twitter.com/iffyuva) for helping to fix spelling and grammer mistakes.

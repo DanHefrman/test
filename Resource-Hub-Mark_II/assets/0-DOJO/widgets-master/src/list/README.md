@@ -1,10 +1,8 @@
-<span class="citation" data-cites="dojo/widgets/list"><span class="citation" data-cites="dojo/widgets/list"><span class="citation" data-cites="dojo/widgets/list"><span class="citation" data-cites="dojo/widgets/list">@dojo/widgets/list</span></span></span></span>
-======================================================================================================================================================================================================================================================================
+# <span class="citation" data-cites="dojo/widgets/list"><span class="citation" data-cites="dojo/widgets/list"><span class="citation" data-cites="dojo/widgets/list"><span class="citation" data-cites="dojo/widgets/list">@dojo/widgets/list</span></span></span></span>
 
 Dojo’s `List` provides a base widget that can be used as a List or an options List within a `Select`, `Typeahead`, etc.
 
-Features
---------
+## Features
 
 -   Handles keyboard interactions if given focus
 -   Can be controlled through `activeIndex` and `onActiveIndexChange` in conjunction with `focusable: false`.

@@ -1,10 +1,8 @@
-<span class="citation" data-cites="dojo/widgets/slider"><span class="citation" data-cites="dojo/widgets/slider"><span class="citation" data-cites="dojo/widgets/slider">@dojo/widgets/slider</span></span></span>
-=================================================================================================================================================================================================================
+# <span class="citation" data-cites="dojo/widgets/slider"><span class="citation" data-cites="dojo/widgets/slider"><span class="citation" data-cites="dojo/widgets/slider">@dojo/widgets/slider</span></span></span>
 
 Dojo’s `Slider` widget creates a range slider control with a styleable track, fill, and draggable thumb control.
 
-Features
---------
+## Features
 
 -   Horizontal or vertical slider with a track, fill, and single thumb
 -   Output node with customizable text that can be used to display the current value

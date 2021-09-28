@@ -1,10 +1,8 @@
-<span class="citation" data-cites="dojo/widgets/radio"><span class="citation" data-cites="dojo/widgets/radio"><span class="citation" data-cites="dojo/widgets/radio">@dojo/widgets/radio</span></span></span>
-=============================================================================================================================================================================================================
+# <span class="citation" data-cites="dojo/widgets/radio"><span class="citation" data-cites="dojo/widgets/radio"><span class="citation" data-cites="dojo/widgets/radio">@dojo/widgets/radio</span></span></span>
 
 Dojo’s `Radio` widget provides a wrapped, styleable radio widget that uses the native `<input type="radio">` as a base.
 
-Features
---------
+## Features
 
 -   Creates a normal radio input.
 -   Correctly handles a11y attributes.

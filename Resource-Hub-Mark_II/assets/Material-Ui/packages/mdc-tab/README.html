@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<!--docs:
+title: "Tab"
+layout: detail
+section: components
+excerpt: "Governs the visibility of one of several groups of content."
+iconId: tabs
+path: /catalog/tabs/tab/
+-->
+<h1 id="tab">Tab</h1>
+<p>Tabs organize and allow navigation between groups of content that are related and at the same level of hierarchy. Each Tab governs the visibility of one group of content.</p>
+<h2 id="design-api-documentation">Design &amp; API Documentation</h2>
+<ul class="icon-list">
+<li class="icon-list-item icon-list-item--spec">
+<a href="https://material.io/go/design-tabs">Material Design guidelines: Tabs</a>
+</li>
+<li class="icon-list-item icon-list-item--link">
+<a href="https://material-components.github.io/material-components-web-catalog/#/component/tabs">Demo</a>
+</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<pre><code>npm install @material/tab</code></pre>
+<h2 id="basic-usage">Basic Usage</h2>
+<h3 id="html-structure">HTML Structure</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">&lt;button</span><span class="ot"> class=</span><span class="st">&quot;mdc-tab&quot;</span><span class="ot"> role=</span><span class="st">&quot;tab&quot;</span><span class="ot"> aria-selected=</span><span class="st">&quot;false&quot;</span><span class="ot"> tabindex=</span><span class="st">&quot;-1&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-2" title="2">  <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-tab__content&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-3" title="3">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-tab__icon material-icons&quot;</span><span class="ot"> aria-hidden=</span><span class="st">&quot;true&quot;</span><span class="kw">&gt;</span>favorite<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb2-4" title="4">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-tab__text-label&quot;</span><span class="kw">&gt;</span>Favorites<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb2-5" title="5">  <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb2-6" title="6">  <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-tab-indicator&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-7" title="7">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-tab-indicator__content mdc-tab-indicator__content--underline&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb2-8" title="8">  <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb2-9" title="9">  <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-tab__ripple&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb2-10" title="10"><span class="kw">&lt;/button&gt;</span></a></code></pre></div>
+<h3 id="styles">Styles</h3>
+<pre class="scss"><code>@use &quot;@material/tab/mdc-tab&quot;;</code></pre>
+<h3 id="javascript-instantiation">JavaScript Instantiation</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="im">import</span> <span class="op">{</span>MDCTab<span class="op">}</span> <span class="im">from</span> <span class="st">&#39;@material/tab&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-2" title="2"></a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="kw">const</span> tab <span class="op">=</span> <span class="kw">new</span> <span class="at">MDCTab</span>(<span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&#39;.mdc-tab&#39;</span>))<span class="op">;</span></a></code></pre></div>
+<blockquote>
+<p>See <a href="../../docs/importing-js.md">Importing the JS component</a> for more information on how to import JavaScript.</p>
+</blockquote>
+<h2 id="variants">Variants</h2>
+<h3 id="active-tab">Active Tab</h3>
+<blockquote>
+<p><em>NOTE</em>: Don’t forget to add the <code>mdc-tab-indicator--active</code> class to the <code>mdc-tab-indicator</code> subcomponent.</p>
+</blockquote>
+<div class="sourceCode" id="cb5"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">&lt;button</span><span class="ot"> class=</span><span class="st">&quot;mdc-tab mdc-tab--active&quot;</span><span class="ot"> role=</span><span class="st">&quot;tab&quot;</span><span class="ot"> aria-selected=</span><span class="st">&quot;true&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb5-2" title="2">  <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-tab__content&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb5-3" title="3">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-tab__icon material-icons&quot;</span><span class="ot"> aria-hidden=</span><span class="st">&quot;true&quot;</span><span class="kw">&gt;</span>favorite<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb5-4" title="4">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-tab__text-label&quot;</span><span class="kw">&gt;</span>Favorites<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb5-5" title="5">  <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb5-6" title="6">  <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-tab-indicator mdc-tab-indicator--active&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb5-7" title="7">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-tab-indicator__content mdc-tab-indicator__content--underline&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb5-8" title="8">  <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb5-9" title="9">  <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-tab__ripple&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb5-10" title="10"><span class="kw">&lt;/button&gt;</span></a></code></pre></div>
+<h3 id="tab-with-indicator-spanning-only-content">Tab with Indicator Spanning Only Content</h3>
+<p>In the example under Basic Usage, the Tab Indicator will span the entire tab. Alternatively, the tab indicator can be set up to span only the content of the tab if it is instead placed <em>within</em> the <code>mdc-tab__content</code> element:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">&lt;button</span><span class="ot"> class=</span><span class="st">&quot;mdc-tab&quot;</span><span class="ot"> role=</span><span class="st">&quot;tab&quot;</span><span class="ot"> aria-selected=</span><span class="st">&quot;false&quot;</span><span class="ot"> tabindex=</span><span class="st">&quot;-1&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb6-2" title="2">  <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-tab__content&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb6-3" title="3">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-tab__icon material-icons&quot;</span><span class="ot"> aria-hidden=</span><span class="st">&quot;true&quot;</span><span class="kw">&gt;</span>favorite<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb6-4" title="4">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-tab__text-label&quot;</span><span class="kw">&gt;</span>Favorites<span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb6-5" title="5">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-tab-indicator&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb6-6" title="6">      <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-tab-indicator__content mdc-tab-indicator__content--underline&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb6-7" title="7">    <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb6-8" title="8">  <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb6-9" title="9">  <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;mdc-tab__ripple&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb6-10" title="10"><span class="kw">&lt;/button&gt;</span></a></code></pre></div>
+<h3 id="tab-icons">Tab Icons</h3>
+<p>We recommend using <a href="https://material.io/tools/icons/">Material Icons</a> from Google Fonts:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">&lt;head&gt;</span></a>
+<a class="sourceLine" id="cb7-2" title="2">  <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href=</span><span class="st">&quot;https://fonts.googleapis.com/icon?family=Material+Icons&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb7-3" title="3"><span class="kw">&lt;/head&gt;</span></a></code></pre></div>
+<p>However, you can also use SVG, <a href="https://fontawesome.com/">Font Awesome</a>, or any other icon library you wish.</p>
+<h2 id="style-customization">Style Customization</h2>
+<h3 id="css-classes">CSS Classes</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>CSS Class</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>mdc-tab</code></td>
+<td>Mandatory.</td>
+</tr>
+<tr class="even">
+<td><code>mdc-tab__content</code></td>
+<td>Mandatory. Container of tab icon, text label and tab indicator.</td>
+</tr>
+<tr class="odd">
+<td><code>mdc-tab__ripple</code></td>
+<td>Mandatory. Denotes the ripple surface for the tab.</td>
+</tr>
+<tr class="even">
+<td><code>mdc-tab--active</code></td>
+<td>Optional. Indicates that the tab is active.</td>
+</tr>
+<tr class="odd">
+<td><code>mdc-tab--stacked</code></td>
+<td>Optional. Indicates that the tab icon and label should flow vertically instead of horizontally.</td>
+</tr>
+<tr class="even">
+<td><code>mdc-tab--min-width</code></td>
+<td>Optional. Indicates that the tab should shrink in size to be as narrow as possible without causing text to wrap.</td>
+</tr>
+<tr class="odd">
+<td><code>mdc-tab__text-label</code></td>
+<td>Optional. Indicates the text label of the tab.</td>
+</tr>
+<tr class="even">
+<td><code>mdc-tab__icon</code></td>
+<td>Optional. Indicates a leading icon in the tab.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sass-mixins">Sass Mixins</h3>
+<p>To customize the colors of any part of the tab, use the following mixins.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mixin</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>text-label-color($color)</code></td>
+<td>Customizes the color of the tab text label.</td>
+</tr>
+<tr class="even">
+<td><code>icon-color($color)</code></td>
+<td>Customizes the color of the tab icon.</td>
+</tr>
+<tr class="odd">
+<td><code>states-color($color)</code></td>
+<td>Customizes the base states color, which affects hover/focus states and the press ripple.</td>
+</tr>
+<tr class="even">
+<td><code>ink-color($color)</code></td>
+<td>Customizes the text label, icon, and base states color.</td>
+</tr>
+<tr class="odd">
+<td><code>active-text-label-color($color)</code></td>
+<td>Customizes the color of the active tab’s text label.</td>
+</tr>
+<tr class="even">
+<td><code>active-icon-color($color)</code></td>
+<td>Customizes the color of the active tab’s icon.</td>
+</tr>
+<tr class="odd">
+<td><code>active-states-color($color)</code></td>
+<td>Customizes the color of the active tab’s states.</td>
+</tr>
+<tr class="even">
+<td><code>parent-positioning</code></td>
+<td>Sets the positioning of the MDCTab’s parent element so that <code>MDCTab.computeDimensions()</code> reports the same values in all browsers.</td>
+</tr>
+<tr class="odd">
+<td><code>fixed-width($width)</code></td>
+<td>Sets the fixed width of the tab. The tab will never be smaller than the given width.</td>
+</tr>
+<tr class="even">
+<td><code>horizontal-padding($padding)</code></td>
+<td>Sets the horizontal padding of the tab.</td>
+</tr>
+<tr class="odd">
+<td><code>height($height)</code></td>
+<td>Sets custom height to tab bar.</td>
+</tr>
+<tr class="even">
+<td><code>text-transform($transform)</code></td>
+<td>Sets tab <code>text-transform</code> property</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mdctab-properties-and-methods"><code>MDCTab</code> Properties and Methods</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Property</th>
+<th>Value Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>Value of the root tab element’s <code>id</code> attribute.</td>
+</tr>
+<tr class="even">
+<td><code>active</code></td>
+<td><code>boolean</code> (read-only)</td>
+<td>Allows getting the active state of the tab.</td>
+</tr>
+<tr class="odd">
+<td><code>focusOnActivate</code></td>
+<td><code>boolean</code> (write-only)</td>
+<td>Sets whether the tab should focus itself when activated. Defaults to <code>true</code>.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method Signature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>activate(previousIndicatorClientRect?: ClientRect) =&gt; void</code></td>
+<td>Activates the indicator. <code>previousIndicatorClientRect</code> is an optional argument.</td>
+</tr>
+<tr class="even">
+<td><code>deactivate() =&gt; void</code></td>
+<td>Deactivates the indicator.</td>
+</tr>
+<tr class="odd">
+<td><code>focus() =&gt; void</code></td>
+<td>Focuses the tab.</td>
+</tr>
+<tr class="even">
+<td><code>computeIndicatorClientRect() =&gt; ClientRect</code></td>
+<td>Returns the bounding client rect of the indicator.</td>
+</tr>
+<tr class="odd">
+<td><code>computeDimensions() =&gt; MDCTabDimensions</code></td>
+<td>Returns the dimensions of the Tab.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Event Name</th>
+<th>Event Data Structure</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>MDCTab:interacted</code></td>
+<td><code>{"detail": {"tabId": string}}</code></td>
+<td>Emitted when the Tab is interacted with, regardless of its active state. Used by parent components to know which Tab to activate.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="usage-within-web-frameworks">Usage within Web Frameworks</h2>
+<p>If you are using a JavaScript framework, such as React or Angular, you can create a Tab for your framework. Depending on your needs, you can use the <em>Simple Approach: Wrapping MDC Web Vanilla Components</em>, or the <em>Advanced Approach: Using Foundations and Adapters</em>. Please follow the instructions <a href="../../docs/integrating-into-frameworks.md">here</a>.</p>
+<h3 id="mdctabadapter"><code>MDCTabAdapter</code></h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method Signature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>addClass(className: string) =&gt; void</code></td>
+<td>Adds a class to the root element.</td>
+</tr>
+<tr class="even">
+<td><code>removeClass(className: string) =&gt; void</code></td>
+<td>Removes a class from the root element.</td>
+</tr>
+<tr class="odd">
+<td><code>hasClass(className: string) =&gt; boolean</code></td>
+<td>Returns true if the root element contains the given class.</td>
+</tr>
+<tr class="even">
+<td><code>setAttr(attr: string, value: string) =&gt; void</code></td>
+<td>Sets the given attribute on the root element to the given value.</td>
+</tr>
+<tr class="odd">
+<td><code>activateIndicator(previousIndicatorClientRect?: ClientRect) =&gt; void</code></td>
+<td>Activates the tab indicator subcomponent. <code>previousIndicatorClientRect</code> is an optional argument.</td>
+</tr>
+<tr class="even">
+<td><code>deactivateIndicator() =&gt; void</code></td>
+<td>Deactivates the tab indicator subcomponent.</td>
+</tr>
+<tr class="odd">
+<td><code>getOffsetLeft() =&gt; number</code></td>
+<td>Returns the <code>offsetLeft</code> value of the root element.</td>
+</tr>
+<tr class="even">
+<td><code>getOffsetWidth() =&gt; number</code></td>
+<td>Returns the <code>offsetWidth</code> value of the root element.</td>
+</tr>
+<tr class="odd">
+<td><code>getContentOffsetLeft() =&gt; number</code></td>
+<td>Returns the <code>offsetLeft</code> value of the content element.</td>
+</tr>
+<tr class="even">
+<td><code>getContentOffsetWidth() =&gt; number</code></td>
+<td>Returns the <code>offsetWidth</code> value of the content element.</td>
+</tr>
+<tr class="odd">
+<td><code>notifyInteracted() =&gt; void</code></td>
+<td>Emits the <code>MDCTab:interacted</code> event.</td>
+</tr>
+<tr class="even">
+<td><code>focus() =&gt; void</code></td>
+<td>Applies focus to the root element.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mdctabfoundation"><code>MDCTabFoundation</code></h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method Signature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>handleClick() =&gt; void</code></td>
+<td>Handles the logic for the <code>"click"</code> event.</td>
+</tr>
+<tr class="even">
+<td><code>isActive() =&gt; boolean</code></td>
+<td>Returns whether the tab is active.</td>
+</tr>
+<tr class="odd">
+<td><code>setFocusOnActivate(focusOnActivate: boolean) =&gt; void</code></td>
+<td>Sets whether the tab should focus itself when activated.</td>
+</tr>
+<tr class="even">
+<td><code>activate(previousIndicatorClientRect?: ClientRect) =&gt; void</code></td>
+<td>Activates the tab. <code>previousIndicatorClientRect</code> is an optional argument.</td>
+</tr>
+<tr class="odd">
+<td><code>deactivate() =&gt; void</code></td>
+<td>Deactivates the tab.</td>
+</tr>
+<tr class="even">
+<td><code>computeDimensions() =&gt; MDCTabDimensions</code></td>
+<td>Returns the dimensions of the tab.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mdctabfoundation-event-handlers"><code>MDCTabFoundation</code> Event Handlers</h3>
+<p>When wrapping the Tab component, it is necessary to register the following event handler. For an example of this, see the <a href="component.ts"><code>MDCTab</code></a> component’s <code>initialSyncWithDOM</code> method.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Event</th>
+<th>Element</th>
+<th>Foundation Handler</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>click</code></td>
+<td>Root element</td>
+<td><code>handleClick()</code></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
