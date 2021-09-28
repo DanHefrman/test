@@ -1,82 +1,206 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>README</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
-  <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
-</head>
-<body>
-<!--docs:
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>README</title>
+    <style type="text/css">
+      code {
+        white-space: pre-wrap;
+      }
+      span.smallcaps {
+        font-variant: small-caps;
+      }
+      span.underline {
+        text-decoration: underline;
+      }
+      div.column {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+      }
+    </style>
+    <style type="text/css">
+      a.sourceLine {
+        display: inline-block;
+        line-height: 1.25;
+      }
+      a.sourceLine {
+        pointer-events: none;
+        color: inherit;
+        text-decoration: inherit;
+      }
+      a.sourceLine:empty {
+        height: 1.2em;
+      }
+      .sourceCode {
+        overflow: visible;
+      }
+      code.sourceCode {
+        white-space: pre;
+        position: relative;
+      }
+      div.sourceCode {
+        margin: 1em 0;
+      }
+      pre.sourceCode {
+        margin: 0;
+      }
+      @media screen {
+        div.sourceCode {
+          overflow: auto;
+        }
+      }
+      @media print {
+        code.sourceCode {
+          white-space: pre-wrap;
+        }
+        a.sourceLine {
+          text-indent: -1em;
+          padding-left: 1em;
+        }
+      }
+      pre.numberSource a.sourceLine {
+        position: relative;
+        left: -4em;
+      }
+      pre.numberSource a.sourceLine::before {
+        content: attr(title);
+        position: relative;
+        left: -1em;
+        text-align: right;
+        vertical-align: baseline;
+        border: none;
+        pointer-events: all;
+        display: inline-block;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        padding: 0 4px;
+        width: 4em;
+        color: #aaaaaa;
+      }
+      pre.numberSource {
+        margin-left: 3em;
+        border-left: 1px solid #aaaaaa;
+        padding-left: 4px;
+      }
+      div.sourceCode {
+      }
+      @media screen {
+        a.sourceLine::before {
+          text-decoration: underline;
+        }
+      }
+      code span.al {
+        color: #ff0000;
+        font-weight: bold;
+      } /* Alert */
+      code span.an {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* Annotation */
+      code span.at {
+        color: #7d9029;
+      } /* Attribute */
+      code span.bn {
+        color: #40a070;
+      } /* BaseN */
+      code span.bu {
+      } /* BuiltIn */
+      code span.cf {
+        color: #007020;
+        font-weight: bold;
+      } /* ControlFlow */
+      code span.ch {
+        color: #4070a0;
+      } /* Char */
+      code span.cn {
+        color: #880000;
+      } /* Constant */
+      code span.co {
+        color: #60a0b0;
+        font-style: italic;
+      } /* Comment */
+      code span.cv {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* CommentVar */
+      code span.do {
+        color: #ba2121;
+        font-style: italic;
+      } /* Documentation */
+      code span.dt {
+        color: #902000;
+      } /* DataType */
+      code span.dv {
+        color: #40a070;
+      } /* DecVal */
+      code span.er {
+        color: #ff0000;
+        font-weight: bold;
+      } /* Error */
+      code span.ex {
+      } /* Extension */
+      code span.fl {
+        color: #40a070;
+      } /* Float */
+      code span.fu {
+        color: #06287e;
+      } /* Function */
+      code span.im {
+      } /* Import */
+      code span.in {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* Information */
+      code span.kw {
+        color: #007020;
+        font-weight: bold;
+      } /* Keyword */
+      code span.op {
+        color: #666666;
+      } /* Operator */
+      code span.ot {
+        color: #007020;
+      } /* Other */
+      code span.pp {
+        color: #bc7a00;
+      } /* Preprocessor */
+      code span.sc {
+        color: #4070a0;
+      } /* SpecialChar */
+      code span.ss {
+        color: #bb6688;
+      } /* SpecialString */
+      code span.st {
+        color: #4070a0;
+      } /* String */
+      code span.va {
+        color: #19177c;
+      } /* Variable */
+      code span.vs {
+        color: #4070a0;
+      } /* VerbatimString */
+      code span.wa {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* Warning */
+    </style>
+  </head>
+  <body>
+    <!--docs:
 title: "Data Tables"
 layout: detail
 section: components
@@ -84,23 +208,38 @@ excerpt: "Data tables display information in a grid-like format of rows and colu
 iconId: data_table
 path: /catalog/data-tables/
 -->
-<h1 id="data-tables">Data tables</h1>
-<p><a href="https://material.io/components/data-tables/#">Data tables</a> display sets of data across rows and columns.</p>
-<figure>
-<img src="images/data-table-hero.png" alt="Data table with 5 rows: 1 header row, 4 rows, one column of checkboxes" /><figcaption>Data table with 5 rows: 1 header row, 4 rows, one column of checkboxes</figcaption>
-</figure>
-<h2 id="using-data-tables">Using data tables</h2>
-<p>Data tables display information in a grid-like format of rows and columns. They organize information in a way that’s easy to scan, so that users can look for patterns and insights.</p>
-<p>Data tables can contain:</p>
-<ul>
-<li>Interactive components (such as chips, buttons, or menus)</li>
-<li>Non-interactive elements (such as badges)</li>
-<li>Tools to query and manipulate data</li>
-</ul>
-<h3 id="installation">Installation</h3>
-<pre><code>npm install @material/data-table</code></pre>
-<h3 id="styles">Styles</h3>
-<pre class="scss"><code>@use &quot;@material/checkbox&quot;; // Required only for data table with row selection.
+    <h1 id="data-tables">Data tables</h1>
+    <p>
+      <a href="https://material.io/components/data-tables/#">Data tables</a>
+      display sets of data across rows and columns.
+    </p>
+    <figure>
+      <img
+        src="images/data-table-hero.png"
+        alt="Data table with 5 rows: 1 header row, 4 rows, one column of checkboxes"
+      />
+      <figcaption>
+        Data table with 5 rows: 1 header row, 4 rows, one column of checkboxes
+      </figcaption>
+    </figure>
+    <h2 id="using-data-tables">Using data tables</h2>
+    <p>
+      Data tables display information in a grid-like format of rows and columns.
+      They organize information in a way that’s easy to scan, so that users can
+      look for patterns and insights.
+    </p>
+    <p>Data tables can contain:</p>
+    <ul>
+      <li>Interactive components (such as chips, buttons, or menus)</li>
+      <li>Non-interactive elements (such as badges)</li>
+      <li>Tools to query and manipulate data</li>
+    </ul>
+    <h3 id="installation">Installation</h3>
+    <pre><code>npm install @material/data-table</code></pre>
+    <h3 id="styles">Styles</h3>
+    <pre
+      class="scss"
+    ><code>@use &quot;@material/checkbox&quot;; // Required only for data table with row selection.
 @use &quot;@material/icon-button&quot;; // Required only for data table with column sorting.
 @use &quot;@material/data-table/data-table&quot;;
 
@@ -108,24 +247,59 @@ path: /catalog/data-tables/
 @include icon-button.core-styles;
 @include data-table.core-styles;
 @include data-table.theme-baseline;</code></pre>
-<p><strong>Note: Styles for any components you intend to include within data-table (e.g. Checkboxes, Buttons etc.) must be loaded.</strong></p>
-<h3 id="javascript-instantiation">JavaScript instantiation</h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="im">import</span> <span class="op">{</span>MDCDataTable<span class="op">}</span> <span class="im">from</span> <span class="st">&#39;@material/data-table&#39;</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb3-2" title="2"><span class="kw">const</span> dataTable <span class="op">=</span> <span class="kw">new</span> <span class="at">MDCDataTable</span>(<span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&#39;.mdc-data-table&#39;</span>))<span class="op">;</span></a></code></pre></div>
-<blockquote>
-<p>See <a href="../../docs/importing-js.md">Importing the JS component</a> for more information on how to import JavaScript.</p>
-</blockquote>
-<blockquote>
-<p>Instantiating <code>MDCDataTable</code> component is only required to add interactions for example, row selection.</p>
-</blockquote>
-<p>MDC Data Table component auto instantiates <code>MDCCheckbox</code> for header row checkbox and all row checkboxes. Make sure to set required class names to instantiate checkbox component. We suggest to use <code>layout</code> API when rows are added or removed from data table to register new checkbox components.</p>
-<h3 id="making-data-tables-accessible">Making data tables accessible</h3>
-<p>Please refer to the <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#table">WAI-ARIA Authoring Practices for table</a> for the ARIA recommended role, states and properties required for table element.</p>
-<h2 id="data-tables-1">Data tables</h2>
-<p>Data table currently supports following features.</p>
-<h3 id="standard-data-table">Standard data table</h3>
-<p>Use this to render data table without any interactivity such as row selection, sorting, etc.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-data-table&quot;</span><span class="kw">&gt;</span></a>
+    <p>
+      <strong
+        >Note: Styles for any components you intend to include within data-table
+        (e.g. Checkboxes, Buttons etc.) must be loaded.</strong
+      >
+    </p>
+    <h3 id="javascript-instantiation">JavaScript instantiation</h3>
+    <div class="sourceCode" id="cb3">
+      <pre
+        class="sourceCode js"
+      ><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="im">import</span> <span class="op">{</span>MDCDataTable<span class="op">}</span> <span class="im">from</span> <span class="st">&#39;@material/data-table&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="kw">const</span> dataTable <span class="op">=</span> <span class="kw">new</span> <span class="at">MDCDataTable</span>(<span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&#39;.mdc-data-table&#39;</span>))<span class="op">;</span></a></code></pre>
+    </div>
+    <blockquote>
+      <p>
+        See
+        <a href="../../docs/importing-js.md">Importing the JS component</a> for
+        more information on how to import JavaScript.
+      </p>
+    </blockquote>
+    <blockquote>
+      <p>
+        Instantiating <code>MDCDataTable</code> component is only required to
+        add interactions for example, row selection.
+      </p>
+    </blockquote>
+    <p>
+      MDC Data Table component auto instantiates <code>MDCCheckbox</code> for
+      header row checkbox and all row checkboxes. Make sure to set required
+      class names to instantiate checkbox component. We suggest to use
+      <code>layout</code> API when rows are added or removed from data table to
+      register new checkbox components.
+    </p>
+    <h3 id="making-data-tables-accessible">Making data tables accessible</h3>
+    <p>
+      Please refer to the
+      <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#table"
+        >WAI-ARIA Authoring Practices for table</a
+      >
+      for the ARIA recommended role, states and properties required for table
+      element.
+    </p>
+    <h2 id="data-tables-1">Data tables</h2>
+    <p>Data table currently supports following features.</p>
+    <h3 id="standard-data-table">Standard data table</h3>
+    <p>
+      Use this to render data table without any interactivity such as row
+      selection, sorting, etc.
+    </p>
+    <div class="sourceCode" id="cb4">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-data-table&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb4-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-data-table__table-container&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb4-3" title="3">    <span class="kw">&lt;table</span><span class="ot"> class=</span><span class="st">&quot;mdc-data-table__table&quot;</span><span class="ot"> aria-label=</span><span class="st">&quot;Dessert calories&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb4-4" title="4">      <span class="kw">&lt;thead&gt;</span></a>
@@ -158,11 +332,21 @@ path: /catalog/data-tables/
 <a class="sourceLine" id="cb4-31" title="31">      <span class="kw">&lt;/tbody&gt;</span></a>
 <a class="sourceLine" id="cb4-32" title="32">    <span class="kw">&lt;/table&gt;</span></a>
 <a class="sourceLine" id="cb4-33" title="33">  <span class="kw">&lt;/div&gt;</span></a>
-<a class="sourceLine" id="cb4-34" title="34"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
-<h3 id="data-table-with-row-selection">Data table with row selection</h3>
-<p>The row selection feature allows users to select table rows via row checkboxes. Users can select or unselect all rows using the header row checkbox. Additionally, the header row checkbox will be automatically updated based on the checked status of each row’s checkbox, whether it was checked manually or programmatically.</p>
-<h4 id="html-structure">HTML Structure</h4>
-<div class="sourceCode" id="cb5"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-data-table&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb4-34" title="34"><span class="kw">&lt;/div&gt;</span></a></code></pre>
+    </div>
+    <h3 id="data-table-with-row-selection">Data table with row selection</h3>
+    <p>
+      The row selection feature allows users to select table rows via row
+      checkboxes. Users can select or unselect all rows using the header row
+      checkbox. Additionally, the header row checkbox will be automatically
+      updated based on the checked status of each row’s checkbox, whether it was
+      checked manually or programmatically.
+    </p>
+    <h4 id="html-structure">HTML Structure</h4>
+    <div class="sourceCode" id="cb5">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-data-table&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb5-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-data-table__table-container&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb5-3" title="3">    <span class="kw">&lt;table</span><span class="ot"> class=</span><span class="st">&quot;mdc-data-table__table&quot;</span><span class="ot"> aria-label=</span><span class="st">&quot;Dessert calories&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb5-4" title="4">      <span class="kw">&lt;thead&gt;</span></a>
@@ -271,20 +455,33 @@ path: /catalog/data-tables/
 <a class="sourceLine" id="cb5-107" title="107">      <span class="kw">&lt;/tbody&gt;</span></a>
 <a class="sourceLine" id="cb5-108" title="108">    <span class="kw">&lt;/table&gt;</span></a>
 <a class="sourceLine" id="cb5-109" title="109">  <span class="kw">&lt;/div&gt;</span></a>
-<a class="sourceLine" id="cb5-110" title="110"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
-<h4 id="javascript-apis">JavaScript APIs</h4>
-<ul>
-<li>Use <code>layout()</code> API when new row checkboxes are added or removed from data table.</li>
-<li>Programmatically get / set row selection using following API’s:
-<ul>
-<li><code>getSelectedRowIds()</code></li>
-<li><code>setSelectedRowIds(string[])</code></li>
-</ul></li>
-</ul>
-<h3 id="data-table-with-pagination">Data table with pagination</h3>
-<p>Pagination is rendered at the footer section of data table. Pagination helps user change the rows per page (page size) and navigate between data table pages.</p>
-<h4 id="html-structure-1">HTML Structure</h4>
-<div class="sourceCode" id="cb6"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-data-table&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb5-110" title="110"><span class="kw">&lt;/div&gt;</span></a></code></pre>
+    </div>
+    <h4 id="javascript-apis">JavaScript APIs</h4>
+    <ul>
+      <li>
+        Use <code>layout()</code> API when new row checkboxes are added or
+        removed from data table.
+      </li>
+      <li>
+        Programmatically get / set row selection using following API’s:
+        <ul>
+          <li><code>getSelectedRowIds()</code></li>
+          <li><code>setSelectedRowIds(string[])</code></li>
+        </ul>
+      </li>
+    </ul>
+    <h3 id="data-table-with-pagination">Data table with pagination</h3>
+    <p>
+      Pagination is rendered at the footer section of data table. Pagination
+      helps user change the rows per page (page size) and navigate between data
+      table pages.
+    </p>
+    <h4 id="html-structure-1">HTML Structure</h4>
+    <div class="sourceCode" id="cb6">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-data-table&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb6-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-data-table__table-container&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb6-3" title="3">    <span class="kw">&lt;table</span><span class="ot"> class=</span><span class="st">&quot;mdc-data-table__table&quot;</span><span class="ot"> aria-label=</span><span class="st">&quot;Dessert calories&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb6-4" title="4">      <span class="kw">&lt;thead&gt;</span></a>
@@ -390,22 +587,44 @@ path: /catalog/data-tables/
 <a class="sourceLine" id="cb6-104" title="104">      <span class="kw">&lt;/div&gt;</span></a>
 <a class="sourceLine" id="cb6-105" title="105">    <span class="kw">&lt;/div&gt;</span></a>
 <a class="sourceLine" id="cb6-106" title="106">  <span class="kw">&lt;/div&gt;</span></a>
-<a class="sourceLine" id="cb6-107" title="107"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
-<h4 id="javascript-apis-1">JavaScript APIs</h4>
-<p>Data table component does not provide any JavaScript APIs for pagination.</p>
-<ul>
-<li>Should manually initialize following components supporting pagination feature:
-<ul>
-<li>Select component: Used to change rows per page (page size).</li>
-<li>Icon button: Used to navigate between data table pages.</li>
-</ul></li>
-<li>Should re-render data table content when rows per page is changed or navigated to another page using events triggered by select &amp; pagination button.</li>
-<li>Should manually enable or disable pagination buttons accordingly when data table reaches first or last page.</li>
-</ul>
-<h3 id="data-table-with-progress-indicator">Data table with progress indicator</h3>
-<p>Progress indicator inform users about the status of ongoing processes, such as data loading. Indeterminate linear progress indicator along with a scrim is shown on blocking the table content.</p>
-<h4 id="html-structure-2">HTML Structure</h4>
-<div class="sourceCode" id="cb7"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-data-table&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb6-107" title="107"><span class="kw">&lt;/div&gt;</span></a></code></pre>
+    </div>
+    <h4 id="javascript-apis-1">JavaScript APIs</h4>
+    <p>
+      Data table component does not provide any JavaScript APIs for pagination.
+    </p>
+    <ul>
+      <li>
+        Should manually initialize following components supporting pagination
+        feature:
+        <ul>
+          <li>Select component: Used to change rows per page (page size).</li>
+          <li>Icon button: Used to navigate between data table pages.</li>
+        </ul>
+      </li>
+      <li>
+        Should re-render data table content when rows per page is changed or
+        navigated to another page using events triggered by select &amp;
+        pagination button.
+      </li>
+      <li>
+        Should manually enable or disable pagination buttons accordingly when
+        data table reaches first or last page.
+      </li>
+    </ul>
+    <h3 id="data-table-with-progress-indicator">
+      Data table with progress indicator
+    </h3>
+    <p>
+      Progress indicator inform users about the status of ongoing processes,
+      such as data loading. Indeterminate linear progress indicator along with a
+      scrim is shown on blocking the table content.
+    </p>
+    <h4 id="html-structure-2">HTML Structure</h4>
+    <div class="sourceCode" id="cb7">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-data-table&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb7-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-data-table__table-container&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb7-3" title="3">    <span class="kw">&lt;table</span><span class="ot"> class=</span><span class="st">&quot;mdc-data-table__table&quot;</span><span class="ot"> aria-label=</span><span class="st">&quot;Dessert calories&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb7-4" title="4">      <span class="kw">&lt;thead&gt;</span></a>
@@ -454,62 +673,81 @@ path: /catalog/data-tables/
 <a class="sourceLine" id="cb7-47" title="47">      <span class="kw">&lt;/div&gt;</span></a>
 <a class="sourceLine" id="cb7-48" title="48">    <span class="kw">&lt;/div&gt;</span></a>
 <a class="sourceLine" id="cb7-49" title="49">  <span class="kw">&lt;/div&gt;</span></a>
-<a class="sourceLine" id="cb7-50" title="50"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
-<h4 id="javascript-apis-2">JavaScript APIs</h4>
-<ul>
-<li>Use <code>showProgress()</code> and <code>hideProgress()</code> API to show or hide the progress indicator.</li>
-<li>Data table component will automatically initializes the linear progress indicator subcomponent.</li>
-</ul>
-<h4 id="events">Events</h4>
-<p>Following events are emitted for row selection feature.</p>
-<table>
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Event constant</th>
-<th>Event name</th>
-<th>Event detail</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>ROW_SELECTION_CHANGED</code></td>
-<td><code>MDCDataTable:rowSelectionChanged</code></td>
-<td><code>MDCDataTableRowSelectionChangedEventDetail</code></td>
-<td>Event emitted when row checkbox is checked or unchecked.</td>
-</tr>
-<tr class="even">
-<td><code>SELECTED_ALL</code></td>
-<td><code>MDCDataTable:selectedAll</code></td>
-<td><code>void</code></td>
-<td>Event emitted when header row checkbox is checked.</td>
-</tr>
-<tr class="odd">
-<td><code>UNSELECTED_ALL</code></td>
-<td><code>MDCDataTable:unselectedAll</code></td>
-<td><code>void</code></td>
-<td>Event emitted when header row checkbox is unchecked.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="data-table-with-column-sorting">Data table with column sorting</h3>
-<p>The column sorting feature allows users to reorder table rows in ascending or descending order by a column.</p>
-<p>The data table handles sorting as follows:</p>
-<ul>
-<li>Triggers event when sort icon button is clicked.</li>
-<li>Flips the sort icon based on sort direction.</li>
-<li>Sets appropriate ARIA attributes based on sort status.</li>
-</ul>
-<p>Data table consumer should re-render the table body (rows) in sorted order on <code>events.SORTED</code> event.</p>
-<h4 id="html-structure-3">HTML Structure</h4>
-<p>Set <code>data-column-id</code> on sortable header cell element to uniquely identify column that needs to be sorted.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-data-table&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb7-50" title="50"><span class="kw">&lt;/div&gt;</span></a></code></pre>
+    </div>
+    <h4 id="javascript-apis-2">JavaScript APIs</h4>
+    <ul>
+      <li>
+        Use <code>showProgress()</code> and <code>hideProgress()</code> API to
+        show or hide the progress indicator.
+      </li>
+      <li>
+        Data table component will automatically initializes the linear progress
+        indicator subcomponent.
+      </li>
+    </ul>
+    <h4 id="events">Events</h4>
+    <p>Following events are emitted for row selection feature.</p>
+    <table>
+      <colgroup>
+        <col style="width: 25%" />
+        <col style="width: 25%" />
+        <col style="width: 25%" />
+        <col style="width: 25%" />
+      </colgroup>
+      <thead>
+        <tr class="header">
+          <th>Event constant</th>
+          <th>Event name</th>
+          <th>Event detail</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="odd">
+          <td><code>ROW_SELECTION_CHANGED</code></td>
+          <td><code>MDCDataTable:rowSelectionChanged</code></td>
+          <td><code>MDCDataTableRowSelectionChangedEventDetail</code></td>
+          <td>Event emitted when row checkbox is checked or unchecked.</td>
+        </tr>
+        <tr class="even">
+          <td><code>SELECTED_ALL</code></td>
+          <td><code>MDCDataTable:selectedAll</code></td>
+          <td><code>void</code></td>
+          <td>Event emitted when header row checkbox is checked.</td>
+        </tr>
+        <tr class="odd">
+          <td><code>UNSELECTED_ALL</code></td>
+          <td><code>MDCDataTable:unselectedAll</code></td>
+          <td><code>void</code></td>
+          <td>Event emitted when header row checkbox is unchecked.</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3 id="data-table-with-column-sorting">Data table with column sorting</h3>
+    <p>
+      The column sorting feature allows users to reorder table rows in ascending
+      or descending order by a column.
+    </p>
+    <p>The data table handles sorting as follows:</p>
+    <ul>
+      <li>Triggers event when sort icon button is clicked.</li>
+      <li>Flips the sort icon based on sort direction.</li>
+      <li>Sets appropriate ARIA attributes based on sort status.</li>
+    </ul>
+    <p>
+      Data table consumer should re-render the table body (rows) in sorted order
+      on <code>events.SORTED</code> event.
+    </p>
+    <h4 id="html-structure-3">HTML Structure</h4>
+    <p>
+      Set <code>data-column-id</code> on sortable header cell element to
+      uniquely identify column that needs to be sorted.
+    </p>
+    <div class="sourceCode" id="cb8">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-data-table&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb8-2" title="2">  <span class="kw">&lt;table</span><span class="ot"> class=</span><span class="st">&quot;mdc-data-table__table&quot;</span><span class="ot"> aria-label=</span><span class="st">&quot;Dessert calories&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb8-3" title="3">    <span class="kw">&lt;thead&gt;</span></a>
 <a class="sourceLine" id="cb8-4" title="4">      <span class="kw">&lt;tr</span><span class="ot"> class=</span><span class="st">&quot;mdc-data-table__header-row&quot;</span><span class="kw">&gt;</span></a>
@@ -585,182 +823,298 @@ path: /catalog/data-tables/
 <a class="sourceLine" id="cb8-74" title="74">      <span class="kw">&lt;/tr&gt;</span></a>
 <a class="sourceLine" id="cb8-75" title="75">    <span class="kw">&lt;/tbody&gt;</span></a>
 <a class="sourceLine" id="cb8-76" title="76">  <span class="kw">&lt;/table&gt;</span></a>
-<a class="sourceLine" id="cb8-77" title="77"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
-<h4 id="events-1">Events</h4>
-<table>
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Event constant</th>
-<th>Event name</th>
-<th>Event detail</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>SORTED</code></td>
-<td><code>MDCDataTable:sorted</code></td>
-<td><code>SortActionEventDetail</code></td>
-<td>Event emitted when clicked on sortable header cell.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="style-customization">Style customization</h2>
-<h3 id="css-classes">CSS classes</h3>
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>CSS Class</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>mdc-data-table</code></td>
-<td>Mandatory. The root DOM element containing <code>table</code> and other supporting elements.</td>
-</tr>
-<tr class="even">
-<td><code>mdc-data-table--sticky-header</code></td>
-<td>Optional. Modifier class name added to root element to make header row sticky (fixed) on vertical scroll. (Note: Sticky header feature is not compatible with IE11 browsers.)</td>
-</tr>
-<tr class="odd">
-<td><code>mdc-data-table__table-container</code></td>
-<td>Mandatory. Container of Table element. Used for horizontal overflowing of table content.</td>
-</tr>
-<tr class="even">
-<td><code>mdc-data-table__table</code></td>
-<td>Mandatory. Table element. Added to <code>table</code> HTML tag.</td>
-</tr>
-<tr class="odd">
-<td><code>mdc-data-table__header-row</code></td>
-<td>Mandatory. Table header row element. Added to <code>thead &gt; tr</code> HTML tag.</td>
-</tr>
-<tr class="even">
-<td><code>mdc-data-table__header-cell</code></td>
-<td>Mandatory. Table header cell element. Added to <code>thead &gt; tr &gt; th</code> HTML tag.</td>
-</tr>
-<tr class="odd">
-<td><code>mdc-data-table__header-cell--checkbox</code></td>
-<td>Optional. Table header cell element that contains <code>mdc-checkbox</code>. Added to <code>thead &gt; tr &gt; th</code> HTML tag.</td>
-</tr>
-<tr class="even">
-<td><code>mdc-data-table__header-cell--numeric</code></td>
-<td>Optional. Table header cell element that maps to numeric cells. Added to <code>thead &gt; tr &gt; th</code> HTML tag.</td>
-</tr>
-<tr class="odd">
-<td><code>mdc-data-table__content</code></td>
-<td>Mandatory. Table body element. Added to <code>tbody</code> HTML tag.</td>
-</tr>
-<tr class="even">
-<td><code>mdc-data-table__row</code></td>
-<td>Mandatory. Table row element. Added to <code>tbody &gt; tr</code> HTML tag.</td>
-</tr>
-<tr class="odd">
-<td><code>mdc-data-table__cell</code></td>
-<td>Mandatory. Table cell element. Added to <code>tbody &gt; tr &gt; td</code> HTML tag.</td>
-</tr>
-<tr class="even">
-<td><code>mdc-data-table__cell--numeric</code></td>
-<td>Optional. Table cell element that contains numeric data. Added to <code>tbody &gt; tr &gt; td</code> HTML tag.</td>
-</tr>
-<tr class="odd">
-<td><code>mdc-data-table__cell--checkbox</code></td>
-<td>Optional. Table cell element that contains <code>mdc-checkbox</code>. Added to <code>thead&gt; th &gt; td:first-child</code> HTML tag.</td>
-</tr>
-<tr class="even">
-<td><code>mdc-data-table__header-row-checkbox</code></td>
-<td>Optional. Checkbox element rendered inside table header row element. Add this class name to <code>mdc-checkbox</code> element to override styles required for data-table.</td>
-</tr>
-<tr class="odd">
-<td><code>mdc-data-table__row-checkbox</code></td>
-<td>Optional. Checkbox element rendered inside table row element. Add this class name to <code>mdc-checkbox</code> element to override styles required for data-table.</td>
-</tr>
-<tr class="even">
-<td><code>mdc-data-table__row--selected</code></td>
-<td>Optional. Modifier class added to <code>mdc-data-table__row</code> when table row is selected.</td>
-</tr>
-<tr class="odd">
-<td><code>mdc-data-table__header-cell--sorted</code></td>
-<td>Optional. Modifier class added to header cell element if column is sorted.</td>
-</tr>
-<tr class="even">
-<td><code>mdc-data-table__header-cell--sorted-descending</code></td>
-<td>Optional. Modifier class added to header cell element if column is sorted in descending order.</td>
-</tr>
-<tr class="odd">
-<td><code>mdc-data-table__header-cell--with-sort</code></td>
-<td>Optional. Modifier class added to header cell element if column supports sorting.</td>
-</tr>
-<tr class="even">
-<td><code>mdc-data-table__header-cell-wrapper</code></td>
-<td>Mandatory. Container of header cell label and sort button, used to align header cell in center.</td>
-</tr>
-<tr class="odd">
-<td><code>mdc-data-table__sort-icon-button</code></td>
-<td>Optional. Class name added to icon button used as sort icon button. This is sibling to header cell label.</td>
-</tr>
-<tr class="even">
-<td><code>mdc-data-table__header-cell-label</code></td>
-<td>Mandatory. Class name added to header cell label. Child to header cell wrapper element.</td>
-</tr>
-<tr class="odd">
-<td><code>mdc-data-table__sort-status-label</code></td>
-<td>Optional. Class name added to sort status label which is visually hidden. Only visible to screen reader users.</td>
-</tr>
-<tr class="even">
-<td><code>mdc-data-table__pagination</code></td>
-<td>Root element of pagination. Pagination block element is rendered as immediate child to data table root element.</td>
-</tr>
-<tr class="odd">
-<td><code>mdc-data-table__pagination-trailing</code></td>
-<td>Immediate child of pagination. Used to wrap pagination content.</td>
-</tr>
-<tr class="even">
-<td><code>mdc-data-table__pagination-rows-per-page</code></td>
-<td>Container of rows per page label and rows per page select.</td>
-</tr>
-<tr class="odd">
-<td><code>mdc-data-table__pagination-rows-per-page-select</code></td>
-<td>Class name added to select component used for changing rows per page (page size).</td>
-</tr>
-<tr class="even">
-<td><code>mdc-data-table__pagination-navigation</code></td>
-<td>Block element containing all icon buttons used to navigate between data table pages.</td>
-</tr>
-<tr class="odd">
-<td><code>mdc-data-table__pagination-button</code></td>
-<td>Class name added to icon button component used to navigate between data table pages.</td>
-</tr>
-<tr class="even">
-<td><code>mdc-data-table__progress-indicator</code></td>
-<td>Block element rendered as immediate child to data table root element. Contains linear progress and scrim blocking the data table content.</td>
-</tr>
-<tr class="odd">
-<td><code>mdc-data-table__scrim</code></td>
-<td>Element blocking data table content. Rendered inside progress indicator root element.</td>
-</tr>
-<tr class="even">
-<td><code>mdc-data-table__linear-progress</code></td>
-<td>Class name added to linear progress component. Rendered inside progress indicator root element.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="sass-mixins">Sass mixins</h3>
-<p>See <a href="./_mixins.scss">_mixins.scss</a> file for up-to-date code documentation of Data table theme APIs.</p>
-<h2 id="mdcdatatable-properties-and-methods"><code>MDCDataTable</code> properties and methods</h2>
-<p>See <a href="./component.ts">component.ts</a> file for up-to-date code documentation of Data table component APIs.</p>
-<h2 id="usage-within-web-frameworks">Usage within web frameworks</h2>
-<p>If you are using a JavaScript framework, such as React or Angular, you can create a Data Table for your framework. Depending on your needs, you can use the <em>Simple Approach: Wrapping MDC Web Vanilla Components</em>, or the <em>Advanced Approach: Using Foundations and Adapters</em>. Please follow the instructions <a href="../../docs/integrating-into-frameworks.md">here</a>.</p>
-<p>See <a href="./adapter.ts">MDCDataTableAdapter</a> and <a href="./foundation.ts">MDCDataTableFoundation</a> for up-to-date code documentation of Data table foundation APIs.</p>
-</body>
+<a class="sourceLine" id="cb8-77" title="77"><span class="kw">&lt;/div&gt;</span></a></code></pre>
+    </div>
+    <h4 id="events-1">Events</h4>
+    <table>
+      <colgroup>
+        <col style="width: 25%" />
+        <col style="width: 25%" />
+        <col style="width: 25%" />
+        <col style="width: 25%" />
+      </colgroup>
+      <thead>
+        <tr class="header">
+          <th>Event constant</th>
+          <th>Event name</th>
+          <th>Event detail</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="odd">
+          <td><code>SORTED</code></td>
+          <td><code>MDCDataTable:sorted</code></td>
+          <td><code>SortActionEventDetail</code></td>
+          <td>Event emitted when clicked on sortable header cell.</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2 id="style-customization">Style customization</h2>
+    <h3 id="css-classes">CSS classes</h3>
+    <table>
+      <colgroup>
+        <col style="width: 50%" />
+        <col style="width: 50%" />
+      </colgroup>
+      <thead>
+        <tr class="header">
+          <th>CSS Class</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="odd">
+          <td><code>mdc-data-table</code></td>
+          <td>
+            Mandatory. The root DOM element containing <code>table</code> and
+            other supporting elements.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>mdc-data-table--sticky-header</code></td>
+          <td>
+            Optional. Modifier class name added to root element to make header
+            row sticky (fixed) on vertical scroll. (Note: Sticky header feature
+            is not compatible with IE11 browsers.)
+          </td>
+        </tr>
+        <tr class="odd">
+          <td><code>mdc-data-table__table-container</code></td>
+          <td>
+            Mandatory. Container of Table element. Used for horizontal
+            overflowing of table content.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>mdc-data-table__table</code></td>
+          <td>
+            Mandatory. Table element. Added to <code>table</code> HTML tag.
+          </td>
+        </tr>
+        <tr class="odd">
+          <td><code>mdc-data-table__header-row</code></td>
+          <td>
+            Mandatory. Table header row element. Added to
+            <code>thead &gt; tr</code> HTML tag.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>mdc-data-table__header-cell</code></td>
+          <td>
+            Mandatory. Table header cell element. Added to
+            <code>thead &gt; tr &gt; th</code> HTML tag.
+          </td>
+        </tr>
+        <tr class="odd">
+          <td><code>mdc-data-table__header-cell--checkbox</code></td>
+          <td>
+            Optional. Table header cell element that contains
+            <code>mdc-checkbox</code>. Added to
+            <code>thead &gt; tr &gt; th</code> HTML tag.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>mdc-data-table__header-cell--numeric</code></td>
+          <td>
+            Optional. Table header cell element that maps to numeric cells.
+            Added to <code>thead &gt; tr &gt; th</code> HTML tag.
+          </td>
+        </tr>
+        <tr class="odd">
+          <td><code>mdc-data-table__content</code></td>
+          <td>
+            Mandatory. Table body element. Added to <code>tbody</code> HTML tag.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>mdc-data-table__row</code></td>
+          <td>
+            Mandatory. Table row element. Added to
+            <code>tbody &gt; tr</code> HTML tag.
+          </td>
+        </tr>
+        <tr class="odd">
+          <td><code>mdc-data-table__cell</code></td>
+          <td>
+            Mandatory. Table cell element. Added to
+            <code>tbody &gt; tr &gt; td</code> HTML tag.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>mdc-data-table__cell--numeric</code></td>
+          <td>
+            Optional. Table cell element that contains numeric data. Added to
+            <code>tbody &gt; tr &gt; td</code> HTML tag.
+          </td>
+        </tr>
+        <tr class="odd">
+          <td><code>mdc-data-table__cell--checkbox</code></td>
+          <td>
+            Optional. Table cell element that contains
+            <code>mdc-checkbox</code>. Added to
+            <code>thead&gt; th &gt; td:first-child</code> HTML tag.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>mdc-data-table__header-row-checkbox</code></td>
+          <td>
+            Optional. Checkbox element rendered inside table header row element.
+            Add this class name to <code>mdc-checkbox</code> element to override
+            styles required for data-table.
+          </td>
+        </tr>
+        <tr class="odd">
+          <td><code>mdc-data-table__row-checkbox</code></td>
+          <td>
+            Optional. Checkbox element rendered inside table row element. Add
+            this class name to <code>mdc-checkbox</code> element to override
+            styles required for data-table.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>mdc-data-table__row--selected</code></td>
+          <td>
+            Optional. Modifier class added to
+            <code>mdc-data-table__row</code> when table row is selected.
+          </td>
+        </tr>
+        <tr class="odd">
+          <td><code>mdc-data-table__header-cell--sorted</code></td>
+          <td>
+            Optional. Modifier class added to header cell element if column is
+            sorted.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>mdc-data-table__header-cell--sorted-descending</code></td>
+          <td>
+            Optional. Modifier class added to header cell element if column is
+            sorted in descending order.
+          </td>
+        </tr>
+        <tr class="odd">
+          <td><code>mdc-data-table__header-cell--with-sort</code></td>
+          <td>
+            Optional. Modifier class added to header cell element if column
+            supports sorting.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>mdc-data-table__header-cell-wrapper</code></td>
+          <td>
+            Mandatory. Container of header cell label and sort button, used to
+            align header cell in center.
+          </td>
+        </tr>
+        <tr class="odd">
+          <td><code>mdc-data-table__sort-icon-button</code></td>
+          <td>
+            Optional. Class name added to icon button used as sort icon button.
+            This is sibling to header cell label.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>mdc-data-table__header-cell-label</code></td>
+          <td>
+            Mandatory. Class name added to header cell label. Child to header
+            cell wrapper element.
+          </td>
+        </tr>
+        <tr class="odd">
+          <td><code>mdc-data-table__sort-status-label</code></td>
+          <td>
+            Optional. Class name added to sort status label which is visually
+            hidden. Only visible to screen reader users.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>mdc-data-table__pagination</code></td>
+          <td>
+            Root element of pagination. Pagination block element is rendered as
+            immediate child to data table root element.
+          </td>
+        </tr>
+        <tr class="odd">
+          <td><code>mdc-data-table__pagination-trailing</code></td>
+          <td>
+            Immediate child of pagination. Used to wrap pagination content.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>mdc-data-table__pagination-rows-per-page</code></td>
+          <td>Container of rows per page label and rows per page select.</td>
+        </tr>
+        <tr class="odd">
+          <td><code>mdc-data-table__pagination-rows-per-page-select</code></td>
+          <td>
+            Class name added to select component used for changing rows per page
+            (page size).
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>mdc-data-table__pagination-navigation</code></td>
+          <td>
+            Block element containing all icon buttons used to navigate between
+            data table pages.
+          </td>
+        </tr>
+        <tr class="odd">
+          <td><code>mdc-data-table__pagination-button</code></td>
+          <td>
+            Class name added to icon button component used to navigate between
+            data table pages.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>mdc-data-table__progress-indicator</code></td>
+          <td>
+            Block element rendered as immediate child to data table root
+            element. Contains linear progress and scrim blocking the data table
+            content.
+          </td>
+        </tr>
+        <tr class="odd">
+          <td><code>mdc-data-table__scrim</code></td>
+          <td>
+            Element blocking data table content. Rendered inside progress
+            indicator root element.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>mdc-data-table__linear-progress</code></td>
+          <td>
+            Class name added to linear progress component. Rendered inside
+            progress indicator root element.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h3 id="sass-mixins">Sass mixins</h3>
+    <p>
+      See <a href="./_mixins.scss">_mixins.scss</a> file for up-to-date code
+      documentation of Data table theme APIs.
+    </p>
+    <h2 id="mdcdatatable-properties-and-methods">
+      <code>MDCDataTable</code> properties and methods
+    </h2>
+    <p>
+      See <a href="./component.ts">component.ts</a> file for up-to-date code
+      documentation of Data table component APIs.
+    </p>
+    <h2 id="usage-within-web-frameworks">Usage within web frameworks</h2>
+    <p>
+      If you are using a JavaScript framework, such as React or Angular, you can
+      create a Data Table for your framework. Depending on your needs, you can
+      use the <em>Simple Approach: Wrapping MDC Web Vanilla Components</em>, or
+      the <em>Advanced Approach: Using Foundations and Adapters</em>. Please
+      follow the instructions
+      <a href="../../docs/integrating-into-frameworks.md">here</a>.
+    </p>
+    <p>
+      See <a href="./adapter.ts">MDCDataTableAdapter</a> and
+      <a href="./foundation.ts">MDCDataTableFoundation</a> for up-to-date code
+      documentation of Data table foundation APIs.
+    </p>
+  </body>
 </html>

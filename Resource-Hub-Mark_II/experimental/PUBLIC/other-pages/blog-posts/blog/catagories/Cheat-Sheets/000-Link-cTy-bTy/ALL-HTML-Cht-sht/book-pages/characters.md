@@ -1,0 +1,215 @@
+&lt;
+
+Resource
+--------
+
+### Online
+
+-   [Wolframa Alpha Tools](http://www.wolframalpha.com/examples/CharacterEncodings.html)
+-   [Wikipedia Characters](http://en.wikipedia.org/wiki/Character_(computing))
+
+### Download
+
+-   [Named entities, numeric entities and ISO numeric codes](static/cs/charsandentities.pdf)
+-   [HTML/XHTML Character Entities in one page](http://www.html.su/entities.html)
+-   [URL Encoded Characters](http://www.html.su/urlencoding.html)
+-   [HTML Character Entities Cheat Sheet by Dave Child \[.pdf\]](http://www.addedbytes.com/cheat-sheets/html-character-entities-cheat-sheet/)
+-   [HTML Character Entities Cheat Sheet by Dave Child \[backup\]](static/cs/characters_cheat_sheet.pdf)
+-   [Character Entity References in HTML 4 and XHTML 1.0](http://www.elizabethcastro.com/html/extras/entities.html)
+-   [Reference: Special Characters](http://www.webmonkey.com/webmonkey/reference/special_characters/)
+-   [HTML Entities Cheatsheet & Online Reference](http://www.explainth.at/en/qr/hent.shtml)
+-   [The Unicode Character Code Charts](http://www.utf.ru/)
+-   [Free Unicode Fonts](http://www.font.su/)
+-   [Windows - Alt Key Numeric Codes](http://tlt.its.psu.edu/suggestions/international/accents/codealt.html)
+-   [HTML Characters, Alpha Codes by Bob Stein, VisiBone](http://www.visibone.com/htmlref/char/ceralpha.htm)
+-   [Webdings, special nearly useless symbols (e.g. ‘ O 6 þ ) Also DingbatsOne, DingbatsTwo, Wingdings, Zapf Dingbats BT by Bob Stein, VisiBone](http://www.visibone.com/htmlref/char/webdings.html)
+-   [DingbatsOne](http://www.visibone.com/htmlref/char/DingbatsOne.html)
+-   [DingbatsTwo](http://www.visibone.com/htmlref/char/DingbatsTwo.html)
+-   [Zapf Dingbats](http://www.visibone.com/htmlref/char/ZapfDingbatsBt.html)
+-   [HTML Entiteiten (Dutch) by Ton Haarmans](http://www.wideopenwin.com/html-entiteiten)
+
+### Related
+
+-   [ASCII](ascii.html "ASCII Cheat Sheet")
+
+### Symbols
+
+-   &\#32;
+-   -   Space
+-   &\#33;
+-   !
+-   Exclam­ation mark
+-   &\#34;
+-   "
+-   Quotation mark
+-   &\#35;
+-   \#
+-   Pound / hash
+-   &\#36;
+-   $
+-   Dollar sign
+-   &\#37;
+-   %
+-   Percent sign
+-   &\#38;
+-   &
+-   Ampersand
+-   &\#39;
+-   \`
+-   Apostrophe
+-   &\#40;
+-   (
+-   Left bracket
+-   &\#41;
+-   )
+-   Right bracket
+-   &\#42;
+-   \*
+-   Asterisk
+-   &\#43;
+-   \+
+-   Plus
+-   &\#44;
+-   ,
+-   Comma
+-   &\#45;
+-   \-
+-   Hyphen
+-   &\#46;
+-   .
+-   Period
+-   &\#47;
+-   /
+-   Forward Slash
+-   &\#58;
+-   :
+-   Colon
+-   &\#59;
+-   ;
+-   Semicolon
+-   &\#60;
+-   &lt;
+-   Less than
+-   &\#61;
+-   =
+-   Equals
+-   &\#62;
+-   &gt;
+-   Greater than
+-   &\#63;
+-   ?
+-   Question mark
+-   &\#64;
+-   @
+-   "­At"
+-   &\#91;
+-   \[
+-   Left square bracket
+-   &\#92;
+-   \\
+-   Backslash
+-   &\#93;
+-   \]
+-   Right square bracket
+-   &\#94;
+-   ^
+-   Caret
+-   &\#95;
+-   \_
+-   Underscore
+-   &\#96;
+-   \`
+-   Single quote / backtick
+-   &\#123;
+-   {
+-   Left curly brace
+-   &\#124;
+-   |
+-   Pipe
+-   &\#125;
+-   }
+-   Right curly brace
+-   &\#126;
+-   ~
+-   Tilde
+-   &\#127;
+-   -   Delete
+-   &\#160;
+-   -   Non-breaking space
+-   &\#162;
+-   ¢
+-   Cent
+-   &\#163;
+-   £
+-   Pound
+-   &\#164;
+-   ¤
+-   Currency
+-   &\#165;
+-   ¥
+-   Yen symbol
+-   &\#166;
+-   ¦
+-   Broken pipe
+-   &\#167;
+-   §
+-   Section
+-   &\#168;
+-   ¨
+-   Umlaut
+-   &\#169;
+-   ©
+-   Copyright
+-   &\#170;
+-   ª
+-   Feminine ordinal
+-   &\#171;
+-   «
+-   Double­-left arrow
+-   &\#172;
+-   ¬
+-   "­Not­"
+-   &\#173;
+-   -   Soft hyphen
+-   &\#174;
+-   ®
+-   Registered
+-   &\#175;
+-   ¯
+-   Overline
+-   &\#176;
+-   °
+-   Degree
+-   &\#177;
+-   ±
+-   Plus or minus
+-   &\#178;
+-   ²
+-   Squared
+-   &\#179;
+-   ³
+-   Cubed
+-   &\#180;
+-   ´
+-   Acute accent
+-   &\#181;
+-   µ
+-   Micro
+-   &\#182;
+-   ¶
+-   Paragraph
+-   &\#183;
+-   ·
+-   Middle dot
+-   &\#184;
+-   ¸
+-   Cedilla
+-   &\#185;
+-   ¹
+-   Supers­cript 1
+-   &\#186;
+-   º
+-   Masculine ordinal
+-   &\#187;
+-   »
+-   Double­-right arrow

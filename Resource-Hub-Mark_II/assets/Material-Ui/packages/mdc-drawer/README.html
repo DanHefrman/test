@@ -1,82 +1,206 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>README</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
-  <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
-</head>
-<body>
-<!--docs:
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>README</title>
+    <style type="text/css">
+      code {
+        white-space: pre-wrap;
+      }
+      span.smallcaps {
+        font-variant: small-caps;
+      }
+      span.underline {
+        text-decoration: underline;
+      }
+      div.column {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+      }
+    </style>
+    <style type="text/css">
+      a.sourceLine {
+        display: inline-block;
+        line-height: 1.25;
+      }
+      a.sourceLine {
+        pointer-events: none;
+        color: inherit;
+        text-decoration: inherit;
+      }
+      a.sourceLine:empty {
+        height: 1.2em;
+      }
+      .sourceCode {
+        overflow: visible;
+      }
+      code.sourceCode {
+        white-space: pre;
+        position: relative;
+      }
+      div.sourceCode {
+        margin: 1em 0;
+      }
+      pre.sourceCode {
+        margin: 0;
+      }
+      @media screen {
+        div.sourceCode {
+          overflow: auto;
+        }
+      }
+      @media print {
+        code.sourceCode {
+          white-space: pre-wrap;
+        }
+        a.sourceLine {
+          text-indent: -1em;
+          padding-left: 1em;
+        }
+      }
+      pre.numberSource a.sourceLine {
+        position: relative;
+        left: -4em;
+      }
+      pre.numberSource a.sourceLine::before {
+        content: attr(title);
+        position: relative;
+        left: -1em;
+        text-align: right;
+        vertical-align: baseline;
+        border: none;
+        pointer-events: all;
+        display: inline-block;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        padding: 0 4px;
+        width: 4em;
+        color: #aaaaaa;
+      }
+      pre.numberSource {
+        margin-left: 3em;
+        border-left: 1px solid #aaaaaa;
+        padding-left: 4px;
+      }
+      div.sourceCode {
+      }
+      @media screen {
+        a.sourceLine::before {
+          text-decoration: underline;
+        }
+      }
+      code span.al {
+        color: #ff0000;
+        font-weight: bold;
+      } /* Alert */
+      code span.an {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* Annotation */
+      code span.at {
+        color: #7d9029;
+      } /* Attribute */
+      code span.bn {
+        color: #40a070;
+      } /* BaseN */
+      code span.bu {
+      } /* BuiltIn */
+      code span.cf {
+        color: #007020;
+        font-weight: bold;
+      } /* ControlFlow */
+      code span.ch {
+        color: #4070a0;
+      } /* Char */
+      code span.cn {
+        color: #880000;
+      } /* Constant */
+      code span.co {
+        color: #60a0b0;
+        font-style: italic;
+      } /* Comment */
+      code span.cv {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* CommentVar */
+      code span.do {
+        color: #ba2121;
+        font-style: italic;
+      } /* Documentation */
+      code span.dt {
+        color: #902000;
+      } /* DataType */
+      code span.dv {
+        color: #40a070;
+      } /* DecVal */
+      code span.er {
+        color: #ff0000;
+        font-weight: bold;
+      } /* Error */
+      code span.ex {
+      } /* Extension */
+      code span.fl {
+        color: #40a070;
+      } /* Float */
+      code span.fu {
+        color: #06287e;
+      } /* Function */
+      code span.im {
+      } /* Import */
+      code span.in {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* Information */
+      code span.kw {
+        color: #007020;
+        font-weight: bold;
+      } /* Keyword */
+      code span.op {
+        color: #666666;
+      } /* Operator */
+      code span.ot {
+        color: #007020;
+      } /* Other */
+      code span.pp {
+        color: #bc7a00;
+      } /* Preprocessor */
+      code span.sc {
+        color: #4070a0;
+      } /* SpecialChar */
+      code span.ss {
+        color: #bb6688;
+      } /* SpecialString */
+      code span.st {
+        color: #4070a0;
+      } /* String */
+      code span.va {
+        color: #19177c;
+      } /* Variable */
+      code span.vs {
+        color: #4070a0;
+      } /* VerbatimString */
+      code span.wa {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* Warning */
+    </style>
+  </head>
+  <body>
+    <!--docs:
 title: "Drawers"
 layout: detail
 section: components
@@ -84,57 +208,110 @@ excerpt: "Permanent, dismissible, and modal drawers."
 iconId: side_navigation
 path: /catalog/drawers/
 -->
-<h1 id="navigation-drawers">Navigation drawers</h1>
-<p><a href="https://material.io/components/navigation-drawer">Navigation drawers</a> provide access to destinations in your app.</p>
-<figure>
-<img src="images/drawer-hero.png" alt="Hero navigation drawer image" /><figcaption>Hero navigation drawer image</figcaption>
-</figure>
-<p><strong>Contents</strong></p>
-<ul>
-<li><a href="#using-navigation-drawers">Using navigation drawers</a></li>
-<li><a href="#types">Types</a></li>
-<li><a href="#other-variants">Other variants</a></li>
-<li><a href="#api">API</a></li>
-<li><a href="#usage-within-web-frameworks">Usage within web frameworks</a></li>
-</ul>
-<h2 id="using-navigation-drawers">Using navigation drawers</h2>
-<p>A navigation drawer provides access to destinations and app functionality, such as switching accounts. It can either be permanently on-screen or controlled by a navigation menu icon.</p>
-<p>A navigation drawer is recommended for:</p>
-<ul>
-<li>Apps with five or more top-level destinations</li>
-<li>Apps with two or more levels of navigation hierarchy</li>
-<li>Quick navigation between unrelated destinations</li>
-</ul>
-<h3 id="installation">Installation</h3>
-<pre><code>npm install @material/drawer</code></pre>
-<h3 id="styles">Styles</h3>
-<pre class="scss"><code>@use &quot;@material/drawer&quot;;
+    <h1 id="navigation-drawers">Navigation drawers</h1>
+    <p>
+      <a href="https://material.io/components/navigation-drawer"
+        >Navigation drawers</a
+      >
+      provide access to destinations in your app.
+    </p>
+    <figure>
+      <img src="images/drawer-hero.png" alt="Hero navigation drawer image" />
+      <figcaption>Hero navigation drawer image</figcaption>
+    </figure>
+    <p><strong>Contents</strong></p>
+    <ul>
+      <li><a href="#using-navigation-drawers">Using navigation drawers</a></li>
+      <li><a href="#types">Types</a></li>
+      <li><a href="#other-variants">Other variants</a></li>
+      <li><a href="#api">API</a></li>
+      <li>
+        <a href="#usage-within-web-frameworks">Usage within web frameworks</a>
+      </li>
+    </ul>
+    <h2 id="using-navigation-drawers">Using navigation drawers</h2>
+    <p>
+      A navigation drawer provides access to destinations and app functionality,
+      such as switching accounts. It can either be permanently on-screen or
+      controlled by a navigation menu icon.
+    </p>
+    <p>A navigation drawer is recommended for:</p>
+    <ul>
+      <li>Apps with five or more top-level destinations</li>
+      <li>Apps with two or more levels of navigation hierarchy</li>
+      <li>Quick navigation between unrelated destinations</li>
+    </ul>
+    <h3 id="installation">Installation</h3>
+    <pre><code>npm install @material/drawer</code></pre>
+    <h3 id="styles">Styles</h3>
+    <pre class="scss"><code>@use &quot;@material/drawer&quot;;
 @use &quot;@material/list&quot;;
 
 @include drawer.core-styles;
 @include drawer.dismissible-core-styles;
 @include drawer.modal-core-styles;
 @include list.core-styles;</code></pre>
-<h3 id="javascript-instantiation">JavaScript instantiation</h3>
-<p>For permanently visible drawer, the list must be instantiated for appropriate keyboard interaction:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="im">import</span> <span class="op">{</span>MDCList<span class="op">}</span> <span class="im">from</span> <span class="st">&quot;@material/list&quot;</span><span class="op">;</span></a>
+    <h3 id="javascript-instantiation">JavaScript instantiation</h3>
+    <p>
+      For permanently visible drawer, the list must be instantiated for
+      appropriate keyboard interaction:
+    </p>
+    <div class="sourceCode" id="cb3">
+      <pre
+        class="sourceCode js"
+      ><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="im">import</span> <span class="op">{</span>MDCList<span class="op">}</span> <span class="im">from</span> <span class="st">&quot;@material/list&quot;</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb3-2" title="2"><span class="kw">const</span> list <span class="op">=</span> <span class="va">MDCList</span>.<span class="at">attachTo</span>(<span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&#39;.mdc-list&#39;</span>))<span class="op">;</span></a>
-<a class="sourceLine" id="cb3-3" title="3"><span class="va">list</span>.<span class="at">wrapFocus</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></a></code></pre></div>
-<p>Other variants use the <code>MDCDrawer</code> component, which will instantiate <code>MDCList</code> automatically:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="im">import</span> <span class="op">{</span>MDCDrawer<span class="op">}</span> <span class="im">from</span> <span class="st">&quot;@material/drawer&quot;</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb4-2" title="2"><span class="kw">const</span> drawer <span class="op">=</span> <span class="va">MDCDrawer</span>.<span class="at">attachTo</span>(<span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&#39;.mdc-drawer&#39;</span>))<span class="op">;</span></a></code></pre></div>
-<h3 id="icons">Icons</h3>
-<p>We recommend using <a href="https://material.io/tools/icons/">Material Icons</a> from Google Fonts:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">&lt;head&gt;</span></a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="va">list</span>.<span class="at">wrapFocus</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></a></code></pre>
+    </div>
+    <p>
+      Other variants use the <code>MDCDrawer</code> component, which will
+      instantiate <code>MDCList</code> automatically:
+    </p>
+    <div class="sourceCode" id="cb4">
+      <pre
+        class="sourceCode js"
+      ><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="im">import</span> <span class="op">{</span>MDCDrawer<span class="op">}</span> <span class="im">from</span> <span class="st">&quot;@material/drawer&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="kw">const</span> drawer <span class="op">=</span> <span class="va">MDCDrawer</span>.<span class="at">attachTo</span>(<span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&#39;.mdc-drawer&#39;</span>))<span class="op">;</span></a></code></pre>
+    </div>
+    <h3 id="icons">Icons</h3>
+    <p>
+      We recommend using
+      <a href="https://material.io/tools/icons/">Material Icons</a> from Google
+      Fonts:
+    </p>
+    <div class="sourceCode" id="cb5">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">&lt;head&gt;</span></a>
 <a class="sourceLine" id="cb5-2" title="2">  <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href=</span><span class="st">&quot;https://fonts.googleapis.com/icon?family=Material+Icons&quot;</span><span class="kw">&gt;</span></a>
-<a class="sourceLine" id="cb5-3" title="3"><span class="kw">&lt;/head&gt;</span></a></code></pre></div>
-<p>However, you can also use SVG, <a href="https://fontawesome.com/">Font Awesome</a>, or any other icon library you wish.</p>
-<h3 id="making-navigation-drawers-accessible">Making navigation drawers accessible</h3>
-<h3 id="focus-management">Focus management</h3>
-<p>It is recommended to shift focus to the first focusable element in the main content when drawer is closed or one of the destination items is activated. (By default, MDC Drawer restores focus to the menu button which opened it.)</p>
-<h4 id="dismissible-drawer">Dismissible drawer</h4>
-<p>Restore focus to the first focusable element when a list item is activated or after the drawer closes. Do not close the drawer upon item activation, since it should be up to the user when to show/hide the dismissible drawer.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">const</span> listEl <span class="op">=</span> <span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&#39;.mdc-drawer .mdc-list&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="kw">&lt;/head&gt;</span></a></code></pre>
+    </div>
+    <p>
+      However, you can also use SVG,
+      <a href="https://fontawesome.com/">Font Awesome</a>, or any other icon
+      library you wish.
+    </p>
+    <h3 id="making-navigation-drawers-accessible">
+      Making navigation drawers accessible
+    </h3>
+    <h3 id="focus-management">Focus management</h3>
+    <p>
+      It is recommended to shift focus to the first focusable element in the
+      main content when drawer is closed or one of the destination items is
+      activated. (By default, MDC Drawer restores focus to the menu button which
+      opened it.)
+    </p>
+    <h4 id="dismissible-drawer">Dismissible drawer</h4>
+    <p>
+      Restore focus to the first focusable element when a list item is activated
+      or after the drawer closes. Do not close the drawer upon item activation,
+      since it should be up to the user when to show/hide the dismissible
+      drawer.
+    </p>
+    <div class="sourceCode" id="cb6">
+      <pre
+        class="sourceCode js"
+      ><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">const</span> listEl <span class="op">=</span> <span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&#39;.mdc-drawer .mdc-list&#39;</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb6-2" title="2"><span class="kw">const</span> mainContentEl <span class="op">=</span> <span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&#39;.main-content&#39;</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb6-3" title="3"></a>
 <a class="sourceLine" id="cb6-4" title="4"><span class="va">listEl</span>.<span class="at">addEventListener</span>(<span class="st">&#39;click&#39;</span><span class="op">,</span> (event) <span class="kw">=&gt;</span> <span class="op">{</span></a>
@@ -143,10 +320,19 @@ path: /catalog/drawers/
 <a class="sourceLine" id="cb6-7" title="7"></a>
 <a class="sourceLine" id="cb6-8" title="8"><span class="va">document</span>.<span class="va">body</span>.<span class="at">addEventListener</span>(<span class="st">&#39;MDCDrawer:closed&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb6-9" title="9">  <span class="va">mainContentEl</span>.<span class="at">querySelector</span>(<span class="st">&#39;input, button&#39;</span>).<span class="at">focus</span>()<span class="op">;</span></a>
-<a class="sourceLine" id="cb6-10" title="10"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
-<h4 id="modal-drawer">Modal drawer</h4>
-<p>Close the drawer when an item is activated in order to dismiss the modal as soon as the user performs an action. Only restore focus to the first focusable element in the main content after the drawer is closed, since it’s being closed automatically.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">const</span> listEl <span class="op">=</span> <span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&#39;.mdc-drawer .mdc-list&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb6-10" title="10"><span class="op">}</span>)<span class="op">;</span></a></code></pre>
+    </div>
+    <h4 id="modal-drawer">Modal drawer</h4>
+    <p>
+      Close the drawer when an item is activated in order to dismiss the modal
+      as soon as the user performs an action. Only restore focus to the first
+      focusable element in the main content after the drawer is closed, since
+      it’s being closed automatically.
+    </p>
+    <div class="sourceCode" id="cb7">
+      <pre
+        class="sourceCode js"
+      ><code class="sourceCode javascript"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">const</span> listEl <span class="op">=</span> <span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&#39;.mdc-drawer .mdc-list&#39;</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb7-2" title="2"><span class="kw">const</span> mainContentEl <span class="op">=</span> <span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&#39;.main-content&#39;</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb7-3" title="3"></a>
 <a class="sourceLine" id="cb7-4" title="4"><span class="va">listEl</span>.<span class="at">addEventListener</span>(<span class="st">&#39;click&#39;</span><span class="op">,</span> (event) <span class="kw">=&gt;</span> <span class="op">{</span></a>
@@ -155,15 +341,35 @@ path: /catalog/drawers/
 <a class="sourceLine" id="cb7-7" title="7"></a>
 <a class="sourceLine" id="cb7-8" title="8"><span class="va">document</span>.<span class="va">body</span>.<span class="at">addEventListener</span>(<span class="st">&#39;MDCDrawer:closed&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb7-9" title="9">  <span class="va">mainContentEl</span>.<span class="at">querySelector</span>(<span class="st">&#39;input, button&#39;</span>).<span class="at">focus</span>()<span class="op">;</span></a>
-<a class="sourceLine" id="cb7-10" title="10"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
-<h2 id="types">Types</h2>
-<p>There are three types of navigation drawers: <a href="#standard-navigation-drawers">standard (1)</a>, <a href="#modal-navigation-drawers">modal (2)</a>, and <a href="#bottom-navigation-drawers">bottom (3)</a>.</p>
-<figure>
-<img src="images/drawer-composite.png" alt="Standard, modal, and bottom navigation drawers" /><figcaption>Standard, modal, and bottom navigation drawers</figcaption>
-</figure>
-<h3 id="standard-navigation-drawers">Standard navigation drawers</h3>
-<p><a href="https://material.io/components/navigation-drawer#standard-drawer">Standard navigation drawers</a> allow interaction with both screen content and the drawer at the same time. They can be used on tablet and desktop, but they aren’t suitable for mobile due to limited screen size.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">&lt;aside</span><span class="ot"> class=</span><span class="st">&quot;mdc-drawer&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb7-10" title="10"><span class="op">}</span>)<span class="op">;</span></a></code></pre>
+    </div>
+    <h2 id="types">Types</h2>
+    <p>
+      There are three types of navigation drawers:
+      <a href="#standard-navigation-drawers">standard (1)</a>,
+      <a href="#modal-navigation-drawers">modal (2)</a>, and
+      <a href="#bottom-navigation-drawers">bottom (3)</a>.
+    </p>
+    <figure>
+      <img
+        src="images/drawer-composite.png"
+        alt="Standard, modal, and bottom navigation drawers"
+      />
+      <figcaption>Standard, modal, and bottom navigation drawers</figcaption>
+    </figure>
+    <h3 id="standard-navigation-drawers">Standard navigation drawers</h3>
+    <p>
+      <a href="https://material.io/components/navigation-drawer#standard-drawer"
+        >Standard navigation drawers</a
+      >
+      allow interaction with both screen content and the drawer at the same
+      time. They can be used on tablet and desktop, but they aren’t suitable for
+      mobile due to limited screen size.
+    </p>
+    <div class="sourceCode" id="cb8">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">&lt;aside</span><span class="ot"> class=</span><span class="st">&quot;mdc-drawer&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb8-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-drawer__content&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb8-3" title="3">    <span class="kw">&lt;nav</span><span class="ot"> class=</span><span class="st">&quot;mdc-list&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb8-4" title="4">      <span class="kw">&lt;a</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item mdc-list-item--activated&quot;</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="ot"> aria-current=</span><span class="st">&quot;page&quot;</span><span class="kw">&gt;</span></a>
@@ -183,10 +389,21 @@ path: /catalog/drawers/
 <a class="sourceLine" id="cb8-18" title="18">      <span class="kw">&lt;/a&gt;</span></a>
 <a class="sourceLine" id="cb8-19" title="19">    <span class="kw">&lt;/nav&gt;</span></a>
 <a class="sourceLine" id="cb8-20" title="20">  <span class="kw">&lt;/div&gt;</span></a>
-<a class="sourceLine" id="cb8-21" title="21"><span class="kw">&lt;/aside&gt;</span></a></code></pre></div>
-<h3 id="modal-navigation-drawers">Modal navigation drawers</h3>
-<p><a href="https://material.io/components/navigation-drawer#modal-drawer">Modal navigation drawers</a> block interaction with the rest of an app’s content with a scrim. They are elevated above most of the app’s UI and don’t affect the screen’s layout grid.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">&lt;body&gt;</span></a>
+<a class="sourceLine" id="cb8-21" title="21"><span class="kw">&lt;/aside&gt;</span></a></code></pre>
+    </div>
+    <h3 id="modal-navigation-drawers">Modal navigation drawers</h3>
+    <p>
+      <a href="https://material.io/components/navigation-drawer#modal-drawer"
+        >Modal navigation drawers</a
+      >
+      block interaction with the rest of an app’s content with a scrim. They are
+      elevated above most of the app’s UI and don’t affect the screen’s layout
+      grid.
+    </p>
+    <div class="sourceCode" id="cb9">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">&lt;body&gt;</span></a>
 <a class="sourceLine" id="cb9-2" title="2">  <span class="kw">&lt;aside</span><span class="ot"> class=</span><span class="st">&quot;mdc-drawer mdc-drawer--modal&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb9-3" title="3">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-drawer__content&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb9-4" title="4">      <span class="kw">&lt;nav</span><span class="ot"> class=</span><span class="st">&quot;mdc-list&quot;</span><span class="kw">&gt;</span></a>
@@ -211,14 +428,32 @@ path: /catalog/drawers/
 <a class="sourceLine" id="cb9-23" title="23"></a>
 <a class="sourceLine" id="cb9-24" title="24">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-drawer-scrim&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
 <a class="sourceLine" id="cb9-25" title="25">  <span class="kw">&lt;div&gt;</span>Main Content<span class="kw">&lt;/div&gt;</span></a>
-<a class="sourceLine" id="cb9-26" title="26"><span class="kw">&lt;/body&gt;</span></a></code></pre></div>
-<p><strong>Note: The <code>mdc-drawer-scrim</code> next sibling element is required, to protect the app’s UI from interactions while the modal drawer is open.</strong></p>
-<h3 id="bottom-navigation-drawers">Bottom navigation drawers</h3>
-<p><a href="https://material.io/components/navigation-drawer#bottom-drawer">Bottom navigation drawers</a> are modal drawers that are anchored to the bottom of the screen instead of the left or right edge. They are only used with bottom app bars.</p>
-<p>MDC Web does not currently support bottom navigation drawers.</p>
-<h2 id="other-variants">Other variants</h2>
-<h3 id="drawer-with-separate-list-groups">Drawer with separate list groups</h3>
-<div class="sourceCode" id="cb10"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">&lt;aside</span><span class="ot"> class=</span><span class="st">&quot;mdc-drawer&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb9-26" title="26"><span class="kw">&lt;/body&gt;</span></a></code></pre>
+    </div>
+    <p>
+      <strong
+        >Note: The <code>mdc-drawer-scrim</code> next sibling element is
+        required, to protect the app’s UI from interactions while the modal
+        drawer is open.</strong
+      >
+    </p>
+    <h3 id="bottom-navigation-drawers">Bottom navigation drawers</h3>
+    <p>
+      <a href="https://material.io/components/navigation-drawer#bottom-drawer"
+        >Bottom navigation drawers</a
+      >
+      are modal drawers that are anchored to the bottom of the screen instead of
+      the left or right edge. They are only used with bottom app bars.
+    </p>
+    <p>MDC Web does not currently support bottom navigation drawers.</p>
+    <h2 id="other-variants">Other variants</h2>
+    <h3 id="drawer-with-separate-list-groups">
+      Drawer with separate list groups
+    </h3>
+    <div class="sourceCode" id="cb10">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">&lt;aside</span><span class="ot"> class=</span><span class="st">&quot;mdc-drawer&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb10-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-drawer__content&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb10-3" title="3">    <span class="kw">&lt;nav</span><span class="ot"> class=</span><span class="st">&quot;mdc-list&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb10-4" title="4">      <span class="kw">&lt;a</span><span class="ot"> class=</span><span class="st">&quot;mdc-list-item mdc-list-item--activated&quot;</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="ot"> aria-current=</span><span class="st">&quot;page&quot;</span><span class="kw">&gt;</span></a>
@@ -261,10 +496,18 @@ path: /catalog/drawers/
 <a class="sourceLine" id="cb10-41" title="41">      <span class="kw">&lt;/a&gt;</span></a>
 <a class="sourceLine" id="cb10-42" title="42">    <span class="kw">&lt;/nav&gt;</span></a>
 <a class="sourceLine" id="cb10-43" title="43">  <span class="kw">&lt;/div&gt;</span></a>
-<a class="sourceLine" id="cb10-44" title="44"><span class="kw">&lt;/aside&gt;</span></a></code></pre></div>
-<h3 id="drawer-with-header">Drawer with header</h3>
-<p>Drawers can contain a header element which will not scroll with the rest of the drawer content. Things like account switchers and titles should live in the header element.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">&lt;aside</span><span class="ot"> class=</span><span class="st">&quot;mdc-drawer&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb10-44" title="44"><span class="kw">&lt;/aside&gt;</span></a></code></pre>
+    </div>
+    <h3 id="drawer-with-header">Drawer with header</h3>
+    <p>
+      Drawers can contain a header element which will not scroll with the rest
+      of the drawer content. Things like account switchers and titles should
+      live in the header element.
+    </p>
+    <div class="sourceCode" id="cb11">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">&lt;aside</span><span class="ot"> class=</span><span class="st">&quot;mdc-drawer&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb11-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-drawer__header&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb11-3" title="3">    <span class="kw">&lt;h3</span><span class="ot"> class=</span><span class="st">&quot;mdc-drawer__title&quot;</span><span class="kw">&gt;</span>Mail<span class="kw">&lt;/h3&gt;</span></a>
 <a class="sourceLine" id="cb11-4" title="4">    <span class="kw">&lt;h6</span><span class="ot"> class=</span><span class="st">&quot;mdc-drawer__subtitle&quot;</span><span class="kw">&gt;</span>email@material.io<span class="kw">&lt;/h6&gt;</span></a>
@@ -288,10 +531,18 @@ path: /catalog/drawers/
 <a class="sourceLine" id="cb11-22" title="22">      <span class="kw">&lt;/a&gt;</span></a>
 <a class="sourceLine" id="cb11-23" title="23">    <span class="kw">&lt;/nav&gt;</span></a>
 <a class="sourceLine" id="cb11-24" title="24">  <span class="kw">&lt;/div&gt;</span></a>
-<a class="sourceLine" id="cb11-25" title="25"><span class="kw">&lt;/aside&gt;</span></a></code></pre></div>
-<h3 id="dismissible-drawer-1">Dismissible drawer</h3>
-<p>Dismissible drawers are by default hidden off screen, and can slide into view. Dismissible drawers should be used when navigation is not common, and the main app content is prioritized.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb12-1" title="1"><span class="kw">&lt;body&gt;</span></a>
+<a class="sourceLine" id="cb11-25" title="25"><span class="kw">&lt;/aside&gt;</span></a></code></pre>
+    </div>
+    <h3 id="dismissible-drawer-1">Dismissible drawer</h3>
+    <p>
+      Dismissible drawers are by default hidden off screen, and can slide into
+      view. Dismissible drawers should be used when navigation is not common,
+      and the main app content is prioritized.
+    </p>
+    <div class="sourceCode" id="cb12">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb12-1" title="1"><span class="kw">&lt;body&gt;</span></a>
 <a class="sourceLine" id="cb12-2" title="2">  <span class="kw">&lt;aside</span><span class="ot"> class=</span><span class="st">&quot;mdc-drawer mdc-drawer--dismissible&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb12-3" title="3">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-drawer__content&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb12-4" title="4">      <span class="kw">&lt;nav</span><span class="ot"> class=</span><span class="st">&quot;mdc-list&quot;</span><span class="kw">&gt;</span></a>
@@ -317,13 +568,35 @@ path: /catalog/drawers/
 <a class="sourceLine" id="cb12-24" title="24">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-drawer-app-content&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb12-25" title="25">    App Content</a>
 <a class="sourceLine" id="cb12-26" title="26">  <span class="kw">&lt;/div&gt;</span></a>
-<a class="sourceLine" id="cb12-27" title="27"><span class="kw">&lt;/body&gt;</span></a></code></pre></div>
-<p><strong>Note: Apply the <code>mdc-drawer-app-content</code> class to the sibling element after the drawer for the open/close animations to work.</strong></p>
-<h4 id="usage-with-top-app-bar">Usage with top app bar</h4>
-<h5 id="dismissible-drawer-full-height-drawer">Dismissible drawer: full height drawer</h5>
-<p>In cases where the drawer occupies the full viewport height, some styles must be applied to get the dismissible drawer and the content below the top app bar to independently scroll and work in all browsers.</p>
-<p>In the following example, the <code>mdc-drawer__content</code> and <code>main-content</code> elements should scroll independently of each other. The <code>mdc-drawer--dismissible</code> and <code>mdc-drawer-app-content</code> elements should then sit side-by-side. The markup looks something like this:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb13-1" title="1"><span class="kw">&lt;body&gt;</span></a>
+<a class="sourceLine" id="cb12-27" title="27"><span class="kw">&lt;/body&gt;</span></a></code></pre>
+    </div>
+    <p>
+      <strong
+        >Note: Apply the <code>mdc-drawer-app-content</code> class to the
+        sibling element after the drawer for the open/close animations to
+        work.</strong
+      >
+    </p>
+    <h4 id="usage-with-top-app-bar">Usage with top app bar</h4>
+    <h5 id="dismissible-drawer-full-height-drawer">
+      Dismissible drawer: full height drawer
+    </h5>
+    <p>
+      In cases where the drawer occupies the full viewport height, some styles
+      must be applied to get the dismissible drawer and the content below the
+      top app bar to independently scroll and work in all browsers.
+    </p>
+    <p>
+      In the following example, the <code>mdc-drawer__content</code> and
+      <code>main-content</code> elements should scroll independently of each
+      other. The <code>mdc-drawer--dismissible</code> and
+      <code>mdc-drawer-app-content</code> elements should then sit side-by-side.
+      The markup looks something like this:
+    </p>
+    <div class="sourceCode" id="cb13">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb13-1" title="1"><span class="kw">&lt;body&gt;</span></a>
 <a class="sourceLine" id="cb13-2" title="2">  <span class="kw">&lt;aside</span><span class="ot"> class=</span><span class="st">&quot;mdc-drawer mdc-drawer--dismissible&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb13-3" title="3">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-drawer__content&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb13-4" title="4">      <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-list&quot;</span><span class="kw">&gt;</span></a>
@@ -362,10 +635,25 @@ path: /catalog/drawers/
 <a class="sourceLine" id="cb13-37" title="37">      <span class="kw">&lt;/div&gt;</span></a>
 <a class="sourceLine" id="cb13-38" title="38">    <span class="kw">&lt;/main&gt;</span></a>
 <a class="sourceLine" id="cb13-39" title="39">  <span class="kw">&lt;/div&gt;</span></a>
-<a class="sourceLine" id="cb13-40" title="40"><span class="kw">&lt;/body&gt;</span></a></code></pre></div>
-<h5 id="dismissible-drawer-below-top-app-bar">Dismissible drawer: below top app bar</h5>
-<p>In cases where the drawer appears below the top app bar you will want to follow the markup shown below. The <code>mdc-drawer__content</code> and <code>main-content</code> elements will also scroll independently of each other. The <code>mdc-top-app-bar</code>, <code>mdc-drawer</code> and <code>mdc-drawer-app-content</code> will be sibling to each other. The <code>mdc-top-app-bar--fixed-adjust</code> helper class will be applied to <code>mdc-drawer</code> and <code>mdc-drawer-app-content</code> elements to adjust the position with top app bar.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">&lt;body&gt;</span></a>
+<a class="sourceLine" id="cb13-40" title="40"><span class="kw">&lt;/body&gt;</span></a></code></pre>
+    </div>
+    <h5 id="dismissible-drawer-below-top-app-bar">
+      Dismissible drawer: below top app bar
+    </h5>
+    <p>
+      In cases where the drawer appears below the top app bar you will want to
+      follow the markup shown below. The <code>mdc-drawer__content</code> and
+      <code>main-content</code> elements will also scroll independently of each
+      other. The <code>mdc-top-app-bar</code>, <code>mdc-drawer</code> and
+      <code>mdc-drawer-app-content</code> will be sibling to each other. The
+      <code>mdc-top-app-bar--fixed-adjust</code> helper class will be applied to
+      <code>mdc-drawer</code> and <code>mdc-drawer-app-content</code> elements
+      to adjust the position with top app bar.
+    </p>
+    <div class="sourceCode" id="cb14">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">&lt;body&gt;</span></a>
 <a class="sourceLine" id="cb14-2" title="2">  <span class="kw">&lt;header</span><span class="ot"> class=</span><span class="st">&quot;mdc-top-app-bar app-bar&quot;</span><span class="ot"> id=</span><span class="st">&quot;app-bar&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb14-3" title="3">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-top-app-bar__row&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb14-4" title="4">      <span class="kw">&lt;section</span><span class="ot"> class=</span><span class="st">&quot;mdc-top-app-bar__section mdc-top-app-bar__section--align-start&quot;</span><span class="kw">&gt;</span></a>
@@ -401,9 +689,12 @@ path: /catalog/drawers/
 <a class="sourceLine" id="cb14-34" title="34">      App Content</a>
 <a class="sourceLine" id="cb14-35" title="35">    <span class="kw">&lt;/main&gt;</span></a>
 <a class="sourceLine" id="cb14-36" title="36">  <span class="kw">&lt;/div&gt;</span></a>
-<a class="sourceLine" id="cb14-37" title="37"><span class="kw">&lt;/body&gt;</span></a></code></pre></div>
-<p>The CSS to match either case looks like this:</p>
-<pre class="scss"><code>// Note: These styles do not account for any paddings/margins that you may need.
+<a class="sourceLine" id="cb14-37" title="37"><span class="kw">&lt;/body&gt;</span></a></code></pre>
+    </div>
+    <p>The CSS to match either case looks like this:</p>
+    <pre
+      class="scss"
+    ><code>// Note: These styles do not account for any paddings/margins that you may need.
 
 body {
   display: flex;
@@ -429,375 +720,483 @@ body {
 .mdc-top-app-bar {
   z-index: 7;
 }</code></pre>
-<p>The JavaScript to toggle the drawer when the navigation button is clicked looks like this:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb16-1" title="1"><span class="im">import</span> <span class="op">{</span>MDCTopAppBar<span class="op">}</span> <span class="im">from</span> <span class="st">&quot;@material/top-app-bar&quot;</span><span class="op">;</span></a>
+    <p>
+      The JavaScript to toggle the drawer when the navigation button is clicked
+      looks like this:
+    </p>
+    <div class="sourceCode" id="cb16">
+      <pre
+        class="sourceCode js"
+      ><code class="sourceCode javascript"><a class="sourceLine" id="cb16-1" title="1"><span class="im">import</span> <span class="op">{</span>MDCTopAppBar<span class="op">}</span> <span class="im">from</span> <span class="st">&quot;@material/top-app-bar&quot;</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb16-2" title="2"><span class="kw">const</span> topAppBar <span class="op">=</span> <span class="va">MDCTopAppBar</span>.<span class="at">attachTo</span>(<span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&#39;app-bar&#39;</span>))<span class="op">;</span></a>
 <a class="sourceLine" id="cb16-3" title="3"><span class="va">topAppBar</span>.<span class="at">setScrollTarget</span>(<span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&#39;main-content&#39;</span>))<span class="op">;</span></a>
 <a class="sourceLine" id="cb16-4" title="4"><span class="va">topAppBar</span>.<span class="at">listen</span>(<span class="st">&#39;MDCTopAppBar:nav&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb16-5" title="5">  <span class="va">drawer</span>.<span class="at">open</span> <span class="op">=</span> <span class="op">!</span><span class="va">drawer</span>.<span class="at">open</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb16-6" title="6"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
-<h2 id="api">API</h2>
-<h3 id="css-classes">CSS classes</h3>
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Class</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>mdc-drawer</code></td>
-<td>Mandatory.</td>
-</tr>
-<tr class="even">
-<td><code>mdc-drawer__header</code></td>
-<td>Non-scrollable element that exists at the top of the drawer.</td>
-</tr>
-<tr class="odd">
-<td><code>mdc-drawer__content</code></td>
-<td>Scrollable content area of the drawer.</td>
-</tr>
-<tr class="even">
-<td><code>mdc-drawer__title</code></td>
-<td>Title text element of the drawer.</td>
-</tr>
-<tr class="odd">
-<td><code>mdc-drawer__subtitle</code></td>
-<td>Subtitle text element of the drawer.</td>
-</tr>
-<tr class="even">
-<td><code>mdc-drawer--dismissible</code></td>
-<td>Dismissible drawer variant class.</td>
-</tr>
-<tr class="odd">
-<td><code>mdc-drawer--modal</code></td>
-<td>Modal drawer variant class.</td>
-</tr>
-<tr class="even">
-<td><code>mdc-drawer--open</code></td>
-<td>If present, indicates that the dismissible drawer is in the open position.</td>
-</tr>
-<tr class="odd">
-<td><code>mdc-drawer--opening</code></td>
-<td>Applied while the drawer is animating from the closed to the open position.</td>
-</tr>
-<tr class="even">
-<td><code>mdc-drawer--closing</code></td>
-<td>Applied while the drawer is animating from the open to the closed position.</td>
-</tr>
-<tr class="odd">
-<td><code>mdc-drawer-app-content</code></td>
-<td>Mandatory for dismissible variant only. Sibling element that is resized when the drawer opens/closes.</td>
-</tr>
-<tr class="even">
-<td><code>mdc-drawer-scrim</code></td>
-<td>Mandatory for modal variant only. Used for the overlay on the app content.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="sass-mixins">Sass mixins</h3>
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Mixin</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>border-color($color)</code></td>
-<td>Sets border color of <code>mdc-drawer</code> surface.</td>
-</tr>
-<tr class="even">
-<td><code>divider-color($color)</code></td>
-<td>Sets divider color found between list groups.</td>
-</tr>
-<tr class="odd">
-<td><code>fill-color-accessible($color)</code></td>
-<td>Sets the fill color to <code>$color</code>, and list item and icon ink colors to an accessible color relative to <code>$color</code>.</td>
-</tr>
-<tr class="even">
-<td><code>surface-fill-color($color)</code></td>
-<td>Sets the background color of <code>mdc-drawer</code>.</td>
-</tr>
-<tr class="odd">
-<td><code>title-ink-color($color)</code></td>
-<td>Sets the ink color of <code>mdc-drawer__title</code>.</td>
-</tr>
-<tr class="even">
-<td><code>subtitle-ink-color</code></td>
-<td>Sets drawer subtitle and list subheader ink color.</td>
-</tr>
-<tr class="odd">
-<td><code>item-icon-ink-color($color)</code></td>
-<td>Sets drawer list item graphic icon ink color.</td>
-</tr>
-<tr class="even">
-<td><code>item-text-ink-color($color)</code></td>
-<td>Sets drawer list item text ink color.</td>
-</tr>
-<tr class="odd">
-<td><code>item-activated-icon-ink-color($color)</code></td>
-<td>Sets activated drawer list item icon ink color.</td>
-</tr>
-<tr class="even">
-<td><code>item-activated-text-ink-color($color)</code></td>
-<td>Sets activated drawer list item text ink color.</td>
-</tr>
-<tr class="odd">
-<td><code>shape-radius($radius)</code></td>
-<td>Sets the rounded shape to drawer with given radius size. <code>$radius</code> can be single radius or list of 2 radius values for trailing-top and trailing-bottom. Automatically flips the radius values in RTL context.</td>
-</tr>
-<tr class="even">
-<td><code>item-shape-radius($radius, $rtl-reflexive)</code></td>
-<td>Sets the rounded shape to drawer navigation item with given radius size. Set <code>$rtl-reflexive</code> to true to flip radius values in RTL context, defaults to true.</td>
-</tr>
-<tr class="odd">
-<td><code>activated-overlay-color($color)</code></td>
-<td>Sets the overlay color of the activated drawer list item.</td>
-</tr>
-<tr class="even">
-<td><code>scrim-fill-color($color)</code></td>
-<td>Sets the fill color of <code>mdc-drawer-scrim</code>.</td>
-</tr>
-<tr class="odd">
-<td><code>z-index($value)</code></td>
-<td>Sets the z index of drawer. Drawer stays on top of top app bar except for clipped variant of drawer.</td>
-</tr>
-<tr class="even">
-<td><code>width($width)</code></td>
-<td>Sets the width of the drawer. In the case of the dismissible variant, also sets margin required for <code>mdc-drawer-app-content</code>.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="mdcdrawer"><code>MDCDrawer</code></h3>
-<h4 id="methods">Methods</h4>
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Signature</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>emit(evtType: string, evtData: T, shouldBubble?: boolean) =&gt; void</code></td>
-<td>Fires a cross-browser-compatible custom event from the component root of the given type, with the given data.</td>
-</tr>
-<tr class="even">
-<td><code>listen(evtType: K, handler: SpecificEventListener&lt;K&gt;, options?: AddEventListenerOptions \| boolean) =&gt; void</code></td>
-<td>Wrapper method to add an event listener to the component’s root element. This is most useful when listening for custom events.</td>
-</tr>
-<tr class="odd">
-<td><code>unlisten(evtType: K, handler: SpecificEventListener&lt;K&gt;, options?: AddEventListenerOptions \| boolean) =&gt; void</code></td>
-<td>Wrapper method to remove an event listener to the component’s root element. This is most useful when unlistening for custom events.</td>
-</tr>
-</tbody>
-</table>
-<h4 id="properties">Properties</h4>
-<table>
-<thead>
-<tr class="header">
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>open</td>
-<td><code>boolean</code></td>
-<td>Toggles the drawer open and closed.</td>
-</tr>
-</tbody>
-</table>
-<h4 id="events">Events</h4>
-<ul>
-<li><code>MDCDrawer:closed {}</code> Emits when the navigation drawer has closed.</li>
-<li><code>MDCDrawer:opened {}</code> Emits when the navigation drawer has opened.</li>
-</ul>
-<h2 id="usage-within-web-frameworks">Usage within web frameworks</h2>
-<p>If you are using a JavaScript framework, such as React or Angular, you can create this component for your framework. Depending on your needs, you can use the <em>Simple Approach: Wrapping MDC Web Vanilla Components</em>, or the <em>Advanced Approach: Using Foundations and Adapters</em>. Please follow the instructions <a href="../../docs/integrating-into-frameworks.md">here</a>.</p>
-<h3 id="mdcdraweradapter"><code>MDCDrawerAdapter</code></h3>
-<h4 id="methods-1">Methods</h4>
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Signature</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>notifyOpen() =&gt; void</code></td>
-<td>Emits a custom event “MDCDrawer:opened” denoting the drawer has opened.</td>
-</tr>
-<tr class="even">
-<td><code>addClass(className: string) =&gt; void</code></td>
-<td>Adds a class to the root Element.</td>
-</tr>
-<tr class="odd">
-<td><code>focusActiveNavigationItem() =&gt; void</code></td>
-<td>Focuses the active / selected navigation item.</td>
-</tr>
-<tr class="even">
-<td><code>hasClass(className: string) =&gt; boolean</code></td>
-<td>Returns true if the root Element contains the given class.</td>
-</tr>
-<tr class="odd">
-<td><code>notifyClose() =&gt; void</code></td>
-<td>Emits a custom event “MDCDrawer:closed” denoting the drawer has closed.</td>
-</tr>
-<tr class="even">
-<td><code>elementHasClass(element: Element, className: string) =&gt; boolean</code></td>
-<td>Returns true if the element contains the given class.</td>
-</tr>
-<tr class="odd">
-<td><code>releaseFocus() =&gt; void</code></td>
-<td>Releases focus trap from root element which was set by <code>trapFocus</code> and restores focus to where it was prior to calling <code>trapFocus</code>.</td>
-</tr>
-<tr class="even">
-<td><code>removeClass(className: string) =&gt; void</code></td>
-<td>Removes a class from the root Element.</td>
-</tr>
-<tr class="odd">
-<td><code>restoreFocus() =&gt; void</code></td>
-<td>Restores focus to element previously saved with ‘saveFocus’.</td>
-</tr>
-<tr class="even">
-<td><code>saveFocus() =&gt; void</code></td>
-<td>Saves the focus of currently active element.</td>
-</tr>
-<tr class="odd">
-<td><code>trapFocus() =&gt; void</code></td>
-<td>Traps focus on root element and focuses the active navigation element.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="mdcdismissibledrawerfoundation"><code>MDCDismissibleDrawerFoundation</code></h3>
-<h4 id="methods-2">Methods</h4>
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Signature</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>close() =&gt; void</code></td>
-<td>Closes the drawer from the open state.</td>
-</tr>
-<tr class="even">
-<td><code>handleKeydown(evt: KeyboardEvent) =&gt; void</code></td>
-<td>Keydown handler to close drawer when key is escape.</td>
-</tr>
-<tr class="odd">
-<td><code>handleTransitionEnd(evt: TransitionEvent) =&gt; void</code></td>
-<td>Handles the <code>transitionend</code> event when the drawer finishes opening/closing.</td>
-</tr>
-<tr class="even">
-<td><code>closed_() =&gt; void</code></td>
-<td>Extension point for when drawer finishes close animation.</td>
-</tr>
-<tr class="odd">
-<td><code>isClosing() =&gt; boolean</code></td>
-<td>Returns true if the drawer is animating closed.</td>
-</tr>
-<tr class="even">
-<td><code>isOpen() =&gt; boolean</code></td>
-<td>Returns true if the drawer is in the open position.</td>
-</tr>
-<tr class="odd">
-<td><code>isOpening() =&gt; boolean</code></td>
-<td>Returns true if the drawer is animating open.</td>
-</tr>
-<tr class="even">
-<td><code>open() =&gt; void</code></td>
-<td>Opens the drawer from the closed state.</td>
-</tr>
-<tr class="odd">
-<td><code>opened_() =&gt; void</code></td>
-<td>Extension point for when drawer finishes open animation.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="mdcmodaldrawerfoundation"><code>MDCModalDrawerFoundation</code></h3>
-<h4 id="methods-3">Methods</h4>
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Signature</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>close() =&gt; void</code></td>
-<td>Closes the drawer from the open state.</td>
-</tr>
-<tr class="even">
-<td><code>handleKeydown(evt: KeyboardEvent) =&gt; void</code></td>
-<td>Keydown handler to close drawer when key is escape.</td>
-</tr>
-<tr class="odd">
-<td><code>handleScrimClick() =&gt; void</code></td>
-<td>Handles click event on scrim.</td>
-</tr>
-<tr class="even">
-<td><code>handleTransitionEnd(evt: TransitionEvent) =&gt; void</code></td>
-<td>Handles the <code>transitionend</code> event when the drawer finishes opening/closing.</td>
-</tr>
-<tr class="odd">
-<td><code>closed_() =&gt; void</code></td>
-<td>Called when drawer finishes close animation.</td>
-</tr>
-<tr class="even">
-<td><code>isClosing() =&gt; boolean</code></td>
-<td>Returns true if the drawer is animating closed.</td>
-</tr>
-<tr class="odd">
-<td><code>isOpen() =&gt; boolean</code></td>
-<td>Returns true if the drawer is in the open position.</td>
-</tr>
-<tr class="even">
-<td><code>isOpening() =&gt; boolean</code></td>
-<td>Returns true if the drawer is animating open.</td>
-</tr>
-<tr class="odd">
-<td><code>open() =&gt; void</code></td>
-<td>Opens the drawer from the closed state.</td>
-</tr>
-<tr class="even">
-<td><code>opened_() =&gt; void</code></td>
-<td>Called when drawer finishes open animation.</td>
-</tr>
-</tbody>
-</table>
-</body>
+<a class="sourceLine" id="cb16-6" title="6"><span class="op">}</span>)<span class="op">;</span></a></code></pre>
+    </div>
+    <h2 id="api">API</h2>
+    <h3 id="css-classes">CSS classes</h3>
+    <table>
+      <colgroup>
+        <col style="width: 50%" />
+        <col style="width: 50%" />
+      </colgroup>
+      <thead>
+        <tr class="header">
+          <th>Class</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="odd">
+          <td><code>mdc-drawer</code></td>
+          <td>Mandatory.</td>
+        </tr>
+        <tr class="even">
+          <td><code>mdc-drawer__header</code></td>
+          <td>Non-scrollable element that exists at the top of the drawer.</td>
+        </tr>
+        <tr class="odd">
+          <td><code>mdc-drawer__content</code></td>
+          <td>Scrollable content area of the drawer.</td>
+        </tr>
+        <tr class="even">
+          <td><code>mdc-drawer__title</code></td>
+          <td>Title text element of the drawer.</td>
+        </tr>
+        <tr class="odd">
+          <td><code>mdc-drawer__subtitle</code></td>
+          <td>Subtitle text element of the drawer.</td>
+        </tr>
+        <tr class="even">
+          <td><code>mdc-drawer--dismissible</code></td>
+          <td>Dismissible drawer variant class.</td>
+        </tr>
+        <tr class="odd">
+          <td><code>mdc-drawer--modal</code></td>
+          <td>Modal drawer variant class.</td>
+        </tr>
+        <tr class="even">
+          <td><code>mdc-drawer--open</code></td>
+          <td>
+            If present, indicates that the dismissible drawer is in the open
+            position.
+          </td>
+        </tr>
+        <tr class="odd">
+          <td><code>mdc-drawer--opening</code></td>
+          <td>
+            Applied while the drawer is animating from the closed to the open
+            position.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>mdc-drawer--closing</code></td>
+          <td>
+            Applied while the drawer is animating from the open to the closed
+            position.
+          </td>
+        </tr>
+        <tr class="odd">
+          <td><code>mdc-drawer-app-content</code></td>
+          <td>
+            Mandatory for dismissible variant only. Sibling element that is
+            resized when the drawer opens/closes.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>mdc-drawer-scrim</code></td>
+          <td>
+            Mandatory for modal variant only. Used for the overlay on the app
+            content.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h3 id="sass-mixins">Sass mixins</h3>
+    <table>
+      <colgroup>
+        <col style="width: 50%" />
+        <col style="width: 50%" />
+      </colgroup>
+      <thead>
+        <tr class="header">
+          <th>Mixin</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="odd">
+          <td><code>border-color($color)</code></td>
+          <td>Sets border color of <code>mdc-drawer</code> surface.</td>
+        </tr>
+        <tr class="even">
+          <td><code>divider-color($color)</code></td>
+          <td>Sets divider color found between list groups.</td>
+        </tr>
+        <tr class="odd">
+          <td><code>fill-color-accessible($color)</code></td>
+          <td>
+            Sets the fill color to <code>$color</code>, and list item and icon
+            ink colors to an accessible color relative to <code>$color</code>.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>surface-fill-color($color)</code></td>
+          <td>Sets the background color of <code>mdc-drawer</code>.</td>
+        </tr>
+        <tr class="odd">
+          <td><code>title-ink-color($color)</code></td>
+          <td>Sets the ink color of <code>mdc-drawer__title</code>.</td>
+        </tr>
+        <tr class="even">
+          <td><code>subtitle-ink-color</code></td>
+          <td>Sets drawer subtitle and list subheader ink color.</td>
+        </tr>
+        <tr class="odd">
+          <td><code>item-icon-ink-color($color)</code></td>
+          <td>Sets drawer list item graphic icon ink color.</td>
+        </tr>
+        <tr class="even">
+          <td><code>item-text-ink-color($color)</code></td>
+          <td>Sets drawer list item text ink color.</td>
+        </tr>
+        <tr class="odd">
+          <td><code>item-activated-icon-ink-color($color)</code></td>
+          <td>Sets activated drawer list item icon ink color.</td>
+        </tr>
+        <tr class="even">
+          <td><code>item-activated-text-ink-color($color)</code></td>
+          <td>Sets activated drawer list item text ink color.</td>
+        </tr>
+        <tr class="odd">
+          <td><code>shape-radius($radius)</code></td>
+          <td>
+            Sets the rounded shape to drawer with given radius size.
+            <code>$radius</code> can be single radius or list of 2 radius values
+            for trailing-top and trailing-bottom. Automatically flips the radius
+            values in RTL context.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>item-shape-radius($radius, $rtl-reflexive)</code></td>
+          <td>
+            Sets the rounded shape to drawer navigation item with given radius
+            size. Set <code>$rtl-reflexive</code> to true to flip radius values
+            in RTL context, defaults to true.
+          </td>
+        </tr>
+        <tr class="odd">
+          <td><code>activated-overlay-color($color)</code></td>
+          <td>Sets the overlay color of the activated drawer list item.</td>
+        </tr>
+        <tr class="even">
+          <td><code>scrim-fill-color($color)</code></td>
+          <td>Sets the fill color of <code>mdc-drawer-scrim</code>.</td>
+        </tr>
+        <tr class="odd">
+          <td><code>z-index($value)</code></td>
+          <td>
+            Sets the z index of drawer. Drawer stays on top of top app bar
+            except for clipped variant of drawer.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>width($width)</code></td>
+          <td>
+            Sets the width of the drawer. In the case of the dismissible
+            variant, also sets margin required for
+            <code>mdc-drawer-app-content</code>.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h3 id="mdcdrawer"><code>MDCDrawer</code></h3>
+    <h4 id="methods">Methods</h4>
+    <table>
+      <colgroup>
+        <col style="width: 50%" />
+        <col style="width: 50%" />
+      </colgroup>
+      <thead>
+        <tr class="header">
+          <th>Signature</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="odd">
+          <td>
+            <code
+              >emit(evtType: string, evtData: T, shouldBubble?: boolean) =&gt;
+              void</code
+            >
+          </td>
+          <td>
+            Fires a cross-browser-compatible custom event from the component
+            root of the given type, with the given data.
+          </td>
+        </tr>
+        <tr class="even">
+          <td>
+            <code
+              >listen(evtType: K, handler: SpecificEventListener&lt;K&gt;,
+              options?: AddEventListenerOptions \| boolean) =&gt; void</code
+            >
+          </td>
+          <td>
+            Wrapper method to add an event listener to the component’s root
+            element. This is most useful when listening for custom events.
+          </td>
+        </tr>
+        <tr class="odd">
+          <td>
+            <code
+              >unlisten(evtType: K, handler: SpecificEventListener&lt;K&gt;,
+              options?: AddEventListenerOptions \| boolean) =&gt; void</code
+            >
+          </td>
+          <td>
+            Wrapper method to remove an event listener to the component’s root
+            element. This is most useful when unlistening for custom events.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h4 id="properties">Properties</h4>
+    <table>
+      <thead>
+        <tr class="header">
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="odd">
+          <td>open</td>
+          <td><code>boolean</code></td>
+          <td>Toggles the drawer open and closed.</td>
+        </tr>
+      </tbody>
+    </table>
+    <h4 id="events">Events</h4>
+    <ul>
+      <li>
+        <code>MDCDrawer:closed {}</code> Emits when the navigation drawer has
+        closed.
+      </li>
+      <li>
+        <code>MDCDrawer:opened {}</code> Emits when the navigation drawer has
+        opened.
+      </li>
+    </ul>
+    <h2 id="usage-within-web-frameworks">Usage within web frameworks</h2>
+    <p>
+      If you are using a JavaScript framework, such as React or Angular, you can
+      create this component for your framework. Depending on your needs, you can
+      use the <em>Simple Approach: Wrapping MDC Web Vanilla Components</em>, or
+      the <em>Advanced Approach: Using Foundations and Adapters</em>. Please
+      follow the instructions
+      <a href="../../docs/integrating-into-frameworks.md">here</a>.
+    </p>
+    <h3 id="mdcdraweradapter"><code>MDCDrawerAdapter</code></h3>
+    <h4 id="methods-1">Methods</h4>
+    <table>
+      <colgroup>
+        <col style="width: 50%" />
+        <col style="width: 50%" />
+      </colgroup>
+      <thead>
+        <tr class="header">
+          <th>Signature</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="odd">
+          <td><code>notifyOpen() =&gt; void</code></td>
+          <td>
+            Emits a custom event “MDCDrawer:opened” denoting the drawer has
+            opened.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>addClass(className: string) =&gt; void</code></td>
+          <td>Adds a class to the root Element.</td>
+        </tr>
+        <tr class="odd">
+          <td><code>focusActiveNavigationItem() =&gt; void</code></td>
+          <td>Focuses the active / selected navigation item.</td>
+        </tr>
+        <tr class="even">
+          <td><code>hasClass(className: string) =&gt; boolean</code></td>
+          <td>Returns true if the root Element contains the given class.</td>
+        </tr>
+        <tr class="odd">
+          <td><code>notifyClose() =&gt; void</code></td>
+          <td>
+            Emits a custom event “MDCDrawer:closed” denoting the drawer has
+            closed.
+          </td>
+        </tr>
+        <tr class="even">
+          <td>
+            <code
+              >elementHasClass(element: Element, className: string) =&gt;
+              boolean</code
+            >
+          </td>
+          <td>Returns true if the element contains the given class.</td>
+        </tr>
+        <tr class="odd">
+          <td><code>releaseFocus() =&gt; void</code></td>
+          <td>
+            Releases focus trap from root element which was set by
+            <code>trapFocus</code> and restores focus to where it was prior to
+            calling <code>trapFocus</code>.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>removeClass(className: string) =&gt; void</code></td>
+          <td>Removes a class from the root Element.</td>
+        </tr>
+        <tr class="odd">
+          <td><code>restoreFocus() =&gt; void</code></td>
+          <td>Restores focus to element previously saved with ‘saveFocus’.</td>
+        </tr>
+        <tr class="even">
+          <td><code>saveFocus() =&gt; void</code></td>
+          <td>Saves the focus of currently active element.</td>
+        </tr>
+        <tr class="odd">
+          <td><code>trapFocus() =&gt; void</code></td>
+          <td>
+            Traps focus on root element and focuses the active navigation
+            element.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h3 id="mdcdismissibledrawerfoundation">
+      <code>MDCDismissibleDrawerFoundation</code>
+    </h3>
+    <h4 id="methods-2">Methods</h4>
+    <table>
+      <colgroup>
+        <col style="width: 50%" />
+        <col style="width: 50%" />
+      </colgroup>
+      <thead>
+        <tr class="header">
+          <th>Signature</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="odd">
+          <td><code>close() =&gt; void</code></td>
+          <td>Closes the drawer from the open state.</td>
+        </tr>
+        <tr class="even">
+          <td><code>handleKeydown(evt: KeyboardEvent) =&gt; void</code></td>
+          <td>Keydown handler to close drawer when key is escape.</td>
+        </tr>
+        <tr class="odd">
+          <td>
+            <code>handleTransitionEnd(evt: TransitionEvent) =&gt; void</code>
+          </td>
+          <td>
+            Handles the <code>transitionend</code> event when the drawer
+            finishes opening/closing.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>closed_() =&gt; void</code></td>
+          <td>Extension point for when drawer finishes close animation.</td>
+        </tr>
+        <tr class="odd">
+          <td><code>isClosing() =&gt; boolean</code></td>
+          <td>Returns true if the drawer is animating closed.</td>
+        </tr>
+        <tr class="even">
+          <td><code>isOpen() =&gt; boolean</code></td>
+          <td>Returns true if the drawer is in the open position.</td>
+        </tr>
+        <tr class="odd">
+          <td><code>isOpening() =&gt; boolean</code></td>
+          <td>Returns true if the drawer is animating open.</td>
+        </tr>
+        <tr class="even">
+          <td><code>open() =&gt; void</code></td>
+          <td>Opens the drawer from the closed state.</td>
+        </tr>
+        <tr class="odd">
+          <td><code>opened_() =&gt; void</code></td>
+          <td>Extension point for when drawer finishes open animation.</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3 id="mdcmodaldrawerfoundation"><code>MDCModalDrawerFoundation</code></h3>
+    <h4 id="methods-3">Methods</h4>
+    <table>
+      <colgroup>
+        <col style="width: 50%" />
+        <col style="width: 50%" />
+      </colgroup>
+      <thead>
+        <tr class="header">
+          <th>Signature</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="odd">
+          <td><code>close() =&gt; void</code></td>
+          <td>Closes the drawer from the open state.</td>
+        </tr>
+        <tr class="even">
+          <td><code>handleKeydown(evt: KeyboardEvent) =&gt; void</code></td>
+          <td>Keydown handler to close drawer when key is escape.</td>
+        </tr>
+        <tr class="odd">
+          <td><code>handleScrimClick() =&gt; void</code></td>
+          <td>Handles click event on scrim.</td>
+        </tr>
+        <tr class="even">
+          <td>
+            <code>handleTransitionEnd(evt: TransitionEvent) =&gt; void</code>
+          </td>
+          <td>
+            Handles the <code>transitionend</code> event when the drawer
+            finishes opening/closing.
+          </td>
+        </tr>
+        <tr class="odd">
+          <td><code>closed_() =&gt; void</code></td>
+          <td>Called when drawer finishes close animation.</td>
+        </tr>
+        <tr class="even">
+          <td><code>isClosing() =&gt; boolean</code></td>
+          <td>Returns true if the drawer is animating closed.</td>
+        </tr>
+        <tr class="odd">
+          <td><code>isOpen() =&gt; boolean</code></td>
+          <td>Returns true if the drawer is in the open position.</td>
+        </tr>
+        <tr class="even">
+          <td><code>isOpening() =&gt; boolean</code></td>
+          <td>Returns true if the drawer is animating open.</td>
+        </tr>
+        <tr class="odd">
+          <td><code>open() =&gt; void</code></td>
+          <td>Opens the drawer from the closed state.</td>
+        </tr>
+        <tr class="even">
+          <td><code>opened_() =&gt; void</code></td>
+          <td>Called when drawer finishes open animation.</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
 </html>

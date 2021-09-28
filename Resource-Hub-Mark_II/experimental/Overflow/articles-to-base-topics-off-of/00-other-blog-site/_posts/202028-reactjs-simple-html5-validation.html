@@ -1,24 +1,9 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>202028-reactjs-simple-html5-validation</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
-</head>
-<body>
 <blockquote>
 <p>Please note this blog post drafted long back and might be outdated. please notify me if you see any issues.</p>
 </blockquote>
 <p>When I get question like which <a href="https://mobile.twitter.com/vaikoovery/status/1037546561952088064">validation package</a> you use in ReactJS, I usually answer saying I don’t use any. I go with <a href="https://mobile.twitter.com/revathskumar/status/1037571942524440576">HTML5 validation</a> which native to browsers for simple validation and rest of them do it on server side.</p>
 <p>In my case it served well enough for all my projects.May be your usecase may vary.</p>
-<h1 id="why-html5-validation"><a href="#why" id="why" class="anchor"><em></em></a>Why HTML5 validation</h1>
+<h1 id="why-html5-validation"><a class="anchor" name="why" href="#why"><i class="anchor-icon"></i></a>Why HTML5 validation</h1>
 <p>Here are the couple of reason why I choose to go with HTML5 validations</p>
 <ul>
 <li>Simple and Easy to implement</li>
@@ -26,9 +11,9 @@
 <li>Easy to maintain</li>
 <li>No need to learn another package and its api.</li>
 </ul>
-<h1 id="basic-implementation"><a href="#basic" id="basic" class="anchor"><em></em></a>Basic implementation</h1>
+<h1 id="basic-implementation"><a class="anchor" name="basic" href="#basic"><i class="anchor-icon"></i></a>Basic implementation</h1>
 <p>For the basic version, we can use <code>form</code> element and bind action to <code>onSubmit</code> event. This is will show validation error in browsers native way.</p>
-<pre><code>import React, { Component } from &quot;react&quot;;
+<pre class="jsx"><code>import React, { Component } from &quot;react&quot;;
 
 export default class Signup extends Component {
   handleSubmit = evt =&gt; {
@@ -56,10 +41,10 @@ export default class Signup extends Component {
 <p>Since we are using <code>submit</code> event, the <code>handleSubmit</code> will get called only when there is no validation error.</p>
 <p>{: style=“text-align: center”} <img src="https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2018/react-html5-validation/html5-validation-2-cropped.png" alt="simple HTML5 validation" /></p>
 <p><a href="https://codesandbox.io/s/rl63rzvvkm"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="Edit Working example" /></a></p>
-<h1 id="form-submit-programatically"><a href="#programatically" id="programatically" class="anchor"><em></em></a>Form submit programatically</h1>
+<h1 id="form-submit-programatically"><a class="anchor" name="programatically" href="#programatically"><i class="anchor-icon"></i></a>Form submit programatically</h1>
 <p>Lets consider another situation where we have 2 submit buttons, where one will submit the form like before another one will submit only after some state change. So for second button we have to bind <code>onClick</code> event and do submit programatically.</p>
 <p>There is a catch in this scenario, when we do the submit programatically the native HTML5 validation won’t get triggered. So we have to check the validation and report it ourselves. We can use <code>checkValidity</code> and <code>reportValidity</code> methods for this.</p>
-<pre><code>import React, { Component } from &quot;react&quot;;
+<pre class="jsx"><code>import React, { Component } from &quot;react&quot;;
 
 export default class Signup extends Component {
   handleSubmit = evt =&gt; {
@@ -135,10 +120,10 @@ export default class Signup extends Component {
 }</code></pre>
 <p>The <code>checkValidity</code> will return true if there is no validation error and <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/reportValidity">reportValidity</a> will trigger the <code>invalid</code> event on each invalid child inputs which result in showing errors to user.</p>
 <p><a href="https://codesandbox.io/s/x9y59x5vmw"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="Edit Working example" /></a></p>
-<h1 id="custom-design-for-error-messages"><a href="#custom-design" id="custom-design" class="anchor"><em></em></a>Custom design for Error messages</h1>
+<h1 id="custom-design-for-error-messages"><a class="anchor" name="custom-design" href="#custom-design"><i class="anchor-icon"></i></a>Custom design for Error messages</h1>
 <p>In the above implementations the issue is error messages will be shown in the native way as per the browser implementation and no as per our custom design.</p>
 <p>If we want the custom design to implement, we have to keep get the error messages for each field and keep those in <code>state</code>. We can bind callback to <a href="https://developer.mozilla.org/en-US/docs/Web/Events/invalid">invalid</a> event, to collect error message from all the child inputs. We will use <code>validationMessage</code> property on the input element to get the localised message for the validation failure.</p>
-<pre><code>import React, { Component } from &quot;react&quot;;
+<pre class="jsx"><code>import React, { Component } from &quot;react&quot;;
 
 export default class Signup extends Component {
   state = {
@@ -271,5 +256,6 @@ export default class Signup extends Component {
 <p>Even though we are using <code>onInvalid</code> on form, it will trigger <code>handleInvalid</code> for each invalid field, and the <code>handleChange</code> is using to clear the state once some update is done on the field. If you want to set csutom validation message you can read from my other post, <a href="https://blog.revathskumar.com/2014/12/html5-custom-validation-messages.html">HTML5 : custom validation message</a></p>
 <p>{: style=“text-align: center”} <img src="https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2018/react-html5-validation/html5-validation-custom-message.gif" alt="HTML5 validation" /></p>
 <p><a href="https://codesandbox.io/s/pm7vwxw0px"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="Edit Working example" /></a></p>
+
 </body>
 </html>

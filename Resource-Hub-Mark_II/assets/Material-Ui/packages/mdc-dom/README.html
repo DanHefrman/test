@@ -1,236 +1,449 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>README</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
-  <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
-</head>
-<body>
-<!--docs:
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>README</title>
+    <style type="text/css">
+      code {
+        white-space: pre-wrap;
+      }
+      span.smallcaps {
+        font-variant: small-caps;
+      }
+      span.underline {
+        text-decoration: underline;
+      }
+      div.column {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+      }
+    </style>
+    <style type="text/css">
+      a.sourceLine {
+        display: inline-block;
+        line-height: 1.25;
+      }
+      a.sourceLine {
+        pointer-events: none;
+        color: inherit;
+        text-decoration: inherit;
+      }
+      a.sourceLine:empty {
+        height: 1.2em;
+      }
+      .sourceCode {
+        overflow: visible;
+      }
+      code.sourceCode {
+        white-space: pre;
+        position: relative;
+      }
+      div.sourceCode {
+        margin: 1em 0;
+      }
+      pre.sourceCode {
+        margin: 0;
+      }
+      @media screen {
+        div.sourceCode {
+          overflow: auto;
+        }
+      }
+      @media print {
+        code.sourceCode {
+          white-space: pre-wrap;
+        }
+        a.sourceLine {
+          text-indent: -1em;
+          padding-left: 1em;
+        }
+      }
+      pre.numberSource a.sourceLine {
+        position: relative;
+        left: -4em;
+      }
+      pre.numberSource a.sourceLine::before {
+        content: attr(title);
+        position: relative;
+        left: -1em;
+        text-align: right;
+        vertical-align: baseline;
+        border: none;
+        pointer-events: all;
+        display: inline-block;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        padding: 0 4px;
+        width: 4em;
+        color: #aaaaaa;
+      }
+      pre.numberSource {
+        margin-left: 3em;
+        border-left: 1px solid #aaaaaa;
+        padding-left: 4px;
+      }
+      div.sourceCode {
+      }
+      @media screen {
+        a.sourceLine::before {
+          text-decoration: underline;
+        }
+      }
+      code span.al {
+        color: #ff0000;
+        font-weight: bold;
+      } /* Alert */
+      code span.an {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* Annotation */
+      code span.at {
+        color: #7d9029;
+      } /* Attribute */
+      code span.bn {
+        color: #40a070;
+      } /* BaseN */
+      code span.bu {
+      } /* BuiltIn */
+      code span.cf {
+        color: #007020;
+        font-weight: bold;
+      } /* ControlFlow */
+      code span.ch {
+        color: #4070a0;
+      } /* Char */
+      code span.cn {
+        color: #880000;
+      } /* Constant */
+      code span.co {
+        color: #60a0b0;
+        font-style: italic;
+      } /* Comment */
+      code span.cv {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* CommentVar */
+      code span.do {
+        color: #ba2121;
+        font-style: italic;
+      } /* Documentation */
+      code span.dt {
+        color: #902000;
+      } /* DataType */
+      code span.dv {
+        color: #40a070;
+      } /* DecVal */
+      code span.er {
+        color: #ff0000;
+        font-weight: bold;
+      } /* Error */
+      code span.ex {
+      } /* Extension */
+      code span.fl {
+        color: #40a070;
+      } /* Float */
+      code span.fu {
+        color: #06287e;
+      } /* Function */
+      code span.im {
+      } /* Import */
+      code span.in {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* Information */
+      code span.kw {
+        color: #007020;
+        font-weight: bold;
+      } /* Keyword */
+      code span.op {
+        color: #666666;
+      } /* Operator */
+      code span.ot {
+        color: #007020;
+      } /* Other */
+      code span.pp {
+        color: #bc7a00;
+      } /* Preprocessor */
+      code span.sc {
+        color: #4070a0;
+      } /* SpecialChar */
+      code span.ss {
+        color: #bb6688;
+      } /* SpecialString */
+      code span.st {
+        color: #4070a0;
+      } /* String */
+      code span.va {
+        color: #19177c;
+      } /* Variable */
+      code span.vs {
+        color: #4070a0;
+      } /* VerbatimString */
+      code span.wa {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* Warning */
+    </style>
+  </head>
+  <body>
+    <!--docs:
 title: "DOM"
 layout: detail
 section: components
 excerpt: "Provides commonly-used utilities for inspecting, traversing, and manipulating the DOM."
 path: /catalog/dom/
 -->
-<h1 id="dom">DOM</h1>
-<p>MDC DOM provides commonly-used utilities for inspecting, traversing, and manipulating the DOM.</p>
-<p>Most of the time, you shouldn’t need to depend on <code>mdc-dom</code> directly. It is useful however if you’d like to write custom components that follow MDC Web’s pattern and elegantly integrate with the MDC Web ecosystem.</p>
-<h2 id="installation">Installation</h2>
-<pre><code>npm install @material/dom</code></pre>
-<h2 id="basic-usage">Basic Usage</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="im">import</span> <span class="op">*</span> <span class="im">as</span> ponyfill <span class="im">from</span> <span class="st">&#39;@material/dom/ponyfill&#39;</span><span class="op">;</span></a></code></pre></div>
-<blockquote>
-<p>See <a href="../../docs/importing-js.md">Importing the JS component</a> for more information on how to import JavaScript.</p>
-</blockquote>
-<h2 id="ponyfill-functions">Ponyfill Functions</h2>
-<p>The <code>ponyfill</code> module provides the following functions:</p>
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Function Signature</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>closest(element: Element, selector: string) =&gt; ?Element</code></td>
-<td>Returns the ancestor of the given element matching the given selector (which may be the element itself if it matches), or <code>null</code> if no matching ancestor is found.</td>
-</tr>
-<tr class="even">
-<td><code>matches(element: Element, selector: string) =&gt; boolean</code></td>
-<td>Returns true if the given element matches the given CSS selector.</td>
-</tr>
-<tr class="odd">
-<td><code>estimateScrollWidth(element: Element) =&gt; number</code></td>
-<td>Returns the true optical width of the element if visible or an estimation if hidden by a parent element with <code>display: none;</code>.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="event-functions">Event Functions</h2>
-<p>External frameworks and libraries can use the following event utility methods.</p>
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Method Signature</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>util.applyPassive(globalObj = window) =&gt; object</code></td>
-<td>Determine whether the current browser supports passive event listeners</td>
-</tr>
-</tbody>
-</table>
-<h2 id="focus-trap">Focus Trap</h2>
-<p>The <code>FocusTrap</code> utility traps focus within a given element. It is intended for usage from MDC-internal components like dialog and modal drawer.</p>
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Method Signature</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>trapFocus() =&gt; void</code></td>
-<td>Traps focus in the root element. Also focuses on <code>initialFocusEl</code> if set; otherwise, sets initial focus to the first focusable child element.</td>
-</tr>
-<tr class="even">
-<td><code>releaseFocus() =&gt; void</code></td>
-<td>Releases focus from the root element. Also restores focus to the previously focused element.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="announce">Announce</h2>
-<p>The <code>announce</code> utility file contains a single helper method for announcing a message via an <code>aria-live</code> region. It is intended for usage from MDC-internal components.</p>
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Method Signature</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>announce(message: string, priority?: AnnouncerPriority) =&gt; void</code></td>
-<td>Announces the message via an <code>aria-live</code> region with the given priority (defaults to polite)</td>
-</tr>
-</tbody>
-</table>
-<!-- TODO(b/148462294): Remove once only exported members are required in docs `say()` -->
-<!-- | -->
-<!-- DO NOT USE -->
-<h2 id="keyboard">Keyboard</h2>
-<p>The <code>keyboard</code> utility provides helper methods for normalizing <code>KeyboardEvent</code> keys across browsers. It is intended for usage from MDC-internal components.</p>
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Method Signature</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>normalizeKey(evt: KeyboardEvent) =&gt; string</code></td>
-<td>Returns a normalized string derived from <code>KeyboardEvent</code>’s <code>keyCode</code> property to be standard across browsers.</td>
-</tr>
-<tr class="even">
-<td><code>isNavigationEvent(evt: KeyboardEvent) =&gt; boolean</code></td>
-<td>Returns <code>true</code> if the event is a navigation event (Page Up, Page Down, Home, End, Left, Up, Right, Down).</td>
-</tr>
-</tbody>
-</table>
-<h2 id="mixins">Mixins</h2>
-<p>The module provides a single SASS mixin which helps improves a DOM element’s UX for high-contrast mode users.</p>
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Mixin</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>transparent-border</code></td>
-<td>Emits necessary layout styles to set a transparent border around an element without interfering with the rest of its component layout. The border is only visible in high-contrast mode. The target element should be a child of a relatively positioned top-level element (i.e. a ::before pseudo-element).</td>
-</tr>
-</tbody>
-</table>
-</body>
+    <h1 id="dom">DOM</h1>
+    <p>
+      MDC DOM provides commonly-used utilities for inspecting, traversing, and
+      manipulating the DOM.
+    </p>
+    <p>
+      Most of the time, you shouldn’t need to depend on
+      <code>mdc-dom</code> directly. It is useful however if you’d like to write
+      custom components that follow MDC Web’s pattern and elegantly integrate
+      with the MDC Web ecosystem.
+    </p>
+    <h2 id="installation">Installation</h2>
+    <pre><code>npm install @material/dom</code></pre>
+    <h2 id="basic-usage">Basic Usage</h2>
+    <div class="sourceCode" id="cb2">
+      <pre
+        class="sourceCode js"
+      ><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="im">import</span> <span class="op">*</span> <span class="im">as</span> ponyfill <span class="im">from</span> <span class="st">&#39;@material/dom/ponyfill&#39;</span><span class="op">;</span></a></code></pre>
+    </div>
+    <blockquote>
+      <p>
+        See
+        <a href="../../docs/importing-js.md">Importing the JS component</a> for
+        more information on how to import JavaScript.
+      </p>
+    </blockquote>
+    <h2 id="ponyfill-functions">Ponyfill Functions</h2>
+    <p>The <code>ponyfill</code> module provides the following functions:</p>
+    <table>
+      <colgroup>
+        <col style="width: 50%" />
+        <col style="width: 50%" />
+      </colgroup>
+      <thead>
+        <tr class="header">
+          <th>Function Signature</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="odd">
+          <td>
+            <code
+              >closest(element: Element, selector: string) =&gt; ?Element</code
+            >
+          </td>
+          <td>
+            Returns the ancestor of the given element matching the given
+            selector (which may be the element itself if it matches), or
+            <code>null</code> if no matching ancestor is found.
+          </td>
+        </tr>
+        <tr class="even">
+          <td>
+            <code
+              >matches(element: Element, selector: string) =&gt; boolean</code
+            >
+          </td>
+          <td>
+            Returns true if the given element matches the given CSS selector.
+          </td>
+        </tr>
+        <tr class="odd">
+          <td>
+            <code>estimateScrollWidth(element: Element) =&gt; number</code>
+          </td>
+          <td>
+            Returns the true optical width of the element if visible or an
+            estimation if hidden by a parent element with
+            <code>display: none;</code>.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h2 id="event-functions">Event Functions</h2>
+    <p>
+      External frameworks and libraries can use the following event utility
+      methods.
+    </p>
+    <table>
+      <colgroup>
+        <col style="width: 50%" />
+        <col style="width: 50%" />
+      </colgroup>
+      <thead>
+        <tr class="header">
+          <th>Method Signature</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="odd">
+          <td>
+            <code>util.applyPassive(globalObj = window) =&gt; object</code>
+          </td>
+          <td>
+            Determine whether the current browser supports passive event
+            listeners
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h2 id="focus-trap">Focus Trap</h2>
+    <p>
+      The <code>FocusTrap</code> utility traps focus within a given element. It
+      is intended for usage from MDC-internal components like dialog and modal
+      drawer.
+    </p>
+    <table>
+      <colgroup>
+        <col style="width: 50%" />
+        <col style="width: 50%" />
+      </colgroup>
+      <thead>
+        <tr class="header">
+          <th>Method Signature</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="odd">
+          <td><code>trapFocus() =&gt; void</code></td>
+          <td>
+            Traps focus in the root element. Also focuses on
+            <code>initialFocusEl</code> if set; otherwise, sets initial focus to
+            the first focusable child element.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>releaseFocus() =&gt; void</code></td>
+          <td>
+            Releases focus from the root element. Also restores focus to the
+            previously focused element.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h2 id="announce">Announce</h2>
+    <p>
+      The <code>announce</code> utility file contains a single helper method for
+      announcing a message via an <code>aria-live</code> region. It is intended
+      for usage from MDC-internal components.
+    </p>
+    <table>
+      <colgroup>
+        <col style="width: 50%" />
+        <col style="width: 50%" />
+      </colgroup>
+      <thead>
+        <tr class="header">
+          <th>Method Signature</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="odd">
+          <td>
+            <code
+              >announce(message: string, priority?: AnnouncerPriority) =&gt;
+              void</code
+            >
+          </td>
+          <td>
+            Announces the message via an <code>aria-live</code> region with the
+            given priority (defaults to polite)
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- TODO(b/148462294): Remove once only exported members are required in docs `say()` -->
+    <!-- | -->
+    <!-- DO NOT USE -->
+    <h2 id="keyboard">Keyboard</h2>
+    <p>
+      The <code>keyboard</code> utility provides helper methods for normalizing
+      <code>KeyboardEvent</code> keys across browsers. It is intended for usage
+      from MDC-internal components.
+    </p>
+    <table>
+      <colgroup>
+        <col style="width: 50%" />
+        <col style="width: 50%" />
+      </colgroup>
+      <thead>
+        <tr class="header">
+          <th>Method Signature</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="odd">
+          <td><code>normalizeKey(evt: KeyboardEvent) =&gt; string</code></td>
+          <td>
+            Returns a normalized string derived from
+            <code>KeyboardEvent</code>’s <code>keyCode</code> property to be
+            standard across browsers.
+          </td>
+        </tr>
+        <tr class="even">
+          <td>
+            <code>isNavigationEvent(evt: KeyboardEvent) =&gt; boolean</code>
+          </td>
+          <td>
+            Returns <code>true</code> if the event is a navigation event (Page
+            Up, Page Down, Home, End, Left, Up, Right, Down).
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h2 id="mixins">Mixins</h2>
+    <p>
+      The module provides a single SASS mixin which helps improves a DOM
+      element’s UX for high-contrast mode users.
+    </p>
+    <table>
+      <colgroup>
+        <col style="width: 50%" />
+        <col style="width: 50%" />
+      </colgroup>
+      <thead>
+        <tr class="header">
+          <th>Mixin</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="odd">
+          <td><code>transparent-border</code></td>
+          <td>
+            Emits necessary layout styles to set a transparent border around an
+            element without interfering with the rest of its component layout.
+            The border is only visible in high-contrast mode. The target element
+            should be a child of a relatively positioned top-level element
+            (i.e. a ::before pseudo-element).
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
 </html>

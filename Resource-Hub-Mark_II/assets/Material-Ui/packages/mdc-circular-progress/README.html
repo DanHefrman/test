@@ -1,82 +1,206 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>README</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
-  <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
-</head>
-<body>
-<!--docs:
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>README</title>
+    <style type="text/css">
+      code {
+        white-space: pre-wrap;
+      }
+      span.smallcaps {
+        font-variant: small-caps;
+      }
+      span.underline {
+        text-decoration: underline;
+      }
+      div.column {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+      }
+    </style>
+    <style type="text/css">
+      a.sourceLine {
+        display: inline-block;
+        line-height: 1.25;
+      }
+      a.sourceLine {
+        pointer-events: none;
+        color: inherit;
+        text-decoration: inherit;
+      }
+      a.sourceLine:empty {
+        height: 1.2em;
+      }
+      .sourceCode {
+        overflow: visible;
+      }
+      code.sourceCode {
+        white-space: pre;
+        position: relative;
+      }
+      div.sourceCode {
+        margin: 1em 0;
+      }
+      pre.sourceCode {
+        margin: 0;
+      }
+      @media screen {
+        div.sourceCode {
+          overflow: auto;
+        }
+      }
+      @media print {
+        code.sourceCode {
+          white-space: pre-wrap;
+        }
+        a.sourceLine {
+          text-indent: -1em;
+          padding-left: 1em;
+        }
+      }
+      pre.numberSource a.sourceLine {
+        position: relative;
+        left: -4em;
+      }
+      pre.numberSource a.sourceLine::before {
+        content: attr(title);
+        position: relative;
+        left: -1em;
+        text-align: right;
+        vertical-align: baseline;
+        border: none;
+        pointer-events: all;
+        display: inline-block;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        padding: 0 4px;
+        width: 4em;
+        color: #aaaaaa;
+      }
+      pre.numberSource {
+        margin-left: 3em;
+        border-left: 1px solid #aaaaaa;
+        padding-left: 4px;
+      }
+      div.sourceCode {
+      }
+      @media screen {
+        a.sourceLine::before {
+          text-decoration: underline;
+        }
+      }
+      code span.al {
+        color: #ff0000;
+        font-weight: bold;
+      } /* Alert */
+      code span.an {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* Annotation */
+      code span.at {
+        color: #7d9029;
+      } /* Attribute */
+      code span.bn {
+        color: #40a070;
+      } /* BaseN */
+      code span.bu {
+      } /* BuiltIn */
+      code span.cf {
+        color: #007020;
+        font-weight: bold;
+      } /* ControlFlow */
+      code span.ch {
+        color: #4070a0;
+      } /* Char */
+      code span.cn {
+        color: #880000;
+      } /* Constant */
+      code span.co {
+        color: #60a0b0;
+        font-style: italic;
+      } /* Comment */
+      code span.cv {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* CommentVar */
+      code span.do {
+        color: #ba2121;
+        font-style: italic;
+      } /* Documentation */
+      code span.dt {
+        color: #902000;
+      } /* DataType */
+      code span.dv {
+        color: #40a070;
+      } /* DecVal */
+      code span.er {
+        color: #ff0000;
+        font-weight: bold;
+      } /* Error */
+      code span.ex {
+      } /* Extension */
+      code span.fl {
+        color: #40a070;
+      } /* Float */
+      code span.fu {
+        color: #06287e;
+      } /* Function */
+      code span.im {
+      } /* Import */
+      code span.in {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* Information */
+      code span.kw {
+        color: #007020;
+        font-weight: bold;
+      } /* Keyword */
+      code span.op {
+        color: #666666;
+      } /* Operator */
+      code span.ot {
+        color: #007020;
+      } /* Other */
+      code span.pp {
+        color: #bc7a00;
+      } /* Preprocessor */
+      code span.sc {
+        color: #4070a0;
+      } /* SpecialChar */
+      code span.ss {
+        color: #bb6688;
+      } /* SpecialString */
+      code span.st {
+        color: #4070a0;
+      } /* String */
+      code span.va {
+        color: #19177c;
+      } /* Variable */
+      code span.vs {
+        color: #4070a0;
+      } /* VerbatimString */
+      code span.wa {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* Warning */
+    </style>
+  </head>
+  <body>
+    <!--docs:
 title: "Circular Progress"
 layout: detail
 section: components
@@ -84,19 +208,30 @@ excerpt: "Material Design-styled circular progress indicators."
 iconId: progress_activity
 path: /catalog/circular-progress/
 -->
-<h1 id="circular-progress">Circular Progress</h1>
-<p>The MDC Circular Progress component is a spec-aligned circular progress indicator component adhering to the <a href="https://material.io/go/design-progress-indicators">Material Design progress &amp; activity requirements</a>.</p>
-<h2 id="design-api-documentation">Design &amp; API Documentation</h2>
-<ul class="icon-list">
-<li class="icon-list-item icon-list-item--spec">
-<a href="https://material.io/go/design-progress-indicators">Guidelines</a>
-</li>
-</ul>
-<h2 id="installation">Installation</h2>
-<pre><code>npm install @material/circular-progress</code></pre>
-<h2 id="basic-usage">Basic Usage</h2>
-<h3 id="html-structure">HTML Structure</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-circular-progress&quot;</span><span class="ot"> style=</span><span class="st">&quot;width:48px;height:48px;&quot;</span><span class="ot"> role=</span><span class="st">&quot;progressbar&quot;</span><span class="ot"> aria-label=</span><span class="st">&quot;Example Progress Bar&quot;</span><span class="ot"> aria-valuemin=</span><span class="st">&quot;0&quot;</span><span class="ot"> aria-valuemax=</span><span class="st">&quot;1&quot;</span><span class="kw">&gt;</span></a>
+    <h1 id="circular-progress">Circular Progress</h1>
+    <p>
+      The MDC Circular Progress component is a spec-aligned circular progress
+      indicator component adhering to the
+      <a href="https://material.io/go/design-progress-indicators"
+        >Material Design progress &amp; activity requirements</a
+      >.
+    </p>
+    <h2 id="design-api-documentation">Design &amp; API Documentation</h2>
+    <ul class="icon-list">
+      <li class="icon-list-item icon-list-item--spec">
+        <a href="https://material.io/go/design-progress-indicators"
+          >Guidelines</a
+        >
+      </li>
+    </ul>
+    <h2 id="installation">Installation</h2>
+    <pre><code>npm install @material/circular-progress</code></pre>
+    <h2 id="basic-usage">Basic Usage</h2>
+    <h3 id="html-structure">HTML Structure</h3>
+    <div class="sourceCode" id="cb2">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-circular-progress&quot;</span><span class="ot"> style=</span><span class="st">&quot;width:48px;height:48px;&quot;</span><span class="ot"> role=</span><span class="st">&quot;progressbar&quot;</span><span class="ot"> aria-label=</span><span class="st">&quot;Example Progress Bar&quot;</span><span class="ot"> aria-valuemin=</span><span class="st">&quot;0&quot;</span><span class="ot"> aria-valuemax=</span><span class="st">&quot;1&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb2-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-circular-progress__determinate-container&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb2-3" title="3">    <span class="kw">&lt;svg</span><span class="ot"> class=</span><span class="st">&quot;mdc-circular-progress__determinate-circle-graphic&quot;</span><span class="ot"> viewBox=</span><span class="st">&quot;0 0 48 48&quot;</span><span class="ot"> xmlns=</span><span class="st">&quot;http://www.w3.org/2000/svg&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb2-4" title="4">      <span class="kw">&lt;circle</span><span class="ot"> class=</span><span class="st">&quot;mdc-circular-progress__determinate-track&quot;</span><span class="ot"> cx=</span><span class="st">&quot;24&quot;</span><span class="ot"> cy=</span><span class="st">&quot;24&quot;</span><span class="ot"> r=</span><span class="st">&quot;18&quot;</span><span class="ot"> stroke-width=</span><span class="st">&quot;4&quot;</span><span class="kw">/&gt;</span></a>
@@ -122,56 +257,97 @@ path: /catalog/circular-progress/
 <a class="sourceLine" id="cb2-24" title="24">      <span class="kw">&lt;/div&gt;</span></a>
 <a class="sourceLine" id="cb2-25" title="25">    <span class="kw">&lt;/div&gt;</span></a>
 <a class="sourceLine" id="cb2-26" title="26">  <span class="kw">&lt;/div&gt;</span></a>
-<a class="sourceLine" id="cb2-27" title="27"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
-<h3 id="accessibility">Accessibility</h3>
-<p>Progress bars conform to the <a href="https://www.w3.org/TR/wai-aria/#progressbar">WAI-ARIA Progressbar Specification</a>. The supported ARIA attributes for this progress bar are:</p>
-<table>
-<colgroup>
-<col style="width: 45%" />
-<col style="width: 55%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Attribute</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>aria-label</code></td>
-<td>Label indicating how the progress bar should be announced to the user.</td>
-</tr>
-<tr class="even">
-<td><code>aria-valuemin</code></td>
-<td>The minimum numeric value of the progress bar, which should always be <code>0</code>.</td>
-</tr>
-<tr class="odd">
-<td><code>aria-valuemax</code></td>
-<td>The maximum numeric value of the progress bar, which should always be <code>1</code>.</td>
-</tr>
-<tr class="even">
-<td><code>aria-valuenow</code></td>
-<td>A numeric value between <code>aria-valuemin</code> and <code>aria-valuemax</code> indicating the progress value of the primary progress bar. This attribute is removed in indeterminate progress bars.</td>
-</tr>
-</tbody>
-</table>
-<p>Note that <code>aria-label</code>, <code>aria-valuemin</code>, and <code>aria-valuemax</code> are static and must be configured in the HTML. <code>aria-valuenow</code> is updated dynamically by the foundation when the progress value is updated in determinate progress bars.</p>
-<h3 id="styles">Styles</h3>
-<pre class="scss"><code>@use &quot;@material/circular-progress/mdc-circular-progress&quot;;</code></pre>
-<h3 id="javascript-instantiation">JavaScript Instantiation</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="im">import</span> <span class="op">{</span> MDCCircularProgress <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;@material/circular-progress&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-27" title="27"><span class="kw">&lt;/div&gt;</span></a></code></pre>
+    </div>
+    <h3 id="accessibility">Accessibility</h3>
+    <p>
+      Progress bars conform to the
+      <a href="https://www.w3.org/TR/wai-aria/#progressbar"
+        >WAI-ARIA Progressbar Specification</a
+      >. The supported ARIA attributes for this progress bar are:
+    </p>
+    <table>
+      <colgroup>
+        <col style="width: 45%" />
+        <col style="width: 55%" />
+      </colgroup>
+      <thead>
+        <tr class="header">
+          <th>Attribute</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="odd">
+          <td><code>aria-label</code></td>
+          <td>
+            Label indicating how the progress bar should be announced to the
+            user.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>aria-valuemin</code></td>
+          <td>
+            The minimum numeric value of the progress bar, which should always
+            be <code>0</code>.
+          </td>
+        </tr>
+        <tr class="odd">
+          <td><code>aria-valuemax</code></td>
+          <td>
+            The maximum numeric value of the progress bar, which should always
+            be <code>1</code>.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>aria-valuenow</code></td>
+          <td>
+            A numeric value between <code>aria-valuemin</code> and
+            <code>aria-valuemax</code> indicating the progress value of the
+            primary progress bar. This attribute is removed in indeterminate
+            progress bars.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      Note that <code>aria-label</code>, <code>aria-valuemin</code>, and
+      <code>aria-valuemax</code> are static and must be configured in the HTML.
+      <code>aria-valuenow</code> is updated dynamically by the foundation when
+      the progress value is updated in determinate progress bars.
+    </p>
+    <h3 id="styles">Styles</h3>
+    <pre
+      class="scss"
+    ><code>@use &quot;@material/circular-progress/mdc-circular-progress&quot;;</code></pre>
+    <h3 id="javascript-instantiation">JavaScript Instantiation</h3>
+    <div class="sourceCode" id="cb4">
+      <pre
+        class="sourceCode js"
+      ><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="im">import</span> <span class="op">{</span> MDCCircularProgress <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;@material/circular-progress&#39;</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb4-2" title="2"></a>
-<a class="sourceLine" id="cb4-3" title="3"><span class="kw">const</span> circularProgress <span class="op">=</span> <span class="kw">new</span> <span class="at">MDCCircularProgress</span>(<span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&#39;.mdc-circular-progress&#39;</span>))<span class="op">;</span></a></code></pre></div>
-<blockquote>
-<p>See <a href="../../docs/importing-js.md">Importing the JS component</a> for more information on how to import JavaScript.</p>
-</blockquote>
-<h2 id="variants">Variants</h2>
-<h3 id="sizing">Sizing</h3>
-<p>To set the stroke-width and container size strictly to one of three sizes defined by guidelines, replace the templates with the following.</p>
-<h4 id="large-48px">Large (48px)</h4>
-<p>See <a href="#HTML-Structure">baseline template</a> above.</p>
-<h4 id="medium-36px">Medium (36px)</h4>
-<div class="sourceCode" id="cb5"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-circular-progress&quot;</span><span class="ot"> style=</span><span class="st">&quot;width:36px;height:36px;&quot;</span><span class="ot"> role=</span><span class="st">&quot;progressbar&quot;</span><span class="ot"> aria-label=</span><span class="st">&quot;Example Progress Bar&quot;</span><span class="ot"> aria-valuemin=</span><span class="st">&quot;0&quot;</span><span class="ot"> aria-valuemax=</span><span class="st">&quot;1&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="kw">const</span> circularProgress <span class="op">=</span> <span class="kw">new</span> <span class="at">MDCCircularProgress</span>(<span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&#39;.mdc-circular-progress&#39;</span>))<span class="op">;</span></a></code></pre>
+    </div>
+    <blockquote>
+      <p>
+        See
+        <a href="../../docs/importing-js.md">Importing the JS component</a> for
+        more information on how to import JavaScript.
+      </p>
+    </blockquote>
+    <h2 id="variants">Variants</h2>
+    <h3 id="sizing">Sizing</h3>
+    <p>
+      To set the stroke-width and container size strictly to one of three sizes
+      defined by guidelines, replace the templates with the following.
+    </p>
+    <h4 id="large-48px">Large (48px)</h4>
+    <p>See <a href="#HTML-Structure">baseline template</a> above.</p>
+    <h4 id="medium-36px">Medium (36px)</h4>
+    <div class="sourceCode" id="cb5">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-circular-progress&quot;</span><span class="ot"> style=</span><span class="st">&quot;width:36px;height:36px;&quot;</span><span class="ot"> role=</span><span class="st">&quot;progressbar&quot;</span><span class="ot"> aria-label=</span><span class="st">&quot;Example Progress Bar&quot;</span><span class="ot"> aria-valuemin=</span><span class="st">&quot;0&quot;</span><span class="ot"> aria-valuemax=</span><span class="st">&quot;1&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb5-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-circular-progress__determinate-container&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb5-3" title="3">    <span class="kw">&lt;svg</span><span class="ot"> class=</span><span class="st">&quot;mdc-circular-progress__determinate-circle-graphic&quot;</span><span class="ot"> viewBox=</span><span class="st">&quot;0 0 32 32&quot;</span><span class="ot"> xmlns=</span><span class="st">&quot;http://www.w3.org/2000/svg&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb5-4" title="4">      <span class="kw">&lt;circle</span><span class="ot"> class=</span><span class="st">&quot;mdc-circular-progress__determinate-track&quot;</span><span class="ot"> cx=</span><span class="st">&quot;16&quot;</span><span class="ot"> cy=</span><span class="st">&quot;16&quot;</span><span class="ot"> r=</span><span class="st">&quot;12.5&quot;</span><span class="ot"> stroke-width=</span><span class="st">&quot;3&quot;</span><span class="kw">/&gt;</span></a>
@@ -197,9 +373,13 @@ path: /catalog/circular-progress/
 <a class="sourceLine" id="cb5-24" title="24">      <span class="kw">&lt;/div&gt;</span></a>
 <a class="sourceLine" id="cb5-25" title="25">    <span class="kw">&lt;/div&gt;</span></a>
 <a class="sourceLine" id="cb5-26" title="26">  <span class="kw">&lt;/div&gt;</span></a>
-<a class="sourceLine" id="cb5-27" title="27"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
-<h4 id="small-24px">Small (24px)</h4>
-<div class="sourceCode" id="cb6"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-circular-progress&quot;</span><span class="ot"> style=</span><span class="st">&quot;width:24px;height:24px;&quot;</span><span class="ot"> role=</span><span class="st">&quot;progressbar&quot;</span><span class="ot"> aria-label=</span><span class="st">&quot;Example Progress Bar&quot;</span><span class="ot"> aria-valuemin=</span><span class="st">&quot;0&quot;</span><span class="ot"> aria-valuemax=</span><span class="st">&quot;1&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb5-27" title="27"><span class="kw">&lt;/div&gt;</span></a></code></pre>
+    </div>
+    <h4 id="small-24px">Small (24px)</h4>
+    <div class="sourceCode" id="cb6">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-circular-progress&quot;</span><span class="ot"> style=</span><span class="st">&quot;width:24px;height:24px;&quot;</span><span class="ot"> role=</span><span class="st">&quot;progressbar&quot;</span><span class="ot"> aria-label=</span><span class="st">&quot;Example Progress Bar&quot;</span><span class="ot"> aria-valuemin=</span><span class="st">&quot;0&quot;</span><span class="ot"> aria-valuemax=</span><span class="st">&quot;1&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb6-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-circular-progress__determinate-container&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb6-3" title="3">    <span class="kw">&lt;svg</span><span class="ot"> class=</span><span class="st">&quot;mdc-circular-progress__determinate-circle-graphic&quot;</span><span class="ot"> viewBox=</span><span class="st">&quot;0 0 24 24&quot;</span><span class="ot"> xmlns=</span><span class="st">&quot;http://www.w3.org/2000/svg&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb6-4" title="4">      <span class="kw">&lt;circle</span><span class="ot"> class=</span><span class="st">&quot;mdc-circular-progress__determinate-track&quot;</span><span class="ot"> cx=</span><span class="st">&quot;12&quot;</span><span class="ot"> cy=</span><span class="st">&quot;12&quot;</span><span class="ot"> r=</span><span class="st">&quot;8.75&quot;</span><span class="ot"> stroke-width=</span><span class="st">&quot;2.5&quot;</span><span class="kw">/&gt;</span></a>
@@ -225,10 +405,22 @@ path: /catalog/circular-progress/
 <a class="sourceLine" id="cb6-24" title="24">      <span class="kw">&lt;/div&gt;</span></a>
 <a class="sourceLine" id="cb6-25" title="25">    <span class="kw">&lt;/div&gt;</span></a>
 <a class="sourceLine" id="cb6-26" title="26">  <span class="kw">&lt;/div&gt;</span></a>
-<a class="sourceLine" id="cb6-27" title="27"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
-<h3 id="four-colored">Four-Colored</h3>
-<p>You may choose to have the indicator in inderminate state animate through 4 colors. The template for the four-colored indicator is like that of the <a href="#HTML-Structure">baseline</a>, except the spinner layer is replicated 4 times, 1 for each color. See <a href="#Sass-Mixins">Sass-Mixins</a> for how to customize the four colors. This is done instead of animating the color property to reduce browser repaints.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-circular-progress&quot;</span><span class="ot"> style=</span><span class="st">&quot;width:48px;height:48px;&quot;</span><span class="ot"> role=</span><span class="st">&quot;progressbar&quot;</span><span class="ot"> aria-label=</span><span class="st">&quot;Example Progress Bar&quot;</span><span class="ot"> aria-valuemin=</span><span class="st">&quot;0&quot;</span><span class="ot"> aria-valuemax=</span><span class="st">&quot;1&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb6-27" title="27"><span class="kw">&lt;/div&gt;</span></a></code></pre>
+    </div>
+    <h3 id="four-colored">Four-Colored</h3>
+    <p>
+      You may choose to have the indicator in inderminate state animate through
+      4 colors. The template for the four-colored indicator is like that of the
+      <a href="#HTML-Structure">baseline</a>, except the spinner layer is
+      replicated 4 times, 1 for each color. See
+      <a href="#Sass-Mixins">Sass-Mixins</a> for how to customize the four
+      colors. This is done instead of animating the color property to reduce
+      browser repaints.
+    </p>
+    <div class="sourceCode" id="cb7">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-circular-progress&quot;</span><span class="ot"> style=</span><span class="st">&quot;width:48px;height:48px;&quot;</span><span class="ot"> role=</span><span class="st">&quot;progressbar&quot;</span><span class="ot"> aria-label=</span><span class="st">&quot;Example Progress Bar&quot;</span><span class="ot"> aria-valuemin=</span><span class="st">&quot;0&quot;</span><span class="ot"> aria-valuemax=</span><span class="st">&quot;1&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb7-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;mdc-circular-progress__determinate-container&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb7-3" title="3">    <span class="kw">&lt;svg</span><span class="ot"> class=</span><span class="st">&quot;mdc-circular-progress__determinate-circle-graphic&quot;</span><span class="ot"> viewBox=</span><span class="st">&quot;0 0 48 48&quot;</span><span class="ot"> xmlns=</span><span class="st">&quot;http://www.w3.org/2000/svg&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb7-4" title="4">      <span class="kw">&lt;circle</span><span class="ot"> class=</span><span class="st">&quot;mdc-circular-progress__determinate-track&quot;</span><span class="ot"> cx=</span><span class="st">&quot;24&quot;</span><span class="ot"> cy=</span><span class="st">&quot;24&quot;</span><span class="ot"> r=</span><span class="st">&quot;18&quot;</span><span class="ot"> stroke-width=</span><span class="st">&quot;4&quot;</span><span class="kw">/&gt;</span></a>
@@ -266,228 +458,308 @@ path: /catalog/circular-progress/
 <a class="sourceLine" id="cb7-36" title="36">      <span class="co">&lt;!-- Same as above --&gt;</span></a>
 <a class="sourceLine" id="cb7-37" title="37">    <span class="kw">&lt;/div&gt;</span></a>
 <a class="sourceLine" id="cb7-38" title="38">  <span class="kw">&lt;/div&gt;</span></a>
-<a class="sourceLine" id="cb7-39" title="39"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
-<h2 id="style-customization">Style Customization</h2>
-<h3 id="css-classes">CSS Classes</h3>
-<table>
-<colgroup>
-<col style="width: 40%" />
-<col style="width: 59%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>CSS Class</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>mdc-circular-progress</code></td>
-<td>Mandatory. The root element.</td>
-</tr>
-<tr class="even">
-<td><code>mdc-circular-progress--indeterminate</code></td>
-<td>Optional. Puts the circular progress indicator in an indeterminate state.</td>
-</tr>
-<tr class="odd">
-<td><code>mdc-circular-progress--closed</code></td>
-<td>Optional. Hides the circular progress indicator.</td>
-</tr>
-<tr class="even">
-<td><code>mdc-circular-progress__determinate-container</code></td>
-<td>Mandatory. Contains the determinate progress indicator.</td>
-</tr>
-<tr class="odd">
-<td><code>mdc-circular-progress__indeterminate-container</code></td>
-<td>Mandatory. Contains the indeterminate progress indicator.</td>
-</tr>
-<tr class="even">
-<td><code>mdc-circular-progress__determinate-circle-graphic</code></td>
-<td>Mandatory. The determinate SVG.</td>
-</tr>
-<tr class="odd">
-<td><code>mdc-circular-progress__determinate-track</code></td>
-<td>Mandatory. The determinate SVG track.</td>
-</tr>
-<tr class="even">
-<td><code>mdc-circular-progress__determinate-circle</code></td>
-<td>Mandatory. The determinate SVG circle.</td>
-</tr>
-<tr class="odd">
-<td><code>mdc-circular-progress__spinner-layer</code></td>
-<td>Mandatory. Another wrapper around the indeterminate indicator.</td>
-</tr>
-<tr class="even">
-<td><code>mdc-circular-progress__indeterminate-circle-graphic</code></td>
-<td>Mandatory. An indeterminate SVG (there are three of these in total).</td>
-</tr>
-<tr class="odd">
-<td><code>mdc-circular-progress__circle-clipper</code></td>
-<td>Mandatory. Clips an indeterminate SVG circle so that only a section of it is visible.</td>
-</tr>
-<tr class="even">
-<td><code>mdc-circular-progress__circle-left</code></td>
-<td>Mandatory. One of two circle sections that when combined are animated to form the full indeterminate progress indicator.</td>
-</tr>
-<tr class="odd">
-<td><code>mdc-circular-progress__circle-right</code></td>
-<td>Mandatory. One of two circle sections that when combined are animated to form the full indeterminate progress indicator.</td>
-</tr>
-<tr class="even">
-<td><code>mdc-circular-progress__gap-patch</code></td>
-<td>Mandatory. A tiny little sliver of an SVG circle used to patch a gap between the circle-left and the circle-right.</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p><em>NOTE</em>: Ensure the correct inner SVG templates for each size are used to ensure optimal ratio of the stroke width to container size as specified in Material Design guidelines.</p>
-</blockquote>
-<h3 id="sass-mixins">Sass Mixins</h3>
-<table>
-<colgroup>
-<col style="width: 29%" />
-<col style="width: 70%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Mixin</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>color($color)</code></td>
-<td>Customizes the stroke-color of the indicator. Applies to the determinate variant, and also the indeterminate variant unless the four-color mixin is applied.</td>
-</tr>
-<tr class="even">
-<td><code>track-color($color)</code></td>
-<td>Customizes the track color of the indicator. Applies to the determinate variant only.</td>
-</tr>
-<tr class="odd">
-<td><code>indeterminate-colors($colors)</code></td>
-<td>Applies four animated stroke-colors to the indeterminate indicator. Applicable to the indeterminate variant only and overrides any single color currently set. Takes a list of exacty four colors.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="mdccircularprogress-properties-and-methods"><code>MDCCircularProgress</code> Properties and Methods</h2>
-<table>
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 31%" />
-<col style="width: 43%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Property</th>
-<th>Value Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>determinate</code></td>
-<td><code>boolean</code> (write-only)</td>
-<td>Toggles the component between the determinate and indeterminate state.</td>
-</tr>
-<tr class="even">
-<td><code>progress</code></td>
-<td><code>number</code> (write-only)</td>
-<td>Sets the progress bar to this value. Value should be between 0 and 1.</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr class="header">
-<th>Method Signature</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>open() =&gt; void</code></td>
-<td>Puts the component in the open state.</td>
-</tr>
-<tr class="even">
-<td><code>close() =&gt; void</code></td>
-<td>Puts the component in the closed state.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="usage-within-web-frameworks">Usage within Web Frameworks</h2>
-<h3 id="mdccircularprogressadapter"><code>MDCCircularProgressAdapter</code></h3>
-<table>
-<colgroup>
-<col style="width: 59%" />
-<col style="width: 40%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Method Signature</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>addClass(className: string) =&gt; void</code></td>
-<td>Adds a class to the root element.</td>
-</tr>
-<tr class="even">
-<td><code>getDeterminateCircleAttribute(attributeName: string) =&gt; void</code></td>
-<td>Gets the specified attribute from the determinate circle element.</td>
-</tr>
-<tr class="odd">
-<td><code>hasClass(className: string) =&gt; boolean</code></td>
-<td>Returns boolean indicating whether the root element has a given class.</td>
-</tr>
-<tr class="even">
-<td><code>removeClass(className: string) =&gt; void</code></td>
-<td>Removes a class from the root element.</td>
-</tr>
-<tr class="odd">
-<td><code>removeAttribute(attributeName: string) =&gt; void</code></td>
-<td>Removes the specified attribute from the root element.</td>
-</tr>
-<tr class="even">
-<td><code>setAttribute(attributeName: string, value: string) =&gt; void</code></td>
-<td>Sets the specified attribute on the root element.</td>
-</tr>
-<tr class="odd">
-<td><code>setDeterminateCircleAttribute(attributeName: string, value: string) =&gt; void</code></td>
-<td>Sets the specified attribute on the determinate circle element.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="mdccircularprogressfoundation"><code>MDCCircularProgressFoundation</code></h3>
-<table>
-<colgroup>
-<col style="width: 84%" />
-<col style="width: 15%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Method Signature</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>setDeterminate(value: boolean) =&gt; void</code></td>
-<td>Toggles the component between the determinate and indeterminate state.</td>
-</tr>
-<tr class="even">
-<td><code>setProgress(value: number) =&gt; void</code></td>
-<td>Sets the progress bar to this value. Value should be between [0, 1].</td>
-</tr>
-<tr class="odd">
-<td><code>open() =&gt; void</code></td>
-<td>Puts the component in the open state.</td>
-</tr>
-<tr class="even">
-<td><code>close() =&gt; void</code></td>
-<td>Puts the component in the closed state.</td>
-</tr>
-</tbody>
-</table>
-</body>
+<a class="sourceLine" id="cb7-39" title="39"><span class="kw">&lt;/div&gt;</span></a></code></pre>
+    </div>
+    <h2 id="style-customization">Style Customization</h2>
+    <h3 id="css-classes">CSS Classes</h3>
+    <table>
+      <colgroup>
+        <col style="width: 40%" />
+        <col style="width: 59%" />
+      </colgroup>
+      <thead>
+        <tr class="header">
+          <th>CSS Class</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="odd">
+          <td><code>mdc-circular-progress</code></td>
+          <td>Mandatory. The root element.</td>
+        </tr>
+        <tr class="even">
+          <td><code>mdc-circular-progress--indeterminate</code></td>
+          <td>
+            Optional. Puts the circular progress indicator in an indeterminate
+            state.
+          </td>
+        </tr>
+        <tr class="odd">
+          <td><code>mdc-circular-progress--closed</code></td>
+          <td>Optional. Hides the circular progress indicator.</td>
+        </tr>
+        <tr class="even">
+          <td><code>mdc-circular-progress__determinate-container</code></td>
+          <td>Mandatory. Contains the determinate progress indicator.</td>
+        </tr>
+        <tr class="odd">
+          <td><code>mdc-circular-progress__indeterminate-container</code></td>
+          <td>Mandatory. Contains the indeterminate progress indicator.</td>
+        </tr>
+        <tr class="even">
+          <td>
+            <code>mdc-circular-progress__determinate-circle-graphic</code>
+          </td>
+          <td>Mandatory. The determinate SVG.</td>
+        </tr>
+        <tr class="odd">
+          <td><code>mdc-circular-progress__determinate-track</code></td>
+          <td>Mandatory. The determinate SVG track.</td>
+        </tr>
+        <tr class="even">
+          <td><code>mdc-circular-progress__determinate-circle</code></td>
+          <td>Mandatory. The determinate SVG circle.</td>
+        </tr>
+        <tr class="odd">
+          <td><code>mdc-circular-progress__spinner-layer</code></td>
+          <td>
+            Mandatory. Another wrapper around the indeterminate indicator.
+          </td>
+        </tr>
+        <tr class="even">
+          <td>
+            <code>mdc-circular-progress__indeterminate-circle-graphic</code>
+          </td>
+          <td>
+            Mandatory. An indeterminate SVG (there are three of these in total).
+          </td>
+        </tr>
+        <tr class="odd">
+          <td><code>mdc-circular-progress__circle-clipper</code></td>
+          <td>
+            Mandatory. Clips an indeterminate SVG circle so that only a section
+            of it is visible.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>mdc-circular-progress__circle-left</code></td>
+          <td>
+            Mandatory. One of two circle sections that when combined are
+            animated to form the full indeterminate progress indicator.
+          </td>
+        </tr>
+        <tr class="odd">
+          <td><code>mdc-circular-progress__circle-right</code></td>
+          <td>
+            Mandatory. One of two circle sections that when combined are
+            animated to form the full indeterminate progress indicator.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>mdc-circular-progress__gap-patch</code></td>
+          <td>
+            Mandatory. A tiny little sliver of an SVG circle used to patch a gap
+            between the circle-left and the circle-right.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <blockquote>
+      <p>
+        <em>NOTE</em>: Ensure the correct inner SVG templates for each size are
+        used to ensure optimal ratio of the stroke width to container size as
+        specified in Material Design guidelines.
+      </p>
+    </blockquote>
+    <h3 id="sass-mixins">Sass Mixins</h3>
+    <table>
+      <colgroup>
+        <col style="width: 29%" />
+        <col style="width: 70%" />
+      </colgroup>
+      <thead>
+        <tr class="header">
+          <th>Mixin</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="odd">
+          <td><code>color($color)</code></td>
+          <td>
+            Customizes the stroke-color of the indicator. Applies to the
+            determinate variant, and also the indeterminate variant unless the
+            four-color mixin is applied.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>track-color($color)</code></td>
+          <td>
+            Customizes the track color of the indicator. Applies to the
+            determinate variant only.
+          </td>
+        </tr>
+        <tr class="odd">
+          <td><code>indeterminate-colors($colors)</code></td>
+          <td>
+            Applies four animated stroke-colors to the indeterminate indicator.
+            Applicable to the indeterminate variant only and overrides any
+            single color currently set. Takes a list of exacty four colors.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h2 id="mdccircularprogress-properties-and-methods">
+      <code>MDCCircularProgress</code> Properties and Methods
+    </h2>
+    <table>
+      <colgroup>
+        <col style="width: 25%" />
+        <col style="width: 31%" />
+        <col style="width: 43%" />
+      </colgroup>
+      <thead>
+        <tr class="header">
+          <th>Property</th>
+          <th>Value Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="odd">
+          <td><code>determinate</code></td>
+          <td><code>boolean</code> (write-only)</td>
+          <td>
+            Toggles the component between the determinate and indeterminate
+            state.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>progress</code></td>
+          <td><code>number</code> (write-only)</td>
+          <td>
+            Sets the progress bar to this value. Value should be between 0 and
+            1.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table>
+      <thead>
+        <tr class="header">
+          <th>Method Signature</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="odd">
+          <td><code>open() =&gt; void</code></td>
+          <td>Puts the component in the open state.</td>
+        </tr>
+        <tr class="even">
+          <td><code>close() =&gt; void</code></td>
+          <td>Puts the component in the closed state.</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2 id="usage-within-web-frameworks">Usage within Web Frameworks</h2>
+    <h3 id="mdccircularprogressadapter">
+      <code>MDCCircularProgressAdapter</code>
+    </h3>
+    <table>
+      <colgroup>
+        <col style="width: 59%" />
+        <col style="width: 40%" />
+      </colgroup>
+      <thead>
+        <tr class="header">
+          <th>Method Signature</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="odd">
+          <td><code>addClass(className: string) =&gt; void</code></td>
+          <td>Adds a class to the root element.</td>
+        </tr>
+        <tr class="even">
+          <td>
+            <code
+              >getDeterminateCircleAttribute(attributeName: string) =&gt;
+              void</code
+            >
+          </td>
+          <td>
+            Gets the specified attribute from the determinate circle element.
+          </td>
+        </tr>
+        <tr class="odd">
+          <td><code>hasClass(className: string) =&gt; boolean</code></td>
+          <td>
+            Returns boolean indicating whether the root element has a given
+            class.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>removeClass(className: string) =&gt; void</code></td>
+          <td>Removes a class from the root element.</td>
+        </tr>
+        <tr class="odd">
+          <td>
+            <code>removeAttribute(attributeName: string) =&gt; void</code>
+          </td>
+          <td>Removes the specified attribute from the root element.</td>
+        </tr>
+        <tr class="even">
+          <td>
+            <code
+              >setAttribute(attributeName: string, value: string) =&gt;
+              void</code
+            >
+          </td>
+          <td>Sets the specified attribute on the root element.</td>
+        </tr>
+        <tr class="odd">
+          <td>
+            <code
+              >setDeterminateCircleAttribute(attributeName: string, value:
+              string) =&gt; void</code
+            >
+          </td>
+          <td>
+            Sets the specified attribute on the determinate circle element.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h3 id="mdccircularprogressfoundation">
+      <code>MDCCircularProgressFoundation</code>
+    </h3>
+    <table>
+      <colgroup>
+        <col style="width: 84%" />
+        <col style="width: 15%" />
+      </colgroup>
+      <thead>
+        <tr class="header">
+          <th>Method Signature</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="odd">
+          <td><code>setDeterminate(value: boolean) =&gt; void</code></td>
+          <td>
+            Toggles the component between the determinate and indeterminate
+            state.
+          </td>
+        </tr>
+        <tr class="even">
+          <td><code>setProgress(value: number) =&gt; void</code></td>
+          <td>
+            Sets the progress bar to this value. Value should be between [0, 1].
+          </td>
+        </tr>
+        <tr class="odd">
+          <td><code>open() =&gt; void</code></td>
+          <td>Puts the component in the open state.</td>
+        </tr>
+        <tr class="even">
+          <td><code>close() =&gt; void</code></td>
+          <td>Puts the component in the closed state.</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
 </html>

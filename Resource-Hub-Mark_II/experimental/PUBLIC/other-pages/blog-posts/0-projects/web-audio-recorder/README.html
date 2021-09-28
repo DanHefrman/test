@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<h2 id="intro-to-web-audio-recorder">Intro to Web Audio Recorder</h2>
+<p><code>WebAudioRecorder.js</code> is a JavaScript library written in 2015 by <a href="https://github.com/higuma">higuma</a> that can record audio and encode to common formats directly in the browser.</p>
+<p>When used in conjunction with <code>getUserMedia()</code> it can record the audio from the user’s microphone or webcam.</p>
+<p>It supports 3 encoding formats:</p>
+<ul>
+<li>Uncompressed waveform audio (.wav)</li>
+<li>Vorbis audio in ogg container (.ogg)</li>
+<li>MP3 (MPEG-1 Audio Layer III) (.mp3)</li>
+</ul>
+<h2 id="libraries">Libraries</h2>
+<p><code>WebAudioRecorder.js</code> employs outside JavaScript libraries to change over the crude sound to mp3 and Vorbis. These libraries are Java Script adaptations of the well known <a href="http://lame.sourceforge.net/download.php">Weak mp3 encoder</a> and <a href="https://xiph.org/ogg/">libogg</a>/<a href="https://xiph.org/vorbis/">libvorbis</a> encoders gotten by compiling the initial C code utilizing <a href="http://kripken.github.io/emscripten-site/">Empscripten</a> as (the asm.js subset of) JavaScript. Since JavaScript is slower than local code you ought to anticipate your encoding times to be higher.</p>
+<p>These libraries are loaded and used as Web Workers which prevents the browser tab from becoming unresponsive while the audio encoding is underway.</p>
+<p>Even though the main <code>WebAudioRecorder.min.js</code> JS file comes in at just 3.6KB when minified (and 1.21 KB when gzipped) unless you’re recording to wav, you do have to make extra HTTP requests and load the external libraries, and these libraries are quite big:</p>
+<p><strong>For encoding MP3</strong></p>
+<ul>
+<li><code>WebAudioRecorderMp3.min.js</code> 386 KB minified and 114 KB gzipped</li>
+<li><code>Mp3LameEncoder.min.js.mem</code> 96 KB minified and 12 KB gzipped</li>
+</ul>
+<p>That’s 2 HTTP requests and 126KB in total when gzipped.</p>
+<p>The MP3 encoder is locked at recording 2 channels but you can configure the bitrate from 64 to 320. The current implementation supports LAME CBR encoding only, no VBR (variable bit rate).</p>
+<p><strong>For encoding Vorbis in ogg container</strong></p>
+<ul>
+<li><code>WebAudioRecorderOgg.min.js</code> 311 KB minified and 95 KB gzipped</li>
+<li><code>OggVorbisEncoder.min.js.mem</code> 553 KB minified and 114KB gzipped</li>
+</ul>
+<p>That’s 2 HTTP requests and 209KB in total when gzipped.</p>
+<p>The Vorbis encoder can encode mono or stereo sound and you can configure the bitrate from 45kb/s to 500kb/s. Also, keep in mind that Vorbis is mostly aimed at compressing music and audio in general, it’s not aimed at compressing speech <a href="https://wiki.xiph.org/Speex_FAQ#Why_do_we_need_Speex.3F_Vorbis_is_open_source_and_patent-free.">like the way Speex is</a>.</p>
+<p><strong>Uncompressed wav sound</strong></p>
+<p>The small code for capturing data as uncompressed wav is located separately in <code>WebAudioRecorderWav.min.js</code> which comes in at just 2.6 KB minified and 1 KB gzipped. No need for large libraries here.</p>
+<p>When recording to wav, audio data is recorded as 2 channel 16bit audio (CD quality) and thus will be <a href="https://www.colincrawley.com/audio-file-size-calculator/">exactly 10.582MB/minute</a> at 44.1kHz but you can lower the number of channels from the <code>WebAudioRecorder</code> constructor to halve that size.</p>
+<p><strong>Sampling rate</strong></p>
+<p>Regardless of the library, the sample rate used will be the one set in your OS for your playback device (<a href="https://www.w3.org/TR/webaudio/#dom-audiocontextoptions-samplerate">as per the spec</a>). In practice, you’ll mostly see sample rates of 44100 (44.1kHz) and 48000 (48kHz).</p>
+<h2 id="project-folder">Project Folder</h2>
+<p>To use the library you must 1st download the <a href="https://github.com/higuma/web-audio-recorder-js/releases">latest release (0.1.1 from 2015) from GitHub</a> and set up your project folder. Here’s how I set up mine:</p>
+<figure>
+<img src="https://blog.addpipe.com/content/images/2018/06/simple-web-audio-recorder-demo-folder-structure-1-300x214.png" alt="Folder structure for simple web audio recorder demo" /><figcaption>Folder structure for simple web audio recorder demo</figcaption>
+</figure>
+<p>Folder structure for simple web audio recorder demo</p>
+<p>I’m using <code>index.html</code> for a simple record/stop UI and <code>app.js</code> to host the code for the interface.</p>
+<h2 id="html-file">HTML File</h2>
+<p>In <code>index.html</code> we need a select for the type of encoding, 2 buttons: start and stop, a list for showing the recorded files and a visible log too keep track of what’s happening. Here’s how my <code>index.html</code> looks:</p>
+<p>We’re inserting<code>WebAudioRecorder.min.js</code> and<code>app.js</code> at the end to make sure they have access to all the DOM elements when run.</p>
+<h2 id="javascript-file">JavaScript File</h2>
+<p>Now let’s move on to <code>app.js</code> and build our web based audio recorder.</p>
+<p>We’ll start out by defining a few variables and setting up references to those DOM UI elements. The comments describe each variable in detail:</p>
+<p>With our record &amp; stop buttons referenced in JS we can add event listeners for when they’re clicked:</p>
+<h2 id="code-for-starting-a-recording">Code for starting a recording</h2>
+<p>The <code>startRecording()</code> function will do most of the heavy lifting in this demo.</p>
+<p>In it we first:</p>
+<ol type="1">
+<li>set up the constraints object for audio only (see our <a href="https://addpipe.com/blog/audio-constraints-getusermedia/">audio constraints</a> article for toggling advanced options like noise reduction and echo cancellation)</li>
+<li>call the promise based <code>navigator.mediaDevices.getUserMedia()</code></li>
+</ol>
+<p>Only if <code>getUserMedia()</code> succeeds (user grants microphone access) we trigger the rest of the code.</p>
+<p>In <code>getUserMedia</code>’s success function we’ll start by booting up a new <code>WebAudioRecorder</code> object taking care to provide the function for the <code>onEncoderLoading</code> event directly in its constructor. <code>onEncoderLoading</code> is the only event to be fired during construction process so to catch the first event correctly, it should be set from constructor parameter.</p>
+<p>The JS worker files for converting audio to mp3 and Vorbis are loaded when creating a recorder object or when changing encoding with <code>setEncoding()</code>. To correctly load those worker files we must set the worker directory from the constructor object using <code>workerDir</code> (“/js” in our case because that’s where we’ve put all the <code>WebAudioRecorder</code>files).</p>
+<p>The last property we’ll be setting in the constructor object is the <code>encoding</code> property (mp3, wav or ogg). We’ll use the value from our <code>encodingTypeSelect</code> drop down menu.</p>
+<p>With the new <code>recorder</code> object initialised we can use the <code>onComplete</code> event to trigger what happens when the encoding is done – basically we just pass the blob to the <code>createDownloadLink(blob,encoding)</code> function but more on that later. We could have set up this event in the constructor but for this demo we’ll just add it after:</p>
+<p>Before starting the recording we configure the <code>recorder</code> object to:</p>
+<ol type="1">
+<li>record for maximum 120 seconds</li>
+<li>encode the audio data AFTER the recording process is stopped</li>
+<li>we set the quality for Vorbis recodings to 0.5 which means abut 160kbps</li>
+<li>we set the bitrate for mp3 encodings to 160 (kbps)</li>
+</ol>
+<p>For the mp3 <code>bitRate</code> you can use values from 64 to 320 while for the Vorbis <code>quality</code> you can use values from -0.1 to 1.0.</p>
+<p>This is the average bitrate each Vorbis quality value corresponds to:</p>
+<figure>
+<img src="https://blog.addpipe.com/content/images/2018/06/Screen-Shot-2018-06-15-at-12.19.28.png" alt="Each Vorbis ogg quality setting and their respective average bit rate" /><figcaption>Each Vorbis ogg quality setting and their respective average bit rate</figcaption>
+</figure>
+</body>
+</html>

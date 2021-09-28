@@ -12,7 +12,7 @@ A link to this tool, including input, options and all chained tools.
 
 Import from file
 
-Save as...
+Save as…
 
 Copy to clipboard
 
@@ -26,11 +26,11 @@ Can"t convert.
 
 An error has occured.
 
-Chain with...
+Chain with…
 
 Remove chain
 
-Save as...
+Save as…
 
 Copy to clipboard
 
@@ -56,21 +56,21 @@ Single Number: 1 2 3 With Dot: 1. 2. 3. With Bracket: 1) 2) 3) Custom
 
 Number Format <span class="option-details">Choose a line number format or create your own.</span>
 
-Custom Numbering Format <span class="option-details">If you chose the "Custom" mode, enter your own format here. Use %n for the actual line number.</span>
+Custom Numbering Format <span class="option-details">If you chose the “Custom” mode, enter your own format here. Use %n for the actual line number.</span>
 
 <span class="primary">Text line number adder tool</span> <span class="secondary">What is a text line number adder?</span>
 
-With this online application, you can add line numbering to the text. The program splits the text input into individual lines and each line gets an incremental number added to its start. By default, it counts all lines, but you can also choose a mode that skips empty lines, which includes lines with only whitespaces. You can also adjust the numbering format. We placed the three most popular ordered list formats in the quick use list, but if you want to create a different format, then select the "custom" mode and enter the desired pattern in the field below. The special variable "%n" will be replaced with the current line number. For example, "(%n)" will be replaced with "(1)", "(2)", "(3)", etc. Textabulous!
+With this online application, you can add line numbering to the text. The program splits the text input into individual lines and each line gets an incremental number added to its start. By default, it counts all lines, but you can also choose a mode that skips empty lines, which includes lines with only whitespaces. You can also adjust the numbering format. We placed the three most popular ordered list formats in the quick use list, but if you want to create a different format, then select the “custom” mode and enter the desired pattern in the field below. The special variable “%n” will be replaced with the current line number. For example, “(%n)” will be replaced with “(1)”, “(2)”, “(3)”, etc. Textabulous!
 
 <span class="primary">Text line number adder examples</span> <span class="secondary">Click to use</span>
 
 Somewhere Over the Rainbow
 
-In this example, we add line numbers to "Somewhere Over the Rainbow" lyrics by Israel Kamakawiwo\`ole. We use ordinal numbers for the line format and count all the lines in the input, including empty ones that separate the verses.
+In this example, we add line numbers to “Somewhere Over the Rainbow” lyrics by Israel Kamakawiwo\`ole. We use ordinal numbers for the line format and count all the lines in the input, including empty ones that separate the verses.
 
 Somewhere over the rainbow Way up high And the dreams that you dream of Once in a lullaby Somewhere over the rainbow Bluebirds fly And the dreams that you dream of Dreams really do come true
 
-1. Somewhere over the rainbow 2. Way up high 3. And the dreams that you dream of 4. Once in a lullaby 5. 6. Somewhere over the rainbow 7. Bluebirds fly 8. And the dreams that you dream of 9. Dreams really do come true
+1.  Somewhere over the rainbow 2. Way up high 3. And the dreams that you dream of 4. Once in a lullaby 5. 6. Somewhere over the rainbow 7. Bluebirds fly 8. And the dreams that you dream of 9. Dreams really do come true
 
 **Required options**
 
@@ -82,13 +82,13 @@ Single Number: 1 2 3 With Dot: 1. 2. 3. With Bracket: 1) 2) 3) Custom
 
 Number Format <span class="option-details">Choose a line number format or create your own.</span>
 
-Poem "Dreams"
+Poem “Dreams”
 
-In this example, we enumerate lines in the poem "Dreams" by Langston Hughes. We have activated the "Number Non-empty Lines" mode, therefore empty lines are skipped and only lines with visual characters in them get numbers. We have also set the numbering format to be the line number followed by a round bracket. In the output, we get nine numbered lines of the poem.
+In this example, we enumerate lines in the poem “Dreams” by Langston Hughes. We have activated the “Number Non-empty Lines” mode, therefore empty lines are skipped and only lines with visual characters in them get numbers. We have also set the numbering format to be the line number followed by a round bracket. In the output, we get nine numbered lines of the poem.
 
 Hold fast to dreams For if dreams die Life is a broken-winged bird That cannot fly. Hold fast to dreams For when dreams go Life is a barren field Frozen with snow. © Langston Hughes
 
-1) Hold fast to dreams 2) For if dreams die 3) Life is a broken-winged bird 4) That cannot fly. 5) Hold fast to dreams 6) For when dreams go 7) Life is a barren field 8) Frozen with snow. 9) © Langston Hughes
+1.  Hold fast to dreams 2) For if dreams die 3) Life is a broken-winged bird 4) That cannot fly. 5) Hold fast to dreams 6) For when dreams go 7) Life is a barren field 8) Frozen with snow. 9) © Langston Hughes
 
 **Required options**
 
@@ -102,7 +102,7 @@ Number Format <span class="option-details">Choose a line number format or create
 
 List of Sports
 
-In this example, we decided to create our own line numbers for a list of different sports names. To do this, we selected the "custom" option in the list of formats and entered the pattern "\[%n\] " in the field below. Here "%n" corresponds to the line numbers. As a result, all numbers are enclosed in square brackets.
+In this example, we decided to create our own line numbers for a list of different sports names. To do this, we selected the “custom” option in the list of formats and entered the pattern “\[%n\]” in the field below. Here “%n” corresponds to the line numbers. As a result, all numbers are enclosed in square brackets.
 
 Badminton Tennis Hockey Fitness Gymnastics Volleyball Basketball Climbing Football
 
@@ -118,4 +118,4 @@ Single Number: 1 2 3 With Dot: 1. 2. 3. With Bracket: 1) 2) 3) Custom
 
 Number Format <span class="option-details">Choose a line number format or create your own.</span>
 
-Custom Numbering Format <span class="option-details">If you chose the "Custom" mode, enter your own format here. Use %n for the actual line number.</span>
+Custom Numbering Format <span class="option-details">If you chose the “Custom” mode, enter your own format here. Use %n for the actual line number.</span>

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="calendar-this">Calendar This!</h1>
+<p>In this project, you are going to take the knowledge that you just gained to build a data-driven application with Flask. In this, you will implement a calendaring application with</p>
+<ul>
+<li>Appointments</li>
+<li>A Google Calendar-like user interface (but no client-side fancy)</li>
+<li>A stretch goal of recurring appointments</li>
+</ul>
+<p>This is going to combine Flask, Psycopg2, WTForms, and Jinja2 into one project. YAY!</p>
+<p>In this project, you will be encouraged to refer to external documentation for some aspects of the project. This is part of the <em>practice</em> of programming: reading documentation. Luckily, Python projects tend to have thorough documentation, not like some of the stuff you saw in Node.js-land. For those references, there will also be code blocks that show you the implementation should you find the documentation inscrutable. However, you are <em>highly</em> encouraged to try to figure it out, first, because that’s what you will do once you become a full-time software engineer.</p>
+<h2 id="setting-up-your-project">Setting up your project</h2>
+<p>Create a new project directory called <code>calendar_this</code>. Change your working directory into <code>calendar_this</code> and run the following command to initialize your Python virtual environment and install needed dependencies all in one command. You’ll use Python 3.8.2 because that version is supported on both macOS and Windows. It will install Flask, Psycopg2, Flask-WTF, and Flask-Login. Installing Flask also installs Jinja2 for you. Installing Flask-WTF also installs WTForms for you. Flask-Login installs … just Flask-Login. :-D Then, <code>python-dotenv</code> allows Flask to load your <code>.env</code> and <code>.flaskenv</code>.</p>
+<pre class="shell"><code>pipenv install Flask psycopg2-binary Flask-WTF python-dotenv \
+       --python &quot;$PYENV_ROOT/versions/3.8.2/bin/python&quot;</code></pre>
+<p>Once it installs, activate the virtual environment.</p>
+<pre class="shell"><code>pipenv shell</code></pre>
+<p>If you don’t want Visual Studio Code to complain to you about linters, now type</p>
+<pre class="shell"><code>pipenv install --dev pylint</code></pre>
+<p>Now, you’re ready to do some coding! Open up Visual Studio for the project directory.</p>
+<h2 id="get-flask-running">Get Flask running</h2>
+<p>Getting Flask running following best practices requires you to complete some steps.</p>
+<ol type="1">
+<li>Create a <code>.gitignore</code> file for a Python project</li>
+<li>Create a directory that will contain your application’s code</li>
+<li>Create a file for your routes and a Blueprint in it to hold the routes for the application</li>
+<li>Create an <code>__init__.py</code> file in your application’s code directory that holds the declaration of your Flask application</li>
+<li>Create a top-level module that will load the application code for you and give it to Flask to run</li>
+<li>Create a <code>.env</code> and <code>.flaskenv</code> file to contain the settings for the Flask application</li>
+</ol>
+<p>Once you have that set up, you should be able to run the app and see it respond to your application!</p>
+<h3 id="create-a-.gitignore-file">Create a .gitignore file</h3>
+<p>There are lots of things that Python projects can produce that you do <em>not</em> want in your application. GitHub maintains an <a href="https://github.com/github/gitignore">updated repository</a> filled with <code>.gitignore</code> files that you can use for almost any kind of project that you could create. They have one for Python projects. You can use that to create a <code>.gitignore</code> for you.</p>
+<p>Of course, you could go to GitHub, find the file, click on it, copy the contents, create a <code>.gitignore</code> file for your project, and paste the contents into it. But, as a developer, that should make you roll your eyes. Clicking! Copying! What is that primitive behavior? Instead, you can just do it on the command line like this.</p>
+<pre class="shell"><code>curl https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore &gt; .gitignore</code></pre>
+<p>Which uses <code>curl</code>, the command line tool to download content from the Internet, and redirect the content it gets into a <code>.gitignore</code> file. So easy!</p>
+<p>You should keep that command in your “list of good code snippets to have” because it’s a good code snippet to have.</p>
+<p>Since you have a good <code>.gitignore</code> file, you can initialize your directory as a Git repository. You should do this so that you can add and commit your code after every step, in case you want to rollback a change that broke something.</p>
+<pre class="shell"><code># Initialize the Git repository
+git init
+
+# Look and see what will be added. It should only
+# be .gitignore and the Pipfiles
+git status
+
+# Add and commit
+git add .
+git commit -m &quot;Add new project files Pipfile and Pipfile.lock&quot;</code></pre>
+<h3 id="create-your-application-directory-and-code">Create your application directory and code</h3>
+<p>Now, create your code to get the application up and running. First up, create the application’s code directory. Some developers name this <code>app</code> while others name it <code>src</code>. You choose. These instructions go with <code>app</code>.</p>
+<p>Inside the <code>app</code> directory, create a file named <code>routes.py</code>. In that file, import the <code>Blueprint</code> from class from the <code>flask</code> package. Please refer to the article <em>Routing Blueprints In Flask</em> to see how to import that.</p>
+<p>Now, create an instance of the <code>Blueprint</code> class with the name “main” as the first argument, <code>__name__</code> as the second, and the top-level route “/” as the third. Store that into a variable named <code>bp</code>. Please refer to the article <em>Routing Blueprints In Flask</em> to see how to create a <code>Blueprint</code> object.</p>
+<p>Create a new route that shows the “main” page. Do that by defining a function named “main” that takes no arguments and returns the string “Calendar working”. Decorate that with the following code.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb6-1" title="1"><span class="at">@bp.route</span>(<span class="st">&quot;/&quot;</span>)</a></code></pre></div>
+<p>Remember that when you have a Blueprint, you use the variable name that contains the Blueprint object to declare your routes.</p>
+<p>Now, create an <code>__init__.py</code> that creates the Flask app, gets the secret key from the environment, and registers the Blueprint. That code should look like this.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb7-1" title="1"><span class="im">from</span> app <span class="im">import</span> routes</a>
+<a class="sourceLine" id="cb7-2" title="2"><span class="im">from</span> flask <span class="im">import</span> Flask</a>
+<a class="sourceLine" id="cb7-3" title="3"><span class="im">import</span> os</a>
+<a class="sourceLine" id="cb7-4" title="4"></a>
+<a class="sourceLine" id="cb7-5" title="5">app <span class="op">=</span> Flask(<span class="va">__name__</span>)</a>
+<a class="sourceLine" id="cb7-6" title="6">app.config.update({<span class="st">&#39;SECRET_KEY&#39;</span>: os.environ.get(<span class="st">&#39;SECRET_KEY&#39;</span>)})</a>
+<a class="sourceLine" id="cb7-7" title="7">app.register_blueprint(routes.bp)</a></code></pre></div>
+<p>In the article, you were encouraged to create a <code>Config</code> class in a <code>config</code> module so that you could use <code>app.config.from_object</code>. This is an alternate way of doing it, the <code>app.config.update</code> method takes a dictionary and uses it in much the same way that <code>app.config.from_object</code> iterates over the attributes of the object and sets the configuration from that.</p>
+<h3 id="top-level-module">Top-level module</h3>
+<p>Create a new module in the project root named “calendar_this.py”. In it, put one line of code.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb8-1" title="1"><span class="im">from</span> app <span class="im">import</span> app</a></code></pre></div>
+<p>That imports the <code>app</code> variable from the module named <code>app</code> which runs the <code>app/__init__.py</code> which creates the <code>app</code> variable that contains the Flask object.</p>
+<h3 id="environment-settings">Environment settings</h3>
+<p>Flask supports <em>two</em> environment files, <code>.flaskenv</code> and <code>.env</code>. You should put the settings in <code>.flaskenv</code> that won’t change between development and production environments. This includes settings like <code>FLASK_APP</code>, the entry point for your application.</p>
+<p>You should put development settings in your <code>.env</code> because that one won’t get checked in to source control. These should include <code>FLASK_ENV</code> and <code>SECRET_KEY</code>.</p>
+<p>In the project root, create a <code>.flaskenv</code> file and put the <code>FLASK_APP</code> in there.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode ini"><code class="sourceCode ini"><a class="sourceLine" id="cb9-1" title="1"><span class="dt">FLASK_APP</span><span class="ot">=</span><span class="st">calendar_this.py</span></a></code></pre></div>
+<p>In the project root, create a <code>.env</code> file and put the <code>FLASK_ENV</code> and <code>SECRET_KEY</code> settings. Replace the “«some random bytes»” in the following content with some secret value.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode ini"><code class="sourceCode ini"><a class="sourceLine" id="cb10-1" title="1"><span class="dt">FLASK_ENV</span><span class="ot">=</span><span class="st">development</span></a>
+<a class="sourceLine" id="cb10-2" title="2"><span class="dt">SECRET_KEY</span><span class="ot">=</span><span class="st">«some random bytes»</span></a></code></pre></div>
+<p>You should now be able to start your Flask application with the following command.</p>
+<pre class="shell"><code>flask run</code></pre>
+<p>Open up a Web browser to http://localhost:5000 and you should see “Calendar working”.</p>
+<h2 id="get-your-first-page-rendering">Get your first page rendering</h2>
+<p>Inside the <code>app</code> directory, create a <code>templates</code> directory. Inside there, create an HTML file named “main.html”. Inside that file, create a Jinja2 template that doesn’t have any dynamic stuff, just a normal HTML file with an <code>html</code>, <code>head</code>, <code>title</code>, and <code>body</code>. In the body, put an <code>h1</code> element with the content “Calendar working”.</p>
+<p>Now, change the <code>main</code> method in your <code>routes.py</code> file to render that HTML file. You don’t need to pass any data into it. Please refer to <em>Jinja Templates</em> on how to import and use the <code>render_template</code> function.</p>
+<p>You should now refresh your browser and see the <strong>Calendar working</strong> rendering there. When it works, add and commit your changes to your local GitHub repository.</p>
+<h2 id="create-your-database">Create your database</h2>
+<p>You’ve done this often, so here are the specs for you to create your development database.</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>User name</td>
+<td>calendar_this</td>
+</tr>
+<tr class="even">
+<td>Database name</td>
+<td>calendar_this_dev</td>
+</tr>
+<tr class="odd">
+<td>Password</td>
+<td>Ku9rSyXD</td>
+</tr>
+</tbody>
+</table>
+<p>Insider there, create a table named “appointments” with the following specification.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Column name</th>
+<th>Column type</th>
+<th>Constraints</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id</td>
+<td>SERIAL</td>
+<td>Primary Key</td>
+</tr>
+<tr class="even">
+<td>name</td>
+<td>VARCHAR(200)</td>
+<td>Not Null</td>
+</tr>
+<tr class="odd">
+<td>start_datetime</td>
+<td>TIMESTAMP</td>
+<td>Not Null</td>
+</tr>
+<tr class="even">
+<td>end_datetime</td>
+<td>TIMESTAMP</td>
+<td>Not Null</td>
+</tr>
+<tr class="odd">
+<td>description</td>
+<td>TEXT</td>
+<td>Not Null</td>
+</tr>
+<tr class="even">
+<td>private</td>
+<td>BOOLEAN</td>
+<td>Not Null</td>
+</tr>
+</tbody>
+</table>
+<p>Go ahead and put one record in there so that you can see it in the browser as you’re developing. Wherever you see “«DATE»” in the following SQL, please insert the current date in “YYYY-MM-DD” format.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb12-1" title="1"><span class="kw">INSERT</span> <span class="kw">INTO</span> appointments (name, start_datetime, end_datetime, description, <span class="kw">private</span>)</a>
+<a class="sourceLine" id="cb12-2" title="2"><span class="kw">VALUES</span></a>
+<a class="sourceLine" id="cb12-3" title="3">(<span class="st">&#39;My appointment&#39;</span>, <span class="st">&#39;«DATE» 14:00:00&#39;</span>, <span class="st">&#39;«DATE» 15:00:00&#39;</span>,</a>
+<a class="sourceLine" id="cb12-4" title="4"> <span class="st">&#39;An appointment for me&#39;</span>, <span class="kw">false</span>);</a></code></pre></div>
+<p>Now, put the connection URL into your <code>.env</code> file so that it will be usable by your application. This goes in <code>.env</code> because you don’t want this to get into source control, nor deployed to a production environment where a different database will likely exist.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode ini"><code class="sourceCode ini"><a class="sourceLine" id="cb13-1" title="1"><span class="dt">DB_USER</span><span class="ot">=</span><span class="st">calendar_this</span></a>
+<a class="sourceLine" id="cb13-2" title="2"><span class="dt">DB_PASS</span><span class="ot">=</span><span class="st">Ku9rSyXD</span></a>
+<a class="sourceLine" id="cb13-3" title="3"><span class="dt">DB_NAME</span><span class="ot">=</span><span class="st">calendar_this_dev</span></a>
+<a class="sourceLine" id="cb13-4" title="4"><span class="dt">DB_HOST</span><span class="ot">=</span><span class="kw">localhost</span></a></code></pre></div>
+<p>Because Flask reads this file for you, it should now be accessible through the <code>os.environ.get</code> method.</p>
+<p>You now have a place from which to get data and a place to put data.</p>
+<h2 id="show-the-appointment-on-the-page">Show the appointment on the page</h2>
+<p>Now, it’s time to get that appointment out of the database and show the data on the Web page. In your <code>app.routes</code> module (that means <code>app/routes.py</code>), import the <code>os</code> module at the top of your file.</p>
+<p>After the creation of your <code>Blueprint</code> for the routes, put a dictionary named <code>CONNECTION_PARAMETERS</code> like you saw in <em>Using Psycopg</em>. You want to read the values from the environment variables in the <code>.env</code> file that you added.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb14-1" title="1">CONNECTION_PARAMETERS <span class="op">=</span> {</a>
+<a class="sourceLine" id="cb14-2" title="2">    <span class="st">&quot;user&quot;</span>: os.environ.get(<span class="st">&quot;DB_USER&quot;</span>),</a>
+<a class="sourceLine" id="cb14-3" title="3">    <span class="st">&quot;password&quot;</span>: os.environ.get(<span class="st">&quot;DB_PASS&quot;</span>),</a>
+<a class="sourceLine" id="cb14-4" title="4">    <span class="st">&quot;dbname&quot;</span>: os.environ.get(<span class="st">&quot;DB_NAME&quot;</span>),</a>
+<a class="sourceLine" id="cb14-5" title="5">    <span class="st">&quot;host&quot;</span>: os.environ.get(<span class="st">&quot;DB_HOST&quot;</span>),</a>
+<a class="sourceLine" id="cb14-6" title="6">}</a></code></pre></div>
+<p>Using <code>CONNECTION_PARAMETERS</code>, in your <code>main</code> method, create a connection, create a cursor, execute the SQL to select all of the records from the <code>appointments</code> table, fetch all of those appointments, and pass them as data into the <code>render_template</code> function. Here’s what it will look like when you get done. Refer to <em>Using Psycopg</em> for the syntax to do this.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb15-1" title="1"><span class="at">@bp.route</span>(<span class="st">&quot;/&quot;</span>)</a>
+<a class="sourceLine" id="cb15-2" title="2"><span class="kw">def</span> main():</a>
+<a class="sourceLine" id="cb15-3" title="3">    <span class="co"># Create a psycopg2 connection with the connection parameters</span></a>
+<a class="sourceLine" id="cb15-4" title="4">        <span class="co"># Create a cursor from the connection</span></a>
+<a class="sourceLine" id="cb15-5" title="5">            <span class="co"># Execute &quot;SELECT id, name, start_datetime, end_datetime</span></a>
+<a class="sourceLine" id="cb15-6" title="6">            <span class="co">#          FROM appointments</span></a>
+<a class="sourceLine" id="cb15-7" title="7">            <span class="co">#          ORDER BY start_datetime;&quot;</span></a>
+<a class="sourceLine" id="cb15-8" title="8">            <span class="co"># Fetch all of the records</span></a>
+<a class="sourceLine" id="cb15-9" title="9">            <span class="cf">return</span> render_template(<span class="st">&quot;main.html&quot;</span>, rows<span class="op">=</span>rows)</a></code></pre></div>
+<p>Recall that the value that comes from fetching all of the rows from Psycopg2 is a tuple with the entries in it. That means the result will be</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb16-1" title="1">(<span class="dv">1</span>, <span class="st">&#39;My appointment&#39;</span>, datetime.datetime(year, month, day, <span class="dv">14</span>, <span class="dv">0</span>, <span class="dv">0</span>)), datetime.datetime(year, month, day, <span class="dv">15</span>, <span class="dv">0</span>, <span class="dv">0</span>))</a></code></pre></div>
+<p>Those last two entries are <code>datetime</code> objects from the <code>datetime</code> built-in package. To format dates, you can use the <code>strftime</code> method on the <code>datetime</code> object. For example, to show just the time, you could do something like this.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb17-1" title="1">d.strftime(<span class="st">&quot;%H:%M&quot;</span>)</a></code></pre></div>
+<p>The “%H” is a format code for the hour, and the “%M” is the format code for the minute. (For a full list of format codes, see <a href="https://docs.python.org/3.8/library/datetime.html#strftime-and-strptime-format-codes"><code>strftime()</code> and <code>strptime()</code> Format Codes</a> in the Python documentation.) Make sure to use <code>strftime</code> in your Jinja template to make the times human readable.</p>
+<p>In the <code>main.html</code> file, use the <code>rows</code> variable that you just passed in to create a table that shows each appointment’s name, start_date, and end_date. Refer to <em>Jinja Templates</em> for the syntax on how to write a loop. The table could look like this.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb18-1" title="1"><span class="kw">&lt;table&gt;</span></a>
+<a class="sourceLine" id="cb18-2" title="2">  <span class="kw">&lt;thead&gt;</span></a>
+<a class="sourceLine" id="cb18-3" title="3">    <span class="kw">&lt;tr&gt;</span></a>
+<a class="sourceLine" id="cb18-4" title="4">      <span class="kw">&lt;th&gt;</span>Name<span class="kw">&lt;/th&gt;</span></a>
+<a class="sourceLine" id="cb18-5" title="5">      <span class="kw">&lt;th&gt;</span>Start<span class="kw">&lt;/th&gt;</span></a>
+<a class="sourceLine" id="cb18-6" title="6">      <span class="kw">&lt;th&gt;</span>End<span class="kw">&lt;/th&gt;</span></a>
+<a class="sourceLine" id="cb18-7" title="7">    <span class="kw">&lt;/tr&gt;</span></a>
+<a class="sourceLine" id="cb18-8" title="8">  <span class="kw">&lt;/thead&gt;</span></a>
+<a class="sourceLine" id="cb18-9" title="9">  <span class="kw">&lt;tbody&gt;</span></a>
+<a class="sourceLine" id="cb18-10" title="10">    <span class="co">&lt;!-- loop here to create rows --&gt;</span></a>
+<a class="sourceLine" id="cb18-11" title="11">    <span class="co">&lt;!-- use strftime to format date objects --&gt;</span></a>
+<a class="sourceLine" id="cb18-12" title="12">    <span class="co">&lt;!-- loop here to create rows --&gt;</span></a>
+<a class="sourceLine" id="cb18-13" title="13">  <span class="kw">&lt;/tbody&gt;</span></a>
+<a class="sourceLine" id="cb18-14" title="14"><span class="kw">&lt;/table&gt;</span></a></code></pre></div>
+<p>Once you have that done, you should now see a single row (assuming you inserted only one record into the <code>appointments</code> table).</p>
+<figure>
+<img src="https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Modular-Curriculum/content/flask/projects/calendar-this/assets/calendar-this-single-appointment.png" alt="One record in calendar this" /><figcaption>One record in calendar this</figcaption>
+</figure>
+<h2 id="create-a-new-appointment">Create a new appointment</h2>
+<p>Now, you’ll build a form for people to complete to create new appointments. Then, you’ll write a handler to accept the form. To do this, you’ll primarily use Flask-WTF.</p>
+<h3 id="creating-your-form-class">Creating your form class</h3>
+<p>Create a new file in your <code>app</code> directory named <code>forms.py</code>. In there, you’ll create your WTF form class.</p>
+<p>The following tables lists the data base column name, its type, the name of the attribute that you’ll use on the form class, and what kind of Basic or Convenience Field it should use from WTForms.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Column name</th>
+<th>Data type</th>
+<th>Attribute name</th>
+<th>Field type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>name</td>
+<td>string</td>
+<td>name</td>
+<td><code>StringField</code></td>
+</tr>
+<tr class="even">
+<td>start_datetime (date part)</td>
+<td>date</td>
+<td>start_date</td>
+<td><code>DateField</code></td>
+</tr>
+<tr class="odd">
+<td>start_datetime (time part)</td>
+<td>time</td>
+<td>start_time</td>
+<td><code>TimeField</code></td>
+</tr>
+<tr class="even">
+<td>end_datetime (date part)</td>
+<td>date</td>
+<td>end_date</td>
+<td><code>DateField</code></td>
+</tr>
+<tr class="odd">
+<td>end_datetime (time part)</td>
+<td>time</td>
+<td>end_time</td>
+<td><code>TimeField</code></td>
+</tr>
+<tr class="even">
+<td>description</td>
+<td>string</td>
+<td>description</td>
+<td><code>TextAreaField</code></td>
+</tr>
+<tr class="odd">
+<td>private</td>
+<td>Boolean</td>
+<td>private</td>
+<td><code>BooleanField</code></td>
+</tr>
+</tbody>
+</table>
+<p>You’ll also want validation for these fields, the <code>DataRequired</code> being the obvious one.</p>
+<p>In addition to those attributes from the table, you’ll want to create a mapping on your form class for a <code>SubmitField</code>. Don’t forget that. Otherwise, you won’t have a button to submit the form!</p>
+<p>Now, note that the the <code>start_datetime</code> and <code>end_datetime</code> columns in the table have <em>two</em> fields to handle one value. It’s not that Python can’t handle a combined date/time. It’s HTML. There is no such thing as a “datetime” <code>input</code>. There was going to be one, but it got dropped from the specification because all the browser makers were like, “Hey! Why make one field when everybody can just use two?” So, dropped it got.</p>
+<p>Using those field names, field types, and the need for validation, build a form class named <code>AppointmentForm</code> for use by your route and view. Refer to <em>Serving HTML From Flask</em> and <em>Handling POSTs</em> for how to build the form class. (Don’t forget to inherit from <code>FlaskForm</code>.) You should end up with an <code>AppointmentForm</code> class with eight attributes on it.</p>
+<p><strong>Note:</strong> Do not put <code>DataRequired</code> on the <code>BooleanField</code>. If you do, that requires the user to <em>always</em> check the box. You don’t want that behavior.</p>
+<p>When you write your form class, you will need to import a lot of classes. It might end up looking like this.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb19-1" title="1"><span class="im">from</span> wtforms.fields <span class="im">import</span> BooleanField, DateField, StringField, SubmitField, TextAreaField, TimeField</a></code></pre></div>
+<p>That’s a long line. If you have <code>pycodestyle</code> installed as your linter, it will complain that the line is too long. A way to fix that is to use parentheses to group your imports like this.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb20-1" title="1"><span class="im">from</span> wtforms.fields <span class="im">import</span> (</a>
+<a class="sourceLine" id="cb20-2" title="2">    BooleanField, DateField, StringField, SubmitField, TextAreaField, TimeField</a>
+<a class="sourceLine" id="cb20-3" title="3">)</a></code></pre></div>
+<p>That way, you can end up with multiple lines of imports, if you need to.</p>
+<p>Once you have the form class created, import it into your <code>app.routes</code> module, create an instance of it as the first line in your <code>main</code> function, and pass it as a parameter to your template for use.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb21-1" title="1"><span class="at">@bp.route</span>(<span class="st">&quot;/&quot;</span>)</a>
+<a class="sourceLine" id="cb21-2" title="2"><span class="kw">def</span> main():</a>
+<a class="sourceLine" id="cb21-3" title="3">    form <span class="op">=</span> AppointmentForm()</a>
+<a class="sourceLine" id="cb21-4" title="4">    <span class="co"># Create a psycopg2 connection with the connection parameters</span></a>
+<a class="sourceLine" id="cb21-5" title="5">        <span class="co"># Create a cursor from the connection</span></a>
+<a class="sourceLine" id="cb21-6" title="6">            <span class="co"># Execute &quot;SELECT id, name, start_datetime, end_datetime FROM appointments;&quot;</span></a>
+<a class="sourceLine" id="cb21-7" title="7">            <span class="co"># Fetch all of the records</span></a>
+<a class="sourceLine" id="cb21-8" title="8">            <span class="cf">return</span> render_template(<span class="st">&quot;main.html&quot;</span>, rows<span class="op">=</span>rows, form<span class="op">=</span>form)</a>
+<a class="sourceLine" id="cb21-9" title="9">            <span class="co">#                                                  ↑</span></a>
+<a class="sourceLine" id="cb21-10" title="10">            <span class="co">#                                         Added this form, too</span></a></code></pre></div>
+<p>Now that you have the form passed to the view, use the functionality provided by WTForms to create the form. Place the <code>form</code> element before your <code>table</code> element that you created in the last section, and have it post to “/”. Please refer to <em>Serving HTML From Flask</em> for how to render the form from the <code>AppointmentForm</code> that you passed into the template.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb22-1" title="1"><span class="kw">&lt;form</span><span class="ot"> method=</span><span class="st">&quot;post&quot;</span><span class="ot"> action=</span><span class="st">&quot;/&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb22-2" title="2">  <span class="co">&lt;!-- use your form variable here --&gt;</span></a>
+<a class="sourceLine" id="cb22-3" title="3">  <span class="co">&lt;!-- to make your form           --&gt;</span></a>
+<a class="sourceLine" id="cb22-4" title="4"><span class="kw">&lt;/form&gt;</span></a>
+<a class="sourceLine" id="cb22-5" title="5"><span class="kw">&lt;table&gt;</span></a>
+<a class="sourceLine" id="cb22-6" title="6">  <span class="kw">&lt;thead&gt;</span></a>
+<a class="sourceLine" id="cb22-7" title="7">    <span class="kw">&lt;tr&gt;</span></a>
+<a class="sourceLine" id="cb22-8" title="8">      <span class="kw">&lt;th&gt;</span>Name<span class="kw">&lt;/th&gt;</span></a>
+<a class="sourceLine" id="cb22-9" title="9">      <span class="kw">&lt;th&gt;</span>Start<span class="kw">&lt;/th&gt;</span></a>
+<a class="sourceLine" id="cb22-10" title="10">      <span class="kw">&lt;th&gt;</span>End<span class="kw">&lt;/th&gt;</span></a>
+<a class="sourceLine" id="cb22-11" title="11"><span class="co">&lt;!-- the rest of the HTML --&gt;</span></a></code></pre></div>
+<p>Once you have that done and rendered, it’ll look something like this.</p>
+<figure>
+<img src="https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Modular-Curriculum/content/flask/projects/calendar-this/assets/calendar-this-with-form.png" alt="Now, with a form!" /><figcaption>Now, with a form!</figcaption>
+</figure>
+<p>You’ll see that the inputs for the date/time values are just regular old text boxes. Modern Web users expect more. To allow that, you need to give all of the <code>DateField</code> and <code>TimeField</code> values a new “widget” to use. In WTForms-speak, a “widget” is the actual form element used in the HTML.</p>
+<p>In your <code>app.forms</code> module, import <code>DateInput</code> and <code>TimeInput</code> from the package <code>wtforms.widgets.html5</code>. Then, specify the widget with the corresponding field by setting the <code>widget=</code> keyword argument. For example, the <code>start_date</code> attribute should end up looking like this.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb23-1" title="1">start_date <span class="op">=</span> DateField(<span class="st">&quot;Start date&quot;</span>, [DataRequired()], widget<span class="op">=</span>DateInput())</a></code></pre></div>
+<p>Do that for both <code>DateField</code> and both <code>TimeField</code> values, specifying <code>DateInput</code> and <code>TimeInput</code>, respectively.</p>
+<p>Now, the form will have appropriate input types that will let the user select a date and a time from the built-in <code>input[type="date"]</code> and <code>input[type="time"]</code> fields.</p>
+<figure>
+<img src="https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Modular-Curriculum/content/flask/projects/calendar-this/assets/calendar-this-with-proper-date-time-fields.png" alt="Now, with a form with nice inputs!" /><figcaption>Now, with a form with nice inputs!</figcaption>
+</figure>
+<h3 id="handling-the-form-submission">Handling the form submission</h3>
+<p>Now that you have the form appearing, you need to handle it in the post.</p>
+<p>Change the route registration from <code>@bp.route("/")</code> to handle both GETs and POSTs. Please refer to <em>Handling POSTs</em> for how to specify that.</p>
+<p>Use the <code>validate_on_submit</code> method to check if the form is valid and, if it is, then create a new record in the database by issuing an <code>INSERT</code> statement. Once that completes, redirect the browser to “/”. Please refer to <em>Using Psycopg</em> to see how to use a parameterized <code>INSERT</code> statement. Please refer to <em>Handling POSTs</em> to recall how to redirect.</p>
+<p>Because you haven’t had to deal with <code>datetime</code> values a lot, so far, here’s the parameter dictionary for you that pulls the data from the <code>AppointmentForm</code> object that you can use in your parameterized <code>INSERT</code> statement. It combines the date from the <code>start_date</code> attribute (type <code>date</code>) and the <code>start_time</code> (type <code>time</code>) attribute into a single <code>datetime</code> Python object.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb24-1" title="1"><span class="co"># Put this import at the top of app.route</span></a>
+<a class="sourceLine" id="cb24-2" title="2"><span class="im">from</span> datetime <span class="im">import</span> datetime</a>
+<a class="sourceLine" id="cb24-3" title="3"></a>
+<a class="sourceLine" id="cb24-4" title="4"><span class="co"># Use this code snippet in running your INSERT statement</span></a>
+<a class="sourceLine" id="cb24-5" title="5"><span class="co"># You must have named the attributes on your AppointmentForm</span></a>
+<a class="sourceLine" id="cb24-6" title="6"><span class="co"># class what was recommended in the table for this to work.</span></a>
+<a class="sourceLine" id="cb24-7" title="7">params <span class="op">=</span> {</a>
+<a class="sourceLine" id="cb24-8" title="8">    <span class="st">&#39;name&#39;</span>: form.name.data,</a>
+<a class="sourceLine" id="cb24-9" title="9">    <span class="st">&#39;start_datetime&#39;</span>: datetime.combine(form.start_date.data, form.start_time.data),</a>
+<a class="sourceLine" id="cb24-10" title="10">    <span class="st">&#39;end_datetime&#39;</span>: datetime.combine(form.end_date.data, form.end_time.data),</a>
+<a class="sourceLine" id="cb24-11" title="11">    <span class="st">&#39;description&#39;</span>: form.description.data,</a>
+<a class="sourceLine" id="cb24-12" title="12">    <span class="st">&#39;private&#39;</span>: form.private.data</a>
+<a class="sourceLine" id="cb24-13" title="13">}</a></code></pre></div>
+<p>Altogether, it’ll look like this.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb25-1" title="1"><span class="at">@bp.route</span>(<span class="st">&quot;/&quot;</span>)</a>
+<a class="sourceLine" id="cb25-2" title="2"><span class="kw">def</span> main():</a>
+<a class="sourceLine" id="cb25-3" title="3">    form <span class="op">=</span> AppointmentForm()</a>
+<a class="sourceLine" id="cb25-4" title="4">    <span class="cf">if</span> form.validate_on_submit():</a>
+<a class="sourceLine" id="cb25-5" title="5">        <span class="co"># Create a psycopg2 connection with the connection parameters</span></a>
+<a class="sourceLine" id="cb25-6" title="6">            <span class="co"># Create a cursor from the connection</span></a>
+<a class="sourceLine" id="cb25-7" title="7">                <span class="co"># Execute a parameterized INSERT statement with the</span></a>
+<a class="sourceLine" id="cb25-8" title="8">                <span class="co">#   params dictionary from above</span></a>
+<a class="sourceLine" id="cb25-9" title="9">                <span class="co"># Redirect to &quot;/&quot;</span></a>
+<a class="sourceLine" id="cb25-10" title="10">    <span class="co"># Create a psycopg2 connection with the connection parameters</span></a>
+<a class="sourceLine" id="cb25-11" title="11">        <span class="co"># Create a cursor from the connection</span></a>
+<a class="sourceLine" id="cb25-12" title="12">            <span class="co"># Execute &quot;SELECT id, name, start_datetime, end_datetime FROM appointments;&quot;</span></a>
+<a class="sourceLine" id="cb25-13" title="13">            <span class="co"># Fetch all of the records</span></a>
+<a class="sourceLine" id="cb25-14" title="14">            <span class="cf">return</span> render_template(<span class="st">&quot;main.html&quot;</span>, rows<span class="op">=</span>rows, form<span class="op">=</span>form)</a></code></pre></div>
+<p>Here’s the link to the Psycopg2 documentation for <a href="https://www.psycopg.org/docs/usage.html#passing-parameters-to-sql-queries">Passing parameters to SQL queries</a> in case you need another point of view.</p>
+<p>Once you get that done, you should be able to add a new appointment via your form and see it in the list.</p>
+<h2 id="showing-form-errors">Showing form errors</h2>
+<p>It wouldn’t make any sense for the <code>end_datetime</code> to be less than the <code>start_datetime</code>. In this section, you will write a custom validator for the <code>AppointmentForm</code>. Then, you will show the error, if it exists.</p>
+<h3 id="adding-a-custom-validator">Adding a custom validator</h3>
+<p>You’re already using <code>DataRequired</code> as a validator for values in the form fields. WTForms allows you to write custom validators for your fields, either as a class (for reusability) or as a one-off function for just one field. This section will walk you through doing the latter. Try to work through the instructions. If you get stuck, the actual code follows the instructions.</p>
+<p>In your <code>app.forms</code> module, import the <code>datetime</code> object from the <code>datetime</code> module. like you did in the <code>app.routes</code> module. You’re going to need it to combine <code>date</code> and <code>time</code> objects. The <code>datetime</code> object in Python supports the comparison operators <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code> and <code>&gt;=</code>, so once you combine the values, it’s a simple <code>if</code> statement with a <code>&lt;</code>.</p>
+<p>Also, you’ll need to import the <code>ValidationError</code> class from <code>wtforms.validators</code> package. Just add it to the existing import.</p>
+<p>In your <code>AppointmentForm</code>, create a new method named <code>validate_end_date</code> that takes two parameters, <code>form</code> and <code>field</code>. This is a one-off validator for the <code>end_date</code> attribute. You can write a <code>validate_«attribute name»</code> method for any and all of the attributes in your form classes and WTForms will run the validations when you call <code>validate_on_submit</code>.</p>
+<p>In the <code>validate_end_date</code> method, use the combine method in the same way that you did for the <code>params</code> object in the previous section, storing the combined <code>start_date</code> and <code>start_time</code> values into a variable named <code>start</code>, and the combined <code>end_date</code> and <code>end_time</code> values into a variable named <code>end</code>.</p>
+<p>Use an <code>if</code> statement to compare that <code>start</code> is greater than or equal to the <code>end</code> value. If it is, raise a <code>ValidationError</code> with the error message “End date/time must come after start date/time”. Please refer to the <a href="https://wtforms.readthedocs.io/en/latest/validators/#custom-validators">Custom validators</a> section of <em>Validators</em> in the WTForms documentation.</p>
+<p>If you just can’t figure those instructions out, here’s the code for you. (<strong>Note:</strong> The <code>import</code> of <code>ValidationError</code> is not shown. Please do that on your own.)</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb26-1" title="1"><span class="kw">def</span> validate_end_date(form, field):</a>
+<a class="sourceLine" id="cb26-2" title="2">    start <span class="op">=</span> datetime.combine(form.start_date.data, form.start_time.data)</a>
+<a class="sourceLine" id="cb26-3" title="3">    end <span class="op">=</span> datetime.combine(field.data, form.end_time.data)</a>
+<a class="sourceLine" id="cb26-4" title="4">    <span class="cf">if</span> start <span class="op">&gt;=</span> end:</a>
+<a class="sourceLine" id="cb26-5" title="5">        msg <span class="op">=</span> <span class="st">&quot;End date/time must come after start date/time&quot;</span></a>
+<a class="sourceLine" id="cb26-6" title="6">        <span class="cf">raise</span> ValidationError(msg)</a></code></pre></div>
+<p>You can test this out by going to the form in the browser and filling it out with a start date/time greater than the end date/time. When you submit it, it should just show you the form, again, with all of the previous values and no new value in the table.</p>
+<h3 id="showing-the-validation-error">Showing the validation error</h3>
+<p>When a form field fails validation, the associated attribute in the instance of the form class has an error added to a list that is in the <code>errors</code> attribute of the field. For example, if the <code>end_date</code> attribute fails the validation that you just wrote, then there will be an entry in <code>end_date.errors</code>. You can loop over that list to show errors in your Web page.</p>
+<p>Now that your form can fail with a start date that is greater than or equal to the end date, it’s only polite to show the person filling it out any errors that they may have inadvertently entered. In the <code>main.html</code> file, replace the rendering of the <code>form.end_date</code> with this code snippet. Don’t copy and paste it. Type it and talk about it with your pair so that there is a mutual understanding gained.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb27-1" title="1"><span class="kw">&lt;div&gt;</span></a>
+<a class="sourceLine" id="cb27-2" title="2">  {{ form.end_date.label }} {{ form.end_date }}</a>
+<a class="sourceLine" id="cb27-3" title="3"></a>
+<a class="sourceLine" id="cb27-4" title="4">  {% if form.end_date.errors %}</a>
+<a class="sourceLine" id="cb27-5" title="5">    <span class="kw">&lt;ul</span><span class="ot"> class=</span><span class="st">&quot;errors&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb27-6" title="6">      {% for error in form.end_date.errors %}</a>
+<a class="sourceLine" id="cb27-7" title="7">        <span class="kw">&lt;li&gt;</span>{{ error }}<span class="kw">&lt;/li&gt;</span></a>
+<a class="sourceLine" id="cb27-8" title="8">        {% endfor %}</a>
+<a class="sourceLine" id="cb27-9" title="9">    <span class="kw">&lt;/ul&gt;</span></a>
+<a class="sourceLine" id="cb27-10" title="10">  {% endif %}</a>
+<a class="sourceLine" id="cb27-11" title="11"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
+<h2 id="make-sure-the-end-date-is-on-the-same-day-as-the-start-date">Make sure the end date is on the same day as the start date</h2>
+<p>Now, add to the previous <code>validate_end_date</code> custom validator to make sure the the start date and end date values (not the times) are the same day. This will make the rendering of your calendar day much easier.</p>
+<h2 id="show-one-days-appointments">Show one day’s appointments</h2>
+<p>Now, you will use routing to figure out what day to show and constrain your <code>SELECT</code> query to that day’s appointments.</p>
+<h3 id="change-your-routes">Change your routes</h3>
+<p>You’re going to change the routes, now, in the following way:</p>
+<ul>
+<li>The <code>main</code> method which handles “/” will redirect to a new path <code>/&lt;year&gt;/&lt;month&gt;/&lt;day&gt;</code> where year, month, and day are for the current date</li>
+<li>A new method named <code>daily</code> will show the appointments for that day</li>
+</ul>
+<p>To do this, add the <code>daily</code> method to your <code>app.routes</code>. It should have three parameters: <code>year</code>, <code>month</code>, and <code>day</code>. The route should reflect that using <code>int</code> placeholders. Please refer to the section <strong>Routes with wildcards</strong> in <em>Routing In Flask</em> to see how to do that. Once you have that declared, move all of the code from <code>main</code> to the new <code>daily</code> method. Make sure the route can handle both <code>POST</code> and <code>GET</code> requests.</p>
+<p>In the <code>main</code> method, you need to get the current date. Luckily, you’ve already imported the <code>datetime</code> object into the file which has a <code>now</code> method. Use the <code>now</code> method to return the current date/time and store it in a variable. The <code>datetime</code> object in that variable has three attributes that you need: <code>year</code>, <code>month</code>, and <code>day</code>.</p>
+<p>Now, you <em>could</em> use those year, month, and day values to just build a string and redirect to that. However, Flask has a built-in method named <code>url_for</code> that will build the path for you. The <code>url_for</code> method takes the following parameters:</p>
+<ul>
+<li>The name of the method that will handle the route. If you’re in a Blueprint, prepend the name of the method with a “.”. For this case, you want to reroute to the “daily” method in the same Blueprint, so the first argument for <code>url_for</code> will be <code>".daily"</code>.</li>
+<li>A series of keyword arguments that will provide values for any of the placeholders in the route. In this case, the route has placeholders for “year”, “month”, and “day”. Because of that, you would provide those as keyword arguments <code>year=value</code>, <code>month=value</code>, and <code>day=value</code>.</li>
+</ul>
+<p>Try referring to the documentation for <a href="https://flask.palletsprojects.com/en/1.1.x/api/?highlight=url_for#flask.url_for">the <code>url_for</code> function</a> to figure out how to call it. If you get stuck, a completed version of the code follows.</p>
+<p>The <code>main</code> method’s route should only handle <code>GET</code> requests, now, so remove the <code>methods</code> argument from its route.</p>
+<p>Your main method should look like this.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb28-1" title="1"><span class="co"># At the top of the file, import the url_for function</span></a>
+<a class="sourceLine" id="cb28-2" title="2"><span class="im">from</span> flask <span class="im">import</span> Blueprint, redirect, render_template, url_for</a>
+<a class="sourceLine" id="cb28-3" title="3"></a>
+<a class="sourceLine" id="cb28-4" title="4"><span class="co"># The new main route</span></a>
+<a class="sourceLine" id="cb28-5" title="5"><span class="at">@bp.route</span>(<span class="st">&quot;/&quot;</span>)</a>
+<a class="sourceLine" id="cb28-6" title="6"><span class="kw">def</span> main():</a>
+<a class="sourceLine" id="cb28-7" title="7">    d <span class="op">=</span> datetime.now()</a>
+<a class="sourceLine" id="cb28-8" title="8">    <span class="cf">return</span> redirect(url_for(<span class="st">&quot;.daily&quot;</span>, year<span class="op">=</span>d.year, month<span class="op">=</span>d.month, day<span class="op">=</span>d.day))</a></code></pre></div>
+<h3 id="update-your-form">Update your form</h3>
+<p>Because you moved all of the form-handling logic to the <code>daily</code> method, you now need to update the <code>action</code> of the <code>form</code> tag to point to the correct path. It’s currently set to “/”. Change that to it’s set to "". This will cause the form to submit to the same path the form resides on.</p>
+<h3 id="only-get-the-days-appointments">Only get the day’s appointments</h3>
+<p>Now that you have the <code>year</code>, <code>month</code>, and <code>day</code> getting passed into the <code>daily</code> method, it’s time to put those values to use. Before your <code>SELECT</code> statement in the <code>daily</code> method, you need to put those three integers together to make a <code>datetime</code> object. Then, you need to calculate the next day so that you can use it in your SQL statement. Here are the steps you will take to determine those values:</p>
+<ol type="1">
+<li>You’re already importing from the <code>datetime</code> module. Add <code>timedelta</code> to the list of things you’re importing from it.</li>
+<li>Construct a <code>datetime</code> object from the <code>year</code>, <code>month</code>, and <code>day</code> values. If you’re using the Python extension for Visual Studio Code, type <code>datetime(</code> to see what comes up and try to figure it out from there. If that doesn’t help, try looking at the <a href="https://docs.python.org/3.8/library/datetime.html#datetime.datetime">documentation for <code>datetime</code></a> to figure it out. Set that value to the variable <code>day</code>.</li>
+<li>Create a <code>timedelta</code> object that represents one day. Refer to the <a href="https://docs.python.org/3.8/library/datetime.html#examples-of-usage-timedelta">Examples of usage: <code>timedelta</code></a> to see how to construct a <code>timedelta</code> that represents “1 day”. Create a new variable named <code>next_day</code> and set it equal to the sum of <code>day</code> and your <code>timedelta</code> object.</li>
+</ol>
+<p>If those directions weren’t enough for you to figure out what to do to create the <code>day</code> and <code>next_day</code> values, please do an Internet search for “python datetime add one day”. There will be many examples of date math for you to use.</p>
+<p>Once you have those values, change your SQL statement to read like the following. Then, pass in the parameter values for <code>day</code> and <code>next_day</code> like you did earlier for the <code>INSERT</code> statement. Please refer to <em>Using Psycopg</em> to see how to use a parameterized SQL statement</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb29-1" title="1"><span class="kw">SELECT</span> <span class="kw">id</span>, name, start_datetime, end_datetime</a>
+<a class="sourceLine" id="cb29-2" title="2"><span class="kw">FROM</span> appointments</a>
+<a class="sourceLine" id="cb29-3" title="3"><span class="kw">WHERE</span> start_datetime <span class="kw">BETWEEN</span> %(<span class="dt">day</span>)s <span class="kw">AND</span> %(<span class="fu">next_day</span>)s</a>
+<a class="sourceLine" id="cb29-4" title="4"><span class="kw">ORDER</span> <span class="kw">BY</span> start_datetime</a></code></pre></div>
+<p>Now, when you refresh the page, you should see only the appointments for the day.</p>
+<p>That’s a great job! You have a working appointment application using full-stack Python! You can change the days by typing specific dates into the URL. You did really well.</p>
+<p>If you got to this point and have more time, here are some stretch goals for you. Choose any one you want to do in any order. They’re <em>orthogonal</em>, which means they don’t rely on one another. If you finish one and still have time, do more!</p>
+<h2 id="stretch-goal-changing-days">Stretch Goal: Changing days</h2>
+<p>Add a way to change days, be it through links or a form. If you choose to use a form with month, day, and year dropdowns, add a little JavaScript to the page to handle the <em>submit</em> event of the form, prevent the submission, and then redirect to the appropriate URL based on the values of the drop downs.</p>
+<p>You could also use an <code>&lt;input type="date"&gt;</code> to do this which will render the browser’s built-in calendar control. You’d then use JavaScript the same way to read its value and change the <code>location</code> based on the value.</p>
+<h2 id="stretch-goal-jinja-time">Stretch Goal: Jinja time</h2>
+<p>You have the appointments coming to you in a list in order of their start date. Use your programming ability to get rid of the <code>table</code> in the <code>main.html</code> template and replace it with something like Google’s daily layout of appointments. Don’t worry about overlapping appointments. If you have some, delete them from your database to make this easier on you.</p>
+<figure>
+<img src="https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Modular-Curriculum/content/flask/projects/calendar-this/assets/calendar-this-daily-layout.png" alt="Daily layout" /><figcaption>Daily layout</figcaption>
+</figure>
+<p>This type task is something that a lot of full-stack developers get presented many times over their career: given a bunch of data, make it presentable to humans. Most likely, eventually, some human will see the output of the code that you’ve written. You need to consider human factors when presenting that output. Data transformation and enrichment are tasks that most software engineers must do to get their features implemented.</p>
+<p>Flask is pretty aggressive with its caching of static assets. Make sure you open your developer tools, go to the “Network” tab, and click on “Disable cache” if it isn’t already checked. Leave the tools open while you work, otherwise the “Disable cache” is ignored.</p>
+<p>To start doing this, create a <code>static</code> directory in your <code>app</code> directory. Then, create a <code>styles</code> directory under the <code>static</code> directory. In there, create a file named <code>calendar.css</code>.</p>
+<p>In the <code>main.html</code>, in the <code>head</code> element, link that stylesheet to your HTML page. To figure out the path for it, please refer to <em>Routing In Flask</em>.</p>
+<p>Now, change the Jinja instructions, HTML, and add CSS to get something akin to the daily layout in the screenshot above. You can also do data manipulation in the <code>daily</code> method to make it easier to use in the Jinja template. For example, you can have code that looks like this:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb30-1" title="1">rows <span class="op">=</span> [(<span class="bu">id</span>, start, (end <span class="op">-</span> start).seconds <span class="op">/</span> <span class="dv">60</span> <span class="op">//</span> <span class="dv">15</span>, title)</a>
+<a class="sourceLine" id="cb30-2" title="2">        <span class="cf">for</span> <span class="bu">id</span>, start, end, title <span class="kw">in</span> rows]</a></code></pre></div>
+<p>which will transform the third entry in each of the rows to the number of 15-minute blocks the appointment takes.</p>
+<p>A nice way to attack this problem is to write the HTML that you would like to use in the Jinja template. Then, figure out how to make the data fit what you want to output.</p>
+</body>
+</html>

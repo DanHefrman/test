@@ -1,66 +1,202 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>README</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
-</head>
-<body>
-<h1 id="ubuntu-basrc-profile-and-aliases">Ubuntu-basrc-profile-and-aliases</h1>
-<p>This includes a copy of default bashrc for those of you who may have lost their way.</p>
-<p>———————————————-default bashrc below this line———————————————- # ~/.bashrc: executed by bash(1) for non-login shells. # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc) # for examples</p>
-<h1 id="if-not-running-interactively-dont-do-anything">If not running interactively, don’t do anything</h1>
-<p>[ -z “$PS1” ] &amp;&amp; return</p>
-<h1 id="dont-put-duplicate-lines-in-the-history.-see-bash1-for-more-options">don’t put duplicate lines in the history. See bash(1) for more options</h1>
-<h1 id="or-force-ignoredups-and-ignorespace">… or force ignoredups and ignorespace</h1>
-<p>HISTCONTROL=ignoredups:ignorespace</p>
-<h1 id="append-to-the-history-file-dont-overwrite-it">append to the history file, don’t overwrite it</h1>
-<p>shopt -s histappend</p>
-<h1 id="for-setting-history-length-see-histsize-and-histfilesize-in-bash1">for setting history length see HISTSIZE and HISTFILESIZE in bash(1)</h1>
-<p>HISTSIZE=1000 HISTFILESIZE=2000</p>
-<h1 id="check-the-window-size-after-each-command-and-if-necessary">check the window size after each command and, if necessary,</h1>
-<h1 id="update-the-values-of-lines-and-columns.">update the values of LINES and COLUMNS.</h1>
-<p>shopt -s checkwinsize</p>
-<h1 id="make-less-more-friendly-for-non-text-input-files-see-lesspipe1">make less more friendly for non-text input files, see lesspipe(1)</h1>
-<p>[ -x /usr/bin/lesspipe ] &amp;&amp; eval “$(SHELL=/bin/sh lesspipe)”</p>
-<h1 id="set-variable-identifying-the-chroot-you-work-in-used-in-the-prompt-below">set variable identifying the chroot you work in (used in the prompt below)</h1>
-<p>if [ -z “<span class="math inline"><span class="math inline">$debian\\\_chroot” \\\] &amp;&amp; \\\[ -r /etc/debian\\\_chroot \\\]; then debian\\\_chroot=$</span></span>(cat /etc/debian_chroot) fi</p>
-<h1 id="set-a-fancy-prompt-non-color-unless-we-know-we-want-color">set a fancy prompt (non-color, unless we know we “want” color)</h1>
-<p>case “$TERM” in xterm-color) color_prompt=yes;; esac</p>
-<h1 id="uncomment-for-a-colored-prompt-if-the-terminal-has-the-capability-turned">uncomment for a colored prompt, if the terminal has the capability; turned</h1>
-<h1 id="off-by-default-to-not-distract-the-user-the-focus-in-a-terminal-window">off by default to not distract the user: the focus in a terminal window</h1>
-<h1 id="should-be-on-the-output-of-commands-not-on-the-prompt">should be on the output of commands, not on the prompt</h1>
-<p>#force_color_prompt=yes</p>
-<p>if [ -n “$force_color_prompt” ]; then if [ -x /usr/bin/tput ] &amp;&amp; tput setaf 1 &gt;&amp;/dev/null; then # We have color support; assume it’s compliant with Ecma-48 # (ISO/IEC-6429). (Lack of such support is extremely rare, and such # a case would tend to support setf rather than setaf.) color_prompt=yes else color_prompt= fi fi</p>
-<p>if [ “<span class="math inline"><span class="math inline">$color\\\_prompt” = yes \\\]; then PS1=‘&amp;lt;span class="math inline"&amp;gt;$</span></span>{debian_chroot:+(<span class="math inline"><span class="math inline">$&amp;lt;/span&amp;gt;debian\\\_chroot)}\\\[\\\\033\\\[01;32m\\\]:\\\[\\\\033\\\[01;34m\\\]\\\[\\\\033\\\[00m\\\]$</span></span>’ else PS1=‘<span class="math inline"><span class="math inline"><span class="math inline">${debian\\\_chroot:+($</span></span></span>debian_chroot)}$’ fi unset color_prompt force_color_prompt</p>
-<h1 id="if-this-is-an-xterm-set-the-title-to-userhostdir">If this is an xterm set the title to user@host:dir</h1>
-<p>case “<span class="math inline"><span class="math inline"><span class="math inline">$TERM" in xterm\\\*|rxvt\\\*) PS1="\\\\\\\[\\\\e\\\]0;$</span></span></span>{debian_chroot:+(<span class="math inline"><span class="math inline"><span class="math inline">$debian\\\_chroot)}\\\\u@\\\\h: \\\\w\\\\a\\\\\\\]$</span></span></span>PS1” ;; *) ;; esac</p>
-<h1 id="enable-color-support-of-ls-and-also-add-handy-aliases">enable color support of ls and also add handy aliases</h1>
-<p>if [ -x /usr/bin/dircolors ]; then test -r ~/.dircolors &amp;&amp; eval “<span class="math inline"><span class="math inline"><span class="math inline">$(dircolors -b ~/.dircolors)" || eval "$</span></span></span>(dircolors -b)” alias ls=‘ls –color=auto’ #alias dir=‘dir –color=auto’ #alias vdir=‘vdir –color=auto’</p>
-<pre><code>alias grep=&#39;grep --color=auto&#39;
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>README</title>
+    <style type="text/css">
+      code {
+        white-space: pre-wrap;
+      }
+      span.smallcaps {
+        font-variant: small-caps;
+      }
+      span.underline {
+        text-decoration: underline;
+      }
+      div.column {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="ubuntu-basrc-profile-and-aliases">
+      Ubuntu-basrc-profile-and-aliases
+    </h1>
+    <p>
+      This includes a copy of default bashrc for those of you who may have lost
+      their way.
+    </p>
+    <p>
+      ———————————————-default bashrc below this line———————————————- #
+      ~/.bashrc: executed by bash(1) for non-login shells. # see
+      /usr/share/doc/bash/examples/startup-files (in the package bash-doc) # for
+      examples
+    </p>
+    <h1 id="if-not-running-interactively-dont-do-anything">
+      If not running interactively, don’t do anything
+    </h1>
+    <p>[ -z “$PS1” ] &amp;&amp; return</p>
+    <h1
+      id="dont-put-duplicate-lines-in-the-history.-see-bash1-for-more-options"
+    >
+      don’t put duplicate lines in the history. See bash(1) for more options
+    </h1>
+    <h1 id="or-force-ignoredups-and-ignorespace">
+      … or force ignoredups and ignorespace
+    </h1>
+    <p>HISTCONTROL=ignoredups:ignorespace</p>
+    <h1 id="append-to-the-history-file-dont-overwrite-it">
+      append to the history file, don’t overwrite it
+    </h1>
+    <p>shopt -s histappend</p>
+    <h1 id="for-setting-history-length-see-histsize-and-histfilesize-in-bash1">
+      for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+    </h1>
+    <p>HISTSIZE=1000 HISTFILESIZE=2000</p>
+    <h1 id="check-the-window-size-after-each-command-and-if-necessary">
+      check the window size after each command and, if necessary,
+    </h1>
+    <h1 id="update-the-values-of-lines-and-columns.">
+      update the values of LINES and COLUMNS.
+    </h1>
+    <p>shopt -s checkwinsize</p>
+    <h1 id="make-less-more-friendly-for-non-text-input-files-see-lesspipe1">
+      make less more friendly for non-text input files, see lesspipe(1)
+    </h1>
+    <p>[ -x /usr/bin/lesspipe ] &amp;&amp; eval “$(SHELL=/bin/sh lesspipe)”</p>
+    <h1
+      id="set-variable-identifying-the-chroot-you-work-in-used-in-the-prompt-below"
+    >
+      set variable identifying the chroot you work in (used in the prompt below)
+    </h1>
+    <p>
+      if [ -z “<span class="math inline"
+        ><span class="math inline"
+          >$debian\\\_chroot” \\\] &amp;&amp; \\\[ -r /etc/debian\\\_chroot
+          \\\]; then debian\\\_chroot=$</span
+        ></span
+      >(cat /etc/debian_chroot) fi
+    </p>
+    <h1 id="set-a-fancy-prompt-non-color-unless-we-know-we-want-color">
+      set a fancy prompt (non-color, unless we know we “want” color)
+    </h1>
+    <p>case “$TERM” in xterm-color) color_prompt=yes;; esac</p>
+    <h1
+      id="uncomment-for-a-colored-prompt-if-the-terminal-has-the-capability-turned"
+    >
+      uncomment for a colored prompt, if the terminal has the capability; turned
+    </h1>
+    <h1
+      id="off-by-default-to-not-distract-the-user-the-focus-in-a-terminal-window"
+    >
+      off by default to not distract the user: the focus in a terminal window
+    </h1>
+    <h1 id="should-be-on-the-output-of-commands-not-on-the-prompt">
+      should be on the output of commands, not on the prompt
+    </h1>
+    <p>#force_color_prompt=yes</p>
+    <p>
+      if [ -n “$force_color_prompt” ]; then if [ -x /usr/bin/tput ] &amp;&amp;
+      tput setaf 1 &gt;&amp;/dev/null; then # We have color support; assume it’s
+      compliant with Ecma-48 # (ISO/IEC-6429). (Lack of such support is
+      extremely rare, and such # a case would tend to support setf rather than
+      setaf.) color_prompt=yes else color_prompt= fi fi
+    </p>
+    <p>
+      if [ “<span class="math inline"
+        ><span class="math inline"
+          >$color\\\_prompt” = yes \\\]; then PS1=‘&amp;lt;span class="math
+          inline"&amp;gt;$</span
+        ></span
+      >{debian_chroot:+(<span class="math inline"
+        ><span class="math inline"
+          >$&amp;lt;/span&amp;gt;debian\\\_chroot)}\\\[\\\\033\\\[01;32m\\\]:\\\[\\\\033\\\[01;34m\\\]\\\[\\\\033\\\[00m\\\]$</span
+        ></span
+      >’ else PS1=‘<span class="math inline"
+        ><span class="math inline"
+          ><span class="math inline">${debian\\\_chroot:+($</span></span
+        ></span
+      >debian_chroot)}$’ fi unset color_prompt force_color_prompt
+    </p>
+    <h1 id="if-this-is-an-xterm-set-the-title-to-userhostdir">
+      If this is an xterm set the title to user@host:dir
+    </h1>
+    <p>
+      case “<span class="math inline"
+        ><span class="math inline"
+          ><span class="math inline"
+            >$TERM" in xterm\\\*|rxvt\\\*) PS1="\\\\\\\[\\\\e\\\]0;$</span
+          ></span
+        ></span
+      >{debian_chroot:+(<span class="math inline"
+        ><span class="math inline"
+          ><span class="math inline"
+            >$debian\\\_chroot)}\\\\u@\\\\h: \\\\w\\\\a\\\\\\\]$</span
+          ></span
+        ></span
+      >PS1” ;; *) ;; esac
+    </p>
+    <h1 id="enable-color-support-of-ls-and-also-add-handy-aliases">
+      enable color support of ls and also add handy aliases
+    </h1>
+    <p>
+      if [ -x /usr/bin/dircolors ]; then test -r ~/.dircolors &amp;&amp; eval
+      “<span class="math inline"
+        ><span class="math inline"
+          ><span class="math inline"
+            >$(dircolors -b ~/.dircolors)" || eval "$</span
+          ></span
+        ></span
+      >(dircolors -b)” alias ls=‘ls –color=auto’ #alias dir=‘dir –color=auto’
+      #alias vdir=‘vdir –color=auto’
+    </p>
+    <pre><code>alias grep=&#39;grep --color=auto&#39;
 alias fgrep=&#39;fgrep --color=auto&#39;
 alias egrep=&#39;egrep --color=auto&#39;</code></pre>
-<p>fi</p>
-<h1 id="some-more-ls-aliases">some more ls aliases</h1>
-<p>alias ll=‘ls -alF’ alias la=‘ls -A’ alias l=‘ls -CF’</p>
-<h1 id="add-an-alert-alias-for-long-running-commands.-use-like-so">Add an “alert” alias for long running commands. Use like so:</h1>
-<h1 id="sleep-10-alert">sleep 10; alert</h1>
-<p>alias alert=‘notify-send –urgency=low -i “<span class="math inline">$(\[ &lt;span class="math inline"&gt;$</span>? = 0 \] &amp;&amp; echo terminal || echo error)” “&lt;span class=”math inline“&gt;<span class="math inline">$&lt;/span&gt;(history|tail -n1|sed -e ‘\\’‘s/^\\s\*\[0-9\]\\+\\s\*//;s/\[;&amp;|\]\\s\*alert$</span>//‘’’)”’</p>
-<h1 id="alias-definitions.">Alias definitions.</h1>
-<h1 id="you-may-want-to-put-all-your-additions-into-a-separate-file-like">You may want to put all your additions into a separate file like</h1>
-<h1 id="bash_aliases-instead-of-adding-them-here-directly.">~/.bash_aliases, instead of adding them here directly.</h1>
-<h1 id="see-usrsharedocbash-docexamples-in-the-bash-doc-package.">See /usr/share/doc/bash-doc/examples in the bash-doc package.</h1>
-<p>if [ -f ~/.bash_aliases ]; then . ~/.bash_aliases fi</p>
-<h1 id="enable-programmable-completion-features-you-dont-need-to-enable">enable programmable completion features (you don’t need to enable</h1>
-<h1 id="this-if-its-already-enabled-in-etcbash.bashrc-and-etcprofile">this, if it’s already enabled in /etc/bash.bashrc and /etc/profile</h1>
-<h1 id="sources-etcbash.bashrc.">sources /etc/bash.bashrc).</h1>
-<p>if [ -f /etc/bash_completion ] &amp;&amp; ! shopt -oq posix; then . /etc/bash_completion fi</p>
-</body>
+    <p>fi</p>
+    <h1 id="some-more-ls-aliases">some more ls aliases</h1>
+    <p>alias ll=‘ls -alF’ alias la=‘ls -A’ alias l=‘ls -CF’</p>
+    <h1 id="add-an-alert-alias-for-long-running-commands.-use-like-so">
+      Add an “alert” alias for long running commands. Use like so:
+    </h1>
+    <h1 id="sleep-10-alert">sleep 10; alert</h1>
+    <p>
+      alias alert=‘notify-send –urgency=low -i “<span class="math inline"
+        >$(\[ &lt;span class="math inline"&gt;$</span
+      >? = 0 \] &amp;&amp; echo terminal || echo error)” “&lt;span class=”math
+      inline“&gt;<span class="math inline"
+        >$&lt;/span&gt;(history|tail -n1|sed -e
+        ‘\\’‘s/^\\s\*\[0-9\]\\+\\s\*//;s/\[;&amp;|\]\\s\*alert$</span
+      >//‘’’)”’
+    </p>
+    <h1 id="alias-definitions.">Alias definitions.</h1>
+    <h1 id="you-may-want-to-put-all-your-additions-into-a-separate-file-like">
+      You may want to put all your additions into a separate file like
+    </h1>
+    <h1 id="bash_aliases-instead-of-adding-them-here-directly.">
+      ~/.bash_aliases, instead of adding them here directly.
+    </h1>
+    <h1 id="see-usrsharedocbash-docexamples-in-the-bash-doc-package.">
+      See /usr/share/doc/bash-doc/examples in the bash-doc package.
+    </h1>
+    <p>if [ -f ~/.bash_aliases ]; then . ~/.bash_aliases fi</p>
+    <h1 id="enable-programmable-completion-features-you-dont-need-to-enable">
+      enable programmable completion features (you don’t need to enable
+    </h1>
+    <h1 id="this-if-its-already-enabled-in-etcbash.bashrc-and-etcprofile">
+      this, if it’s already enabled in /etc/bash.bashrc and /etc/profile
+    </h1>
+    <h1 id="sources-etcbash.bashrc.">sources /etc/bash.bashrc).</h1>
+    <p>
+      if [ -f /etc/bash_completion ] &amp;&amp; ! shopt -oq posix; then .
+      /etc/bash_completion fi
+    </p>
+  </body>
 </html>
