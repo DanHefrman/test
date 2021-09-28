@@ -10,7 +10,7 @@ If you click on this P, the onclick event for the DIV actually runs.
 Nested Event Handlers
 ---------------------
 
-The p, div, and main tags all have their own event handler. Clicking on anyone of these elements will trigger an event. That event will bubble up and also trigger the parent’s events.
+The p, div, and main tags all have their own event handler. Clicking on anyone of these elements will trigger an event. That event will bubble up and also trigger the parent's events.
 
 THIS IS THE MAIN, BUT NOT THE DIV OR P
 

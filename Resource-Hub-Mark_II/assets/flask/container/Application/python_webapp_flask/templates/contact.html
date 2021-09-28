@@ -1,20 +1,26 @@
-{% extends "layout.html" %}
-
-{% block content %}
-
-<h2>{{ title }}.</h2>
-<h3>{{ message }}</h3>
-
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
-
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
-
-{% endblock %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>contact</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<p>{% extends “layout.html” %} {% block content %}</p>
+<h2 id="title-.">{{ title }}.</h2>
+<h3 id="message">{{ message }}</h3>
+<p>One Microsoft Way<br />
+Redmond, WA 98052-6399<br />
+P: 425.555.0100</p>
+<p><strong>Support:</strong> <a href="mailto:Support@example.com" class="email">Support@example.com</a><br />
+<strong>Marketing:</strong> <a href="mailto:Marketing@example.com" class="email">Marketing@example.com</a></p>
+<p>{% endblock %}</p>
+</body>
+</html>
