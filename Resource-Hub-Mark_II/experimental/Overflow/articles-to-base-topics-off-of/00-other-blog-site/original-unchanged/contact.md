@@ -82,7 +82,7 @@ Copyright © 2018 All rights reserved | This template is made with by [Colorlib]
 Thank you
 ---------
 
-Your message is successfully sent...
+Your message is successfully sent…
 
 Sorry !
 -------

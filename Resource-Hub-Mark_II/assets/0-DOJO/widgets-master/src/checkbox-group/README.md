@@ -1,5 +1,5 @@
-<span class="citation" data-cites="dojo/widgets/checkbox-group"><span class="citation" data-cites="dojo/widgets/checkbox-group">@dojo/widgets/checkbox-group</span></span>
-==========================================================================================================================================================================
+<span class="citation" data-cites="dojo/widgets/checkbox-group"><span class="citation" data-cites="dojo/widgets/checkbox-group"><span class="citation" data-cites="dojo/widgets/checkbox-group">@dojo/widgets/checkbox-group</span></span></span>
+=================================================================================================================================================================================================================================================
 
 Dojo’s `CheckboxGroup` widget provides an opinionated way to use a group of check boxes in a form.
 

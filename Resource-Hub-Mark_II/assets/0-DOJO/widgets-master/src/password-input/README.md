@@ -1,5 +1,5 @@
-<span class="citation" data-cites="dojo/widgets/password-input">@dojo/widgets/password-input</span>
-===================================================================================================
+<span class="citation" data-cites="dojo/widgets/password-input"><span class="citation" data-cites="dojo/widgets/password-input">@dojo/widgets/password-input</span></span>
+==========================================================================================================================================================================
 
 Dojo’s `PasswordInput` provides a simple to use input box for entering passwords. The rules that which the password must follow are equivalent to the rules of the `ConstrainedInput` widget.
 

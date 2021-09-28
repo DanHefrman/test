@@ -1,7 +1,7 @@
-<span class="citation" data-cites="dojo/widgets"><span class="citation" data-cites="dojo/widgets">@dojo/widgets</span></span>
-=============================================================================================================================
+<span class="citation" data-cites="dojo/widgets"><span class="citation" data-cites="dojo/widgets"><span class="citation" data-cites="dojo/widgets">@dojo/widgets</span></span></span>
+=====================================================================================================================================================================================
 
-A suite of pre-built Dojo widgets, ready to use in your web application. These widgets are built using Dojo’s widget authoring system <span class="citation" data-cites="dojo/framework/core">\[(<span class="citation" data-cites="dojo/framework/core">@dojo/framework/core</span>)\]</span>(https://github.com/dojo/framework/blob/master/src/core/README.md).
+A suite of pre-built Dojo widgets, ready to use in your web application. These widgets are built using Dojo’s widget authoring system <span class="citation" data-cites="dojo/framework/core">\[(<span class="citation" data-cites="dojo/framework/core"><span class="citation" data-cites="dojo/framework/core">@dojo/framework/core</span></span>)\]</span>(https://github.com/dojo/framework/blob/master/src/core/README.md).
 
 -   [Usage](#usage)
 -   [Features](#features)
@@ -34,6 +34,6 @@ Features
 
 -   All widgets are designed to be accessible. If custom ARIA semantics are required, widgets have an `aria` property that may be passed an object with custom `aria-*` attributes.
 
--   All widgets are fully themeable. Example themes are available in the <span class="citation" data-cites="dojo/themes">\[<span class="citation" data-cites="dojo/themes">@dojo/themes</span>\]</span>(https://github.com/dojo/themes) repository.
+-   All widgets are fully themeable. Example themes are available in the <span class="citation" data-cites="dojo/themes">\[<span class="citation" data-cites="dojo/themes"><span class="citation" data-cites="dojo/themes">@dojo/themes</span></span>\]</span>(https://github.com/dojo/themes) repository.
 
 -   All widgets support internationalization (`i18n`)

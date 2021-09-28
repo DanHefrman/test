@@ -1,7 +1,7 @@
 Dojo Widgets Custom Element Showcase
 ====================================
 
-A demo implementation of <span class="citation" data-cites="dojo/widgets">\[<span class="citation" data-cites="dojo/widgets">@dojo/widgets</span>\]</span>(https://github.com/dojo/widgets) used as custom elements.
+A demo implementation of <span class="citation" data-cites="dojo/widgets">\[<span class="citation" data-cites="dojo/widgets"><span class="citation" data-cites="dojo/widgets">@dojo/widgets</span></span>\]</span>(https://github.com/dojo/widgets) used as custom elements.
 
 -   [Pre-requisites](#pre-requisites)
 -   [Usage](#usage)

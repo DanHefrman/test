@@ -1,5 +1,5 @@
-<span class="citation" data-cites="dojo/widgets/label"><span class="citation" data-cites="dojo/widgets/label">@dojo/widgets/label</span></span>
-===============================================================================================================================================
+<span class="citation" data-cites="dojo/widgets/label"><span class="citation" data-cites="dojo/widgets/label"><span class="citation" data-cites="dojo/widgets/label">@dojo/widgets/label</span></span></span>
+=============================================================================================================================================================================================================
 
 Dojo’s `Label` widget creates a `<label>` element that wraps its children. It is included by default in all form input widgets (including `ComboBox` and `TimePicker`).
 

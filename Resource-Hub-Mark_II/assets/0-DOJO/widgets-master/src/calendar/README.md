@@ -1,5 +1,5 @@
-<span class="citation" data-cites="dojo/widgets/calendar"><span class="citation" data-cites="dojo/widgets/calendar">@dojo/widgets/calendar</span></span>
-========================================================================================================================================================
+<span class="citation" data-cites="dojo/widgets/calendar"><span class="citation" data-cites="dojo/widgets/calendar"><span class="citation" data-cites="dojo/widgets/calendar">@dojo/widgets/calendar</span></span></span>
+=========================================================================================================================================================================================================================
 
 Dojo’s `Calendar` renders a date grid with a dropdown month and year picker. The displayed month and year are controlled via properties, defaulting to the current day. Given the limitations of scaling the date grid while maintaining usability, the calendar is not fully responsive at small screen sizes; it is instead recommended to use an alternative date picker for mobile.
 

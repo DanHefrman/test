@@ -1,5 +1,5 @@
-<span class="citation" data-cites="dojo/widgets/grid"><span class="citation" data-cites="dojo/widgets/grid">@dojo/widgets/grid</span></span>
-============================================================================================================================================
+<span class="citation" data-cites="dojo/widgets/grid"><span class="citation" data-cites="dojo/widgets/grid"><span class="citation" data-cites="dojo/widgets/grid">@dojo/widgets/grid</span></span></span>
+=========================================================================================================================================================================================================
 
 Dojo’s `Grid` is a reactive lightweight, customizable grid widget.
 

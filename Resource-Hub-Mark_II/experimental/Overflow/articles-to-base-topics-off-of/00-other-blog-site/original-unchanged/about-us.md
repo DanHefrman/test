@@ -47,7 +47,7 @@ There is a moment in the life of any aspiring astronomer that it is time to buy 
 
 #### Ethel Davis
 
-Sr. Faculty Data Science
+Sr. Faculty Data Science
 
 If you are looking at blank cassettes on the web, you may be very confused at the difference in price.
 
@@ -57,7 +57,7 @@ If you are looking at blank cassettes on the web, you may be very confused at th
 
 #### Rodney Cooper
 
-Sr. Faculty Data Science
+Sr. Faculty Data Science
 
 If you are looking at blank cassettes on the web, you may be very confused at the difference in price.
 
@@ -67,7 +67,7 @@ If you are looking at blank cassettes on the web, you may be very confused at th
 
 #### Dane Walker
 
-Sr. Faculty Data Science
+Sr. Faculty Data Science
 
 If you are looking at blank cassettes on the web, you may be very confused at the difference in price.
 
@@ -77,7 +77,7 @@ If you are looking at blank cassettes on the web, you may be very confused at th
 
 #### Lena Keller
 
-Sr. Faculty Data Science
+Sr. Faculty Data Science
 
 If you are looking at blank cassettes on the web, you may be very confused at the difference in price.
 

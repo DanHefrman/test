@@ -1,5 +1,7 @@
-# **Notes**
+**Notes**
+=========
 
-## **Environment Variables**
+**Environment Variables**
+-------------------------
 
 **Acclimating to Environment Variables**

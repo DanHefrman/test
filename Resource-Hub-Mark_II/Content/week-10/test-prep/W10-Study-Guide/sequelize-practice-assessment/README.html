@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="practice-for-sequelize">Practice for Sequelize</h1>
+<p>This is a practice assessment for using Sequelize.</p>
+<p>There is a picture of the data model in the images directory that you can use to refer to.</p>
+<p>The tests will check that models are correctly named by making assumptions about how they’re used. Remember:</p>
+<ul>
+<li>Models are capitalized singular nouns</li>
+<li>Tables are capitalized plural nouns</li>
+</ul>
+<p>After each of the “modify migration file” or “modify seed data file” steps, you may want to run the associated Sequelize CLI commands, if applicable, to make sure that tables and data are what you expect them to be. When you type your commands on the command line, it should use the “development” database that you’ll create.</p>
+<p>The tests will expect that you have created seeder files to insert the provided data. Before tests, it will run the equivalence of, in order:</p>
+<ul>
+<li>db:seed:undo:all</li>
+<li>db:migrate:undo:all</li>
+<li>db:migrate</li>
+<li>db:seed:all</li>
+</ul>
+<p>You must run the tests with “npm test”. It sets the proper environment variable for using the test database environment. The tests will use the “test” database that you will create.</p>
+<h1 id="step-1-set-up">Step 1: Set-up</h1>
+<p>Using npm, install</p>
+<ul>
+<li>sequelize</li>
+<li>sequelize-cli</li>
+<li>pg</li>
+</ul>
+<p>Create a database user named “enrollment_app” with password “86kRVBVnx92Fn5wG”.</p>
+<p>Create a database named “enrollment_development” with the owner “enrollment_app”. You can use this app during development to mess around with your model.</p>
+<p>Create a database named “enrollment_test” with the owner “enrollment_app”. This is the database that the mocha tests will use.</p>
+<h1 id="step-2-person-model">Step 2: Person Model</h1>
+<p>Use the Sequelize CLI to initialize your project. Begin by generating a <code>Person</code> model that has:</p>
+<ul>
+<li>a <code>firstName</code> attribute that contains a string up to 50 characters long</li>
+<li>a <code>lastName</code> attribute that contains a string up to 50 characters long</li>
+<li>an <code>email</code> attribute that contains a string up to 255 characters long</li>
+</ul>
+<p>Update the migration file to make the associated columns for those properties non-nullable.</p>
+<p>Update the migration file to make the <code>email</code> column have only unique values.</p>
+<h1 id="step-3-campus-model">Step 3: Campus Model</h1>
+<p>Use the Sequelize CLI to generate a <code>Campus</code> model that has</p>
+<ul>
+<li>a <code>name</code> attribute that contains a string up to 255 characters long</li>
+</ul>
+<p>Update the migration file to make the associated columns for those properties non-nullable.</p>
+<p>Update the migration file to make the <code>name</code> column have only unique values.</p>
+<h1 id="step-4-department-model">Step 4: Department Model</h1>
+<p>Use the Sequelize CLI to generate a <code>Department</code> model that has</p>
+<ul>
+<li>a <code>name</code> attribute that contains a string up to 50 characters long</li>
+</ul>
+<p>Update the migration file to make the associated columns for those properties non-nullable.</p>
+<p>Update the migration file to make the <code>name</code> column have only unique values.</p>
+<h1 id="step-5-course-model">Step 5: Course Model</h1>
+<p>Use the Sequelize CLI to generate a <code>Course</code> model that has</p>
+<ul>
+<li>a <code>name</code> attribute that contains a string up to 50 characters long</li>
+<li>a <code>level</code> attribute that contains an integer</li>
+<li>a <code>campusId</code> attribute that contains an integer</li>
+<li>a <code>departmentId</code> attribute that contains an integer</li>
+</ul>
+<p>Update the migration file to make the associated columns for those properties non-nullable.</p>
+<p>Update the migration file so that <code>campusId</code> references the Campuses model.</p>
+<p>Update the migration file so that the <code>departmentId</code> references the Departments model.</p>
+<h1 id="step-6-enrollment-model">Step 6: Enrollment Model</h1>
+<p>Use the Sequelize CLI to generate an <code>Enrollment</code> model that has</p>
+<ul>
+<li>a <code>personId</code> attribute that contains an integer</li>
+<li>a <code>courseId</code> attribute that contains an integer</li>
+</ul>
+<p>Update the migration file so that <code>personId</code> references the People model.</p>
+<p>Update the migration file so that the <code>courseId</code> references the Courses model.</p>
+<h1 id="step-7-seeding-data">Step 7: Seeding Data</h1>
+<p>Use the Sequelize CLI to generate seeder files to seed the database with the following data. All <code>createdAt</code> and <code>updatedAt</code> values can just be <code>new Date()</code>.</p>
+<p>In each of the seeder files, include this code snippet in the <code>down</code> method to delete all records replacing <code>TABLE_NAME</code> with the name of the table for the seeder file:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="cf">return</span> <span class="va">queryInterface</span>.<span class="at">bulkDelete</span>(<span class="st">&#39;TABLE_NAME&#39;</span><span class="op">,</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-2" title="2">  <span class="dt">id</span><span class="op">:</span> <span class="op">{</span> [<span class="va">Sequelize</span>.<span class="va">Op</span>.<span class="at">gt</span>]<span class="op">:</span> <span class="dv">0</span> <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
+<p>Then, use the following data to generate seed data for each seeder file:</p>
+<ul>
+<li><p>People data</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="op">{</span> <span class="dt">firstName</span><span class="op">:</span> <span class="st">&#39;Daniel&#39;</span><span class="op">,</span> <span class="dt">lastName</span><span class="op">:</span> <span class="st">&#39;Hays&#39;</span><span class="op">,</span> <span class="dt">email</span><span class="op">:</span> <span class="st">&#39;Cras.sed.leo@Vivamusmolestie.co.uk&#39;</span><span class="op">,</span> <span class="dt">createdAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>()<span class="op">,</span> <span class="dt">updatedAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>() <span class="op">},</span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="op">{</span> <span class="dt">firstName</span><span class="op">:</span> <span class="st">&#39;Wade&#39;</span><span class="op">,</span> <span class="dt">lastName</span><span class="op">:</span> <span class="st">&#39;Woodard&#39;</span><span class="op">,</span> <span class="dt">email</span><span class="op">:</span> <span class="st">&#39;massa.Integer@lectus.ca&#39;</span><span class="op">,</span> <span class="dt">createdAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>()<span class="op">,</span> <span class="dt">updatedAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>() <span class="op">},</span></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="op">{</span> <span class="dt">firstName</span><span class="op">:</span> <span class="st">&#39;Frances&#39;</span><span class="op">,</span> <span class="dt">lastName</span><span class="op">:</span> <span class="st">&#39;Rosales&#39;</span><span class="op">,</span> <span class="dt">email</span><span class="op">:</span> <span class="st">&#39;ligula@velitduisemper.ca&#39;</span><span class="op">,</span> <span class="dt">createdAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>()<span class="op">,</span> <span class="dt">updatedAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>() <span class="op">},</span></a></code></pre></div></li>
+<li><p>Campuses data</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="op">{</span> <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Valdivia&#39;</span><span class="op">,</span> <span class="dt">createdAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>()<span class="op">,</span> <span class="dt">updatedAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>() <span class="op">},</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="op">{</span> <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Bangor&#39;</span><span class="op">,</span> <span class="dt">createdAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>()<span class="op">,</span> <span class="dt">updatedAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>() <span class="op">},</span></a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="op">{</span> <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Chatillon&#39;</span><span class="op">,</span> <span class="dt">createdAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>()<span class="op">,</span> <span class="dt">updatedAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>() <span class="op">},</span></a>
+<a class="sourceLine" id="cb3-4" title="4"><span class="op">{</span> <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Filacciano&#39;</span><span class="op">,</span> <span class="dt">createdAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>()<span class="op">,</span> <span class="dt">updatedAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>() <span class="op">},</span></a></code></pre></div></li>
+<li><p>Departments data</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="op">{</span> <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Economics&#39;</span><span class="op">,</span> <span class="dt">createdAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>()<span class="op">,</span> <span class="dt">updatedAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>() <span class="op">},</span></a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="op">{</span> <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Mathematics&#39;</span><span class="op">,</span> <span class="dt">createdAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>()<span class="op">,</span> <span class="dt">updatedAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>() <span class="op">},</span></a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="op">{</span> <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Music&#39;</span><span class="op">,</span> <span class="dt">createdAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>()<span class="op">,</span> <span class="dt">updatedAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>() <span class="op">},</span></a></code></pre></div></li>
+<li><p>Courses data</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb5-1" title="1"><span class="op">{</span> <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Macro&#39;</span><span class="op">,</span> <span class="dt">level</span><span class="op">:</span> <span class="dv">860</span><span class="op">,</span> <span class="dt">campusId</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">departmentId</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">createdAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>()<span class="op">,</span> <span class="dt">updatedAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>() <span class="op">},</span></a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="op">{</span> <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Calculus&#39;</span><span class="op">,</span> <span class="dt">level</span><span class="op">:</span> <span class="dv">830</span><span class="op">,</span> <span class="dt">campusId</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">departmentId</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">createdAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>()<span class="op">,</span> <span class="dt">updatedAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>() <span class="op">},</span></a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="op">{</span> <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Discrete&#39;</span><span class="op">,</span> <span class="dt">level</span><span class="op">:</span> <span class="dv">690</span><span class="op">,</span> <span class="dt">campusId</span><span class="op">:</span> <span class="dv">4</span><span class="op">,</span> <span class="dt">departmentId</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">createdAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>()<span class="op">,</span> <span class="dt">updatedAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>() <span class="op">},</span></a>
+<a class="sourceLine" id="cb5-4" title="4"><span class="op">{</span> <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Orchestra&#39;</span><span class="op">,</span> <span class="dt">level</span><span class="op">:</span> <span class="dv">280</span><span class="op">,</span> <span class="dt">campusId</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">departmentId</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span> <span class="dt">createdAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>()<span class="op">,</span> <span class="dt">updatedAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>() <span class="op">},</span></a>
+<a class="sourceLine" id="cb5-5" title="5"><span class="op">{</span> <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Appreciation&#39;</span><span class="op">,</span> <span class="dt">level</span><span class="op">:</span> <span class="dv">650</span><span class="op">,</span> <span class="dt">campusId</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">departmentId</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span> <span class="dt">createdAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>()<span class="op">,</span> <span class="dt">updatedAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>() <span class="op">},</span></a>
+<a class="sourceLine" id="cb5-6" title="6"><span class="op">{</span> <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Supply Chain&#39;</span><span class="op">,</span> <span class="dt">level</span><span class="op">:</span> <span class="dv">790</span><span class="op">,</span> <span class="dt">campusId</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">departmentId</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">createdAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>()<span class="op">,</span> <span class="dt">updatedAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>() <span class="op">},</span></a>
+<a class="sourceLine" id="cb5-7" title="7"><span class="op">{</span> <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Algebra&#39;</span><span class="op">,</span> <span class="dt">level</span><span class="op">:</span> <span class="dv">300</span><span class="op">,</span> <span class="dt">campusId</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">departmentId</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">createdAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>()<span class="op">,</span> <span class="dt">updatedAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>() <span class="op">},</span></a></code></pre></div></li>
+<li><p>Enrollments data</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="op">{</span> <span class="dt">personId</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span> <span class="dt">courseId</span><span class="op">:</span> <span class="dv">7</span><span class="op">,</span> <span class="dt">createdAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>()<span class="op">,</span> <span class="dt">updatedAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>() <span class="op">},</span></a>
+<a class="sourceLine" id="cb6-2" title="2"><span class="op">{</span> <span class="dt">personId</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span> <span class="dt">courseId</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">createdAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>()<span class="op">,</span> <span class="dt">updatedAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>() <span class="op">},</span></a>
+<a class="sourceLine" id="cb6-3" title="3"><span class="op">{</span> <span class="dt">personId</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span> <span class="dt">courseId</span><span class="op">:</span> <span class="dv">4</span><span class="op">,</span> <span class="dt">createdAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>()<span class="op">,</span> <span class="dt">updatedAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>() <span class="op">},</span></a>
+<a class="sourceLine" id="cb6-4" title="4"><span class="op">{</span> <span class="dt">personId</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">courseId</span><span class="op">:</span> <span class="dv">4</span><span class="op">,</span> <span class="dt">createdAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>()<span class="op">,</span> <span class="dt">updatedAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>() <span class="op">},</span></a>
+<a class="sourceLine" id="cb6-5" title="5"><span class="op">{</span> <span class="dt">personId</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">courseId</span><span class="op">:</span> <span class="dv">6</span><span class="op">,</span> <span class="dt">createdAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>()<span class="op">,</span> <span class="dt">updatedAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>() <span class="op">},</span></a>
+<a class="sourceLine" id="cb6-6" title="6"><span class="op">{</span> <span class="dt">personId</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">courseId</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">createdAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>()<span class="op">,</span> <span class="dt">updatedAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>() <span class="op">},</span></a>
+<a class="sourceLine" id="cb6-7" title="7"><span class="op">{</span> <span class="dt">personId</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span> <span class="dt">courseId</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">createdAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>()<span class="op">,</span> <span class="dt">updatedAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>() <span class="op">},</span></a>
+<a class="sourceLine" id="cb6-8" title="8"><span class="op">{</span> <span class="dt">personId</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">courseId</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">createdAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>()<span class="op">,</span> <span class="dt">updatedAt</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>() <span class="op">},</span></a></code></pre></div></li>
+</ul>
+<h1 id="step-8-associations">Step 8: Associations</h1>
+<p>Modify the models so that they have the correct relationships.</p>
+<p><strong>The Person model:</strong></p>
+<p>A person has many courses and a course has many people. This is a many-to-many relationship. Configure the <code>Person</code> model’s side of having a <strong>many-to-many relationship</strong> with the <code>Course</code> model.</p>
+<p><strong>The Campus model:</strong></p>
+<p>A campus can have many courses. Configure the <code>Campus</code> model to have many <code>Course</code> models.</p>
+<p><strong>The Department model:</strong></p>
+<p>A department has many courses. Configure the <code>Department</code> model to have many <code>Course</code> models.</p>
+<p><strong>The Course model:</strong></p>
+<p>A person has many courses and a course has many people. This is a many-to-many relationship. Configure the <code>Course</code> model’s side of having a many-to-many relationship with the <code>Person</code> model.</p>
+<p>A course belongs to a campus. Configure the <code>Course</code> model to belong to a <code>Campus</code>.</p>
+<p>A course belongs to a department. Configure the <code>Course</code> model to belong to a <code>Department</code>.</p>
+<h2 id="step-9-queries">Step 9: Queries</h2>
+<p>Time to write some queries! Inside the “queries” directory, you will find a file called <code>personLookup.js</code>.</p>
+<p>Inside this file are three query functions, that will fetch a person (or people) in a variety of ways. Complete each query in order to get the final tests to pass.</p>
+<h2 id="step-10-practice-again">Step 10: Practice again!</h2>
+<p>The tests should fully pass, now. Take a break and do another round of the practice assessment.</p>
+</body>
+</html>

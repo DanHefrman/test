@@ -1,5 +1,5 @@
-<span class="citation" data-cites="dojo/widgets/progress">@dojo/widgets/progress</span>
-=======================================================================================
+<span class="citation" data-cites="dojo/widgets/progress"><span class="citation" data-cites="dojo/widgets/progress">@dojo/widgets/progress</span></span>
+========================================================================================================================================================
 
 Dojo’s `Progress` widget provides a themeable progress bar with a customizable output display.
 

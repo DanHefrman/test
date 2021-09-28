@@ -1,11 +1,13 @@
-# @dojo/widgets/text-area
+<span class="citation" data-cites="dojo/widgets/text-area">@dojo/widgets/text-area</span>
+=========================================================================================
 
-Dojo's `TextArea` widget provides a wrapped native `textarea` input with an optional label.
+Dojo’s `TextArea` widget provides a wrapped native `textarea` input with an optional label.
 
-## Features
+Features
+--------
 
-- Provides an API for valid `<textarea>` attributes
-- Correctly handles a11y attributes
+-   Provides an API for valid `<textarea>` attributes
+-   Correctly handles a11y attributes
 
 ### Accessibility Features
 

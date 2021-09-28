@@ -29,7 +29,7 @@ In the history of modern astronomy, there is probably no one greater leap forwar
 
 ### Text Sample
 
-Every avid independent filmmaker has **Bold** about making that *Italic* interest documentary, or short film to show off their creative prowess. Many have great ideas and want to “wow” the<sup>Superscript</sup> scene, or video renters with their big project. But once you have the<sub>Subscript</sub> “in the can” (no easy feat), how do you move from a <s>Strike</s> through of master DVDs with the <span class="underline">“Underline”</span> marked hand-written title inside a secondhand CD case, to a pile of cardboard boxes full of shiny new, retail-ready DVDs, with UPC barcodes and polywrap sitting on your doorstep? You need to create eye-popping artwork and have your project replicated. Using a reputable full service DVD Replication company like PacificDisc, Inc. to partner with is certainly a helpful option to ensure a professional end result, but to help with your DVD replication project, here are 4 easy steps to follow for good DVD replication results:
+Every avid independent filmmaker has **Bold** about making that *Italic* interest documentary, or short film to show off their creative prowess. Many have great ideas and want to “wow” the<sup>Superscript</sup> scene, or video renters with their big project. But once you have the<sub>Subscript</sub> “in the can” (no easy feat), how do you move from a <s>Strike</s> through of master DVDs with the <span class="underline">“Underline”</span> marked hand-written title inside a secondhand CD case, to a pile of cardboard boxes full of shiny new, retail-ready DVDs, with UPC barcodes and polywrap sitting on your doorstep? You need to create eye-popping artwork and have your project replicated. Using a reputable full service DVD Replication company like PacificDisc, Inc. to partner with is certainly a helpful option to ensure a professional end result, but to help with your DVD replication project, here are 4 easy steps to follow for good DVD replication results:
 
 ### Sample Buttons
 
@@ -207,11 +207,11 @@ Country Bangladesh India England Srilanka
 
 ### Switches
 
-01. Sample Switch
+1.  Sample Switch
 
-02. Primary Color Switch
+2.  Primary Color Switch
 
-03. Confirm Color Switch
+3.  Confirm Color Switch
 
 ### Selectboxes
 
@@ -219,27 +219,27 @@ English Spanish Arabic Portuguise Bengali
 
 ### Checkboxes
 
-01. Sample Checkbox
+1.  Sample Checkbox
 
-02. Primary Color Checkbox
+2.  Primary Color Checkbox
 
-03. Confirm Color Checkbox
+3.  Confirm Color Checkbox
 
-04. Disabled Checkbox
+4.  Disabled Checkbox
 
-05. Disabled Checkbox active
+5.  Disabled Checkbox active
 
 ### Radios
 
-01. Sample radio
+1.  Sample radio
 
-02. Primary Color radio
+2.  Primary Color radio
 
-03. Confirm Color radio
+3.  Confirm Color radio
 
-04. Disabled radio
+4.  Disabled radio
 
-05. Disabled radio active
+5.  Disabled radio active
 
 #### Top Products
 

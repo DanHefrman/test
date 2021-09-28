@@ -21,7 +21,7 @@ For more information on how this works with other front-ends & back-ends, head o
 How it works
 ============
 
-Dojo RealWorld using <span class="citation" data-cites="dojo/widget-core"><span class="citation" data-cites="dojo/widget-core">@dojo/widget-core</span></span>, <span class="citation" data-cites="dojo/routing"><span class="citation" data-cites="dojo/routing">@dojo/routing</span></span> and <span class="citation" data-cites="dojo/stores"><span class="citation" data-cites="dojo/stores">@dojo/stores</span></span>.
+Dojo RealWorld using <span class="citation" data-cites="dojo/widget-core"><span class="citation" data-cites="dojo/widget-core"><span class="citation" data-cites="dojo/widget-core">@dojo/widget-core</span></span></span>, <span class="citation" data-cites="dojo/routing"><span class="citation" data-cites="dojo/routing"><span class="citation" data-cites="dojo/routing">@dojo/routing</span></span></span> and <span class="citation" data-cites="dojo/stores"><span class="citation" data-cites="dojo/stores"><span class="citation" data-cites="dojo/stores">@dojo/stores</span></span></span>.
 
 For more information on Dojo visit [dojo.io](https://dojo.io)
 

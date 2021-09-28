@@ -30,7 +30,7 @@ Basics
 
 -   A graph is any collection of nodes and
     -   Much more relaxed in structure than a tree.
--   It doesn't need to have a root node (not every node needs to be accessible from a single node)
+-   It doesn’t need to have a root node (not every node needs to be accessible from a single node)
 -   It can have cycles (a group of nodes whose paths begin and end at the same node)
     -   Cycles are not always “isolated”, they can be one part of a larger graph. You can detect them by starting your search on a specific node and finding a path that takes you back to that same node.
 -   Any number of edges may leave a given node
@@ -51,7 +51,7 @@ Graph Types
 
 -   A graph with lots of edges.
 
-> "Dense graphs have many edges. But, wait! ⚠️ I know what you must be thinking, how can you determine what qualifies as “many edges”? This is a little bit too subjective, right? ? I agree with you, so let’s quantify it a little bit: Let’s find the maximum number of edges in a directed graph. If there are |V| nodes in a directed graph (in the example below, six nodes), that means that each node can have up to |v| connections (in the example below, six connections). Why? Because each node could potentially connect with all other nodes and with itself (see “loop” below). Therefore, the maximum number of edges that the graph can have is |V|\\\*|V| , which is the total number of nodes multiplied by the maximum number of connections that each node can have."
+> “Dense graphs have many edges. But, wait! ⚠️ I know what you must be thinking, how can you determine what qualifies as “many edges”? This is a little bit too subjective, right? ? I agree with you, so let’s quantify it a little bit: Let’s find the maximum number of edges in a directed graph. If there are |V| nodes in a directed graph (in the example below, six nodes), that means that each node can have up to |v| connections (in the example below, six connections). Why? Because each node could potentially connect with all other nodes and with itself (see “loop” below). Therefore, the maximum number of edges that the graph can have is |V|\\\*|V| , which is the total number of nodes multiplied by the maximum number of connections that each node can have."
 
 <img src="./Images/dense-graph.png" alt="Dense Graph Image" id="dense-graph-img" class="image" />
 
@@ -76,7 +76,7 @@ Graph Types
 
 ### Undirected Graph
 
--   Undirected Graph: Edges don't have a direction. All graphs are assumed to be undirected unless otherwise stated
+-   Undirected Graph: Edges don’t have a direction. All graphs are assumed to be undirected unless otherwise stated
 
 <img src="./Images/undirected-graph.png" alt="Undirected Graph Image" id="undirected-graph-img" class="image" />
 
@@ -87,7 +87,6 @@ Ways to Reference Graph Nodes
 
 Uses a class to construct a node and define the neighbors as properties of each node.
 
-                         
                         class GraphNode {
                         constructor(val) {
                         this.val = val;
@@ -105,9 +104,6 @@ Uses a class to construct a node and define the neighbors as properties of each 
                         e.neighbors = [a];
                         f.neighbors = [e];
 
-                        
-                    
-
 ### With an Adjacency Matrix
 
 -   The row index will corespond to the source of an edge and the column index will correspond to the edges destination.
@@ -121,7 +117,6 @@ Uses a class to construct a node and define the neighbors as properties of each 
 
 Seeks to solve the shortcomings of the matrix implementation. It uses an object where keys represent node labels and values associated with that key are the adjacent node keys held in an array.
 
-                         
                             let graph = {
                                 a: ["b", "c", "e"],
                                 b: [],
@@ -131,15 +126,11 @@ Seeks to solve the shortcomings of the matrix implementation. It uses an object 
                                 f: ["e"],
                               };
 
-                        
-                    
-
 Code Examples
 -------------
 
 ### Basic Graph Class
 
-                             
                                 class Graph {
                                     constructor() {
                                       this.adjList = {};
@@ -209,13 +200,7 @@ Code Examples
                                       return [...vertices];
                                     }
 
-
-                            
-                        
-
 ### Node Class Examples
-
-                             
 
                                 class GraphNode {
                                     constructor(val) {
@@ -263,14 +248,10 @@ Code Examples
                                     return maxValue;
                                   }
 
-                            
-                        
-
 ### Traversal Examples
 
 With a Graph Node Class
 
-                             
                                 function depthFirstRecur(node, visited = new Set()) {
                                     if (visited.has(node.val)) return;
 
@@ -302,7 +283,6 @@ With a Graph Node Class
 
 With an Adjacency List
 
-                             
                                 function depthFirst(graph) {
                                     let visited = new Set();
 

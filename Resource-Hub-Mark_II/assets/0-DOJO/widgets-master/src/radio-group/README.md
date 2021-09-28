@@ -1,5 +1,5 @@
-<span class="citation" data-cites="dojo/widgets/radio-group">@dojo/widgets/radio-group</span> widget
-====================================================================================================
+<span class="citation" data-cites="dojo/widgets/radio-group"><span class="citation" data-cites="dojo/widgets/radio-group">@dojo/widgets/radio-group</span></span> widget
+========================================================================================================================================================================
 
 Dojo’s `RadioGroup` widget provides an opinionated way to use a group of check boxes in a form.
 

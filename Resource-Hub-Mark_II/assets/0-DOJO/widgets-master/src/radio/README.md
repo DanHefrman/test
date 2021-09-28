@@ -1,5 +1,5 @@
-<span class="citation" data-cites="dojo/widgets/radio">@dojo/widgets/radio</span>
-=================================================================================
+<span class="citation" data-cites="dojo/widgets/radio"><span class="citation" data-cites="dojo/widgets/radio">@dojo/widgets/radio</span></span>
+===============================================================================================================================================
 
 Dojo’s `Radio` widget provides a wrapped, styleable radio widget that uses the native `<input type="radio">` as a base.
 

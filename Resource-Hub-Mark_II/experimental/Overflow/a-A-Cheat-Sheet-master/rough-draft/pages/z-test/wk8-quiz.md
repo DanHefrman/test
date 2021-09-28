@@ -8,7 +8,7 @@ SHOW
 
 Name the layers in an OSI Network Model
 
-<img src="wk8-images/osi-network-layers.png" style="width:30.0%;height:30.0%" />
+![](wk8-images/osi-network-layers.png)
 
 SHOW
 
@@ -20,7 +20,7 @@ SHOW
 
 In the OSI Network Model, briefly describe what protocol each layer uses.
 
-<table><thead><tr class="header"><th>Layer</th><th>Protocol and description</th></tr></thead><tbody><tr class="odd"><td>Application</td><td>HTTP is a common Application Layer protocol. Data transmitted on this layer will interact directly with applications.</td></tr><tr class="even"><td>Presentation</td><td>JPEG, GIF are examples of protocols at this layer. This is where the data gets translated into a presentable format.</td></tr><tr class="odd"><td>Session</td><td>RPC (Remote Procedure Call): Includes protocols responsible for authentication and data continuity. May authroize a client with a server or re-establish a dropped connection.</td></tr><tr class="even"><td>Transport</td><td>TCP/UDP: These processes focus on data integrity and connectivity</td></tr><tr class="odd"><td>Network</td><td>IP: Manages connections between remote networks, transferring packets across intermediary devices.</td></tr><tr class="even"><td>Data Link</td><td>Ethernet : Deals with connections directly from one machine's network interface to another. Frames targeting different MAC addresses are transferred here. This layer is primarily used by machines in local networks.</td></tr><tr class="odd"><td>Physical</td><td>Wi-Fi (802.11) and DSL : Translate from raw electrical signals to bits and bytes of data.</td></tr></tbody></table>
+<table><thead><tr class="header"><th>Layer</th><th>Protocol and description</th></tr></thead><tbody><tr class="odd"><td>Application</td><td>HTTP is a common Application Layer protocol. Data transmitted on this layer will interact directly with applications.</td></tr><tr class="even"><td>Presentation</td><td>JPEG, GIF are examples of protocols at this layer. This is where the data gets translated into a presentable format.</td></tr><tr class="odd"><td>Session</td><td>RPC (Remote Procedure Call): Includes protocols responsible for authentication and data continuity. May authroize a client with a server or re-establish a dropped connection.</td></tr><tr class="even"><td>Transport</td><td>TCP/UDP: These processes focus on data integrity and connectivity</td></tr><tr class="odd"><td>Network</td><td>IP: Manages connections between remote networks, transferring packets across intermediary devices.</td></tr><tr class="even"><td>Data Link</td><td>Ethernet : Deals with connections directly from one machine’s network interface to another. Frames targeting different MAC addresses are transferred here. This layer is primarily used by machines in local networks.</td></tr><tr class="odd"><td>Physical</td><td>Wi-Fi (802.11) and DSL : Translate from raw electrical signals to bits and bytes of data.</td></tr></tbody></table>
 
 SHOW
 
@@ -45,7 +45,7 @@ What are some use cases for the UDP protocol?
 When performance is more important than quality:
 
 1.  VOIP (Voice over IP)
-2.  Real-time video : Here you want to keep pace with the video as it is real-time so missing a packet isn't as important as keeping pace with the video.
+2.  Real-time video : Here you want to keep pace with the video as it is real-time so missing a packet isn’t as important as keeping pace with the video.
 3.  Network services
 
 SHOW
@@ -68,7 +68,7 @@ SHOW
 
 What does UDP stand for:
 
-User Datagram Protocol: Used when you don't mind a more unreliable connection, but real time interactivity is more important. Voice Over IP, Video Chat are examples of where you might use UDP
+User Datagram Protocol: Used when you don’t mind a more unreliable connection, but real time interactivity is more important. Voice Over IP, Video Chat are examples of where you might use UDP
 
 SHOW
 
@@ -86,7 +86,7 @@ SHOW
 
 Describe a Port
 
-Represents a TCP/UDP connection on an actual computer. Valid ports are in the range from 0 - 65535. Used by the operating system of a computer to route TCP connections to the right program running on a computer. These programs can be said to be "listening" on a port. No two programs are allowed to listen on the same port at once.
+Represents a TCP/UDP connection on an actual computer. Valid ports are in the range from 0 - 65535. Used by the operating system of a computer to route TCP connections to the right program running on a computer. These programs can be said to be “listening” on a port. No two programs are allowed to listen on the same port at once.
 
 SHOW
 
@@ -183,7 +183,7 @@ SHOW
 How is an IPv6 number made up?
 
 -   IPv6 addresses are made up of a 128bit number
--   IPv6 addresses are typically represented as hexidecimal, with every 4 digits separated by a ':'
+-   IPv6 addresses are typically represented as hexidecimal, with every 4 digits separated by a ‘:’
 -   Example: 2001:0db8:85a3:0000:0000:8a2e:0370:7334
 
 SHOW
@@ -238,24 +238,24 @@ SHOW
 
 Is a linked list a graph?
 
-Yes!  
-  
+Yes!
+
 ![](wk8-images/linked-list-graph.png)
 
 SHOW
 
 What is a Tree?
 
-A tree is a graph that does not contain any cycles. Note the image below. Tree 4 is a graph in mathematics, but in computer science it is not.  
-  
+A tree is a graph that does not contain any cycles. Note the image below. Tree 4 is a graph in mathematics, but in computer science it is not.
+
 ![](wk8-images/trees.png)
 
 SHOW
 
 Define a binary tree
 
-A binary tree is a tree where nodes have at most 2 children. Graphs 1, 2 and 3 are all binary trees shown below.  
-  
+A binary tree is a tree where nodes have at most 2 children. Graphs 1, 2 and 3 are all binary trees shown below.
+
 ![](wk8-images/trees.png)
 
 SHOW
@@ -270,8 +270,6 @@ SHOW
 
 Determine the nodes to be searched in pre-order traversal, in the following graph:
 
-  
-  
 ![](wk8-images/binary-search-tree.png)
 
 ![](wk8-images/pre-order-traversal.png)
@@ -280,8 +278,6 @@ SHOW
 
 Determine the nodes to be searched in in-order traversal, in the following graph:
 
-  
-  
 ![](wk8-images/binary-search-tree.png)
 
 ![](wk8-images/in-order-traversal.png)
@@ -290,8 +286,6 @@ SHOW
 
 Determine the nodes to be searched in post-order traversal in the following graph:
 
-  
-  
 ![](wk8-images/binary-search-tree.png)
 
 ![](wk8-images/post-order-traversal.png)
@@ -300,7 +294,7 @@ SHOW
 
 Write a recursive function to print a binary search tree inOrder
 
-``
+\`\`
 
         function inOrderPrint(root) {
             if (!root) return;
@@ -314,7 +308,7 @@ SHOW
 
 Write a recursive function to print a binary search tree in PostOrder
 
-``
+\`\`
 
         function postOrderPrint(root) {
             if (!root) return;
@@ -328,7 +322,7 @@ SHOW
 
 Write a recursive function to print a binary search tree in PreOrder
 
-``
+\`\`
 
         function inPreOrder(root) {
             if (!root) return;
@@ -342,7 +336,7 @@ SHOW
 
 Write a recursive function to perform a breadth-first search.
 
-``
+\`\`
 
         function printBreadthFirst(root) {
             let queue = [];
@@ -359,7 +353,7 @@ SHOW
 
 Write a recursive function that returns an array in postOrder.
 
-``
+\`\`
 
         function postOrderArray(root) {
             if (!root) return [];
@@ -375,7 +369,7 @@ SHOW
 
 Write a function that returns an array in pre-order order.
 
-``
+\`\`
 
         function preOrderArray(root) {
             if (!root) return [];
@@ -391,7 +385,7 @@ SHOW
 
 Write a function that returns an array inOrder order.
 
-``
+\`\`
 
         function inOrderArray(root){
             if (!root) return [];
@@ -406,7 +400,7 @@ SHOW
 
 Write a function that adds a node to a binary search tree
 
-``
+\`\`
 
         function add(root, val) {
             if (!root) //root is null
@@ -435,7 +429,7 @@ SHOW
 
 Write a function to search a binary search tree recursively for a value. If the value is found, return true. Otherwise return false.
 
-``
+\`\`
 
         function searchRecurse(root, val) {
             if (!root) return false;
@@ -453,7 +447,7 @@ SHOW
 
 Write an iterative search for a binary tree, returning true or false if the value is found.
 
-``
+\`\`
 
         function searchIter(root, val) {
             let currNode = root;
@@ -505,13 +499,13 @@ SHOW
 Name two ways we can create a graph
 
 1.  Using a class: GraphNode with two properties: val, and neighbors = \[\]
-2.  Using an adjacency list: graph = { 'a' : \['b'\], 'b' : \['a'\] }
+2.  Using an adjacency list: graph = { ‘a’ : \[‘b’\], ‘b’ : \[‘a’\] }
 
 SHOW
 
 Write a breadthFirstSearch for a graph, iteratively.
 
-``
+\`\`
 
         let graph = {
             'q': ['r'],
@@ -543,10 +537,9 @@ SHOW
 
 Write a depth-first Search on the adjacency list graph.
 
-Note with the following: If your graph has disjointed subgraphs - in that there is no way to move from one subgraph to another, your starting node is ONLY the subgraph you want to search through. Also note, this algorithm only works on graphs with NO cycles. We won't be tested on searching through a cycle for depth-first, so set that topic aside. Also note, mathematicians consider cycles as a graph. Computer scientists do not.  
-  
-``
+Note with the following: If your graph has disjointed subgraphs - in that there is no way to move from one subgraph to another, your starting node is ONLY the subgraph you want to search through. Also note, this algorithm only works on graphs with NO cycles. We won’t be tested on searching through a cycle for depth-first, so set that topic aside. Also note, mathematicians consider cycles as a graph. Computer scientists do not.
 
+\`\`
 
         const depthFirst = (graph, node, targetVal, visited = new Set()) => {
             if (node === targetVal) return true;

@@ -1,5 +1,5 @@
-<span class="citation" data-cites="dojo/widgets/dialog"><span class="citation" data-cites="dojo/widgets/dialog">@dojo/widgets/dialog</span></span>
-==================================================================================================================================================
+<span class="citation" data-cites="dojo/widgets/dialog"><span class="citation" data-cites="dojo/widgets/dialog"><span class="citation" data-cites="dojo/widgets/dialog">@dojo/widgets/dialog</span></span></span>
+=================================================================================================================================================================================================================
 
 Dojo’s `Dialog` component shows content inside a window over top the application content. It provides default styling for a titlebar, content area, underlay, and a close button.
 

@@ -1,21 +1,23 @@
-# W2D5 Notes
+W2D5 Notes
+==========
 
-## Morning Notes on Context
-- [morning_notes.js]
+Morning Notes on Context
+------------------------
 
-## Evening Notes on Context
-- [context.js]
+-   [morning\_notes.js](./morning_notes.js)
 
-## Learning Objectives not filled out
-- [empty_learning_objectives.js]
+Evening Notes on Context
+------------------------
 
-## Assessment 2 Prep
-- [Assessment 2 Prep material]
-- [Assessment 2 Prep material download]
+-   [context.js](./context.js)
 
+Learning Objectives not filled out
+----------------------------------
 
-[morning_notes.js]: ./morning_notes.js
-[empty_learning_objectives.js]: ../assessment2Prep/empty_learning_objectives.js
-[context.js]: ./context.js
-[Assessment 2 Prep material]: ../assessment2Prep
-[Assessment 2 Prep material download]: ../assessment2Prep.zip
+-   [empty\_learning\_objectives.js](../assessment2Prep/empty_learning_objectives.js)
+
+Assessment 2 Prep
+-----------------
+
+-   [Assessment 2 Prep material](../assessment2Prep)
+-   [Assessment 2 Prep material download](../assessment2Prep.zip)

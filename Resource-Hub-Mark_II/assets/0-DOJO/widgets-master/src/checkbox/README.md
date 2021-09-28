@@ -1,5 +1,5 @@
-<span class="citation" data-cites="dojo/widgets/checkbox"><span class="citation" data-cites="dojo/widgets/checkbox">@dojo/widgets/checkbox</span></span>
-========================================================================================================================================================
+<span class="citation" data-cites="dojo/widgets/checkbox"><span class="citation" data-cites="dojo/widgets/checkbox"><span class="citation" data-cites="dojo/widgets/checkbox">@dojo/widgets/checkbox</span></span></span>
+=========================================================================================================================================================================================================================
 
 Dojo’s `Checkbox` widget provides a wrapped, styleable checkbox widget that uses the native `<input type="checkbox">` as a base.
 

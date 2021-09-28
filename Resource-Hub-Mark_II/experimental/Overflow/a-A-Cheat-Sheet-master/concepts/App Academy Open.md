@@ -71,7 +71,7 @@
         -   [*✔︎*Binary and Hexidecimal00:10:00](https://open.appacademy.io/learn/js-py---sep-2020-online/week-8-sep-2020-online/binary-and-hexidecimal)
         -   [*●*Internet Protocol00:10:00](https://open.appacademy.io/learn/js-py---sep-2020-online/week-8-sep-2020-online/internet-protocol)
         -   [*●*Transport Protocols00:10:00](https://open.appacademy.io/learn/js-py---sep-2020-online/week-8-sep-2020-online/transport-protocols)
-        -   [*►*TCP vs. UDP00:04:16](https://open.appacademy.io/learn/js-py---sep-2020-online/week-8-sep-2020-online/tcp-vs--udp)
+        -   [*►*TCP vs. UDP00:04:16](https://open.appacademy.io/learn/js-py---sep-2020-online/week-8-sep-2020-online/tcp-vs--udp)
         -   [*●*DNS00:10:00](https://open.appacademy.io/learn/js-py---sep-2020-online/week-8-sep-2020-online/dns)
         -   [*►*DNS Walkthrough with dig00:06:11](https://open.appacademy.io/learn/js-py---sep-2020-online/week-8-sep-2020-online/dns-walkthrough-with-dig)
         -   [*●*Network Hardware00:10:00](https://open.appacademy.io/learn/js-py---sep-2020-online/week-8-sep-2020-online/network-hardware)

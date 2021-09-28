@@ -1,12 +1,14 @@
-# @dojo/widgets/text-input
+<span class="citation" data-cites="dojo/widgets/text-input">@dojo/widgets/text-input</span>
+===========================================================================================
 
-Dojo's `TextInput` widget provides a basic text input widget with an optional label.
+Dojo’s `TextInput` widget provides a basic text input widget with an optional label.
 
-## Features
+Features
+--------
 
-- Allows specification of input type (e.g. `text`, `email`, `number`, etc)
-- Correctly handles a11y attributes
-- Allows leading / trailing icons / text to be added
+-   Allows specification of input type (e.g. `text`, `email`, `number`, etc)
+-   Correctly handles a11y attributes
+-   Allows leading / trailing icons / text to be added
 
 ### Accessibility Features
 

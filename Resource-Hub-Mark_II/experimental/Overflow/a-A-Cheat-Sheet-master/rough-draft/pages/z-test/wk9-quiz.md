@@ -23,10 +23,10 @@ Order the specificity of the following:
 3.  The most element tags (eg: li, p, span)
 4.  The most classes (eg: .myClass)
 
-1.  The most ID tags (eg: \#main-header)
-2.  The most classes (eg: .myClass)
-3.  The most element tags(eg: p, h1, li)
-4.  The last style for that element read in the browser.
+5.  The most ID tags (eg: \#main-header)
+6.  The most classes (eg: .myClass)
+7.  The most element tags(eg: p, h1, li)
+8.  The last style for that element read in the browser.
 
 SHOW
 
@@ -57,7 +57,7 @@ Third Child
 
 All decendants selector: space
 
-``
+\`\`
 
             ul li {
                 color: red;
@@ -68,7 +68,7 @@ SHOW
 
 Write a selector that will apply the same style to your body, div, paragraph, span, unordered list and line item elements.
 
-The multiple items selection: comma ``
+The multiple items selection: comma \`\`
 
             body, div, p, span, ul, li {
                 color: red;
@@ -94,7 +94,7 @@ Third Child
 
 The direct child selector:
 
-``
+\`\`
 
             ul > li {
                 color: red;
@@ -111,7 +111,7 @@ SHOW
 
 What is a pseudo-class?
 
-A pseudo-class is a selector that selects elements that are in a specific state. e.g. :hover or :first-child
+A pseudo-class is a selector that selects elements that are in a specific state. e.g. :hover or :first-child
 
 SHOW
 
@@ -170,8 +170,8 @@ How many arguments does the border property require?
 
 Three args: thickness, line style, and line color
 
-1.  thickness (like 2px, or 3em...)
-2.  line style(solid, dotted, dashed, double, groove, ridge, hidden ...)
+1.  thickness (like 2px, or 3em…)
+2.  line style(solid, dotted, dashed, double, groove, ridge, hidden …)
 3.  line color (red, rgb(255, 255, 255), etc.
 
 SHOW
@@ -190,7 +190,7 @@ SHOW
 
 What does opacity do?
 
-It sets the element's opacity. The lower the value the more transparent the element becomes. Values range from 0 (completely transparent) to 1;
+It sets the element’s opacity. The lower the value the more transparent the element becomes. Values range from 0 (completely transparent) to 1;
 
 SHOW
 
@@ -202,13 +202,13 @@ SHOW
 
 Why is using web fonts valuable?
 
-Without loading web fonts, you are depending upon the browser to have the font you specify -- which may not be the case. Either downloading a font, or using a web font alleviates that problem and you can be assured the font will always be available.
+Without loading web fonts, you are depending upon the browser to have the font you specify – which may not be the case. Either downloading a font, or using a web font alleviates that problem and you can be assured the font will always be available.
 
 SHOW
 
 What is a rem?
 
-This is a relative length unit in CSS. It is based upon the root's value.
+This is a relative length unit in CSS. It is based upon the root’s value.
 
 SHOW
 
@@ -240,14 +240,14 @@ SHOW
 
 What are the advantages of using an AJAX request?
 
--   We don't have to refresh the entire HTML page.
--   It's a smaller amount of data that needs to be transferred.
+-   We don’t have to refresh the entire HTML page.
+-   It’s a smaller amount of data that needs to be transferred.
 
 SHOW
 
 Describe how AJAX relates to modern web programming.
 
--   Asychronous: We don't lock up the page when we're waiting on a response. We're still able to interact and the response's data will be handled whenever it returns.
+-   Asychronous: We don’t lock up the page when we’re waiting on a response. We’re still able to interact and the response’s data will be handled whenever it returns.
 -   JavaScript: The engine behind AJAX. We use JavaScript to make the request to the server, then we also use it to process the response and make any updates to the DOM that are needed based on this new data.
 -   XML: The original format of the data that was sent back on the response. Nowadays we will amost always be using JSON as the format.
 
@@ -259,13 +259,13 @@ Describe the different steps in an AJAX request/response cycle
 -   When the event is triggered, we use JavaScript to formulate an appropriate request to a server. In our project we used fetch in order to send a request to a specific route on our server, along with an options object to indicate the methods, headers, etc., that differ from the default values, a body with necessary data, etc..
 -   The request is sent asynchronously to the server. The user is still able to interact with our application since the request is not blocking the call stack
 -   The server receives the request and does whatever it needs to do on its end to create/read/update/destroy data related to the request. After it performs the requested action, it creates a response and sends it back to the client. This is almost always going to be in a JSON format.
--   The client receives the response and is able to parse the data and do any updates that it needs to do in the DOM. In our project we use a .then on our call to fetch, which allowed us to then convert the response's JSON into a usable POJO when the response came back. The data inside of this object is then accessible and used to manipulate the DOM.
+-   The client receives the response and is able to parse the data and do any updates that it needs to do in the DOM. In our project we use a .then on our call to fetch, which allowed us to then convert the response’s JSON into a usable POJO when the response came back. The data inside of this object is then accessible and used to manipulate the DOM.
 
 SHOW
 
-Write an event listener in JavaScript that will fetch to 'http://localhost:3000/kitten/downvote', with the 'PATCH' method, handle the response and catch any errors.
+Write an event listener in JavaScript that will fetch to ‘http://localhost:3000/kitten/downvote’, with the ‘PATCH’ method, handle the response and catch any errors.
 
-``
+\`\`
 
             document.querySelector('#downvote').addEventListener('click', () => {
                 fetch('http://localhost:3000/kitten/downvote', {method: 'PATCH' } )
@@ -279,7 +279,7 @@ SHOW
 
 Write another event listener to the above, but this time use the try/catch syntax.
 
-``
+\`\`
 
             document.querySelector('#downvote').addEventListener('click, async () =>
             {
@@ -296,7 +296,7 @@ SHOW
 
 Write the handleResponse for the fetch calls above.
 
-``
+\`\`
 
             const handleResponse = (response) => {
                 stopLoader();
@@ -312,7 +312,7 @@ SHOW
 
 Write the handleError function for the code above.
 
-``
+\`\`
 
             const handleError = (error) => {
                 if (error.json) {
@@ -328,7 +328,7 @@ SHOW
 
 Write the updateImageScore for the fetch call above.
 
-``
+\`\`
 
             const updateImageScore = (data) => {
                 const { score } = data;
@@ -347,9 +347,8 @@ In CSS, what are the different types of media that a media query can target?
 
 SHOW
 
-Given the following CSS rule, write a media query that would change the product-index container so the items appear in a vertical fashion for a viewport width less than or equal to 300px: `                         `
+Given the following CSS rule, write a media query that would change the product-index container so the items appear in a vertical fashion for a viewport width less than or equal to 300px: ``
 
-        
             .product-index {
                 display: flex;
             }
@@ -357,9 +356,7 @@ Given the following CSS rule, write a media query that would change the product-
                 background-color: blue;
             }
 
-        
-
-``
+\`\`
 
             @media screen and (max-width: 300px) {
                 .product-index {
@@ -372,7 +369,7 @@ SHOW
 
 Describe padding
 
-The innermost part of the box model -- creating space around an element's content (like putting on a puffy jacket)
+The innermost part of the box model – creating space around an element’s content (like putting on a puffy jacket)
 
 SHOW
 
@@ -386,9 +383,8 @@ What is the different between `box-sizing: border-box;` and `box-sizing: content
 
 border-box includes the border and padding in the width and height; content-box does not;
 
-`                         `
+``
 
-        
             div {
                 box-sizing: border-box;
                 width: 200px; /* including the padding and border */
@@ -421,13 +417,13 @@ SHOW
 
 Describe `position: relative`
 
-Positioned relative to itself; i.e. the element is still in the flow of the document, but now left/right/top/bottom/z-index will work.
+Positioned relative to itself; i.e. the element is still in the flow of the document, but now left/right/top/bottom/z-index will work.
 
 SHOW
 
 Describe `position: absolute`
 
-Element is removed from the flow of the document and other elements will behave as if it's not even there whilst all the other positional properties will work on it.
+Element is removed from the flow of the document and other elements will behave as if it’s not even there whilst all the other positional properties will work on it.
 
 SHOW
 
@@ -447,7 +443,7 @@ What are the 5 display property values?
 
 SHOW
 
-In the following list, choose which elements have "inline" display value:
+In the following list, choose which elements have “inline” display value:
 
 -   div
 -   span
@@ -484,13 +480,13 @@ SHOW
 
 Describe the z-index
 
-z-index refers to the "third dimension" i.e. stacking elements on top of each other. A higher z-index means bringing the element to the top.
+z-index refers to the “third dimension” i.e. stacking elements on top of each other. A higher z-index means bringing the element to the top.
 
 SHOW
 
 How does flex-box lay out elements?
 
-Flex box allows for easy responsive design by displaying items in a flexible container, where a container's height/width will adjust to the viewport.
+Flex box allows for easy responsive design by displaying items in a flexible container, where a container’s height/width will adjust to the viewport.
 
 SHOW
 
@@ -562,7 +558,7 @@ Explain and use the shorthand versions of grid-column and grid-row to define how
 
 SHOW
 
-Explain the "fr" unit of measure
+Explain the “fr” unit of measure
 
 fr: fraction unit of measure used for creating grid layout
 
@@ -628,13 +624,13 @@ Latin letters (X, M, IX, C, etc), digits, dashes
 
 SHOW
 
-What does the "E" of BEM stand for?
+What does the “E” of BEM stand for?
 
 Element - part of a block, no meaning on its own
 
 SHOW
 
-Give some examples of an "E" element
+Give some examples of an “E” element
 
 Element: menu item, list-item, header title, input label
 
@@ -646,13 +642,13 @@ Latin letters, digits, dashes, underscores.
 
 SHOW
 
-What does the "M" of BEM stand for?
+What does the “M” of BEM stand for?
 
 Modifier: A flag on a block or element used to change appearance or behavior
 
 SHOW
 
-What are some modifiers that might be used on an "M" element?
+What are some modifiers that might be used on an “M” element?
 
 -   disabled
 -   color (ie yellow)
@@ -669,31 +665,31 @@ SHOW
 
 How would you compose a CSS BEM class with a modifier?
 
-.block\_\_elem--mod or .block--color-red
+.block\_\_elem–mod or .block–color-red
 
 SHOW
 
 Create a BEM class name for a nav list-container with a shadow
 
-nav\_\_list-container--shadow
+nav\_\_list-container–shadow
 
 SHOW
 
 Create a BEM class name for a form that has modifiers theme-xmas and simple
 
-form--theme-xmas and form--simple
+form–theme-xmas and form–simple
 
 SHOW
 
 Create a BEM CSS class for form that has elements input and submit. Submit has its own modifier disabled
 
-form\_\_input, form\_\_submit, form\_\_submit--disabled
+form\_\_input, form\_\_submit, form\_\_submit–disabled
 
 SHOW
 
-Use the "hover" pseudo-class to make changes to a button, making the border 1px solid \#386a7a and the color = \#65c547b
+Use the “hover” pseudo-class to make changes to a button, making the border 1px solid \#386a7a and the color = \#65c547b
 
-``
+\`\`
 
         div {
             width: 100px;
@@ -714,9 +710,8 @@ How would you make an element show animated changes?
 
 Use the transition-property and transition-duration
 
-`                         `
+``
 
-        
             .button {
                 transition: margin-top -5 2s;
             }
@@ -726,19 +721,19 @@ SHOW
 
 What does the overflow CSS property do?
 
-It specifies what should happen if content overflows an element's box. This property specifies whether to clip content or to add scrollbars when an element's content is too big to fit in a specified area.
+It specifies what should happen if content overflows an element’s box. This property specifies whether to clip content or to add scrollbars when an element’s content is too big to fit in a specified area.
 
 SHOW
 
 Does overflow work for all block elements?
 
-No. It only works for block elements with a specified height.
+No. It only works for block elements with a specified height.
 
 SHOW
 
 What is a default overflow value?
 
-visible: The overflow is not clipped. It renders outside the element's box if it overflows. This is the default.
+visible: The overflow is not clipped. It renders outside the element’s box if it overflows. This is the default.
 
 SHOW
 
@@ -750,7 +745,7 @@ SHOW
 
 What are the overflow properties and values?
 
--   visible: The overflow is not clipped. It renders outside the element's box. This is default
+-   visible: The overflow is not clipped. It renders outside the element’s box. This is default
 -   hidden: The overflow is clipped, and the rest of the content will be invisible
 -   scroll: The overflow is clipped, but a scroll-bar is added to see the rest of the content
 -   auto: If overflow is clipped, a scroll-bar should be added to see the rest of the content.
@@ -777,9 +772,8 @@ The element is removed from the page flow and is typically positioned relative t
 
 SHOW
 
-Which of the following diagrams shows the correct layout of the elements given their margin and padding settings shown in the CSS below: `                         `
+Which of the following diagrams shows the correct layout of the elements given their margin and padding settings shown in the CSS below: ``
 
-        
         <body>
         <div class="container">
             <div class="element"></div>
@@ -800,15 +794,14 @@ Which of the following diagrams shows the correct layout of the elements given t
         }
         
 
-<img src="wk9-images/CSS-margin-padding-question.png" style="width:30.0%;height:30.0%" />
+![](wk9-images/CSS-margin-padding-question.png)
 
 Diagram D
 
 SHOW
 
-Given the following HTML and CSS, which of the following diagrams shows the correct layout of the absolutely positioned element? `                         `
+Given the following HTML and CSS, which of the following diagrams shows the correct layout of the absolutely positioned element? ``
 
-        
             <body>
             <div class="container">
                 <div class="element" id="element-1">1</div>
@@ -839,21 +832,21 @@ Given the following HTML and CSS, which of the following diagrams shows the corr
             }
         
 
-<img src="wk9-images/CSS-position.png" style="width:30.0%;height:30.0%" />
+![](wk9-images/CSS-position.png)
 
 Diagram A
 
 SHOW
 
-``
+\`\`
 
                     Given the following HTML and CSS, which of the following diagrams shows the
                         correct layout of the absolutely positioned element contained in a relatively
                         positioned element?
 
-HTML &lt;body&gt; &lt;div class="container"&gt; &lt;div class="element" id="element-1"&gt;1&lt;/div&gt; &lt;div class="element" id="element-2"&gt;2&lt;/div&gt; &lt;div class="element" id="element-3"&gt;3&lt;/div&gt; &lt;/div&gt; &lt;/body&gt; CSS .container { background-color: \#2B2D2F; position: relative; } .element { display: inline-block; width: 100px; height: 280px; font-size: 36px; } \#element-1 { background-color: \#FFFF00; } \#element-2 { background-color: \#FF69B4; position: absolute; bottom: 60px; } \#element-3 { background-color: \#00EEEE; }
+HTML &lt;body&gt; &lt;div class=“container”&gt; &lt;div class=“element” id=“element-1”&gt;1&lt;/div&gt; &lt;div class=“element” id=“element-2”&gt;2&lt;/div&gt; &lt;div class=“element” id=“element-3”&gt;3&lt;/div&gt; &lt;/div&gt; &lt;/body&gt; CSS .container { background-color: \#2B2D2F; position: relative; } .element { display: inline-block; width: 100px; height: 280px; font-size: 36px; } \#element-1 { background-color: \#FFFF00; } \#element-2 { background-color: \#FF69B4; position: absolute; bottom: 60px; } \#element-3 { background-color: \#00EEEE; }
 
-<img src="wk9-images/CSS-Position-Relative.png" style="width:30.0%;height:30.0%" />
+![](wk9-images/CSS-Position-Relative.png)
 
 Diagram C
 
@@ -864,8 +857,8 @@ What position setting completely removes itself from the document flow, and what
 position: absolute;
 
 -   Completely removes the element from the document flow.
--   Elements around it position themselves as though the element didn't exist.
--   Absolute in conjunction with top, bottom, left, right, reference the parent element who's position is NOT static.
+-   Elements around it position themselves as though the element didn’t exist.
+-   Absolute in conjunction with top, bottom, left, right, reference the parent element who’s position is NOT static.
 -   If there is no parent element that is NOT static, then the position of top, bottom, etc, will be relative to the root document.
 -   Position absolute will scroll out of view.
 
@@ -917,7 +910,7 @@ SHOW
 
 How do you create a grid?
 
-Set the grid container class's display to grid or inline-grid
+Set the grid container class’s display to grid or inline-grid
 
 SHOW
 
@@ -929,7 +922,7 @@ SHOW
 
 What are grid container grid settings?
 
-``
+\`\`
 
             .grid__container {
                 display: grid;
@@ -968,7 +961,7 @@ SHOW
 
 What properties are available on a flexible container and on a flex item?
 
-``
+\`\`
 
             .class__container {
                 display: flex;
