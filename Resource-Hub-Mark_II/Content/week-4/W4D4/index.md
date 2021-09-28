@@ -71,9 +71,11 @@ localStorage
 
 ---
 
-# Local Storage:
+# JSON
 
 ---
+
+
 ```js
 
 window.addEventListener('DOMContentLoaded', () => {
