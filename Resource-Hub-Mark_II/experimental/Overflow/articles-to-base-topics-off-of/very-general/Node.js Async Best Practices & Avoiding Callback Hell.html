@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Node.js Async Best Practices & Avoiding Callback Hell</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<h1 id="node.js-async-best-practices-avoiding-callback-hell-risingstack">Node.js Async Best Practices &amp; Avoiding Callback Hell | <span class="citation" data-cites="RisingStack">@RisingStack</span></h1>
+<blockquote>
+<p>In this post, we cover what tools and techniques you have at your disposal when handling Node.js asynchronous operations: async.js…</p>
+</blockquote>
+<p>In this post, we cover what tools and techniques you have at your disposal when handling Node.js asynchronous operations: async.js, promises, and async functions.</p>
+<p>After reading this article, you’ll know how to use the latest async tools at your disposal provided by Node.js!</p>
+<blockquote>
+<p>Node.js at Scale is a collection of articles focusing on the needs of companies with bigger Node.js installations and advanced Node developers. Chapters:</p>
+<p>.</p>
+<p><strong>Using npm:</strong></p>
+<p>* <a href="https://blog.risingstack.com/nodejs-at-scale-npm-best-practices/">npm Tricks and Best Practices</a></p>
+<p>* <a href="https://blog.risingstack.com/nodejs-at-scale-npm-publish-tutorial/">SemVer and Module Publishing</a></p>
+<p>* <a href="https://blog.risingstack.com/node-js-at-scale-module-system-commonjs-require/">Understanding the Module System, CommonJS and require</a></p>
+<p>.</p>
+<p><strong>Node.js Internals Deep Dive:</strong></p>
+<p>* <a href="https://blog.risingstack.com/node-js-at-scale-understanding-node-js-event-loop/">The Node.js Event Loop</a></p>
+<p>* <a href="https://blog.risingstack.com/node-js-at-scale-node-js-garbage-collection/">Node.js Garbage Collection Explained</a></p>
+<p>* <a href="https://blog.risingstack.com/writing-native-node-js-modules/">Writing Native Node.js Modules</a></p>
+<p>.</p>
+<p><strong>Building with Node.js:</strong></p>
+<p>* <a href="https://blog.risingstack.com/node-js-project-structure-tutorial-node-js-at-scale/">Advanced Node.js Project Structuring</a></p>
+<p>* <a href="https://blog.risingstack.com/javascript-clean-coding-best-practices-node-js-at-scale/">JavaScript Clean Coding Best Practices</a></p>
+<p>* Node.js Async Best Practices <em>[ this article ]</em></p>
+<p>* <a href="https://blog.risingstack.com/event-sourcing-with-examples-node-js-at-scale/">Event sourcing with Examples</a></p>
+<p>* <a href="https://blog.risingstack.com/cqrs-explained-node-js-at-scale/">CQRS (Command Query Responsibility Segregation) Explained</a></p>
+<p>.</p>
+<p><strong>Testing + Node:</strong></p>
+<p>* <a href="https://blog.risingstack.com/getting-node-js-testing-and-tdd-right-node-js-at-scale/">Node.js Testing and Getting TDD Right</a></p>
+<p>* <a href="https://blog.risingstack.com/end-to-end-testing-with-nightwatch-js-node-js-at-scale/">Node.js End-to-End Testing with Nightwatch.js</a></p>
+<p>.</p>
+<p><strong>Node.js in Production:</strong></p>
+<p>* <a href="https://blog.risingstack.com/monitoring-nodejs-applications-nodejs-at-scale/">The Definitive Guide for Monitoring Node.js Applications</a></p>
+<p>* <a href="https://blog.risingstack.com/how-to-debug-nodej-js-with-the-best-tools-available/">How to Debug Node.js with the Best Tools Available</a></p>
+<p>* <a href="https://blog.risingstack.com/post-mortem-diagnostics-debugging-node-js-at-scale/">Node.js Post-Mortem Diagnostics &amp; Debugging</a></p>
+<p>.</p>
+<p><strong>Node.js + Microservices:</strong></p>
+<p>* <a href="https://blog.risingstack.com/distributed-tracing-opentracing-node-js/">Distributed Tracing</a></p>
+<p>* <a href="https://blog.risingstack.com/building-an-api-gateway-using-nodejs/">API Gateways</a></p>
+</blockquote>
+<p>Previously we have gathered a strong knowledge about <a href="https://blog.risingstack.com/node-hero-async-programming-in-node-js/">asynchronous programming in JavaScript</a> and understood how the <a href="https://blog.risingstack.com/node-js-at-scale-understanding-node-js-event-loop/">Node.js event loop</a> works.</p>
+<p>If you have not read these articles, I highly recommend them as introductions!</p>
+<p>Node.js itself is single-threaded, but some tasks can run in parallel thanks to its asynchronous nature.</p>
+<p>But what does running in parallel mean in practice?</p>
+<p>Since we program a single-threaded VM, it is essential that we do not block execution by waiting for I/O, but handle operations concurrently with the help of Node.js’s event-driven APIs.</p>
+<p>Let’s take a look at some fundamental patterns, and learn how we can write resource-efficient, non-blocking code, with the built-in solutions of Node.js.</p>
+<p>Let’s take a look at these simple async operations. They do nothing special, just fire a timer and call a function once the timer finished.</p>
+<p>function fastFunction (done) {<br />
+setTimeout(function () {<br />
+done()<br />
+}, 100)<br />
+}function slowFunction (done) {<br />
+setTimeout(function () {<br />
+done()<br />
+}, 300)<br />
+}</p>
+<p>Seems easy, right?</p>
+<p>Our higher-order functions can be executed sequentially or in parallel with the basic “pattern” by nesting callbacks — but using this method can lead to an untameable callback-hell.</p>
+<p>function runSequentially (callback) {<br />
+fastFunction((err, data) =&gt; {<br />
+if (err) return callback(err)<br />
+console.log(data) <em>// results of a</em></p>
+<pre><code>  slowFunction((err, data) =&gt; {  
+  if (err) return callback(err)  
+  console.log(data) _// results of b_
+
+    _// here you can continue running more tasks_  
+})  </code></pre>
+<p>})<br />
+}</p>
+<p><span class="citation" data-cites="RisingStack">[Never use the nested callback approach for handling asynchronous #nodejs operations!” via @RisingStack]</span>(https://twitter.com/share?text=Never%20use%20the%20nested%20callback%20approach%20for%20handling%20asynchronous%20%23nodejs%20operations!%22%20via%20%40RisingStack;url=https://blog.risingstack.com/node-js-async-best-practices-avoiding-callback-hell-node-js-at-scale/)</p>
+<blockquote>
+<p>To become an efficient Node.js developer, you have to avoid the constantly growing indentation level, produce clean and readable code and be able to handle complex flows.</p>
+</blockquote>
+<p>Let me show you some of the tools we can use to organize our code in a nice and maintainable way!</p>
+<p>There have been native promises in javascript since 2014, receiving an important boost in performance in Node.js 8. We will make use of them in our functions to make them non-blocking — without the traditional callbacks. The following example will call the modified version of both our previous functions in such a manner:</p>
+<p>function fastFunction () {<br />
+return new Promise((resolve, reject) =&gt; {<br />
+setTimeout(function () {<br />
+console.log(‘Fast function done’)<br />
+resolve()<br />
+}, 100)<br />
+})<br />
+}function slowFunction () {<br />
+return new Promise((resolve, reject) =&gt; {<br />
+setTimeout(function () {<br />
+console.log(‘Slow function done’)<br />
+resolve()<br />
+}, 300)<br />
+})<br />
+}function asyncRunner () {<br />
+return Promise.all([slowFunction(), fastFunction()])<br />
+}</p>
+<p>Please note that <code>Promise.all</code> will fail as soon as any of the promises inside it fails.</p>
+<p>The previous functions have been modified slightly to return promises. Our new function, asyncRunner, will also return a promise, that will resolve when all the contained functions resolve, and this also means that wherever we call our asyncRunner, we’ll be able to use the .then and .catch methods to deal with the possible outcomes:</p>
+<p>asyncRunner()<br />
+.then(([ slowResult, fastResult ]) =&gt; {<br />
+console.log(‘All operations resolved successfully’)<br />
+})<br />
+.catch((error) =&gt; {<br />
+console.error(‘There has been an error:’, error)<br />
+})</p>
+<p>Since node@12.9.0, there is a method called <code>promise.allSettled</code>, that we can use to get the result of all the passed in promises regardless of rejections. Much like Promise.all, this function expects an array of promises, and returns an array of objects that has a status of “fulfilled” or “rejected”, and either the resolved value or the error that occurred.</p>
+<p>function failingFunction() {<br />
+return new Promise((resolve, reject) =&gt; {<br />
+reject(new Error(‘This operation will surely fail!’))<br />
+})<br />
+}function asyncMixedRunner () {<br />
+return Promise.allSettled([slowFunction(), failingFunction()])<br />
+}asyncMixedRunner()<br />
+.then(([slowResult, failedResult]) =&gt; {<br />
+console.log(slowResult, failedResult)<br />
+})</p>
+<p>In previous node versions, where <code>.allSettled</code> is not available, we can implement our own version in just a few lines:</p>
+<p>function homebrewAllSettled(promises) {<br />
+return Promise.all(promises.map((promise) =&gt; {<br />
+return promise<br />
+.then((value) =&gt; {<br />
+return { status: ‘fulfilled’, value }<br />
+})<br />
+.catch((error) =&gt; {<br />
+return { status: ‘rejected’, error }<br />
+})<br />
+}))<br />
+}</p>
+<p>To make sure your tasks run in a specific order — maybe successive functions need the return value of previous ones, or depend on the run of previous functions less directly — which is basically the same as <code>[_.flow](https://lodash.com/docs/#flow)</code> for functions that return a Promise. As long as it’s missing from everyone’s favorite utility library, you can easily create a chain from an array of your async functions:</p>
+<p>function serial(asyncFunctions) {<br />
+return asyncFunctions.reduce(function(functionChain, nextFunction) {<br />
+return functionChain.then(<br />
+(previousResult) =&gt; nextFunction(previousResult)<br />
+);<br />
+}, Promise.resolve());<br />
+}serial([parameterValidation, dbQuery, serviceCall ])<br />
+.then((result) =&gt; console.log(`Operation result: ${result}`))<br />
+.catch((error) =&gt; console.log(`There has been an error: ${error}`))</p>
+<p>In case of a failure, this will skip all the remaining promises, and go straight to the error handling branch. You can tweak it some more in case you need the result of all of the promises regardless if they resolved or rejected.</p>
+<p>function serial(asyncFunctions) {<br />
+return asyncFunctions.map(function(functionChain, nextFunction) {<br />
+return functionChain<br />
+.then((previousResult) =&gt; nextFunction(previousResult))<br />
+.then(result =&gt; ({ status: ‘fulfilled’, result }))<br />
+.catch(error =&gt; ({ status: ‘rejected’, error }));<br />
+}, Promise.resolve());<br />
+}</p>
+<p>Node also provides a handy utility function called “promisify”, that you can use to convert any old function expecting a callback that you just have to use into one that returns a promise. All you need to do is import it in your project:</p>
+<p>const promisify = require(‘util’).promisify;<br />
+function slowCallbackFunction (done) {<br />
+setTimeout(function () {<br />
+done()<br />
+}, 300)<br />
+}<br />
+const slowPromise = promisify(slowCallbackFunction);slowPromise()<br />
+.then(() =&gt; {<br />
+console.log(‘Slow function resolved’)<br />
+})<br />
+.catch((error) =&gt; {<br />
+console.error(‘There has been an error:’, error)<br />
+})</p>
+<p>It’s actually not that hard to implement a promisify function of our own, to learn more about how it works. We can even handle additional arguments that our wrapped functions might need!</p>
+<p>function homebrewPromisify(originalFunction, originalArgs = []) {<br />
+return new Promise((resolve, reject) =&gt; {<br />
+originalFunction(…originalArgs, (error, result) =&gt; {<br />
+if (error) return reject(error)<br />
+return resolve(result)<br />
+})<br />
+})<br />
+}</p>
+<p>We just wrap the original callback-based function in a promise, and then reject or resolve based on the result of the operation.</p>
+<p>Easy as that!</p>
+<p>For better support of callback based code — legacy code, ~50% of the npm modules — Node also includes a <code>callbackify</code> function, essentially the opposite of <code>promisify</code>, which takes an async function that returns a promise, and returns a function that expects a callback as its single argument.</p>
+<p>const callbackify = require(‘util’).callbackify<br />
+const callbackSlow = callbackify(slowFunction)callbackSlow((error, result) =&gt; {<br />
+if (error) return console.log(‘Callback function received an error’)<br />
+return console.log(‘Callback resolved without errors’)<br />
+})</p>
+<p>We can use another javascript feature since node@7.6 to achieve the same thing: the async and await keywords. They allow you to structure your code in a way that is almost synchronous looking, saving us the <code>.then</code> chaining as well as callbacks:</p>
+<p>const promisify = require(‘util’).promisify;async function asyncRunner () {<br />
+try {<br />
+const slowResult = await promisify(slowFunction)()<br />
+const fastResult = await promisify(fastFunction)()<br />
+console.log(‘all done’)<br />
+return [<br />
+slowResult,<br />
+fastResult<br />
+]<br />
+} catch (error) {<br />
+console.error(error)<br />
+}<br />
+}</p>
+<p>This is the same async runner we’ve created before, but it does not require us to wrap our code in <code>.then</code> calls to gain access to the results. For handling errors, we have the option to use try &amp; catch blocks, as presented above, or use the same <code>.catch</code> calls that we’ve seen previously with promises. This is possible because async-await is an abstraction on top of promises - async functions always return a promise, even if you don’t explicitly declare them to do so.</p>
+<p>The await keyword can only be used inside functions that have the async tag. This also means that we cannot currently utilize it in the global scope.</p>
+<p>Since Node 10, we also have access to the <code>promise.finally</code> method, which allows us to run code regardless of whether the promise resolve or rejected. It can be used to run tasks that we had to call in both the <code>.then</code> and <code>.catch</code> paths previously, saving us some code duplication.</p>
+<p>As we have just learned several tools and tricks to handle async, it is time to do some practice with fundamental control flows to make our code more efficient and clean.</p>
+<p>Let’s take an example and write a route <code>handler</code> for our web app, where the request can be resolved after 3 steps: <code>validateParams</code>, <code>dbQuery</code> and <code>serviceCall</code>.</p>
+<p>If you’d like to write them without any helper, you’d most probably end up with something like this. Not so nice, right?</p>
+<p><em>// validateParams, dbQuery, serviceCall are higher-order functions</em><br />
+<em>// DONT</em><br />
+function handler (done) {<br />
+validateParams((err) =&gt; {<br />
+if (err) return done(err)<br />
+dbQuery((err, dbResults) =&gt; {<br />
+if (err) return done(err)<br />
+serviceCall((err, serviceResults) =&gt; {<br />
+done(err, { dbResults, serviceResults })<br />
+})<br />
+})<br />
+})<br />
+}</p>
+<p>Instead of the callback-hell, we can use promises to refactor our code, as we have already learned:</p>
+<p><em>// validateParams, dbQuery, serviceCall are higher-order functions</em><br />
+function handler () {<br />
+return validateParams()<br />
+.then(dbQuery)<br />
+.then(serviceCall)<br />
+.then((result) =&gt; {<br />
+console.log(result)<br />
+return result<br />
+})<br />
+.catch(console.log.bind(console))<br />
+}</p>
+<p>Let’s take it a step further! Rewrite it to use the async and await keywords:</p>
+<p><em>// validateParams, dbQuery, serviceCall are thunks</em><br />
+async function handler () {<br />
+try {<br />
+await validateParams()<br />
+const dbResults = await dbQuery()<br />
+const serviceResults = await serviceCall()<br />
+return { dbResults, serviceResults }<br />
+} catch (error) {<br />
+console.log(error)<br />
+}<br />
+}</p>
+<p>It feels like a “synchronous” code but still doing async operations one after each other.</p>
+<p>Essentially, a new callback is injected into the functions, and this is how async knows when a function is finished.</p>
+<p>Fortunately, Node.js eliminates the complexities of writing thread-safe code. You just have to stick to these rules to keep things smooth:</p>
+<p>As a rule of thumb, prefer async, because using a non-blocking approach gives superior performance over the synchronous scenario, and the async — await keywords gives you more flexibility in structuring your code. Luckily, most libraries now have promise based APIs, so compatibility is rarely an issue, and can be solved with util.promisify should the need arise.</p>
+<p>If you have any questions or suggestions for the article, please let me know in the comments!</p>
+<p>In case you’re looking for help with <a href="https://risingstack.com/nodejs-development-consulting-services">Node.js consulting or development</a>, feel free to reach out to us! Our team of experienced engineers is ready to speed up your development process, or <a href="https://risingstack.com/trainings">educate your team on JavaScript, Node, React, Microservices and Kubernetes</a>.</p>
+<p>In the next part of the Node.js at Scale series, we take a look at <a href="https://blog.risingstack.com/event-sourcing-with-examples-node-js-at-scale/">Event Sourcing with Examples</a>.</p>
+<p><em>This article was originally written by Tamas Hodi, and was released on 2017, January 17. The revised second edition was authored by Janos Kubisch and Tamas Hodi and it was released on 2020 February 10.</em></p>
+<p><a href="https://medium.com/the-node-js-collection/node-js-async-best-practices-avoiding-callback-hell-risingstack-cae115b85572">Source</a></p>
+</body>
+</html>

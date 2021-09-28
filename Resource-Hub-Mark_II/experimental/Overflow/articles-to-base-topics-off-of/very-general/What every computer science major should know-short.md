@@ -1,10 +1,11 @@
-# What Every Computer Science Major Should Know
+What Every Computer Science Major Should Know
+=============================================
 
-> Portfolio vs. Resume
+> Portfolio vs. Resume
 
 [![randerson112358](https://miro.medium.com/fit/c/56/56/1*UBNxSKKVDD-P8wPOChB30w.png)](chrome-extension://cjedbglnccaioiolemnfhjncicchinao/?source=post_page-----713d530fcdfc--------------------------------)
 
-Portfolio vs. Resume
+Portfolio vs. Resume
 
 ![Image for post](https://miro.medium.com/max/60/1*4Ef6akTuBIszLIV4c46GYw.png?q=20)
 
@@ -16,13 +17,13 @@ A resume says nothing of a programmer’s ability. Every computer science major 
 
 Students must have a solid grasp of formal logic and of proof. Proof by algebraic manipulation and by natural deduction engages the reasoning common to routine programming tasks. Proof by induction engages the reasoning used in the construction of recursive functions. Students must be fluent in formal mathematical notation, and in reasoning rigorously about the basic discrete structures: sets, tuples, sequences, functions and power sets.
 
-If you want to read up on more induction problems or Discrete Math topics in general a great book to easily learn and practice these topics is [**_Practice Problems in Discrete Mathematics by Bojana Obrenic’_**](https://www.amazon.com/gp/product/0130458031/ref=as_li_tl?ie=UTF8&tag=medium074-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0130458031&linkId=69b2d87ea5656aeb50125846e69dff88), and [**_Discrete Math Workbook: Interactive Exercises by James R. bush_**](https://www.amazon.com/gp/product/0130463272/ref=as_li_tl?ie=UTF8&tag=medium074-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0130463272&linkId=3eb1a5a4aff161cb809471d30d4a1f40).
+If you want to read up on more induction problems or Discrete Math topics in general a great book to easily learn and practice these topics is [***Practice Problems in Discrete Mathematics by Bojana Obrenic’***](https://www.amazon.com/gp/product/0130458031/ref=as_li_tl?ie=UTF8&tag=medium074-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0130458031&linkId=69b2d87ea5656aeb50125846e69dff88), and [***Discrete Math Workbook: Interactive Exercises by James R. bush***](https://www.amazon.com/gp/product/0130463272/ref=as_li_tl?ie=UTF8&tag=medium074-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0130463272&linkId=3eb1a5a4aff161cb809471d30d4a1f40).
 
 ![Image for post](https://miro.medium.com/max/54/1*IGFnyVy5fESEQ4bOc1rlCg.png?q=20)
 
 ![Image for post](https://miro.medium.com/max/1308/1*IGFnyVy5fESEQ4bOc1rlCg.png)
 
-[**_Practice Problems in Discrete Mathematics by Bojana Obrenic’_**](https://www.amazon.com/gp/product/0130458031/ref=as_li_tl?ie=UTF8&tag=medium074-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0130458031&linkId=69b2d87ea5656aeb50125846e69dff88)
+[***Practice Problems in Discrete Mathematics by Bojana Obrenic’***](https://www.amazon.com/gp/product/0130458031/ref=as_li_tl?ie=UTF8&tag=medium074-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0130458031&linkId=69b2d87ea5656aeb50125846e69dff88)
 
 Students should certainly see the common (or rare yet unreasonably effective) data structures and algorithms. But, more important than knowing a specific algorithm or data structure (which is usually easy enough to look up), students must understand how to design algorithms (e.g., greedy, dynamic strategies) and how to span the gap between an algorithm in the ideal and the nitty-gritty of its implementation.
 
@@ -47,64 +48,45 @@ Databases are too common and too useful to ignore. It’s useful to understand t
 Thanks for reading this article I hope its helpful to you all ! Keep up the learning, and if you would like more computer science, programming and algorithm analysis videos please visit and subscribe to my [YouTube](https://www.youtube.com/channel/UCaV_0qp2NZd319K4_K8Z5SQ) channels ([randerson112358](https://www.youtube.com/channel/UCaV_0qp2NZd319K4_K8Z5SQ) & [compsci112358](https://www.youtube.com/channel/UCbmb5IoBtHZTpYZCDBOC1CA) )
 
 **YouTube Channel:**  
-_randerson112358:_ [https://www.youtube.com/channel/UCaV\_0qp2NZd319K4\_K8Z5SQ](https://www.youtube.com/channel/UCaV_0qp2NZd319K4_K8Z5SQ)
+*randerson112358:* <https://www.youtube.com/channel/UCaV_0qp2NZd319K4_K8Z5SQ>
 
-_compsci112358:_  
-[https://www.youtube.com/channel/UCbmb5IoBtHZTpYZCDBOC1CA](https://www.youtube.com/channel/UCbmb5IoBtHZTpYZCDBOC1CA)
+*compsci112358:*  
+<https://www.youtube.com/channel/UCbmb5IoBtHZTpYZCDBOC1CA>
 
 **Website:**  
 [http://everythingcomputerscience.com/](http://everythingcomputerscience.com/Udemy)
 
 **Video Tutorials on Recurrence Relation:**  
-[https://www.udemy.com/recurrence-relation-made-easy/](https://www.udemy.com/recurrence-relation-made-easy/)
+<https://www.udemy.com/recurrence-relation-made-easy/>
 
 **Video Tutorial on Algorithm Analysis:**  
-[https://www.udemy.com/algorithm-analysis/](https://www.udemy.com/algorithm-analysis/)
+<https://www.udemy.com/algorithm-analysis/>
 
 **Twitter:**  
-[https://twitter.com/CsEverything](https://twitter.com/CsEverything)
+<https://twitter.com/CsEverything>
 
-[
+\[
 
 ![Image for post](https://miro.medium.com/max/60/0*lhSpRvc4VZbLLT3T.png?q=20)
 
 ![Image for post](https://miro.medium.com/max/1024/0*lhSpRvc4VZbLLT3T.png)
 
+\](https://www.youtube.com/channel/UCaV\_0qp2NZd319K4\_K8Z5SQ)
 
-
-
-
-
-
-](https://www.youtube.com/channel/UCaV_0qp2NZd319K4_K8Z5SQ)
-
-[
+\[
 
 ![Image for post](https://miro.medium.com/max/60/0*oKT63rANbMUACDzw.jpg?q=20)
 
 ![Image for post](https://miro.medium.com/max/1800/0*oKT63rANbMUACDzw.jpg)
 
+\](http://everythingcomputerscience.com/)
 
-
-
-
-
-
-](http://everythingcomputerscience.com/)
-
-[
+\[
 
 ![Image for post](https://miro.medium.com/max/60/0*BKaxieSoLAMOACfO.png?q=20)
 
 ![Image for post](https://miro.medium.com/max/1600/0*BKaxieSoLAMOACfO.png)
 
-
-
-
-
-
-
-](https://www.udemy.com/algorithm-analysis/)
-
+\](https://www.udemy.com/algorithm-analysis/)
 
 [Source](https://randerson112358.medium.com/what-every-computer-science-major-should-know-713d530fcdfc)

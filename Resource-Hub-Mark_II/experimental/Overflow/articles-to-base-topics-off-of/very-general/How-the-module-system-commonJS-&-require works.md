@@ -1,4 +1,5 @@
-# How the module system, CommonJS & require works | @RisingStack
+How the module system, CommonJS & require works | <span class="citation" data-cites="RisingStack">@RisingStack</span>
+=====================================================================================================================
 
 > Learn how the Node.js module system & CommonJS works and what does `require` do under the hood.
 
@@ -20,22 +21,17 @@ Modules are the fundamental building blocks of the code structure. The module sy
 
 The simplest example can be the following using CommonJS:
 
-
     function add (a, b) {
       return a + b
     }
 
     module.exports = add
 
-
 To use the `add` module we have just created, we have to require it.
-
 
     const add = require('./add')
 
     console.log(add(4, 5))
-
-
 
 Under the hood, `add.js` is wrapped by Node.js this way:
 
@@ -46,7 +42,6 @@ Under the hood, `add.js` is wrapped by Node.js this way:
 
       module.exports = add
     })
-
 
 This is why you can access the global-like variables like **require** and **module**. It also ensures that your variables are scoped to your module rather than the global object.
 
@@ -75,8 +70,7 @@ Otherwise, it creates a new module for the file and saves it to the cache. Then 
 
 The compile function runs the file contents in the correct scope or sandbox, as well as exposes helper variables like `require`, `module` or `exports` to the file.
 
-![How require works in Node.js](https://blog-assets.risingstack.com/2016/Okt/module-system/node-js-at-scale-how-require-works.png)
-_How Require Works - From [James N. Snell](https://hackernoon.com/node-js-tc-39-and-modules-a1118aecf95e#.z1plueqbn)_
+![How require works in Node.js](https://blog-assets.risingstack.com/2016/Okt/module-system/node-js-at-scale-how-require-works.png) *How Require Works - From [James N. Snell](https://hackernoon.com/node-js-tc-39-and-modules-a1118aecf95e#.z1plueqbn)*
 
 How to organize the code?
 -------------------------
@@ -98,14 +92,12 @@ We usually export **named functions** or **constants** in the following way:
       connect
     }
 
-
 What’s in your node\_modules?
 -----------------------------
 
 The `node_modules` folder is the place where Node.js looks for modules. **npm v2** and **npm v3** install your dependencies differently. You can find out what version of npm you are using by executing:
 
     npm --version
-
 
 ### npm v2
 
@@ -120,7 +112,7 @@ You can make sure that your node\_modules directory is always the same by instal
 How to handle your modules?
 ---------------------------
 
-There are two main ways for wiring modules. One of them is using hard coded dependencies, explicitly loading one module into another using a `require` call. The other method is to use a dependency injection pattern, where we pass the components as a parameter or we have a global container _(known as IoC, or Inversion of Control container)_, which centralizes the management of the modules.
+There are two main ways for wiring modules. One of them is using hard coded dependencies, explicitly loading one module into another using a `require` call. The other method is to use a dependency injection pattern, where we pass the components as a parameter or we have a global container *(known as IoC, or Inversion of Control container)*, which centralizes the management of the modules.
 
 We can allow Node.js to manage the modules life cycle by using hard coded module loading. It organizes your packages in an intuitive way, which makes understanding and debugging easy.
 
@@ -144,7 +136,6 @@ Let’s see an example for DI modules using the factory pattern:
 
     module.exports = create
 
-
 The ES2015 module system
 ------------------------
 
@@ -156,6 +147,5 @@ Next up
 -------
 
 I hope this article contained valuable information about the module system and how `require` works. If you have any questions or insights on the topic, please share them in the comments. In the next chapter of the Node.js at Scale series, we are going to take a deep dive and learn about the [event loop](chrome-extension://cjedbglnccaioiolemnfhjncicchinao/node-js-at-scale-understanding-node-js-event-loop/).
-
 
 [Source](https://blog.risingstack.com/node-js-at-scale-module-system-commonjs-require/)

@@ -1,6 +1,61 @@
-ES6 MODULES
-===========
 
-Browser Support for ES6 Modules - ES6 modules can only be used when file is specified as a `module` - can use HTTP server to serve HTML file with
+# ES6 MODULES
 
-&lt;ul&gt; &lt;li&gt;&lt;code&gt;python3 -m http.server&lt;/code&gt;&lt;/li&gt; &lt;li&gt;running local web server gives you access to browser support for ES6 syntax&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Modules in Browser Before ES6 Support 1. third party technology to load javascript files 2. individual script tags for each module&lt;/p&gt; &lt;p&gt;ES6 Modules:&lt;/p&gt; &lt;div class="sourceCode" id="cb1"&gt;&lt;pre class="sourceCode js"&gt;&lt;code class="sourceCode javascript"&gt;&lt;a class="sourceLine" id="cb1-1" title="1"&gt;&lt;/a&gt; &lt;a class="sourceLine" id="cb1-2" title="2"&gt;&lt;span class="co"&gt;// animal.js&lt;/span&gt;&lt;/a&gt; &lt;a class="sourceLine" id="cb1-3" title="3"&gt;&lt;span class="im"&gt;export&lt;/span&gt; &lt;span class="kw"&gt;class&lt;/span&gt; Dog &lt;span class="op"&gt;{}&lt;/span&gt;&lt;/a&gt; &lt;a class="sourceLine" id="cb1-4" title="4"&gt;&lt;span class="im"&gt;export&lt;/span&gt; &lt;span class="kw"&gt;class&lt;/span&gt; Cat &lt;span class="op"&gt;{}&lt;/span&gt;&lt;/a&gt; &lt;a class="sourceLine" id="cb1-5" title="5"&gt;&lt;/a&gt; &lt;a class="sourceLine" id="cb1-6" title="6"&gt;&lt;span class="co"&gt;// shelter.js&lt;/span&gt;&lt;/a&gt; &lt;a class="sourceLine" id="cb1-7" title="7"&gt;&lt;span class="im"&gt;export&lt;/span&gt; &lt;span class="im"&gt;default&lt;/span&gt; &lt;span class="kw"&gt;class&lt;/span&gt; Shelter &lt;span class="op"&gt;{}&lt;/span&gt;&lt;/a&gt; &lt;a class="sourceLine" id="cb1-8" title="8"&gt;&lt;/a&gt; &lt;a class="sourceLine" id="cb1-9" title="9"&gt;&lt;span class="co"&gt;// index.js&lt;/span&gt;&lt;/a&gt; &lt;a class="sourceLine" id="cb1-10" title="10"&gt;&lt;span class="im"&gt;import&lt;/span&gt; &lt;span class="op"&gt;{&lt;/span&gt; Cat&lt;span class="op"&gt;,&lt;/span&gt; Dog &lt;span class="op"&gt;}&lt;/span&gt; &lt;span class="im"&gt;from&lt;/span&gt; &lt;span class="st"&gt;&\#39;./animal.js&\#39;&lt;/span&gt;&lt;/a&gt; &lt;a class="sourceLine" id="cb1-11" title="11"&gt;&lt;span class="im"&gt;import&lt;/span&gt; Shelter &lt;span class="im"&gt;from&lt;/span&gt; &lt;span class="st"&gt;&\#39;./shelter.js&\#39;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt; &lt;p&gt;Common JS Modules:&lt;/p&gt; &lt;div class="sourceCode" id="cb2"&gt;&lt;pre class="sourceCode js"&gt;&lt;code class="sourceCode javascript"&gt;&lt;a class="sourceLine" id="cb2-1" title="1"&gt;&lt;span class="co"&gt;// animal.js&lt;/span&gt;&lt;/a&gt; &lt;a class="sourceLine" id="cb2-2" title="2"&gt;&lt;span class="kw"&gt;class&lt;/span&gt; Dog &lt;span class="op"&gt;{}&lt;/span&gt;&lt;/a&gt; &lt;a class="sourceLine" id="cb2-3" title="3"&gt;&lt;span class="kw"&gt;class&lt;/span&gt; Cat &lt;span class="op"&gt;{}&lt;/span&gt;&lt;/a&gt; &lt;a class="sourceLine" id="cb2-4" title="4"&gt;&lt;span class="va"&gt;module&lt;/span&gt;.&lt;span class="at"&gt;exports&lt;/span&gt; &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="op"&gt;{&lt;/span&gt; Cat&lt;span class="op"&gt;,&lt;/span&gt; Dog &lt;span class="op"&gt;}&lt;/span&gt;&lt;/a&gt; &lt;a class="sourceLine" id="cb2-5" title="5"&gt;&lt;span class="co"&gt;// or&lt;/span&gt;&lt;/a&gt; &lt;a class="sourceLine" id="cb2-6" title="6"&gt;&lt;span class="co"&gt;// module.exports = { Cat: Cat, Dog: Dog }&lt;/span&gt;&lt;/a&gt; &lt;a class="sourceLine" id="cb2-7" title="7"&gt;&lt;span class="co"&gt;// or&lt;/span&gt;&lt;/a&gt; &lt;a class="sourceLine" id="cb2-8" title="8"&gt;&lt;span class="co"&gt;// module.exports.Cat = Cat;&lt;/span&gt;&lt;/a&gt; &lt;a class="sourceLine" id="cb2-9" title="9"&gt;&lt;span class="co"&gt;// module.exports.Dog = Dog;&lt;/span&gt;&lt;/a&gt; &lt;a class="sourceLine" id="cb2-10" title="10"&gt;&lt;/a&gt; &lt;a class="sourceLine" id="cb2-11" title="11"&gt;&lt;/a&gt; &lt;a class="sourceLine" id="cb2-12" title="12"&gt;&lt;span class="co"&gt;// shelter.js&lt;/span&gt;&lt;/a&gt; &lt;a class="sourceLine" id="cb2-13" title="13"&gt;&lt;span class="kw"&gt;class&lt;/span&gt; Shelter &lt;span class="op"&gt;{}&lt;/span&gt;&lt;/a&gt; &lt;a class="sourceLine" id="cb2-14" title="14"&gt;&lt;span class="va"&gt;module&lt;/span&gt;.&lt;span class="at"&gt;exports&lt;/span&gt; &lt;span class="op"&gt;=&lt;/span&gt; Shelter&lt;/a&gt; &lt;a class="sourceLine" id="cb2-15" title="15"&gt;&lt;/a&gt; &lt;a class="sourceLine" id="cb2-16" title="16"&gt;&lt;/a&gt; &lt;a class="sourceLine" id="cb2-17" title="17"&gt;&lt;/a&gt; &lt;a class="sourceLine" id="cb2-18" title="18"&gt;&lt;span class="co"&gt;// index.js&lt;/span&gt;&lt;/a&gt; &lt;a class="sourceLine" id="cb2-19" title="19"&gt;&lt;span class="kw"&gt;const&lt;/span&gt; &lt;span class="op"&gt;{&lt;/span&gt; Cat&lt;span class="op"&gt;,&lt;/span&gt; Dog &lt;span class="op"&gt;}&lt;/span&gt; &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="at"&gt;require&lt;/span&gt;(&lt;span class="st"&gt;&\#39;./animal&\#39;&lt;/span&gt;)&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt; &lt;a class="sourceLine" id="cb2-20" title="20"&gt;&lt;span class="kw"&gt;const&lt;/span&gt; Shelter &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="at"&gt;require&lt;/span&gt;(&lt;span class="st"&gt;&\#39;./shelter&\#39;&lt;/span&gt;)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt; &lt;/body&gt; &lt;/html&gt;
+
+
+Browser Support for ES6 Modules
+- ES6 modules can only be used when file is specified as a `module`
+- can use HTTP server to serve HTML file with <script type="module">
+	- `python3 -m http.server`
+- running local web server gives you access to browser support for ES6 syntax
+
+
+Modules in Browser Before ES6 Support
+1. third party technology to load javascript files
+2. individual script tags for each module
+
+
+
+ES6 Modules: 
+```js
+
+// animal.js
+export class Dog {}
+export class Cat {}
+
+// shelter.js
+export default class Shelter {}
+
+// index.js
+import { Cat, Dog } from './animal.js'
+import Shelter from './shelter.js'
+
+```
+
+
+
+Common JS Modules:
+```js
+// animal.js
+class Dog {}
+class Cat {}
+module.exports = { Cat, Dog }
+// or
+// module.exports = { Cat: Cat, Dog: Dog }
+// or
+// module.exports.Cat = Cat;
+// module.exports.Dog = Dog;
+
+
+// shelter.js
+class Shelter {}
+module.exports = Shelter
+
+
+
+// index.js
+const { Cat, Dog } = require('./animal');
+const Shelter = require('./shelter')
+
+```
+

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Node.js Garbage Collection Explained</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<h1 id="node.js-garbage-collection-explained-risingstack">Node.js Garbage Collection Explained | <span class="citation" data-cites="RisingStack">@RisingStack</span></h1>
+<blockquote>
+<p>Learn how Node.js garbage collection and memory management works in practice. Code-level explanation and garbage collection examples inside.</p>
+</blockquote>
+<p>In this article, you are going to learn how Node.js garbage collection works, what happens in the background when you write code and how memory is freed up for you.</p>
+<figure>
+<img src="https://blog-assets.risingstack.com/2016/11/ancient-garbage-collector-in-action.jpg" alt="Ancient garbage collector in action" /><figcaption>Ancient garbage collector in action</figcaption>
+</figure>
+<blockquote>
+<p>With <strong>Node.js at Scale</strong> we are creating a collection of articles focusing on the needs of companies with bigger Node.js installations, and developers who already learned the basics of Node.</p>
+</blockquote>
+<p><strong>Click to see all chapters of Node.js at Scale:</strong></p>
+<h2 id="memory-management-in-node.js-applications">Memory Management in Node.js Applications</h2>
+<p>Every application needs memory to work properly. Memory management provides ways to dynamically allocate memory chunks for programs when they request it, and free them when they are no longer needed - so that they can be reused.</p>
+<p>Application-level memory management can be manual or automatic. The automatic memory management usually involves a garbage collector.</p>
+<p>The following code snippet shows how memory can be allocated in <code>C</code>, using manual memory management:</p>
+<pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+
+int main() {
+
+   char name[20];
+   char *description;
+
+   strcpy(name, &quot;RisingStack&quot;);
+
+   
+   description = malloc( 30 * sizeof(char) );
+    
+   if( description == NULL ) {
+      fprintf(stderr, &quot;Error - unable to allocate required memory\n&quot;);
+   } else {
+      strcpy( description, &quot;Trace by RisingStack is an APM.&quot;);
+   }
+   
+   printf(&quot;Company name = %s\n&quot;, name );
+   printf(&quot;Description: %s\n&quot;, description );
+
+   
+   free(description);
+}</code></pre>
+<p>In <strong>manual memory management</strong>, it is the responsibility of the developer to free up the unused memory portions. Managing your memory this way can introduce several major bugs to your applications:</p>
+<ul>
+<li><strong>Memory leaks</strong> when the used memory space is never freed up.</li>
+<li><strong>Wild/dangling pointers</strong> appear when an object is deleted, but the pointer is reused. Serious security issues can be introduced when other data structures are overwritten or sensitive information is read.</li>
+</ul>
+<p><strong>Luckily for you, Node.js comes with a garbage collector, and you don’t need to manually manage memory allocation.</strong></p>
+<h2 id="the-concept-of-the-garbage-collector">The Concept of the Garbage Collector</h2>
+<p>Garbage collection is a way of managing application memory automatically. The job of the garbage collector <em>(GC)</em> is to reclaim memory occupied by unused objects <em>(garbage)</em>. It was first used in LISP in 1959, invented by John McCarthy.</p>
+<p>The way how the GC knows that objects are no longer in use is that no other object has references to them.</p>
+<p><strong>Memory before the garbage collection</strong></p>
+<p>The following diagram shows how the memory can look like if you have objects with references to each other, and with some objects that have no reference to any objects. These are the objects that can be collected by a garbage collector run.</p>
+<figure>
+<img src="https://blog-assets.risingstack.com/2016/11/memory-state-before-node-js-garbage-collection.png" alt="Memory state before Node.js garbage collection" /><figcaption>Memory state before Node.js garbage collection</figcaption>
+</figure>
+<p><strong>Memory after the garbage collection</strong></p>
+<p>Once the garbage collector is run, the objects that are unreachable gets deleted, and the memory space is freed up.</p>
+<figure>
+<img src="https://blog-assets.risingstack.com/2016/11/memory-state-after-node-js-garbage-collection.png" alt="Memory state after Node.js garbage collection" /><figcaption>Memory state after Node.js garbage collection</figcaption>
+</figure>
+<h2 id="the-advantages-of-using-a-garbage-collector">The Advantages of Using a Garbage Collector</h2>
+<ul>
+<li>it prevents <strong>wild/dangling pointers</strong> bugs,</li>
+<li>it won’t try to free up space that was already freed up,</li>
+<li>it will <strong>protect</strong> you <strong>from</strong> some types of <strong>memory leaks</strong>.</li>
+</ul>
+<p>Of course, using a garbage collector doesn’t solve all of your problems, and it’s not a silver bullet for memory management. Let’s take a look at things that you should keep in mind!</p>
+<h4 id="things-to-keep-in-mind-when-using-a-garbage-collector">Things to Keep in Mind When Using a Garbage Collector</h4>
+<ul>
+<li><strong>performance impact</strong> - in order to decide what can be freed up, the GC consumes computing power</li>
+<li><strong>unpredictable stalls</strong> - modern GC implementations try to avoid “stop-the-world” collections</li>
+</ul>
+<h2 id="node.js-garbage-collection-memory-management-in-practice">Node.js Garbage Collection &amp; Memory Management in Practice</h2>
+<p>The easiest way of learning is by doing - so I am going to show you what happens in the memory with different code snippets.</p>
+<h2 id="the-stack">The Stack</h2>
+<p>The stack contains local variables and pointers to objects on the heap or pointers defining the control flow of the application.</p>
+<p>In the following example, both <code>a</code> and <code>b</code> will be placed on the stack.</p>
+<pre><code>function add (a, b) {
+  return a + b
+}
+
+add(4, 5)</code></pre>
+<blockquote>
+<p><strong>Need help with enterprise-grade Node.js Development?</strong><br />
+<a href="https://risingstack.com/nodejs-development-consulting-services">Hire a Node.js development team from RisingStack!</a></p>
+</blockquote>
+<h2 id="the-heap">The Heap</h2>
+<p>The heap is dedicated to store reference type objects, like strings or objects.</p>
+<p>The <code>Car</code> object created in the following snippet is placed on the heap.</p>
+<pre><code>function Car (opts) {
+  this.name = opts.name
+}
+
+const LightningMcQueen = new Car({name: &#39;Lightning McQueen&#39;})</code></pre>
+<p>After this, the memory would look something like this:</p>
+<figure>
+<img src="https://blog-assets.risingstack.com/2016/11/node-js-garbage-collection-first-step-object-placed-in-memory-heap.png" alt="Node.js Garbage Collection First Step - Object Placed in the Memory Heap" /><figcaption>Node.js Garbage Collection First Step - Object Placed in the Memory Heap</figcaption>
+</figure>
+<p>Let’s add more cars, and see how our memory would look like!</p>
+<pre><code>function Car (opts) {
+  this.name = opts.name
+}
+
+const LightningMcQueen = new Car({name: &#39;Lightning McQueen&#39;})
+const SallyCarrera = new Car({name: &#39;Sally Carrera&#39;})
+const Mater = new Car({name: &#39;Mater&#39;})</code></pre>
+<figure>
+<img src="https://blog-assets.risingstack.com/2016/11/node-js-garbage-collection-second-step-more-elements-added-to-the-heap.png" alt="Node.js Garbage Collection Second Step - More elements added to the heap" /><figcaption>Node.js Garbage Collection Second Step - More elements added to the heap</figcaption>
+</figure>
+<p>If the GC would run now, nothing could be freed up, as the root has a reference to every object.</p>
+<p>Let’s make it a little bit more interesting, and add some parts to our cars!</p>
+<pre><code>function Engine (power) {
+  this.power = power
+}
+
+function Car (opts) {
+  this.name = opts.name
+  this.engine = new Engine(opts.power)
+}
+
+let LightningMcQueen = new Car({name: &#39;Lightning McQueen&#39;, power: 900})
+let SallyCarrera = new Car({name: &#39;Sally Carrera&#39;, power: 500})
+let Mater = new Car({name: &#39;Mater&#39;, power: 100})</code></pre>
+<figure>
+<img src="https://blog-assets.risingstack.com/2016/11/node-js-garbage-collection-assigning-values-to-the-objects-in-heap.png" alt="Node.js Garbage Collection - Assigning values to the objects in the heap" /><figcaption>Node.js Garbage Collection - Assigning values to the objects in the heap</figcaption>
+</figure>
+<p>What would happen, if we no longer use <code>Mater</code>, but redefine it and assign some other value, like <code>Mater = undefined</code>?</p>
+<figure>
+<img src="https://blog-assets.risingstack.com/2016/11/node-js-garbage-collection-redefining-values.png" alt="Node.js Garbage Collection - Redefining values" /><figcaption>Node.js Garbage Collection - Redefining values</figcaption>
+</figure>
+<p>As a result, the original <code>Mater</code> object cannot be reached from the root object, so on the next garbage collector run it will be freed up:</p>
+<figure>
+<img src="https://blog-assets.risingstack.com/2016/11/node-js-garbage-collection-freeing-up-unreachable-object.png" alt="Node.js Garbage Collection - Freeing up the unreachable object" /><figcaption>Node.js Garbage Collection - Freeing up the unreachable object</figcaption>
+</figure>
+<p>Now as we understand the basics of what’s the expected behaviour of the garbage collector, let’s take a look on how it is implemented in V8!</p>
+<h2 id="garbage-collection-methods">Garbage Collection Methods</h2>
+<p>In one of our previous articles we dealt with <a href="https://blog.risingstack.com/finding-a-memory-leak-in-node-js/">how the Node.js garbage collection methods work</a>, so I strongly recommend reading that article.</p>
+<p>Here are the most important things you’ll learn there:</p>
+<h4 id="new-space-and-old-space">New Space and Old Space</h4>
+<p>The heap has two main segments, the New Space and the Old Space. The New Space is where new allocations are happening; it is fast to collect garbage here and has a size of ~1-8MBs. Objects living in the New Space are called Young Generation.</p>
+<p>The Old Space where the objects that survived the collector in the New Space are promoted into - they are called the Old Generation. Allocation in the Old Space is fast, however collection is expensive so it is infrequently performed .</p>
+<h4 id="young-generation">Young Generation</h4>
+<p>Usually, ~20% of the Young Generation survives into the Old Generation. Collection in the Old Space will only commence once it is getting exhausted. To do so the V8 engine uses two different collection algorithms.</p>
+<h4 id="scavenge-and-mark-sweep-collection">Scavenge and Mark-Sweep collection</h4>
+<p>Scavenge collection is fast and runs on the Young Generation, however the slower Mark-Sweep collection runs on the Old Generation.</p>
+<h2 id="a-real-life-example---the-meteor-case-study">A Real-Life Example - The Meteor Case-Study</h2>
+<p>In 2013, the creators of Meteor announced their findings about a memory leak they ran into. The problematic code snippet was the following:</p>
+<pre><code>var theThing = null
+var replaceThing = function () {
+  var originalThing = theThing
+  var unused = function () {
+    if (originalThing)
+      console.log(&quot;hi&quot;)
+  }
+  theThing = {
+    longStr: new Array(1000000).join(&#39;*&#39;),
+    someMethod: function () {
+      console.log(someMessage)
+    }
+  };
+};
+setInterval(replaceThing, 1000)</code></pre>
+<blockquote>
+<p>Well, the typical way that closures are implemented is that every function object has a link to a dictionary-style object representing its lexical scope. If both functions defined inside <code>replaceThing</code> actually used <code>originalThing</code>, it would be important that they both get the same object, even if <code>originalThing</code> gets assigned to over and over, so both functions share the same lexical environment. Now, Chrome’s V8 JavaScript engine is apparently smart enough to keep variables out of the lexical environment if they aren’t used by any closures - from the <a href="http://info.meteor.com/blog/an-interesting-kind-of-javascript-memory-leak">Meteor blog</a>.</p>
+</blockquote>
+<h4 id="further-reading">Further reading:</h4>
+<ul>
+<li><a href="https://blog.risingstack.com/finding-a-memory-leak-in-node-js/">Finding a memory leak in Node.js</a></li>
+<li><a href="https://blog.risingstack.com/javascript-garbage-collection-orinoco/">JavaScript Garbage Collection Improvements - Orinoco</a></li>
+<li><a href="http://www.memorymanagement.org/">memorymanagement.org</a></li>
+</ul>
+<h2 id="next-up">Next up</h2>
+<p>In the next chapter of the Node.js at Scale tutorial series we will take a deep dive into <a href="chrome-extension://cjedbglnccaioiolemnfhjncicchinao/writing-native-node-js-modules/">writing native Node.js module</a>.</p>
+<p>In the meantime, let us know in the comments sections if you have any questions!</p>
+<p><a href="https://blog.risingstack.com/node-js-at-scale-node-js-garbage-collection/">Source</a></p>
+</body>
+</html>

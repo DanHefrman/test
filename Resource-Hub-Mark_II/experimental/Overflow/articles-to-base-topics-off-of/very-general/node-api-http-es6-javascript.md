@@ -1,12 +1,13 @@
-# Get Started With Node: An Introduction To APIs, HTTP And ES6+ JavaScript — Smashing Magazine
+Get Started With Node: An Introduction To APIs, HTTP And ES6+ JavaScript — Smashing Magazine
+============================================================================================
 
-> An introduction to the backend web application development process &mdash; discussing bleeding edge ES6+ JavaScript features, the HyperText Transfer Protocol, working with APIs and JSON, and using Node.js to build fast and scalable backends.
+> An introduction to the backend web application development process — discussing bleeding edge ES6+ JavaScript features, the HyperText Transfer Protocol, working with APIs and JSON, and using Node.js to build fast and scalable backends.
 
-[
+\[
 
 ![Jamie Corkhill](https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/63cf3aaa-d568-46de-be09-f532ad4cdd24/jamie-corkhill-profile.jpg)
 
-](chrome-extension://cjedbglnccaioiolemnfhjncicchinao/author/jamie-corkhill)
+\](chrome-extension://cjedbglnccaioiolemnfhjncicchinao/author/jamie-corkhill)
 
 Jamie is an 18-year-old software developer located in Texas. He has particular interests in enterprise architecture (DDD/CQRS/ES), writing elegant and testable … [More about Jamie …](chrome-extension://cjedbglnccaioiolemnfhjncicchinao/author/jamie-corkhill)
 
@@ -26,9 +27,9 @@ Node is only an environment, or runtime, within which to run normal JavaScript (
 
 Suppose we are making a database call to retrieve properties about a user. That call is going to take time, and if the request is “blocking”, then that means it will block the execution of our program until the call is complete. In this case, we made a “synchronous” request since it ended up blocking the thread.
 
-So, a _synchronous_ operation _blocks_ a process or thread until that operation is complete, leaving the thread in a “wait state”. An _asynchronous_ operation, on the other hand, is _non-blocking_. It permits execution of the thread to proceed regardless of the time it takes for the operation to complete or the result it completes with, and no part of the thread falls into a wait state at any point.
+So, a *synchronous* operation *blocks* a process or thread until that operation is complete, leaving the thread in a “wait state”. An *asynchronous* operation, on the other hand, is *non-blocking*. It permits execution of the thread to proceed regardless of the time it takes for the operation to complete or the result it completes with, and no part of the thread falls into a wait state at any point.
 
-Let’s look at another example of a _synchronous_ call that _blocks_ a thread. Suppose we are building an application that compares the results of two Weather APIs to find their percent difference in temperature. In a blocking manner, we make a call to Weather API One and wait for the result. Once we get a result, we call Weather API Two and wait for its result. Don’t worry at this point if you are not familiar with APIs. We’ll be covering them in an upcoming section. For now, just think of an API as the medium through which two computers may communicate with one another.
+Let’s look at another example of a *synchronous* call that *blocks* a thread. Suppose we are building an application that compares the results of two Weather APIs to find their percent difference in temperature. In a blocking manner, we make a call to Weather API One and wait for the result. Once we get a result, we call Weather API Two and wait for its result. Don’t worry at this point if you are not familiar with APIs. We’ll be covering them in an upcoming section. For now, just think of an API as the medium through which two computers may communicate with one another.
 
 [![A graphic depicting the fact Synchronous Operations take a long time complete](https://res.cloudinary.com/indysigner/image/fetch/f_auto,q_auto/w_400/https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/e1043f01-6675-4b6a-82df-d6cbf06667ac/node-mongose-express-syncblock.png)](https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/e1043f01-6675-4b6a-82df-d6cbf06667ac/node-mongose-express-syncblock.png)
 
@@ -46,13 +47,13 @@ Time progression of asynchronous non-blocking operations ([Large preview](https:
 
 You can clearly see how much faster we concluded execution. Rather than wait on API One and then wait on API Two, we could wait for both of them to complete at the same time and achieve our results almost 50% faster. Notice, once we called API One and started waiting for its response, we also called API Two and began waiting for its response at the same time as One.
 
-At this point, before moving into more concrete and tangible examples, it is important to mention that, for ease, the term _“Synchronous”_ is generally shortened to “Sync”, and the term _“Asynchronous”_ is generally shortened to “Async”. You will see this notation used in method/function names.
+At this point, before moving into more concrete and tangible examples, it is important to mention that, for ease, the term *“Synchronous”* is generally shortened to “Sync”, and the term *“Asynchronous”* is generally shortened to “Async”. You will see this notation used in method/function names.
 
 ### Callback Functions
 
 You might be wondering, “if we can handle a call asynchronously, how do we know when that call is finished and we have a response?” Generally, we pass in as an argument to our async method a callback function, and that method will “call back” that function at a later time with a response. I’m using ES5 functions here, but we’ll update to ES6 standards later.
 
-Such a function is called a “Higher-Order Function” since it takes a function (our callback) as an argument. Alternatively, a callback function might take in an error object and a response object as arguments, and present them when the async function is complete. We’ll see this later with Express. When we called `asyncAddFunction(...)`, you’ll notice we supplied a callback function for the callback parameter from the method definition. This function is an _anonymous_ function (it does not have a name) and is written using the _Expression Syntax_. The method definition, on the other hand, is a function statement. It’s not anonymous because it actually has a name (that being “asyncAddFunction”).
+Such a function is called a “Higher-Order Function” since it takes a function (our callback) as an argument. Alternatively, a callback function might take in an error object and a response object as arguments, and present them when the async function is complete. We’ll see this later with Express. When we called `asyncAddFunction(...)`, you’ll notice we supplied a callback function for the callback parameter from the method definition. This function is an *anonymous* function (it does not have a name) and is written using the *Expression Syntax*. The method definition, on the other hand, is a function statement. It’s not anonymous because it actually has a name (that being “asyncAddFunction”).
 
 Some may note confusion since, in the method definition, we do supply a name, that being “callback”. However, the anonymous function passed in as the third parameter to `asyncAddFunction(...)` does not know about the name, and so it remains anonymous. We also can’t execute that function at a later point by name, we’d have to go through the async calling function again to fire it.
 
@@ -90,7 +91,7 @@ and we would call it with:
 
 If we wanted to make another API call using the response from the first, we would have to nest both callbacks. Suppose I need to inject the `userName` property from the `res1` object into the path of the second API call. We would have:
 
-**Note**: _The ES6+ method to inject the `res1.userName` property rather than string concatenation would be to use "Template Strings". That way, rather than encapsulate our string in quotes (`'`, or `"`), we would use backticks (`` ` ``). located beneath the Escape key on your keyboard. Then, we would use the notation `${}` to embed any JS expression inside the brackets. In the end, our earlier path would be: `/newExample/${res.UserName}`, wrapped in backticks._
+**Note**: *The ES6+ method to inject the `res1.userName` property rather than string concatenation would be to use “Template Strings”. That way, rather than encapsulate our string in quotes (`'`, or `"`), we would use backticks (`` ` ``). located beneath the Escape key on your keyboard. Then, we would use the notation `${}` to embed any JS expression inside the brackets. In the end, our earlier path would be: `/newExample/${res.UserName}`, wrapped in backticks.*
 
 It is clear to see that this method of nesting callbacks can quickly become quite inelegant, so-called the “JavaScript Pyramid of Doom”. Jumping in, if we were using promises rather than callbacks, we could refactor our code from the first example as such:
 
@@ -102,7 +103,7 @@ We can also restructure this for readability:
 
 It is important to note that we can’t just tack a `.then()` call on to any function and expect it to work. The function we are calling has to actually return a promise, a promise that will fire the `.then()` when that async operation is complete. In this case, `makeAPICall(...)` will do it’s thing, firing either the `then()` block or the `catch()` block when completed.
 
-To make `makeAPICall(...)` return a Promise, we assign a function to a variable, where that function is the Promise constructor. Promises can be either _fulfilled_ or _rejected_, where fulfilled means that the action relating to the promise completed successfully, and rejected meaning the opposite. Once the promise is either fulfilled or rejected, we say it has _settled_, and while waiting for it to settle, perhaps during an async call, we say that the promise is _pending_.
+To make `makeAPICall(...)` return a Promise, we assign a function to a variable, where that function is the Promise constructor. Promises can be either *fulfilled* or *rejected*, where fulfilled means that the action relating to the promise completed successfully, and rejected meaning the opposite. Once the promise is either fulfilled or rejected, we say it has *settled*, and while waiting for it to settle, perhaps during an async call, we say that the promise is *pending*.
 
 The Promise constructor takes in one callback function as an argument, which receives two parameters — `resolve` and `reject`, which we will call at a later point in time to fire either the success callback in `.then()`, or the `.then()` failure callback, or `.catch()`, if provided.
 
@@ -122,7 +123,7 @@ Like above, we can restructure this for readability, and remove the failure call
 
 Note that the success and failure callbacks in `.then()` only fire for the status of the individual Promise that `.then()` corresponds to. The `catch` block, however, will catch any errors that fire in any of the `.then()`s.
 
-### ES6 Const vs. Let
+### ES6 Const vs. Let
 
 Throughout all of our examples, we have been employing ES5 functions and the old `var` keyword. While millions of lines of code still run today employing those ES5 methods, it is useful to update to current ES6+ standards, and we’ll refactor some of our code above. Let’s start with `const` and `let`.
 
@@ -132,7 +133,7 @@ With ES6+ standards, we could make that either
 
 or
 
-where `const` means “constant” — a value that cannot be reassigned to later. (Except for object properties — we’ll cover that soon. Also, variables declared `const` are _not_ immutable, only the reference to the variable is.)
+where `const` means “constant” — a value that cannot be reassigned to later. (Except for object properties — we’ll cover that soon. Also, variables declared `const` are *not* immutable, only the reference to the variable is.)
 
 In old JavaScript, block scopes, such as those in `if`, `while`, `{}`. `for`, etc. did not affect `var` in any way, and this is quite different to more statically typed languages like Java or C++. That is, the scope of `var` is the entire enclosing function — and that could be global (if placed outside a function), or local (if placed within a function). To demonstrate this, see the following example:
 
@@ -196,7 +197,7 @@ This is known as ‘Lexical Scoping’, and we can get around it by using the so
 
 While JavaScript never supported classes, you could always emulate them with objects like the above. EcmaScript 6 provides support for classes using the `class` and `new` keywords:
 
-The constructor function gets called automatically when using the `new` keyword, into which we can pass arguments to initially set up the object. This should be familiar to any reader who has experience with more statically typed object-oriented programming languages like Java, C++, and C#.
+The constructor function gets called automatically when using the `new` keyword, into which we can pass arguments to initially set up the object. This should be familiar to any reader who has experience with more statically typed object-oriented programming languages like Java, C++, and C\#.
 
 Without going into too much detail about OOP concepts, another such paradigm is “inheritance”, which is to allow one class to inherit from another. A class called `Car`, for example, will be very general — containing such methods as “stop”, “start”, etc., as all cars need. A sub-set of the class called `SportsCar`, then, might inherit fundamental operations from `Car` and override anything it needs custom. We could denote such a class as follows:
 
@@ -240,7 +241,7 @@ You can also install a package globally. This package will be available across a
 
 APIs are a very common paradigm in programming, and even if you are just starting out in your career as a developer, APIs and their usage, especially in web and mobile development, will likely come up more often than not.
 
-An API is an _Application Programming Interface_, and it is basically a method by which two decoupled systems may communicate with each other. In more technical terms, an API permits a system or computer program (usually a server) to receive requests and send appropriate responses (to a client, also known as a host).
+An API is an *Application Programming Interface*, and it is basically a method by which two decoupled systems may communicate with each other. In more technical terms, an API permits a system or computer program (usually a server) to receive requests and send appropriate responses (to a client, also known as a host).
 
 Suppose you are building a weather application. You need a way to geocode a user’s address into a latitude and longitude, and then a way to attain the current or forecasted weather at that particular location.
 
@@ -248,7 +249,7 @@ As a developer, you want to focus on building your app and monetizing it, not pu
 
 Luckily for you, companies like Google and OpenWeatherMap have already put that infrastructure in place, you just need a way to talk to it — that is where the API comes in. While, as of now, we have developed a very abstract and ambiguous definition of the API, bear with me. We’ll be getting to tangible examples soon.
 
-Now, it costs money for companies to develop, maintain, and secure that aforementioned infrastructure, and so it is common for corporations to sell you access to their API. This is done with that is known as an API key, a unique alphanumeric identifier associating you, the developer, with the API. Every time you ask the API to send you data, you pass along your API key. The server can then authenticate you and keep track of how many API calls you are making, and you will be charged appropriately. The API key also permits _Rate-Limiting_ or _API Call Throttling_ (a method of throttling the number of API calls in a certain timeframe as to not overwhelm the server, preventing DOS attacks — Denial of Service). Most companies, however, will provide a free quota, giving you, as an example, 25,000 free API calls a day before charging you.
+Now, it costs money for companies to develop, maintain, and secure that aforementioned infrastructure, and so it is common for corporations to sell you access to their API. This is done with that is known as an API key, a unique alphanumeric identifier associating you, the developer, with the API. Every time you ask the API to send you data, you pass along your API key. The server can then authenticate you and keep track of how many API calls you are making, and you will be charged appropriately. The API key also permits *Rate-Limiting* or *API Call Throttling* (a method of throttling the number of API calls in a certain timeframe as to not overwhelm the server, preventing DOS attacks — Denial of Service). Most companies, however, will provide a free quota, giving you, as an example, 25,000 free API calls a day before charging you.
 
 Up to this point, we have established that an API is a method by which two computer programs can communicate with each other. If a server is storing data, such as a website, and your browser makes a request to download the code for that site, that was the API in action.
 
@@ -258,9 +259,9 @@ Since you will never directly talk to the chef, there is no way for him/her to r
 
 Now, how do you actually talk to the API (the waiter)? You might speak English, but the chef might speak Spanish. Is the waiter expected to know both languages to translate? What if a third person comes in who only speaks Mandarin? What then? Well, all clients and servers have to agree to speak a common language, and in computer programming, that language is JSON, pronounced JAY-sun, and it stands for JavaScript Object Notation.
 
-At this point, we don’t quite know what JSON looks like. It’s not a computer programming language, it’s just, well, a language, like English or Spanish, that everyone (everyone being computers) understands on a guaranteed basis. It’s guaranteed because it’s a standard, notably _RFC 8259_, the _JavaScript Object Notation (JSON) Data Interchange Format_ by the Internet Engineering Task Force (IETF).
+At this point, we don’t quite know what JSON looks like. It’s not a computer programming language, it’s just, well, a language, like English or Spanish, that everyone (everyone being computers) understands on a guaranteed basis. It’s guaranteed because it’s a standard, notably *RFC 8259*, the *JavaScript Object Notation (JSON) Data Interchange Format* by the Internet Engineering Task Force (IETF).
 
-Even without formal knowledge of what JSON actually is and what it looks like (we’ll see in an upcoming article in this series), we can go ahead introduce a technical example operating on the Internet today that employs APIs and JSON. APIs and JSON are not just something you can choose to use, it’s not equivalent to one out of a thousand JavaScript frameworks you can pick to do the same thing. It is _THE_ standard for data exchange on the web.
+Even without formal knowledge of what JSON actually is and what it looks like (we’ll see in an upcoming article in this series), we can go ahead introduce a technical example operating on the Internet today that employs APIs and JSON. APIs and JSON are not just something you can choose to use, it’s not equivalent to one out of a thousand JavaScript frameworks you can pick to do the same thing. It is *THE* standard for data exchange on the web.
 
 Suppose you are building a travel website that compares prices for aircraft, rental car, and hotel ticket prices. Let us walk through, step-by-step, on a high level, how we would build such an application. Of course, we need our User Interface, the front-end, but that is out of scope for this article.
 
@@ -270,7 +271,7 @@ How will we get this data? Well, suppose all of the booking sites have a databas
 
 Also, note that just because something is called an API does not necessarily mean it operates on the web and sends and receives JSON. The Java API, for example, is just the list of classes, packages, and interfaces that are part of the Java Development Kit (JDK), providing programming functionality to the programmer.
 
-Okay. We know we can talk to a program running on a server by way of an Application Programming Interface, and we know that the common language with which we do this is known as JSON. But in the web development and networking world, everything has a protocol. What do we actually do to make an API call, and what does that look like code-wise? That’s where HTTP Requests enter the picture, the HyperText Transfer Protocol, defining how messages are formatted and transmitted across the Internet. Once we have an understanding of HTTP (and HTTP verbs, you’ll see that in the next section), we can look into actual JavaScript frameworks and methods (like `fetch()`) offered by the _JavaScript API_ (similar to the Java API), that actually allow us to make API calls.
+Okay. We know we can talk to a program running on a server by way of an Application Programming Interface, and we know that the common language with which we do this is known as JSON. But in the web development and networking world, everything has a protocol. What do we actually do to make an API call, and what does that look like code-wise? That’s where HTTP Requests enter the picture, the HyperText Transfer Protocol, defining how messages are formatted and transmitted across the Internet. Once we have an understanding of HTTP (and HTTP verbs, you’ll see that in the next section), we can look into actual JavaScript frameworks and methods (like `fetch()`) offered by the *JavaScript API* (similar to the Java API), that actually allow us to make API calls.
 
 ### HTTP And HTTP Requests
 
@@ -280,17 +281,17 @@ You type the website URL (Uniform Resource Locator) in the URL bar, where the DN
 
 There are a few things to note here. First, the GET Request, and then the “OK” response. Suppose you have a specific database, and you want to write an API to expose that database to your users. Suppose the database contains books the user wants to read (as it will in a future article in this series). Then there are four fundamental operations your user may want to perform on this database, that is, Create a record, Read a record, Update a record, or Delete a record, known collectively as CRUD operations.
 
-Let’s look at the Read operation for a moment. Without incorrectly assimilating or conflating the notion of a web server and a database, that Read operation is very similar to your web browser attempting to _get_ the site from the server, just as to read a record is to _get_ the record from the database.
+Let’s look at the Read operation for a moment. Without incorrectly assimilating or conflating the notion of a web server and a database, that Read operation is very similar to your web browser attempting to *get* the site from the server, just as to read a record is to *get* the record from the database.
 
-This is known as an HTTP Request. You are making a request to some server somewhere to _get_ some data, and, as such, the request is appropriately named “GET”, capitalization being a standard way to denote such requests.
+This is known as an HTTP Request. You are making a request to some server somewhere to *get* some data, and, as such, the request is appropriately named “GET”, capitalization being a standard way to denote such requests.
 
-What about the Create portion of CRUD? Well, when talking about HTTP Requests, that is known as a POST request. Just as you might _post_ a message on a social media platform, you might also _post_ a new record to a database.
+What about the Create portion of CRUD? Well, when talking about HTTP Requests, that is known as a POST request. Just as you might *post* a message on a social media platform, you might also *post* a new record to a database.
 
 CRUD’s Update allows us to use either a PUT or PATCH Request in order to update a resource. HTTP’s PUT will either create a new record or will update/replace the old one.
 
 Let’s look at this a bit more in detail, and then we’ll get to PATCH.
 
-An API generally works by making HTTP requests to specific routes in a URL. Suppose we are making an API to talk to a DB containing a user’s booklist. Then we might be able to view those books at the URL `.../books`. A POST requests to `.../books` will create a new book with whatever properties you define (think id, title, ISBN, author, publishing data, etc.) at the `.../books` route. It doesn’t matter what the underlying data structure is that stores all the books at `.../books` right now. We just care that the API exposes that endpoint (accessed through the route) to manipulate data. The prior sentence was key: A POST request _creates_ a new book at the `...books/` route. The difference between PUT and POST, then, is that PUT will create a new book (as with POST) if no such book exists, _or, it will replace an existing book_ if the book already exists within that aforementioned data structure.
+An API generally works by making HTTP requests to specific routes in a URL. Suppose we are making an API to talk to a DB containing a user’s booklist. Then we might be able to view those books at the URL `.../books`. A POST requests to `.../books` will create a new book with whatever properties you define (think id, title, ISBN, author, publishing data, etc.) at the `.../books` route. It doesn’t matter what the underlying data structure is that stores all the books at `.../books` right now. We just care that the API exposes that endpoint (accessed through the route) to manipulate data. The prior sentence was key: A POST request *creates* a new book at the `...books/` route. The difference between PUT and POST, then, is that PUT will create a new book (as with POST) if no such book exists, *or, it will replace an existing book* if the book already exists within that aforementioned data structure.
 
 Suppose each book has the following properties: id, title, ISBN, author, hasRead (boolean).
 
@@ -420,12 +421,11 @@ From here, start building your own Node applications, read the Node documentatio
 
 #### Further Reading on SmashingMag:
 
-*   [Understanding And Using REST APIs](https://www.smashingmagazine.com/2018/01/understanding-using-rest-api/ "Read 'Understanding And Using REST APIs'")
-*   [New JavaScript Features That Will Change How You Write Regex](https://www.smashingmagazine.com/2019/02/regexp-features-regular-expressions/ "Read 'New JavaScript Features That Will Change How You Write Regex'")
-*   [Keeping Node.js Fast: Tools, Techniques, And Tips For Making High-Performance Node.js Servers](https://www.smashingmagazine.com/2018/06/nodejs-tools-techniques-performance-servers/ "Read 'Keeping Node.js Fast: Tools, Techniques, And Tips For Making High-Performance Node.js Servers'")
-*   [Building A Simple AI Chatbot With Web Speech API And Node.js](https://www.smashingmagazine.com/2017/08/ai-chatbot-web-speech-api-node-js/ "Read 'Building A Simple AI Chatbot With Web Speech API And Node.js'")
+-   [Understanding And Using REST APIs](https://www.smashingmagazine.com/2018/01/understanding-using-rest-api/ "Read 'Understanding And Using REST APIs'")
+-   [New JavaScript Features That Will Change How You Write Regex](https://www.smashingmagazine.com/2019/02/regexp-features-regular-expressions/ "Read 'New JavaScript Features That Will Change How You Write Regex'")
+-   [Keeping Node.js Fast: Tools, Techniques, And Tips For Making High-Performance Node.js Servers](https://www.smashingmagazine.com/2018/06/nodejs-tools-techniques-performance-servers/ "Read 'Keeping Node.js Fast: Tools, Techniques, And Tips For Making High-Performance Node.js Servers'")
+-   [Building A Simple AI Chatbot With Web Speech API And Node.js](https://www.smashingmagazine.com/2017/08/ai-chatbot-web-speech-api-node-js/ "Read 'Building A Simple AI Chatbot With Web Speech API And Node.js'")
 
 ![Smashing Editorial](https://www.smashingmagazine.com/images/logo/logo--red.png) (dm, ra, il)
-
 
 [Source](https://www.smashingmagazine.com/2019/02/node-api-http-es6-javascript/)

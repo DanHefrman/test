@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>steps-to-clone</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<h1 id="steps-to-clone-and-change-origin-to-push-to-your-own-repo">Steps to clone and change origin to push to your own repo</h1>
+<h2 id="the-first-step-is-to-clone-the-repo">1. The first step is to clone the repo!</h2>
+<ul>
+<li>Navigate to the repo you want to clone and hit the big green code button. Copy the link given.</li>
+</ul>
+<figure>
+<img src="./clone-repo.png" alt="clone-repo" /><figcaption>clone-repo</figcaption>
+</figure>
+<ul>
+<li>Navigate in your terminal to the directory where you want this repo to live. I chose ~/Documents/appAcademy</li>
+<li><code>git clone HTTPS://LINKTOURL/THATYOUCOPIED</code></li>
+</ul>
+<figure>
+<img src="./git-clone.png" alt="git-clone" /><figcaption>git-clone</figcaption>
+</figure>
+<h2 id="sweet-you-have-the-cloned-repo-in-your-preferred-directory.-now-lets-make-your-own-repo.-on-github-create-a-new-repository.">2. Sweet, you have the cloned repo in your preferred directory. Now lets make your own repo. On github, create a new repository.</h2>
+<ul>
+<li>Default settings are fine. Hit the big green button <code>Create Repository</code></li>
+</ul>
+<figure>
+<img src="./create-repo.png" alt="create-repo" /><figcaption>create-repo</figcaption>
+</figure>
+<h2 id="next-copy-the-.git-link-that-is-on-the-next-page.-do-not-do-any-other-steps-on-this-page---that-is-for-when-you-do-not-clone-a-repo.">3. Next, copy the .git link that is on the next page. Do not do any other steps on this page - That is for when you do not clone a repo.</h2>
+<figure>
+<img src="./your-dotgit.png" alt="your-dotgit" /><figcaption>your-dotgit</figcaption>
+</figure>
+<h2 id="whenver-you-clone-a-repo-it-already-has-a-.git-directory-with-certain-configurations-set-up.-to-be-able-to-push-this-repo-to-your-newly-created-github-repo-we-have-to-change-the-remote-origin.">4. Whenver you clone a repo it already has a .git directory with certain configurations set up. To be able to push this repo to your newly created GitHub repo we have to change the remote origin.</h2>
+<ul>
+<li>To do that, just run this command: (Make sure you are inside the repo you cloned)
+<ul>
+<li><code>git remote set-url origin https://LINK/TO/YOUR/GIT/THAT/YOU/COPIED/FROM/PREVIOUS/STEP.git</code></li>
+</ul>
+<img src="./set-url.png" title="fig:" alt="set-url" /></li>
+</ul>
+<h2 id="thats-its-you-can-now-run-git-push-and-it-will-push-to-your-newly-created-repo.-try-it-out">5. Thats its! You can now run <code>git push</code> and it will push to your newly created repo. Try it out :)</h2>
+</body>
+</html>

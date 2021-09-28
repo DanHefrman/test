@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>How to Debug Node.js with the Best Tools Available</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<h1 id="how-to-debug-node.js-with-the-best-tools-available">How to Debug Node.js with the Best Tools Available</h1>
+<blockquote>
+<p>Let’s take a look at the available options &amp; tools to debug Node.js - the pino &amp; debug modules, the built-in debugger, the v8 inspector &amp; Visual Studio Code</p>
+</blockquote>
+<p><strong>Debugging - the process of finding and fixing defects in software - can be a challenging task to do in all languages. Node.js is no exception.</strong></p>
+<p>Luckily, the tooling for finding these issues improved a lot in the past period. Let’s take a look at what options you have to find and fix bugs in your Node.js applications!</p>
+<p>We will dive into two different aspects of debugging Node.js applications - the first one will be <strong>logging, so you can keep an eye on production systems</strong>, and have events from there. After logging, we will take a look at how you can <strong>debug your applications in development environments</strong>.</p>
+<p><strong>Click to see all chapters of Node.js at Scale:</strong></p>
+<h2 id="logging-in-node.js">Logging in Node.js</h2>
+<p>Logging takes place in the execution of your application <strong>to provide an audit trail that can be used to understand the activity of the system and to diagnose problems</strong> to find and fix bugs.</p>
+<p>For logging purposes, you have lots of options when building Node.js applications. Some npm modules are shipped with built in logging that can be turned on when needed using the <strong><a href="https://www.npmjs.com/package/debug">debug</a></strong> module. For your own applications, you have to pick a logger too! We will take a look at <strong><a href="https://www.npmjs.com/package/pino">pino</a></strong>.</p>
+<p><strong>Before jumping into logging libraries, let’s take a look what requirements they have to fulfil:</strong></p>
+<ul>
+<li><strong>timestamps</strong> - it is crucial to know which event happened when,</li>
+<li><strong>formatting</strong> - log lines must be easily understandable by humans, and straightforward to parse for applications,</li>
+<li><strong>log destination</strong> - it should be always the standard output/error, applications should not concern themselves with log routing,</li>
+<li><strong>log levels</strong> - log events have different severity levels, in most cases, you won’t be interested in debug or info level events.</li>
+</ul>
+<h2 id="the-debug-module-of-node.js">The <code>debug</code> module of Node.js</h2>
+<blockquote>
+<p><em>Recommendation: use for modules published on npm</em></p>
+</blockquote>
+<p>Let’s see how it makes your life easier! Imagine that you have a Node.js module that sends serves requests, as well as send out some.</p>
+<pre><code>const debugHttpIncoming = require(&#39;debug&#39;)(&#39;http:incoming&#39;)
+const debugHttpOutgoing = require(&#39;debug&#39;)(&#39;http:outgoing&#39;)
+
+let outgoingRequest = {
+  url: &#39;https://risingstack.com&#39;
+}
+
+
+debugHttpOutgoing(&#39;sending request to %s&#39;, outgoingRequest.url)
+
+let incomingRequest = {
+  body: &#39;{&quot;status&quot;: &quot;ok&quot;}&#39;
+}
+
+
+debugHttpOutgoing(&#39;got JSON body %s&#39;, incomingRequest.body)</code></pre>
+<p>Once you have it, start your application this way:</p>
+<pre><code>DEBUG=http:incoming,http:outgoing node index.js</code></pre>
+<p>The output will be something like this:</p>
+<figure>
+<img src="https://blog-assets.risingstack.com/2017/04/output-of-nodejs-debugging.png" alt="Output of Node.js Debugging" /><figcaption>Output of Node.js Debugging</figcaption>
+</figure>
+<p>Also, the debug module supports wildcards with the <code>*</code> character. To get the same result we got previously, we simply could start our application with <code>DEBUG=http:* node index.js</code>.</p>
+<p><strong>What’s really nice about the debug module is that a lot of modules <em>(like Express or Koa)</em> on npm are shipped with it - as of the time of writing this article more than 14.000 modules.</strong></p>
+<h2 id="the-pino-logger-module">The <code>pino</code> logger module</h2>
+<blockquote>
+<p><em>Recommendation: use for your applications when performance is key</em></p>
+</blockquote>
+<figure>
+<img src="https://blog-assets.risingstack.com/2017/04/pino.png" alt="Pino logger module" /><figcaption>Pino logger module</figcaption>
+</figure>
+<p><strong>Pino is an extremely fast Node.js logger, inspired by <a href="https://www.npmjs.com/package/bunyan">bunyan</a>.</strong> In many cases, <strong>pino is over 6x faster than alternatives</strong> like bunyan or winston:</p>
+<pre><code>benchWinston*10000:     2226.117ms
+benchBunyan*10000:      1355.229ms
+benchDebug*10000:       445.291ms
+benchLogLevel*10000:    322.181ms
+benchBole*10000:        291.727ms
+benchPino*10000:        269.109ms
+benchPinoExtreme*10000: 102.239ms</code></pre>
+<p>Getting started with pino is straightforward:</p>
+<pre><code>const pino = require(&#39;pino&#39;)()
+
+pino.info(&#39;hello pino&#39;)
+pino.info(&#39;the answer is %d&#39;, 42)
+pino.error(new Error(&#39;an error&#39;))</code></pre>
+<p>The above snippet produces the following log lines:</p>
+<pre><code>{&quot;pid&quot;:28325,&quot;hostname&quot;:&quot;Gergelys-MacBook-Pro.local&quot;,&quot;level&quot;:30,&quot;time&quot;:1492858757722,&quot;msg&quot;:&quot;hello pino&quot;,&quot;v&quot;:1}
+{&quot;pid&quot;:28325,&quot;hostname&quot;:&quot;Gergelys-MacBook-Pro.local&quot;,&quot;level&quot;:30,&quot;time&quot;:1492858757724,&quot;msg&quot;:&quot;the answer is 42&quot;,&quot;v&quot;:1}
+{&quot;pid&quot;:28325,&quot;hostname&quot;:&quot;Gergelys-MacBook-Pro.local&quot;,&quot;level&quot;:50,&quot;time&quot;:1492858757725,&quot;msg&quot;:&quot;an error&quot;,&quot;type&quot;:&quot;Error&quot;,&quot;stack&quot;:&quot;Error: an error\n    at Object.&lt;anonymous&gt; (/Users/gergelyke/Development/risingstack/node-js-at-scale-debugging/pino.js:5:12)\n    at Module._compile (module.js:570:32)\n    at Object.Module._extensions..js (module.js:579:10)\n    at Module.load (module.js:487:32)\n    at tryModuleLoad (module.js:446:12)\n    at Function.Module._load (module.js:438:3)\n    at Module.runMain (module.js:604:10)\n    at run (bootstrap_node.js:394:7)\n    at startup (bootstrap_node.js:149:9)\n    at bootstrap_node.js:509:3&quot;,&quot;v&quot;:1}</code></pre>
+<h2 id="the-built-in-node.js-debugger-module">The Built-in Node.js Debugger module</h2>
+<p><strong>Node.js ships with an out-of-process debugging utility, accessible via a TCP-based protocol and built-in debugging client.</strong> You can start it using the following command:</p>
+<pre><code>$ node debug index.js</code></pre>
+<p>This debugging agent is a not a fully featured debugging agent - you won’t have a fancy user interface, however, simple inspections are possible.</p>
+<p>You can add breakpoints to your code by adding the <code>debugger</code> statement into your codebase:</p>
+<pre><code>const express = require(&#39;express&#39;)
+const app = express()
+
+app.get(&#39;/&#39;, (req, res) =&gt; {
+  debugger
+  res.send(&#39;ok&#39;)
+})</code></pre>
+<p>This way the execution of your script will be paused at that line, then you can start using the commands exposed by the debugging agent:</p>
+<ul>
+<li><strong>cont</strong> or <strong>c</strong> - continue execution,</li>
+<li><strong>next</strong> or <strong>n</strong> - step next,</li>
+<li><strong>step</strong> or <strong>s</strong> - step in,</li>
+<li><strong>out</strong> or <strong>o</strong> - step out,</li>
+<li><strong>repl</strong> - to evaluate script’s context.</li>
+</ul>
+<h2 id="v8-inspector-integration-for-node.js">V8 Inspector Integration for Node.js</h2>
+<p><strong>The V8 inspector integration allows attaching Chrome DevTools to Node.js instances for debugging by using the Chrome Debugging Protocol.</strong></p>
+<p>V8 Inspector can be enabled by passing the <code>--inspect</code> flag when starting a Node.js application:</p>
+<pre><code>$ node --inspect index.js</code></pre>
+<p>In most cases, it makes sense to stop the execution of the application at the very first line of your codebase and continue the execution from that. This way you won’t miss any command execution.</p>
+<pre><code>$ node --inspect-brk index.js</code></pre>
+<p><em>I recommend watching this video in full-screen mode to get every detail!</em></p>
+<h2 id="how-to-debug-node.js-with-visual-studio-code">How to Debug Node.js with Visual Studio Code</h2>
+<p><strong>Most modern IDEs have some support for debugging applications - so does VS Code. It has built-in debugging support for Node.js.</strong></p>
+<p>What you can see below, is the debugging interface of VS Code - with the context variables, watched expressions, call stack and breakpoints.</p>
+<p><img src="https://blog-assets.risingstack.com/2017/04/vs-code-debugging-layout.png" alt="VS Code Debugging Layout" /> <em>Image credit: Visual Studio Code</em></p>
+<p>One of the most valuable features of the integrated Visual Studio Code debugger is the ability to add <strong>conditional breakpoints</strong>. With conditional breakpoints, the breakpoint will be hit whenever the expression evaluates to true.</p>
+<p>If you need more advanced settings for VS Code, it comes with a configuration file, <code>.vscode/launch.json</code> which describes how the debugger should be launched. The default <code>launch.json</code> looks something like this:</p>
+<pre><code>{
+    &quot;version&quot;: &quot;0.2.0&quot;,
+    &quot;configurations&quot;: [
+        {
+            &quot;type&quot;: &quot;node&quot;,
+            &quot;request&quot;: &quot;launch&quot;,
+            &quot;name&quot;: &quot;Launch Program&quot;,
+            &quot;program&quot;: &quot;${workspaceRoot}/index.js&quot;
+        },
+        {
+            &quot;type&quot;: &quot;node&quot;,
+            &quot;request&quot;: &quot;attach&quot;,
+            &quot;name&quot;: &quot;Attach to Port&quot;,
+            &quot;address&quot;: &quot;localhost&quot;,
+            &quot;port&quot;: 5858
+        }
+    ]
+}</code></pre>
+<p>For advanced configuration settings of <code>launch.json</code> go to <a href="https://code.visualstudio.com/docs/editor/debugging#_launchjson-attributes">https://code.visualstudio.com/docs/editor/debugging#_launchjson-attributes</a>.</p>
+<p><em>For more information on debugging with Visual Studio Code, visit the official site: <a href="https://code.visualstudio.com/docs/editor/debugging">https://code.visualstudio.com/docs/editor/debugging</a>.</em></p>
+<h2 id="next-up">Next Up</h2>
+<p>If you have any questions about debugging, please let me know in the comments section.</p>
+<p><strong>In the next episode of the Node.js at Scale series, we are going to talk about <a href="https://blog.risingstack.com/post-mortem-diagnostics-debugging-node-js-at-scale/">Node.js Post-Mortem Diagnostics &amp; Debugging</a>.</strong></p>
+<p><a href="https://blog.risingstack.com/how-to-debug-nodej-js-with-the-best-tools-available/">Source</a></p>
+</body>
+</html>

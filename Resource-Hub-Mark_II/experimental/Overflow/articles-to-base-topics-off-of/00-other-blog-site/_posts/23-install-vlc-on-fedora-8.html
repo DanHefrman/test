@@ -1,65 +1,42 @@
-<!--
-
----
- Install Vlc on fedora 8
-date: 2009-09-23 09:10:38 UTC
-updated: 2009-09-23 09:10:38 UTC
-2008/kind#post rpm fedora vlc
----
-
--->
 <!DOCTYPE html>
-<html>
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
-  <title>basic-git-workflow</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-  <link rel="stylesheet" href="./css/bootstrap.css">
-  <link rel="stylesheet" href="./css/bootstrap.grid.css">
-  <link rel="stylesheet" href="./css/bootstrap.min.css">
-  <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
-  <link rel="stylesheet" href="./css/bootstrap.css.map">
-  <link rel="stylesheet" href="./css/blog-home.css">
-  <link rel="stylesheet" href="./css/prism.css">
-  <script async defer src="./css/prism.js"></script>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>23-install-vlc-on-fedora-8</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
 </head>
-
 <body>
-
-  This is a tutorial showing how you can install VLC media player on fedora 8 system.<br /><br />1. For "i386"
-  architecture<br />&nbsp;&nbsp;&nbsp; Download the following files.<br />
-  <ol>
-    <li><a
-        href="http://download1.rpmfusion.org/free/fedora/updates/8/x86_64/vlc-0.8.7-0.8.fc8.i386.rpm">vlc-0.8.7-0.8.fc8.i386.rpm</a>
-    </li>
-    <li><a
-        href="http://download1.rpmfusion.org/free/fedora/updates/8/x86_64/vlc-0.8.7-0.8.fc8.i386.rpm">vlc-0.8.7-0.8.fc8.i386.rpm</a>
-    </li>
-    <li><a
-        href="http://download1.rpmfusion.org/free/fedora/updates/8/x86_64/vlc-devel-0.8.7-0.8.fc8.i386.rpm">vlc-devel-0.8.7-0.8.fc8.i386.rpm</a>&nbsp;
-    </li>
-  </ol><br /><br />2. For "x86_64" architecture<br />&nbsp;&nbsp;&nbsp; Download the following files.<br />&nbsp; <br />
-  <ol>
-    <li><a
-        href="http://download1.rpmfusion.org/free/fedora/updates/8/x86_64/vlc-0.8.7-0.8.fc8.x86_64.rpm">vlc-0.8.7-0.8.fc8.x86_64.rpm</a>
-    </li>
-    <li><a
-        href="http://download1.rpmfusion.org/free/fedora/updates/8/x86_64/vlc-core-0.8.7-0.8.fc8.x86_64.rpm">vlc-core-0.8.7-0.8.fc8.x86_64.rpm</a>&nbsp;
-    </li>
-    <li><a
-        href="http://download1.rpmfusion.org/free/fedora/updates/8/x86_64/vlc-devel-0.8.7-0.8.fc8.x86_64.rpm">vlc-devel-0.8.7-0.8.fc8.x86_64.rpm</a>&nbsp;
-    </li>
-  </ol>&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; Click on the file name to download the files.................<br /><br />Try to
-  install using rpm command<br />&nbsp; <br />&nbsp;&nbsp;&nbsp;&nbsp; rpm -Uvh
-  vlc-0.8.7-0.8.fc8.x86_64.rpm<br /><br />It
-  will show a lot of dependency error.Because there will be a lot of dependencies will be missing. so we want to get
-  each
-  dependency and install manually because rpm command can't resolve dependency.<br /><br />To find the dependencies goto
-  <a href="http://rpm.pbone.net/">rpm.pbone.net</a> and then go to advanced search<br />give your dependency name in the
-  search box.tick on the fedora 8.<br /><br />At the end check on filename and provide.<br /><br /><br />If you want to
-  install the vlc without these dependencies just use the command<br /><br />rpm -Uvh --nodeps <package name="">
-  </package>
-  <br /><br />But working will depends on the packages in your system.
+<p>This is a tutorial showing how you can install VLC media player on fedora 8 system.</p>
+<ol type="1">
+<li><p>For “i386” architecture<br />
+    Download the following files.</p></li>
+<li><a href="http://download1.rpmfusion.org/free/fedora/updates/8/x86_64/vlc-0.8.7-0.8.fc8.i386.rpm">vlc-0.8.7-0.8.fc8.i386.rpm</a></li>
+<li><a href="http://download1.rpmfusion.org/free/fedora/updates/8/x86_64/vlc-0.8.7-0.8.fc8.i386.rpm">vlc-0.8.7-0.8.fc8.i386.rpm</a></li>
+<li><p><a href="http://download1.rpmfusion.org/free/fedora/updates/8/x86_64/vlc-devel-0.8.7-0.8.fc8.i386.rpm">vlc-devel-0.8.7-0.8.fc8.i386.rpm</a> </p></li>
+<li><p>For “x86_64” architecture<br />
+    Download the following files.<br />
+ </p></li>
+<li><a href="http://download1.rpmfusion.org/free/fedora/updates/8/x86_64/vlc-0.8.7-0.8.fc8.x86_64.rpm">vlc-0.8.7-0.8.fc8.x86_64.rpm</a></li>
+<li><a href="http://download1.rpmfusion.org/free/fedora/updates/8/x86_64/vlc-core-0.8.7-0.8.fc8.x86_64.rpm">vlc-core-0.8.7-0.8.fc8.x86_64.rpm</a> </li>
+<li><p><a href="http://download1.rpmfusion.org/free/fedora/updates/8/x86_64/vlc-devel-0.8.7-0.8.fc8.x86_64.rpm">vlc-devel-0.8.7-0.8.fc8.x86_64.rpm</a> </p></li>
+</ol>
+<p>        Click on the file name to download the files……………..</p>
+<p>Try to install using rpm command<br />
+ <br />
+     rpm -Uvh vlc-0.8.7-0.8.fc8.x86_64.rpm</p>
+<p>It will show a lot of dependency error.Because there will be a lot of dependencies will be missing. so we want to get each dependency and install manually because rpm command can’t resolve dependency.</p>
+<p>To find the dependencies goto <a href="http://rpm.pbone.net/">rpm.pbone.net</a> and then go to advanced search<br />
+give your dependency name in the search box.tick on the fedora 8.</p>
+<p>At the end check on filename and provide.</p>
+<p>If you want to install the vlc without these dependencies just use the command</p>
+<p>rpm -Uvh –nodeps</p>
+<p>But working will depends on the packages in your system.</p>
+</body>
+</html>

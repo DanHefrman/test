@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>npm Best Practices</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<h1 id="npm-best-practices-risingstack">npm Best Practices | <span class="citation" data-cites="RisingStack">@RisingStack</span></h1>
+<blockquote>
+<p>Learn the best practices of using npm: Installation, finding &amp; investigating packages, saving or locking dependencies, securing projects and more!</p>
+</blockquote>
+<blockquote>
+<p><a href="chrome-extension://cjedbglnccaioiolemnfhjncicchinao/node-hero-tutorial-getting-started-with-node-js">Node Hero</a> was a Node.js tutorial series focusing on teaching the most essential Node.js best practices, so one can start developing applications using it.</p>
+</blockquote>
+<p>With our new series, called <strong>Node.js at Scale</strong>, we are creating a collection of articles focusing on the needs of companies with bigger Node.js installations, and developers who already learned the basics of Node.</p>
+<p>In the first chapter of <strong>Node.js at Scale</strong> you are going to learn the best practices on using <code>npm</code> as well as tips and tricks that can save you a lot of time on a daily basis.</p>
+<p><strong>Click to see all chapters of Node.js at Scale:</strong></p>
+<h2 id="npm-best-practices">npm Best Practices</h2>
+<p><code>npm install</code> is the most common way of using the npm cli - but it has a lot more to offer! In this chapter of <strong>Node.js at Scale</strong> you will learn how npm can help you during the full lifecycle of your application - from starting a new project through development and deployment.</p>
+<h3 id="know-your-npm">#0 Know your npm</h3>
+<p>Before diving into the topics, let’s see some commands that help you with what version of npm you are running, or what commands are available.</p>
+<h4 id="npm-versions">npm versions</h4>
+<p>To get the version of the npm cli you are actively using, you can do the following:</p>
+<pre><code>$ npm --version
+2.13.2</code></pre>
+<p>npm can return a lot more than just its own version - it can return the version of the current package, the Node.js version you are using and OpenSSL or V8 versions:</p>
+<pre><code>$ npm version
+{ bleak: &#39;1.0.4&#39;,
+  npm: &#39;2.15.0&#39;,
+  ares: &#39;1.10.1-DEV&#39;,
+  http_parser: &#39;2.5.2&#39;,
+  icu: &#39;56.1&#39;,
+  modules: &#39;46&#39;,
+  node: &#39;4.4.2&#39;,
+  openssl: &#39;1.0.2g&#39;,
+  uv: &#39;1.8.0&#39;,
+  v8: &#39;4.5.103.35&#39;,
+  zlib: &#39;1.2.8&#39; }</code></pre>
+<h4 id="npm-help">npm help</h4>
+<p>As most cli toolkits, npm has a great built-in help functionality as well. Description and synopsis are always available. These are essentially <a href="https://www.kernel.org/doc/man-pages/">man-pages</a>.</p>
+<pre><code>$ npm help test
+NAME
+       npm-test - Test a package
+
+SYNOPSIS
+           npm test [-- &lt;args&gt;]
+
+           aliases: t, tst
+
+DESCRIPTION
+       This runs a package&#39;s &quot;test&quot; script, if one was provided.
+
+       To run tests as a condition of installation, set the npat config to true.</code></pre>
+<h3 id="start-new-projects-with-npm-init">#1 Start new projects with <code>npm init</code></h3>
+<p>When starting a new project <code>npm init</code> can help you a lot by interactively creating a <code>package.json</code> file. This will prompt questions for example on the project’s name or description. However, there is a quicker solution!</p>
+<pre><code>$ npm init --yes</code></pre>
+<p>If you use <code>npm init --yes</code>, it won’t prompt for anything, just create a <code>package.json</code> with your defaults. To set these defaults, you can use the following commands:</p>
+<pre><code>npm config set init.author.name YOUR_NAME
+npm config set init.author.email YOUR_EMAIL</code></pre>
+<h3 id="finding-npm-packages">#2 Finding npm packages</h3>
+<p>Finding the right packages can be quite challenging - there are hundreds of thousands of modules you can choose from. We know this from experience, and developers participating in our latest <a href="https://blog.risingstack.com/node-js-developer-survey-results-2016/">Node.js survey</a> also told us that selecting the right npm package is frustrating. Let’s try to pick a module that helps us sending HTTP requests!</p>
+<p>One website that makes the task a lot easier is <a href="https://npms.io/">npms.io</a>. It shows metrics like <strong>quality</strong>, <strong>popularity</strong> and <strong>maintenance</strong>. These are calculated based on whether a module has outdated dependencies, does it have linters configured, is it covered with tests or when the most recent commit was made.</p>
+<figure>
+<img src="https://blog-assets.risingstack.com/2016/Sep/npm-best-practices/node-js-best-practices-finsing-npm-packages.png" alt="finding npm packages" /><figcaption>finding npm packages</figcaption>
+</figure>
+<h3 id="investigate-npm-packages">#3 Investigate npm packages</h3>
+<p>Once we picked our module (which will be the <code>request</code> module in our example), we should take a look at the documentation, and check out the open issues to get a better picture of what we are going to require into our application. Don’t forget that the more npm packages you use, the higher the risk of having a vulnerable or malicious one. If you’d like to read more on <a href="https://blog.risingstack.com/controlling-node-js-security-risk-npm-dependencies/">npm-related security risks</a>, read our related guideline.</p>
+<p>If you’d like to open the homepage of the module from the cli you can do:</p>
+<pre><code>$ npm home request</code></pre>
+<p>To check open issues or the publicly available roadmap (if there’s any), you can try this:</p>
+<pre><code>$ npm bugs request</code></pre>
+<p>Alternatively, if you’d just like to check a module’s git repository, type this:</p>
+<pre><code>$ npm repo request</code></pre>
+<h3 id="saving-dependencies">#4 Saving dependencies</h3>
+<p>Once you found the package you want to include in your project, you have to install and save it. The most common way of doing that is by using <code>npm install request</code>.</p>
+<p>If you’d like to take that one step forward and automatically add it to your package.json file, you can do:</p>
+<pre><code>$ npm install request --save</code></pre>
+<p>npm will save your dependencies with the <code>^</code> prefix by default. It means that during the next <code>npm install</code> the latest module without a major version bump will be installed. To change this behaviour, you can:</p>
+<pre><code>$ npm config set save-prefix=&#39;~&#39;</code></pre>
+<p>In case you’d like to save the exact version, you can try:</p>
+<pre><code>$ npm config set save-exact true</code></pre>
+<h3 id="lock-down-dependencies">#5 Lock down dependencies</h3>
+<p>Even if you save modules with exact version numbers as shown in the previous section, you should be aware that most npm module authors don’t. It’s totally fine, they do it to get patches and features automatically.</p>
+<p>The situation can easily become problematic for production deployments: <strong>It’s possible to have different versions locally then on production</strong>, if in the meantime someone just released a new version. The problem will arise, when this new version has some bug which will affect your production system.</p>
+<p>To solve this issue, you may want to use <code>npm shrinkwrap</code>. It will generate an <code>npm-shrinkwrap.json</code> that contains not just the exact versions of the modules installed on your machine, but also the version of its dependencies, and so on. Once you have this file in place, <code>npm install</code> will use it to reproduce the same dependency tree.</p>
+<h3 id="check-for-outdated-dependencies">#6 Check for outdated dependencies</h3>
+<p>To check for outdated dependencies, npm comes with a built-in tool method the <code>npm outdated</code> command. You have to run in the project’s directory which you’d like to check.</p>
+<pre><code>$ npm outdated
+conventional-changelog    0.5.3   0.5.3   1.1.0  @risingstack/docker-node
+eslint-config-standard    4.4.0   4.4.0   6.0.1  @risingstack/docker-node
+eslint-plugin-standard    1.3.1   1.3.1   2.0.0  @risingstack/docker-node
+rimraf                    2.5.1   2.5.1   2.5.4  @risingstack/docker-node</code></pre>
+<p>Once you maintain more projects, it can become an overwhelming task to keep all your dependencies up to date in each of your projects. To automate this task, you can use <a href="http://greenkeeper.io/">Greenkeeper</a> which will automatically send pull requests to your repositories once a dependency is updated.</p>
+<h3 id="no-devdependencies-in-production">#7 No <code>devDependencies</code> in production</h3>
+<p>Development dependencies are called development dependencies for a reason - you don’t have to install them in production. It makes your deployment artifacts smaller and more secure, as you will have less modules in production which can have security problems.</p>
+<p>To install production dependencies only, run this:</p>
+<pre><code>$ npm install --production</code></pre>
+<p>Alternatively, you can set the <code>NODE_ENV</code> environment variable to production:</p>
+<pre><code>$ NODE_ENV=production npm install</code></pre>
+<h3 id="secure-your-projects-and-tokens">#8 Secure your projects and tokens</h3>
+<p>In case of using npm with a logged in user, your npm token will be placed in the <code>.npmrc</code> file. As a lot of developers store dotfiles on GitHub, sometimes these tokens get published by accident. Currently, there are thousands of results when searching for the <code>.npmrc</code> file on GitHub, with a huge percentage containing tokens. <strong>If you have dotfiles in your repositories, double check that your credentials are not pushed!</strong></p>
+<p>Another source of possible security issues are the files which are published to npm by accident. By default npm respects the <code>.gitignore</code> file, and files matching those rules won’t be published. However, if you add an <code>.npmignore</code> file, it will override the content of <code>.gitignore</code> - so they won’t be merged.</p>
+<h3 id="developing-packages">#9 Developing packages</h3>
+<p>When developing packages locally, you usually want to try them out with one of your projects before publish to npm. This is where <code>npm link</code> comes to the rescue.</p>
+<p>What <code>npm link</code> does is that it creates a symlink in the global folder that links to the package where the <code>npm link</code> was executed.</p>
+<p>You can run <code>npm link package-name</code> from another location, to create a symbolic link from the globally installed <code>package-name</code> to the <code>/node_modules</code> directory of the current folder.</p>
+<p>Let’s see it in action!</p>
+<pre><code>/projects/request $ npm link
+
+
+/projects/my-server $ npm link request</code></pre>
+<h2 id="next-up-on-node.js-at-scale-semver-and-module-publishing">Next up on Node.js at Scale: SemVer and Module Publishing</h2>
+<p>The next article in the Node.js at Scale series will be a <a href="chrome-extension://cjedbglnccaioiolemnfhjncicchinao/nodejs-at-scale-npm-publish-tutorial">SemVer deep dive with how to publish Node.js modules</a>.</p>
+<p>Let me know if you have any questions in the comments!</p>
+<p><a href="https://blog.risingstack.com/nodejs-at-scale-npm-best-practices/">Source</a></p>
+</body>
+</html>

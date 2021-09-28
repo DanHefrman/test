@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>JavaScript Clean Coding Best Practices</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<h1 id="javascript-clean-coding-best-practices-risingstack">JavaScript Clean Coding Best Practices | <span class="citation" data-cites="RisingStack">@RisingStack</span></h1>
+<blockquote>
+<p>This post covers general clean coding guidelines for naming and using variables &amp; functions, as well as some JavaScript specific clean coding best practices</p>
+</blockquote>
+<p><strong>Writing clean code is what you must know and do in order to call yourself a professional developer.</strong> There is no reasonable excuse for doing anything less than your best.</p>
+<blockquote>
+<p>“Even bad code can function. But if the code isn’t clean, it can bring a development organization to its knees.” — Robert C. Martin (Uncle Bob)</p>
+</blockquote>
+<p>In this blog post, we will cover general clean coding principles for naming and using variables &amp; functions, as well as some <strong>JavaScript specific clean coding best practices.</strong></p>
+<blockquote>
+<p><strong>Node.js at Scale</strong> is a collection of articles focusing on the needs of companies with bigger Node.js installations and advanced Node developers. Chapters:</p>
+</blockquote>
+<p><strong>Click to see all chapters of Node.js at Scale:</strong></p>
+<h2 id="first-of-all-what-does-clean-coding-mean">First of all, what does clean coding mean?</h2>
+<p>Clean coding means that in the first place you write code for your later self and for your co-workers and not for the machine.</p>
+<p><strong>Your code must be easily understandable for humans.</strong></p>
+<p>You know you are working on a clean code when each routine you read turns out to be pretty much what you expected.</p>
+<figure>
+<img src="https://blog-assets.risingstack.com/2016/12/javascript-clean-coding-best-practices-code-review.jpg" alt="JavaSctipr Clean Coding: The only valid measurement of code quality is WTFs/minute" /><figcaption>JavaSctipr Clean Coding: The only valid measurement of code quality is WTFs/minute</figcaption>
+</figure>
+<h2 id="javascript-clean-coding-best-practices">JavaScript Clean Coding Best Practices</h2>
+<p>Now that we know what every developer should aim for, let’s go through the best practices!</p>
+<h3 id="how-should-i-name-my-variables">How should I name my variables?</h3>
+<p><strong>Use intention-revealing names</strong> and don’t worry if you have long variable names instead of saving a few keyboard strokes.</p>
+<p><strong>If you follow this practice, your names become searchable,</strong> which helps a lot when you do refactors or you are just looking for something.</p>
+<pre><code>let d
+let elapsed
+const ages = arr.map((i) =&gt; i.age)
+
+
+let daysSinceModification
+const agesOfUsers = users.map((user) =&gt; user.age)</code></pre>
+<p>Also, <strong>make meaningful distinctions</strong> and <strong>don’t add extra, unnecessary nouns</strong> to the variable names, like its type (<a href="https://en.wikipedia.org/wiki/Hungarian_notation">hungarian notation</a>).</p>
+<pre><code>let nameString
+let theUsers
+
+
+let name
+let users</code></pre>
+<p><strong>Make your variable names easy to pronounce,</strong> because for the human mind it takes less effort to process.</p>
+<p>When you are doing code reviews with your fellow developers, these names are easier to reference.</p>
+<pre><code>let fName, lName
+let cntr
+
+let full = false
+if (cart.size &gt; 100) {
+  full = true
+}
+
+
+let firstName, lastName
+let counter
+
+const MAX_CART_SIZE = 100
+
+const isFull = cart.size &gt; MAX_CART_SIZE</code></pre>
+<p>In short, don’t cause extra mental mapping with your names.</p>
+<h3 id="how-should-i-write-my-functions">How should I write my functions?</h3>
+<p>Your functions should do one thing only on one level of abstraction.</p>
+<blockquote>
+<p>Functions should do one thing. They should do it well. They should do it only. — Robert C. Martin (Uncle Bob)</p>
+</blockquote>
+<pre><code>function getUserRouteHandler (req, res) {
+  const { userId } = req.params
+  
+  knex(&#39;user&#39;)
+    .where({ id: userId })
+    .first()
+    .then((user) =&gt; res.json(user))
+}
+
+
+
+const tableName = &#39;user&#39;
+const User = {
+  getOne (userId) {
+    return knex(tableName)
+      .where({ id: userId })
+      .first()
+  }
+}
+
+
+function getUserRouteHandler (req, res) {
+  const { userId } = req.params
+  User.getOne(userId)
+    .then((user) =&gt; res.json(user))
+}</code></pre>
+<p>After you wrote your functions properly, you can test how well you did with <a href="https://blog.risingstack.com/node-js-tutorial-debugging-async-memory-leaks-cpu-profiling/">CPU profiling</a> - which helps you to find bottlenecks.</p>
+<h3 id="use-long-descriptive-names">Use long, descriptive names</h3>
+<p><strong>A function name</strong> should be a verb or a verb phrase, and it <strong>needs to communicate its intent,</strong> as well as the order and intent of the arguments.</p>
+<p>A long descriptive name is way better than a short, enigmatic name or a long descriptive comment.</p>
+<pre><code>function inv (user) {  }
+
+
+function inviteUser (emailAddress) {  }</code></pre>
+<h3 id="avoid-long-argument-list">Avoid long argument list</h3>
+<p>Use a single object parameter and destructuring assignment instead. It also makes handling optional parameters much easier.</p>
+<pre><code>function getRegisteredUsers (fields, include, fromDate, toDate) {  }
+getRegisteredUsers([&#39;firstName&#39;, &#39;lastName&#39;, &#39;email&#39;], [&#39;invitedUsers&#39;], &#39;2016-09-26&#39;, &#39;2016-12-13&#39;)
+
+
+function getRegisteredUsers ({ fields, include, fromDate, toDate }) {  }
+getRegisteredUsers({
+  fields: [&#39;firstName&#39;, &#39;lastName&#39;, &#39;email&#39;],
+  include: [&#39;invitedUsers&#39;],
+  fromDate: &#39;2016-09-26&#39;,
+  toDate: &#39;2016-12-13&#39;
+})</code></pre>
+<h3 id="reduce-side-effects">Reduce side effects</h3>
+<p>Use pure functions without side effects, whenever you can. <strong>They are really easy to use and test.</strong></p>
+<pre><code>function addItemToCart (cart, item, quantity = 1) {
+  const alreadyInCart = cart.get(item.id) || 0
+  cart.set(item.id, alreadyInCart + quantity)
+  return cart
+}
+
+
+
+function addItemToCart (cart, item, quantity = 1) {
+  const cartCopy = new Map(cart)
+  const alreadyInCart = cartCopy.get(item.id) || 0
+  cartCopy.set(item.id, alreadyInCart + quantity)
+  return cartCopy
+}
+
+
+
+
+const cart = new Map()
+Object.assign(cart, {
+  addItem (item, quantity = 1) {
+    const alreadyInCart = this.get(item.id) || 0
+    this.set(item.id, alreadyInCart + quantity)
+    return this
+  }
+})</code></pre>
+<h3 id="organize-your-functions-in-a-file-according-to-the-stepdown-rule">Organize your functions in a file according to the stepdown rule</h3>
+<p>Higher level functions should be on top and lower levels below. It makes it natural to read the source code.</p>
+<pre><code>function getFullName (user) {
+  return `${user.firstName} ${user.lastName}`
+}
+
+function renderEmailTemplate (user) {
+  
+  const fullName = getFullName(user)
+  return `Dear ${fullName}, ...`
+}
+
+
+function renderEmailTemplate (user) {
+  
+  const fullName = getFullName(user)
+  return `Dear ${fullName}, ...`
+}
+
+
+function getFullName (user) {
+  return `${user.firstName} ${user.lastName}`
+}</code></pre>
+<h3 id="query-or-modification">Query or modification</h3>
+<p>Functions should either do something (modify) or answer something (query), but not both.</p>
+<h2 id="everyone-likes-to-write-javascript-differently-what-to-do">Everyone likes to write JavaScript differently, what to do?</h2>
+<p>As JavaScript is dynamic and loosely typed, it is especially prone to programmer errors.</p>
+<p><strong>Use project or company wise linter rules and formatting style.</strong></p>
+<p>The stricter the rules, the less effort will go into pointing out bad formatting in code reviews. It should cover things like consistent naming, indentation size, whitespace placement and even semicolons.</p>
+<p>The <a href="http://standardjs.com/">standard JS</a> style is quite nice to start with, but in my opinion, it isn’t strict enough. I can <a href="https://github.com/RisingStack/multi-process-nodejs-example/blob/master/.eslintrc.yaml">agree</a> most of the rules in the <a href="https://github.com/airbnb/javascript">Airbnb style</a>.</p>
+<h2 id="how-to-write-nice-async-code">How to write nice async code?</h2>
+<p>Use <a href="https://blog.risingstack.com/asynchronous-javascript/">Promises</a> whenever you can.</p>
+<p>Promises are natively available from Node 4. Instead of writing nested callbacks, you can have chainable Promise calls.</p>
+<pre><code>asyncFunc1((err, result1) =&gt; {
+  asyncFunc2(result1, (err, result2) =&gt; {
+    asyncFunc3(result2, (err, result3) =&gt; {
+      console.lor(result3)
+    })
+  })
+})
+
+
+asyncFuncPromise1()
+  .then(asyncFuncPromise2)
+  .then(asyncFuncPromise3)
+  .then((result) =&gt; console.log(result))
+  .catch((err) =&gt; console.error(err))</code></pre>
+<p>Most of the libraries out there have both callback and promise interfaces, prefer the latter. You can even convert callback APIs to promise based one by wrapping them using packages like <a href="https://www.npmjs.com/package/es6-promisify">es6-promisify</a>.</p>
+<pre><code>const fs = require(&#39;fs&#39;)
+
+function readJSON (filePath, callback) {
+  fs.readFile(filePath, (err, data) =&gt; {
+    if (err) {
+      return callback(err)
+    }
+
+    try {
+      callback(null, JSON.parse(data))
+    } catch (ex) {
+      callback(ex)
+    }
+  })
+}
+
+readJSON(&#39;./package.json&#39;, (err, pkg) =&gt; { console.log(err, pkg) })
+
+
+const fs = require(&#39;fs&#39;)
+const promisify = require(&#39;es6-promisify&#39;)
+
+const readFile = promisify(fs.readFile)
+function readJSON (filePath) {
+  return readFile(filePath)
+    .then((data) =&gt; JSON.parse(data))
+}
+
+readJSON(&#39;./package.json&#39;)
+  .then((pkg) =&gt; console.log(pkg))
+  .catch((err) =&gt; console.error(err))</code></pre>
+<p>The next step would be to use <code>async/await</code> (≥ Node 7) or <code>generators</code> with <a href="https://www.npmjs.com/package/co"><code>co</code></a> (≥ Node 4) to achieve synchronous like control flows for your asynchronous code.</p>
+<pre><code>const request = require(&#39;request-promise-native&#39;)
+
+function getExtractFromWikipedia (title) {
+  return request({
+    uri: &#39;https://en.wikipedia.org/w/api.php&#39;,
+    qs: {
+      titles: title,
+      action: &#39;query&#39;,
+      format: &#39;json&#39;,
+      prop: &#39;extracts&#39;,
+      exintro: true,
+      explaintext: true
+    },
+    method: &#39;GET&#39;,
+    json: true
+  })
+    .then((body) =&gt; Object.keys(body.query.pages).map((key) =&gt; body.query.pages[key].extract))
+    .then((extracts) =&gt; extracts[0])
+    .catch((err) =&gt; {
+      console.error(&#39;getExtractFromWikipedia() error:&#39;, err)
+      throw err
+    })
+} 
+
+
+async function getExtractFromWikipedia (title) {
+  let body
+  try {
+    body = await request({  })
+  } catch (err) {
+    console.error(&#39;getExtractFromWikipedia() error:&#39;, err)
+    throw err
+  }
+
+  const extracts = Object.keys(body.query.pages).map((key) =&gt; body.query.pages[key].extract)
+  return extracts[0]
+}
+
+
+const co = require(&#39;co&#39;)
+
+const getExtractFromWikipedia = co.wrap(function * (title) {
+  let body
+  try {
+    body = yield request({  })
+  } catch (err) {
+    console.error(&#39;getExtractFromWikipedia() error:&#39;, err)
+    throw err
+  }
+
+  const extracts = Object.keys(body.query.pages).map((key) =&gt; body.query.pages[key].extract)
+  return extracts[0]
+})
+
+getExtractFromWikipedia(&#39;Robert Cecil Martin&#39;)
+  .then((robert) =&gt; console.log(robert))</code></pre>
+<h2 id="how-should-i-write-performant-code">How should I write performant code?</h2>
+<p>In the first place, you should write clean code, then use <a href="https://blog.risingstack.com/node-js-tutorial-debugging-async-memory-leaks-cpu-profiling/">profiling</a> to find performance bottlenecks.</p>
+<p>Never try to write performant and smart code first, instead, optimize the code when you need to and refer to true impact instead of micro-benchmarks.</p>
+<p>Although, there are some straightforward scenarios like eagerly initializing what you can (eg. joi schemas in route handlers, which would be used in every request and adds serious overhead if recreated every time) and using asynchronous instead of blocking code.</p>
+<h2 id="next-up-in-node.js-at-scale">Next up in Node.js at Scale</h2>
+<p>In the next episode of this series, we’ll discuss advanced <a href="https://blog.risingstack.com/node-js-async-best-practices-avoiding-callback-hell-node-js-at-scale/">Node.js async best practices and avoiding the callback hell</a>!</p>
+<p><strong>If you have any questions regarding clean coding, don’t hesitate and let me know in the comments!</strong></p>
+<p><a href="https://blog.risingstack.com/javascript-clean-coding-best-practices-node-js-at-scale/">Source</a></p>
+</body>
+</html>

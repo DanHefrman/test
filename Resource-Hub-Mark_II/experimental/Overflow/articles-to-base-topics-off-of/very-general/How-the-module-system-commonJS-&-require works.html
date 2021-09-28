@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>How-the-module-system-commonJS-&-require works</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<h1 id="how-the-module-system-commonjs-require-works-risingstack">How the module system, CommonJS &amp; require works | <span class="citation" data-cites="RisingStack">@RisingStack</span></h1>
+<blockquote>
+<p>Learn how the Node.js module system &amp; CommonJS works and what does <code>require</code> do under the hood.</p>
+</blockquote>
+<p>In the third chapter of <strong>Node.js at Scale</strong> you are about to learn how the Node.js module system &amp; CommonJS works and what does <code>require</code> do under the hood.</p>
+<blockquote>
+<p>With <strong>Node.js at Scale</strong> we are creating a collection of articles focusing on the needs of companies with bigger Node.js installations, and developers who already learned the basics of Node.</p>
+</blockquote>
+<p><strong>Click to see all chapters of Node.js at Scale:</strong></p>
+<h2 id="commonjs-to-the-rescue">CommonJS to the rescue</h2>
+<p>The JavaScript language didn’t have a native way of organizing code before the ES2015 standard. Node.js filled this gap with the <a href="http://requirejs.org/docs/commonjs.html"><strong>CommonJS</strong></a> module format. In this article we will learn about how the Node.js module system works, how you can organize your modules and what does the new ES standard means for the future of Node.js.</p>
+<h2 id="what-is-the-module-system">What is the module system?</h2>
+<p>Modules are the fundamental building blocks of the code structure. The module system allows you to organize your code, hide information and only expose the public interface of a component using <code>module.exports</code>. Every time you use the <code>require</code> call, you are loading another module.</p>
+<p>The simplest example can be the following using CommonJS:</p>
+<pre><code>function add (a, b) {
+  return a + b
+}
+
+module.exports = add</code></pre>
+<p>To use the <code>add</code> module we have just created, we have to require it.</p>
+<pre><code>const add = require(&#39;./add&#39;)
+
+console.log(add(4, 5))</code></pre>
+<p>Under the hood, <code>add.js</code> is wrapped by Node.js this way:</p>
+<pre><code>(function (exports, require, module, __filename, __dirname) {
+  function add (a, b) {
+    return a + b
+  }
+
+  module.exports = add
+})</code></pre>
+<p>This is why you can access the global-like variables like <strong>require</strong> and <strong>module</strong>. It also ensures that your variables are scoped to your module rather than the global object.</p>
+<h2 id="how-does-require-work">How does <code>require</code> work?</h2>
+<p>The module loading mechanism in Node.js is caching the modules on the first <code>require</code> call. It means that every time you use <code>require('awesome-module')</code> you will get the same instance of <code>awesome-module</code>, which ensures that the modules are singleton-like and have the same state across your application.</p>
+<p>You can load native modules and path references from your file system or installed modules. If the identifier passed to the <code>require</code> function is not a native module or a file reference (beginning with <code>/</code>, <code>../</code>, <code>./</code> or similar), then Node.js will look for installed modules. It will walk your file system looking for the referenced module in the <code>node_modules</code> folder. It starts from the parent directory of your current module and then moves to the parent directory until it finds the right module or until the root of the file system is reached.</p>
+<h3 id="require-under-the-hood---module.js">Require under the hood - <code>module.js</code></h3>
+<p>The module dealing with module loading in the Node core is called <code>module.js</code>, and can be found in <a href="https://github.com/nodejs/node/blob/master/lib/module.js">lib/module.js</a> in the Node.js repository.</p>
+<p>The most important functions to check here are the <code>_load</code> and <code>_compile</code> functions.</p>
+<h3 id="module._load">Module._load</h3>
+<p>This function checks whether the module is in the cache already - if so, it returns the exports object.</p>
+<p>If the module is native, it calls the <code>NativeModule.require()</code> with the filename and returns the result.</p>
+<p>Otherwise, it creates a new module for the file and saves it to the cache. Then it loads the file contents before returning its exports object.</p>
+<h3 id="module._compile">Module._compile</h3>
+<p>The compile function runs the file contents in the correct scope or sandbox, as well as exposes helper variables like <code>require</code>, <code>module</code> or <code>exports</code> to the file.</p>
+<p><img src="https://blog-assets.risingstack.com/2016/Okt/module-system/node-js-at-scale-how-require-works.png" alt="How require works in Node.js" /> <em>How Require Works - From <a href="https://hackernoon.com/node-js-tc-39-and-modules-a1118aecf95e#.z1plueqbn">James N. Snell</a></em></p>
+<h2 id="how-to-organize-the-code">How to organize the code?</h2>
+<p>In our applications, we need to find the right balance of cohesion and coupling when creating modules. The desirable scenario is to achieve <strong>high cohesion and loose coupling</strong> of the modules.</p>
+<p>A module must be focused only on a single part of the functionality to have high cohesion. Loose coupling means that the modules should not have a global or shared state. They should only communicate by passing parameters, and they are easily replaceable without touching your broader codebase.</p>
+<p>We usually export <strong>named functions</strong> or <strong>constants</strong> in the following way:</p>
+<pre><code>&#39;use strict&#39;
+
+const CONNECTION_LIMIT = 0
+
+function connect () {  }
+
+module.exports = {
+  CONNECTION_LIMIT,
+  connect
+}</code></pre>
+<h2 id="whats-in-your-node_modules">What’s in your node_modules?</h2>
+<p>The <code>node_modules</code> folder is the place where Node.js looks for modules. <strong>npm v2</strong> and <strong>npm v3</strong> install your dependencies differently. You can find out what version of npm you are using by executing:</p>
+<pre><code>npm --version</code></pre>
+<h3 id="npm-v2">npm v2</h3>
+<p>npm 2 installs all dependencies in a nested way, where your primary package dependencies are in their <code>node_modules</code> folder.</p>
+<h3 id="npm-v3">npm v3</h3>
+<p>npm3 attempts to flatten these secondary dependencies and install them in the root <code>node_modules</code> folder. This means that you can’t tell by looking at your <code>node_modules</code> which packages are your explicit or implicit dependencies. It is also possible that the installation order changes your folder structure because npm 3 is non-deterministic in this manner.</p>
+<p>You can make sure that your node_modules directory is always the same by installing packages only from a <code>package.json</code>. In this case, it installs your dependencies in alphabetical order, which also means that you will get the same folder tree. This is important because the modules are cached using their path as the lookup key. Each package can have its own child <code>node_modules</code> folder, which might result in multiple instances of the same package and of the same module.</p>
+<h2 id="how-to-handle-your-modules">How to handle your modules?</h2>
+<p>There are two main ways for wiring modules. One of them is using hard coded dependencies, explicitly loading one module into another using a <code>require</code> call. The other method is to use a dependency injection pattern, where we pass the components as a parameter or we have a global container <em>(known as IoC, or Inversion of Control container)</em>, which centralizes the management of the modules.</p>
+<p>We can allow Node.js to manage the modules life cycle by using hard coded module loading. It organizes your packages in an intuitive way, which makes understanding and debugging easy.</p>
+<p>Dependency Injection is rarely used in a Node.js environment, although it is a useful concept. The DI pattern can result in an improved decoupling of the modules. Instead of explicitly defining dependencies for a module, they are received from the outside. Therefore they can be easily replaced with modules having the same interfaces.</p>
+<p>Let’s see an example for DI modules using the factory pattern:</p>
+<pre><code>class Car {
+  constructor (options) {
+    this.engine = options.engine
+  }
+
+  start () {
+    this.engine.start()
+  }
+}
+
+function create (options) {
+  return new Car(options)
+}
+
+module.exports = create</code></pre>
+<h2 id="the-es2015-module-system">The ES2015 module system</h2>
+<p>As we saw above, the CommonJS module system uses a runtime evaluation of the modules, wrapping them into a function before the execution. The ES2015 modules don’t need to be wrapped since the <code>import</code>/<code>export</code> bindings are created before evaluating the module. This incompatibility is the reason that currently there are no JavaScript runtime supporting the ES modules. There was a lot of discussion about the topic and a <a href="https://github.com/nodejs/node-eps/blob/master/002-es6-modules.md">proposal</a> is in <code>DRAFT</code> state, so hopefully we will have support for it in future Node versions.</p>
+<p>To read an in-depth explanation of the biggest differences between CommonJS and the ESM, read the <a href="https://hackernoon.com/node-js-tc-39-and-modules-a1118aecf95e#.z1plueqbn">following article</a> by James M Snell.</p>
+<h2 id="next-up">Next up</h2>
+<p>I hope this article contained valuable information about the module system and how <code>require</code> works. If you have any questions or insights on the topic, please share them in the comments. In the next chapter of the Node.js at Scale series, we are going to take a deep dive and learn about the <a href="chrome-extension://cjedbglnccaioiolemnfhjncicchinao/node-js-at-scale-understanding-node-js-event-loop/">event loop</a>.</p>
+<p><a href="https://blog.risingstack.com/node-js-at-scale-module-system-commonjs-require/">Source</a></p>
+</body>
+</html>
