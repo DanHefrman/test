@@ -1,26 +1,26 @@
-**Notes**
-=========
+# **Notes**
 
-**Modern Promises with Async and Await**
-----------------------------------------
+## **Modern Promises with Async and Await**
 
-    function walkTheDog() {
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve("happy dog");
-        }, 1000);
-      });
-    }
+```js
+function walkTheDog() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("happy dog");
+    }, 1000);
+  });
+}
 
-    function doChores() {
-      console.log("before walking the dog");
-      walkTheDog().then((res) => {
-        console.log(res);
-        console.log("after walking the dog");
-      });
-      return "done";
-    }
+function doChores() {
+  console.log("before walking the dog");
+  walkTheDog().then((res) => {
+    console.log(res);
+    console.log("after walking the dog");
+  });
+  return "done";
+}
 
-    console.log(doChores());
+console.log(doChores());
+```
 
 > Classic example of promise handling using two functions.
