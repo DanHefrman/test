@@ -69,7 +69,11 @@ localStorage
 -   \`const value = localStorage.getItem('key')\`
 
 
+---
 
+# Local Storage:
+
+---
 ```js
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -93,6 +97,12 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 
 ```
+
+---
+
+# Local Storage:
+
+---
 
 
 ```js
