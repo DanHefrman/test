@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<h1 id="dojowidgets"><span class="citation" data-cites="dojo/widgets"><span class="citation" data-cites="dojo/widgets"><span class="citation" data-cites="dojo/widgets">@dojo/widgets</span></span></span></h1>
+<p><a href="https://travis-ci.org/dojo/widgets"><img src="https://travis-ci.org/dojo/widgets.svg?branch=master" alt="Build Status" /></a> <a href="https://codecov.io/gh/dojo/widgets"><img src="https://codecov.io/gh/dojo/widgets/branch/master/graph/badge.svg" alt="codecov" /></a> <a href="https://badge.fury.io/js/%40dojo%2Fwidgets"><img src="https://badge.fury.io/js/%40dojo%2Fwidgets.svg" alt="npm version" /></a></p>
+<p>A suite of pre-built Dojo widgets, ready to use in your web application. These widgets are built using Dojo’s widget authoring system <span class="citation" data-cites="dojo/framework/core">[(<span class="citation" data-cites="dojo/framework/core"><span class="citation" data-cites="dojo/framework/core">@dojo/framework/core</span></span>)]</span>(https://github.com/dojo/framework/blob/master/src/core/README.md).</p>
+<ul>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#conventions">Conventions</a>
+<ul>
+<li><a href="#icons">Icons</a></li>
+<li><a href="#coding-conventions">Coding conventions</a></li>
+</ul></li>
+<li><a href="#how-do-i-contribute">How Do I Contribute?</a>
+<ul>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#testing">Testing</a></li>
+</ul></li>
+<li><a href="#licensing-information">Licensing Information</a></li>
+</ul>
+<h2 id="usage">Usage</h2>
+<p>To use <code>@dojo/widgets</code> in your project, you will need to install the package:</p>
+<pre><code>npm install @dojo/widgets</code></pre>
+<p>This package contains <em>all</em> of the widgets in this repo.</p>
+<p>All of the widgets are on the same release schedule, that is to say, that we release all widgets at the same time. Minor releases may include new widgets and/or features, whereas patch releases may contain fixes to more than 1 widget.</p>
+<p>To use a widget in your application, you will need to import each widget individually:</p>
+<pre><code>import Button from &#39;@dojo/widgets/button&#39;;</code></pre>
+<p>Each widget module has a default export of the widget itself, as well as named exports for things such as properties specific to the widget:</p>
+<pre><code>import Button, { ButtonProperties } from &#39;@dojo/widgets/button&#39;;</code></pre>
+<p>Because each widget is a separate module, when you create a release build of your application, you will only include the widgets that you have explicitly imported. This allows our <a href="https://github.com/dojo/cli"><code>dojo cli</code></a> build tooling to make sure that the production build of your application only includes the widgets you use and is as small as possible.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li><p>All widgets are supported in all evergreen browsers (Chrome, Edge, Firefox, IE11+, and Safari) as well as popular mobile browsers (Mobile Safari, Chrome on Android).</p></li>
+<li><p>All widgets are designed to be accessible. If custom ARIA semantics are required, widgets have an <code>aria</code> property that may be passed an object with custom <code>aria-*</code> attributes.</p></li>
+<li><p>All widgets are fully themeable. Example themes are available in the <span class="citation" data-cites="dojo/themes">[<span class="citation" data-cites="dojo/themes"><span class="citation" data-cites="dojo/themes">@dojo/themes</span></span>]</span>(https://github.com/dojo/themes) repository.</p></li>
+<li><p>All widgets support internationalization (<code>i18n</code>)</p></li>
+</ul>
+<h2 id="widgets">Widgets</h2>
+<p>Live examples of current widgets are available in the <a href="https://dojo.github.io/examples/widget-showcase/">widget showcase</a>.</p>
+<h3 id="form-widgets">Form widgets</h3>
+<p><a href="src/button/README.md">Button</a></p>
+<p><a href="src/calendar/README.md">Calendar</a></p>
+<p><a href="src/checkbox/README.md">Checkbox/Toggle</a></p>
+<p><a href="src/combobox/README.md">ComboBox</a></p>
+<p><a href="src/label/README.md">Label</a></p>
+<p><a href="src/listbox/README.md">Listbox</a></p>
+<p><a href="src/radio/README.md">Radio</a></p>
+<p><a href="src/range-slider/README.md">RangeSlider</a></p>
+<p><a href="src/select/README.md">Select</a></p>
+<p><a href="src/native-select/README.md">NativeSelect</a></p>
+<p><a href="src/slider/README.md">Slider</a></p>
+<p><a href="src/text-area/README.md">TextArea</a></p>
+<p><a href="src/text-input/README.md">TextInput</a></p>
+<p><a href="src/time-picker/README.md">TimePicker</a></p>
+<h3 id="layout-widgets">Layout widgets</h3>
+<p><a href="src/accordion/README.md">Accordion</a></p>
+<p><a href="src/slide-pane/README.md">SlidePane</a></p>
+<p><a href="src/split-pane/README.md">SplitPane</a></p>
+<p><a href="src/tab-controller/README.md">TabController</a></p>
+<p><a href="src/title-pane/README.md">TitlePane</a></p>
+<h3 id="misc-widgets">Misc widgets</h3>
+<p><a href="src/grid/README.md">Grid</a></p>
+<p><a href="src/dialog/README.md">Dialog</a></p>
+<p><a href="src/global-event/README.md">GlobalEvent</a></p>
+<p><a href="src/icon/README.md">Icon</a></p>
+<p><a href="src/progress/README.md">Progress</a></p>
+<p><a href="src/toolbar/README.md">Toolbar</a></p>
+<p><a href="src/tooltip/README.md">Tooltip</a></p>
+<h2 id="conventions">Conventions</h2>
+<h3 id="eventhandlers">EventHandlers</h3>
+<p>You can register event handlers that get called when the corresponding events occur by passing the handlers into a widget’s <code>properties</code>. The naming convention for event handlers is as follows:</p>
+<ul>
+<li>if the parent of the widget has the power to decide <em>if</em> an event is successful, i.e. can cancel the event, then the child widget will call an event handler in the following format:</li>
+</ul>
+<p><code>onRequest[X]</code>, e.g. for a <code>close</code> event, the event handler called by the child widget must be called <code>onRequestClose</code></p>
+<p>Here the child widget is requesting that the <code>close</code> event take place.</p>
+<ul>
+<li>for events that will occur regardless of child/parent interaction, then the <code>Request</code> naming convention is dropped:</li>
+</ul>
+<p><code>on[X]</code>, e.g. for a <code>dismiss</code> event, the event handler called by the child widget must be called <code>onDismiss</code></p>
+<h3 id="icons">Icons</h3>
+<p>We use <a href="http://fontawesome.io/">font awesome</a> for icons. Where a theme requires specific icons that are not part of the Font Awesome set, then those themes will ship their own icons.</p>
+<p>Icon fonts are generated using <a href="https://icomoon.io/app">IcoMoon</a>. If a new icon is required, it is possible to upload the current <code>dojoSelect.json</code> from <code>src/theme/fonts</code> and then add new icons by selecting from the Font Awesome library. After selecting the new icons from the library, merge them down into the current icon set, then delete the rest of the Font Awesome icons that were added by IcoMoon. After this you can export and download them as a zip. Once downloaded you will also need to unzip them and replace the font files (svg, woff, ttf) in <code>src/theme/fonts</code>. Now download the new selection JSON file from the <code>projects</code> page of IcoMoon and replace the current <code>dojoSelection.json</code> file.</p>
+<p>To make use of the new icons it is necessary to update the <code>icon.m.css</code> file in the theme folder with the new unicode icon like so:</p>
+<pre><code>.newIcon:before {
+    content: &quot;\f123&quot;;
+}</code></pre>
+<p>Where <code>\f123</code> is the unicode character for the new icon. To check the new icon works you can render it in the <code>src/widgets/examples/icon/Basic.tsx</code> to make sure everything renders correctly.</p>
+<p>There is an <a href="src/icon/README.md">icon widget</a> that aids in creating in proper semantics and provides type-checking for the type of icon.</p>
+<h3 id="coding-conventions">Coding conventions</h3>
+<p><code>px vs. em</code> - we specify font sizes in <code>px</code>. When creating a widget, spacing (margin, padding) should be specified using <code>px</code> unless the design calls for proportional spacing, in which case <code>em</code> can be used.</p>
+<h3 id="z-index-layering">Z-index layering</h3>
+<p>Widgets adhere to a basic convention for using specific ranges of z-index values based on function and visual context. This convention is followed in both individual widget CSS and in the Dojo theme styles. These values can be overridden in a custom theme if necessary since no <code>z-index</code> values are set in fixed styles.</p>
+<p>The range definitions are as follows:</p>
+<ul>
+<li><strong>0 - 100</strong>: Any specific component layering, e.g. a caption over an image.</li>
+<li><strong>100 - 200</strong>: Fixed position elements. Fixed headers and footers are clear examples of fixed page elements, but it could also include a drag-and-drop element in a drag state.</li>
+<li><strong>200 - 300</strong>: Partial-page overlays such as Slide panes.</li>
+<li><strong>300 - 400</strong>: Full-page overlays such as Dialogs.</li>
+<li><strong>400 - 500</strong>: Body level popups, tooltips and alerts.</li>
+</ul>
+<h2 id="how-to-customize-a-widget">How to customize a widget</h2>
+<p>There are many ways in which you can customize the behavior and appearance of Dojo widgets. See the <a href="https://github.com/dojo/framework/blob/master/src/core/README.md"><code>core</code></a> README for examples of how to customize the theme or a specific CSS class of a widget.</p>
+<p>Or can you write your own widget that extends an official widget.</p>
+<h3 id="extending-widgets">Extending widgets</h3>
+<p>Because all Dojo widgets are Classes, you can simply extend the Class to add or change its behavior.</p>
+<pre><code>export class MyWidget extends Button {
+...
+}</code></pre>
+<p>Dojo widgets provide standard extension points to allow you to customize their behavior. For more details, please refer to the <a href="https://github.com/dojo/framework/blob/master/src/core/README.md#decorator-lifecycle-hooks">widget authoring system</a>.</p>
+<p>Individual widgets also provide certain types of extension points where applicable:</p>
+<ul>
+<li><code>render*</code>: Large render functions are split up into multiple smaller pieces that can be more easily overridden to create custom vdom.</li>
+<li><code>getModifierClasses</code>: Modify the array of conditionally applied classes like <code>css.selected</code> or <code>css.disabled</code>. Not all widgets include these extension points, and some have additional overridable methods.</li>
+</ul>
+<h2 id="widget-variants">Widget Variants</h2>
+<p>When writing a widget variant, ie. <code>RaisedButton</code>, you should ensure that you use <code>theme.compose</code> from the widget <a href="https://github.com/dojo/widgets/blob/master/src/middleware/theme.ts">theme middleware</a>. This allows your variant to interit css from it’s base widget whilst allowing it to be themed separately.</p>
+<h2 id="how-do-i-contribute">How do I contribute?</h2>
+<p>We appreciate your interest! Please see the <a href="https://github.com/dojo/meta#readme">Dojo Meta Repository</a> for the Contributing Guidelines and Style Guide.</p>
+<p>Note that all changes to widgets should work with the <a href="https://github.com/dojo/themes/">dojo theme</a>. To test this start the example page (instructions at <a href="#installation">Installation</a> section) and select the dojo option at the top of the page.</p>
+<h3 id="installation">Installation</h3>
+<p>To start working with this package, clone the repository and run <code>npm install</code>.</p>
+<p>In order to build the project run <code>npm run build</code>.</p>
+<h3 id="testing">Testing</h3>
+<p>Test cases MUST be written using <a href="https://theintern.github.io">Intern</a> using the Object test interface and Assert assertion interface.</p>
+<p>90% branch coverage MUST be provided for all code submitted to this repository, as reported by istanbul’s combined coverage results for all supported platforms.</p>
+<p>To test locally in node run:</p>
+<p><code>npm run test</code></p>
+<h3 id="widget-examples">Widget Examples</h3>
+<p>The Dojo widget examples application is located in <code>src/examples</code>.</p>
+<p>To add a new example, create a directory that matches the directory name of the widget e.g. <code>src/examples/src/widgets/text-input</code>. Each widget <em>must</em> have an example called <code>Basic.tsx</code> and an entry in the <code>src/examples/src/config.ts</code> keyed by the name of the widget directory. The widget example should import widgets from <code>@dojo/widgets</code> and not via a relative import. It is very important that the config entry name (ie. <code>text-input</code>) matches the folder name / css file name of the widget otherwise the doc build will fail.</p>
+<pre><code>{
+    &#39;text-input: {
+        filename: &#39;index&#39;,
+        overview: {
+            example: {
+                module: BasicCheckbox,
+                filename: &#39;Basic&#39;
+            }
+        },
+        examples: [
+            {
+                title: &#39;The example title&#39;,
+                description: &#39;Optional example description&#39;,
+                module: OtherCheckbox,
+                filename: &#39;Other&#39;
+            }
+        ]
+    }
+}</code></pre>
+<ul>
+<li>filename: The name of the widget module, defaults to <code>index</code></li>
+<li>overview: The configuration for the basic example including the imported Basic module and the example filename (has to be <code>'Basic'</code>)</li>
+<li>examples: Additional examples for the widget, an array of configuration that specifies the title, description, module and example filename.</li>
+</ul>
+<p>To view the examples locally run <code>npm run dev</code> in the root directory and navigate to http://localhost:9999, this starts the examples in watch mode and should update widget module are changed. Note that you do not have to install dependencies in the <code>src/examples</code> project, this will result in an error.</p>
+<h3 id="widget-documentation">Widget Documentation</h3>
+<p>The widget examples and documentation is automatically generated by the <code>examples</code> application when built with the <code>docs</code> feature flag set to <code>true</code>. The site relies on a few conventions in order to be able do this:</p>
+<ol type="1">
+<li>A widgets properties interface must be the name of the widget with a suffix of <code>Properties</code>, e.g. for <code>text-input</code> the properties interface would be <code>TextInputProperties</code></li>
+<li>The widget properties must be exported to ensure they are visible in the generated widget documentation.</li>
+<li>All themeable styles must be added to the corresponding theme css module in <code>src/theme</code> and match the name of the widget directory e.g. <code>text-input.m.css</code></li>
+<li>For properties description docs must be included inline above each property, e.g.</li>
+<li><p>All widgets must have a <code>README.md</code> file in their root directory.</p>
+<p>interface ExampleProperties { /** This is the description for foo */ foo: string; /** This is the description for bar */ bar: string; }</p></li>
+</ol>
+<p>To build the documentation run <code>npm run build:docs</code> and to build and serve the documentation in watch mode run <code>npm run build:docs:dev</code></p>
+<h3 id="running-the-examples-on-codesandbox">Running the examples on Codesandbox</h3>
+<p>The examples also run on Codesanbox, to run the examples on the master branch go to https://codesandbox.io/s/github/dojo/widgets/tree/master/src/examples. To run the examples for a specific user/branch/tag adjust the url as required.</p>
+<h2 id="licensing-information">Licensing information</h2>
+<p>© 2018 <a href="https://js.foundation/">JS Foundation</a>. <a href="http://opensource.org/licenses/BSD-3-Clause">New BSD</a> license.</p>
+</body>
+</html>

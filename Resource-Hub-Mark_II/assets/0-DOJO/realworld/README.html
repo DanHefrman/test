@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<h1 id="realworld-example-app"><img src="logo.png" width="48" /> RealWorld Example App</h1>
+<blockquote>
+<h3 id="dojo-codebase-containing-real-world-examples-crud-auth-advanced-patterns-etc.-that-adheres-to-the-realworld-spec-and-api.">Dojo codebase containing real-world examples (CRUD, auth, advanced patterns, etc.) that adheres to the <a href="https://github.com/gothinkster/realworld">RealWorld</a> spec and API.</h3>
+</blockquote>
+<h3 id="demo"><a href="https://dojo.github.io/examples/realworld/">Demo</a></h3>
+<p>This codebase was created to demonstrate an application built with Dojo.</p>
+<ul>
+<li><strong>Automatic Code Splitting</strong>: The application is split into bundles by top level routes configured in the <code>src/routes.ts</code>.</li>
+<li><strong>Build Time Rendering</strong>: Configured to build the home page at build time which injects the applications HTML into the index.html.</li>
+<li><strong>Progress Web Application</strong>: Build configuration for PWA.</li>
+<li><strong>State Management</strong>: Uses <code>@dojo/framework/stores</code> for state management and managing fetching, creating, and inserting CRUD data.</li>
+<li><strong>Routing</strong>: Uses <code>@dojo/framework/routing</code> to provide full application routing.</li>
+<li><strong>Lazy Loading (Code Splitting)</strong>: Automatically code splits for widgets/outlets or containers that are defined in an application registry using the dynamic <code>import</code> syntax.</li>
+<li><strong>Authentication</strong>: Demonstrates handling authentication within a Dojo application.</li>
+<li><strong>Pagination</strong>: Includes pagination for displaying larger sets of data.</li>
+</ul>
+<p>For more information on how this works with other front-ends &amp; back-ends, head over to the <a href="https://github.com/gothinkster/realworld">RealWorld</a> repository.</p>
+<h1 id="how-it-works">How it works</h1>
+<p>Dojo RealWorld using <span class="citation" data-cites="dojo/widget-core"><span class="citation" data-cites="dojo/widget-core"><span class="citation" data-cites="dojo/widget-core">@dojo/widget-core</span></span></span>, <span class="citation" data-cites="dojo/routing"><span class="citation" data-cites="dojo/routing"><span class="citation" data-cites="dojo/routing">@dojo/routing</span></span></span> and <span class="citation" data-cites="dojo/stores"><span class="citation" data-cites="dojo/stores"><span class="citation" data-cites="dojo/stores">@dojo/stores</span></span></span>.</p>
+<p>For more information on Dojo visit <a href="https://dojo.io">dojo.io</a></p>
+<h1 id="getting-started">Getting started</h1>
+<p>View the <a href="https://dojo.github.io/examples/realworld/">Dojo RealWorld live demo</a></p>
+<p>To get the frontend running locally:</p>
+<ul>
+<li>Clone this repository</li>
+<li><code>npm install</code> to install all required dependencies</li>
+<li><code>npm run dev</code> to build the application with watch and start a local server (<a href="http:localhost:9999" class="uri">http:localhost:9999</a>)</li>
+</ul>
+<p>Local web server will use port 9999.</p>
+<p>For a production build of the application:</p>
+<ul>
+<li><code>npm run build</code> to build the output into the <code>output/dist</code> directory.</li>
+</ul>
+<p>To run the tests run <code>npm test</code></p>
+<h2 id="licensing-information">Licensing Information</h2>
+<p>The Dojo-specific portions of this example are © 2018 <a href="https://js.foundation/">JS Foundation</a>. <a href="http://opensource.org/licenses/BSD-3-Clause">New BSD</a> license.</p>
+</body>
+</html>

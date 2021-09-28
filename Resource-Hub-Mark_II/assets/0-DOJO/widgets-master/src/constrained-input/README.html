@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<h1 id="dojowidgetsconstrained-input"><span class="citation" data-cites="dojo/widgets/constrained-input"><span class="citation" data-cites="dojo/widgets/constrained-input"><span class="citation" data-cites="dojo/widgets/constrained-input">@dojo/widgets/constrained-input</span></span></span></h1>
+<p>Dojo’s <code>ConstrainedInput</code> component creates a text input that follows certain pre-defined validation constraints. This can be used to quickly create an input that meets certain minimum standards like a username or password input.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Handles validation state / messaging internally so the consumer does not have to</li>
+<li>Easily validates against a set of predefined rules</li>
+</ul>
+<h2 id="validation-rules">Validation Rules</h2>
+<p>A number of validation options exist for validating common username / password scenarios.</p>
+<table style="width:99%;">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 78%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>
+Property
+</th>
+<th>
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>
+<code>length.min</code>
+</td>
+<td>
+The input value must be at least <code>min</code> characters long.
+</td>
+</tr>
+<tr class="even">
+<td>
+<code>length.max</code>
+</td>
+<td>
+The input value cannot be longer than <code>max</code> characters.
+</td>
+</tr>
+<tr class="odd">
+<td>
+<code>contains.uppercase</code>
+</td>
+<td>
+The input value must contain at least <code>uppercase</code> number of uppercase characters.
+</td>
+</tr>
+<tr class="even">
+<td>
+<code>contains.numbers</code>
+</td>
+<td>
+The input value must contain at least <code>numbers</code> number of numeric characters.
+</td>
+</tr>
+<tr class="odd">
+<td>
+<code>contains.specialCharacters</code>
+</td>
+<td>
+The input value must contain at least <code>specialCharacters</code> number of special characters.
+</td>
+</tr>
+<tr class="even">
+<td>
+<code>contains.atLeast</code>
+</td>
+<td>
+The input value must match <code>atLeast</code> number of the <code>uppercase</code>, <code>numbers</code>, and <code>specialCharacters</code> rules.
+</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<h1 id="infinite-scrolling-demo">Infinite Scrolling Demo</h1>
+<p>A demo implementation of an infinite scrolling list, using the <code>Intersection</code> meta.</p>
+<h2 id="usage">Usage</h2>
+<p>To use <code>intersection-observer</code>, clone the <code>examples</code> repository and install the npm dependencies:</p>
+<pre><code>git clone https://github.com/dojo/examples
+cd examples/intersection-observer
+npm install</code></pre>
+<p>To run the example, simply run the dojo build.</p>
+<pre><code>dojo build</code></pre>
+<p>To watch and serve the application source, then run the build with the <code>-w</code> command.</p>
+<pre><code>dojo build -w -s</code></pre>
+<h2 id="whats-going-on">What’s Going On?</h2>
+<p>The <code>InfiniteList</code> widget uses the <a href="https://github.com/dojo/widget-core#intersection">Intersection meta</a> to determine when its bottom element is in the viewport. If it is, then the bottom of the list is visible and more content needs to be loaded.</p>
+<h2 id="how-do-i-contribute">How do I contribute?</h2>
+<p>We appreciate your interest! Please see the <a href="https://github.com/dojo/meta#readme">Dojo Meta Repository</a> for the Contributing Guidelines and Style Guide.</p>
+<h3 id="installation">Installation</h3>
+<p>To start working with this package, clone the repository and run <code>npm install</code>.</p>
+<p>In order to build the project run <code>npm run build</code>.</p>
+<h2 id="licensing-information">Licensing Information</h2>
+<p>© 2018 <a href="https://js.foundation/">JS Foundation</a>. <a href="http://opensource.org/licenses/BSD-3-Clause">New BSD</a> license.</p>
+</body>
+</html>

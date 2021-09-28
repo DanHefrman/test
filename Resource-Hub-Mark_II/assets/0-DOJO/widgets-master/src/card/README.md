@@ -1,6 +1,7 @@
-# @dojo/widgets/card
+<span class="citation" data-cites="dojo/widgets/card"><span class="citation" data-cites="dojo/widgets/card">@dojo/widgets/card</span></span>
+============================================================================================================================================
 
-Dojo's `Card` widget provides a simple container for content and actions with a similar theme.
+Dojo’s `Card` widget provides a simple container for content and actions with a similar theme.
 
 ### Features
 

@@ -1,6 +1,7 @@
-# @dojo/widgets/avatar
+<span class="citation" data-cites="dojo/widgets/avatar"><span class="citation" data-cites="dojo/widgets/avatar">@dojo/widgets/avatar</span></span>
+==================================================================================================================================================
 
-Dojo's `Avatar` widget provides a simple means for displaying an image or text avatar.
+Dojo’s `Avatar` widget provides a simple means for displaying an image or text avatar.
 
 ### Features
 

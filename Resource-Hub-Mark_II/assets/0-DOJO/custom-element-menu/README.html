@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<h1 id="dojo-custom-element-menu-demo">Dojo Custom Element Menu Demo</h1>
+<p>Implementation of a basic menu widget that demonstrates using as custom elements against standard Dojo widgets.</p>
+<ul>
+<li><a href="#pre-requisites">Pre-requisites</a></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#how-do-i-contribute">How do I contribute?</a>
+<ul>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#testing">Testing</a></li>
+</ul></li>
+<li><a href="#licensing-information">Licensing information</a></li>
+</ul>
+<h2 id="pre-requisites">Pre-requisites</h2>
+<p><code>@dojo/cli</code> must be installed globally:</p>
+<pre><code>npm install @dojo/cli -g</code></pre>
+<h2 id="usage">Usage</h2>
+<p>To use the <code>custom-element-menu</code>, clone the <code>examples</code> repository and install the npm dependencies:</p>
+<pre><code>git clone https://github.com/dojo/examples
+cd examples/custom-element-menu
+npm install</code></pre>
+<p>To run the application simply run the dojo build.</p>
+<pre><code>npm run build</code></pre>
+<p>Open the <code>dist</code> directory using a local webserver.</p>
+<h2 id="features">Features</h2>
+<p>This package demonstrates how to use Dojo widgets as a custom element.</p>
+<p>Notice <code>src/widgets/createMenuElement.ts</code> and <code>src/widgets/createMenuItemElement.ts</code> describe the custom elements. To build the custom elements, the <code>npm run build</code> command above first runs <code>dojo build</code> and then</p>
+<pre><code>dojo build --element=src/widgets/createMenuItemElement.ts
+dojo build --element=src/widgets/createMenuElement.ts</code></pre>
+<p>Those CLI build commands use webpack to create bundles in the <code>dist</code> directory for each custom element. To use those custom elements in your own HTML page, import the custom elements’ HTML files:</p>
+<pre><code>&lt;link rel=&quot;import&quot; href=&quot;./dist/menu/menu.html&quot; /&gt;
+&lt;link rel=&quot;import&quot; href=&quot;./dist/menu-item/menu-item.html&quot; /&gt;</code></pre>
+<h2 id="how-do-i-contribute">How do I contribute?</h2>
+<p>We appreciate your interest! Please see the <a href="https://github.com/dojo/meta#readme">Dojo Meta Repository</a> for the Contributing Guidelines and Style Guide.</p>
+<h3 id="installation">Installation</h3>
+<p>To start working with this package, clone the repository and run <code>npm install</code>.</p>
+<p>In order to build the project run <code>dojo build</code>.</p>
+<h3 id="testing">Testing</h3>
+<p>Test cases MUST be written using <a href="https://theintern.github.io">Intern</a> using the Object test interface and Assert assertion interface.</p>
+<p>You can test custom element menu locally using the <a href="https://github.com/dojo/cli-test-intern"><code>@dojo/cli-test-intern</code></a> command:</p>
+<pre><code>dojo test -a</code></pre>
+<h2 id="licensing-information">Licensing Information</h2>
+<p>© 2018 <a href="https://js.foundation/">JS Foundation</a>. <a href="http://opensource.org/licenses/BSD-3-Clause">New BSD</a> license.</p>
+</body>
+</html>
