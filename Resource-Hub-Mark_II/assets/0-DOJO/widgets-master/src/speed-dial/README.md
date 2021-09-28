@@ -1,5 +1,5 @@
-<span class="citation" data-cites="dojo/widgets/speed-dial">@dojo/widgets/speed-dial</span> widget
-==================================================================================================
+<span class="citation" data-cites="dojo/widgets/speed-dial"><span class="citation" data-cites="dojo/widgets/speed-dial">@dojo/widgets/speed-dial</span></span> widget
+=====================================================================================================================================================================
 
 Dojo’s `SpeedDial` widget provides a way to display a small set of related actions.
 

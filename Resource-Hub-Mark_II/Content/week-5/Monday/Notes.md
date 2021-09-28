@@ -150,11 +150,7 @@
 
 -   There is a strong option `npm audit fix --force` that will fix your package with a major version - which might break your code - use with caution!
 
-    {
-      "scripts": {
-        "start": "node index.js"
-      }
-    }
+    { “scripts”: { “start”: “node index.js” } }
 
 -   npm scripts are defined using the **scripts** field in the package.json file.
     -   we can run it by using `npm start`.

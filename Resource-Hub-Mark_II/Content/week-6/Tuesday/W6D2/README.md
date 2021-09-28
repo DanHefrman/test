@@ -22,29 +22,18 @@ Promise Syntax
 
 -   create a `new Promise`
 
-    const myPromise = new Promise((resolve, reject) => {
-      // resolve() // invoking resolve will change state from pending to resolved
-      // reject() // invoking reject will change state from pending to rejected
-    });
+    const myPromise = new Promise((resolve, reject) =&gt; { // resolve() // invoking resolve will change state from pending to resolved // reject() // invoking reject will change state from pending to rejected });
 
 -   `.then` is an instance method for a `Promise`
+
     -   first argument is expected to be a callback function that will be invoked when the promise is resolved, return value is passed into the next `.then`
     -   second argument is expected to be a callback function that will be invoked when the promise is rejected
 
-    myPromise
-      .then((resolveArg) => {
-        // resolveArg is the argument that gets passed into the resolve function in the promise
-        // executed when promise is resolved
-      }, (rejectArg) => {
-        // rejectArg is the argument that gets passed into the reject function in the promise
-        // executed when promise is rejected
-      });
+    myPromise .then((resolveArg) =&gt; { // resolveArg is the argument that gets passed into the resolve function in the promise // executed when promise is resolved }, (rejectArg) =&gt; { // rejectArg is the argument that gets passed into the reject function in the promise // executed when promise is rejected });
 
 -   `.then` can be chained on a `Promise` that will be executed one right after the other
 
-    myPromise
-      .then(() => 'hello world!')
-      .then(() => 'after hello world');
+    myPromise .then(() =&gt; ‘hello world!’) .then(() =&gt; ‘after hello world’);
 
 -   `.catch` is an instance method on a `Promise` to catch errors on any part of the promise or the `.then` chain
     -   argument passed in is expected to be a callback function

@@ -1,5 +1,5 @@
-<span class="citation" data-cites="dojo/widgets/text-input">@dojo/widgets/text-input</span>
-===========================================================================================
+<span class="citation" data-cites="dojo/widgets/text-input"><span class="citation" data-cites="dojo/widgets/text-input">@dojo/widgets/text-input</span></span>
+==============================================================================================================================================================
 
 Dojo’s `TextInput` widget provides a basic text input widget with an optional label.
 

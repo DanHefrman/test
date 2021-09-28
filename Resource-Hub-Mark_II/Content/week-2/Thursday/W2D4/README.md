@@ -1,31 +1,34 @@
-# Week 2 - Day 4 - Scope, Closures, Context, Arrow Functions
+Week 2 - Day 4 - Scope, Closures, Context, Arrow Functions
+==========================================================
 
-## 0) Scope
-See [variablesAndScope1.js] for the scope material we looked at today
+0) Scope
+--------
 
-## 1) Closure
-- [closureLecture.js]
-- [closureCodeDemo.js]
+See [variablesAndScope1.js](./variablesAndScope1.js) for the scope material we looked at today
 
-## 2) Context
-- [contextLecture.js]
-- [contextCodeDemo.js]
+1) Closure
+----------
 
-## 3) Fat Arrow Functions
-- [arrow_functions.js]
+-   [closureLecture.js](./closureLecture.js)
+-   [closureCodeDemo.js](./closureCodeDemo.js)
 
-## 4) EOD
-- [eod.js]
+2) Context
+----------
 
-## [Functions Cheat Sheet]
-- [functions_cheatsheet.md]
+-   [contextLecture.js](./contextLecture.js)
+-   [contextCodeDemo.js](./contextCodeDemo.js)
 
-[variablesAndScope1.js]: ./variablesAndScope1.js
-[closureLecture.js]: ./closureLecture.js
-[closureCodeDemo.js]: ./closureCodeDemo.js
-[contextLecture.js]: ./contextLecture.js
-[contextCodeDemo.js]: ./contextCodeDemo.js
-[arrow_functions.js]: ./arrow_functions.js
-[eod.js]: ./eod.js
-[functions_cheatsheet.md]: ./functions_cheatsheet.md
-[Functions Cheat Sheet]: ./functions_cheatsheet.md
+3) Fat Arrow Functions
+----------------------
+
+-   [arrow\_functions.js](./arrow_functions.js)
+
+4) EOD
+------
+
+-   [eod.js](./eod.js)
+
+[Functions Cheat Sheet](./functions_cheatsheet.md)
+--------------------------------------------------
+
+-   [functions\_cheatsheet.md](./functions_cheatsheet.md)

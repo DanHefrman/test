@@ -6,51 +6,30 @@ Big-O
 
 1.  Order the common complexity classes according to their growth rate
 
--   -   -   -   -   -   -   
+------------------------------------------------------------------------
 
 1.  Identify the complexity classes of common sort methods | Sort Name | Time Complexity | Space Complexity | |:——— |:—————— |:—————– | | bubble | O(\_\_) | O(\_) | | selection | O(\_\_) | O(\_) | | insertion | O(\_\_) | O(\_) | | merge | O(\_\_) | O(\_) | | quick | O(\_\_) | O(\_) |
 
 2.  Identify complexity classes of code
 
-    function example1(n) {
-      for (let i = 1; i <= 20; i++) {
-        console.log(i);
-      }
-    }
+    function example1(n) { for (let i = 1; i &lt;= 20; i++) { console.log(i); } }
 
-    function example2(n) {
-      for (let i = 1; i <= n; i++) {
-        for (let j = 1; j <= n; j++) {
-          console.log(`${i}, ${j}`);
-        }
-      }
-    }
+    function example2(n) { for (let i = 1; i &lt;= n; i++) { for (let j = 1; j &lt;= n; j++) { console.log(`${i}, ${j}`); } } }
 
-    function example3(n) {
-      console.log(n);
-      if (n === 1) return;
-      example3(n - 1);
-      example3(n - 1);
-    }
+    function example3(n) { console.log(n); if (n === 1) return; example3(n - 1); example3(n - 1); }
 
 Memoization and Tabulation
 --------------------------
 
 1.  Apply memoization to recursive problems to make them less than polynomial time.
 
-    function fib(n) {
-      if (n === 1 || n === 2) return 1;
-      return fib(n - 1) + fib(n - 2);
-    }
+    function fib(n) { if (n === 1 || n === 2) return 1; return fib(n - 1) + fib(n - 2); }
 
     function fibMemo() {}
 
-1.  Apply tabulation to iterative problems to make them less than polynomial time.
+2.  Apply tabulation to iterative problems to make them less than polynomial time.
 
-    function fib(n) {
-      if (n === 1 || n === 2) return 1;
-      return fib(n - 1) + fib(n - 2);
-    }
+    function fib(n) { if (n === 1 || n === 2) return 1; return fib(n - 1) + fib(n - 2); }
 
     function fibTab() {}
 
@@ -74,7 +53,7 @@ Sorting Algorithms
 -   Code:
 
     function selectionSort(array) {
-      
+
     }
 
 1.  Explain the complexity of and write a function that performs insertion sort on an array of numbers.
@@ -84,7 +63,7 @@ Sorting Algorithms
 -   Code:
 
     function insertionSort(array) {
-      
+
     }
 
 1.  Explain the complexity of and write a function that performs merge sort on an array of numbers.
@@ -94,7 +73,7 @@ Sorting Algorithms
 -   Code:
 
     function mergeSort(array) {
-      
+
     }
 
 1.  Explain the complexity of and write a function that performs quick sort on an array of numbers.
@@ -104,7 +83,7 @@ Sorting Algorithms
 -   Code:
 
     function quickSort(array) {
-      
+
     }
 
 1.  Explain the complexity of and write a function that performs a binary search on a sorted array of numbers.
@@ -114,7 +93,7 @@ Sorting Algorithms
 -   Code:
 
     function bindarySearch(array) {
-      
+
     }
 
 Lists, Stacks, and Queues

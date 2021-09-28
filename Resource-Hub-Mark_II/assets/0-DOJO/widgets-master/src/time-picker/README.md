@@ -1,11 +1,13 @@
-# @dojo/widgets/time-picker
+<span class="citation" data-cites="dojo/widgets/time-picker">@dojo/widgets/time-picker</span>
+=============================================================================================
 
-Dojo's `TimePicker` widget provides a form control that allows users to manually enter a time or select a valid time from a dropdown of options.
+Dojo’s `TimePicker` widget provides a form control that allows users to manually enter a time or select a valid time from a dropdown of options.
 
-## Features
+Features
+--------
 
-- Automatically generates all possible valid options based on the starting time, ending time, and step
-- Display times in 24-hour or 12-hour format.
+-   Automatically generates all possible valid options based on the starting time, ending time, and step
+-   Display times in 24-hour or 12-hour format.
 
 ### Keyboard Usage
 

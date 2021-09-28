@@ -1,5 +1,5 @@
-<span class="citation" data-cites="dojo/widgets/select"><span class="citation" data-cites="dojo/widgets/select">@dojo/widgets/select</span></span>
-==================================================================================================================================================
+<span class="citation" data-cites="dojo/widgets/select"><span class="citation" data-cites="dojo/widgets/select"><span class="citation" data-cites="dojo/widgets/select">@dojo/widgets/select</span></span></span>
+=================================================================================================================================================================================================================
 
 Dojo’s `Select` provides a dropdown menu form control using either the native `<select>` element or a fully custom component. The custom version uses the `Listbox` widget as its list of options.
 

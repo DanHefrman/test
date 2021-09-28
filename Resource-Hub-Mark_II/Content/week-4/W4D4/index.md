@@ -1,47 +1,47 @@
-# JSON and `localStorage`
+JSON and `localStorage`
+=======================
 
-- **serialize** - converting data into a string (or some other kind of value like "binary") so your program can send it to another computer
+-   **serialize** - converting data into a string (or some other kind of value like “binary”) so your program can send it to another computer
 
-- **deserialize** - converting text (or something another computer has sent to your program) and turn it into data
+-   **deserialize** - converting text (or something another computer has sent to your program) and turn it into data
 
-- `JSON.stringify(value)` will turn the value passed into it into a string.
-- `JSON.parse(str)` will turn a JSON-formatted string into a JavaScript object.
+-   `JSON.stringify(value)` will turn the value passed into it into a string.
+-   `JSON.parse(str)` will turn a JSON-formatted string into a JavaScript object.
 
-- **Web Storage API** - has a much larger storage limit than cookies, making it a useful place to store data on the client side
+-   **Web Storage API** - has a much larger storage limit than cookies, making it a useful place to store data on the client side
 
-- `sessionStorage` - persists for the duration of the session and ends when a user closes the browser
+-   `sessionStorage` - persists for the duration of the session and ends when a user closes the browser
 
-- `localStorage` - persists past the current session and has no expiration date
-  - `localStorage.setItem('key', value)`
-  - `const value = localStorage.getItem('key')`
+-   `localStorage` - persists past the current session and has no expiration date
+    -   `localStorage.setItem('key', value)`
+    -   `const value = localStorage.getItem('key')`
 
-## JSON Learning Objectives
+JSON Learning Objectives
+------------------------
 
 The objective of this lesson is to familiarize you with the JSON format and how to serialize to and deserialize from that format.
 
 The learning objectives for this lesson are that you can:
 
-1. Identify and generate valid JSON-formatted strings
-2. Use `JSON.parse` to deserialize JSON-formatted strings
-3. Use `JSON.stringify` to serialize JavaScript objects
-4. Correctly identify the definition of "deserialize"
-5. Correctly identify the definition of "serialize"
+1.  Identify and generate valid JSON-formatted strings
+2.  Use `JSON.parse` to deserialize JSON-formatted strings
+3.  Use `JSON.stringify` to serialize JavaScript objects
+4.  Correctly identify the definition of “deserialize”
+5.  Correctly identify the definition of “serialize”
 
 This lesson is relevant because JSON is the lingua franca of data interchange.
 
-[JSON Demo]
+[JSON Demo](./json_demo.js)
 
-## `localStorage` Learning Objectives
+`localStorage` Learning Objectives
+----------------------------------
 
 Below is a complete list of the terminal learning objectives for this lesson. When you complete this lesson, you should be able to perform each of the following objectives. These objectives capture how you may be evaluated on the assessment for this lesson.
 
-1. Write JavaScript to store the value "I <3 falafel" with the key "eatz" in the browser's local storage.
-2. Write JavaScript to read the value stored in local storage for the key "paper-trail".
+1.  Write JavaScript to store the value “I &lt;3 falafel” with the key “eatz” in the browser’s local storage.
+2.  Write JavaScript to read the value stored in local storage for the key “paper-trail”.
 
-[`localStorage` Demo]
-
-[JSON Demo]: ./json_demo.js
-[`localStorage` Demo]: ./localStorage_demo.js
+[`localStorage` Demo](./localStorage_demo.js)
 
 JSON and localStorage Demo
 ==========================
@@ -49,7 +49,7 @@ JSON and localStorage Demo
 JSON
 ----
 
--   **serialize** - converting data into a string (or some other kind of value like "binary") so your program can send it to another computer
+-   **serialize** - converting data into a string (or some other kind of value like “binary”) so your program can send it to another computer
 -   **deserialize** - converting text (or something another computer has sent to your program) and turn it into data
 
 localStorage
@@ -65,79 +65,55 @@ localStorage
 
 \`localStorage\` - persists past the current session and has no expiration date
 
--   \`localStorage.setItem('key', value)\`
--   \`const value = localStorage.getItem('key')\`
+-   \`localStorage.setItem(‘key’, value)\`
+-   \`const value = localStorage.getItem(‘key’)\`
 
+------------------------------------------------------------------------
 
----
+JSON
+====
 
-# JSON
+------------------------------------------------------------------------
 
----
+    window.addEventListener('DOMContentLoaded', () => {
+      debugger
+      const data = {
+        Angela: "\"instructor\"",
+        Tadeo: "student",
+        ages: [40, 35]
+      }
+      
+      const jsonString = JSON.stringify(data);
+      
+      console.log(jsonString)
 
+      const stringifiedAgain = JSON.stringify(jsonString);
+      console.log(stringifiedAgain);
+      
+      const convertedData = JSON.parse(jsonString);
+      
+      debugger;
+    })
 
-```js
+------------------------------------------------------------------------
 
-window.addEventListener('DOMContentLoaded', () => {
-  debugger
-  const data = {
-    Angela: "\"instructor\"",
-    Tadeo: "student",
-    ages: [40, 35]
-  }
-  
-  const jsonString = JSON.stringify(data);
-  
-  console.log(jsonString)
+Local Storage:
+==============
 
-  const stringifiedAgain = JSON.stringify(jsonString);
-  console.log(stringifiedAgain);
-  
-  const convertedData = JSON.parse(jsonString);
-  
-  debugger;
-})
+------------------------------------------------------------------------
 
-```
+    const data = {
 
----
+    };
 
-# Local Storage:
+    data.key = ["value"]
 
----
+    // console.log(data.key);
+    // console.log(data["key"]);
 
+    localStorage.setItem('key', JSON.stringify({
+      "key1": "value",
+      "key2": "value",
+    }));
 
-```js
-const data = {
-
-};
-
-data.key = ["value"]
-
-// console.log(data.key);
-// console.log(data["key"]);
-
-localStorage.setItem('key', JSON.stringify({
-  "key1": "value",
-  "key2": "value",
-}));
-
-console.log(JSON.parse(localStorage.getItem('key')));
-
-```
-
-
-
-
-
-find ./ -iname "*.md" -type f -exec sh -c 'pandoc --standalone "${0}" -o "${0%.md}.html"' {} \;
-
-
-
-find ./ -iname "*.html" -type f -exec sh -c 'pandoc --wrap=none --from html --to markdown_strict "${0}" -o "${0%.html}.md"' {} \;
-
-
-find ./ -iname "*.docx" -type f -exec sh -c 'pandoc "${0}" -o "${0%.docx}.md"' {} \;
-
-
-find . -name '*.rst' -exec pandoc {} -f rst -t markdown -o {}.md \;
+    console.log(JSON.parse(localStorage.getItem('key')));

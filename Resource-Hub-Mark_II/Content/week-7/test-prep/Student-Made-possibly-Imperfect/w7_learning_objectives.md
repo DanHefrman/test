@@ -23,141 +23,46 @@ Big O Learning Objectives
 
 1.  constant time: `O(1)`
 
-    // constant time example
-    // this function has a constant number of operations,
-    // regardless of the size of n
-    // even if there were a million operations, it would still be
-    // linear time as long as the number of operations stayed the
-    // same for any n
-    function constantTime(n) {
-        n += 5;
-        n -= 2;
-        return n;
-    }
+    // constant time example // this function has a constant number of operations, // regardless of the size of n // even if there were a million operations, it would still be // linear time as long as the number of operations stayed the // same for any n function constantTime(n) { n += 5; n -= 2; return n; }
 
-1.  log: `O(log(n))`
+2.  log: `O(log(n))`
 
-    // log time example
-    // this iterative function is log time because the size of our
-    // iterative step doubles on each loop.
-    function logTime(n) {
-        let i = 1;
-        let arr = [];
-        while (i < n) {
-            arr.push(i);
-            i *= 2;
-        }
-    }
-    // in the recursive example, with each call to our function,
-    // the size of the input is halved
-    function logTimeRecursive (n) {
-        // base case
-        if (n <= 1) return;
-        //recursive step
-        logTimeRecursive(n/2)
-    }
+    // log time example // this iterative function is log time because the size of our // iterative step doubles on each loop. function logTime(n) { let i = 1; let arr = \[\]; while (i &lt; n) { arr.push(i); i \*= 2; } } // in the recursive example, with each call to our function, // the size of the input is halved function logTimeRecursive (n) { // base case if (n &lt;= 1) return; //recursive step logTimeRecursive(n/2) }
 
-1.  linear: `O(n)`
+3.  linear: `O(n)`
 
-    // for linear functions (both recursive and iterative)
-    // the step size is constant—usually we use a step size
-    // of 1, but any constant step size will be linear time
-    function linearTime (n) {
-        for (let i = 0; i < n; i +=5) {
-            console.log(`${i} cats`);
-        }
-    }
+    // for linear functions (both recursive and iterative) // the step size is constant—usually we use a step size // of 1, but any constant step size will be linear time function linearTime (n) { for (let i = 0; i &lt; n; i +=5) { console.log(`${i} cats`); } }
 
-    function linearTimeRecursive (n) {
-        if (n <= 1) return;
-        console.log(`${n} cats`);
-        linearTimeRecursive(n-5);
-    }
+    function linearTimeRecursive (n) { if (n &lt;= 1) return; console.log(`${n} cats`); linearTimeRecursive(n-5); }
 
-1.  loglinear: `O(n*log(n))`
+4.  loglinear: `O(n*log(n))`
 
-    // this is usually a combination of linear and log time operations
-    // e.g. if you nest a linear-time operation in a log-time loop
-    function logTime(n) {
-        let i = 1;
-        let arr = [];
-        while (i < n) {
-            arr.push(i);
-            i *= 2;
-            for (let j = 0; j < n; j +=5) {
-                console.log(`${j} cats`);
-            }
-        }
-    }
+    // this is usually a combination of linear and log time operations // e.g. if you nest a linear-time operation in a log-time loop function logTime(n) { let i = 1; let arr = \[\]; while (i &lt; n) { arr.push(i); i \*= 2; for (let j = 0; j &lt; n; j +=5) { console.log(`${j} cats`); } } }
 
-    // or recursively, if you have a log time helper function
-    // in a linear-time recursive function
-    function logLinearRecursion(n) {
-        helperLogTime (x) {
-            if (x === 1) return;
-            console.log(x);
-            helperLogTime(x/2)
-        }
-        helperLogTime(n);
-        logLinearRecursive(n-1);
-    }
+    // or recursively, if you have a log time helper function // in a linear-time recursive function function logLinearRecursion(n) { helperLogTime (x) { if (x === 1) return; console.log(x); helperLogTime(x/2) } helperLogTime(n); logLinearRecursive(n-1); }
 
-1.  polynomial: `O(n^C)`
+5.  polynomial: `O(n^C)`
 
-    // the classic example would be nested for loops
-    function polynomialTime (n) {
-        for (let i = 0; i < n; i ++) {
-            for (let j = 0; j < n; j ++) {
-                console.log(`${i}:${j}`)
-            }
-        }
-    }
-    // with recursion, this could involve nested recursive function
-    // calls where the step size is constant
-    // importantly, the inner function only calls itself once
-    // honestly i don't think this pattern is especially common
-    function polynomialRecursion(n) {
-        if (n === 0) return;
-        function helper (x) {
-            if (x === 0) return;
-            console.log(x)
-            helper(x-1);
-        }
-        helper(n);
-        polynomialRecursion(n-1);
-    }
+    // the classic example would be nested for loops function polynomialTime (n) { for (let i = 0; i &lt; n; i ++) { for (let j = 0; j &lt; n; j ++) { console.log(`${i}:${j}`) } } } // with recursion, this could involve nested recursive function // calls where the step size is constant // importantly, the inner function only calls itself once // honestly i don’t think this pattern is especially common function polynomialRecursion(n) { if (n === 0) return; function helper (x) { if (x === 0) return; console.log(x) helper(x-1); } helper(n); polynomialRecursion(n-1); }
 
-1.  exponential: `O(C^n)`
+6.  exponential: `O(C^n)`
 
-    // still trying to come up with an iterative
-    // exponential time function
+    // still trying to come up with an iterative // exponential time function
 
-    // recursive version would be when a recursive function
-    // invokes itself multiple times
-    // fibonacci is an example of this
-    function expRecursive (n) {
-        if (n === 0) return 'done!';
-        expRecursive(n-1);
-        expRecursive(n-1);
+    // recursive version would be when a recursive function // invokes itself multiple times // fibonacci is an example of this function expRecursive (n) { if (n === 0) return ‘done!’; expRecursive(n-1); expRecursive(n-1);
 
     }
 
-1.  factorial: `O(n!)`
+7.  factorial: `O(n!)`
 
-    // with factorial, the number of times the function
-    // branches (invokes itself) would also depend on n
-    // in a simple case, you could do that with a for loop
-    // can't think of an iterative example here either
+    // with factorial, the number of times the function // branches (invokes itself) would also depend on n // in a simple case, you could do that with a for loop // can’t think of an iterative example here either
 
-    // a good example of an O(n!) algorithm would be
-    // getting every possible subset of any length from
-    // a set of items
-    function factorial (n) {
-        if (n === 1) return;
+    // a good example of an O(n!) algorithm would be // getting every possible subset of any length from // a set of items function factorial (n) { if (n === 1) return;
 
         for (let i = 1; i <= n; i ++) {
             factorialTime(n-1);
         }
+
     }
 
 ### Identify the complexity classes of common sort methods
@@ -222,21 +127,7 @@ Sorting Algorithms
 -   bubble sort is a very simple sorting algorithm with typically poor performance.
 -   bubble sort takes quadratic time(`O(n`<sup>`2`</sup>`)`) both on average and in the worst case
 
-    function bubble(array) {
-      let noSwaps = false;
-      while (noSwaps === false) {
-        noSwaps = true;
-        for (let i = 1; i < array.length; i ++) {
-          if (array[i - 1] > array[i]) {
-            let swap = arr[j];
-            arr[j] = arr[j+1];
-            arr[j+1] = swap;
-            noSwaps = false;
-          }
-        }
-      }
-      return array;
-    }
+    function bubble(array) { let noSwaps = false; while (noSwaps === false) { noSwaps = true; for (let i = 1; i &lt; array.length; i ++) { if (array\[i - 1\] &gt; array\[i\]) { let swap = arr\[j\]; arr\[j\] = arr\[j+1\]; arr\[j+1\] = swap; noSwaps = false; } } } return array; }
 
 ### Explain the complexity of and write a function that performs selection sort on an array of numbers.
 

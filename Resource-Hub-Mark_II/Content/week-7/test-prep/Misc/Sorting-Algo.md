@@ -198,19 +198,15 @@
 
 -   Our space complexity is linear O(n) because of the partition arrays we create. ![quick](https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/efficient_sorting_algorithms/quick_sort/images/QuickSort.gif) ![qs](https://www.w3resource.com/w3r_images/quick-sort-part-1.png)
 
-    function quickSort(array) {
-      if (array.length <= 1) return array;
+    function quickSort(array) { if (array.length &lt;= 1) return array;
 
-      let pivot = array.shift();
+    let pivot = array.shift();
 
-      let left = array.filter((x) => x < pivot);
-      let right = array.filter((x) => x >= pivot);
+    let left = array.filter((x) =&gt; x &lt; pivot); let right = array.filter((x) =&gt; x &gt;= pivot);
 
-      let sortedLeft = quickSort(left);
-      let sortedRight = quickSort(right);
+    let sortedLeft = quickSort(left); let sortedRight = quickSort(right);
 
-      return [...sortedLeft, pivot, ...sortedRight];
-    }
+    return \[…sortedLeft, pivot, …sortedRight\]; }
 
 ------------------------------------------------------------------------
 

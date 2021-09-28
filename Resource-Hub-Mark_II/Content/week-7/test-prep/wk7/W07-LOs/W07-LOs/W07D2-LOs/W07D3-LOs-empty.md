@@ -7,29 +7,24 @@ Sorting Algorithms
 1.  Write a function that performs bubble sort on an array of numbers.
     -   Code:
 
-        function bubbleSort(array) {
-        }
+        function bubbleSort(array) { }
 
 2.  Write a function that performs selection sort on an array of numbers.
     -   Code:
 
-        function selectionSort(array) {
-        }
+        function selectionSort(array) { }
 
 3.  Write a function that performs insertion sort on an array of numbers.
     -   Code:
 
-        function insertionSort(array) {
-        }
+        function insertionSort(array) { }
 
 4.  Write a function that performs merge sort on an array of numbers.
     -   Code:
 
-        function mergeSort(array) {
-        }
+        function mergeSort(array) { }
 
 5.  Write a function that performs quick sort on an array of numbers.
     -   Code:
 
-        function quickSort(array) {
-        }
+        function quickSort(array) { }

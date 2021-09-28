@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>join</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<pre><code>SELECT * FROM puppies
+INNER JOIN breeds ON (puppies.breed_id = breeds.id);</code></pre>
+<p>The JOIN operation above is joining the “puppies” table with the “breeds” table together into a single table using the foreign key/primary key shared between the two tables: breed_id.</p>
+<p>You should get all rows back containing all information for the puppies and breeds with matching breed_id values:</p>
+</body>
+</html>

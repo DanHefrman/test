@@ -1,6 +1,6 @@
 Help
 
-Sorry can't help you
+Sorry can’t help you
 
 <span class="navbar__item navbar__item--color-red">HOME-hit-Refresh</span> <span class="navbar__item">Profile</span> <span class="navbar__item">Info</span>
 

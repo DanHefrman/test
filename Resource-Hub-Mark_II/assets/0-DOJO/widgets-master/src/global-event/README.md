@@ -1,5 +1,5 @@
-<span class="citation" data-cites="dojo/widgets/global-event"><span class="citation" data-cites="dojo/widgets/global-event"><span class="citation" data-cites="dojo/widgets/global-event">@dojo/widgets/global-event</span></span></span>
-=========================================================================================================================================================================================================================================
+<span class="citation" data-cites="dojo/widgets/global-event"><span class="citation" data-cites="dojo/widgets/global-event"><span class="citation" data-cites="dojo/widgets/global-event"><span class="citation" data-cites="dojo/widgets/global-event">@dojo/widgets/global-event</span></span></span></span>
+==============================================================================================================================================================================================================================================================================================================
 
 Dojo’s `GlobalEvent` enables events to be registered on `document` and `window` reactively.
 

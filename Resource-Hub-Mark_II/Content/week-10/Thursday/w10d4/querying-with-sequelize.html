@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>querying-with-sequelize</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<pre><code>petTypes = await PetType.findAll({
+  where: {
+    type: {
+        [Op.substring]: &#39;a&#39;
+      }
+   }
+});
+console.log(petTypes.length);
+
+sequelize.close();
+</code></pre>
+<pre><code>petType = await PetType.findByPk(3)</code></pre>
+<pre><code>petType = await PetType.findOne({
+  where:{
+    type: [Op.substring]:&#39;a&#39;
+  }
+})</code></pre>
+<pre><code>petTypes = await PetType.findCreateFind({
+where:{type: &#39;Bird&#39;}});
+
+petType = petTypes[0];</code></pre>
+</body>
+</html>

@@ -42,15 +42,11 @@ CSS Selectors
 
 -   **Type selectors** – matches elements by node name (e.g. `div`, `li`, `a`, `p`)
 
-    div {
-      background-color: red;
-    }
+    div { background-color: red; }
 
 -   **Class selectors** – matches elements by class name (e.g. `<button class=“active”>`)
 
-    .active {
-      background-color: red;
-    }
+    .active { background-color: red; }
 
 To select a `button` with class of `active`:
 
@@ -60,9 +56,7 @@ To select a `button` with class of `active`:
 
 -   **ID selectors** – matches elements by ID name (e.g. `<div id=”list-1”>`)
 
-    #list-1 {
-      background-color: red;
-    }
+    \#list-1 { background-color: red; }
 
 -   **Universal selectors** – matches elements of any type (e.g. \*)
 
@@ -143,9 +137,7 @@ Will select all the following `<abbr>` tags:
 
 -   **Adjacent sibling selectors** - The `+` selector selects adjacent siblings (syntax: A + B). This means that the second element (B) **directly follows** the first (A), and both share the same parent.
 
-    h1 + h2 {
-      font-style: italic;
-    }
+    h1 + h2 { font-style: italic; }
 
 Will select `h2`:
 
@@ -168,9 +160,7 @@ Will **not** select `h2`:
 
 -   **Direct child selector** - The `>`selector selects nodes that are **direct children** of the first element (syntax: A &gt; B). It will match every element B that is **immediately neste**d inside an element A. This is different than the descendant selector because it selects only the direct children of an element.
 
-    .menu > .is-active {
-      background-color: #ffe0b2;
-    }
+    .menu &gt; .is-active { background-color: \#ffe0b2; }
 
 Will select `<div class="is-active">`:
 

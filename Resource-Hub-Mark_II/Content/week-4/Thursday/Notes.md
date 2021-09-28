@@ -20,14 +20,11 @@
 
 -   Syntax for creating a new cookie.
 
-    const firstCookie = "favoriteCat=million";
-    document.cookie = firstCookie;
-    document.cookie; // Returns "favoriteCat=million"
+    const firstCookie = “favoriteCat=million”; document.cookie = firstCookie; document.cookie; // Returns “favoriteCat=million”
 
 -   We can also delete a cookie by setting an expiration date like so.
 
-    document.cookie = "favoriteCat=; expires = Thu, 01 Jan 1970 00:00:00 GMT";
-    document.cookie; // ""
+    document.cookie = “favoriteCat=; expires = Thu, 01 Jan 1970 00:00:00 GMT”; document.cookie; // ""
 
 -   You can also manually delete cookies by going into your Dev Tools and right clicking on a cookie.
 
@@ -40,47 +37,29 @@
     -   Deleted when clearing the browser cache
     -   Has the maxiumum storage limit in the browser
 -   **Session Storage** :
+
     -   Stores data only for a single session
     -   Stores until a browser window or tab is closed
     -   Never transfers data to the server
     -   Has a storage limit of 5MB (cookies are 4KB)
 
-    let field = document.getElementById("field");
+    let field = document.getElementById(“field”);
 
-    if (sessionStorage.getItem("autosave")) {
-      field.value = sessionStorage.getItem("autosave");
-    }
+    if (sessionStorage.getItem(“autosave”)) { field.value = sessionStorage.getItem(“autosave”); }
 
-    field.addEventListener("change", function () {
-      sessionStorage.setItem("autosave", field.value);
-    });
+    field.addEventListener(“change”, function () { sessionStorage.setItem(“autosave”, field.value); });
 
 -   Both methods use getItem() and setItem()
 
-    if (!localStorage.getItem("bgcolor")) {
-      populateStorage();
-    }
-    setStyles();
+    if (!localStorage.getItem(“bgcolor”)) { populateStorage(); } setStyles();
 
-    const populateStorage = () => {
-      localStorage.setItem("bgcolor", document.getElementById("bgcolor").value);
-      localStorage.setItem("font", document.getElementById("font").value);
-      localStorage.setItem("image", document.getElementById("image").value);
-    };
+    const populateStorage = () =&gt; { localStorage.setItem(“bgcolor”, document.getElementById(“bgcolor”).value); localStorage.setItem(“font”, document.getElementById(“font”).value); localStorage.setItem(“image”, document.getElementById(“image”).value); };
 
-    const setStyles = () => {
-      var currentColor = localStorage.getItem("bgcolor");
-      var currentFont = localStorage.getItem("font");
-      var currentImage = localStorage.getItem("image");
+    const setStyles = () =&gt; { var currentColor = localStorage.getItem(“bgcolor”); var currentFont = localStorage.getItem(“font”); var currentImage = localStorage.getItem(“image”);
 
-      document.getElementById("bgcolor").value = currentColor;
-      document.getElementById("font").value = currentFont;
-      document.getElementById("image").value = currentImage;
+    document.getElementById(“bgcolor”).value = currentColor; document.getElementById(“font”).value = currentFont; document.getElementById(“image”).value = currentImage;
 
-      htmlElem.style.backgroundColor = "#" + currentColor;
-      pElem.style.fontFamily = currentFont;
-      imgElem.setAttribute("src", currentImage);
-    };
+    htmlElem.style.backgroundColor = “\#” + currentColor; pElem.style.fontFamily = currentFont; imgElem.setAttribute(“src”, currentImage); };
 
 1.  Our conditional checks to see if our local storage contains a data item called `bgcolor`
 2.  If it does contain the data:
@@ -123,17 +102,9 @@
 -   **JSON.stringify(value)** : truns the value passed into it into a string.
 -   **JSON.parse(str)** : turns a JSON-formatted string into a JS object.
 
-    const array = [1, 'hello, "world"', 3.14, { id: 17 }];
-    console.log(JSON.stringify(array));
-    // prints [1, "hello, \"world\"", 3.14, {"id":17}]
+    const array = \[1, ‘hello, “world”’, 3.14, { id: 17 }\]; console.log(JSON.stringify(array)); // prints \[1, “hello, "world"”, 3.14, {“id”:17}\]
 
-    const str = '[1,"hello, \\"world\\"",3.14,{"id":17}]';
-    console.log(JSON.parse(str));
-    // prints an array with the following entries:
-    //   0: 1
-    //   1: "hello, \"world\""
-    //   2: 3.14
-    //   3: { id: 17 }
+    const str = ‘\[1,“hello, \\”world\\"“,3.14,{”id":17}\]’; console.log(JSON.parse(str)); // prints an array with the following entries: // 0: 1 // 1: “hello, "world"” // 2: 3.14 // 3: { id: 17 }
 
 -   You will almost never write raw JSON, most of the times you will just use JSON.stringify(), or call a data service that returns JSON formatted content.
 
@@ -181,6 +152,6 @@
 
 -   We can construct a JS value or object from JSON by parsing it.
 
-    const doughnuts = JSON.parse(localStorage.getItem("doughnuts"));
+    const doughnuts = JSON.parse(localStorage.getItem(“doughnuts”));
 
 –

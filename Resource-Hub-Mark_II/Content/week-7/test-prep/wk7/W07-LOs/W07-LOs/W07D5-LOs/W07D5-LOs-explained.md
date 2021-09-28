@@ -20,20 +20,18 @@ Heaps
 4.  What is a commmon way to represent heaps in JavaScript?
     -   We can use an array. Since there are no gaps in the heap, we can add elements to an array and they will represent the next valid position to be filled in the heap.
 
-        /*
+        /\*
 
                     40
                 /      \
               32          24
             /    \       /   \
-          30      9    20     18
-          /  \  
-        2    7 
 
-        */
+        30 9 20 18 /   2 7
 
-        // our heap: [null, 40, 32, 24, 30,  9, 20, 18,  2,  7]
-        //  indices: [   0,  1,  2,  3,  4,  5,  6,  7,  8,  9]
+        \*/
+
+        // our heap: \[null, 40, 32, 24, 30, 9, 20, 18, 2, 7\] // indices: \[ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9\]
 
     -   We typically use a `null` at index 0 because it allows for simpler calculations of child/parent indices, but this is not a strict requirement.
 
@@ -46,83 +44,32 @@ Heaps
     -   When considering an array format, this would mean we can simply push our new element onto the end of the array, then compare our value with our parentIdx’s value until a swap does not occur.
     -   From our max\_heap project:
 
-        insert(val) {
-          this.array.push(val);
-          this.siftUp(this.array.length - 1);
-        }
+        insert(val) { this.array.push(val); this.siftUp(this.array.length - 1); }
 
-        siftUp(idx) {
-          // If we are already the root, we cannot sift up further
-          if (idx === 1) return;
+        siftUp(idx) { // If we are already the root, we cannot sift up further if (idx === 1) return;
 
-          let parentIdx = this.getParent(idx);
+        let parentIdx = this.getParent(idx);
 
-          // If our value is greater than our parents, swap, then call siftUp again
-          // on the new location to see if we need to do further swaps.
-          if (this.array[parentIdx] < this.array[idx]) {
-            [ this.array[parentIdx], this.array[idx] ] = [ this.array[idx], this.array[parentIdx] ];
-            this.siftUp(parentIdx);
-          }
-        }
+        // If our value is greater than our parents, swap, then call siftUp again // on the new location to see if we need to do further swaps. if (this.array\[parentIdx\] &lt; this.array\[idx\]) { \[ this.array\[parentIdx\], this.array\[idx\] \] = \[ this.array\[idx\], this.array\[parentIdx\] \]; this.siftUp(parentIdx); } }
 
 7.  What processes do we need to follow when we remove then root of a heap?
     -   To maintain the heap structure, we replace our root with the node that is as far left as possible, then sift the newly replaced value down if necessary until it reaches an appropriate position. This sifting would be necessary if we are currently smaller than either child in a max heap, or greater in a min heap.
     -   When considering an array format, this would mean we can pop our last element off of the array, then replace `array[1]` with this value (we hold on to the replaced value to return at the end of our algorithm). We compare our value with each childIdx’s value until a swap does not occur.
     -   From our max\_heap project:
 
-        deleteMax() {
-          // Since our first element is `null` we take the element at index 1.
-          // We want to keep null in the array if there are no other elements,
-          // which is why we are returning null instead of popping for a length of 1.
-          if (this.array.length === 2) return this.array.pop();
-          if (this.array.length === 1) return null;
+        deleteMax() { // Since our first element is `null` we take the element at index 1. // We want to keep null in the array if there are no other elements, // which is why we are returning null instead of popping for a length of 1. if (this.array.length === 2) return this.array.pop(); if (this.array.length === 1) return null;
 
-          // Since we're overwriting our index 1, we keep a reference to its value
-          // so that we can return it later.
-          let max = this.array[1];
-          // We reassign the root of our heap to be the last element in our array.
-          // Using .pop() removes that element from the end for us as well.
-          this.array[1] = this.array.pop();
-          // We check to see if the element that took our root's spot needs to be
-          // sifted down into an appropriate position.
-          this.siftDown(1);
-          // After our sifting is done, our heap has been reorganize into a valid
-          // configuration. We can now return the value that we originally removed.
-          return max;
-        }
+        // Since we’re overwriting our index 1, we keep a reference to its value // so that we can return it later. let max = this.array\[1\]; // We reassign the root of our heap to be the last element in our array. // Using .pop() removes that element from the end for us as well. this.array\[1\] = this.array.pop(); // We check to see if the element that took our root’s spot needs to be // sifted down into an appropriate position. this.siftDown(1); // After our sifting is done, our heap has been reorganize into a valid // configuration. We can now return the value that we originally removed. return max; }
 
-        siftDown(idx) {
-          let ary = this.array;
-          let leftIdx = this.getLeftChild(idx);
-          let rightIdx = this.getRightChild(idx);
-          let leftVal = ary[leftIdx];
-          let rightVal = ary[rightIdx];
+        siftDown(idx) { let ary = this.array; let leftIdx = this.getLeftChild(idx); let rightIdx = this.getRightChild(idx); let leftVal = ary\[leftIdx\]; let rightVal = ary\[rightIdx\];
 
-          // If we do not have a child, leftVal or rightVal would be `undefined`.
-          // We can't perform comparisons to `undefined` so we reassign them to be
-          // -Infinity, which will always result in our value being greater, indicating
-          // we are in a correct position (we can't sift down when we're already a leaf)
-          if (leftVal === undefined) leftVal = -Infinity;
-          if (rightVal === undefined) rightVal = -Infinity;
+        // If we do not have a child, leftVal or rightVal would be `undefined`. // We can’t perform comparisons to `undefined` so we reassign them to be // -Infinity, which will always result in our value being greater, indicating // we are in a correct position (we can’t sift down when we’re already a leaf) if (leftVal === undefined) leftVal = -Infinity; if (rightVal === undefined) rightVal = -Infinity;
 
-          // If we are greater than both of our children, we are in our final spot.
-          if (ary[idx] > leftVal && ary[idx] > rightVal) return;
+        // If we are greater than both of our children, we are in our final spot. if (ary\[idx\] &gt; leftVal && ary\[idx\] &gt; rightVal) return;
 
-          // If one of our children is greater, we made it past the previous conditional.
-          // We determine which child is greater, then assign that index as the the
-          // one that we need to swap with.
-          let swapIdx;
-          if (leftVal < rightVal) {
-            swapIdx = rightIdx;
-          } else {
-            swapIdx = leftIdx;
-          }
+        // If one of our children is greater, we made it past the previous conditional. // We determine which child is greater, then assign that index as the the // one that we need to swap with. let swapIdx; if (leftVal &lt; rightVal) { swapIdx = rightIdx; } else { swapIdx = leftIdx; }
 
-          // We swap our current element with our largest child.
-          [ ary[idx], ary[swapIdx] ] = [ ary[swapIdx], ary[idx] ];
-          // We invoke siftDown again with the new index to see if we need to sift further.
-          this.siftDown(swapIdx);
-        }
+        // We swap our current element with our largest child. \[ ary\[idx\], ary\[swapIdx\] \] = \[ ary\[swapIdx\], ary\[idx\] \]; // We invoke siftDown again with the new index to see if we need to sift further. this.siftDown(swapIdx); }
 
 8.  Given an array, determine if it represents a max (or min) heap.
     -   For the array to represent a max heap, it would need to be complete (no `undefined` values, which would indicate a gap) and each parent would have to be greater than its children.

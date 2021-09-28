@@ -48,11 +48,7 @@
 
 -   Most important thing about a test is that it is **readable** and **understandable**
 
-    describe("avgValue()", function () {
-      it("should return the average of an array of numbers", function () {
-        assert.equal(avgValue([10, 20]), 15);
-      });
-    });
+    describe(“avgValue()”, function () { it(“should return the average of an array of numbers”, function () { assert.equal(avgValue(\[10, 20\]), 15); }); });
 
 -   avgValue() =&gt; The function we will be testing.
 -   it(“string”) =&gt; describes the desired output.

@@ -1,66 +1,47 @@
-<!--
-
----
- Send sms from php using way2sms
-date: 2010-01-19 15:34:07 UTC
-updated: 2011-07-16 15:34:07 UTC
-2008/kind#post php
----
--->
-
 <!DOCTYPE html>
-<html>
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
-  <title>basic-git-workflow</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-  <link rel="stylesheet" href="./css/bootstrap.css">
-  <link rel="stylesheet" href="./css/bootstrap.grid.css">
-  <link rel="stylesheet" href="./css/bootstrap.min.css">
-  <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
-  <link rel="stylesheet" href="./css/bootstrap.css.map">
-  <link rel="stylesheet" href="./css/blog-home.css">
-  <link rel="stylesheet" href="./css/prism.css">
-  <script async defer src="./css/prism.js"></script>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>19-send-sms-from-php-using-way2sms</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
 </head>
-
 <body>
-
-
-
-  <span style="font-size: x-large;"><b style="color: red;">This post is updated in <a
-        href="http://www.phprepo.in/2011/07/send-sms-from-php-using-way2sms-updated/">www.phprepo.in</a> and you can
-      download from <a href="https://github.com/revathskumar/sms-with-php">Github</a></b></span> <br /><br />As for a
-  long time i was using the web service as <a href="http://www.aswinanand.com/">aswin anand</a> guided in his <a
-    href="http://www.aswinanand.com/2009/12/free-sms-web-service-updated-2/">blog</a><br /><br />But now a days some
-  problem occured.<br /><br />As a php programmer i just edited his code and now its working.<br />to use it simpler i
-  made the code into class and member functions.<br /><br />you can download the edited code from <a
-    href="http://www.4shared.com/file/214370221/b0f784df/sms.html">here</a> .<br /><br />the only change this sesction
-  <br />
-  <blockquote>
-    <blockquote>curl_setopt ($curl, CURLOPT_URL,
-      "http://wwwd.way2sms.com/FirstServletsms?custid=");<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      curl_setopt ($curl, CURLOPT_REFERER, curl_getinfo($curl,
-      CURLINFO_EFFECTIVE_URL));<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      curl_setopt ($curl, CURLOPT_POST,
-      1);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      curl_setopt ($curl, CURLOPT_POSTFIELDS,
-      "HiddenAction=instantsms&amp;login=&amp;pass=&amp;custid=undefined&amp;MobNo=" . $p . "&amp;textArea=" .
-      $msg);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      $text = curl_exec($curl); </blockquote>
-  </blockquote><br />&nbsp;the new code is<br /><br />
-  <blockquote>curl_setopt ($curl, CURLOPT_URL, "http://www1.way2sms.com/FirstServletsms?custid=\"+custid+</blockquote>
-  &nbsp;\"&amp;sponserid=\"+sponserid+\"");<br />
-  <blockquote>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    curl_setopt ($curl, CURLOPT_REFERER, curl_getinfo($curl,
-    CURLINFO_EFFECTIVE_URL));<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    curl_setopt ($curl, CURLOPT_POST,
-    1);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    curl_setopt ($curl, CURLOPT_POSTFIELDS, "MobNo=$p&amp;textArea=$msg&amp;HiddenAction=instantsms</blockquote><br />
-  <blockquote>
-    &amp;login=&amp;pass=&amp;Action=custfrom300000");<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    $text = curl_exec($curl);</blockquote><br />Don't forget to comment on this changes.<br />Any problems please keep
-  informing<br />recommended to download and use it
+<p><span style="font-size: x-large;"><strong>This post is updated in <a href="http://www.phprepo.in/2011/07/send-sms-from-php-using-way2sms-updated/">www.phprepo.in</a> and you can download from <a href="https://github.com/revathskumar/sms-with-php">Github</a></strong></span></p>
+<p>As for a long time i was using the web service as <a href="http://www.aswinanand.com/">aswin anand</a> guided in his <a href="http://www.aswinanand.com/2009/12/free-sms-web-service-updated-2/">blog</a></p>
+<p>But now a days some problem occured.</p>
+<p>As a php programmer i just edited his code and now its working.<br />
+to use it simpler i made the code into class and member functions.</p>
+<p>you can download the edited code from <a href="http://www.4shared.com/file/214370221/b0f784df/sms.html">here</a> .</p>
+<p>the only change this sesction</p>
+<blockquote>
+<blockquote>
+<p>curl_setopt (<span class="math inline">$curl, CURLOPT\_URL, "http://wwwd.way2sms.com/FirstServletsms?custid=");                   curl\_setopt ($</span>curl, CURLOPT_REFERER, curl_getinfo(<span class="math inline"><em>c</em><em>u</em><em>r</em><em>l</em>, <em>C</em><em>U</em><em>R</em><em>L</em><em>I</em><em>N</em><em>F</em><em>O</em>_<em>E</em><em>F</em><em>F</em><em>E</em><em>C</em><em>T</em><em>I</em><em>V</em><em>E</em>_<em>U</em><em>R</em><em>L</em>)); <em>c</em><em>u</em><em>r</em><em>l</em>_<em>s</em><em>e</em><em>t</em><em>o</em><em>p</em><em>t</em>(</span>curl, CURLOPT_POST, 1);<br />
+                  curl_setopt ($curl, CURLOPT_POSTFIELDS, “HiddenAction=instantsms&amp;login=&amp;pass=&amp;custid=undefined&amp;MobNo=” . $p . “&amp;textArea=” . $msg);<br />
+                  <span class="math inline"><em>t</em><em>e</em><em>x</em><em>t</em> = <em>c</em><em>u</em><em>r</em><em>l</em>_<em>e</em><em>x</em><em>e</em><em>c</em>(</span>curl);</p>
+</blockquote>
+</blockquote>
+<p> the new code is</p>
+<blockquote>
+<p>curl_setopt ($curl, CURLOPT_URL, “http://www1.way2sms.com/FirstServletsms?custid=\”+custid+</p>
+</blockquote>
+<p> \“&amp;sponserid=\”+sponserid+\"");</p>
+<blockquote>
+<p>                  curl_setopt (<span class="math inline"><em>c</em><em>u</em><em>r</em><em>l</em>, <em>C</em><em>U</em><em>R</em><em>L</em><em>O</em><em>P</em><em>T</em>_<em>R</em><em>E</em><em>F</em><em>E</em><em>R</em><em>E</em><em>R</em>, <em>c</em><em>u</em><em>r</em><em>l</em>_<em>g</em><em>e</em><em>t</em><em>i</em><em>n</em><em>f</em><em>o</em>(</span>curl, CURLINFO_EFFECTIVE_URL));<br />
+                  curl_setopt (<span class="math inline"><em>c</em><em>u</em><em>r</em><em>l</em>, <em>C</em><em>U</em><em>R</em><em>L</em><em>O</em><em>P</em><em>T</em>_<em>P</em><em>O</em><em>S</em><em>T</em>, 1); <em>c</em><em>u</em><em>r</em><em>l</em>_<em>s</em><em>e</em><em>t</em><em>o</em><em>p</em><em>t</em>(</span>curl, CURLOPT_POSTFIELDS, "MobNo=<span class="math inline">$p&amp;textArea=$</span>msg&amp;HiddenAction=instantsms</p>
+</blockquote>
+<blockquote>
+<p>&amp;login=&amp;pass=&amp;Action=custfrom300000");<br />
+                  <span class="math inline"><em>t</em><em>e</em><em>x</em><em>t</em> = <em>c</em><em>u</em><em>r</em><em>l</em>_<em>e</em><em>x</em><em>e</em><em>c</em>(</span>curl);</p>
+</blockquote>
+<p>Don’t forget to comment on this changes.<br />
+Any problems please keep informing<br />
+recommended to download and use it</p>
+</body>
+</html>

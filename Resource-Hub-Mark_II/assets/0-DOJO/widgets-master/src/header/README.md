@@ -1,5 +1,5 @@
-<span class="citation" data-cites="dojo/widgets/header"><span class="citation" data-cites="dojo/widgets/header"><span class="citation" data-cites="dojo/widgets/header">@dojo/widgets/header</span></span></span>
-=================================================================================================================================================================================================================
+<span class="citation" data-cites="dojo/widgets/header"><span class="citation" data-cites="dojo/widgets/header"><span class="citation" data-cites="dojo/widgets/header"><span class="citation" data-cites="dojo/widgets/header">@dojo/widgets/header</span></span></span></span>
+================================================================================================================================================================================================================================================================================
 
 Dojo’s `Header` widget provides an application toolbar.
 

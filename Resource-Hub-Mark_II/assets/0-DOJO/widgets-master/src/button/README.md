@@ -1,5 +1,5 @@
-<span class="citation" data-cites="dojo/widgets/button"><span class="citation" data-cites="dojo/widgets/button"><span class="citation" data-cites="dojo/widgets/button">@dojo/widgets/button</span></span></span>
-=================================================================================================================================================================================================================
+<span class="citation" data-cites="dojo/widgets/button"><span class="citation" data-cites="dojo/widgets/button"><span class="citation" data-cites="dojo/widgets/button"><span class="citation" data-cites="dojo/widgets/button">@dojo/widgets/button</span></span></span></span>
+================================================================================================================================================================================================================================================================================
 
 Dojo’s `Button` widget creates a `<button>` element with support `pressed` and `disabled` states.
 

@@ -29,7 +29,7 @@
 -   A series of questions that will store metadata will be asked.
 -   Use `npm install lodash` to install a package.
 
-    const lodash = require("lodash"); // note we can just set the name of the installed package as the argument for our require function since it was downloaded; use ./name.js if it is a local dependency.
+    const lodash = require(“lodash”); // note we can just set the name of the installed package as the argument for our require function since it was downloaded; use ./name.js if it is a local dependency.
 
 **6. Given a package version number following the MAJOR.MINOR.PATCH semantic versioning spec that may include tilde (~) and caret (^) ranges, identify the range of versions of the package that will be compatible.**
 
@@ -84,12 +84,6 @@
 -   \`“linecount” : “wc -l \*.js”
 -   Run it by using the command `npm run linecount`
 
-    {
-      "scripts": {
-        "start": "node index.js",
-        "test": "mocha --watch",
-        "watch": "nodemon index.js"
-      }
-    }
+    { “scripts”: { “start”: “node index.js”, “test”: “mocha –watch”, “watch”: “nodemon index.js” } }
 
 ------------------------------------------------------------------------

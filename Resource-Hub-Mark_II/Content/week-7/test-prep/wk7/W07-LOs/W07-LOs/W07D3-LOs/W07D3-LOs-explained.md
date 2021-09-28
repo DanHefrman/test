@@ -37,97 +37,39 @@ Big-O
 
         -   Looping an exact number of times (independent of input) -&gt; constant O(1) time
 
-            function constant_2(n) {
-              for (let i = 1; i <= 20; i++) {
-                console.log(i);
-              }
-            }
+            function constant\_2(n) { for (let i = 1; i &lt;= 20; i++) { console.log(i); } }
 
         -   Recursive calls that divide the input -&gt; logarithmic O(log n) time
 
-            function logarithmic(n) {
-              console.log(n);
-              if (n <= 1) return;
-              logarithmic(n / 2);
-            }
+            function logarithmic(n) { console.log(n); if (n &lt;= 1) return; logarithmic(n / 2); }
 
         -   Loops that depend on the size of the input -&gt; linear O(n) time
 
-            function linear_1(n) {
-              for (let i = 1; i <= n; i++) {
-                console.log(i);
-              }
-            }
+            function linear\_1(n) { for (let i = 1; i &lt;= n; i++) { console.log(i); } }
 
         -   Recursive calls that depend on the size of the input (decrementing instead of dividing) -&gt; linear O(n) time
 
-            function linear_2(n) {
-              console.log(n);
-              if (n === 1) return;
-              linear_2(n - 1);
-            }
+            function linear\_2(n) { console.log(n); if (n === 1) return; linear\_2(n - 1); }
 
         -   Looping through input on each stack frame, while recursively dividing our data (commonly seen in sorts like merge and quick sort) -&gt; loglinear O(n log n) time
 
-            function loglinear(n) {
-              if (n <= 1) return;
-              for (let i = 1; i <= n; i++) { // n calculations in each stack frame
-                console.log(n);
-              }
-              loglinear(n / 2); // log n number of stack frames
-              loglinear(n / 2);
-            }
+            function loglinear(n) { if (n &lt;= 1) return; for (let i = 1; i &lt;= n; i++) { // n calculations in each stack frame console.log(n); } loglinear(n / 2); // log n number of stack frames loglinear(n / 2); }
 
         -   Nesting loops that depend on the size of the input -&gt; polynomial O(n^c) time
 
-            // O(n^2)
-            function quadratic(n) {
-              for (let i = 1; i <= n; i++) {
-                for (let j = 1; j <= n; j++) {
-                  console.log(`${i}, ${j}`);
-                }
-              }
-            }
+            // O(n^2) function quadratic(n) { for (let i = 1; i &lt;= n; i++) { for (let j = 1; j &lt;= n; j++) { console.log(`${i}, ${j}`); } } }
 
-            // O(n^3)
-            function cubic(n) {
-              for (let i = 1; i <= n; i++) {
-                for (let j = 1; j <= n; j++) {
-                  for (let k = 1; k <= n; k++) {
-                    console.log(`${i}, ${j}, ${k}`);
-                  }
-                }
-              }
-            }
+            // O(n^3) function cubic(n) { for (let i = 1; i &lt;= n; i++) { for (let j = 1; j &lt;= n; j++) { for (let k = 1; k &lt;= n; k++) { console.log(`${i}, ${j}, ${k}`); } } } }
 
         -   Branching out on each recursive call, with the number of calls dependent on the size of the input -&gt; exponential O(c^n) time
 
-            // O(2^n)
-            function exponential_2n(n) {
-              console.log(n);
-              if (n === 1) return;
-              exponential_2n(n - 1);
-              exponential_2n(n - 1);
-            }
+            // O(2^n) function exponential\_2n(n) { console.log(n); if (n === 1) return; exponential\_2n(n - 1); exponential\_2n(n - 1); }
 
-            // O(3^n)
-            function exponential_3n(n) {
-              console.log(n);
-              if (n === 1) return;
-              exponential_3n(n - 1);
-              exponential_3n(n - 1);
-              exponential_3n(n - 1);
-            }
+            // O(3^n) function exponential\_3n(n) { console.log(n); if (n === 1) return; exponential\_3n(n - 1); exponential\_3n(n - 1); exponential\_3n(n - 1); }
 
         -   When both the number of recursive calls and the number of branches made in the calls are dependent on the size of the input -&gt; factorial O(n!) time
 
-            function factorial(n) {
-              console.log(n);
-              if (n === 1) return;
-              for (let i = 1; i <= n; i++) { // Here we're making n branches on this frame
-                factorial(n - 1); // Since we are decrementing, we're making n stack frames
-              }
-            }
+            function factorial(n) { console.log(n); if (n === 1) return; for (let i = 1; i &lt;= n; i++) { // Here we’re making n branches on this frame factorial(n - 1); // Since we are decrementing, we’re making n stack frames } }
 
 ### Memoization and Tabulation
 
@@ -144,27 +86,11 @@ Big-O
 
     -   Example of a standard and memoized fibonacci:
 
-        // Standard Implementation
-        // Time Complexity: O(2^n)
-        //   - For each call to fib, we have to make two branches, with n levels to this tree
-        function fib(n) {
-          if (n === 1 || n === 2) return 1;
-          return fib(n - 1) + fib(n - 2);
-        }
+        // Standard Implementation // Time Complexity: O(2^n) // - For each call to fib, we have to make two branches, with n levels to this tree function fib(n) { if (n === 1 || n === 2) return 1; return fib(n - 1) + fib(n - 2); }
 
-        // Using memoization
-        // Time Complexity: O(n)
-        //   - We only ever have to calculate fib(x) one time, every other time that we use it in a larger problem, the result is immediately accessible in our memo
-        //   - The memo removes the repeated trees of calculations from our original code
-        function fib(n, memo = {}) {
-          if (n in memo) return memo[n]; // If we already calculated this value, return it
-          if (n === 1 || n === 2) return 1;
+        // Using memoization // Time Complexity: O(n) // - We only ever have to calculate fib(x) one time, every other time that we use it in a larger problem, the result is immediately accessible in our memo // - The memo removes the repeated trees of calculations from our original code function fib(n, memo = {}) { if (n in memo) return memo\[n\]; // If we already calculated this value, return it if (n === 1 || n === 2) return 1;
 
-          // Store the result in the memo first before returning
-          // Make sure to pass the memo in to your calls to fib!
-          memo[n] = fib(n - 1, memo) + fib(n - 2, memo);
-          return memo[n];
-        }
+        // Store the result in the memo first before returning // Make sure to pass the memo in to your calls to fib! memo\[n\] = fib(n - 1, memo) + fib(n - 2, memo); return memo\[n\]; }
 
 2.  Apply tabulation to iterative problems to make them less than polynomial time.
 

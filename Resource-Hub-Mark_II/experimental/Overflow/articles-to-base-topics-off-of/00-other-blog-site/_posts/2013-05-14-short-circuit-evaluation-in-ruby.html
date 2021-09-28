@@ -1,48 +1,26 @@
-<!--
-
----
- Short circuit evaluation in ruby
-date: 2013-05-14 19:49:29 UTC
-updated: 2013-05-14 19:49:29 UTC
-comments: false
-categories: ruby
----
--->
-
-
-
 <!DOCTYPE html>
-<html>
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
-  <title>basic-git-workflow</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-  <link rel="stylesheet" href="./css/bootstrap.css">
-  <link rel="stylesheet" href="./css/bootstrap.grid.css">
-  <link rel="stylesheet" href="./css/bootstrap.min.css">
-  <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
-  <link rel="stylesheet" href="./css/bootstrap.css.map">
-  <link rel="stylesheet" href="./css/blog-home.css">
-  <link rel="stylesheet" href="./css/prism.css">
-  <script async defer src="./css/prism.js"></script>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>2013-05-14-short-circuit-evaluation-in-ruby</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
 </head>
-
 <body>
-
-  <h3>What is short circuit evaluation??</h3>
-  <blockquote>It means in a conditional statement with two conditions the second condition is evaluated only when the
-    first condition is not enough to determine the value of expression </blockquote>Consider a conditional statement
-  <code>echo "Hello" if a &amp;&amp; b</code>. In <strong>&amp;&amp;</strong> condition if the first condition is
-  <code>false</code> (considering a is defined as <code>false</code>) then the result of <code>a &amp;&amp; b</code> is
-  always <code>false</code>. So in this ruby won't try to evaluate <strong>b</strong>.<br /><img
-    alt="Short circuit  evaluation in ruby"
-    src="/assets/images/2013/03/short-circuit-evaluation-in-ruby-1_zps82defa70.png" /><br />In the above image when
-  <strong>a</strong> is <code>false</code> it neither print <code>"Hello"</code> nor raise any error. Means
-  <strong>b</strong> is not evaluated. <br /><img alt="Short circuit  evaluation in ruby" height="77"
-    src="/assets/images/2013/03/short-circuit-evaluation-in-ruby-2_zpse3c5c6f6.png" width="400" /><br />But when the
-  <strong>a</strong> is <code>true</code>, <strong>a</strong> is not enough to determine the condition so the ruby will
-  try to evaluate <strong>b</strong>. But since <strong>b</strong> is not defined the ruby will raise error saying
-  <code>undefined local variable or method b</code>
+<h3 id="what-is-short-circuit-evaluation">What is short circuit evaluation??</h3>
+<blockquote>
+<p>It means in a conditional statement with two conditions the second condition is evaluated only when the first condition is not enough to determine the value of expression</p>
+</blockquote>
+<p>Consider a conditional statement <code>echo "Hello" if a &amp;&amp; b</code>. In <strong>&amp;&amp;</strong> condition if the first condition is <code>false</code> (considering a is defined as <code>false</code>) then the result of <code>a &amp;&amp; b</code> is always <code>false</code>. So in this ruby won’t try to evaluate <strong>b</strong>.<br />
+<img src="/assets/images/2013/03/short-circuit-evaluation-in-ruby-1_zps82defa70.png" alt="Short circuit evaluation in ruby" /><br />
+In the above image when <strong>a</strong> is <code>false</code> it neither print <code>"Hello"</code> nor raise any error. Means <strong>b</strong> is not evaluated.<br />
+<img src="/assets/images/2013/03/short-circuit-evaluation-in-ruby-2_zpse3c5c6f6.png" alt="Short circuit evaluation in ruby" width="400" height="77" /><br />
+But when the <strong>a</strong> is <code>true</code>, <strong>a</strong> is not enough to determine the condition so the ruby will try to evaluate <strong>b</strong>. But since <strong>b</strong> is not defined the ruby will raise error saying <code>undefined local variable or method b</code></p>
+</body>
+</html>

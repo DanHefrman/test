@@ -61,8 +61,7 @@
 -   We can pass in a description string to identify our symbol.
     -   *Do not confused the description as a name to reference the symbol.*
 
-        const symApple = Symbol("apple");
-        console.log(symApple); // Symbol(apple)
+        const symApple = Symbol(“apple”); console.log(symApple); // Symbol(apple)
 
     **Symbols vs Strings as keys in Objects**
     -   **`Name Collision`** : When a program attempts to use the same variable name twice for different values.

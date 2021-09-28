@@ -34,5 +34,4 @@ Binary Search
 
         -   Code:
 
-            function binarySearchIndexIterative(array) {
-            }
+            function binarySearchIndexIterative(array) { }

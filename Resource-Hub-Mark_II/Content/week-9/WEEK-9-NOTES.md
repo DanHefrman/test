@@ -30,36 +30,24 @@ Tuesday
 -----------------
 
 -   **`CSS Selector`** : Applies styles to a specific DOM element(s), there are various types:
+
     -   **`Type Selectors`** : Matches by node name.
     -   **`Class Selectors`** : Matches by class name.
     -   **`ID Selectors`** : Matches by ID name.
     -   **`Universal Selectors`** : Selects all HTML elements on a page.
     -   **`Attribute Selectors`** : Matches elements based on the prescence or value of a given attribute. (i.e. a\[title\] will match all a elements with a title attribute)
 
-    /* Type selector */
-    div {
-      background-color: #000000;
-    }
+    /\* Type selector \*/ div { background-color: \#000000; }
 
-    /* Class selector */
-    .active {
-      color: #ffffff;
-    }
+    /\* Class selector \*/ .active { color: \#ffffff; }
 
-    /* ID selector */
-    #list-1 {
-      border: 1px solid gray;
-    }
+    /\* ID selector \*/ \#list-1 { border: 1px solid gray; }
 
-    /* Universal selector */
-    * {
-      padding: 10px;
-    }
+    /\* Universal selector \*/
 
-    /* Attribute selector */
-    a[title] {
-      font-size: 2em;
-    }
+    -   { padding: 10px; }
+
+    /\* Attribute selector \*/ a\[title\] { font-size: 2em; }
 
 **Class Selectors**
 
@@ -71,74 +59,63 @@ Tuesday
 -   To get around accidentally selecting elements with multiple classes beyond what we want to grab we can chain dots.
 -   TO use a compound class selector just append the classes together when referencing them in the CSS.
 
-    <div class="box yellow"></div>
-    <div class="box orange"></div>
-    <div class="circle orange"></div>
-
 -   i.e. .box.yellow will select only the first element.
 -   KEEP IN MIND that if you do include a space it will make the selector into a *descendant selector*.
 
-    h1#heading,
-    h2.subheading {
-      font-style: italic;
-    }
+    h1\#heading, h2.subheading { font-style: italic; }
 
 -   When we want to target all `h1` tags with the id of `heading`.
 
 **CSS Combinators**
 
--   CSS Combinators are used to combine other selectors into more complex or targeted selectors - they are very powerful!
--   Be careful not to use too many of them as they will make your CSS far too complex.
+CSS Combinators are used to combine other selectors into more complex or targeted selectors - they are very powerful!
 
-    -   **`Descendant Selectors`**
-        -   Seperated by a space.
-        -   Selects all descendants of a parent container.
-    -   **`Direct Child Selectors`**
+Be careful not to use too many of them as they will make your CSS far too complex.
 
-        -   Indicated with a `>`.
-        -   Different from descendants because it only affects the direct children of an element.
-        -   .menu > .is-active {
-                  background-color: #ffe0b2;
-                }
+**`Descendant Selectors`**
 
-        -   <body>
-                  <div class="menu">
-                    <div class="is-active">Belka</div>
-                    <div>
-                      <div class="is-active">Strelka</div>
-                    </div>
-                  </div>
-                </body>
-                <div class="is-active">
-                  Laika
-                </div>
-                </body>
+-   Seperated by a space.
+-   Selects all descendants of a parent container.
 
-        -   Belka would be the only element selected.
+**`Direct Child Selectors`**
 
-    -   **`Adjacent Sibling Selectors`**
+Indicated with a `>`.
 
-        -   Uses the `+` symbol.
-        -   Used for elements that directly follow one another and who both have the same parent.
-        -     h1 + h2 {
-                font-style: italic;
-                  }
+Different from descendants because it only affects the direct children of an element.
 
-                <h1>Big header</h1>
-                <h2>This one is styled because it is directly adjacent to the H1</h2>
-                <h2>This one is NOT styled because there is no H1 right before it</h2>
+.menu &gt; .is-active { background-color: \#ffe0b2; }
+
+        <div class="is-active">Belka</div>
+        <div>
+          <div class="is-active">Strelka</div>
+        </div>
+      </div>
+    </body>
+    <div class="is-active">
+      Laika
+    </div>
+    </body>
+
+Belka would be the only element selected.
+
+**`Adjacent Sibling Selectors`**
+
+-   Uses the `+` symbol.
+-   Used for elements that directly follow one another and who both have the same parent.
+-   h1 + h2 {
+          font-style: italic;
+            }
+
+          <h1>Big header</h1>
+          <h2>This one is styled because it is directly adjacent to the H1</h2>
+          <h2>This one is NOT styled because there is no H1 right before it</h2>
 
 **Pseudo-Classes**
 
 -   **`Pseudo-Class`** : Specifies a special state of the seleted element(s) and does not refer to any elements or attributes contained in the DOM.
     -   Format is a `Selector:Pseudo-Class Name` or `A:B`
 
-        a:hover {
-          font-family: "Roboto Condensed", sans-serif;
-          color: #4fc3f7;
-          text-decoration: none;
-          border-bottom: 2px solid #4fc3f7;
-        }
+        a:hover { font-family: “Roboto Condensed”, sans-serif; color: \#4fc3f7; text-decoration: none; border-bottom: 2px solid \#4fc3f7; }
 
     -   Some common pseudo-classes that are frequently used are:
         -   **`active`** : ‘push down’, when ele are activated.
@@ -157,21 +134,15 @@ Tuesday
 **`Pseudo-Selectors`**
 
 -   Used to create pseudo-elements as children of the elements to which the property applies.
+
     -   `::after`
     -   `::before`
 
-    <style>
-      p::before {
-        background-color: lightblue;
-        border-right: 4px solid violet;
-        content: ":-) ";
-        margin-right: 4px;
-        padding-left: 4px;
-      }
-    </style>
-    <p>This is the first paragraph</p>
-    <p>This is the second paragraph</p>
-    <p>This is the third paragraph</p>
+    This is the first paragraph
+
+    This is the second paragraph
+
+    This is the third paragraph
 
 -   Will add some blue smiley faces before the p tag elements.
 
@@ -187,23 +158,6 @@ Tuesday
     -   1.  Who has the most tags? If no one, continue.
 
     -   1.  Last Read in the browser wins. ![4num](https://i.gyazo.com/791874ae4dc749b84d901403a4c32776.png) ![4numResults](https://i.gyazo.com/ca8542e4d17baa50b858ff0fe750e23b.png)
-
-    <style>
-      .box {
-        width: 50px;
-        height: 50px;
-        border: 1px solid black;
-      }
-      .orange {
-        background-color: orange;
-      }
-      .yellow {
-        background-color: yellow;
-        border: 1px solid purple;
-      }
-    </style>
-    <div class="box yellow"></div>
-    <div class="box orange"></div>
 
 -   Coming back to our example where all the CSS Rules have tied, the last step 4 wins out so our element will have a `purple border`.
 
@@ -308,40 +262,12 @@ Tuesday
 -   To Recap: **`Fetch`** is used to make HTTP Requests, it uses Promises to handle the async nature of HTTP requests and responses.
 -   **`GET`** : Request used to retrieve information from the server.
 
-    fetch("https://jservice.xyz/api/games")
-      .then(function (res) {
-        console.log("response: ", res);
-        return res.json();
-      })
-      .then(function (data) {
-        console.log("data:", data);
-      });
+    fetch(“https://jservice.xyz/api/games”) .then(function (res) { console.log(“response:”, res); return res.json(); }) .then(function (data) { console.log(“data:”, data); });
 
 -   The second optional argument of a fetch request is the `options` argument, which can be used to add additional header information.
 -   **`POST`** : Used to create data on the server.
 
-    fetch("https://jservice.xyz/api/categories", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        title: "ACTORS & THEIR FILMS",
-      }),
-    })
-      .then(function (res) {
-        console.log(res);
-        if (!res.ok) {
-          throw Error(res.statusText);
-        }
-        return res.json();
-      })
-      .then(function (data) {
-        console.log(data);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    fetch(“https://jservice.xyz/api/categories”, { method: “POST”, headers: { “Content-Type”: “application/json”, }, body: JSON.stringify({ title: “ACTORS & THEIR FILMS”, }), }) .then(function (res) { console.log(res); if (!res.ok) { throw Error(res.statusText); } return res.json(); }) .then(function (data) { console.log(data); }) .catch(function (error) { console.log(error); });
 
 -   IMPORTANT! Fetch API will not reject HTTP status codes between 400 & 600 - it will only reject on errors like network errors.
     -   Instead, Fetch REQUIRES you to check the `ok` key inside of the Response Object, and if the key is false then the fetch can properly handle the error.
@@ -404,7 +330,45 @@ Tuesday
 \# Thursday
 -----------
 
-<table style="width:9%;"><colgroup><col style="width: 9%" /></colgroup><tbody><tr class="odd"><td># <strong>Notes</strong></td></tr><tr class="even"><td>## <strong>The Box Model</strong></td></tr><tr class="odd"><td>- <strong>Box Model</strong> : A concept that basically boils down that every DOM element has a box around it.</td></tr><tr class="even"><td><img src="https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/layout/assets/the-box-model.svg" alt="boxmodel" /></td></tr><tr class="odd"><td>&gt; Imagine a gift, inside is the gift, wrapped in foam all around (padding), and the giftbox outside of it (border) and then a wrapping paper on the giftbox (margin).</td></tr><tr class="even"><td>- For items that are using <code>block</code> as it’s display, the browser will follow these rules to layout the element: - The box fills 100% of the available container space. - Every new box takes on a new line/row. - Width and Height properties are respected. - Padding, Margin, and Border will push other elements away from the box. - Certain elements have <code>block</code> as their default display, such as: divs, headers, and paragraphs.</td></tr><tr class="odd"><td>- For items that are using <code>inline</code> as it’s display, the browser will follow these rules to layout the element: - Each box appears in a single line until it fills up the space. - Width and height are <strong>not</strong> respected. - Padding, Margin, and Border are applied but they <strong>do not</strong> push other elements away from the box. - Certain elements have <code>inline</code> as their default display, such as: span tags, anchors, and images.</td></tr><tr class="even"><td><strong>Standard Box Model vs Border-Box</strong></td></tr><tr class="odd"><td>- As per the standard Box Model, the width and height pertains to the content of the box and excludes any additional padding, borders, and margins.</td></tr><tr class="even"><td><img src="https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/layout/assets/standard-box.svg" alt="example" /></td></tr><tr class="odd"><td>- This bothered many programmers so they created the <strong>border box</strong> to include the calculation of the entire box’s height and width.</td></tr><tr class="even"><td><img src="https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/layout/assets/border-box.svg" alt="ex" /></td></tr><tr class="odd"><td><strong>Inline-Block</strong></td></tr><tr class="even"><td>- Inline-block uses the best features of both <code>block</code> and <code>inline</code>. - Elements still get laid out left to right. - Layout takes into account specified width and height.</td></tr><tr class="odd"><td><strong>Padding</strong></td></tr><tr class="even"><td>- Padding applies padding to every side of a box. It is shorthand for four padding properties in this order: <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, <code>padding-left</code> (clockwise!)</td></tr><tr class="odd"><td><strong>Border</strong></td></tr><tr class="even"><td>- Border applies a border on all sides of an element. It takes three values in this order: <code>border-width</code>, <code>border-style</code>, <code>border-color</code>. - All three properties can be broken down in the four sides clockwise: top, right, bottom, left.</td></tr><tr class="odd"><td><strong>Margin</strong></td></tr><tr class="even"><td>- Margin sets margins on every side of an element. It takes four values in this order: <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, <code>margin-left</code>. - You can use <code>margin: 0 auto</code> to center an element.</td></tr></tbody></table>
+\# **Notes**
+
+\#\# **The Box Model**
+
+**Box Model** : A concept that basically boils down that every DOM element has a box around it.
+
+![boxmodel](https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/layout/assets/the-box-model.svg)
+
+&gt; Imagine a gift, inside is the gift, wrapped in foam all around (padding), and the giftbox outside of it (border) and then a wrapping paper on the giftbox (margin).
+
+For items that are using `block` as it’s display, the browser will follow these rules to layout the element: - The box fills 100% of the available container space. - Every new box takes on a new line/row. - Width and Height properties are respected. - Padding, Margin, and Border will push other elements away from the box. - Certain elements have `block` as their default display, such as: divs, headers, and paragraphs.
+
+For items that are using `inline` as it’s display, the browser will follow these rules to layout the element: - Each box appears in a single line until it fills up the space. - Width and height are **not** respected. - Padding, Margin, and Border are applied but they **do not** push other elements away from the box. - Certain elements have `inline` as their default display, such as: span tags, anchors, and images.
+
+**Standard Box Model vs Border-Box**
+
+As per the standard Box Model, the width and height pertains to the content of the box and excludes any additional padding, borders, and margins.
+
+![example](https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/layout/assets/standard-box.svg)
+
+This bothered many programmers so they created the **border box** to include the calculation of the entire box’s height and width.
+
+![ex](https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/layout/assets/border-box.svg)
+
+**Inline-Block**
+
+Inline-block uses the best features of both `block` and `inline`. - Elements still get laid out left to right. - Layout takes into account specified width and height.
+
+**Padding**
+
+Padding applies padding to every side of a box. It is shorthand for four padding properties in this order: `padding-top`, `padding-right`, `padding-bottom`, `padding-left` (clockwise!)
+
+**Border**
+
+Border applies a border on all sides of an element. It takes three values in this order: `border-width`, `border-style`, `border-color`. - All three properties can be broken down in the four sides clockwise: top, right, bottom, left.
+
+**Margin**
+
+-   Margin sets margins on every side of an element. It takes four values in this order: `margin-top`, `margin-right`, `margin-bottom`, `margin-left`. - You can use `margin: 0 auto` to center an element.
 
 **Positioning**
 ---------------
@@ -424,14 +388,7 @@ Tuesday
 -   It is positioned *RELATIVE* to the it’s *ORIGINAL PLACE* on the page flow.
 -   Creates a **stacking context** : overlapping elements whose order can be set by the z-index property.
 
-    #pink-box {
-      background-color: #ff69b4;
-      bottom: 0;
-      left: -20px;
-      position: relative;
-      right: 0;
-      top: 0;
-    }
+    \#pink-box { background-color: \#ff69b4; bottom: 0; left: -20px; position: relative; right: 0; top: 0; }
 
 ![rel](https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/layout/assets/relative-pink-box.png)
 
@@ -440,63 +397,36 @@ Tuesday
 -   Absolute elements are removed from the normal page flow and other elements around it act like it’s not there. (how we can easily achieve some layering)
 -   Here are some examples to illustration absolute positioning:
 
-    .container {
-      background-color: #2b2d2f;
-      position: relative;
-    }
+    .container { background-color: \#2b2d2f; position: relative; }
 
-    #pink-box {
-      position: absolute;
-      top: 60px;
-    }
+    \#pink-box { position: absolute; top: 60px; }
 
 ![img](https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/layout/assets/absolute-pink-box.png)
 
 -   Note that the container ele has a relative positioning - this is so that any changes made to the absolute positioned children will be positioned from it’s top-left corner.
 -   Note that because we removed the pink from the normal page flow, the container has now shifted the blue box to where the pink box should have been - which is why it is now layered beneath the pink.
 
-    .container {
-      background-color: #2b2d2f;
-      position: relative;
-    }
+    .container { background-color: \#2b2d2f; position: relative; }
 
-    #pink-box {
-      position: absolute;
-      top: 60px;
-    }
+    \#pink-box { position: absolute; top: 60px; }
 
-    #blue-box {
-      position: absolute;
-    }
+    \#blue-box { position: absolute; }
 
 ![img](https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/layout/assets/absolute-blue-box.png)
 
 -   As you can see here, since we have also taken the blue box out of the normal page flow by declaring it as absoutely positioned it now overlaps over the pink box.
 
-    .container {
-      background-color: #2b2d2f;
-      position: relative;
-    }
+    .container { background-color: \#2b2d2f; position: relative; }
 
-    #pink-box {
-      background-color: #ff69b4;
-      bottom: 60px;
-      position: absolute;
-    }
+    \#pink-box { background-color: \#ff69b4; bottom: 60px; position: absolute; }
 
 ![img](https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/layout/assets/relative-parent-absolute-child.png)
 
 -   Example where the absolute element has it’s bottom property modified.
 
-    .container {
-      background-color: #2b2d2f;
-    }
+    .container { background-color: \#2b2d2f; }
 
-    #pink-box {
-      background-color: #ff69b4;
-      bottom: 60px;
-      position: absolute;
-    }
+    \#pink-box { background-color: \#ff69b4; bottom: 60px; position: absolute; }
 
 ![img](https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/layout/assets/static-parent-absolute-child.png)
 
@@ -532,11 +462,7 @@ Tuesday
 
 -   Flexbox layout applies styles to the parent element, and it’s children.
 
-    .container {
-      display: flex; /*sets display to use flex*/
-      flex-wrap: wrap; /*bc flex tries to fit everything into one line, use wrap to have the elements wrap to the next line*/
-      flex-direction: row; /*lets us create either rows or columns*/
-    }
+    .container { display: flex; /*sets display to use flex*/ flex-wrap: wrap; /*bc flex tries to fit everything into one line, use wrap to have the elements wrap to the next line*/ flex-direction: row; /*lets us create either rows or columns*/ }
 
 -   **`flex-flow`** can be used to combine wrap and direction.
 -   **`justify-content`** used to define the alignment of flex items along the main axis.
@@ -564,35 +490,11 @@ Tuesday
 -   Bootstrap was a front-end library commonly used to create grid layouts but now CSS grid provides greater flexibility and control.
 -   Grid applies style to a parent container and it’s child elements.
 
-    .grid-container {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: auto;
-      grid-template-areas:
-        "header header header"
-        "main . sidebar"
-        "footer footer footer";
+    .grid-container { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: auto; grid-template-areas: “header header header” “main . sidebar” “footer footer footer”;
 
-      grid-column-gap: 20px;
-      grid-row-gap: 30px;
-      justify-items: stretch;
-      align-items: stretch;
-      justify-content: stretch;
-      align-content: stretch;
-    }
+    grid-column-gap: 20px; grid-row-gap: 30px; justify-items: stretch; align-items: stretch; justify-content: stretch; align-content: stretch; }
 
-    .item-1 {
-      grid-area: header;
-    }
-    .item-2 {
-      grid-area: main;
-    }
-    .item-3 {
-      grid-area: sidebar;
-    }
-    .item-4 {
-      grid-area: footer;
-    }
+    .item-1 { grid-area: header; } .item-2 { grid-area: main; } .item-3 { grid-area: sidebar; } .item-4 { grid-area: footer; }
 
 -   Columns and Rows can be defined with: pixels, percentages, auto, named grid lines, using `repeat`, fractions.
 -   **`Grid Template Areas`** gives us a handy way to map out and visualize areas of the grid layout.
@@ -603,13 +505,7 @@ Tuesday
 
 -   We can also **`implicitly`** define grids.
 
-    .grid-container {
-      display: grid;
-      grid-template-columns: 100px 100px 100px 100px;
-      grid-template-rows: 50px 50px 50px;
-      grid-auto-columns: 100px;
-      grid-auto-rows: 50px;
-    }
+    .grid-container { display: grid; grid-template-columns: 100px 100px 100px 100px; grid-template-rows: 50px 50px 50px; grid-auto-columns: 100px; grid-auto-rows: 50px; }
 
 -   Any grid items that aren’t explicity placed are automatically placed or *re-flowed*
 
@@ -624,19 +520,9 @@ Tuesday
 
 -   All four properties can take any of the following values: the line number, span \#, span name, auto.
 
-    .item-1 {
-      grid-row-start: row2-start; /* Item starts at row line named "row2-start" */
-      grid-row-end: 5; /* Item ends at row line 5 */
-      grid-column-start: 1; /* Item starts at column line 1 */
-      grid-column-end: three; /* Item ends at column line named "three" */
-    }
+    .item-1 { grid-row-start: row2-start; /\* Item starts at row line named “row2-start” */ grid-row-end: 5; /* Item ends at row line 5 */ grid-column-start: 1; /* Item starts at column line 1 */ grid-column-end: three; /* Item ends at column line named “three” \*/ }
 
-    .item-2 {
-      grid-row-start: 1; /* Item starts at row line 1 */
-      grid-row-end: span 2; /* Item spans two rows and ends at row line 3 */
-      grid-column-start: 3; /* Item starts at column line 3 */
-      grid-column-end: span col5-start; /* Item spans and ends at line named "col5-start" */
-    }
+    .item-2 { grid-row-start: 1; /\* Item starts at row line 1 */ grid-row-end: span 2; /* Item spans two rows and ends at row line 3 */ grid-column-start: 3; /* Item starts at column line 3 */ grid-column-end: span col5-start; /* Item spans and ends at line named “col5-start” \*/ }
 
 **Grid Areas**
 
@@ -661,7 +547,17 @@ Tuesday
 \# Friday
 ---------
 
-<table style="width:9%;"><colgroup><col style="width: 9%" /></colgroup><tbody><tr class="odd"><td># <strong>Notes</strong></td></tr><tr class="even"><td>## <strong>CSS Hover Effect and Handling Overflow</strong></td></tr><tr class="odd"><td><code>css .btn { background-color: #00bfff; color: #ffffff; border-radius: 10px; padding: 1.5rem; } .btn--active:hover { cursor: pointer; transform: translateY(-0.25rem); /* Moves our button up/down on the Y axis */ }</code></td></tr><tr class="even"><td>- The Pseudo Class Selector <strong><code>hover</code></strong> activates when the cursor goes over the selected element.</td></tr><tr class="odd"><td><strong>Content Overflow</strong></td></tr><tr class="even"><td>- You can apply an <code>overflow</code> content property to an element if it’s inner contents are spilling over. - There are three members in the overflow family: - <strong><code>overflow-x</code></strong> : Apply horizontally. - <strong><code>overflow-y</code></strong> : Apply vertically. - <strong><code>overflow</code></strong> : Apply both directions.</td></tr></tbody></table>
+\# **Notes**
+
+\#\# **CSS Hover Effect and Handling Overflow**
+
+`css .btn { background-color: #00bfff; color: #ffffff; border-radius: 10px; padding: 1.5rem; } .btn–active:hover { cursor: pointer; transform: translateY(-0.25rem); /* Moves our button up/down on the Y axis */ }`
+
+The Pseudo Class Selector **`hover`** activates when the cursor goes over the selected element.
+
+**Content Overflow**
+
+-   You can apply an `overflow` content property to an element if it’s inner contents are spilling over. - There are three members in the overflow family: - **`overflow-x`** : Apply horizontally. - **`overflow-y`** : Apply vertically. - **`overflow`** : Apply both directions.
 
 **Transitions**
 ---------------
@@ -692,22 +588,9 @@ Tuesday
 
 -   After a delay of two seconds, a four second transition begins where the font size goes from 36px to 14px.
 
-    .box {
-      border-style: solid;
-      border-width: 1px;
-      display: block;
-      width: 100px;
-      height: 100px;
-      background-color: #0000ff;
-      transition: width 2s, height 2s, background-color 2s, transform 2s;
-    }
+    .box { border-style: solid; border-width: 1px; display: block; width: 100px; height: 100px; background-color: \#0000ff; transition: width 2s, height 2s, background-color 2s, transform 2s; }
 
-    .box:hover {
-      background-color: #ffcccc;
-      width: 200px;
-      height: 200px;
-      transform: rotate(180deg);
-    }
+    .box:hover { background-color: \#ffcccc; width: 200px; height: 200px; transform: rotate(180deg); }
 
 ![pic](https://assets.aaonline.io/Module-Solo-Prep-Work/assets/example-css-transition-multiple.gif)
 

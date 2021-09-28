@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>2014-06-06-express-github-authentication-with-passport</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<!--
+
+
+---
+ "Express.js : Github authentication with passport"
+excerpt: "Configure github authentication with express.js and passport"
+date: 2014-06-06 00:00:00 IST
+updated: 2014-06-06 00:00:00 IST
+categories: nodejs, express
+tags: express, passport, github, authentication
+---
+
+-->
+&lt;!DOCTYPE html&gt;
+<html>
+<head>
+<title>
+basic-git-workflow
+</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./css/bootstrap.css"> <link rel="stylesheet" href="./css/bootstrap.grid.css"> <link rel="stylesheet" href="./css/bootstrap.min.css"> <link rel="stylesheet" href="./css/bootstrap-reboot.min.css"> <link rel="stylesheet" href="./css/bootstrap.css.map"> <link rel="stylesheet" href="./css/blog-home.css"> <link rel="stylesheet" href="./css/prism.css">
+<script async defer src="./css/prism.js"></script>
+</head>
+<body>
+<p><a href="http://expressjs.com">Express.js</a> is one of the popular web application framework for Node.js. To implement Github authentication <a href="http://passportjs.org/">passport</a> module seems to really flexible.</p>
+<p>To start, register a new application on Github goto <a href="https://github.com/settings/applications/new">Account &gt; Applications &gt; Register new application</a>. This will yield you a client id and client secret for your application which we will use later. While registering new appplication they will ask for a callback url, let it be <code>http://localhost:3000/auth/callback</code>.</p>
+<h1 id="install-passport">Install passport</h1>
+<p>After creating new express.js project install the <a href="https://www.npmjs.org/package/passport">passport</a> and <a href="https://www.npmjs.org/package/passport-github">passport-github</a> Strategy.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">npm</span> install passport passport-github --save</a></code></pre></div>
+<h1 id="configure-passport">Configure passport</h1>
+<p>To configure, start with require passport and passport-github strategy into your application.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="co">// app.js</span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="kw">var</span> passport <span class="op">=</span> <span class="at">require</span>(<span class="st">&quot;passport&quot;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="kw">var</span> GithubStrategy <span class="op">=</span> <span class="at">require</span>(<span class="st">&quot;passport-github&quot;</span>).<span class="at">Strategy</span><span class="op">;</span></a></code></pre></div>
+<p>Now initialize the passport middleware with <code>app.use</code>. Usually, a freshly baked express.js doesn’t use <code>cookieParse</code> and <code>session</code> middleware so before adding passport middleware add those to your application. You will receive some weird errors if you didn’t. Also I recommend to use them in the following order after <code>app.use(express.methodOverride());</code></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="va">app</span>.<span class="at">use</span>(<span class="va">express</span>.<span class="at">cookieParser</span>())<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="va">app</span>.<span class="at">use</span>(<span class="va">express</span>.<span class="at">session</span>(<span class="op">{</span> <span class="dt">secret</span><span class="op">:</span> <span class="st">&quot;mysecret&quot;</span> <span class="op">}</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="va">app</span>.<span class="at">use</span>(<span class="va">passport</span>.<span class="at">initialize</span>())<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-4" title="4"><span class="va">app</span>.<span class="at">use</span>(<span class="va">passport</span>.<span class="at">session</span>())<span class="op">;</span></a></code></pre></div>
+<h1 id="configure-github-strategy">Configure github strategy</h1>
+<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="co">// app.js</span></a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="va">passport</span>.<span class="at">use</span>(</a>
+<a class="sourceLine" id="cb4-3" title="3">  <span class="kw">new</span> <span class="at">GithubStrategy</span>(</a>
+<a class="sourceLine" id="cb4-4" title="4">    <span class="op">{</span></a>
+<a class="sourceLine" id="cb4-5" title="5">      <span class="dt">clientID</span><span class="op">:</span> <span class="st">&quot;your app client id&quot;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb4-6" title="6">      <span class="dt">clientSecret</span><span class="op">:</span> <span class="st">&quot;your app client secret&quot;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb4-7" title="7">      <span class="dt">callbackURL</span><span class="op">:</span> <span class="st">&quot;http://localhost:3000/auth/callback&quot;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb4-8" title="8">    <span class="op">},</span></a>
+<a class="sourceLine" id="cb4-9" title="9">    <span class="kw">function</span> (accessToken<span class="op">,</span> refreshToken<span class="op">,</span> profile<span class="op">,</span> done) <span class="op">{</span></a>
+<a class="sourceLine" id="cb4-10" title="10">      <span class="at">done</span>(<span class="kw">null</span><span class="op">,</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb4-11" title="11">        <span class="dt">accessToken</span><span class="op">:</span> accessToken<span class="op">,</span></a>
+<a class="sourceLine" id="cb4-12" title="12">        <span class="dt">profile</span><span class="op">:</span> profile<span class="op">,</span></a>
+<a class="sourceLine" id="cb4-13" title="13">      <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-14" title="14">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb4-15" title="15">  )</a>
+<a class="sourceLine" id="cb4-16" title="16">)<span class="op">;</span></a></code></pre></div>
+<p>Github doen’t have a <code>refreshToken</code> so we don’t care about it. The object we passed to <code>done()</code> method will be received by <code>serializeUser</code>.</p>
+<p>In order to maintain the users session, Passport will serialize and deserialize <code>user</code> instances to and from the session. we need to configure those methods as our needs.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb5-1" title="1"><span class="co">// app.js</span></a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="va">passport</span>.<span class="at">serializeUser</span>(<span class="kw">function</span> (user<span class="op">,</span> done) <span class="op">{</span></a>
+<a class="sourceLine" id="cb5-3" title="3">  <span class="co">// for the time being tou can serialize the user</span></a>
+<a class="sourceLine" id="cb5-4" title="4">  <span class="co">// object {accessToken: accessToken, profile: profile }</span></a>
+<a class="sourceLine" id="cb5-5" title="5">  <span class="co">// In the real app you might be storing on the id like user.profile.id</span></a>
+<a class="sourceLine" id="cb5-6" title="6">  <span class="at">done</span>(<span class="kw">null</span><span class="op">,</span> user)<span class="op">;</span></a>
+<a class="sourceLine" id="cb5-7" title="7"><span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb5-8" title="8"></a>
+<a class="sourceLine" id="cb5-9" title="9"><span class="va">passport</span>.<span class="at">deserializeUser</span>(<span class="kw">function</span> (user<span class="op">,</span> done) <span class="op">{</span></a>
+<a class="sourceLine" id="cb5-10" title="10">  <span class="co">// If you are storing the whole user on session we can just pass to the done method,</span></a>
+<a class="sourceLine" id="cb5-11" title="11">  <span class="co">// But if you are storing the user id you need to query your db and get the user</span></a>
+<a class="sourceLine" id="cb5-12" title="12">  <span class="co">//object and pass to done()</span></a>
+<a class="sourceLine" id="cb5-13" title="13">  <span class="at">done</span>(<span class="kw">null</span><span class="op">,</span> user)<span class="op">;</span></a>
+<a class="sourceLine" id="cb5-14" title="14"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
+<p>The <code>serializeUser</code> will store the user id in the session and <code>deserializeUser</code> will get the user from our database and store it in <code>req.user</code>.</p>
+<h1 id="configure-routes">Configure routes</h1>
+<p>We need to configure the routes for auth callback and error.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="co">// app.js</span></a>
+<a class="sourceLine" id="cb6-2" title="2"><span class="va">app</span>.<span class="at">get</span>(<span class="st">&quot;/auth&quot;</span><span class="op">,</span> <span class="va">passport</span>.<span class="at">authenticate</span>(<span class="st">&quot;github&quot;</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb6-3" title="3"><span class="va">app</span>.<span class="at">get</span>(<span class="st">&quot;/auth/error&quot;</span><span class="op">,</span> <span class="va">auth</span>.<span class="at">error</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb6-4" title="4"><span class="va">app</span>.<span class="at">get</span>(</a>
+<a class="sourceLine" id="cb6-5" title="5">  <span class="st">&quot;/auth/callback&quot;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb6-6" title="6">  <span class="va">passport</span>.<span class="at">authenticate</span>(<span class="st">&quot;github&quot;</span><span class="op">,</span> <span class="op">{</span> <span class="dt">failureRedirect</span><span class="op">:</span> <span class="st">&quot;/auth/error&quot;</span> <span class="op">}</span>)<span class="op">,</span></a>
+<a class="sourceLine" id="cb6-7" title="7">  <span class="va">auth</span>.<span class="at">callback</span></a>
+<a class="sourceLine" id="cb6-8" title="8">)<span class="op">;</span></a></code></pre></div>
+<p>The implementation of the routes are upto you.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb7-1" title="1"><span class="co">// routes/auth.js</span></a>
+<a class="sourceLine" id="cb7-2" title="2"><span class="va">exports</span>.<span class="at">callback</span> <span class="op">=</span> <span class="kw">function</span> (req<span class="op">,</span> res) <span class="op">{</span></a>
+<a class="sourceLine" id="cb7-3" title="3">  <span class="co">// In the real application you might need to check</span></a>
+<a class="sourceLine" id="cb7-4" title="4">  <span class="co">// whether the user exits and if exists redirect</span></a>
+<a class="sourceLine" id="cb7-5" title="5">  <span class="co">// or if not you many need to create user.</span></a>
+<a class="sourceLine" id="cb7-6" title="6">  <span class="va">res</span>.<span class="at">send</span>(<span class="st">&quot;Login success&quot;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb7-7" title="7"><span class="op">};</span></a>
+<a class="sourceLine" id="cb7-8" title="8"></a>
+<a class="sourceLine" id="cb7-9" title="9"><span class="va">exports</span>.<span class="at">error</span> <span class="op">=</span> <span class="kw">function</span> (req<span class="op">,</span> res) <span class="op">{</span></a>
+<a class="sourceLine" id="cb7-10" title="10">  <span class="va">res</span>.<span class="at">send</span>(<span class="st">&quot;Login Failed&quot;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb7-11" title="11"><span class="op">};</span></a></code></pre></div>
+<p>Thats it, you successfully implemented the github authentication for you express.js app with passport. In this I just skipped the usage of models and store the data to make it short. Consider this as a steeping stone and if you have any issues on implementing this in a real app, lemme know via comments. I will try my best to address it.</p>
+<p>Until next time. Thank you.</p>
+</body>
+</html>

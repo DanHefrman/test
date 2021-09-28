@@ -1,5 +1,5 @@
-<span class="citation" data-cites="dojo/widgets/snackbar">@dojo/widgets/snackbar</span>
-=======================================================================================
+<span class="citation" data-cites="dojo/widgets/snackbar"><span class="citation" data-cites="dojo/widgets/snackbar">@dojo/widgets/snackbar</span></span>
+========================================================================================================================================================
 
 Dojo’s `Snackbar` widget creates a brief display message that is positioned at the bottom of the screen.
 

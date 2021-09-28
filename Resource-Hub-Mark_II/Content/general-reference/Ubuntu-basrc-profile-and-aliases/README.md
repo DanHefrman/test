@@ -44,7 +44,7 @@ make less more friendly for non-text input files, see lesspipe(1)
 set variable identifying the chroot you work in (used in the prompt below)
 ==========================================================================
 
-if \[ -z “$debian\_chroot” \] && \[ -r /etc/debian\_chroot \]; then debian\_chroot=$(cat /etc/debian\_chroot) fi
+if \[ -z “<span class="math inline">$debian\\\_chroot” \\\] && \\\[ -r /etc/debian\\\_chroot \\\]; then debian\\\_chroot=$</span>(cat /etc/debian\_chroot) fi
 
 set a fancy prompt (non-color, unless we know we “want” color)
 ==============================================================
@@ -64,17 +64,17 @@ should be on the output of commands, not on the prompt
 
 if \[ -n “$force\_color\_prompt” \]; then if \[ -x /usr/bin/tput \] && tput setaf 1 &gt;&/dev/null; then \# We have color support; assume it’s compliant with Ecma-48 \# (ISO/IEC-6429). (Lack of such support is extremely rare, and such \# a case would tend to support setf rather than setaf.) color\_prompt=yes else color\_prompt= fi fi
 
-if \[ “$color\_prompt” = yes \]; then PS1=‘<span class="math inline">${debian\_chroot:+($</span>debian\_chroot)}\[\\033\[01;32m\]:\[\\033\[01;34m\]\[\\033\[00m\]$’ else PS1=‘<span class="math inline">${debian\_chroot:+($</span>debian\_chroot)}$’ fi unset color\_prompt force\_color\_prompt
+if \[ “<span class="math inline">$color\\\_prompt” = yes \\\]; then PS1=‘&lt;span class="math inline"&gt;$</span>{debian\_chroot:+(<span class="math inline">$&lt;/span&gt;debian\\\_chroot)}\\\[\\\\033\\\[01;32m\\\]:\\\[\\\\033\\\[01;34m\\\]\\\[\\\\033\\\[00m\\\]$</span>’ else PS1=‘<span class="math inline"><span class="math inline">${debian\\\_chroot:+($</span></span>debian\_chroot)}$’ fi unset color\_prompt force\_color\_prompt
 
 If this is an xterm set the title to user@host:dir
 ==================================================
 
-case “<span class="math inline">$TERM" in xterm\*|rxvt\*) PS1="\\\[\\e\]0;$</span>{debian\_chroot:+(<span class="math inline">$debian\_chroot)}\\u@\\h: \\w\\a\\\]$</span>PS1” ;; \*) ;; esac
+case “<span class="math inline"><span class="math inline">$TERM" in xterm\\\*|rxvt\\\*) PS1="\\\\\\\[\\\\e\\\]0;$</span></span>{debian\_chroot:+(<span class="math inline"><span class="math inline">$debian\\\_chroot)}\\\\u@\\\\h: \\\\w\\\\a\\\\\\\]$</span></span>PS1” ;; \*) ;; esac
 
 enable color support of ls and also add handy aliases
 =====================================================
 
-if \[ -x /usr/bin/dircolors \]; then test -r ~/.dircolors && eval “<span class="math inline">$(dircolors -b ~/.dircolors)" || eval "$</span>(dircolors -b)” alias ls=‘ls –color=auto’ \#alias dir=‘dir –color=auto’ \#alias vdir=‘vdir –color=auto’
+if \[ -x /usr/bin/dircolors \]; then test -r ~/.dircolors && eval “<span class="math inline"><span class="math inline">$(dircolors -b ~/.dircolors)" || eval "$</span></span>(dircolors -b)” alias ls=‘ls –color=auto’ \#alias dir=‘dir –color=auto’ \#alias vdir=‘vdir –color=auto’
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
@@ -93,7 +93,7 @@ Add an “alert” alias for long running commands. Use like so:
 sleep 10; alert
 ===============
 
-alias alert=‘notify-send –urgency=low -i “$(\[ $? = 0 \] && echo terminal || echo error)” “<span class="math inline">$(history|tail -n1|sed -e '\\''s/^\\s\*\[0-9\]\\+\\s\*//;s/\[;&|\]\\s\*alert$</span>//‘'’)”’
+alias alert=‘notify-send –urgency=low -i “$(\[ <span class="math inline">$? = 0 \\\] && echo terminal || echo error)” “&lt;span class="math inline"&gt;$</span>(history|tail -n1|sed -e ‘\\’‘s/^\\s\*\[0-9\]\\+\\s\*//;s/\[;&|\]\\s\*alert$//‘’’)”’
 
 Alias definitions.
 ==================

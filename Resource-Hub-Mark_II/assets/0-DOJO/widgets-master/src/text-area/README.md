@@ -1,5 +1,5 @@
-<span class="citation" data-cites="dojo/widgets/text-area">@dojo/widgets/text-area</span>
-=========================================================================================
+<span class="citation" data-cites="dojo/widgets/text-area"><span class="citation" data-cites="dojo/widgets/text-area">@dojo/widgets/text-area</span></span>
+===========================================================================================================================================================
 
 Dojo’s `TextArea` widget provides a wrapped native `textarea` input with an optional label.
 

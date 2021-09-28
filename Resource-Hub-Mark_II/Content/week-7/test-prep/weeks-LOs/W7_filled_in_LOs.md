@@ -35,103 +35,43 @@ Big-O
 -   Important takeaway here is being able to connect code patterns with complexities
     -   Doing an exact number of calculations (independent of input) -&gt; constant O(1)
 
-        function constant_1(n) {
-          return n * 2 + 1;
-        }
+        function constant\_1(n) { return n \* 2 + 1; }
 
     -   Looping an exact number of times (independent of input) -&gt; constant O(1)
 
-        function constant_2(n) {
-          for (let i = 1; i <= 20; i++) {
-            console.log(i);
-          }
-        }
+        function constant\_2(n) { for (let i = 1; i &lt;= 20; i++) { console.log(i); } }
 
     -   Recursive calls that divide the input -&gt; logarithmic O(log n)
 
-        function logarithmic(n) {
-          console.log(n);
-          if (n <= 1) return;
-          logarithmic(n / 2);
-        }
+        function logarithmic(n) { console.log(n); if (n &lt;= 1) return; logarithmic(n / 2); }
 
     -   Loops that depend on the size of the input -&gt; linear O(n)
 
-        function linear_1(n) {
-          for (let i = 1; i <= n; i++) {
-            console.log(i);
-          }
-        }
+        function linear\_1(n) { for (let i = 1; i &lt;= n; i++) { console.log(i); } }
 
     -   Recursive calls that depend on the size of the input (decrementing instead of dividing) -&gt; linear O(n)
 
-        function linear_2(n) {
-          console.log(n);
-          if (n === 1) return;
-          linear_2(n - 1);
-        }
+        function linear\_2(n) { console.log(n); if (n === 1) return; linear\_2(n - 1); }
 
     -   Looping through input on each stack frame, while recursively dividing our data (commonly seen in sorts like merge and quick sort) -&gt; loglinear O(n log n)
 
-        function loglinear(n) {
-          if (n <= 1) return;
-          for (let i = 1; i <= n; i++) { // n calculations in each stack frame
-            console.log(n);
-          }
-          loglinear(n / 2); // log n number of stack frames
-          loglinear(n / 2);
-        }
+        function loglinear(n) { if (n &lt;= 1) return; for (let i = 1; i &lt;= n; i++) { // n calculations in each stack frame console.log(n); } loglinear(n / 2); // log n number of stack frames loglinear(n / 2); }
 
     -   Nesting loops that depend on the size of the input -&gt; polynomial O(n^c)
 
-        // O(n^2)
-        function quadratic(n) {
-          for (let i = 1; i <= n; i++) {
-            for (let j = 1; j <= n; j++) {
-              console.log(`${i}, ${j}`);
-            }
-          }
-        }
+        // O(n^2) function quadratic(n) { for (let i = 1; i &lt;= n; i++) { for (let j = 1; j &lt;= n; j++) { console.log(`${i}, ${j}`); } } }
 
-        // O(n^3)
-        function cubic(n) {
-          for (let i = 1; i <= n; i++) {
-            for (let j = 1; j <= n; j++) {
-              for (let k = 1; k <= n; k++) {
-                console.log(`${i}, ${j}, ${k}`);
-              }
-            }
-          }
-        }
+        // O(n^3) function cubic(n) { for (let i = 1; i &lt;= n; i++) { for (let j = 1; j &lt;= n; j++) { for (let k = 1; k &lt;= n; k++) { console.log(`${i}, ${j}, ${k}`); } } } }
 
     -   Branching out on each recursive call, with the number of calls dependent on the size of the input -&gt; exponential O(c^n)
 
-        // O(2^n)
-        function exponential_2n(n) {
-          console.log(n);
-          if (n === 1) return;
-          exponential_2n(n - 1);
-          exponential_2n(n - 1);
-        }
+        // O(2^n) function exponential\_2n(n) { console.log(n); if (n === 1) return; exponential\_2n(n - 1); exponential\_2n(n - 1); }
 
-        // O(3^n)
-        function exponential_3n(n) {
-          console.log(n);
-          if (n === 1) return;
-          exponential_3n(n - 1);
-          exponential_3n(n - 1);
-          exponential_3n(n - 1);
-        }
+        // O(3^n) function exponential\_3n(n) { console.log(n); if (n === 1) return; exponential\_3n(n - 1); exponential\_3n(n - 1); exponential\_3n(n - 1); }
 
     -   When both the number of recursive calls and the number of branches made in the calls are dependent on the size of the input -&gt; factorial O(n!)
 
-        function factorial(n) {
-          console.log(n);
-          if (n === 1) return;
-          for (let i = 1; i <= n; i++) { // Here we're making n branches on this frame
-            factorial(n - 1); // Since we are decrementing, we're making n stack frames
-          }
-        }
+        function factorial(n) { console.log(n); if (n === 1) return; for (let i = 1; i &lt;= n; i++) { // Here we’re making n branches on this frame factorial(n - 1); // Since we are decrementing, we’re making n stack frames } }
 
 Memoization and Tabulation
 --------------------------
@@ -149,32 +89,13 @@ Memoization and Tabulation
 
 -   Example of a standard and memoized fibonacci:
 
-    // Standard Implementation
-    // Time Complexity: O(2^n)
-    //   - For each call to fib, we have to make two branches, with n levels to this tree
-    function fib(n) {
-      if (n === 1 || n === 2) return 1;
-      return fib(n - 1) + fib(n - 2); // fib(3) + fib(2)
-    }
-    //fib(2) + fib(1)
+    // Standard Implementation // Time Complexity: O(2^n) // - For each call to fib, we have to make two branches, with n levels to this tree function fib(n) { if (n === 1 || n === 2) return 1; return fib(n - 1) + fib(n - 2); // fib(3) + fib(2) } //fib(2) + fib(1)
 
-    // Using memoization
-    // Time Complexity: O(n)
-    //   - We only ever have to calculate fib(x) one time, every other time that we use it in a larger problem, the result is immediately accessible in our memo
-    //   - The memo removes the repeated trees of calculations from our original code
-    function fib(n, memo = {}) { // n = 4, memo = { 3: 2, 4: 3 }
-      if (n in memo) return memo[n]; // If we already calculated this value, return it
-      if (n === 1 || n === 2) return 1;
+    // Using memoization // Time Complexity: O(n) // - We only ever have to calculate fib(x) one time, every other time that we use it in a larger problem, the result is immediately accessible in our memo // - The memo removes the repeated trees of calculations from our original code function fib(n, memo = {}) { // n = 4, memo = { 3: 2, 4: 3 } if (n in memo) return memo\[n\]; // If we already calculated this value, return it if (n === 1 || n === 2) return 1;
 
-      // Store the result in the memo first before returning
-      // Make sure to pass the memo in to your calls to fib!
-      memo[n] = fib(n - 1, memo) + fib(n - 2, memo); 
-      return memo[n];
-    }
+    // Store the result in the memo first before returning // Make sure to pass the memo in to your calls to fib! memo\[n\] = fib(n - 1, memo) + fib(n - 2, memo); return memo\[n\]; }
 
-    // memo[5] = fib(4) + fib(3) = 3 + memo[3] = 5
-    // memo[4] = fib(3) + fib(2) = 2 + 1 = 3
-    // memo[3] = fib(2) + fib(1) = 1 + 1 = 2
+    // memo\[5\] = fib(4) + fib(3) = 3 + memo\[3\] = 5 // memo\[4\] = fib(3) + fib(2) = 2 + 1 = 3 // memo\[3\] = fib(2) + fib(1) = 1 + 1 = 2
 
 1.  Apply tabulation to iterative problems to make them less than polynomial time.
 
@@ -196,32 +117,11 @@ Memoization and Tabulation
         -   In stepper, we iterated over each possible stepping location. If we could have made it to that point from our previous steps (ie that index was true in our table), we continued updating our table by marking the possible landing spots as true.
 -   Example of a tabulated fibonacci:
 
-    // Using tabulation
-    // Time Complexity: O(n)
-    //   - We are iterating through an array directly related to the size of the input and performing a constant number of calculations at each step (adding our two previous values together and storing the result in the array).
-    function fib(n) {
-      // We create a table to track our values as we build them up
-      // We're making it n+1 here so that table[n] lines up with the nth fib number
-      // This is because arrays are zero-indexed.
-      // We could have used an array of length n, but we would have to remember that 
-      // the nth fib number would then be stored at table[n-1]. Completely doable,
-      // but I think making them line up is more intuitive.
-      let table = new Array(n + 1); 
-      // Seed our table with our starting values.
-      // Again, if we had a table of length n, we could have seeded table[0] = 1
-      // and table[1] = 1 and had the same final result with our indices shifted.
-      table[0] = 0;
-      table[1] = 1;
+    // Using tabulation // Time Complexity: O(n) // - We are iterating through an array directly related to the size of the input and performing a constant number of calculations at each step (adding our two previous values together and storing the result in the array). function fib(n) { // We create a table to track our values as we build them up // We’re making it n+1 here so that table\[n\] lines up with the nth fib number // This is because arrays are zero-indexed. // We could have used an array of length n, but we would have to remember that // the nth fib number would then be stored at table\[n-1\]. Completely doable, // but I think making them line up is more intuitive. let table = new Array(n + 1); // Seed our table with our starting values. // Again, if we had a table of length n, we could have seeded table\[0\] = 1 // and table\[1\] = 1 and had the same final result with our indices shifted. table\[0\] = 0; table\[1\] = 1;
 
-      // Iterate through our input and fill out our table as we go.
-      for (let i = 2; i < table.length; i++) {
-        table[i] = table[i - 1] + table[i - 2];
-      }
+    // Iterate through our input and fill out our table as we go. for (let i = 2; i &lt; table.length; i++) { table\[i\] = table\[i - 1\] + table\[i - 2\]; }
 
-      // At the end, the final entry in our table is the result we are looking for.
-      // The table holds all of the sub-answers that we used to get to this result.
-      return table[n];
-    }
+    // At the end, the final entry in our table is the result we are looking for. // The table holds all of the sub-answers that we used to get to this result. return table\[n\]; }
 
 Sorting Algorithms
 ------------------
@@ -236,11 +136,9 @@ Sorting Algorithms
     -   We are creating the same number of variables with an exact size, independent of our input. No new arrays are created.
 -   Code example for bubbleSort:
 
-    function bubbleSort(array) {
-      let swapped = true;
+    function bubbleSort(array) { let swapped = true;
 
-      while(swapped) {
-        swapped = false;
+    while(swapped) { swapped = false;
 
         for (let i = 0; i < array.length - 1; i++) {
           if (array[i] > array[i+1]) {
@@ -252,10 +150,10 @@ Sorting Algorithms
             swapped = true;
           }
         }
-      }
 
-      return array;
     }
+
+    return array; }
 
 1.  Explain the complexity of and write a function that performs selection sort on an array of numbers.
 
@@ -268,9 +166,7 @@ Sorting Algorithms
     -   We are creating the same number of variables with an exact size, independent of our input. No new arrays are created.
 -   Code example for selectSort:
 
-    function selectionSort(arr) {
-      for (let i = 0; i < arr.length; i++) {
-        let minIndex = i;
+    function selectionSort(arr) { for (let i = 0; i &lt; arr.length; i++) { let minIndex = i;
 
         for (let j = i + 1; j < arr.length; j++) {
           if (arr[minIndex] > arr[j]) {
@@ -283,9 +179,8 @@ Sorting Algorithms
         arr[minIndex] = temp;
         // The above three lines could also be in a helper swap function
         // swap(arr, i, minIndex);
-      }
-      return arr;
-    }
+
+    } return arr; }
 
 1.  Explain the complexity of and write a function that performs insertion sort on an array of numbers.
 
@@ -298,16 +193,7 @@ Sorting Algorithms
     -   We are creating the same number of variables with an exact size, independent of our input. No new arrays are created.
 -   Code example for insertionSort:
 
-    function insertionSort(arr) {
-      for (let i = 1; i < arr.length; i++) {
-        let currElement = arr[i];
-        for (var j = i - 1; j >= 0 && currElement < arr[j]; j--) {
-          arr[j + 1] = arr[j];
-        }
-        arr[j + 1] = currElement;
-      }
-      return arr;
-    }
+    function insertionSort(arr) { for (let i = 1; i &lt; arr.length; i++) { let currElement = arr\[i\]; for (var j = i - 1; j &gt;= 0 && currElement &lt; arr\[j\]; j–) { arr\[j + 1\] = arr\[j\]; } arr\[j + 1\] = currElement; } return arr; }
 
 1.  Explain the complexity of and write a function that performs merge sort on an array of numbers.
 
@@ -320,15 +206,9 @@ Sorting Algorithms
     -   **IDEALLY merge sort space complexity is O(n)** see [merge sort space complexity explanation](#####*merge-sort-can-be-O(n)-space-complexity)
 -   Code example for mergeSort:
 
-    // The merge function is what is combining our sorted sub-arrays
-    function merge(array1, array2) {
-      let merged = [];
+    // The merge function is what is combining our sorted sub-arrays function merge(array1, array2) { let merged = \[\];
 
-      // keep running while either array still contains elements
-      while (array1.length || array2.length) {
-        // if array1 is nonempty, take its the first element as ele1
-        // otherwise array1 is empty, so take Infinity as ele1
-        let ele1 = array1.length ? array1[0] : Infinity;
+    // keep running while either array still contains elements while (array1.length || array2.length) { // if array1 is nonempty, take its the first element as ele1 // otherwise array1 is empty, so take Infinity as ele1 let ele1 = array1.length ? array1\[0\] : Infinity;
 
         // do the same for array2, ele2
         let ele2 = array2.length ? array2[0] : Infinity;
@@ -343,27 +223,18 @@ Sorting Algorithms
 
         // and add that ele to the new array
         merged.push(next);
-      }
 
-      return merged;
     }
 
-    // The mergeSort function breaks apart our input into smaller sub-arrays until we have an input of length <= 1, which is inherently sorted.
-    // Once we have a left and right subarray that's sorted, we can merge them together to get our sorted result of this sub-problem, passing the sorted version back up the call stack.
-    function mergeSort(array) {
-      if (array.length <= 1) {
-        return array;
-      }
+    return merged; }
 
-      let midIdx = Math.floor(array.length / 2);
-      let leftHalf = array.slice(0, midIdx);
-      let rightHalf = array.slice(midIdx);
+    // The mergeSort function breaks apart our input into smaller sub-arrays until we have an input of length &lt;= 1, which is inherently sorted. // Once we have a left and right subarray that’s sorted, we can merge them together to get our sorted result of this sub-problem, passing the sorted version back up the call stack. function mergeSort(array) { if (array.length &lt;= 1) { return array; }
 
-      let sortedLeft = mergeSort(leftHalf);
-      let sortedRight = mergeSort(rightHalf);
+    let midIdx = Math.floor(array.length / 2); let leftHalf = array.slice(0, midIdx); let rightHalf = array.slice(midIdx);
 
-      return merge(sortedLeft, sortedRight);
-    }
+    let sortedLeft = mergeSort(leftHalf); let sortedRight = mergeSort(rightHalf);
+
+    return merge(sortedLeft, sortedRight); }
 
 1.  Explain the complexity of and write a function that performs quick sort on an array of numbers.
 
@@ -376,24 +247,13 @@ Sorting Algorithms
     -   With some tweaking, we could implement an in-place quick sort, which would eliminate the creation of new arrays. In this case, the log n stack frames from the recursion are the only proportional amount of space that is used, resulting in O(log n) space complexity.
 -   Code example for quickSort:
 
-    function quickSort(array) {
-      if (array.length <= 1) {
-          return array;
-      }
+    function quickSort(array) { if (array.length &lt;= 1) { return array; }
 
-      let pivot = array.shift();
-      // This implementation uses filter, which returns a new array with any element that passes the criteria (ie the callback returns true).
-      // We also could have iterated over the array (array.forEach(el => ...)) and pushed each value into the appropriate left/right subarray as we encountered it.
-      let left = array.filter(el => el < pivot);
-      let right = array.filter(el => el >= pivot);
+    let pivot = array.shift(); // This implementation uses filter, which returns a new array with any element that passes the criteria (ie the callback returns true). // We also could have iterated over the array (array.forEach(el =&gt; …)) and pushed each value into the appropriate left/right subarray as we encountered it. let left = array.filter(el =&gt; el &lt; pivot); let right = array.filter(el =&gt; el &gt;= pivot);
 
-      let leftSorted = quickSort(left);
-      let rightSorted = quickSort(right);
+    let leftSorted = quickSort(left); let rightSorted = quickSort(right);
 
-      return [ ...leftSorted, pivot, ...rightSorted ];
-      // We also could have concatenated the arrays instead of spreading their contents
-      // return leftSorted.concat([pivot]).concat(rightSorted);
-    }
+    return \[ …leftSorted, pivot, …rightSorted \]; // We also could have concatenated the arrays instead of spreading their contents // return leftSorted.concat(\[pivot\]).concat(rightSorted); }
 
 1.  Explain the complexity of and write a function that performs a binary search on a sorted array of numbers.
 
@@ -404,50 +264,17 @@ Sorting Algorithms
     -   If we kept references to the beginning and end index of the portion of the array that we are searching, we could eliminate the need for creating new subarrays. We could also use a while loop to perform this functionality until we either found our target or our beginning and end indices crossed. This would eliminate the space required for recursive calls (adding stack frames). Ultimately we would be using the same number of variables independent of input size, resulting in O(1).
 -   Code example for binarySearch and binarySearchIndex:
 
-    // Returns simply true/false for presence
-    function binarySearch(array, target) {
-      if (array.length === 0) {
-          return false;
-      }
+    // Returns simply true/false for presence function binarySearch(array, target) { if (array.length === 0) { return false; }
 
-      let midIdx = Math.floor(array.length / 2);
-      let leftHalf = array.slice(0, midIdx);
-      let rightHalf = array.slice(midIdx + 1);
+    let midIdx = Math.floor(array.length / 2); let leftHalf = array.slice(0, midIdx); let rightHalf = array.slice(midIdx + 1);
 
-      if (target < array[midIdx]) {
-          return binarySearch(leftHalf, target);
-      } else if (target > array[midIdx]) {
-          return binarySearch(rightHalf, target);
-      } else {
-          return true;
-      }
-    }
+    if (target &lt; array\[midIdx\]) { return binarySearch(leftHalf, target); } else if (target &gt; array\[midIdx\]) { return binarySearch(rightHalf, target); } else { return true; } }
 
-    // Returns the index or -1 if not found
-    function binarySearchIndex(array, target) {
-      if (!array.length) return -1;
+    // Returns the index or -1 if not found function binarySearchIndex(array, target) { if (!array.length) return -1;
 
-      const midIdx = Math.floor(array.length / 2);
-      const midEl = array[midIdx];
+    const midIdx = Math.floor(array.length / 2); const midEl = array\[midIdx\];
 
-      if (target < midEl) {
-        return binarySearchIndex(array.slice(0, midIdx), target);
-      } else if (target > midEl) {
-        // Since our recursive call will have new indices for the subarray, we have to adjust the return value to align it with the indices of our original array.
-        // If the recursive call returns -1, it was not found and we can immediately return -1
-        // If it was found in the subarray, we have to add on the number of elements that were removed from the beginning of our larger original array.
-        // For example, if we try to find 15 in an array of [5, 10, 15]:
-          // - Our first call to binarySearchIndex will check our middle element of 10
-          // - Since our target is greater, we will recursively call our search on elements to the right, being the subarray [15]
-          // - On our recursive call we found our target! It's index in this call is 0.
-          // - When we return 0 to where binarySearchIndex was called, we need to adjust it to line up with this larger array (the 0th element of this larger array is 5, but our target was at the 0th index of the subarray)
-          // - Since we sliced off 2 elements from the beginning before making our recursive call, we add 2 to the return value to adjust it back to line up with our original array.
-        const idxShift = binarySearchIndex(array.slice(midIdx + 1), target);
-        return idxShift === -1 ? -1 : idxShift + midIdx + 1;
-      } else {
-        return midIdx;
-      }
-    }
+    if (target &lt; midEl) { return binarySearchIndex(array.slice(0, midIdx), target); } else if (target &gt; midEl) { // Since our recursive call will have new indices for the subarray, we have to adjust the return value to align it with the indices of our original array. // If the recursive call returns -1, it was not found and we can immediately return -1 // If it was found in the subarray, we have to add on the number of elements that were removed from the beginning of our larger original array. // For example, if we try to find 15 in an array of \[5, 10, 15\]: // - Our first call to binarySearchIndex will check our middle element of 10 // - Since our target is greater, we will recursively call our search on elements to the right, being the subarray \[15\] // - On our recursive call we found our target! It’s index in this call is 0. // - When we return 0 to where binarySearchIndex was called, we need to adjust it to line up with this larger array (the 0th element of this larger array is 5, but our target was at the 0th index of the subarray) // - Since we sliced off 2 elements from the beginning before making our recursive call, we add 2 to the return value to adjust it back to line up with our original array. const idxShift = binarySearchIndex(array.slice(midIdx + 1), target); return idxShift === -1 ? -1 : idxShift + midIdx + 1; } else { return midIdx; } }
 
 Lists, Stacks, and Queues
 -------------------------

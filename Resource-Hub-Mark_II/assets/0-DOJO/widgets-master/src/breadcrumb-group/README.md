@@ -1,5 +1,5 @@
-<span class="citation" data-cites="dojo/widgets/breadcrumb-group"><span class="citation" data-cites="dojo/widgets/breadcrumb-group"><span class="citation" data-cites="dojo/widgets/breadcrumb-group">@dojo/widgets/breadcrumb-group</span></span></span>
-=========================================================================================================================================================================================================================================================
+<span class="citation" data-cites="dojo/widgets/breadcrumb-group"><span class="citation" data-cites="dojo/widgets/breadcrumb-group"><span class="citation" data-cites="dojo/widgets/breadcrumb-group"><span class="citation" data-cites="dojo/widgets/breadcrumb-group">@dojo/widgets/breadcrumb-group</span></span></span></span>
+==================================================================================================================================================================================================================================================================================================================================
 
 Dojo’s `BreadcrumbGroup` widget provides a means of displaying a list of breadcrumbs, either as static text or as links.
 

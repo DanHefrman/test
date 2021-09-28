@@ -56,32 +56,19 @@ How to load JS in our HTML pages
 
 -   using script tags
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <script type="text/javascript" src="entry.js"></script>
-    </head>
-    <body>
-    </body>
-    </html>
+    &lt;!DOCTYPE html&gt;
 
 ### Remove Render-Blocking
 
 -   without render-blocking in script tags will wait for script to load and execute before parsing HTML and rendering it
 
-    <script type="text/javascript" src="entry.js"></script>
-
 ![No Async or Defer](./no_async_defer.png)
 
 -   **`async`** keyword in a script will fetch the script asynchronously and order of scripts run may be different than specified (whatever script gets loaded first)
 
-    <script async type="text/javascript" src="entry.js"></script>
-
 ![Async](./async.png)
 
 -   **`defer`** keyword in a script will make it so the script executes only after page has been loaded
-
-    <script defer type="text/javascript" src="entry.js"></script>
 
 ![Defer](./defer.png)
 
@@ -94,41 +81,21 @@ Ways to prevent code from being executed until HTML page is loaded
 
 -   function set to `window.onload` will be called when the HTML, CSS, images and everything is loaded
 
-    window.onload = () => {
-      console.log('this is printed only after all the HTML elements are displayed');
-    };
+    window.onload = () =&gt; { console.log(‘this is printed only after all the HTML elements are displayed’); };
 
 1.  `DOMContentLoaded` event listener
 
 -   will execute code in the callback function to the `eventListener` on `DOMContentLoaded` or when all the HTML elements, or the document has been loaded (doesn’t wait for CSS or images)
 
-    window.addEventListener('DOMContentLoaded', () => {
-      console.log('this is printed only after all the HTML elements are displayed');
-    });
+    window.addEventListener(‘DOMContentLoaded’, () =&gt; { console.log(‘this is printed only after all the HTML elements are displayed’); });
 
 1.  Adding a script tag after the `body` of a page
 
-    <!DOCTYPE html>
-    <html lang="en">
-      <head>
-      </head>
-      <body>
-      </body>
-      <script async>
-        console.log('this is printed only after all the HTML elements are displayed');
-      </script>
-    </html>
+    &lt;!DOCTYPE html&gt;
 
-1.  `defer` keyword in a `script` tag
+2.  `defer` keyword in a `script` tag
 
-    <!DOCTYPE html>
-    <html lang="en">
-      <head>
-        <script defer type="text/javascript" src="entry.js"></script>
-      </head>
-      <body>
-      </body>
-    </html>
+    &lt;!DOCTYPE html&gt;
 
 Cookies
 -------

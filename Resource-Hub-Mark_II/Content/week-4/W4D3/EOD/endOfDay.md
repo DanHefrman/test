@@ -5,9 +5,6 @@ Given a span inside of a button, add an event listener to the button with will d
 
 I have been clicked <span id="clicked-count">0</span> times
 
-  
-  
-
 ------------------------------------------------------------------------
 
 LO \#2
@@ -22,18 +19,12 @@ Extra Cheese
 
 Add $1.00
 
-  
-  
-
 ------------------------------------------------------------------------
 
 LO \#3
 ------
 
-Write JavaScript that will change the background color of the page five seconds after a page loads unless the value for an input field is equal to "STOP".
-
-  
-  
+Write JavaScript that will change the background color of the page five seconds after a page loads unless the value for an input field is equal to “STOP”.
 
 ------------------------------------------------------------------------
 
@@ -41,9 +32,6 @@ LO \#4
 ------
 
 Write JavaScript that changes the background color of a textbox to when the caret is in the textbox and turns it back to its normal color when focus is elsewhere.
-
-  
-  
 
 ------------------------------------------------------------------------
 
@@ -54,9 +42,6 @@ Given an HTML page that includes a form with two password fields, write JavaScri
 
 Submit
 
-  
-  
-
 ------------------------------------------------------------------------
 
 LO \#6
@@ -65,9 +50,6 @@ LO \#6
 Given an HTML page that includes a div styled as a square with a red background, write JavaScript that allows a user to drag the square around the screen
 
 drop zone
-
-  
-  
 
 ------------------------------------------------------------------------
 
@@ -95,9 +77,6 @@ Given an HTML page that has 300 DIVs, create one click event subscription that w
 9
 
 10
-
-  
-  
 
 ------------------------------------------------------------------------
 

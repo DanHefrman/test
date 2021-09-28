@@ -1,6 +1,6 @@
 ![](nyt-logo.svg)
 
-Day, Month Date, Year Today's Paper
+Day, Month Date, Year Today’s Paper
 
 ------------------------------------------------------------------------
 

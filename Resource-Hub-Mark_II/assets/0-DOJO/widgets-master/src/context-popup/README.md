@@ -1,5 +1,5 @@
-<span class="citation" data-cites="dojo/widgets/context-popup"><span class="citation" data-cites="dojo/widgets/context-popup"><span class="citation" data-cites="dojo/widgets/context-popup">@dojo/widgets/context-popup</span></span></span>
-=============================================================================================================================================================================================================================================
+<span class="citation" data-cites="dojo/widgets/context-popup"><span class="citation" data-cites="dojo/widgets/context-popup"><span class="citation" data-cites="dojo/widgets/context-popup"><span class="citation" data-cites="dojo/widgets/context-popup">@dojo/widgets/context-popup</span></span></span></span>
+===================================================================================================================================================================================================================================================================================================================
 
 Dojo’s `ContextPopup` widget allows popup content to be shown when a user right clicks. The will be automatically positioned next to the user’s mouse
 

@@ -16,9 +16,7 @@
     -   **`setTimeout()`** : a method used to execute a callback after a given amount of time.
         -   setTimeout’s time delay is not an absolute guarantee, simply a **minimum**.
 
-            setTimeout(function () {
-              console.log("time is up!");
-            }, 1500);
+            setTimeout(function () { console.log(“time is up!”); }, 1500);
 
     -   **`setInterval()`** : Method that will continually execute a callback after a number of milliseconds, repeatedly.
 
@@ -66,12 +64,9 @@
 -   The time argument is optional, it will default to zero if there is no input.
 -   There are also an unlimited number of arguments you can provide.
 
-    function foo(food1, food2) {
-      console.log(food1 + " for breakfast");
-      console.log(food2 + " for lunch");
-    }
+    function foo(food1, food2) { console.log(food1 + " for breakfast“); console.log(food2 +” for lunch"); }
 
-    setTimeout(foo, 2000, "pancakes", "couscous");
+    setTimeout(foo, 2000, “pancakes”, “couscous”);
 
 **Cancelling Timeouts**
 
@@ -93,11 +88,9 @@
 
 -   `setInterval` accepts the same arguments as `setTimeout`: **callback function, time, …additional args)**
 
-    function foo(food1, food2) {
-      console.log(food1 + " and " + food2 + "!");
-    }
+    function foo(food1, food2) { console.log(food1 + " and " + food2 + “!”); }
 
-    setInterval(foo, 1000, "pancakes", "couscous");
+    setInterval(foo, 1000, “pancakes”, “couscous”);
 
 -   The above code will repeatedly print out ‘pancakes and couscous!’, we can use `clearInterrval()` to cancel.
 
@@ -181,20 +174,13 @@
 
 -   **`Module`** : A package of JS code that provides some useful functionality (i.e. Mocha for testing our code.)
 
-    const readline = require("readline");
+    const readline = require(“readline”);
 
-    const rl = readline.createInterface({
-      input: process.stdin,
-      output: process.stdout,
-    });
+    const rl = readline.createInterface({ input: process.stdin, output: process.stdout, });
 
-    rl.question("What's up, doc? ", (answer) => {
-      console.log("you responded: " + answer);
-      rl.close();
-    });
+    rl.question(“What’s up, doc?”, (answer) =&gt; { console.log(“you responded:” + answer); rl.close(); });
 
-    // try to print 'DONE!' after the question
-    console.log("DONE!");
+    // try to print ‘DONE!’ after the question console.log(“DONE!”);
 
 -   The **readline** module is already pre-bundled with Node.
 

@@ -78,11 +78,8 @@ Week 9 - Responsive Design Review
     -   Text and box shadows
     -   Opacity set to 0 can make an element completely transparent.
 
-        h2 {
-            border: 4px solid red;
-            text-shadow: 0px 2px 10px orange; 
-            box-shadow: 5px 5px yellow;  
-            opacity: 0.5;  
+        h2 { border: 4px solid red; text-shadow: 0px 2px 10px orange; box-shadow: 5px 5px yellow;  
+        opacity: 0.5;  
         }
 
 10. Covering an element with a background image `css      #picture-here {          background-image: url(https://appacademy.github.io/styleguide/assets/logo/logo-emblem-black-1000.png);           background-size: cover;          height: 100px;          width: 100px;      }`

@@ -1,5 +1,5 @@
-<span class="citation" data-cites="dojo/widgets/popup"><span class="citation" data-cites="dojo/widgets/popup">@dojo/widgets/popup</span></span>
-===============================================================================================================================================
+<span class="citation" data-cites="dojo/widgets/popup"><span class="citation" data-cites="dojo/widgets/popup"><span class="citation" data-cites="dojo/widgets/popup">@dojo/widgets/popup</span></span></span>
+=============================================================================================================================================================================================================
 
 Dojo’s `Popup` widget allows popup content to be shown at an arbitrary position on the page. The popup can be positioned `above` or below a specific y coordinate. The popup will move the content appropriately if there is not room in the desired position.
 

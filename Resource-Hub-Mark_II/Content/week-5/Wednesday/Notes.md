@@ -17,72 +17,37 @@
 
     class MyClass {}
 
-    // is the same as
-    class MyClass extends Object {}
+    // is the same as class MyClass extends Object {}
 
 -   When you declare a class with no explicit parent class, JS will make it a child of Object.
 
     class Charity {}
 
-    class Business {
-      toString() {
-        return "Give us your money.";
-      }
-    }
+    class Business { toString() { return “Give us your money.”; } }
 
-    class Restaurant extends Business {
-      toString() {
-        return "Eat at Joe's!";
-      }
-    }
+    class Restaurant extends Business { toString() { return “Eat at Joe’s!”; } }
 
     class AutoRepairShop extends Business {}
 
-    class Retail extends Business {
-      toString() {
-        return "Buy some stuff!";
-      }
-    }
+    class Retail extends Business { toString() { return “Buy some stuff!”; } }
 
     class ClothingStore extends Retail {}
 
-    class PhoneStore extends Retail {
-      toString() {
-        return "Upgrade your perfectly good phone, now!";
-      }
-    }
+    class PhoneStore extends Retail { toString() { return “Upgrade your perfectly good phone, now!”; } }
 
-    console.log(new PhoneStore().toString()); // 'Upgrade your perfectly good phone, now!'
-    console.log(new ClothingStore().toString()); // 'Buy some stuff!';
-    console.log(new Restaurant().toString()); // 'Eat at Joe\'s!'
-    console.log(new AutoRepairShop().toString()); // 'Give us your money.'
-    console.log(new Charity().toString()); // [object object]
+    console.log(new PhoneStore().toString()); // ‘Upgrade your perfectly good phone, now!’ console.log(new ClothingStore().toString()); // ‘Buy some stuff!’; console.log(new Restaurant().toString()); // ‘Eat at Joe's!’ console.log(new AutoRepairShop().toString()); // ‘Give us your money.’ console.log(new Charity().toString()); // \[object object\]
 
 **The nuts and bolts of prototypal inheritance** ![pic](https://assets.aaonline.io/Module-JavaScript/oop/find-tostring-v3.png)
 
 -   When JavaScript uses a property (or method) from a prototype that it found through prototypal inheritance, then the **this** property points to the original object on which the first call was made.
 
-    class Parent {
-      constructor() {
-        this.name = "PARENT";
-      }
-      toString() {
-        return `My name is ${this.name}`;
-      }
-    }
+    class Parent { constructor() { this.name = “PARENT”; } toString() { return `My name is ${this.name}`; } }
 
-    class Child extends Parent {
-      constructor() {
-        super();
-        this.name = "CHILD";
-      }
-    }
+    class Child extends Parent { constructor() { super(); this.name = “CHILD”; } }
 
-    const parent = new Parent();
-    console.log(parent.toString()); // my name is Parent
+    const parent = new Parent(); console.log(parent.toString()); // my name is Parent
 
-    const child = new Child();
-    console.log(child.toString()); // my name is Child
+    const child = new Child(); console.log(child.toString()); // my name is Child
 
 **Polymorphism**
 
@@ -153,9 +118,7 @@
 
 -   When you work with objects that come from code that you didn’t create - you will often have to break the LoD.
 
-    document
-      .getElementById("that-link")
-      .addEventListener("click", (e) => e.preventDefault());
+    document .getElementById(“that-link”) .addEventListener(“click”, (e) =&gt; e.preventDefault());
 
 -   This breaks the law but there is way about it because your code needs to know about both elements and you have to use the API provided by the DOM.
 -   UI’s will break LoD because they are not object-oriented programns.

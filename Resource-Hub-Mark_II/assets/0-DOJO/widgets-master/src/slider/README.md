@@ -1,5 +1,5 @@
-<span class="citation" data-cites="dojo/widgets/slider"><span class="citation" data-cites="dojo/widgets/slider">@dojo/widgets/slider</span></span>
-==================================================================================================================================================
+<span class="citation" data-cites="dojo/widgets/slider"><span class="citation" data-cites="dojo/widgets/slider"><span class="citation" data-cites="dojo/widgets/slider">@dojo/widgets/slider</span></span></span>
+=================================================================================================================================================================================================================
 
 Dojo’s `Slider` widget creates a range slider control with a styleable track, fill, and draggable thumb control.
 

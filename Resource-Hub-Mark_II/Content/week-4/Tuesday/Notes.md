@@ -93,23 +93,7 @@
 
 -   You can also put JS directly into your HTML document by placing it in the script tag
 
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <title>My Cool Website</title>
-        <script type="text/javascript">
-          const addListElement = () => {
-            const listElement = document.createElement("ul");
-            const listItem = document.createElement("li");
-            listItem.setAttribute("id", "dreamy-eyes");
-            listElement.appendChild(listItem);
-            document.body.prepend(listElement);
-          };
-          window.onload = addListElement;
-        </script>
-      </head>
-      <body></body>
-    </html>
+    &lt;!DOCTYPE html&gt;
 
 ------------------------------------------------------------------------
 
@@ -122,9 +106,7 @@
 
 -   **`DOMContentLoaded`** : event that fires when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading.
 
-    window.addEventListener("DOMContentLoaded", (event) => {
-      document.body.className = "i-got-loaded";
-    });
+    window.addEventListener(“DOMContentLoaded”, (event) =&gt; { document.body.className = “i-got-loaded”; });
 
 -   Here we are using DOMContentLoaded to add CSS Classes to page elements immediately after they are loaded.
 

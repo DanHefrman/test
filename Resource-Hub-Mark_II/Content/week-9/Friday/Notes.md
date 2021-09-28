@@ -56,22 +56,9 @@
 
 -   After a delay of two seconds, a four second transition begins where the font size goes from 36px to 14px.
 
-    .box {
-      border-style: solid;
-      border-width: 1px;
-      display: block;
-      width: 100px;
-      height: 100px;
-      background-color: #0000ff;
-      transition: width 2s, height 2s, background-color 2s, transform 2s;
-    }
+    .box { border-style: solid; border-width: 1px; display: block; width: 100px; height: 100px; background-color: \#0000ff; transition: width 2s, height 2s, background-color 2s, transform 2s; }
 
-    .box:hover {
-      background-color: #ffcccc;
-      width: 200px;
-      height: 200px;
-      transform: rotate(180deg);
-    }
+    .box:hover { background-color: \#ffcccc; width: 200px; height: 200px; transform: rotate(180deg); }
 
 ![pic](https://assets.aaonline.io/Module-Solo-Prep-Work/assets/example-css-transition-multiple.gif)
 

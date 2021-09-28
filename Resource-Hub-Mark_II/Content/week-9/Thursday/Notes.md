@@ -73,14 +73,7 @@
 -   It is positioned *RELATIVE* to the it’s *ORIGINAL PLACE* on the page flow.
 -   Creates a **stacking context** : overlapping elements whose order can be set by the z-index property.
 
-    #pink-box {
-      background-color: #ff69b4;
-      bottom: 0;
-      left: -20px;
-      position: relative;
-      right: 0;
-      top: 0;
-    }
+    \#pink-box { background-color: \#ff69b4; bottom: 0; left: -20px; position: relative; right: 0; top: 0; }
 
 ![rel](https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/layout/assets/relative-pink-box.png)
 
@@ -89,63 +82,36 @@
 -   Absolute elements are removed from the normal page flow and other elements around it act like it’s not there. (how we can easily achieve some layering)
 -   Here are some examples to illustration absolute positioning:
 
-    .container {
-      background-color: #2b2d2f;
-      position: relative;
-    }
+    .container { background-color: \#2b2d2f; position: relative; }
 
-    #pink-box {
-      position: absolute;
-      top: 60px;
-    }
+    \#pink-box { position: absolute; top: 60px; }
 
 ![img](https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/layout/assets/absolute-pink-box.png)
 
 -   Note that the container ele has a relative positioning - this is so that any changes made to the absolute positioned children will be positioned from it’s top-left corner.
 -   Note that because we removed the pink from the normal page flow, the container has now shifted the blue box to where the pink box should have been - which is why it is now layered beneath the pink.
 
-    .container {
-      background-color: #2b2d2f;
-      position: relative;
-    }
+    .container { background-color: \#2b2d2f; position: relative; }
 
-    #pink-box {
-      position: absolute;
-      top: 60px;
-    }
+    \#pink-box { position: absolute; top: 60px; }
 
-    #blue-box {
-      position: absolute;
-    }
+    \#blue-box { position: absolute; }
 
 ![img](https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/layout/assets/absolute-blue-box.png)
 
 -   As you can see here, since we have also taken the blue box out of the normal page flow by declaring it as absoutely positioned it now overlaps over the pink box.
 
-    .container {
-      background-color: #2b2d2f;
-      position: relative;
-    }
+    .container { background-color: \#2b2d2f; position: relative; }
 
-    #pink-box {
-      background-color: #ff69b4;
-      bottom: 60px;
-      position: absolute;
-    }
+    \#pink-box { background-color: \#ff69b4; bottom: 60px; position: absolute; }
 
 ![img](https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/layout/assets/relative-parent-absolute-child.png)
 
 -   Example where the absolute element has it’s bottom property modified.
 
-    .container {
-      background-color: #2b2d2f;
-    }
+    .container { background-color: \#2b2d2f; }
 
-    #pink-box {
-      background-color: #ff69b4;
-      bottom: 60px;
-      position: absolute;
-    }
+    \#pink-box { background-color: \#ff69b4; bottom: 60px; position: absolute; }
 
 ![img](https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/layout/assets/static-parent-absolute-child.png)
 
@@ -181,11 +147,7 @@
 
 -   Flexbox layout applies styles to the parent element, and it’s children.
 
-    .container {
-      display: flex; /*sets display to use flex*/
-      flex-wrap: wrap; /*bc flex tries to fit everything into one line, use wrap to have the elements wrap to the next line*/
-      flex-direction: row; /*lets us create either rows or columns*/
-    }
+    .container { display: flex; /*sets display to use flex*/ flex-wrap: wrap; /*bc flex tries to fit everything into one line, use wrap to have the elements wrap to the next line*/ flex-direction: row; /*lets us create either rows or columns*/ }
 
 -   **`flex-flow`** can be used to combine wrap and direction.
 -   **`justify-content`** used to define the alignment of flex items along the main axis.
@@ -213,35 +175,11 @@
 -   Bootstrap was a front-end library commonly used to create grid layouts but now CSS grid provides greater flexibility and control.
 -   Grid applies style to a parent container and it’s child elements.
 
-    .grid-container {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: auto;
-      grid-template-areas:
-        "header header header"
-        "main . sidebar"
-        "footer footer footer";
+    .grid-container { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: auto; grid-template-areas: “header header header” “main . sidebar” “footer footer footer”;
 
-      grid-column-gap: 20px;
-      grid-row-gap: 30px;
-      justify-items: stretch;
-      align-items: stretch;
-      justify-content: stretch;
-      align-content: stretch;
-    }
+    grid-column-gap: 20px; grid-row-gap: 30px; justify-items: stretch; align-items: stretch; justify-content: stretch; align-content: stretch; }
 
-    .item-1 {
-      grid-area: header;
-    }
-    .item-2 {
-      grid-area: main;
-    }
-    .item-3 {
-      grid-area: sidebar;
-    }
-    .item-4 {
-      grid-area: footer;
-    }
+    .item-1 { grid-area: header; } .item-2 { grid-area: main; } .item-3 { grid-area: sidebar; } .item-4 { grid-area: footer; }
 
 -   Columns and Rows can be defined with: pixels, percentages, auto, named grid lines, using `repeat`, fractions.
 -   **`Grid Template Areas`** gives us a handy way to map out and visualize areas of the grid layout.
@@ -252,13 +190,7 @@
 
 -   We can also **`implicitly`** define grids.
 
-    .grid-container {
-      display: grid;
-      grid-template-columns: 100px 100px 100px 100px;
-      grid-template-rows: 50px 50px 50px;
-      grid-auto-columns: 100px;
-      grid-auto-rows: 50px;
-    }
+    .grid-container { display: grid; grid-template-columns: 100px 100px 100px 100px; grid-template-rows: 50px 50px 50px; grid-auto-columns: 100px; grid-auto-rows: 50px; }
 
 -   Any grid items that aren’t explicity placed are automatically placed or *re-flowed*
 
@@ -273,19 +205,9 @@
 
 -   All four properties can take any of the following values: the line number, span \#, span name, auto.
 
-    .item-1 {
-      grid-row-start: row2-start; /* Item starts at row line named "row2-start" */
-      grid-row-end: 5; /* Item ends at row line 5 */
-      grid-column-start: 1; /* Item starts at column line 1 */
-      grid-column-end: three; /* Item ends at column line named "three" */
-    }
+    .item-1 { grid-row-start: row2-start; /\* Item starts at row line named “row2-start” */ grid-row-end: 5; /* Item ends at row line 5 */ grid-column-start: 1; /* Item starts at column line 1 */ grid-column-end: three; /* Item ends at column line named “three” \*/ }
 
-    .item-2 {
-      grid-row-start: 1; /* Item starts at row line 1 */
-      grid-row-end: span 2; /* Item spans two rows and ends at row line 3 */
-      grid-column-start: 3; /* Item starts at column line 3 */
-      grid-column-end: span col5-start; /* Item spans and ends at line named "col5-start" */
-    }
+    .item-2 { grid-row-start: 1; /\* Item starts at row line 1 */ grid-row-end: span 2; /* Item spans two rows and ends at row line 3 */ grid-column-start: 3; /* Item starts at column line 3 */ grid-column-end: span col5-start; /* Item spans and ends at line named “col5-start” \*/ }
 
 **Grid Areas**
 

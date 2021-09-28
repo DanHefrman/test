@@ -6,7 +6,7 @@ Big-O
 
 1.  Order the common complexity classes according to their growth rate
 
-    -   -   -   -   -   -   -   
+    ------------------------------------------------------------------------
 
 2.  Identify the complexity classes of common sort methods
 
@@ -16,29 +16,11 @@ Big-O
 
     -   Important takeaway here is being able to connect code patterns with complexities
 
-        // O(_) ?
-        function example1(n) {
-          for (let i = 1; i <= 20; i++) {
-            console.log(i);
-          }
-        }
+        // O(\_) ? function example1(n) { for (let i = 1; i &lt;= 20; i++) { console.log(i); } }
 
-        // O(_) ?
-        function example2(n) {
-          for (let i = 1; i <= n; i++) {
-            for (let j = 1; j <= n; j++) {
-              console.log(`${i}, ${j}`);
-            }
-          }
-        }
+        // O(\_) ? function example2(n) { for (let i = 1; i &lt;= n; i++) { for (let j = 1; j &lt;= n; j++) { console.log(`${i}, ${j}`); } } }
 
-        // O(_) ?
-        function example3(n) {
-          console.log(n);
-          if (n === 1) return;
-          example3(n - 1);
-          example3(n - 1);
-        }
+        // O(\_) ? function example3(n) { console.log(n); if (n === 1) return; example3(n - 1); example3(n - 1); }
 
 Memoization and Tabulation
 --------------------------

@@ -1,5 +1,5 @@
-<span class="citation" data-cites="dojo/widgets/switch">@dojo/widgets/switch</span> widget
-==========================================================================================
+<span class="citation" data-cites="dojo/widgets/switch"><span class="citation" data-cites="dojo/widgets/switch">@dojo/widgets/switch</span></span> widget
+=========================================================================================================================================================
 
 Dojo’s `Switch` widget provides an on/off toggle that uses the native `<input type="checkbox">` as a base.
 

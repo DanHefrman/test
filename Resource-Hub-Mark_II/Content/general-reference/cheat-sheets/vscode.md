@@ -38,7 +38,7 @@ Useful Extensions
 
 -   [`PHP CS Fixer`](https://?marketplace.visualstudio.com/items?itemName=junstyle.php-cs-fixer): PHP CS Fixer extension for VS Code, php formatter, php code beautify tool.
 
--   [`PHP Doc Comment VSCode Plugin`](https://?marketplace.visualstudio.com/items?itemName=rexshi.phpdoc-comment-vscode-plugin): Add phpdoc <span class="citation" data-cites="param">@param</span> and <span class="citation" data-cites="return">@return</span> tag for selected function signatures.
+-   [`PHP Doc Comment VSCode Plugin`](https://?marketplace.visualstudio.com/items?itemName=rexshi.phpdoc-comment-vscode-plugin): Add phpdoc <span class="citation" data-cites="param"><span class="citation" data-cites="param">@param</span></span> and <span class="citation" data-cites="return"><span class="citation" data-cites="return">@return</span></span> tag for selected function signatures.
 
 -   [`PHP IntelliSense`](https://?marketplace.visualstudio.com/items?itemName=felixfbecker.php-intellisense): Advanced Autocompletion and Refactoring support for PHP.
 

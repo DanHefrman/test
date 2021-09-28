@@ -27,36 +27,24 @@
 -----------------
 
 -   **`CSS Selector`** : Applies styles to a specific DOM element(s), there are various types:
+
     -   **`Type Selectors`** : Matches by node name.
     -   **`Class Selectors`** : Matches by class name.
     -   **`ID Selectors`** : Matches by ID name.
     -   **`Universal Selectors`** : Selects all HTML elements on a page.
     -   **`Attribute Selectors`** : Matches elements based on the prescence or value of a given attribute. (i.e. a\[title\] will match all a elements with a title attribute)
 
-    /* Type selector */
-    div {
-      background-color: #000000;
-    }
+    /\* Type selector \*/ div { background-color: \#000000; }
 
-    /* Class selector */
-    .active {
-      color: #ffffff;
-    }
+    /\* Class selector \*/ .active { color: \#ffffff; }
 
-    /* ID selector */
-    #list-1 {
-      border: 1px solid gray;
-    }
+    /\* ID selector \*/ \#list-1 { border: 1px solid gray; }
 
-    /* Universal selector */
-    * {
-      padding: 10px;
-    }
+    /\* Universal selector \*/
 
-    /* Attribute selector */
-    a[title] {
-      font-size: 2em;
-    }
+    -   { padding: 10px; }
+
+    /\* Attribute selector \*/ a\[title\] { font-size: 2em; }
 
 **Class Selectors**
 
@@ -68,74 +56,63 @@
 -   To get around accidentally selecting elements with multiple classes beyond what we want to grab we can chain dots.
 -   TO use a compound class selector just append the classes together when referencing them in the CSS.
 
-    <div class="box yellow"></div>
-    <div class="box orange"></div>
-    <div class="circle orange"></div>
-
 -   i.e. .box.yellow will select only the first element.
 -   KEEP IN MIND that if you do include a space it will make the selector into a *descendant selector*.
 
-    h1#heading,
-    h2.subheading {
-      font-style: italic;
-    }
+    h1\#heading, h2.subheading { font-style: italic; }
 
 -   When we want to target all `h1` tags with the id of `heading`.
 
 **CSS Combinators**
 
--   CSS Combinators are used to combine other selectors into more complex or targeted selectors - they are very powerful!
--   Be careful not to use too many of them as they will make your CSS far too complex.
+CSS Combinators are used to combine other selectors into more complex or targeted selectors - they are very powerful!
 
-    -   **`Descendant Selectors`**
-        -   Seperated by a space.
-        -   Selects all descendants of a parent container.
-    -   **`Direct Child Selectors`**
+Be careful not to use too many of them as they will make your CSS far too complex.
 
-        -   Indicated with a `>`.
-        -   Different from descendants because it only affects the direct children of an element.
-        -   .menu > .is-active {
-                  background-color: #ffe0b2;
-                }
+**`Descendant Selectors`**
 
-        -   <body>
-                  <div class="menu">
-                    <div class="is-active">Belka</div>
-                    <div>
-                      <div class="is-active">Strelka</div>
-                    </div>
-                  </div>
-                </body>
-                <div class="is-active">
-                  Laika
-                </div>
-                </body>
+-   Seperated by a space.
+-   Selects all descendants of a parent container.
 
-        -   Belka would be the only element selected.
+**`Direct Child Selectors`**
 
-    -   **`Adjacent Sibling Selectors`**
+Indicated with a `>`.
 
-        -   Uses the `+` symbol.
-        -   Used for elements that directly follow one another and who both have the same parent.
-        -     h1 + h2 {
-                font-style: italic;
-                  }
+Different from descendants because it only affects the direct children of an element.
 
-                <h1>Big header</h1>
-                <h2>This one is styled because it is directly adjacent to the H1</h2>
-                <h2>This one is NOT styled because there is no H1 right before it</h2>
+.menu &gt; .is-active { background-color: \#ffe0b2; }
+
+        <div class="is-active">Belka</div>
+        <div>
+          <div class="is-active">Strelka</div>
+        </div>
+      </div>
+    </body>
+    <div class="is-active">
+      Laika
+    </div>
+    </body>
+
+Belka would be the only element selected.
+
+**`Adjacent Sibling Selectors`**
+
+-   Uses the `+` symbol.
+-   Used for elements that directly follow one another and who both have the same parent.
+-   h1 + h2 {
+          font-style: italic;
+            }
+
+          <h1>Big header</h1>
+          <h2>This one is styled because it is directly adjacent to the H1</h2>
+          <h2>This one is NOT styled because there is no H1 right before it</h2>
 
 **Pseudo-Classes**
 
 -   **`Pseudo-Class`** : Specifies a special state of the seleted element(s) and does not refer to any elements or attributes contained in the DOM.
     -   Format is a `Selector:Pseudo-Class Name` or `A:B`
 
-        a:hover {
-          font-family: "Roboto Condensed", sans-serif;
-          color: #4fc3f7;
-          text-decoration: none;
-          border-bottom: 2px solid #4fc3f7;
-        }
+        a:hover { font-family: “Roboto Condensed”, sans-serif; color: \#4fc3f7; text-decoration: none; border-bottom: 2px solid \#4fc3f7; }
 
     -   Some common pseudo-classes that are frequently used are:
         -   **`active`** : ‘push down’, when ele are activated.
@@ -154,21 +131,15 @@
 **`Pseudo-Selectors`**
 
 -   Used to create pseudo-elements as children of the elements to which the property applies.
+
     -   `::after`
     -   `::before`
 
-    <style>
-      p::before {
-        background-color: lightblue;
-        border-right: 4px solid violet;
-        content: ":-) ";
-        margin-right: 4px;
-        padding-left: 4px;
-      }
-    </style>
-    <p>This is the first paragraph</p>
-    <p>This is the second paragraph</p>
-    <p>This is the third paragraph</p>
+    This is the first paragraph
+
+    This is the second paragraph
+
+    This is the third paragraph
 
 -   Will add some blue smiley faces before the p tag elements.
 
@@ -184,23 +155,6 @@
     -   1.  Who has the most tags? If no one, continue.
 
     -   1.  Last Read in the browser wins. ![4num](https://i.gyazo.com/791874ae4dc749b84d901403a4c32776.png) ![4numResults](https://i.gyazo.com/ca8542e4d17baa50b858ff0fe750e23b.png)
-
-    <style>
-      .box {
-        width: 50px;
-        height: 50px;
-        border: 1px solid black;
-      }
-      .orange {
-        background-color: orange;
-      }
-      .yellow {
-        background-color: yellow;
-        border: 1px solid purple;
-      }
-    </style>
-    <div class="box yellow"></div>
-    <div class="box orange"></div>
 
 -   Coming back to our example where all the CSS Rules have tied, the last step 4 wins out so our element will have a `purple border`.
 

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>where</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<p>#Where Used to further filter our queries</p>
+<pre><code>SELECT name, breed FROM puppies
+  WHERE breed = &#39;Corgi&#39;;</code></pre>
+<h1 id="selecting-between-ranges.">Selecting between ranges.</h1>
+<pre><code>SELECT name, breed, age_yrs FROM puppies
+WHERE age_yrs BETWEEN 0 AND 0.6;</code></pre>
+<h1 id="limit-and-offset.">Limit and offset.</h1>
+<pre><code>SELECT name, breed
+FROM puppies
+ORDER BY age_yrs
+LIMIT 100;</code></pre>
+</body>
+</html>

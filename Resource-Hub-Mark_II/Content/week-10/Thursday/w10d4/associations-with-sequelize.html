@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>associations-with-sequelize</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<pre><code>const {Pet, Owner, PetType, sequelize } = require(&#39;./models&#39;);
+
+async fucntion queryPetsTypesAndOwnders(){
+// Lazy Load
+  const pet = await Pet.findByPk(1);
+  console.log(
+    pet.id,
+    pet.name,
+    pet.age,
+    pet.petTypeId,
+    pet.PetType,
+    pet.Owners
+}
+
+// Lazy Load
+  const pet = await Pet.findByPk(1, {include:[PetType, Owner]});
+  console.log(
+    pet.id,
+    pet.name,
+    pet.age,
+    pet.petTypeId,
+    pet.PetType.type
+}
+
+const o = await Owner.create({firstName: &#39;Arthur&#39;, lastName:Dent});
+
+for (let owner of pet.Owners){
+  console.log(owner.id, owner.firstName, owner.lastName);
+}
+
+pet.belongsToMany();
+
+sequelize.close</code></pre>
+</body>
+</html>

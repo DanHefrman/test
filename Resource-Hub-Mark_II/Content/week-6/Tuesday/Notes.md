@@ -14,18 +14,12 @@ When you declare a function normally:
 -   It *does* create a Function object and stores that in a variable named **loudLoud**.
 -   **Promises** are wrappers around asychronous code.
 
-    readFile("~/Documents/todos.txt", "utf8", function (err, content) {
-      console.log("YOUR FILE CONTAINS:");
-      console.log(content);
-    });
+    readFile(“~/Documents/todos.txt”, “utf8”, function (err, content) { console.log(“YOUR FILE CONTAINS:”); console.log(content); });
 
 -   Javascript is idiomatic, so if you’re only going to call a function once just set it directly into the callback of your readfile in this example.
 -   To take it up a notch, JS now just wants you to write the callback with an arrow function.
 
-    readFile("~/Documents/todos.txt", "utf8", (err, content) => {
-      console.log("YOUR FILE CONTAINS:");
-      console.log(content);
-    });
+    readFile(“~/Documents/todos.txt”, “utf8”, (err, content) =&gt; { console.log(“YOUR FILE CONTAINS:”); console.log(content); });
 
 -   **`Promise`** : a commitment that sometime in the future, your code will get a value from some operation (like reading a file or getting JSON from a Website) or your code will get an error from that operation (like the file doesn’t exist or the Web site is down).
 
@@ -57,21 +51,11 @@ When you declare a function normally:
 -   Each then, returns another Promise that transitions out of it’s pending state when the **then** that created it completes.
 -   You can pass a second argument into the then method as the **error handler**; (essentially saying, if this then does not resolve, then this error handler will do something.)
 
-    readFilePromise("manifest.txt")
-      .then((manifest) => manifest.split("\n"))
-      .then((fileList) => fileList.length)
-      .then(
-        (numberOfFiles) => console.log("Reading", numberOfFiles, "files"),
-        (reason) => console.err("Badness happened", reason)
-      );
+    readFilePromise(“manifest.txt”) .then((manifest) =&gt; manifest.split(“”)) .then((fileList) =&gt; fileList.length) .then( (numberOfFiles) =&gt; console.log(“Reading”, numberOfFiles, “files”), (reason) =&gt; console.err(“Badness happened”, reason) );
 
 -   You can also use a **catch** error handler at the end of your then chain to catch any error that may happen along the way.
 
-    readFilePromise("manifest.txt")
-      .then((manifest) => manifest.split("\n"))
-      .then((fileList) => fileList.length)
-      .then((numberOfFiles) => console.log("Reading", numberOfFiles, "files"))
-      .catch((reason) => console.err("Badness happened", reason));
+    readFilePromise(“manifest.txt”) .then((manifest) =&gt; manifest.split(“”)) .then((fileList) =&gt; fileList.length) .then((numberOfFiles) =&gt; console.log(“Reading”, numberOfFiles, “files”)) .catch((reason) =&gt; console.err(“Badness happened”, reason));
 
 **Using Promise.all**
 

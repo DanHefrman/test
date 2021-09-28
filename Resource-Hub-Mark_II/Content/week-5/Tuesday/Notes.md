@@ -18,35 +18,24 @@
     -   **`Behaviors`** are represented by methods.
 
 -   **`Constructor Functions`** : Handle the creation of an object - it’s a factory for creating objects of a specific type.
+
     -   There are a few specific things to constructors worth noting:
         -   **The name of the constructor function is capitalized**
         -   **The Function does not explicityly return a value**
         -   **Within the body, the *this* keyword references the newly created object**
 
-    function Book(title, series, author) {
-      this.title = title;
-      this.series = series;
-      this.author = author;
-    }
+    function Book(title, series, author) { this.title = title; this.series = series; this.author = author; }
 
 **Invoking a constructor function**
 -----------------------------------
 
 -   We can invoke a constructor function using the **`new`** keyword.
 
-    function Book(title, series, author) {
-      this.title = title;
-      this.series = series;
-      this.author = author;
-    }
+    function Book(title, series, author) { this.title = title; this.series = series; this.author = author; }
 
-    const fellowshipOfTheRing = new Book(
-      "The Fellowship of the Ring",
-      "The Lord of the Rings",
-      "J.R.R. Tolkien"
-    );
+    const fellowshipOfTheRing = new Book( “The Fellowship of the Ring”, “The Lord of the Rings”, “J.R.R. Tolkien” );
 
-    console.log(fellowshipOfTheRing); // Book { title: 'The Fellowship of the Ring', ... }
+    console.log(fellowshipOfTheRing); // Book { title: ‘The Fellowship of the Ring’, … }
 
 -   *Four Things will happen when invoking a constructor function*
     1.  A new empty object is created {};
@@ -82,25 +71,14 @@
     -   Every instance created by a constructor function shares the same prototype.
 
 -   **`Object.setPrototypeOf()`** and **`Object.getPrototypeOf()`** are just used to set a prototype of one object to another object; and also the verify a prototype.
+
     -   **`proto`** : aka “dunder proto” is a property used to gain easy access to an object’s prototype - it is widely supported by browsers but is considered deprecated.
 
-    function Book(title, series, author) {
-      this.title = title;
-      this.series = series;
-      this.author = author;
-    }
+    function Book(title, series, author) { this.title = title; this.series = series; this.author = author; }
 
-    // Any method defined on the `Book.prototype` property
-    // will be shared across all `Book` instances.
-    Book.prototype.getInformation = function () {
-      return `${this.title} by ${this.author}`;
-    };
+    // Any method defined on the `Book.prototype` property // will be shared across all `Book` instances. Book.prototype.getInformation = function () { return `${this.title} by ${this.author}`; };
 
-    const fellowshipOfTheRing = new Book(
-      "The Fellowship of the Ring",
-      "The Lord of the Rings",
-      "J.R.R. Tolkien"
-    );
+    const fellowshipOfTheRing = new Book( “The Fellowship of the Ring”, “The Lord of the Rings”, “J.R.R. Tolkien” );
 
     console.log(fellowshipOfTheRing.getInformation());
 
@@ -168,84 +146,43 @@ In ES2015, JS gained the **`class`** keyword - replacing the need to use only co
     -   Instance methods are also sometimes referred to as **`prototype`** methods because they are defined on a shared prototype object.
 
 -   **`Static Method`** : Methods that invoked directly on a class, not on an instance.
+
     -   `Important`: Invoking a static method on an instance will result in a runtime error.
     -   Prepending the **`static`** keyword at the beginning on the method name will make it static.
 
-    class Book {
-      constructor(title, series, author) {
-        this.title = title;
-        this.series = series;
-        this.author = author;
-      }
+    class Book { constructor(title, series, author) { this.title = title; this.series = series; this.author = author; }
 
-      // Notice the use of a rest parameter (...books)
-      // to capture the passed parameters as an array of values.
-      static getTitles(...books) {
-        return books.map((book) => book.title);
-      }
+    // Notice the use of a rest parameter (…books) // to capture the passed parameters as an array of values. static getTitles(…books) { return books.map((book) =&gt; book.title); }
 
-      getInformation() {
-        return `${this.title} by ${this.author}`;
-      }
-    }
+    getInformation() { return `${this.title} by ${this.author}`; } }
 
-    const fellowshipOfTheRing = new Book(
-      "The Fellowship of the Ring",
-      "The Lord of the Rings",
-      "J.R.R. Tolkien"
-    );
+    const fellowshipOfTheRing = new Book( “The Fellowship of the Ring”, “The Lord of the Rings”, “J.R.R. Tolkien” );
 
-    const theTwoTowers = new Book(
-      "The Two Towers",
-      "The Lord of the Rings",
-      "J.R.R. Tolkien"
-    );
+    const theTwoTowers = new Book( “The Two Towers”, “The Lord of the Rings”, “J.R.R. Tolkien” );
 
     const bookTitles = Book.getTitles(fellowshipOfTheRing, theTwoTowers);
 
-    console.log(bookTitles.join(", ")); // The Fellowship of the Ring, The Two Towers
+    console.log(bookTitles.join(“,”)); // The Fellowship of the Ring, The Two Towers
 
 -   If we go back to an example of how constructor functions also use static methods - we see that static methods are *defined directly on the constructor function* - whereas instance methods need to be defined on the *prototype* object.
 
-    function Book(title, series, author) {
-      this.title = title;
-      this.series = series;
-      this.author = author;
-    }
+    function Book(title, series, author) { this.title = title; this.series = series; this.author = author; }
 
-    // Static methods are defined
-    // directly on the constructor function.
-    Book.getTitles = function (...books) {
-      return books.map((book) => book.title);
-    };
+    // Static methods are defined // directly on the constructor function. Book.getTitles = function (…books) { return books.map((book) =&gt; book.title); };
 
-    // Instance methods are defined
-    // on the constructor function's `prototype` property.
-    Book.prototype.getInformation = function () {
-      return `${this.title} by ${this.author}`;
-    };
+    // Instance methods are defined // on the constructor function’s `prototype` property. Book.prototype.getInformation = function () { return `${this.title} by ${this.author}`; };
 
-    const fellowshipOfTheRing = new Book(
-      "The Fellowship of the Ring",
-      "The Lord of the Rings",
-      "J.R.R. Tolkien"
-    );
+    const fellowshipOfTheRing = new Book( “The Fellowship of the Ring”, “The Lord of the Rings”, “J.R.R. Tolkien” );
 
-    const theTwoTowers = new Book(
-      "The Two Towers",
-      "The Lord of the Rings",
-      "J.R.R. Tolkien"
-    );
+    const theTwoTowers = new Book( “The Two Towers”, “The Lord of the Rings”, “J.R.R. Tolkien” );
 
     console.log(fellowshipOfTheRing.getInformation()); // The Fellowship of the Ring by J.R.R. Tolkien
 
     console.log(theTwoTowers.getInformation()); // The Two Towers by J.R.R. Tolkien
 
-    // Call the static `Book.getTitles()` method
-    // to get an array of the book titles.
-    const bookTitles = Book.getTitles(fellowshipOfTheRing, theTwoTowers);
+    // Call the static `Book.getTitles()` method // to get an array of the book titles. const bookTitles = Book.getTitles(fellowshipOfTheRing, theTwoTowers);
 
-    console.log(bookTitles.join(", ")); // The Fellowship of the Ring, The Two Towers
+    console.log(bookTitles.join(“,”)); // The Fellowship of the Ring, The Two Towers
 
 **Comparing Classes to Constructor Functions**
 
@@ -260,50 +197,17 @@ In ES2015, JS gained the **`class`** keyword - replacing the need to use only co
 -   **`Parent Class`** : Class that is being inherited downwards.
 -   **`Inheritance`** : The process of basing a class upon another class.
 
-    class CatalogItem {
-      constructor(title, series) {
-        this.title = title;
-        this.series = series;
-      }
+    class CatalogItem { constructor(title, series) { this.title = title; this.series = series; }
 
-      getInformation() {
-        if (this.series) {
-          return `${this.title} (${this.series})`;
-        } else {
-          return this.title;
-        }
-      }
-    }
+    getInformation() { if (this.series) { return `${this.title} (${this.series})`; } else { return this.title; } } }
 
-    class Book extends CatalogItem {
-      constructor(title, series, author) {
-        super(title, series);
-        this.author = author;
-      }
-    }
+    class Book extends CatalogItem { constructor(title, series, author) { super(title, series); this.author = author; } }
 
-    class Movie extends CatalogItem {
-      constructor(title, series, director) {
-        super(title, series);
-        this.director = director;
-      }
-    }
+    class Movie extends CatalogItem { constructor(title, series, director) { super(title, series); this.director = director; } }
 
-    const theGrapesOfWrath = new Book(
-      "The Grapes of Wrath",
-      null,
-      "John Steinbeck"
-    );
-    const aNewHope = new Movie(
-      "Episode 4: A New Hope",
-      "Star Wars",
-      "George Lucas"
-    );
+    const theGrapesOfWrath = new Book( “The Grapes of Wrath”, null, “John Steinbeck” ); const aNewHope = new Movie( “Episode 4: A New Hope”, “Star Wars”, “George Lucas” );
 
-    console.log(theGrapesOfWrath.getInformation()); // The Grapes of Wrath
-    console.log(aNewHope.getInformation()); // Episode 4: A New Hope (Star Wars)
-    console.log(Catalogitem instanceof Function); // true
-    console.log(Book instanceof Function); // true
+    console.log(theGrapesOfWrath.getInformation()); // The Grapes of Wrath console.log(aNewHope.getInformation()); // Episode 4: A New Hope (Star Wars) console.log(Catalogitem instanceof Function); // true console.log(Book instanceof Function); // true
 
 -   A **`prototype chain`** defines a series of prototype objects that are delegated to one by one, when a property or method can’t be found on an instance object.
 
@@ -319,22 +223,17 @@ In ES2015, JS gained the **`class`** keyword - replacing the need to use only co
 
 -   **`Method Overriding`** : when a child class provides an implementation of a method that’s already defined in a parent class.
 
-    class Movie extends CatalogItem {
-      constructor(title, series, director) {
-        super(title, series);
-        this.director = director;
-      }
+    class Movie extends CatalogItem { constructor(title, series, director) { super(title, series); this.director = director; }
 
-      getInformation() {
-        let result = super.getInformation();
+    getInformation() { let result = super.getInformation();
 
         if (this.director) {
           result += ` [directed by ${this.director}]`;
         }
 
         return result;
-      }
-    }
+
+    } }
 
 -   We can simply declare our own method of the same name in our child class to override our parent’s version of `getInformation()`
 
