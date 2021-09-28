@@ -22,3 +22,35 @@ localStorage
 
 -   \`localStorage.setItem('key', value)\`
 -   \`const value = localStorage.getItem('key')\`
+
+
+
+```js
+
+window.addEventListener('DOMContentLoaded', () => {
+  debugger
+  const data = {
+    Angela: "\"instructor\"",
+    Tadeo: "student",
+    ages: [40, 35]
+  }
+  
+  const jsonString = JSON.stringify(data);
+  
+  console.log(jsonString)
+
+  const stringifiedAgain = JSON.stringify(jsonString);
+  console.log(stringifiedAgain);
+  
+  const convertedData = JSON.parse(jsonString);
+  
+  debugger;
+})
+
+```
+
+
+```js
+
+
+```
