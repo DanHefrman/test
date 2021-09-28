@@ -11,69 +11,6 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
-  <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
 </head>
 <body>
 <h1 id="monday">Monday ——————————–</h1>
@@ -192,79 +129,78 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Fun Fact: Objects are affectionately known as POJO’s (Plain Old Javascript Objects)</p>
 </blockquote>
 <p><strong>Setting Keys and Values</strong></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="co">// here &quot;color&quot; is the key!</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="op">&gt;</span> car[<span class="st">&quot;color&quot;</span>] <span class="op">=</span> <span class="st">&quot;Blue&quot;</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="st">&quot;Blue&quot;</span></a>
-<a class="sourceLine" id="cb1-4" title="4"></a>
-<a class="sourceLine" id="cb1-5" title="5"><span class="op">&gt;</span> car[<span class="st">&quot;seats&quot;</span>] <span class="op">=</span> <span class="dv">2</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb1-6" title="6"><span class="dv">2</span></a>
-<a class="sourceLine" id="cb1-7" title="7"></a>
-<a class="sourceLine" id="cb1-8" title="8"><span class="co">// accessing our object at the key of color</span></a>
-<a class="sourceLine" id="cb1-9" title="9"><span class="op">&gt;</span> car[<span class="st">&quot;color&quot;</span>]</a>
-<a class="sourceLine" id="cb1-10" title="10"><span class="st">&quot;Blue&quot;</span></a>
-<a class="sourceLine" id="cb1-11" title="11"></a>
-<a class="sourceLine" id="cb1-12" title="12"><span class="op">&gt;</span> car[<span class="st">&quot;seats&quot;</span>]</a>
-<a class="sourceLine" id="cb1-13" title="13"><span class="dv">2</span></a>
-<a class="sourceLine" id="cb1-14" title="14"></a>
-<a class="sourceLine" id="cb1-15" title="15"><span class="op">&gt;</span> car</a>
-<a class="sourceLine" id="cb1-16" title="16"><span class="op">{</span><span class="dt">color</span><span class="op">:</span> <span class="st">&quot;Blue&quot;</span><span class="op">,</span> <span class="dt">seats</span><span class="op">:</span> <span class="dv">2</span><span class="op">}</span></a></code></pre></div>
+<pre><code>// here &quot;color&quot; is the key!
+&gt; car[&quot;color&quot;] = &quot;Blue&quot;;
+&quot;Blue&quot;
+
+&gt; car[&quot;seats&quot;] = 2;
+2
+
+// accessing our object at the key of color
+&gt; car[&quot;color&quot;]
+&quot;Blue&quot;
+
+&gt; car[&quot;seats&quot;]
+2
+
+&gt; car
+{color: &quot;Blue&quot;, seats: 2}</code></pre>
 <ul>
-<li>We assign values to an object by defining the name of the key in brackets and assigning it to a value.</li>
-</ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="op">&gt;</span> car</a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="op">{</span><span class="dt">color</span><span class="op">:</span> <span class="st">&quot;Blue&quot;</span><span class="op">,</span> <span class="dt">seats</span><span class="op">:</span> <span class="dv">2</span><span class="op">}</span></a>
-<a class="sourceLine" id="cb2-3" title="3"></a>
-<a class="sourceLine" id="cb2-4" title="4"><span class="op">&gt;</span> <span class="st">&quot;color&quot;</span> <span class="kw">in</span> car<span class="op">;</span></a>
-<a class="sourceLine" id="cb2-5" title="5"><span class="kw">true</span></a>
-<a class="sourceLine" id="cb2-6" title="6"></a>
-<a class="sourceLine" id="cb2-7" title="7"><span class="op">&gt;</span> <span class="st">&quot;model&quot;</span> <span class="kw">in</span> car<span class="op">;</span></a>
-<a class="sourceLine" id="cb2-8" title="8"><span class="kw">false</span></a></code></pre></div>
-<ul>
+<li><p>We assign values to an object by defining the name of the key in brackets and assigning it to a value.</p>
+<blockquote>
+<p>car {color: “Blue”, seats: 2}</p>
+</blockquote>
+<blockquote>
+<p>“color” in car; true</p>
+</blockquote>
+<blockquote>
+<p>“model” in car; false</p>
+</blockquote></li>
 <li>If we try to access a key that has not yet been assigned within an object we will output undefined.</li>
-<li>The <strong>preferred method</strong> for checking to see if an object exists at a key is to use the <strong><code>in</code></strong> operator.</li>
+<li><p>The <strong>preferred method</strong> for checking to see if an object exists at a key is to use the <strong><code>in</code></strong> operator.</p></li>
 </ul>
 <p><strong>Using Variables as Keys</strong></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="op">&gt;</span> car</a>
-<a class="sourceLine" id="cb3-2" title="2"><span class="op">{</span><span class="dt">color</span><span class="op">:</span> <span class="st">&quot;Blue&quot;</span><span class="op">,</span> <span class="dt">seats</span><span class="op">:</span> <span class="dv">2</span><span class="op">}</span></a>
-<a class="sourceLine" id="cb3-3" title="3"></a>
-<a class="sourceLine" id="cb3-4" title="4"><span class="op">&gt;</span> <span class="kw">let</span> newVariable <span class="op">=</span> <span class="st">&quot;color&quot;</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb3-5" title="5"><span class="kw">undefined</span></a>
-<a class="sourceLine" id="cb3-6" title="6"></a>
-<a class="sourceLine" id="cb3-7" title="7"><span class="op">&gt;</span> newVariable</a>
-<a class="sourceLine" id="cb3-8" title="8"><span class="st">&quot;color&quot;</span></a>
-<a class="sourceLine" id="cb3-9" title="9"></a>
-<a class="sourceLine" id="cb3-10" title="10"><span class="op">&gt;</span> car[newVariable]</a>
-<a class="sourceLine" id="cb3-11" title="11"><span class="st">&quot;Blue&quot;</span></a>
-<a class="sourceLine" id="cb3-12" title="12"></a>
-<a class="sourceLine" id="cb3-13" title="13"><span class="op">---</span></a>
-<a class="sourceLine" id="cb3-14" title="14"></a>
-<a class="sourceLine" id="cb3-15" title="15"><span class="op">&gt;</span> car</a>
-<a class="sourceLine" id="cb3-16" title="16"><span class="op">{</span><span class="dt">color</span><span class="op">:</span> <span class="st">&quot;Blue&quot;</span><span class="op">,</span> <span class="dt">seats</span><span class="op">:</span> <span class="dv">2</span><span class="op">}</span></a>
-<a class="sourceLine" id="cb3-17" title="17"></a>
-<a class="sourceLine" id="cb3-18" title="18"><span class="op">&gt;</span> newVariable</a>
-<a class="sourceLine" id="cb3-19" title="19"><span class="st">&quot;weight&quot;</span></a>
-<a class="sourceLine" id="cb3-20" title="20"></a>
-<a class="sourceLine" id="cb3-21" title="21"><span class="co">// assigning a key value pair using a variable!</span></a>
-<a class="sourceLine" id="cb3-22" title="22"><span class="op">&gt;</span> car[newVariable] <span class="op">=</span> <span class="dv">1000</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb3-23" title="23"><span class="dv">1000</span></a>
-<a class="sourceLine" id="cb3-24" title="24"></a>
-<a class="sourceLine" id="cb3-25" title="25"><span class="op">&gt;</span> car</a>
-<a class="sourceLine" id="cb3-26" title="26"><span class="op">{</span><span class="dt">color</span><span class="op">:</span> <span class="st">&quot;Blue&quot;</span><span class="op">,</span> <span class="dt">seats</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">weight</span><span class="op">:</span> <span class="dv">1000</span><span class="op">}</span></a></code></pre></div>
+<pre><code>&gt; car
+{color: &quot;Blue&quot;, seats: 2}
+
+&gt; let newVariable = &quot;color&quot;;
+undefined
+
+&gt; newVariable
+&quot;color&quot;
+
+&gt; car[newVariable]
+&quot;Blue&quot;
+
+---
+
+&gt; car
+{color: &quot;Blue&quot;, seats: 2}
+
+&gt; newVariable
+&quot;weight&quot;
+
+// assigning a key value pair using a variable!
+&gt; car[newVariable] = 1000;
+1000
+
+&gt; car
+{color: &quot;Blue&quot;, seats: 2, weight: 1000}</code></pre>
 <ul>
 <li>It is useful to set a variable as a key, because variables can be re-assigned new values - this way we can quickly access different data and also create new key/value pairs.</li>
 </ul>
 <h2 id="using-different-notations"><strong>Using Different Notations</strong></h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="op">&gt;</span> <span class="kw">let</span> dog <span class="op">=</span> <span class="op">{};</span></a>
-<a class="sourceLine" id="cb4-2" title="2"><span class="kw">undefined</span></a>
-<a class="sourceLine" id="cb4-3" title="3"></a>
-<a class="sourceLine" id="cb4-4" title="4"><span class="op">&gt;</span> <span class="va">dog</span>.<span class="at">bark</span> <span class="op">=</span> <span class="st">&quot;Bowowowo&quot;</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb4-5" title="5"><span class="st">&quot;Bowowowowo&quot;</span></a>
-<a class="sourceLine" id="cb4-6" title="6"></a>
-<a class="sourceLine" id="cb4-7" title="7"><span class="op">&gt;</span> <span class="va">dog</span>.<span class="at">bark</span></a>
-<a class="sourceLine" id="cb4-8" title="8"><span class="st">&quot;Bowowowo&quot;</span></a>
-<a class="sourceLine" id="cb4-9" title="9"></a>
-<a class="sourceLine" id="cb4-10" title="10"><span class="op">&gt;</span> dog</a>
-<a class="sourceLine" id="cb4-11" title="11"><span class="op">{</span> <span class="dt">bark</span><span class="op">:</span> <span class="st">&quot;Bowowowowo&quot;</span> <span class="op">}</span></a></code></pre></div>
+<pre><code>&gt; let dog = {};
+undefined
+
+&gt; dog.bark = &quot;Bowowowo&quot;;
+&quot;Bowowowowo&quot;
+
+&gt; dog.bark
+&quot;Bowowowo&quot;
+
+&gt; dog
+{ bark: &quot;Bowowowowo&quot; }</code></pre>
 <ul>
 <li>We can also use <strong>dot notation</strong> <strong>“.”</strong> to access key/value pairs in an object.
 <ul>
@@ -272,72 +208,83 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 <p><strong>Bracket Notation vs Dot Notation</strong></p>
-<table>
+<table style="width:99%;">
 <colgroup>
 <col style="width: 47%" />
 <col style="width: 52%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th><strong>Dot</strong></th>
-<th><strong>Bracket</strong></th>
+<th>
+<strong>Dot</strong>
+</th>
+<th>
+<strong>Bracket</strong>
+</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Easier To Read</td>
-<td>You can use variables as keys!</td>
+<td>
+Easier To Read
+</td>
+<td>
+You can use variables as keys!
+</td>
 </tr>
 <tr class="even">
-<td>Easier To Write b/c do not need Quotations.</td>
-<td>Okay to use variables and Strings that start with numbers.</td>
+<td>
+Easier To Write b/c do not need Quotations.
+</td>
+<td>
+Okay to use variables and Strings that start with numbers.
+</td>
 </tr>
 <tr class="odd">
-<td>Cannot access with Variables</td>
-<td></td>
+<td>
+Cannot access with Variables
+</td>
+<td>
+</td>
 </tr>
 <tr class="even">
-<td>Keys cannot contain numbers as their first character</td>
-<td></td>
+<td>
+Keys cannot contain numbers as their first character
+</td>
+<td>
+</td>
 </tr>
 </tbody>
 </table>
 <ul>
 <li><strong>When accessing object keys</strong>: Bracket notation needs to refer to that key in quotations, dot notation doesn’t.</li>
-<li><strong>When accessing object keys via a variable</strong>: Bracket notation can refer to that key w/o use of quotations, dot notation can’t do this at all.</li>
-</ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">let</span> myDog <span class="op">=</span> <span class="op">{};</span></a>
-<a class="sourceLine" id="cb5-2" title="2"><span class="va">myDog</span>.<span class="at">name</span> <span class="op">=</span> <span class="st">&quot;Fido&quot;</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb5-3" title="3"></a>
-<a class="sourceLine" id="cb5-4" title="4"><span class="kw">let</span> myKey <span class="op">=</span> <span class="st">&quot;name&quot;</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb5-5" title="5"><span class="va">console</span>.<span class="at">log</span>(myDog)<span class="op">;</span> <span class="co">// prints `{name: &quot;Fido&quot;}`</span></a>
-<a class="sourceLine" id="cb5-6" title="6"><span class="va">console</span>.<span class="at">log</span>(myDog[myKey])<span class="op">;</span> <span class="co">// prints `Fido`</span></a>
-<a class="sourceLine" id="cb5-7" title="7"></a>
-<a class="sourceLine" id="cb5-8" title="8"><span class="va">console</span>.<span class="at">log</span>(<span class="va">myDog</span>.<span class="at">myKey</span>)<span class="op">;</span> <span class="co">// prints: undefined</span></a></code></pre></div>
-<ul>
-<li>As illustrated above, the dot notation cannot access a varible key - since it takes a <strong>literal</strong> interpretation of the key.</li>
+<li><p><strong>When accessing object keys via a variable</strong>: Bracket notation can refer to that key w/o use of quotations, dot notation can’t do this at all.</p>
+<p>let myDog = {}; myDog.name = “Fido”;</p>
+<p>let myKey = “name”; console.log(myDog); // prints <code>{name: "Fido"}</code> console.log(myDog[myKey]); // prints <code>Fido</code></p>
+<p>console.log(myDog.myKey); // prints: undefined</p></li>
+<li><p>As illustrated above, the dot notation cannot access a varible key - since it takes a <strong>literal</strong> interpretation of the key.</p></li>
 </ul>
 <p><strong>Putting it All Together</strong></p>
 <p>You can put an object together in a single statement.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">let</span> myDog <span class="op">=</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb6-2" title="2">    <span class="dt">name</span><span class="op">:</span> <span class="st">&quot;Fido&quot;</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb6-3" title="3">    <span class="dt">type</span><span class="op">:</span> <span class="st">&quot;Doge&quot;</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb6-4" title="4">    <span class="dt">age</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb6-5" title="5">    <span class="dt">favoriteToys</span><span class="op">:</span> [<span class="st">&quot;bone&quot;</span><span class="op">,</span> <span class="st">&quot;ball&quot;</span>]<span class="op">,</span></a>
-<a class="sourceLine" id="cb6-6" title="6"><span class="op">};</span></a></code></pre></div>
+<pre><code>let myDog = {
+    name: &quot;Fido&quot;,
+    type: &quot;Doge&quot;,
+    age: 2,
+    favoriteToys: [&quot;bone&quot;, &quot;ball&quot;],
+};</code></pre>
 <p><strong>Operator Precedence Revisited</strong></p>
 <ul>
 <li>The concept of Operator Precedence also applies to objects.</li>
 <li>There are two types of associativity:
 <ul>
 <li><p><strong><code>Right Associativity</code></strong> : When code is evaluted right to left.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb7-1" title="1">a <span class="op">=</span> b <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></a></code></pre></div>
+<pre><code>a = b = 1;</code></pre>
 <ul>
 <li>Since <strong>assignment of variables</strong> takes lowest precendence, we end up evaluating b = 1 first before a = b.</li>
 </ul></li>
 <li><p><strong><code>Left Associativity</code></strong> : When code is evaluated left to right.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">let</span> id <span class="op">=</span> <span class="st">&quot;header&quot;</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb8-2" title="2"><span class="kw">let</span> element <span class="op">=</span> <span class="va">document</span>.<span class="at">getElementById</span>(id).<span class="at">value</span><span class="op">;</span></a></code></pre></div>
+<pre><code>let id = &quot;header&quot;;
+let element = document.getElementById(id).value;</code></pre>
 <ul>
 <li>We first resolve the document variable, then use dot notation to retrive the getElementById function, we eval it’s arguments, access it’s value, and then retrieve assignment (the lowest precedence).</li>
 </ul></li>
@@ -345,70 +292,50 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <hr />
 <h2 id="iterating-through-objects"><strong>Iterating Through Objects</strong></h2>
-<p>Because objects store <em><strong>unordered</strong></em> key-value pairs, we do not rely on indices to access values; instead we rely on our keys.</p>
+<p>Because objects store <strong><em>unordered</em></strong> key-value pairs, we do not rely on indices to access values; instead we rely on our keys.</p>
 <p><strong>A New Kind of For Loop</strong></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb9-1" title="1"><span class="cf">for</span> (<span class="kw">let</span> variable <span class="kw">in</span> object) <span class="op">{</span></a>
-<a class="sourceLine" id="cb9-2" title="2">    statement<span class="op">;</span></a>
-<a class="sourceLine" id="cb9-3" title="3"></a>
-<a class="sourceLine" id="cb9-4" title="4">    <span class="kw">let</span> obj <span class="op">=</span> <span class="op">{</span> <span class="dt">name</span><span class="op">:</span> <span class="st">&quot;Rose&quot;</span><span class="op">,</span> <span class="dt">cats</span><span class="op">:</span> <span class="dv">2</span> <span class="op">};</span></a>
-<a class="sourceLine" id="cb9-5" title="5">    <span class="cf">for</span> (<span class="kw">let</span> currentKey <span class="kw">in</span> obj) <span class="op">{</span></a>
-<a class="sourceLine" id="cb9-6" title="6">        <span class="va">console</span>.<span class="at">log</span>(currentKey)<span class="op">;</span></a>
-<a class="sourceLine" id="cb9-7" title="7">        <span class="va">console</span>.<span class="at">log</span>(obj[currentKey])<span class="op">;</span></a>
-<a class="sourceLine" id="cb9-8" title="8">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb9-9" title="9"></a>
-<a class="sourceLine" id="cb9-10" title="10">    <span class="co">// prints out:</span></a>
-<a class="sourceLine" id="cb9-11" title="11">    <span class="co">// name</span></a>
-<a class="sourceLine" id="cb9-12" title="12">    <span class="co">// cats</span></a>
-<a class="sourceLine" id="cb9-13" title="13">    <span class="co">// Rose</span></a>
-<a class="sourceLine" id="cb9-14" title="14">    <span class="co">// 2</span></a>
-<a class="sourceLine" id="cb9-15" title="15"><span class="op">}</span></a></code></pre></div>
+<pre><code>for (let variable in object) {
+    statement;
+
+    let obj = { name: &quot;Rose&quot;, cats: 2 };
+    for (let currentKey in obj) {
+        console.log(currentKey);
+        console.log(obj[currentKey]);
+    }
+
+    // prints out:
+    // name
+    // cats
+    // Rose
+    // 2
+}</code></pre>
 <ul>
 <li>We use a special syntax to iterate through each key of an object called a <strong><code>for-in loop</code></strong>.</li>
 </ul>
 <p><strong>Methods vs Functions</strong></p>
 <p>A <strong><code>Method</code></strong> is a function that <em>belongs</em> to an object. Every method is a function, but <em>not</em> every function is a method.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb10-1" title="1">myFunc is a <span class="kw">function</span></a>
-<a class="sourceLine" id="cb10-2" title="2"><span class="va">myObject</span>.<span class="at">myFunc</span> is a method <span class="kw">of</span> the object myObject</a>
-<a class="sourceLine" id="cb10-3" title="3">myObject[<span class="st">&quot;myFunc&quot;</span>] is a method <span class="kw">of</span> the object myObject</a></code></pre></div>
+<pre><code>myFunc is a function
+myObject.myFunc is a method of the object myObject
+myObject[&quot;myFunc&quot;] is a method of the object myObject</code></pre>
 <ul>
-<li><strong>Methods</strong> are just a key-value pair where the <strong>key is the function name and the value is the function definition</strong>.</li>
+<li><p><strong>Methods</strong> are just a key-value pair where the <strong>key is the function name and the value is the function definition</strong>.</p>
+<p>let dog = { name: “Fido”, };</p>
+<p>dog.bark = function () { console.log(“bark bark!”); };</p>
+<p>// this is the same thing as above just using Bracket Notation dog[“speak”] = function (string) { console.log(“WOOF” + string + " WOOF!!!"); };</p>
+<p>dog.bark(); // prints <code>bark bark!</code> dog.speak(“pizza”); // prints <code>WOOF pizza WOOF!!!</code></p>
+<p>let dog2 = { name: “Rover”,</p>
+<pre><code>bark: function () {
+    console.log(&quot;bork bork!&quot;);
+},
+
+speak: function (string) {
+    console.log(&quot;BORK &quot; + string + &quot; BORK!!!&quot;);
+},</code></pre>
+<p>}; // Notice that in the object above, we still separate the key-value pairs with commas. // <code>bark</code> and <code>speak</code> are just keys with functions as values.</p>
+<p>dog2.bark(); // prints <code>bork bork!</code> dog2.speak(“burrito”); // prints <code>BORK burrito BORK!!!</code></p></li>
+<li><p>To invoke these methods we just need to specify which object is calling that method.</p>
+<p>myObject.methodName();</p></li>
 </ul>
-<div class="sourceCode" id="cb11"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">let</span> dog <span class="op">=</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb11-2" title="2">    <span class="dt">name</span><span class="op">:</span> <span class="st">&quot;Fido&quot;</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb11-3" title="3"><span class="op">};</span></a>
-<a class="sourceLine" id="cb11-4" title="4"></a>
-<a class="sourceLine" id="cb11-5" title="5"><span class="va">dog</span>.<span class="at">bark</span> <span class="op">=</span> <span class="kw">function</span> () <span class="op">{</span></a>
-<a class="sourceLine" id="cb11-6" title="6">    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;bark bark!&quot;</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb11-7" title="7"><span class="op">};</span></a>
-<a class="sourceLine" id="cb11-8" title="8"></a>
-<a class="sourceLine" id="cb11-9" title="9"><span class="co">// this is the same thing as above just using Bracket Notation</span></a>
-<a class="sourceLine" id="cb11-10" title="10">dog[<span class="st">&quot;speak&quot;</span>] <span class="op">=</span> <span class="kw">function</span> (string) <span class="op">{</span></a>
-<a class="sourceLine" id="cb11-11" title="11">    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;WOOF &quot;</span> <span class="op">+</span> string <span class="op">+</span> <span class="st">&quot; WOOF!!!&quot;</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb11-12" title="12"><span class="op">};</span></a>
-<a class="sourceLine" id="cb11-13" title="13"></a>
-<a class="sourceLine" id="cb11-14" title="14"><span class="va">dog</span>.<span class="at">bark</span>()<span class="op">;</span> <span class="co">// prints `bark bark!`</span></a>
-<a class="sourceLine" id="cb11-15" title="15"><span class="va">dog</span>.<span class="at">speak</span>(<span class="st">&quot;pizza&quot;</span>)<span class="op">;</span> <span class="co">// prints `WOOF pizza WOOF!!!`</span></a>
-<a class="sourceLine" id="cb11-16" title="16"></a>
-<a class="sourceLine" id="cb11-17" title="17"><span class="kw">let</span> dog2 <span class="op">=</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb11-18" title="18">    <span class="dt">name</span><span class="op">:</span> <span class="st">&quot;Rover&quot;</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb11-19" title="19"></a>
-<a class="sourceLine" id="cb11-20" title="20">    <span class="dt">bark</span><span class="op">:</span> <span class="kw">function</span> () <span class="op">{</span></a>
-<a class="sourceLine" id="cb11-21" title="21">        <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;bork bork!&quot;</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb11-22" title="22">    <span class="op">},</span></a>
-<a class="sourceLine" id="cb11-23" title="23"></a>
-<a class="sourceLine" id="cb11-24" title="24">    <span class="dt">speak</span><span class="op">:</span> <span class="kw">function</span> (string) <span class="op">{</span></a>
-<a class="sourceLine" id="cb11-25" title="25">        <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;BORK &quot;</span> <span class="op">+</span> string <span class="op">+</span> <span class="st">&quot; BORK!!!&quot;</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb11-26" title="26">    <span class="op">},</span></a>
-<a class="sourceLine" id="cb11-27" title="27"><span class="op">};</span></a>
-<a class="sourceLine" id="cb11-28" title="28"><span class="co">// Notice that in the object above, we still separate the key-value pairs with commas.</span></a>
-<a class="sourceLine" id="cb11-29" title="29"><span class="co">// `bark` and `speak` are just keys with functions as values.</span></a>
-<a class="sourceLine" id="cb11-30" title="30"></a>
-<a class="sourceLine" id="cb11-31" title="31"><span class="va">dog2</span>.<span class="at">bark</span>()<span class="op">;</span> <span class="co">// prints `bork bork!`</span></a>
-<a class="sourceLine" id="cb11-32" title="32"><span class="va">dog2</span>.<span class="at">speak</span>(<span class="st">&quot;burrito&quot;</span>)<span class="op">;</span> <span class="co">// prints `BORK burrito BORK!!!`</span></a></code></pre></div>
-<ul>
-<li>To invoke these methods we just need to specify which object is calling that method.</li>
-</ul>
-<div class="sourceCode" id="cb12"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb12-1" title="1"><span class="va">myObject</span>.<span class="at">methodName</span>()<span class="op">;</span></a></code></pre></div>
 <p><strong>Useful Object Methods</strong></p>
 <ul>
 <li><strong><code>Object.keys()</code></strong> : A method that allows us to iterate through keys, it accepts an obj as the argument and returns an array of the keys.</li>
@@ -416,10 +343,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p><strong>Iterating through an Object’s keys &amp; values</strong></p>
 <ul>
-<li><strong><code>Object.entries</code></strong> : Method that accepts an object as the argument and returns an array of the [key,value] pairs within.</li>
+<li><p><strong><code>Object.entries</code></strong> : Method that accepts an object as the argument and returns an array of the [key,value] pairs within.</p>
+<blockquote>
+<p>Object.entries(cat) [ [ ‘name’, ‘Freyja’ ], [ ‘color’, ‘orange’ ] ]</p>
+</blockquote></li>
 </ul>
-<div class="sourceCode" id="cb13"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb13-1" title="1"><span class="op">&gt;</span> <span class="va">Object</span>.<span class="at">entries</span>(cat)</a>
-<a class="sourceLine" id="cb13-2" title="2">[ [ <span class="st">&#39;name&#39;</span><span class="op">,</span> <span class="st">&#39;Freyja&#39;</span> ]<span class="op">,</span> [ <span class="st">&#39;color&#39;</span><span class="op">,</span> <span class="st">&#39;orange&#39;</span> ] ]</a></code></pre></div>
 <hr />
 <h2 id="references-vs-primitives"><strong>References vs Primitives</strong></h2>
 <p><strong>Primitives vs Objects</strong></p>
@@ -463,354 +391,199 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Takes a data type (i.e. array, obj) and spreads the values of that type where elements are expected.</li>
 <li>Takes iterable data and spreads the elements of that type where arguments are expected.</li>
-</ul></li>
 </ul>
-<div class="sourceCode" id="cb14"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">let</span> numArray <span class="op">=</span> [<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">;</span></a>
-<a class="sourceLine" id="cb14-2" title="2"></a>
-<a class="sourceLine" id="cb14-3" title="3"><span class="co">// here we are taking `numArray` and *spreading* it into a new array where</span></a>
-<a class="sourceLine" id="cb14-4" title="4"><span class="co">// comma separated elements are expected to be</span></a>
-<a class="sourceLine" id="cb14-5" title="5"><span class="kw">let</span> moreNums <span class="op">=</span> [...<span class="at">numArray</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">6</span>]<span class="op">;</span></a>
-<a class="sourceLine" id="cb14-6" title="6"></a>
-<a class="sourceLine" id="cb14-7" title="7"><span class="op">&gt;</span> moreNums</a>
-<a class="sourceLine" id="cb14-8" title="8"><span class="co">// =&gt; [1, 2, 3, 4, 5, 6]</span></a></code></pre></div>
+<p>let numArray = [1, 2, 3];</p>
+<p>// here we are taking <code>numArray</code> and <em>spreading</em> it into a new array where // comma separated elements are expected to be let moreNums = […numArray, 4, 5, 6];</p>
+<blockquote>
+<p>moreNums // =&gt; [1, 2, 3, 4, 5, 6]</p>
+</blockquote></li>
+</ul>
 <p><strong>With Objects</strong></p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">let</span> colors <span class="op">=</span> <span class="op">{</span> <span class="dt">red</span><span class="op">:</span> <span class="st">&quot;scarlet&quot;</span><span class="op">,</span> <span class="dt">blue</span><span class="op">:</span> <span class="st">&quot;aquamarine&quot;</span> <span class="op">};</span></a>
-<a class="sourceLine" id="cb15-2" title="2"><span class="kw">let</span> newColors <span class="op">=</span> <span class="op">{</span> ...<span class="at">colors</span> <span class="op">};</span></a>
-<a class="sourceLine" id="cb15-3" title="3"></a>
-<a class="sourceLine" id="cb15-4" title="4"><span class="op">&gt;</span> newColors</a>
-<a class="sourceLine" id="cb15-5" title="5"><span class="co">// { red: &quot;scarlet&quot;, blue: &quot;aquamarine&quot; };</span></a></code></pre></div>
-<div class="sourceCode" id="cb16"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb16-1" title="1"><span class="kw">let</span> colors <span class="op">=</span> <span class="op">{</span> <span class="dt">red</span><span class="op">:</span> <span class="st">&quot;scarlet&quot;</span><span class="op">,</span> <span class="dt">blue</span><span class="op">:</span> <span class="st">&quot;aquamarine&quot;</span> <span class="op">};</span></a>
-<a class="sourceLine" id="cb16-2" title="2"><span class="kw">let</span> colors2 <span class="op">=</span> <span class="op">{</span> <span class="dt">green</span><span class="op">:</span> <span class="st">&quot;forest&quot;</span><span class="op">,</span> <span class="dt">yellow</span><span class="op">:</span> <span class="st">&quot;sunflower&quot;</span> <span class="op">};</span></a>
-<a class="sourceLine" id="cb16-3" title="3"></a>
-<a class="sourceLine" id="cb16-4" title="4"><span class="kw">let</span> moreColors <span class="op">=</span> <span class="op">{</span> ...<span class="at">colors</span><span class="op">,</span> ...<span class="at">colors2</span> <span class="op">};</span></a>
-<a class="sourceLine" id="cb16-5" title="5"></a>
-<a class="sourceLine" id="cb16-6" title="6"><span class="op">&gt;</span> moreColors</a>
-<a class="sourceLine" id="cb16-7" title="7"><span class="co">// {red: &quot;scarlet&quot;, blue: &quot;aquamarine&quot;, green: &quot;forest&quot;, yellow: &quot;sunflo</span></a></code></pre></div>
+<pre><code>let colors = { red: &quot;scarlet&quot;, blue: &quot;aquamarine&quot; };
+let newColors = { ...colors };
+
+&gt; newColors
+// { red: &quot;scarlet&quot;, blue: &quot;aquamarine&quot; };
+
+let colors = { red: &quot;scarlet&quot;, blue: &quot;aquamarine&quot; };
+let colors2 = { green: &quot;forest&quot;, yellow: &quot;sunflower&quot; };
+
+let moreColors = { ...colors, ...colors2 };
+
+&gt; moreColors
+// {red: &quot;scarlet&quot;, blue: &quot;aquamarine&quot;, green: &quot;forest&quot;, yellow: &quot;sunflo</code></pre>
 <p><strong>Spreading Arguments</strong></p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb17-1" title="1"><span class="kw">function</span> <span class="at">speak</span>(verb<span class="op">,</span> noun) <span class="op">{</span></a>
-<a class="sourceLine" id="cb17-2" title="2">    <span class="cf">return</span> <span class="st">&quot;I like to go &quot;</span> <span class="op">+</span> verb <span class="op">+</span> <span class="st">&quot; with &quot;</span> <span class="op">+</span> noun <span class="op">+</span> <span class="st">&quot;.&quot;</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb17-3" title="3"><span class="op">}</span></a>
-<a class="sourceLine" id="cb17-4" title="4"></a>
-<a class="sourceLine" id="cb17-5" title="5"><span class="kw">const</span> words <span class="op">=</span> [<span class="st">&quot;running&quot;</span><span class="op">,</span> <span class="st">&quot;Jet&quot;</span>]<span class="op">;</span></a>
-<a class="sourceLine" id="cb17-6" title="6"></a>
-<a class="sourceLine" id="cb17-7" title="7"><span class="va">console</span>.<span class="at">log</span>(<span class="at">speak</span>(<span class="st">&quot;running&quot;</span><span class="op">,</span> <span class="st">&quot;Jet&quot;</span>))<span class="op">;</span> <span class="co">// =&gt; I like to go running with Jet.</span></a>
-<a class="sourceLine" id="cb17-8" title="8"><span class="va">console</span>.<span class="at">log</span>(<span class="at">speak</span>(...<span class="at">words</span>))<span class="op">;</span> <span class="co">// =&gt; I like to go running with Jet.</span></a></code></pre></div>
+<pre><code>function speak(verb, noun) {
+    return &quot;I like to go &quot; + verb + &quot; with &quot; + noun + &quot;.&quot;;
+}
+
+const words = [&quot;running&quot;, &quot;Jet&quot;];
+
+console.log(speak(&quot;running&quot;, &quot;Jet&quot;)); // =&gt; I like to go running with Jet.
+console.log(speak(...words)); // =&gt; I like to go running with Jet.</code></pre>
 <hr />
 <h2 id="destructuring"><strong>Destructuring</strong></h2>
 <ul>
-<li><strong><code>Destructuring Syntax</code></strong> : Allows you to extract parts of an array or obj intro distinct variables.</li>
+<li><p><strong><code>Destructuring Syntax</code></strong> : Allows you to extract parts of an array or obj intro distinct variables.</p>
+<p>let numArray = [10, 20];</p>
+<p>// here we are “unpacking” the array values into two separate variables let [firstEl, secondEl] = numArray;</p>
+<p>console.log(firstEl); //=&gt; 10 console.log(secondEl); //=&gt; 20</p></li>
 </ul>
-<div class="sourceCode" id="cb18"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb18-1" title="1"><span class="kw">let</span> numArray <span class="op">=</span> [<span class="dv">10</span><span class="op">,</span> <span class="dv">20</span>]<span class="op">;</span></a>
-<a class="sourceLine" id="cb18-2" title="2"></a>
-<a class="sourceLine" id="cb18-3" title="3"><span class="co">// here we are &quot;unpacking&quot; the array values into two separate variables</span></a>
-<a class="sourceLine" id="cb18-4" title="4"><span class="kw">let</span> [firstEl<span class="op">,</span> secondEl] <span class="op">=</span> numArray<span class="op">;</span></a>
-<a class="sourceLine" id="cb18-5" title="5"></a>
-<a class="sourceLine" id="cb18-6" title="6"><span class="va">console</span>.<span class="at">log</span>(firstEl)<span class="op">;</span> <span class="co">//=&gt; 10</span></a>
-<a class="sourceLine" id="cb18-7" title="7"><span class="va">console</span>.<span class="at">log</span>(secondEl)<span class="op">;</span> <span class="co">//=&gt; 20</span></a></code></pre></div>
 <p><strong>Swapping Variables using destructuring</strong></p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb19-1" title="1"><span class="kw">let</span> num1 <span class="op">=</span> <span class="dv">17</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb19-2" title="2"><span class="kw">let</span> num2 <span class="op">=</span> <span class="dv">3</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb19-3" title="3"></a>
-<a class="sourceLine" id="cb19-4" title="4"><span class="co">// this syntax will swap the values of the two variables</span></a>
-<a class="sourceLine" id="cb19-5" title="5">[num1<span class="op">,</span> num2] <span class="op">=</span> [num2<span class="op">,</span> num1]<span class="op">;</span></a>
-<a class="sourceLine" id="cb19-6" title="6"></a>
-<a class="sourceLine" id="cb19-7" title="7"><span class="va">console</span>.<span class="at">log</span>(num1)<span class="op">;</span> <span class="co">// 3</span></a>
-<a class="sourceLine" id="cb19-8" title="8"><span class="va">console</span>.<span class="at">log</span>(num2)<span class="op">;</span> <span class="co">// 17</span></a></code></pre></div>
+<pre><code>let num1 = 17;
+let num2 = 3;
+
+// this syntax will swap the values of the two variables
+[num1, num2] = [num2, num1];
+
+console.log(num1); // 3
+console.log(num2); // 17</code></pre>
 <ul>
 <li>One of the cool things we can do with destructuring is swap the values of two variables.</li>
 </ul>
 <p><strong>Destructuring objects into variables</strong></p>
 <ul>
-<li>One of the most useful parts of destructuring is the ability to take apart and assign little slices of large objs to variables.</li>
+<li><p>One of the most useful parts of destructuring is the ability to take apart and assign little slices of large objs to variables.</p>
+<p>let obj = { name: “Apples”, breed: [“tabby”, “short hair”] }; let { name, breed } = obj;</p>
+<p>console.log(name); // “Apples” console.log(breed); // [“tabby”, “short hair”]</p></li>
+<li><p><strong>Aliased Object Destructuring</strong> : When our variable does not have the same name as our object’s keys.</p>
+<p>let obj = { apple: “red”, banana: “yellow” }; let { apple: newApple, banana: newBanana } = obj;</p>
+<p>console.log(newApple); // “red” console.log(newBanana); // “yellow”</p></li>
+<li><p>Good rule of thumb to keep clarity in your code is to only destructure values from objects that are two levels deep.</p>
+<p>// the fname key is nested more than two levels deep // (within bootcamp.instructor.fullName) let bootcamp = { name: “App Academy”, color: “red”, instructor: { fullName: { fname: “Rose”, lname: “K”, }, }, };</p>
+<p>// this is hard to follow: let { instructor: { fullName: { fname, lname }, }, } = bootcamp; console.log(fname, lname);</p>
+<p>// this is much easier to read: let { fname, lname } = bootcamp.instructor.fullName; console.log(fname, lname);</p></li>
 </ul>
-<div class="sourceCode" id="cb20"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb20-1" title="1"><span class="kw">let</span> obj <span class="op">=</span> <span class="op">{</span> <span class="dt">name</span><span class="op">:</span> <span class="st">&quot;Apples&quot;</span><span class="op">,</span> <span class="dt">breed</span><span class="op">:</span> [<span class="st">&quot;tabby&quot;</span><span class="op">,</span> <span class="st">&quot;short hair&quot;</span>] <span class="op">};</span></a>
-<a class="sourceLine" id="cb20-2" title="2"><span class="kw">let</span> <span class="op">{</span> name<span class="op">,</span> breed <span class="op">}</span> <span class="op">=</span> obj<span class="op">;</span></a>
-<a class="sourceLine" id="cb20-3" title="3"></a>
-<a class="sourceLine" id="cb20-4" title="4"><span class="va">console</span>.<span class="at">log</span>(name)<span class="op">;</span> <span class="co">// &quot;Apples&quot;</span></a>
-<a class="sourceLine" id="cb20-5" title="5"><span class="va">console</span>.<span class="at">log</span>(breed)<span class="op">;</span> <span class="co">// [&quot;tabby&quot;, &quot;short hair&quot;]</span></a></code></pre></div>
-<ul>
-<li><strong>Aliased Object Destructuring</strong> : When our variable does not have the same name as our object’s keys.</li>
-</ul>
-<div class="sourceCode" id="cb21"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb21-1" title="1"><span class="kw">let</span> obj <span class="op">=</span> <span class="op">{</span> <span class="dt">apple</span><span class="op">:</span> <span class="st">&quot;red&quot;</span><span class="op">,</span> <span class="dt">banana</span><span class="op">:</span> <span class="st">&quot;yellow&quot;</span> <span class="op">};</span></a>
-<a class="sourceLine" id="cb21-2" title="2"><span class="kw">let</span> <span class="op">{</span> <span class="dt">apple</span><span class="op">:</span> newApple<span class="op">,</span> <span class="dt">banana</span><span class="op">:</span> newBanana <span class="op">}</span> <span class="op">=</span> obj<span class="op">;</span></a>
-<a class="sourceLine" id="cb21-3" title="3"></a>
-<a class="sourceLine" id="cb21-4" title="4"><span class="va">console</span>.<span class="at">log</span>(newApple)<span class="op">;</span> <span class="co">// &quot;red&quot;</span></a>
-<a class="sourceLine" id="cb21-5" title="5"><span class="va">console</span>.<span class="at">log</span>(newBanana)<span class="op">;</span> <span class="co">// &quot;yellow&quot;</span></a></code></pre></div>
-<ul>
-<li>Good rule of thumb to keep clarity in your code is to only destructure values from objects that are two levels deep.</li>
-</ul>
-<div class="sourceCode" id="cb22"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb22-1" title="1"><span class="co">// the fname key is nested more than two levels deep</span></a>
-<a class="sourceLine" id="cb22-2" title="2"><span class="co">// (within bootcamp.instructor.fullName)</span></a>
-<a class="sourceLine" id="cb22-3" title="3"><span class="kw">let</span> bootcamp <span class="op">=</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb22-4" title="4">    <span class="dt">name</span><span class="op">:</span> <span class="st">&quot;App Academy&quot;</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb22-5" title="5">    <span class="dt">color</span><span class="op">:</span> <span class="st">&quot;red&quot;</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb22-6" title="6">    <span class="dt">instructor</span><span class="op">:</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb22-7" title="7">        <span class="dt">fullName</span><span class="op">:</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb22-8" title="8">            <span class="dt">fname</span><span class="op">:</span> <span class="st">&quot;Rose&quot;</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb22-9" title="9">            <span class="dt">lname</span><span class="op">:</span> <span class="st">&quot;K&quot;</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb22-10" title="10">        <span class="op">},</span></a>
-<a class="sourceLine" id="cb22-11" title="11">    <span class="op">},</span></a>
-<a class="sourceLine" id="cb22-12" title="12"><span class="op">};</span></a>
-<a class="sourceLine" id="cb22-13" title="13"></a>
-<a class="sourceLine" id="cb22-14" title="14"><span class="co">// this is hard to follow:</span></a>
-<a class="sourceLine" id="cb22-15" title="15"><span class="kw">let</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb22-16" title="16">    <span class="dt">instructor</span><span class="op">:</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb22-17" title="17">        <span class="dt">fullName</span><span class="op">:</span> <span class="op">{</span> fname<span class="op">,</span> lname <span class="op">},</span></a>
-<a class="sourceLine" id="cb22-18" title="18">    <span class="op">},</span></a>
-<a class="sourceLine" id="cb22-19" title="19"><span class="op">}</span> <span class="op">=</span> bootcamp<span class="op">;</span></a>
-<a class="sourceLine" id="cb22-20" title="20"><span class="va">console</span>.<span class="at">log</span>(fname<span class="op">,</span> lname)<span class="op">;</span></a>
-<a class="sourceLine" id="cb22-21" title="21"></a>
-<a class="sourceLine" id="cb22-22" title="22"><span class="co">// this is much easier to read:</span></a>
-<a class="sourceLine" id="cb22-23" title="23"><span class="kw">let</span> <span class="op">{</span> fname<span class="op">,</span> lname <span class="op">}</span> <span class="op">=</span> <span class="va">bootcamp</span>.<span class="va">instructor</span>.<span class="at">fullName</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb22-24" title="24"><span class="va">console</span>.<span class="at">log</span>(fname<span class="op">,</span> lname)<span class="op">;</span></a></code></pre></div>
 <p><strong>Destructuring and the Rest Pattern</strong></p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb23-1" title="1"><span class="kw">let</span> foods <span class="op">=</span> [<span class="st">&quot;pizza&quot;</span><span class="op">,</span> <span class="st">&quot;ramen&quot;</span><span class="op">,</span> <span class="st">&quot;sushi&quot;</span><span class="op">,</span> <span class="st">&quot;kale&quot;</span><span class="op">,</span> <span class="st">&quot;tacos&quot;</span>]<span class="op">;</span></a>
-<a class="sourceLine" id="cb23-2" title="2"></a>
-<a class="sourceLine" id="cb23-3" title="3"><span class="kw">let</span> [firstFood<span class="op">,</span> secondFood<span class="op">,</span> ...<span class="at">otherFoods</span>] <span class="op">=</span> foods<span class="op">;</span></a>
-<a class="sourceLine" id="cb23-4" title="4"><span class="va">console</span>.<span class="at">log</span>(firstFood)<span class="op">;</span> <span class="co">// =&gt; &quot;pizza&quot;</span></a>
-<a class="sourceLine" id="cb23-5" title="5"><span class="va">console</span>.<span class="at">log</span>(secondFood)<span class="op">;</span> <span class="co">// =&gt; &quot;ramen&quot;</span></a>
-<a class="sourceLine" id="cb23-6" title="6"><span class="va">console</span>.<span class="at">log</span>(otherFoods)<span class="op">;</span> <span class="co">// =&gt; [&quot;sushi&quot;, &quot;kale&quot;, &quot;tacos&quot;]</span></a></code></pre></div>
+<pre><code>let foods = [&quot;pizza&quot;, &quot;ramen&quot;, &quot;sushi&quot;, &quot;kale&quot;, &quot;tacos&quot;];
+
+let [firstFood, secondFood, ...otherFoods] = foods;
+console.log(firstFood); // =&gt; &quot;pizza&quot;
+console.log(secondFood); // =&gt; &quot;ramen&quot;
+console.log(otherFoods); // =&gt; [&quot;sushi&quot;, &quot;kale&quot;, &quot;tacos&quot;]</code></pre>
 <ul>
-<li>Currently the rest pattern is only officially supported by JS when destructuring arrays.</li>
+<li><p>Currently the rest pattern is only officially supported by JS when destructuring arrays.</p>
+<p>let { a, c, …obj } = { a: 1, b: 2, c: 3, d: 4 }; console.log(a); // =&gt; 1 console.log(c); // =&gt; 3 console.log(obj); // =&gt; { b: 2, d: 4 }</p></li>
 </ul>
-<div class="sourceCode" id="cb24"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb24-1" title="1"><span class="kw">let</span> <span class="op">{</span> a<span class="op">,</span> c<span class="op">,</span> ...<span class="at">obj</span> <span class="op">}</span> <span class="op">=</span> <span class="op">{</span> <span class="dt">a</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">b</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">c</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span> <span class="dt">d</span><span class="op">:</span> <span class="dv">4</span> <span class="op">};</span></a>
-<a class="sourceLine" id="cb24-2" title="2"><span class="va">console</span>.<span class="at">log</span>(a)<span class="op">;</span> <span class="co">// =&gt; 1</span></a>
-<a class="sourceLine" id="cb24-3" title="3"><span class="va">console</span>.<span class="at">log</span>(c)<span class="op">;</span> <span class="co">// =&gt; 3</span></a>
-<a class="sourceLine" id="cb24-4" title="4"><span class="va">console</span>.<span class="at">log</span>(obj)<span class="op">;</span> <span class="co">// =&gt; { b: 2, d: 4 }</span></a></code></pre></div>
 <hr />
 <h2 id="destructuring-parameters"><strong>Destructuring Parameters</strong></h2>
 <p>We can also destructure <strong>incoming parameters</strong> of a function. This is very useful when we’re passing objects around to different functions.</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb25-1" title="1"><span class="kw">let</span> cat <span class="op">=</span> <span class="op">{</span> <span class="dt">name</span><span class="op">:</span> <span class="st">&quot;Rupert&quot;</span><span class="op">,</span> <span class="dt">owner</span><span class="op">:</span> <span class="st">&quot;Curtis&quot;</span><span class="op">,</span> <span class="dt">weight</span><span class="op">:</span> <span class="dv">10</span> <span class="op">};</span></a>
-<a class="sourceLine" id="cb25-2" title="2"></a>
-<a class="sourceLine" id="cb25-3" title="3"><span class="co">// This unpacks the *owner* key out of any incoming object argument and</span></a>
-<a class="sourceLine" id="cb25-4" title="4"><span class="co">// assigns it to a owner parameter(variable)</span></a>
-<a class="sourceLine" id="cb25-5" title="5"><span class="kw">function</span> <span class="at">ownerName</span>(<span class="op">{</span> owner <span class="op">}</span>) <span class="op">{</span></a>
-<a class="sourceLine" id="cb25-6" title="6">    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;This cat is owned by &quot;</span> <span class="op">+</span> owner)<span class="op">;</span></a>
-<a class="sourceLine" id="cb25-7" title="7"><span class="op">}</span></a>
-<a class="sourceLine" id="cb25-8" title="8"></a>
-<a class="sourceLine" id="cb25-9" title="9"><span class="at">ownerName</span>(cat)<span class="op">;</span></a></code></pre></div>
-<div class="sourceCode" id="cb26"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb26-1" title="1"><span class="kw">let</span> bigCat <span class="op">=</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb26-2" title="2">    <span class="dt">name</span><span class="op">:</span> <span class="st">&quot;Jet&quot;</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb26-3" title="3">    <span class="dt">owner</span><span class="op">:</span> <span class="op">{</span> <span class="dt">name</span><span class="op">:</span> <span class="st">&quot;Rose&quot;</span> <span class="op">},</span></a>
-<a class="sourceLine" id="cb26-4" title="4">    <span class="dt">toys</span><span class="op">:</span> [<span class="st">&quot;ribbon&quot;</span>]<span class="op">,</span></a>
-<a class="sourceLine" id="cb26-5" title="5">    <span class="dt">siblings</span><span class="op">:</span> <span class="op">{</span> <span class="dt">name</span><span class="op">:</span> <span class="st">&quot;Freyja&quot;</span><span class="op">,</span> <span class="dt">color</span><span class="op">:</span> <span class="st">&quot;orange&quot;</span><span class="op">,</span> <span class="dt">toys</span><span class="op">:</span> [<span class="st">&quot;mouse&quot;</span><span class="op">,</span> <span class="st">&quot;string&quot;</span>] <span class="op">},</span></a>
-<a class="sourceLine" id="cb26-6" title="6"><span class="op">};</span></a>
-<a class="sourceLine" id="cb26-7" title="7"></a>
-<a class="sourceLine" id="cb26-8" title="8"><span class="co">// here we use *aliased* object destructuring to create a siblingToys variable</span></a>
-<a class="sourceLine" id="cb26-9" title="9"><span class="kw">function</span> <span class="at">toyFinder</span>(<span class="op">{</span> toys<span class="op">,</span> <span class="dt">siblings</span><span class="op">:</span> <span class="op">{</span> <span class="dt">toys</span><span class="op">:</span> siblingToys <span class="op">}</span> <span class="op">}</span>) <span class="op">{</span></a>
-<a class="sourceLine" id="cb26-10" title="10">    <span class="kw">let</span> allToys <span class="op">=</span> <span class="va">toys</span>.<span class="at">concat</span>(siblingToys)<span class="op">;</span></a>
-<a class="sourceLine" id="cb26-11" title="11">    <span class="cf">return</span> allToys<span class="op">;</span></a>
-<a class="sourceLine" id="cb26-12" title="12"><span class="op">}</span></a>
-<a class="sourceLine" id="cb26-13" title="13"></a>
-<a class="sourceLine" id="cb26-14" title="14"><span class="va">console</span>.<span class="at">log</span>(<span class="at">toyFinder</span>(bigCat))<span class="op">;</span> <span class="co">// =&gt; [&quot;ribbon&quot;, &quot;mouse&quot;, &quot;string&quot;]</span></a></code></pre></div>
+<pre><code>let cat = { name: &quot;Rupert&quot;, owner: &quot;Curtis&quot;, weight: 10 };
+
+// This unpacks the *owner* key out of any incoming object argument and
+// assigns it to a owner parameter(variable)
+function ownerName({ owner }) {
+    console.log(&quot;This cat is owned by &quot; + owner);
+}
+
+ownerName(cat);
+
+let bigCat = {
+    name: &quot;Jet&quot;,
+    owner: { name: &quot;Rose&quot; },
+    toys: [&quot;ribbon&quot;],
+    siblings: { name: &quot;Freyja&quot;, color: &quot;orange&quot;, toys: [&quot;mouse&quot;, &quot;string&quot;] },
+};
+
+// here we use *aliased* object destructuring to create a siblingToys variable
+function toyFinder({ toys, siblings: { toys: siblingToys } }) {
+    let allToys = toys.concat(siblingToys);
+    return allToys;
+}
+
+console.log(toyFinder(bigCat)); // =&gt; [&quot;ribbon&quot;, &quot;mouse&quot;, &quot;string&quot;]</code></pre>
 <h2 id="plain-old-js-object-lesson-learning-objectives-w2d2---learning-objectives">Plain Old JS Object Lesson Learning Objectives (W2D2) - Learning Objectives</h2>
 <ol type="1">
 <li>Label variables as either Primitive vs. Reference There are 5 primitive data types: Boolean, Null, Undefined, Number, String 1 Reference Type: Object (arrays are a kind of object)</li>
-<li>Identify when to use . vs [] when accessing values of an object:</li>
-</ol>
-<div class="sourceCode" id="cb27"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb27-1" title="1"><span class="co">//Using [](bracket) notation</span></a>
-<a class="sourceLine" id="cb27-2" title="2"></a>
-<a class="sourceLine" id="cb27-3" title="3"><span class="kw">let</span> person <span class="op">=</span> <span class="op">{};</span></a>
-<a class="sourceLine" id="cb27-4" title="4"></a>
-<a class="sourceLine" id="cb27-5" title="5">person[<span class="st">&quot;firstName&quot;</span>] <span class="op">=</span> <span class="st">&quot;Jesse&quot;</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb27-6" title="6"><span class="va">console</span>.<span class="at">log</span>(person)<span class="op">;</span></a>
-<a class="sourceLine" id="cb27-7" title="7">person[<span class="st">&quot;firstName&quot;</span>] <span class="op">=</span> <span class="st">&quot;Steven&quot;</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb27-8" title="8"></a>
-<a class="sourceLine" id="cb27-9" title="9"><span class="va">console</span>.<span class="at">log</span>(person)<span class="op">;</span></a>
-<a class="sourceLine" id="cb27-10" title="10"></a>
-<a class="sourceLine" id="cb27-11" title="11"><span class="co">//Using . (dot) notation</span></a>
-<a class="sourceLine" id="cb27-12" title="12"></a>
-<a class="sourceLine" id="cb27-13" title="13"><span class="kw">let</span> person <span class="op">=</span> <span class="op">{};</span></a>
-<a class="sourceLine" id="cb27-14" title="14"></a>
-<a class="sourceLine" id="cb27-15" title="15"><span class="va">person</span>.<span class="at">name</span> <span class="op">=</span> <span class="st">&quot;Brian&quot;</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb27-16" title="16"><span class="va">console</span>.<span class="at">log</span>(person)<span class="op">;</span></a>
-<a class="sourceLine" id="cb27-17" title="17"><span class="va">person</span>.<span class="at">name</span> <span class="op">=</span> <span class="st">&quot;Steven&quot;</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb27-18" title="18"><span class="va">console</span>.<span class="at">log</span>(person)<span class="op">;</span></a></code></pre></div>
-<ol start="3" type="1">
-<li>Use the obj[key] !== undefined pattern to check if a given variable that contains a key exists in an object</li>
+<li><p>Identify when to use . vs [] when accessing values of an object:</p>
+<p>//Using <a href="bracket"></a> notation</p>
+<p>let person = {};</p>
+<p>person[“firstName”] = “Jesse”; console.log(person); person[“firstName”] = “Steven”;</p>
+<p>console.log(person);</p>
+<p>//Using . (dot) notation</p>
+<p>let person = {};</p>
+<p>person.name = “Brian”; console.log(person); person.name = “Steven”; console.log(person);</p></li>
+<li><p>Use the obj[key] !== undefined pattern to check if a given variable that contains a key exists in an object</p></li>
 </ol>
 <h1 id="checking-for-undefinied-with-bracket-notation">Checking for Undefinied with bracket notation</h1>
-<div class="sourceCode" id="cb28"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb28-1" title="1"><span class="kw">let</span> person <span class="op">=</span> <span class="op">{};</span></a>
-<a class="sourceLine" id="cb28-2" title="2"><span class="va">person</span>.<span class="at">name</span> <span class="op">=</span> <span class="st">&quot;Paul&quot;</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb28-3" title="3"><span class="va">person</span>.<span class="at">age</span> <span class="op">=</span> <span class="dv">25</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb28-4" title="4"><span class="va">console</span>.<span class="at">log</span>(person)<span class="op">;</span></a>
-<a class="sourceLine" id="cb28-5" title="5"><span class="va">console</span>.<span class="at">log</span>(person[<span class="st">&quot;name&quot;</span>] <span class="op">===</span> <span class="st">&quot;Paul&quot;</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb28-6" title="6"><span class="va">console</span>.<span class="at">log</span>(person[<span class="st">&quot;age&quot;</span>] <span class="op">===</span> <span class="dv">25</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb28-7" title="7"><span class="va">console</span>.<span class="at">log</span>(person[<span class="st">&quot;occupation&quot;</span>] <span class="op">===</span> <span class="kw">undefined</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb28-8" title="8"><span class="va">console</span>.<span class="at">log</span>(person[<span class="st">&quot;occupation&quot;</span>] <span class="op">!==</span> <span class="kw">undefined</span>)<span class="op">;</span></a></code></pre></div>
-<ol start="4" type="1">
-<li>Utilize Object.keys and Object.values in a function</li>
+<pre><code>let person = {};
+person.name = &quot;Paul&quot;;
+person.age = 25;
+console.log(person);
+console.log(person[&quot;name&quot;] === &quot;Paul&quot;);
+console.log(person[&quot;age&quot;] === 25);
+console.log(person[&quot;occupation&quot;] === undefined);
+console.log(person[&quot;occupation&quot;] !== undefined);</code></pre>
+<ol type="1">
+<li><p>Utilize Object.keys and Object.values in a function</p>
+<p>//Object.keys</p>
+<p>let cars = { make: “honda”, model: “civic” }; console.log(Object.keys(cars));</p>
+<p>//Object.values</p>
+<p>let cars = { make: “honda”, model: “civic” }; console.log(Object.values(cars));</p></li>
+<li><p>Iterate through an object using a for in loop</p>
+<p>let obj = { game: “call of duty”, console: “PC duh?” };</p>
+<p>for (let keys in obj) { let values = obj[keys]; console.log(“Here are the key value pairs!”, keys, “-”, values); }</p></li>
+<li><p>Define a function that utilizes …rest syntax to accept an arbitrary number of arguments</p>
+<p>let acceptEverything = function (…everything) { console.log(everything); };</p>
+<p>acceptEverything(“thing1”, “thing2”, “thing3”);</p></li>
+<li><p>Use …spread syntax for Object literals and Array literals</p>
+<p>let arrayOfNums = [0, 1, 2, 3, 4];</p>
+<p>let moreNums = […arrayOfNums, 5, 6, 7, 8, 9];</p>
+<p>console.log(moreNums);</p>
+<p>let hubby = { firstName: “John”, lastName: “Doe” }; let wifey = { firsName: “Jane”, lastName: “Doe” };</p>
+<p>let couple = { …hubby, …wifey }; //Something interesting happens here console.log(couple);</p>
+<p>let person1 = { name: “Jack”, faveColor: “red” }; let person2 = { name: “Paul”, faveColor: “blue” }; let people = { …person1, …person2 }; console.log(people);</p></li>
+<li><p>Destructure an array to reference specific elements</p>
+<p>let nums = [1, 2];</p>
+<p>let [num1, num2] = nums;</p>
+<p>console.log(“num1 variable”, num1, " num2 variable", num2);</p></li>
+<li><p>Destructure an object to reference specific values</p>
+<p>let person = { name: “Kelly”, getFaveColor: function () { return “blue”; }, friends: { name: “Ryan”, }, };</p>
+<p>let { friends: { name }, } = person;</p>
+<p>console.log(“name”, person.name); console.log(“favorite color”, person.getFaveColor()); console.log(name);</p></li>
+<li><p>Write a function that accepts a array as an argument and returns an object representing the count of each character in the array</p>
+<p>let myCounter = function (array) { let myObj = {}; let count = 1; array.forEach(function (char) { if (myObj[char] === undefined) { myObj[char] = count; } else { myObj[char]++; } }); return myObj; };</p>
+<p>console.log(myCounter([“a”, “a”, “n”, “c”]));</p></li>
 </ol>
-<div class="sourceCode" id="cb29"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb29-1" title="1"><span class="co">//Object.keys</span></a>
-<a class="sourceLine" id="cb29-2" title="2"></a>
-<a class="sourceLine" id="cb29-3" title="3"><span class="kw">let</span> cars <span class="op">=</span> <span class="op">{</span> <span class="dt">make</span><span class="op">:</span> <span class="st">&quot;honda&quot;</span><span class="op">,</span> <span class="dt">model</span><span class="op">:</span> <span class="st">&quot;civic&quot;</span> <span class="op">};</span></a>
-<a class="sourceLine" id="cb29-4" title="4"><span class="va">console</span>.<span class="at">log</span>(<span class="va">Object</span>.<span class="at">keys</span>(cars))<span class="op">;</span></a>
-<a class="sourceLine" id="cb29-5" title="5"></a>
-<a class="sourceLine" id="cb29-6" title="6"><span class="co">//Object.values</span></a>
-<a class="sourceLine" id="cb29-7" title="7"></a>
-<a class="sourceLine" id="cb29-8" title="8"><span class="kw">let</span> cars <span class="op">=</span> <span class="op">{</span> <span class="dt">make</span><span class="op">:</span> <span class="st">&quot;honda&quot;</span><span class="op">,</span> <span class="dt">model</span><span class="op">:</span> <span class="st">&quot;civic&quot;</span> <span class="op">};</span></a>
-<a class="sourceLine" id="cb29-9" title="9"><span class="va">console</span>.<span class="at">log</span>(<span class="va">Object</span>.<span class="at">values</span>(cars))<span class="op">;</span></a></code></pre></div>
-<ol start="5" type="1">
-<li>Iterate through an object using a for in loop</li>
-</ol>
-<div class="sourceCode" id="cb30"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb30-1" title="1"><span class="kw">let</span> obj <span class="op">=</span> <span class="op">{</span> <span class="dt">game</span><span class="op">:</span> <span class="st">&quot;call of duty&quot;</span><span class="op">,</span> <span class="dt">console</span><span class="op">:</span> <span class="st">&quot;PC duh?&quot;</span> <span class="op">};</span></a>
-<a class="sourceLine" id="cb30-2" title="2"></a>
-<a class="sourceLine" id="cb30-3" title="3"><span class="cf">for</span> (<span class="kw">let</span> keys <span class="kw">in</span> obj) <span class="op">{</span></a>
-<a class="sourceLine" id="cb30-4" title="4">    <span class="kw">let</span> values <span class="op">=</span> obj[keys]<span class="op">;</span></a>
-<a class="sourceLine" id="cb30-5" title="5">    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;Here are the key value pairs!&quot;</span><span class="op">,</span> keys<span class="op">,</span> <span class="st">&quot;-&quot;</span><span class="op">,</span> values)<span class="op">;</span></a>
-<a class="sourceLine" id="cb30-6" title="6"><span class="op">}</span></a></code></pre></div>
-<ol start="6" type="1">
-<li>Define a function that utilizes …rest syntax to accept an arbitrary number of arguments</li>
-</ol>
-<div class="sourceCode" id="cb31"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb31-1" title="1"><span class="kw">let</span> acceptEverything <span class="op">=</span> <span class="kw">function</span> (...<span class="at">everything</span>) <span class="op">{</span></a>
-<a class="sourceLine" id="cb31-2" title="2">    <span class="va">console</span>.<span class="at">log</span>(everything)<span class="op">;</span></a>
-<a class="sourceLine" id="cb31-3" title="3"><span class="op">};</span></a>
-<a class="sourceLine" id="cb31-4" title="4"></a>
-<a class="sourceLine" id="cb31-5" title="5"><span class="at">acceptEverything</span>(<span class="st">&quot;thing1&quot;</span><span class="op">,</span> <span class="st">&quot;thing2&quot;</span><span class="op">,</span> <span class="st">&quot;thing3&quot;</span>)<span class="op">;</span></a></code></pre></div>
-<ol start="7" type="1">
-<li>Use …spread syntax for Object literals and Array literals</li>
-</ol>
-<div class="sourceCode" id="cb32"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb32-1" title="1"><span class="kw">let</span> arrayOfNums <span class="op">=</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span>]<span class="op">;</span></a>
-<a class="sourceLine" id="cb32-2" title="2"></a>
-<a class="sourceLine" id="cb32-3" title="3"><span class="kw">let</span> moreNums <span class="op">=</span> [...<span class="at">arrayOfNums</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">6</span><span class="op">,</span> <span class="dv">7</span><span class="op">,</span> <span class="dv">8</span><span class="op">,</span> <span class="dv">9</span>]<span class="op">;</span></a>
-<a class="sourceLine" id="cb32-4" title="4"></a>
-<a class="sourceLine" id="cb32-5" title="5"><span class="va">console</span>.<span class="at">log</span>(moreNums)<span class="op">;</span></a>
-<a class="sourceLine" id="cb32-6" title="6"></a>
-<a class="sourceLine" id="cb32-7" title="7"><span class="kw">let</span> hubby <span class="op">=</span> <span class="op">{</span> <span class="dt">firstName</span><span class="op">:</span> <span class="st">&quot;John&quot;</span><span class="op">,</span> <span class="dt">lastName</span><span class="op">:</span> <span class="st">&quot;Doe&quot;</span> <span class="op">};</span></a>
-<a class="sourceLine" id="cb32-8" title="8"><span class="kw">let</span> wifey <span class="op">=</span> <span class="op">{</span> <span class="dt">firsName</span><span class="op">:</span> <span class="st">&quot;Jane&quot;</span><span class="op">,</span> <span class="dt">lastName</span><span class="op">:</span> <span class="st">&quot;Doe&quot;</span> <span class="op">};</span></a>
-<a class="sourceLine" id="cb32-9" title="9"></a>
-<a class="sourceLine" id="cb32-10" title="10"><span class="kw">let</span> couple <span class="op">=</span> <span class="op">{</span> ...<span class="at">hubby</span><span class="op">,</span> ...<span class="at">wifey</span> <span class="op">};</span></a>
-<a class="sourceLine" id="cb32-11" title="11"><span class="co">//Something interesting happens here</span></a>
-<a class="sourceLine" id="cb32-12" title="12"><span class="va">console</span>.<span class="at">log</span>(couple)<span class="op">;</span></a>
-<a class="sourceLine" id="cb32-13" title="13"></a>
-<a class="sourceLine" id="cb32-14" title="14"><span class="kw">let</span> person1 <span class="op">=</span> <span class="op">{</span> <span class="dt">name</span><span class="op">:</span> <span class="st">&quot;Jack&quot;</span><span class="op">,</span> <span class="dt">faveColor</span><span class="op">:</span> <span class="st">&quot;red&quot;</span> <span class="op">};</span></a>
-<a class="sourceLine" id="cb32-15" title="15"><span class="kw">let</span> person2 <span class="op">=</span> <span class="op">{</span> <span class="dt">name</span><span class="op">:</span> <span class="st">&quot;Paul&quot;</span><span class="op">,</span> <span class="dt">faveColor</span><span class="op">:</span> <span class="st">&quot;blue&quot;</span> <span class="op">};</span></a>
-<a class="sourceLine" id="cb32-16" title="16"><span class="kw">let</span> people <span class="op">=</span> <span class="op">{</span> ...<span class="at">person1</span><span class="op">,</span> ...<span class="at">person2</span> <span class="op">};</span></a>
-<a class="sourceLine" id="cb32-17" title="17"><span class="va">console</span>.<span class="at">log</span>(people)<span class="op">;</span></a></code></pre></div>
-<ol start="8" type="1">
-<li>Destructure an array to reference specific elements</li>
-</ol>
-<div class="sourceCode" id="cb33"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb33-1" title="1"><span class="kw">let</span> nums <span class="op">=</span> [<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span>]<span class="op">;</span></a>
-<a class="sourceLine" id="cb33-2" title="2"></a>
-<a class="sourceLine" id="cb33-3" title="3"><span class="kw">let</span> [num1<span class="op">,</span> num2] <span class="op">=</span> nums<span class="op">;</span></a>
-<a class="sourceLine" id="cb33-4" title="4"></a>
-<a class="sourceLine" id="cb33-5" title="5"><span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;num1 variable&quot;</span><span class="op">,</span> num1<span class="op">,</span> <span class="st">&quot; num2 variable&quot;</span><span class="op">,</span> num2)<span class="op">;</span></a></code></pre></div>
-<ol start="9" type="1">
-<li>Destructure an object to reference specific values</li>
-</ol>
-<div class="sourceCode" id="cb34"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb34-1" title="1"><span class="kw">let</span> person <span class="op">=</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb34-2" title="2">    <span class="dt">name</span><span class="op">:</span> <span class="st">&quot;Kelly&quot;</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb34-3" title="3">    <span class="dt">getFaveColor</span><span class="op">:</span> <span class="kw">function</span> () <span class="op">{</span></a>
-<a class="sourceLine" id="cb34-4" title="4">        <span class="cf">return</span> <span class="st">&quot;blue&quot;</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb34-5" title="5">    <span class="op">},</span></a>
-<a class="sourceLine" id="cb34-6" title="6">    <span class="dt">friends</span><span class="op">:</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb34-7" title="7">        <span class="dt">name</span><span class="op">:</span> <span class="st">&quot;Ryan&quot;</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb34-8" title="8">    <span class="op">},</span></a>
-<a class="sourceLine" id="cb34-9" title="9"><span class="op">};</span></a>
-<a class="sourceLine" id="cb34-10" title="10"></a>
-<a class="sourceLine" id="cb34-11" title="11"><span class="kw">let</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb34-12" title="12">    <span class="dt">friends</span><span class="op">:</span> <span class="op">{</span> name <span class="op">},</span></a>
-<a class="sourceLine" id="cb34-13" title="13"><span class="op">}</span> <span class="op">=</span> person<span class="op">;</span></a>
-<a class="sourceLine" id="cb34-14" title="14"></a>
-<a class="sourceLine" id="cb34-15" title="15"><span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;name&quot;</span><span class="op">,</span> <span class="va">person</span>.<span class="at">name</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb34-16" title="16"><span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;favorite color&quot;</span><span class="op">,</span> <span class="va">person</span>.<span class="at">getFaveColor</span>())<span class="op">;</span></a>
-<a class="sourceLine" id="cb34-17" title="17"><span class="va">console</span>.<span class="at">log</span>(name)<span class="op">;</span></a></code></pre></div>
-<ol start="10" type="1">
-<li>Write a function that accepts a array as an argument and returns an object representing the count of each character in the array</li>
-</ol>
-<div class="sourceCode" id="cb35"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb35-1" title="1"><span class="kw">let</span> myCounter <span class="op">=</span> <span class="kw">function</span> (array) <span class="op">{</span></a>
-<a class="sourceLine" id="cb35-2" title="2">    <span class="kw">let</span> myObj <span class="op">=</span> <span class="op">{};</span></a>
-<a class="sourceLine" id="cb35-3" title="3">    <span class="kw">let</span> count <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb35-4" title="4">    <span class="va">array</span>.<span class="at">forEach</span>(<span class="kw">function</span> (char) <span class="op">{</span></a>
-<a class="sourceLine" id="cb35-5" title="5">        <span class="cf">if</span> (myObj[char] <span class="op">===</span> <span class="kw">undefined</span>) <span class="op">{</span></a>
-<a class="sourceLine" id="cb35-6" title="6">            myObj[char] <span class="op">=</span> count<span class="op">;</span></a>
-<a class="sourceLine" id="cb35-7" title="7">        <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb35-8" title="8">            myObj[char]<span class="op">++;</span></a>
-<a class="sourceLine" id="cb35-9" title="9">        <span class="op">}</span></a>
-<a class="sourceLine" id="cb35-10" title="10">    <span class="op">}</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb35-11" title="11">    <span class="cf">return</span> myObj<span class="op">;</span></a>
-<a class="sourceLine" id="cb35-12" title="12"><span class="op">};</span></a>
-<a class="sourceLine" id="cb35-13" title="13"></a>
-<a class="sourceLine" id="cb35-14" title="14"><span class="va">console</span>.<span class="at">log</span>(<span class="at">myCounter</span>([<span class="st">&quot;a&quot;</span><span class="op">,</span> <span class="st">&quot;a&quot;</span><span class="op">,</span> <span class="st">&quot;n&quot;</span><span class="op">,</span> <span class="st">&quot;c&quot;</span>]))<span class="op">;</span></a></code></pre></div>
 <h1 id="wednesday">Wednesday —————————————————————————————————————————–</h1>
 <h1 id="notes-2"><strong>Notes</strong></h1>
 <h2 id="callbacks-using-a-function-as-an-argument"><strong>Callbacks: Using a Function as an Argument</strong></h2>
 <p><strong>What is a callback?</strong></p>
 <ul>
-<li>A <strong><code>callback</code></strong> is always a function that is being passed into another function.</li>
-</ul>
-<div class="sourceCode" id="cb36"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb36-1" title="1"><span class="kw">let</span> foobar <span class="op">=</span> <span class="kw">function</span> (callback) <span class="op">{</span></a>
-<a class="sourceLine" id="cb36-2" title="2">    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;foo&quot;</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb36-3" title="3">    <span class="at">callback</span>()<span class="op">;</span></a>
-<a class="sourceLine" id="cb36-4" title="4">    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;bar&quot;</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb36-5" title="5"><span class="op">};</span></a>
-<a class="sourceLine" id="cb36-6" title="6"></a>
-<a class="sourceLine" id="cb36-7" title="7"><span class="kw">let</span> sayHello <span class="op">=</span> <span class="kw">function</span> () <span class="op">{</span></a>
-<a class="sourceLine" id="cb36-8" title="8">    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;hello&quot;</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb36-9" title="9"><span class="op">};</span></a>
-<a class="sourceLine" id="cb36-10" title="10"></a>
-<a class="sourceLine" id="cb36-11" title="11"><span class="at">foobar</span>(sayHello)<span class="op">;</span> <span class="co">// prints</span></a>
-<a class="sourceLine" id="cb36-12" title="12"><span class="co">// foo</span></a>
-<a class="sourceLine" id="cb36-13" title="13"><span class="co">// hello</span></a>
-<a class="sourceLine" id="cb36-14" title="14"><span class="co">// bar</span></a></code></pre></div>
-<ul>
-<li>Although we named our parameter <em>callback</em>, we could name it anything we like.</li>
-</ul>
-<div class="sourceCode" id="cb37"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb37-1" title="1"><span class="kw">let</span> foobar <span class="op">=</span> <span class="kw">function</span> (callback) <span class="op">{</span></a>
-<a class="sourceLine" id="cb37-2" title="2">    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;foo&quot;</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb37-3" title="3">    <span class="at">callback</span>()<span class="op">;</span></a>
-<a class="sourceLine" id="cb37-4" title="4">    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;bar&quot;</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb37-5" title="5"><span class="op">};</span></a>
-<a class="sourceLine" id="cb37-6" title="6"></a>
-<a class="sourceLine" id="cb37-7" title="7"><span class="at">foobar</span>(<span class="kw">function</span> () <span class="op">{</span></a>
-<a class="sourceLine" id="cb37-8" title="8">    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;hello&quot;</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb37-9" title="9"><span class="op">}</span>)<span class="op">;</span> <span class="co">// prints</span></a>
-<a class="sourceLine" id="cb37-10" title="10"><span class="co">// foo</span></a>
-<a class="sourceLine" id="cb37-11" title="11"><span class="co">// hello</span></a>
-<a class="sourceLine" id="cb37-12" title="12"><span class="co">// bar</span></a></code></pre></div>
-<ul>
+<li><p>A <strong><code>callback</code></strong> is always a function that is being passed into another function.</p>
+<p>let foobar = function (callback) { console.log(“foo”); callback(); console.log(“bar”); };</p>
+<p>let sayHello = function () { console.log(“hello”); };</p>
+<p>foobar(sayHello); // prints // foo // hello // bar</p></li>
+<li><p>Although we named our parameter <em>callback</em>, we could name it anything we like.</p>
+<p>let foobar = function (callback) { console.log(“foo”); callback(); console.log(“bar”); };</p>
+<p>foobar(function () { console.log(“hello”); }); // prints // foo // hello // bar</p></li>
 <li><strong><code>Anonymous Callback</code></strong> : When we use a function expression directly.</li>
-<li>Typically we want to assign our callback to a name if we plan on using it multiple times, an anonymous callball is better if it’s just single use.</li>
+<li><p>Typically we want to assign our callback to a name if we plan on using it multiple times, an anonymous callball is better if it’s just single use.</p></li>
 </ul>
 <p><strong>A More Interesting Example</strong></p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb38-1" title="1"><span class="kw">let</span> add <span class="op">=</span> <span class="kw">function</span> (num1<span class="op">,</span> num2<span class="op">,</span> cb) <span class="op">{</span></a>
-<a class="sourceLine" id="cb38-2" title="2">    <span class="kw">let</span> sum <span class="op">=</span> num1 <span class="op">+</span> num2<span class="op">;</span></a>
-<a class="sourceLine" id="cb38-3" title="3">    <span class="kw">let</span> result <span class="op">=</span> <span class="at">cb</span>(sum)<span class="op">;</span></a>
-<a class="sourceLine" id="cb38-4" title="4">    <span class="cf">return</span> result<span class="op">;</span></a>
-<a class="sourceLine" id="cb38-5" title="5"><span class="op">};</span></a>
-<a class="sourceLine" id="cb38-6" title="6"></a>
-<a class="sourceLine" id="cb38-7" title="7"><span class="kw">let</span> double <span class="op">=</span> <span class="kw">function</span> (num) <span class="op">{</span></a>
-<a class="sourceLine" id="cb38-8" title="8">    <span class="cf">return</span> num <span class="op">*</span> <span class="dv">2</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb38-9" title="9"><span class="op">};</span></a>
-<a class="sourceLine" id="cb38-10" title="10"></a>
-<a class="sourceLine" id="cb38-11" title="11"><span class="va">console</span>.<span class="at">log</span>(<span class="at">add</span>(<span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> double))<span class="op">;</span> <span class="co">// 10</span></a></code></pre></div>
+<pre><code>let add = function (num1, num2, cb) {
+    let sum = num1 + num2;
+    let result = cb(sum);
+    return result;
+};
+
+let double = function (num) {
+    return num * 2;
+};
+
+console.log(add(2, 3, double)); // 10</code></pre>
 <ul>
-<li><strong>Variable expression function</strong> being passed in as an argument.</li>
-</ul>
-<div class="sourceCode" id="cb39"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb39-1" title="1"><span class="kw">let</span> add <span class="op">=</span> <span class="kw">function</span> (num1<span class="op">,</span> num2<span class="op">,</span> cb) <span class="op">{</span></a>
-<a class="sourceLine" id="cb39-2" title="2">    <span class="kw">let</span> sum <span class="op">=</span> num1 <span class="op">+</span> num2<span class="op">;</span></a>
-<a class="sourceLine" id="cb39-3" title="3">    <span class="kw">let</span> result <span class="op">=</span> <span class="at">cb</span>(sum)<span class="op">;</span></a>
-<a class="sourceLine" id="cb39-4" title="4">    <span class="cf">return</span> result<span class="op">;</span></a>
-<a class="sourceLine" id="cb39-5" title="5"><span class="op">};</span></a>
-<a class="sourceLine" id="cb39-6" title="6"></a>
-<a class="sourceLine" id="cb39-7" title="7"><span class="va">console</span>.<span class="at">log</span>(<span class="at">add</span>(<span class="dv">60</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="va">Math</span>.<span class="at">sqrt</span>))<span class="op">;</span> <span class="co">// 8</span></a></code></pre></div>
-<ul>
-<li><strong><code>Math.sqrt</code></strong> built in function being passed directly in as an argument.</li>
+<li><p><strong>Variable expression function</strong> being passed in as an argument.</p>
+<p>let add = function (num1, num2, cb) { let sum = num1 + num2; let result = cb(sum); return result; };</p>
+<p>console.log(add(60, 4, Math.sqrt)); // 8</p></li>
+<li><p><strong><code>Math.sqrt</code></strong> built in function being passed directly in as an argument.</p></li>
 </ul>
 <p><strong>Refactoring for an Optional Callback</strong></p>
 <ul>
-<li>We can add in a conditional to make the callback optional. (This is a very common pattern in Javascript!)</li>
+<li><p>We can add in a conditional to make the callback optional. (This is a very common pattern in Javascript!)</p>
+<p>let add = function (num1, num2, cb) { if (cb === undefined) { return num1 + num2; } else { return cb(num1 + num2); } };</p>
+<p>console.log(add(9, 40)); // 49 console.log(add(9, 40, Math.sqrt)); // 7</p></li>
 </ul>
-<div class="sourceCode" id="cb40"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb40-1" title="1"><span class="kw">let</span> add <span class="op">=</span> <span class="kw">function</span> (num1<span class="op">,</span> num2<span class="op">,</span> cb) <span class="op">{</span></a>
-<a class="sourceLine" id="cb40-2" title="2">    <span class="cf">if</span> (cb <span class="op">===</span> <span class="kw">undefined</span>) <span class="op">{</span></a>
-<a class="sourceLine" id="cb40-3" title="3">        <span class="cf">return</span> num1 <span class="op">+</span> num2<span class="op">;</span></a>
-<a class="sourceLine" id="cb40-4" title="4">    <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb40-5" title="5">        <span class="cf">return</span> <span class="at">cb</span>(num1 <span class="op">+</span> num2)<span class="op">;</span></a>
-<a class="sourceLine" id="cb40-6" title="6">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb40-7" title="7"><span class="op">};</span></a>
-<a class="sourceLine" id="cb40-8" title="8"></a>
-<a class="sourceLine" id="cb40-9" title="9"><span class="va">console</span>.<span class="at">log</span>(<span class="at">add</span>(<span class="dv">9</span><span class="op">,</span> <span class="dv">40</span>))<span class="op">;</span> <span class="co">// 49</span></a>
-<a class="sourceLine" id="cb40-10" title="10"><span class="va">console</span>.<span class="at">log</span>(<span class="at">add</span>(<span class="dv">9</span><span class="op">,</span> <span class="dv">40</span><span class="op">,</span> <span class="va">Math</span>.<span class="at">sqrt</span>))<span class="op">;</span> <span class="co">// 7</span></a></code></pre></div>
 <hr />
 <h2 id="callback-functions-as-first-class-objects"><strong>Callback Functions as First Class Objects</strong></h2>
 <ul>
@@ -826,11 +599,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Callback Functions.</li>
 </ul></li>
 <li><p>They can be returned in functions.</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb41-1" title="1"><span class="kw">function</span> <span class="at">foo</span>() <span class="op">{</span></a>
-<a class="sourceLine" id="cb41-2" title="2">    <span class="cf">return</span> <span class="kw">function</span> () <span class="op">{</span></a>
-<a class="sourceLine" id="cb41-3" title="3">        <span class="cf">return</span> <span class="st">&quot;I&#39;m a cat&quot;</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb41-4" title="4">    <span class="op">};</span></a>
-<a class="sourceLine" id="cb41-5" title="5"><span class="op">}</span></a></code></pre></div></li>
+<pre><code>function foo() {
+    return function () {
+        return &quot;I&#39;m a cat&quot;;
+    };
+}</code></pre></li>
 </ul></li>
 <li>As we have just proved above, functions are indeed first-class objects!</li>
 <li><strong><code>Higher-Order Function</code></strong> : A function that should either accept another function as an argument, or return a function as an output.</li>
@@ -839,17 +612,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <hr />
 <h2 id="callback-functions-demo"><strong>Callback Functions Demo</strong></h2>
 <p>Interesting Interaction.</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb42-1" title="1"><span class="kw">let</span> foo <span class="op">=</span> <span class="kw">function</span> () <span class="op">{</span></a>
-<a class="sourceLine" id="cb42-2" title="2">    <span class="kw">let</span> bar <span class="op">=</span> <span class="kw">function</span> () <span class="op">{</span></a>
-<a class="sourceLine" id="cb42-3" title="3">        <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;interesting&quot;</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb42-4" title="4">    <span class="op">};</span></a>
-<a class="sourceLine" id="cb42-5" title="5">    <span class="cf">return</span> bar<span class="op">;</span></a>
-<a class="sourceLine" id="cb42-6" title="6"><span class="op">};</span></a>
-<a class="sourceLine" id="cb42-7" title="7"></a>
-<a class="sourceLine" id="cb42-8" title="8"><span class="va">console</span>.<span class="at">log</span>(<span class="at">foo</span>())<span class="op">;</span> <span class="co">// [function: bar]</span></a>
-<a class="sourceLine" id="cb42-9" title="9"></a>
-<a class="sourceLine" id="cb42-10" title="10"><span class="kw">let</span> res <span class="op">=</span> <span class="at">foo</span>()<span class="op">;</span></a>
-<a class="sourceLine" id="cb42-11" title="11"><span class="va">console</span>.<span class="at">log</span>(rest)<span class="op">;</span> <span class="co">// interesting.</span></a></code></pre></div>
+<pre><code>let foo = function () {
+    let bar = function () {
+        console.log(&quot;interesting&quot;);
+    };
+    return bar;
+};
+
+console.log(foo()); // [function: bar]
+
+let res = foo();
+console.log(rest); // interesting.</code></pre>
 <ul>
 <li>Saving our function into a variable will</li>
 </ul>
@@ -881,14 +654,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 <p><strong>Scope Chaining: Variables and Scope</strong></p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb43-1" title="1"><span class="kw">let</span> name <span class="op">=</span> <span class="st">&quot;Fiona&quot;</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb43-2" title="2"></a>
-<a class="sourceLine" id="cb43-3" title="3"><span class="co">// we aren&#39;t passing in or defining and variables</span></a>
-<a class="sourceLine" id="cb43-4" title="4"><span class="kw">function</span> <span class="at">hungryHippo</span>() <span class="op">{</span></a>
-<a class="sourceLine" id="cb43-5" title="5">    <span class="va">console</span>.<span class="at">log</span>(name <span class="op">+</span> <span class="st">&quot; is hungry!&quot;</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb43-6" title="6"><span class="op">}</span></a>
-<a class="sourceLine" id="cb43-7" title="7"></a>
-<a class="sourceLine" id="cb43-8" title="8"><span class="at">hungryHippo</span>()<span class="op">;</span> <span class="co">// =&gt; &quot;Fiona is hungry&quot;</span></a></code></pre></div>
+<pre><code>let name = &quot;Fiona&quot;;
+
+// we aren&#39;t passing in or defining and variables
+function hungryHippo() {
+    console.log(name + &quot; is hungry!&quot;);
+}
+
+hungryHippo(); // =&gt; &quot;Fiona is hungry&quot;</code></pre>
 <ul>
 <li>A key scoping rule is that an inner scope <strong>does</strong> have access to variables in the outer scope.</li>
 <li><strong><code>Scope Chaining</code></strong> : When a variable is not found within the immediate scope, JS will keep searching outwards until it matches the one we are referencing.</li>
@@ -917,11 +690,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>As we learned, var creates function-scoped variables, this means our declared var keyword variable will be confined to the scope of our current function.</li>
 </ul>
 <p><strong>Hoisting with function-scoped variables</strong></p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb44-1" title="1"><span class="kw">function</span> <span class="at">test</span>() <span class="op">{</span></a>
-<a class="sourceLine" id="cb44-2" title="2">    <span class="co">// var hoistedVar;</span></a>
-<a class="sourceLine" id="cb44-3" title="3">    <span class="va">console</span>.<span class="at">log</span>(hoistedVar)<span class="op">;</span> <span class="co">// =&gt;  undefined</span></a>
-<a class="sourceLine" id="cb44-4" title="4">    <span class="kw">var</span> hoistedVar <span class="op">=</span> <span class="dv">10</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb44-5" title="5"><span class="op">}</span></a></code></pre></div>
+<pre><code>function test() {
+    // var hoistedVar;
+    console.log(hoistedVar); // =&gt;  undefined
+    var hoistedVar = 10;
+}</code></pre>
 <ul>
 <li>Even though we initially declared &amp; initizalized our variable underneath the console.log var variables are “hoisted” to the top, but only in declaration.</li>
 </ul>
@@ -978,15 +751,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li><p><strong>Passing Arguments Implicitly</strong></p>
 <ul>
-<li>We can use closures to pass down arguments to helper functions.</li>
-</ul>
-<div class="sourceCode" id="cb45"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb45-1" title="1"><span class="kw">function</span> <span class="at">isPalindrome</span>(string) <span class="op">{</span></a>
-<a class="sourceLine" id="cb45-2" title="2">  <span class="kw">function</span> <span class="at">reverse</span>() <span class="op">{</span></a>
-<a class="sourceLine" id="cb45-3" title="3">      <span class="cf">return</span> <span class="va">string</span>.<span class="at">split</span>(<span class="st">&quot;&quot;</span>).<span class="at">reverse</span>().<span class="at">join</span>(<span class="st">&quot;&quot;</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb45-4" title="4">  <span class="op">}</span></a>
-<a class="sourceLine" id="cb45-5" title="5"></a>
-<a class="sourceLine" id="cb45-6" title="6">  <span class="cf">return</span> string <span class="op">===</span> <span class="at">reverse</span>()<span class="op">;</span></a>
-<a class="sourceLine" id="cb45-7" title="7"><span class="op">}</span></a></code></pre></div></li>
+<li><p>We can use closures to pass down arguments to helper functions.</p>
+<p>function isPalindrome(string) { function reverse() { return string.split("“).reverse().join(”"); }</p>
+<p>return string === reverse(); }</p></li>
+</ul></li>
 </ul>
 <hr />
 <h2 id="context-in-javascript"><strong>Context in Javascript</strong></h2>
@@ -1005,19 +773,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>If <code>this</code> is called using normal function style invocation, our output will be the contents of the global object.</li>
 </ul>
 <p><strong>When Methods have an Unexpected Context</strong></p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb46-1" title="1"><span class="kw">let</span> dog <span class="op">=</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb46-2" title="2">    <span class="dt">name</span><span class="op">:</span> <span class="st">&quot;Bowser&quot;</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb46-3" title="3">    <span class="dt">changeName</span><span class="op">:</span> <span class="kw">function</span> () <span class="op">{</span></a>
-<a class="sourceLine" id="cb46-4" title="4">        <span class="kw">this</span>.<span class="at">name</span> <span class="op">=</span> <span class="st">&quot;Layla&quot;</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb46-5" title="5">    <span class="op">},</span></a>
-<a class="sourceLine" id="cb46-6" title="6"><span class="op">};</span></a>
-<a class="sourceLine" id="cb46-7" title="7"></a>
-<a class="sourceLine" id="cb46-8" title="8"><span class="kw">let</span> change <span class="op">=</span> <span class="va">dog</span>.<span class="at">changeName</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb46-9" title="9"><span class="va">console</span>.<span class="at">log</span>(<span class="at">change</span>())<span class="op">;</span> <span class="co">// undefined</span></a>
-<a class="sourceLine" id="cb46-10" title="10"></a>
-<a class="sourceLine" id="cb46-11" title="11"><span class="va">console</span>.<span class="at">log</span>(dog)<span class="op">;</span> <span class="co">// { name: &#39;Bowser&#39;, changeName: [Function: changeName] }</span></a>
-<a class="sourceLine" id="cb46-12" title="12"></a>
-<a class="sourceLine" id="cb46-13" title="13"><span class="va">console</span>.<span class="at">log</span>(<span class="kw">this</span>)<span class="op">;</span> <span class="co">// Object [global] {etc, etc, etc,  name: &#39;Layla&#39;}</span></a></code></pre></div>
+<pre><code>let dog = {
+    name: &quot;Bowser&quot;,
+    changeName: function () {
+        this.name = &quot;Layla&quot;;
+    },
+};
+
+let change = dog.changeName;
+console.log(change()); // undefined
+
+console.log(dog); // { name: &#39;Bowser&#39;, changeName: [Function: changeName] }
+
+console.log(this); // Object [global] {etc, etc, etc,  name: &#39;Layla&#39;}</code></pre>
 <ul>
 <li>In the above example we get undefined when we assign our this function to a variable bc there is no obj to reference except the global one!</li>
 <li><p><strong><code>global.setTimeout()</code></strong> : popular method of setting a function to run on a timer.</p>
@@ -1040,41 +808,43 @@ global.setTimeout(hello, 5000); // waits 5 seconds then prints &quot;hello!&quot
 </ul>
 <p><strong>Changing Context using Bind</strong></p>
 <p>“The simplest use of <strong><code>bind()</code></strong> is to make a function that, no matter how it is called, is called with a particular this value”.</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb48-1" title="1"><span class="kw">let</span> cat <span class="op">=</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb48-2" title="2">    <span class="dt">purr</span><span class="op">:</span> <span class="kw">function</span> () <span class="op">{</span></a>
-<a class="sourceLine" id="cb48-3" title="3">        <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;meow&quot;</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb48-4" title="4">    <span class="op">},</span></a>
-<a class="sourceLine" id="cb48-5" title="5">    <span class="dt">purrMore</span><span class="op">:</span> <span class="kw">function</span> () <span class="op">{</span></a>
-<a class="sourceLine" id="cb48-6" title="6">        <span class="kw">this</span>.<span class="at">purr</span>()<span class="op">;</span></a>
-<a class="sourceLine" id="cb48-7" title="7">    <span class="op">},</span></a>
-<a class="sourceLine" id="cb48-8" title="8"><span class="op">};</span></a>
-<a class="sourceLine" id="cb48-9" title="9"></a>
-<a class="sourceLine" id="cb48-10" title="10"><span class="kw">let</span> sayMeow <span class="op">=</span> <span class="va">cat</span>.<span class="at">purrMore</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb48-11" title="11"><span class="va">console</span>.<span class="at">log</span>(<span class="at">sayMeow</span>())<span class="op">;</span> <span class="co">// TypeError</span></a>
-<a class="sourceLine" id="cb48-12" title="12"></a>
-<a class="sourceLine" id="cb48-13" title="13"><span class="kw">let</span> boundCat <span class="op">=</span> <span class="va">sayMeow</span>.<span class="at">bind</span>(cat)<span class="op">;</span></a>
-<a class="sourceLine" id="cb48-14" title="14"></a>
-<a class="sourceLine" id="cb48-15" title="15"><span class="at">boundCat</span>()<span class="op">;</span> <span class="co">// prints &quot;meow&quot;</span></a></code></pre></div>
+<pre><code>let cat = {
+    purr: function () {
+        console.log(&quot;meow&quot;);
+    },
+    purrMore: function () {
+        this.purr();
+    },
+};
+
+let sayMeow = cat.purrMore;
+console.log(sayMeow()); // TypeError
+
+let boundCat = sayMeow.bind(cat);
+
+boundCat(); // prints &quot;meow&quot;</code></pre>
 <p><strong>Binding with Arguments</strong></p>
 <ul>
 <li><p>We can also use bind() to bind arguments to a function.</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb49-1" title="1"><span class="kw">let</span> aboundFunc <span class="op">=</span> <span class="va">func</span>.<span class="at">bind</span>(context<span class="op">,</span> arg1<span class="op">,</span> arg2<span class="op">,</span> <span class="va">etc</span>...)<span class="op">;</span></a></code></pre></div>
-<div class="sourceCode" id="cb50"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb50-1" title="1"><span class="kw">const</span> sum <span class="op">=</span> <span class="kw">function</span> (a<span class="op">,</span> b) <span class="op">{</span></a>
-<a class="sourceLine" id="cb50-2" title="2">  <span class="cf">return</span> a <span class="op">+</span> b<span class="op">;</span></a>
-<a class="sourceLine" id="cb50-3" title="3"><span class="op">};</span></a>
-<a class="sourceLine" id="cb50-4" title="4"></a>
-<a class="sourceLine" id="cb50-5" title="5"><span class="kw">const</span> add3 <span class="op">=</span> <span class="va">sum</span>.<span class="at">bind</span>(<span class="kw">null</span><span class="op">,</span> <span class="dv">3</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb50-6" title="6"></a>
-<a class="sourceLine" id="cb50-7" title="7"><span class="va">console</span>.<span class="at">log</span>(<span class="at">add3</span>(<span class="dv">10</span>))<span class="op">;</span> <span class="co">// 13</span></a></code></pre></div>
-<div class="sourceCode" id="cb51"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb51-1" title="1"><span class="kw">const</span> multiply <span class="op">=</span> <span class="kw">function</span> (a<span class="op">,</span> b) <span class="op">{</span></a>
-<a class="sourceLine" id="cb51-2" title="2">  <span class="cf">return</span> a <span class="op">*</span> b<span class="op">;</span></a>
-<a class="sourceLine" id="cb51-3" title="3"><span class="op">};</span></a>
-<a class="sourceLine" id="cb51-4" title="4"></a>
-<a class="sourceLine" id="cb51-5" title="5"><span class="kw">const</span> double <span class="op">=</span> <span class="va">multiply</span>.<span class="at">bind</span>(<span class="kw">null</span><span class="op">,</span> <span class="dv">2</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb51-6" title="6"><span class="kw">const</span> triple <span class="op">=</span> <span class="va">multiply</span>.<span class="at">bind</span>(<span class="kw">null</span><span class="op">,</span> <span class="dv">3</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb51-7" title="7"></a>
-<a class="sourceLine" id="cb51-8" title="8"><span class="va">console</span>.<span class="at">log</span>(<span class="at">double</span>(<span class="dv">3</span>))<span class="op">;</span> <span class="co">// 6</span></a>
-<a class="sourceLine" id="cb51-9" title="9"><span class="va">console</span>.<span class="at">log</span>(<span class="at">triple</span>(<span class="dv">3</span>))<span class="op">;</span> <span class="co">// 9</span></a></code></pre></div></li>
+<pre><code>let aboundFunc = func.bind(context, arg1, arg2, etc...);
+
+const sum = function (a, b) {
+  return a + b;
+};
+
+const add3 = sum.bind(null, 3);
+
+console.log(add3(10)); // 13
+
+const multiply = function (a, b) {
+  return a * b;
+};
+
+const double = multiply.bind(null, 2);
+const triple = multiply.bind(null, 3);
+
+console.log(double(3)); // 6
+console.log(triple(3)); // 9</code></pre></li>
 </ul>
 <hr />
 <h2 id="arrow-functions-aka-fat-arrows"><strong>Arrow Functions aka Fat Arrows</strong></h2>
@@ -1082,15 +852,15 @@ global.setTimeout(hello, 5000); // waits 5 seconds then prints &quot;hello!&quot
 <li><strong><code>=&gt;</code></strong> : A more concise way of declaring a function and also considers the behavior of <code>this</code> and context.</li>
 </ul>
 <p><strong>Arrow Functions Solving Problems</strong></p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb52-1" title="1"><span class="kw">let</span> average <span class="op">=</span> <span class="kw">function</span> (num1<span class="op">,</span> num2) <span class="op">{</span></a>
-<a class="sourceLine" id="cb52-2" title="2">    <span class="kw">let</span> avg <span class="op">=</span> (num1 <span class="op">+</span> num2) / <span class="dv">2</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb52-3" title="3">    <span class="cf">return</span> avg<span class="op">;</span></a>
-<a class="sourceLine" id="cb52-4" title="4"><span class="op">};</span></a>
-<a class="sourceLine" id="cb52-5" title="5"></a>
-<a class="sourceLine" id="cb52-6" title="6"><span class="kw">let</span> averageArrow <span class="op">=</span> (num1<span class="op">,</span> num2) <span class="kw">=&gt;</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb52-7" title="7">    <span class="kw">let</span> avg <span class="op">=</span> (num1 <span class="op">+</span> num2) / <span class="dv">2</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb52-8" title="8">    <span class="cf">return</span> avg<span class="op">;</span></a>
-<a class="sourceLine" id="cb52-9" title="9"><span class="op">};</span></a></code></pre></div>
+<pre><code>let average = function (num1, num2) {
+    let avg = (num1 + num2) / 2;
+    return avg;
+};
+
+let averageArrow = (num1, num2) =&gt; {
+    let avg = (num1 + num2) / 2;
+    return avg;
+};</code></pre>
 <p>As you can see the arrow function is shorter and easier to read.</p>
 <p><strong>Anatomy of an Arrow Function</strong></p>
 <ul>

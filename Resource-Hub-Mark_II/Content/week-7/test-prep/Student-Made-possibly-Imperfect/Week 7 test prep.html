@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Week 7 test prep</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<p><img src="media/image1.png" style="width:7.65849in;height:3.26838in" /></p>
+<p><img src="media/image2.png" style="width:5.875in;height:4.3125in" /></p>
+<p><img src="media/image3.png" style="width:7.27083in;height:3.97917in" /></p>
+<p><img src="media/image4.png" style="width:8.38599in;height:4.63093in" /></p>
+<p><img src="media/image5.png" style="width:8.36458in;height:3.82292in" /></p>
+<p><img src="media/image6.png" style="width:8.38606in;height:4.22489in" /></p>
+<p><img src="media/image7.png" style="width:9.125in;height:3.85417in" /></p>
+<p><img src="media/image8.png" style="width:7.97493in;height:4.40929in" /></p>
+<p><img src="media/image9.png" style="width:9.89583in;height:5.35417in" /></p>
+<p><img src="media/image10.png" style="width:8.83075in;height:3.55032in" /></p>
+<p><img src="media/image11.png" style="width:8.97917in;height:6.10417in" /></p>
+<p><img src="media/image12.png" style="width:8.62308in;height:3.25in" /></p>
+<p><img src="media/image13.png" style="width:5.52083in;height:3.625in" /></p>
+<p><img src="media/image14.png" style="width:7.13451in;height:4.36346in" /></p>
+<p><img src="media/image15.png" style="width:5.76923in;height:5.46236in" /></p>
+<p><img src="media/image16.png" style="width:7.50683in;height:5.07783in" /></p>
+<p><img src="media/image17.png" style="width:7.22688in;height:2.03643in" /></p>
+<p><img src="media/image18.png" style="width:9.31597in;height:3.38814in" /></p>
+<p><img src="media/image19.png" style="width:7.48462in;height:4.24354in" /></p>
+<p><img src="media/image20.png" style="width:9.64615in;height:2.33333in" /></p>
+<p><img src="media/image21.png" style="width:7.64275in;height:3.23029in" /></p>
+<p><img src="media/image22.png" style="width:7.59274in;height:5.13429in" /></p>
+<p><img src="media/image23.png" style="width:7.64615in;height:6.63259in" /></p>
+<p><img src="media/image24.png" style="width:8.37692in;height:5.39194in" /></p>
+<p><img src="media/image25.png" style="width:8.66798in;height:5.27083in" /></p>
+<p><img src="media/image26.png" style="width:8.32396in;height:2.27997in" /></p>
+<p><img src="media/image27.png" style="width:7.98462in;height:1.55975in" /></p>
+<p><img src="media/image28.png" style="width:8.02292in;height:6.06602in" /></p>
+<p><em>//! Single Linked List</em></p>
+<p>class Node {</p>
+<p>    constructor(val) {</p>
+<p>        <em>this</em>.value = val;</p>
+<p>        <em>this</em>.next = null;</p>
+<p>    }</p>
+<p>}</p>
+<p>class LinkedList {</p>
+<p>    constructor() {</p>
+<p>        <em>this</em>.head = null;</p>
+<p>        <em>this</em>.tail = null;</p>
+<p>        <em>this</em>.length = 0;</p>
+<p>    }</p>
+<p>    addToTail(val) {</p>
+<p>        const newNode = new Node(val);</p>
+<p>        <em>if</em> (!<em>this</em>.head) {</p>
+<p>            <em>this</em>.head = newNode;</p>
+<p>        } <em>else</em> {</p>
+<p>            <em>this</em>.tail.next = newNode;</p>
+<p>        }</p>
+<p>        <em>this</em>.tail = newNode;</p>
+<p>        <em>this</em>.length++;</p>
+<p>        <em>return</em> <em>this</em>;</p>
+<p>    }</p>
+<p>    </p>
+<p>removeTail() {</p>
+<p>        <em>if</em> (!<em>this</em>.head) <em>return</em> undefined;</p>
+<p>        let current = <em>this</em>.head;</p>
+<p>        let newTail = current;</p>
+<p>        <em>while</em> (current.next) {</p>
+<p>            newTail = current;</p>
+<p>            current = current.next;</p>
+<p>        }</p>
+<p>        <em>this</em>.tail = newTail;</p>
+<p>        <em>this</em>.tail.next = null;</p>
+<p>        <em>this</em>.length--;</p>
+<p>        <em>if</em> (<em>this</em>.length === 0) {</p>
+<p>            <em>this</em>.head = null;</p>
+<p>            <em>this</em>.tail = null;</p>
+<p>        }</p>
+<p>        <em>return</em> current;</p>
+<p>    }</p>
+<p>    </p>
+<p>addToHead(val) {</p>
+<p>        let newNode = new Node(val);</p>
+<p>        <em>if</em> (!<em>this</em>.head) {</p>
+<p>            <em>this</em>.head = newNode;</p>
+<p>            <em>this</em>.tail = newNode;</p>
+<p>        } <em>else</em> {</p>
+<p>            newNode.next = <em>this</em>.head;</p>
+<p>            <em>this</em>.head = newNode;</p>
+<p>        }</p>
+<p>        <em>this</em>.length++;</p>
+<p>        <em>return</em> <em>this</em>;</p>
+<p>    }</p>
+<p>    </p>
+<p>removeHead() {</p>
+<p>        <em>if</em> (!<em>this</em>.head) <em>return</em> undefined;</p>
+<p>        const currentHead = <em>this</em>.head;</p>
+<p>        <em>this</em>.head = currentHead.next;</p>
+<p>        <em>this</em>.length--;</p>
+<p>        <em>if</em> (<em>this</em>.length === 0) {</p>
+<p>            <em>this</em>.tail = null;</p>
+<p>        }</p>
+<p>        <em>return</em> currentHead;</p>
+<p>    }</p>
+<p>    contains(target) {</p>
+<p>        let node = <em>this</em>.head;</p>
+<p>        <em>while</em> (node) {</p>
+<p>            <em>if</em> (node.value === target) <em>return</em> true;</p>
+<p>            node = node.next;</p>
+<p>        }</p>
+<p>        <em>return</em> false;</p>
+<p>    }</p>
+<p>    </p>
+<p>get(index) {</p>
+<p>        <em>if</em> (index &lt; 0 || index &gt;= <em>this</em>.length) <em>return</em> null;</p>
+<p>        let counter = 0;</p>
+<p>        let current = <em>this</em>.head;</p>
+<p>        <em>while</em> (counter !== index) {</p>
+<p>            current = current.next;</p>
+<p>            counter++;</p>
+<p>        }</p>
+<p>        <em>return</em> current;</p>
+<p>    }</p>
+<p>    </p>
+<p>set(index, val) {</p>
+<p>        const foundNode = <em>this</em>.get(index);</p>
+<p>        <em>if</em> (foundNode) {</p>
+<p>            foundNode.value = val;</p>
+<p>            <em>return</em> true;</p>
+<p>        }</p>
+<p>        <em>return</em> false;</p>
+<p>    }</p>
+<p>    insert(index, val) {</p>
+<p>        <em>if</em> (index &lt; 0 || index &gt; <em>this</em>.length) <em>return</em> false;</p>
+<p>        <em>if</em> (index === <em>this</em>.length) <em>return</em> !!<em>this</em>.addToTail(val);</p>
+<p>        <em>if</em> (index === 0) <em>return</em> !!<em>this</em>.addToHead(val);</p>
+<p>        const newNode = new Node(val);</p>
+<p>        const prev = <em>this</em>.get(index - 1);</p>
+<p>        const temp = prev.next;</p>
+<p>        prev.next = newNode;</p>
+<p>        newNode.next = temp;</p>
+<p>        <em>this</em>.length++;</p>
+<p>        <em>return</em> true;</p>
+<p>    }</p>
+<p>   </p>
+<p> remove(index) {</p>
+<p>        <em>if</em> (index &lt; 0 || index &gt;= <em>this</em>.length) <em>return</em> undefined;</p>
+<p>        <em>if</em> (index === 0) <em>return</em> <em>this</em>.removeHead();</p>
+<p>        <em>if</em> (index === <em>this</em>.length - 1) <em>return</em> <em>this</em>.removeTail();</p>
+<p>        const previousNode = <em>this</em>.get(index - 1);</p>
+<p>        const removed = previousNode.next;</p>
+<p>        previousNode.next = removed.next;</p>
+<p>        <em>this</em>.length--;</p>
+<p>        <em>return</em> removed;</p>
+<p>    }</p>
+<p>    size() {</p>
+<p>        <em>return</em> <em>this</em>.length;</p>
+<p>    }</p>
+<p>}</p>
+<p>exports.Node = Node;</p>
+<p>exports.LinkedList = LinkedList;</p>
+<p><em>//!Queue Array:</em></p>
+<p><em>// Using the first element of the array as the "front" of the queue</em></p>
+<p>class QueueArray {</p>
+<p>    constructor() {</p>
+<p>        <em>this</em>.queue = [];</p>
+<p>    }</p>
+<p>    enqueue(value) {</p>
+<p>        <em>this</em>.queue.push(value);</p>
+<p>    }</p>
+<p>    dequeue() {</p>
+<p>        <em>return</em> <em>this</em>.queue.shift();</p>
+<p>    }</p>
+<p>    peek() {</p>
+<p>        <em>return</em> <em>this</em>.queue[0];</p>
+<p>    }</p>
+<p>}</p>
+<p><em>// Using the last element of the array as the "front" of the queue</em></p>
+<p>class QueueArray {</p>
+<p>    constructor() {</p>
+<p>        <em>this</em>.queue = [];</p>
+<p>    }</p>
+<p>    enqueue(value) {</p>
+<p>        <em>this</em>.queue.unshift(value);</p>
+<p>    }</p>
+<p>    dequeue() {</p>
+<p>        <em>return</em> <em>this</em>.queue.pop();</p>
+<p>    }</p>
+<p>    peek() {</p>
+<p>        <em>return</em> <em>this</em>.queue[<em>this</em>.queue.length - 1];</p>
+<p>    }</p>
+<p>}</p>
+<p><em>//! Queue Node</em></p>
+<p>class Node {</p>
+<p>    constructor(val) {</p>
+<p>        <em>this</em>.value = val;</p>
+<p>        <em>this</em>.next = null;</p>
+<p>    }</p>
+<p>}</p>
+<p>class Queue {</p>
+<p>    constructor() {</p>
+<p>        <em>this</em>.front = null;</p>
+<p>        <em>this</em>.back = null;</p>
+<p>        <em>this</em>.length = 0;</p>
+<p>    }</p>
+<p>    </p>
+<p>enqueue(val) {</p>
+<p>        const newNode = new Node(val);</p>
+<p>        <em>if</em> (!<em>this</em>.front) {</p>
+<p>            <em>this</em>.front = newNode;</p>
+<p>            <em>this</em>.back = newNode;</p>
+<p>        } <em>else</em> {</p>
+<p>            <em>this</em>.back.next = newNode;</p>
+<p>            <em>this</em>.back = newNode;</p>
+<p>        }</p>
+<p>        <em>return</em> ++<em>this</em>.length;</p>
+<p>    }</p>
+<p>    </p>
+<p>dequeue() {</p>
+<p>        <em>if</em> (!<em>this</em>.front) {</p>
+<p>            <em>return</em> null;</p>
+<p>        }</p>
+<p>        const temp = <em>this</em>.front;</p>
+<p>        <em>if</em> (<em>this</em>.front === <em>this</em>.back) {</p>
+<p>            <em>this</em>.back = null;</p>
+<p>        }</p>
+<p>        <em>this</em>.front = <em>this</em>.front.next;</p>
+<p>        <em>this</em>.length--;</p>
+<p>        <em>return</em> temp.value;</p>
+<p>    }</p>
+<p>    size() {</p>
+<p>        <em>return</em> <em>this</em>.length;</p>
+<p>    }</p>
+<p>}</p>
+<p><em>//!Stack Array</em></p>
+<p><em>// Using the last element of the array as the "top" of the stack</em></p>
+<p><em>// This is more efficient than the second implementation because we can push and</em></p>
+<p><em>// pop from an array in O(1) time since we don't have to reassign any indices.</em></p>
+<p>class StackArray {</p>
+<p>    constructor() {</p>
+<p>        <em>this</em>.stack = [];</p>
+<p>    }</p>
+<p>    push(value) {</p>
+<p>        <em>this</em>.stack.push(value);</p>
+<p>    }</p>
+<p>    pop() {</p>
+<p>        <em>return</em> <em>this</em>.stack.pop();</p>
+<p>    }</p>
+<p>    peek() {</p>
+<p>        <em>return</em> <em>this</em>.stack[<em>this</em>.stack.length - 1];</p>
+<p>    }</p>
+<p>}</p>
+<p><em>// Using the first element of the array as the "top" of the stack</em></p>
+<p><em>// This is not as efficient as the previous implementation since we have to</em></p>
+<p><em>// reassign indices for a shift and unshift, but the user will see the same</em></p>
+<p><em>// functionality.</em></p>
+<p>class StackArray {</p>
+<p>    constructor() {</p>
+<p>        <em>this</em>.stack = [];</p>
+<p>    }</p>
+<p>    push(value) {</p>
+<p>        <em>this</em>.stack.unshift(value);</p>
+<p>    }</p>
+<p>    pop() {</p>
+<p>        <em>return</em> <em>this</em>.stack.shift();</p>
+<p>    }</p>
+<p>    peek() {</p>
+<p>        <em>return</em> <em>this</em>.stack[0];</p>
+<p>    }</p>
+<p>}</p>
+<p>class Node {</p>
+<p>    constructor(value) {</p>
+<p>        <em>this</em>.value = value;</p>
+<p>        <em>this</em>.next = null;</p>
+<p>    }</p>
+<p>}</p>
+<p>class StackNode {</p>
+<p>    constructor() {</p>
+<p>        <em>this</em>.top = null;</p>
+<p>        <em>this</em>.length = 0;</p>
+<p>    }</p>
+<p>    </p>
+<p>push(val) {</p>
+<p>        const newNode = new Node(val);</p>
+<p>        <em>if</em> (!<em>this</em>.top) {</p>
+<p>            <em>this</em>.top = newNode;</p>
+<p>        } <em>else</em> {</p>
+<p>            const temp = <em>this</em>.top;</p>
+<p>            <em>this</em>.top = newNode;</p>
+<p>            <em>this</em>.top.next = temp;</p>
+<p>        }</p>
+<p>        <em>this</em>.length++;</p>
+<p>        <em>return</em> <em>this</em>.length;</p>
+<p>    }</p>
+<p>    </p>
+<p>pop() {</p>
+<p>        <em>if</em> (!<em>this</em>.top) {</p>
+<p>            <em>return</em> null;</p>
+<p>        }</p>
+<p>        const temp = <em>this</em>.top;</p>
+<p>        <em>this</em>.top = <em>this</em>.top.next;</p>
+<p>        <em>this</em>.length--;</p>
+<p>        <em>return</em> temp.value;</p>
+<p>    }</p>
+<p>    peek() {</p>
+<p>        <em>if</em> (!<em>this</em>.top) {</p>
+<p>            <em>return</em> null;</p>
+<p>        }</p>
+<p>        <em>return</em> <em>this</em>.top.value;</p>
+<p>    }</p>
+<p>   </p>
+<p> size() {</p>
+<p>        <em>return</em> <em>this</em>.length;</p>
+<p>    }</p>
+<p>}</p>
+</body>
+</html>

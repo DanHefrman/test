@@ -1,107 +1,118 @@
-Function Context Cheatsheet
-===========================
+# Function Context Cheatsheet
 
-Types of Invocation
--------------------
-
--   Applies to only **named** and **unnamed** functions
--   **Doesn’t matter** for fat arrow functions
+## Types of Invocation
+- Applies to only **named** and **unnamed** functions
+- **Doesn't matter** for fat arrow functions
 
 ### Function-style invocation
-
--   Context of the function will be global context **UNLESS** binded
+- Context of the function will be global context **UNLESS** binded
 
 ### Method-style invocation
+- Context of the function will be the object which the function is called on **UNLESS** binded
 
--   Context of the function will be the object which the function is called on **UNLESS** binded
+```javascript
+const obj = {
+  name: 'Example Object',
+  unnamedFunc: function() {
+    console.log(this.name);
+  }
+};
 
-    const obj = {
-      name: 'Example Object',
-      unnamedFunc: function() {
-        console.log(this.name);
-      }
-    };
+// Method-style invocation
+obj.unnamedFunc(); // 'Example Object' 
 
-    // Method-style invocation
-    obj.unnamedFunc(); // 'Example Object' 
+// Function-style invocation
+const unnamedFunc = obj.unnamedFunc;
+unnamedFunc(); // Global context
+```
 
-    // Function-style invocation
-    const unnamedFunc = obj.unnamedFunc;
-    unnamedFunc(); // Global context
-
-Types of Functions
-------------------
+## Types of Functions
 
 ### Named Function
 
--   explicit `return` keyword required
--   curly braces `{}` around function body
--   **NOT** saved to a variable
--   parameters must be surrounded by parentheses `()`
--   context is defined by how it’s invoked or called
-    -   function-style: global context
-    -   method-style: context is object that function is being called on
--   calling `bind` on the function will return a function binded to the context of the `bind` argument
+- explicit `return` keyword required
+- curly braces `{}` around function body
+- **NOT** saved to a variable
+- parameters must be surrounded by parentheses `()`
+- context is defined by how it's invoked or called
+  - function-style: global context
+  - method-style: context is object that function is being called on
+- calling `bind` on the function will return a function binded to the context of the `bind` argument
 
-    function namedFunc(params) {
-      return 'named function'
-    }
+```javascript
+function namedFunc(params) {
+  return 'named function'
+}
+```
 
-    // bindedNamedFunc will have the context of obj
-    const bindedNamedFunc = namedFunc.bind(obj);
+```javascript
+// bindedNamedFunc will have the context of obj
+const bindedNamedFunc = namedFunc.bind(obj);
+```
 
 ### Unnamed Function
 
--   explicit `return` keyword required
--   curly braces `{}` around function body
--   **MUST** be saved to a variable
--   parameters must be surrounded by parentheses `()`
--   context is defined by how it’s invoked or called
-    -   function-style: global context
-    -   method-style: context is object that function is being called on
--   calling `bind` on the function will return a function binded to the context of the `bind` argument
+- explicit `return` keyword required
+- curly braces `{}` around function body
+- **MUST** be saved to a variable
+- parameters must be surrounded by parentheses `()`
+- context is defined by how it's invoked or called
+  - function-style: global context
+  - method-style: context is object that function is being called on
+- calling `bind` on the function will return a function binded to the context of the `bind` argument
 
-    const unnamedFunc = function(params) {
-      return 'unnamed function'
-    }
+```javascript
+const unnamedFunc = function(params) {
+  return 'unnamed function'
+}
+```
 
-    // bindedUnnamedFunc will have the context of obj
-    const bindedUnnamedFunc = unnamedFunc.bind(obj);
+```javascript
+// bindedUnnamedFunc will have the context of obj
+const bindedUnnamedFunc = unnamedFunc.bind(obj);
+```
 
 ### Explicit Fat Arrow Function
 
--   explicit `return` keyword required
--   curly braces `{}` around function body
--   **MUST** be saved to a variable
--   parameters must be surrounded by parentheses `()` **IF more than one parameter**
--   takes the context of where it’s defined
--   **CANNOT** be binded using `bind`
+- explicit `return` keyword required
+- curly braces `{}` around function body
+- **MUST** be saved to a variable
+- parameters must be surrounded by parentheses `()` **IF more than one parameter**
+- takes the context of where it's defined
+- **CANNOT** be binded using `bind`
 
-    const explicitFatArrow = params => {
-      return 'explicit fat arrow function'
-    };
+```javascript
+const explicitFatArrow = params => {
+  return 'explicit fat arrow function'
+};
+```
 
 ### Implicit Fat Arrow Function
 
--   **NO** `return` keyword
--   function body can only consist of what is being returned
--   Optional parentheses `()` around function body &gt; NOTE: Parentheses needs to be used if returning an object `ex: ({ key: value })`
--   **MUST** be saved to a variable
--   parameters must be surrounded by parentheses `()` **IF more than one parameter**
--   takes the context of where it’s defined
--   **CANNOT** be binded using `bind`
+- **NO** `return` keyword
+- function body can only consist of what is being returned
+- Optional parentheses `()` around function body
+> NOTE: Parentheses needs to be used if returning an object `ex: ({ key: value })`
+- **MUST** be saved to a variable
+- parameters must be surrounded by parentheses `()` **IF more than one parameter**
+- takes the context of where it's defined
+- **CANNOT** be binded using `bind`
 
-    const implicitFatArrow = (params) => 'implicit fat arrow function';
+```javascript
+const implicitFatArrow = (params) => 'implicit fat arrow function';
+```
 
-    const implicitFatArrow = (params) => ('implicit fat arrow function');
+```javascript
+const implicitFatArrow = (params) => ('implicit fat arrow function');
+```
 
-    const implicitFatArrow = (params) => ({
-      function: 'implicit fat arrow'
-    });
+```javascript
+const implicitFatArrow = (params) => ({
+  function: 'implicit fat arrow'
+});
+```
 
-Bind
-----
-
--   `bind` accepts multiple arguments
--   first argument is the context that you want to bind the function to
--   any arguments that come afterwards will be passed in when the bound function is called **BEFORE** the call time arguments
+## Bind
+- `bind` accepts multiple arguments
+- first argument is the context that you want to bind the function to
+- any arguments that come afterwards will be passed in when the bound function is called **BEFORE** the call time arguments

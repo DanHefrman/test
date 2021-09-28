@@ -125,3 +125,19 @@ localStorage.setItem('key', JSON.stringify({
 console.log(JSON.parse(localStorage.getItem('key')));
 
 ```
+
+
+
+
+
+find ./ -iname "*.md" -type f -exec sh -c 'pandoc --standalone "${0}" -o "${0%.md}.html"' {} \;
+
+
+
+find ./ -iname "*.html" -type f -exec sh -c 'pandoc --wrap=none --from html --to markdown_strict "${0}" -o "${0%.html}.md"' {} \;
+
+
+find ./ -iname "*.docx" -type f -exec sh -c 'pandoc "${0}" -o "${0%.docx}.md"' {} \;
+
+
+find . -name '*.rst' -exec pandoc {} -f rst -t markdown -o {}.md \;

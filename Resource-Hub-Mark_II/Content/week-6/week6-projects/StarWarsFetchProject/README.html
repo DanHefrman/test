@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="star-wars-api-promises-project">Star Wars API Promises Project</h1>
+<p>In this project you will be using the <a href="https://swapi.dev/">Star Wars API</a> to fetch information about Star Wars characters and save it into a file.</p>
+<p>You will use <code>node-fetch</code> and <code>fs</code> to accomplish this.</p>
+<p><strong>First, setup your code directory with a package.json and install node-fetch.</strong></p>
+<pre class="shell"><code>npm init -y
+npm install node-fetch</code></pre>
+<p><strong>Now let’s create a new <code>index.js</code> file in here and start coding!</strong></p>
+<p>Look at the example on the SWAPI website. You can see it gives us a URL like this to grab info on a person (the number is the id of the person, <code>1</code> is Luke Skywalker. <strong>Your code should work for any character id</strong>).</p>
+<p><code>https://swapi.dev/api/people/1</code></p>
+<p>This API responds with JSON by default and these are all <code>GET</code> requests so we can use plain ’ol fetch with the defaults like this:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="at">fetch</span>(<span class="st">&#39;https://swapi.dev/api/people/1&#39;</span>)<span class="op">;</span></a></code></pre></div>
+<p>As we know, fetch returns a promise, so next we would need to call <code>.then()</code> and then parse the <code>json</code> from the response.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="at">fetch</span>(<span class="st">&#39;https://swapi.dev/api/people/1&#39;</span>)</a>
+<a class="sourceLine" id="cb3-2" title="2">    .<span class="at">then</span>(response <span class="kw">=&gt;</span> <span class="va">response</span>.<span class="at">json</span>())</a></code></pre></div>
+<p>Remember, this short arrow function syntax is the same as this:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="at">fetch</span>(<span class="st">&#39;https://swapi.dev/api/people/1&#39;</span>)</a>
+<a class="sourceLine" id="cb4-2" title="2">    .<span class="at">then</span>((response) <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb4-3" title="3">        <span class="cf">return</span> <span class="va">response</span>.<span class="at">json</span>()</a>
+<a class="sourceLine" id="cb4-4" title="4">    <span class="op">}</span>)</a></code></pre></div>
+<p>But since we are only doing one thing, we can shorten it into one line.</p>
+<p>The point here is <code>response.json()</code> returns another promise, so this means we can chain another <code>.then()</code> call and that should get the resolved information from the JSON promise. Which should be the object representing a character from Star Wars.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb5-1" title="1">    <span class="at">fetch</span>(<span class="st">&#39;https://swapi.dev/api/people/1&#39;</span>)</a>
+<a class="sourceLine" id="cb5-2" title="2">    .<span class="at">then</span>((response) <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb5-3" title="3">        <span class="cf">return</span> <span class="va">response</span>.<span class="at">json</span>()</a>
+<a class="sourceLine" id="cb5-4" title="4">    <span class="op">}</span>)</a>
+<a class="sourceLine" id="cb5-5" title="5">    .<span class="at">then</span>(personObject <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb5-6" title="6">        <span class="va">console</span>.<span class="at">log</span>(personOnject)<span class="op">;</span></a>
+<a class="sourceLine" id="cb5-7" title="7">    <span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
+<p>If you console.log the person object you’ll see it looks like this:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="op">{</span></a>
+<a class="sourceLine" id="cb6-2" title="2">  <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Luke Skywalker&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb6-3" title="3">  <span class="dt">height</span><span class="op">:</span> <span class="st">&#39;172&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb6-4" title="4">  <span class="dt">mass</span><span class="op">:</span> <span class="st">&#39;77&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb6-5" title="5">  <span class="dt">hair_color</span><span class="op">:</span> <span class="st">&#39;blond&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb6-6" title="6">  <span class="dt">skin_color</span><span class="op">:</span> <span class="st">&#39;fair&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb6-7" title="7">  <span class="dt">eye_color</span><span class="op">:</span> <span class="st">&#39;blue&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb6-8" title="8">  <span class="dt">birth_year</span><span class="op">:</span> <span class="st">&#39;19BBY&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb6-9" title="9">  <span class="dt">gender</span><span class="op">:</span> <span class="st">&#39;male&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb6-10" title="10">  <span class="dt">homeworld</span><span class="op">:</span> <span class="st">&#39;http://swapi.dev/api/planets/1/&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb6-11" title="11">  <span class="dt">films</span><span class="op">:</span> [</a>
+<a class="sourceLine" id="cb6-12" title="12">    <span class="st">&#39;http://swapi.dev/api/films/1/&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb6-13" title="13">    <span class="st">&#39;http://swapi.dev/api/films/2/&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb6-14" title="14">    <span class="st">&#39;http://swapi.dev/api/films/3/&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb6-15" title="15">    <span class="st">&#39;http://swapi.dev/api/films/6/&#39;</span></a>
+<a class="sourceLine" id="cb6-16" title="16">  ]<span class="op">,</span></a>
+<a class="sourceLine" id="cb6-17" title="17">  <span class="dt">species</span><span class="op">:</span> []<span class="op">,</span></a>
+<a class="sourceLine" id="cb6-18" title="18">  <span class="dt">vehicles</span><span class="op">:</span> [</a>
+<a class="sourceLine" id="cb6-19" title="19">    <span class="st">&#39;http://swapi.dev/api/vehicles/14/&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb6-20" title="20">    <span class="st">&#39;http://swapi.dev/api/vehicles/30/&#39;</span></a>
+<a class="sourceLine" id="cb6-21" title="21">  ]<span class="op">,</span></a>
+<a class="sourceLine" id="cb6-22" title="22">  <span class="dt">starships</span><span class="op">:</span> [</a>
+<a class="sourceLine" id="cb6-23" title="23">    <span class="st">&#39;http://swapi.dev/api/starships/12/&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb6-24" title="24">    <span class="st">&#39;http://swapi.dev/api/starships/22/&#39;</span></a>
+<a class="sourceLine" id="cb6-25" title="25">  ]<span class="op">,</span></a>
+<a class="sourceLine" id="cb6-26" title="26">  <span class="dt">created</span><span class="op">:</span> <span class="st">&#39;2014-12-09T13:50:51.644000Z&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb6-27" title="27">  <span class="dt">edited</span><span class="op">:</span> <span class="st">&#39;2014-12-20T21:17:56.891000Z&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb6-28" title="28">  <span class="dt">url</span><span class="op">:</span> <span class="st">&#39;http://swapi.dev/api/people/1/&#39;</span></a>
+<a class="sourceLine" id="cb6-29" title="29"><span class="op">}</span></a></code></pre></div>
+<p>You’ll notice this has URLs in various places. <strong>See if you can make more fetch calls to get the homeworld of the character.</strong></p>
+<p>After you are getting both the person and the homeworld, <strong>try getting all of the films for the person</strong>. You’ll notice they are stored as an array of film URLs. You <em>perhaps</em> could use <code>Promise.all</code> to make a bunch of fetch calls for those URLs and then after they are finished you should have a complete list of the films as objects.</p>
+<p>Once you’ve got your person, their homeworld and the list of films, we will use the <code>fs</code> module’s <code>promises</code> version to write this info out to a file.</p>
+<p>To use the promise version of <code>fs</code> you simple import it like this:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">const</span> fs <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;fs&#39;</span>).<span class="at">promises</span><span class="op">;</span></a></code></pre></div>
+<p>The documentation for the promises version of <code>fs</code> is <a href="https://nodejs.org/dist/latest-v12.x/docs/api/fs.html#fs_fs_promises_api">here</a>.</p>
+<p>You see it contains almost identical versions of all the functions on <code>fs</code> but these versions return Promises instead of taking callback functions as arguments.</p>
+<p>So to write a file it would look something like this:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">const</span> fs <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;fs&#39;</span>).<span class="at">promises</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb8-2" title="2"></a>
+<a class="sourceLine" id="cb8-3" title="3"><span class="va">fs</span>.<span class="at">writeFile</span>(<span class="st">&#39;filename.txt&#39;</span><span class="op">,</span> fileContents<span class="op">,</span> <span class="st">&#39;utf-8&#39;</span>)</a>
+<a class="sourceLine" id="cb8-4" title="4">    .<span class="at">then</span>(() <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb8-5" title="5">        <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;The file is finished being written&quot;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb8-6" title="6">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb8-7" title="7">    .<span class="at">catch</span>(e <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb8-8" title="8">        <span class="va">console</span>.<span class="at">error</span>(<span class="st">&quot;Something went wrong when writing the file&quot;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb8-9" title="9">    <span class="op">}</span></a></code></pre></div>
+<p>You can chain <code>.then()</code> and <code>.catch()</code> methods after <code>writeFile</code> exactly like we did with <code>fetch</code>.</p>
+<p><strong>See if you can write out the following sentence to a file:</strong></p>
+<pre class="text"><code>My name is Luke Skywalker, I am from Tatooine
+I starred in the following films: A New Hope, The Empire Strikes Back, Return of the Jedi, Revenge of the Sith</code></pre>
+<p>Once you’ve finished this, see if you can refactor your code into multiple helper functions that each do one thing per the Single Responsibility principle.</p>
+</body>
+</html>
