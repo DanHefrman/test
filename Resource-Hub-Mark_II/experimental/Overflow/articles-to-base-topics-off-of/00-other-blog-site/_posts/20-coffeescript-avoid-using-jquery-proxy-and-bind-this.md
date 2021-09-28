@@ -4,7 +4,7 @@ When I was learning [CoffeeSctipt](http://coffeescript.org), I continued using t
 
 In CS, you can use Fat arrow functions for this.
 
-{% highlight coffeescript %} class Form constructor: (root) -&gt; <span class="citation" data-cites="root">@root</span> = root; <span class="citation" data-cites="root.on">@root.on</span> ‘submit’, <span class="citation" data-cites="onSubmit">@onSubmit</span> <span class="citation" data-cites="root.on">@root.on</span> ‘submit’, <span class="citation" data-cites="onSub">@onSub</span>
+{% highlight coffeescript %} class Form constructor: (root) -&gt; <span class="citation" data-cites="root"><span class="citation" data-cites="root">@root</span></span> = root; <span class="citation" data-cites="root.on"><span class="citation" data-cites="root.on">@root.on</span></span> ‘submit’, <span class="citation" data-cites="onSubmit"><span class="citation" data-cites="onSubmit">@onSubmit</span></span> <span class="citation" data-cites="root.on"><span class="citation" data-cites="root.on">@root.on</span></span> ‘submit’, <span class="citation" data-cites="onSub"><span class="citation" data-cites="onSub">@onSub</span></span>
 
 onSub:(e) -&gt; console.log(this) return false;
 

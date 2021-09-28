@@ -1,6 +1,6 @@
 In our [whatznear.com](http://whatznear.com) we were using tables in some places. When we went to responsive those tables are one of the biggest headaches. Since using table as it is for mobile is breaking our design, we thought of render data seperatly for mobile and desktop.
 
-Then <span class="citation" data-cites="shidhin">\[@shidhin\]</span>(http://twitter.com/shidhin) has came up with a CSS trick to use the same table for the mobile so we can avoid seperate rendering.
+Then <span class="citation" data-cites="shidhin">\[<span class="citation" data-cites="shidhin">@shidhin</span>\]</span>(http://twitter.com/shidhin) has came up with a CSS trick to use the same table for the mobile so we can avoid seperate rendering.
 
 ![CSS table for desktop](http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2014/07/table-for-esktop_zpsd1511e3b.png)
 

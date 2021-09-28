@@ -347,7 +347,7 @@ In CSS, what are the different types of media that a media query can target?
 
 SHOW
 
-Given the following CSS rule, write a media query that would change the product-index container so the items appear in a vertical fashion for a viewport width less than or equal to 300px: ``
+Given the following CSS rule, write a media query that would change the product-index container so the items appear in a vertical fashion for a viewport width less than or equal to 300px: \`\`
 
             .product-index {
                 display: flex;
@@ -383,7 +383,7 @@ What is the different between `box-sizing: border-box;` and `box-sizing: content
 
 border-box includes the border and padding in the width and height; content-box does not;
 
-``
+\`\`
 
             div {
                 box-sizing: border-box;
@@ -710,7 +710,7 @@ How would you make an element show animated changes?
 
 Use the transition-property and transition-duration
 
-``
+\`\`
 
             .button {
                 transition: margin-top -5 2s;
@@ -772,7 +772,7 @@ The element is removed from the page flow and is typically positioned relative t
 
 SHOW
 
-Which of the following diagrams shows the correct layout of the elements given their margin and padding settings shown in the CSS below: ``
+Which of the following diagrams shows the correct layout of the elements given their margin and padding settings shown in the CSS below: \`\`
 
         <body>
         <div class="container">
@@ -800,7 +800,7 @@ Diagram D
 
 SHOW
 
-Given the following HTML and CSS, which of the following diagrams shows the correct layout of the absolutely positioned element? ``
+Given the following HTML and CSS, which of the following diagrams shows the correct layout of the absolutely positioned element? \`\`
 
             <body>
             <div class="container">

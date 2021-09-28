@@ -1,5 +1,4 @@
-Javascript / jQuery  
-  
+Javascript / jQuery
 
         jQuery(function($){
             var doc = document;
@@ -31,10 +30,7 @@ Javascript / jQuery
             })
         });
 
-  
-  
-PHP  
-  
+PHP
 
     echo json_encode(array(0=>"a",1=>"b",2=>"c"));
     ?>

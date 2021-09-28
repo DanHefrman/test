@@ -16,7 +16,7 @@ Yeoman will create a initial scaffold with a single command.
 
 This command will create the basic app structure and create all the files need to run your app. It copy client dependencies using bower and also install all the npm dependencies used for build the app.
 
-### That's it? Just basic scaffold? No!
+### That’s it? Just basic scaffold? No!
 
 Yeoman backbone generator is bundled with many sub generators, which helps to create backbone router, model, collections and views.
 
@@ -27,7 +27,7 @@ Yeoman backbone generator is bundled with many sub generators, which helps to cr
 
 ### What if I am coffeescripter ?
 
-Its quite simple use `--coffee` option with the generator. If you created basic scaffold with coffee option then you don't want to use this option on every sub generator for that particular app. Yeoman sub-generators are intelligent enough to detect coffee and create scaffold accordingly.
+Its quite simple use `--coffee` option with the generator. If you created basic scaffold with coffee option then you don’t want to use this option on every sub generator for that particular app. Yeoman sub-generators are intelligent enough to detect coffee and create scaffold accordingly.
 
 ### Different HTML template engines
 

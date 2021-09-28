@@ -13,7 +13,7 @@ Name
 
 Email
 
-&lt;% <span class="citation" data-cites="user.each">@user.each</span> do | user | %&gt;
+&lt;% <span class="citation" data-cites="user.each"><span class="citation" data-cites="user.each">@user.each</span></span> do | user | %&gt;
 
 &lt;% user.name %&gt;
 

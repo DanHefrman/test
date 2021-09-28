@@ -40,15 +40,13 @@ Store is the place where application state is holding. We can use the `createSto
 -   dispatch() : To dispatch an action to change the state
 -   subscribe() : To listen to the state change
 
-    import {createStore} from 'redux';
+    import {createStore} from ‘redux’;
 
     const store = createStore(counter);
 
     console.log(store.getState()) // logs 0
 
-    store.dispatch({
-      type: 'INCREMENT'
-    });
+    store.dispatch({ type: ‘INCREMENT’ });
 
     console.log(store.getState()) // logs 1
 

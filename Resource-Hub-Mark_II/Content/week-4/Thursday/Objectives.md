@@ -1,46 +1,51 @@
-**Objectives**
-==============
+# **Objectives**
 
-**JSON**
---------
+## **JSON**
 
 **1. Identify and generate valid JSON-formatted strings**
 
--   JSON formatted strings can contain \[\] for arrays, and {} for objects.
--   Valid JSON values: objects, arrays, strings, numbers, booleans, and null.
--   Keys to Objects must be double quoted in JSON.
+- JSON formatted strings can contain [] for arrays, and {} for objects.
+- Valid JSON values: objects, arrays, strings, numbers, booleans, and null.
+- Keys to Objects must be double quoted in JSON.
 
 **2. Use JSON.parse to deserialize JSON-formatted strings**
 
-    const JSONString = '[1, 2, 3, 4, "apple", "banana, "pear"]';
-    const myList = JSON.parse(JSONString);
-    console.log(myList[4]); // "apple"
+```js
+const JSONString = '[1, 2, 3, 4, "apple", "banana, "pear"]';
+const myList = JSON.parse(JSONString);
+console.log(myList[4]); // "apple"
+```
 
 **3. Use JSON.stringify to serialize JavaScript objects**
 
-    const fruits = ["apple", "banana", "pear"];
-    const JSONString = JSON.stringify(fruits);
-    console.log(JSONString); // ["apple", "banana", "pear"]
+```js
+const fruits = ["apple", "banana", "pear"];
+const JSONString = JSON.stringify(fruits);
+console.log(JSONString); // ["apple", "banana", "pear"]
+```
 
-**4. Correctly identify the definition of “deserialize”**
+**4. Correctly identify the definition of "deserialize"**
 
--   When we take some data and turn it into a string, so our program can send it to another computer.
+- When we take some data and turn it into a string, so our program can send it to another computer.
 
-**5. Correctly identify the definition of “serialize”**
+**5. Correctly identify the definition of "serialize"**
 
--   When we take some text and turn it into data.
+- When we take some text and turn it into data.
 
-------------------------------------------------------------------------
+---
 
-**Storage**
------------
+## **Storage**
 
-**1. Write JavaScript to store the value “I &lt;3 falafel” with the key “eatz” in the browser’s local storage.**
+**1. Write JavaScript to store the value "I <3 falafel" with the key "eatz" in the browser's local storage.**
 
-    localStorage.setItem("eatz", "I <3 falafel");
+```js
+localStorage.setItem("eatz", "I <3 falafel");
+```
 
-**2. Write JavaScript to read the value stored in local storage for the key “paper-trail”.**
+**2. Write JavaScript to read the value stored in local storage for the key "paper-trail".**
 
-    localStorage.getItem("paper-trail");
+```js
+localStorage.getItem("paper-trail");
+```
 
-------------------------------------------------------------------------
+---

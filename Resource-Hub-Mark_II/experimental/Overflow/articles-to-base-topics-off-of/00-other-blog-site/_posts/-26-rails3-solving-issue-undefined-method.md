@@ -1,11 +1,9 @@
-  
-
-<span style="font-family: Consolas;"><span style="font-size: 15px;">Some days before when I am writing an application without using ActiveRecord and writing its tests with Rspec, I ran into an error </span></span><span style="background-color: white; font-size: 15px;"><span style="font-family: Consolas;">**"undefined method \`fixture\_path=\`"** when I executes the spec. If you are facing this issue here is how you can fix this error.</span></span>
+<span style="font-family: Consolas;"><span style="font-size: 15px;">Some days before when I am writing an application without using ActiveRecord and writing its tests with Rspec, I ran into an error </span></span><span style="background-color: white; font-size: 15px;"><span style="font-family: Consolas;">**“undefined method \`fixture\_path=\`”** when I executes the spec. If you are facing this issue here is how you can fix this error.</span></span>
 
 <span style="background-color: white; font-size: 15px;"><span style="font-family: Consolas;">  
 </span></span>
 
-<span style="background-color: white;"><span style="font-family: Consolas;"><span style="font-size: 15px;">I have created this application with **-O option for rails** command so that it won't use ActiveRecord. I think  **rspec-rails** is not enough intelligent to know this. When I **[setup the rspec-rails for Rails 3](http://blog.revathskumar.com/2012/07/set-up-rspec-for-rails-app.html) **it generates a **spec/spec\_helper.rb** with ActiveRecord configurations.</span></span></span>
+<span style="background-color: white;"><span style="font-family: Consolas;"><span style="font-size: 15px;">I have created this application with **-O option for rails** command so that it won’t use ActiveRecord. I think  **rspec-rails** is not enough intelligent to know this. When I **[setup the rspec-rails for Rails 3](http://blog.revathskumar.com/2012/07/set-up-rspec-for-rails-app.html) **it generates a **spec/spec\_helper.rb** with ActiveRecord configurations.</span></span></span>
 
 <span style="background-color: white; font-family: Consolas; font-size: 15px; white-space: pre-wrap;">  
 </span>

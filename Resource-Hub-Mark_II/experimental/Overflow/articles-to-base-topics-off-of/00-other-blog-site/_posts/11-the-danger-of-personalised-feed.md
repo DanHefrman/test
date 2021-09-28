@@ -1,6 +1,8 @@
 Most of the social apps now come with features called `personalised feed` or `personalised         experience`. They claim that they will provide personalised experience to each user differently as per their interest and people always buy it.
 
-<figure><embed src="%7B%7B%20page.image%20%7D%7D" style="width:100.0%" /><figcaption>unsplash-logo ¶ <span style="display:inline-block;padding:2px 3px">William White</span></figcaption></figure>Why the apps are giving you personalised feeds?
+unsplash-logo ¶ <span style="display:inline-block;padding:2px 3px">William White</span>
+
+Why the apps are giving you personalised feeds?
 -----------------------------------------------
 
 Because **That’s where they are taking control of the things** what you see or what you read. Nobody is gonna question them since what you see in your feed is seen by you only.

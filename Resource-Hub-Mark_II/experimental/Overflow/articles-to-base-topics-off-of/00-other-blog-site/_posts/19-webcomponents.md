@@ -10,6 +10,4 @@ In this talk, I tried to
 -   what are the major pieces? ( Templates, Custom Elements, Shadow DOM and imports)
 -   Current status and support.
 
-  
-
 Hope you enjoyed my slides.

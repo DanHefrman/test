@@ -1,19 +1,28 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>index</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+	</link>
+	<link rel="stylesheet" href="./stylesheets/reset.css">
+	<link rel="stylesheet" href="./stylesheets/main.css">
+	<script type="module" src="./your-code/index.js"></script>
+	<title>ES6 Modules</title>
 </head>
 <body>
-<h1 id="available-dogs">Available Dogs</h1>
-<p>Add New Dog</p>
+	<section>
+		<h1>Available Dogs</h1>
+		<ul id="dog-list"></ul>
+	</section>
+
+	<section class="form-container">
+		<form id="dog-form">
+			<input type="text" id="name" class="dog-input" placeholder="Name..."" autocomplete="off">
+			<input type="text" id="age" class="dog-input" placeholder="Age..."" autocomplete="off">
+			<input type="text" id="img-src" class="dog-input" placeholder="Image Url..."" >
+
+			<button>Add New Dog</button>
+		</form>
+	</section>
+	
 </body>
 </html>

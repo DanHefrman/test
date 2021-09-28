@@ -10,7 +10,7 @@
 <span style="font-size: large;">  
 </span>
 
-<span style="font-size: large;">2. Click on **I'll be careful, I promise!** </span>
+<span style="font-size: large;">2. Click on **I’ll be careful, I promise!** </span>
 
 <span style="font-size: large;">[<img src="http://2.bp.blogspot.com/-3b9I65QM1cA/TkuMEQrJ8HI/AAAAAAAABek/DsihSHYsP0A/s400/Screenshot-6.png" width="400" height="161" />](http://2.bp.blogspot.com/-3b9I65QM1cA/TkuMEQrJ8HI/AAAAAAAABek/DsihSHYsP0A/s1600/Screenshot-6.png)</span>
 

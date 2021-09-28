@@ -1,4 +1,4 @@
-We can use 4 units to specify font-size, `px`, `%`, `em` and newly added `rem`. The `em` and `rem` where bit confusing for me. In this blog post I like to discuss the difference between `em` and `rem` which <span class="citation" data-cites="shidhin">\[@shidhin\]</span>(http://twitter.com/shidhin) taught me.
+We can use 4 units to specify font-size, `px`, `%`, `em` and newly added `rem`. The `em` and `rem` where bit confusing for me. In this blog post I like to discuss the difference between `em` and `rem` which <span class="citation" data-cites="shidhin">\[<span class="citation" data-cites="shidhin">@shidhin</span>\]</span>(http://twitter.com/shidhin) taught me.
 
 Understanding `em` unit
 =======================

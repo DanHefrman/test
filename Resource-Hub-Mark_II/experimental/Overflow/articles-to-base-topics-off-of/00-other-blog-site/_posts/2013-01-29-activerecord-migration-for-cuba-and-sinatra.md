@@ -1,7 +1,5 @@
 [![](http://2.bp.blogspot.com/-FNAYC_NgaDc/UQeOcMTMbrI/AAAAAAAALOQ/bKCITp9Ye0E/s1600/sinatra.png)](http://2.bp.blogspot.com/-FNAYC_NgaDc/UQeOcMTMbrI/AAAAAAAALOQ/bKCITp9Ye0E/s1600/sinatra.png)
 
-  
-
 Rails like highly featured frameworks are already packed with the rake tasks for database migrations. But recently when I was playing with [cuba](http://cuba.is/), a micro [framework](https://github.com/soveran/cuba) for ruby, I really wanted to setup migrations so that I can handle database changes in production without hassle. The migration tasks are not bundle with cuba, so I wrote two tasks to handle database creation and database migration. Here is my Rakefile looks like
 
     require 'active_record'
@@ -37,7 +35,6 @@ You can use **<span style="background-color: white; color: #dd1144; font-family:
     rake db:create RACK_ENV=production
             rake db:migrate VERSION=10
 
-  
 This can be used in both cuba and [sinatra](http://www.sinatrarb.com/).
 
 $

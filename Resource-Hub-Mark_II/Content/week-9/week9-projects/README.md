@@ -1,26 +1,32 @@
-# Week 9 Projects
+Week 9 Projects
+===============
 
-## Monday
+Monday
+------
+
 Modern Craigslist
 
-## Tuesday
+Tuesday
+-------
+
 Recreate Trello
 
-## FlexBox Fun
-[FlexBox Froggy](https://flexboxfroggy.com/)
-[FlexBox Defense](http://www.flexboxdefense.com/)
+FlexBox Fun
+-----------
+
+[FlexBox Froggy](https://flexboxfroggy.com/) [FlexBox Defense](http://www.flexboxdefense.com/)
 
 ### Grid Fun
+
 [CSS Grid Garden](http://cssgridgarden.com/)
 
-## Wednesday
-Whack-a-mole
-AA Times
-## Thursday
-AJAX Project
-Catstagram
+Wednesday
+---------
 
-## Friday
+Whack-a-mole AA Times \#\# Thursday AJAX Project Catstagram
 
-# The Projects are optional for today
+Friday
+------
 
+The Projects are optional for today
+===================================

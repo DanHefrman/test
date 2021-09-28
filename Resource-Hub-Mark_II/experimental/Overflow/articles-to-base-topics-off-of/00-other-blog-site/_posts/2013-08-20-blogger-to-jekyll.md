@@ -14,7 +14,7 @@ and then initiliased my blog
 *Importing*
 -----------
 
-Now I need to import all my existing blog posts from blogger to jekyll. I used a [import script](https://gist.github.com/kennym/1115810) by <span class="citation" data-cites="kennym">\[@kennym\]</span>(https://github.com/kennym).
+Now I need to import all my existing blog posts from blogger to jekyll. I used a [import script](https://gist.github.com/kennym/1115810) by <span class="citation" data-cites="kennym">\[<span class="citation" data-cites="kennym">@kennym</span>\]</span>(https://github.com/kennym).
 
 As per the script instructions I took my feed url from blogger and passed to the script, I thought **oh! ya I am done**. But I was wrong, the feed contained only half of my blog posts.
 

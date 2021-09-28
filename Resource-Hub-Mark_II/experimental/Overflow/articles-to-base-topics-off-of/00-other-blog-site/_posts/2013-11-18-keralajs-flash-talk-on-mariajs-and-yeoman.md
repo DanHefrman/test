@@ -1,4 +1,4 @@
-id="summary"&gt;Summary
+id=“summary”&gt;Summary
 
 This is just a summary of my unprepard flash talk on [MariaJS](http://peter.michaux.ca/maria/) and [Yeoman](http://yeoman.io) in [KeralaJS](http://keralajs.org) meetup. I was really happy that I am able to introduce MariaJS and Yeoman to community. Most of them were already heard and used about Yeoman, But MariaJS was really new to everyone. I started my talk with **What’s MariaJS** and **How it’s different from other MV\* frameworks**. My intension was not to start a debate on JS frameworks, but rather make them understand other JS frameworks availabe now are not MVC.
 
@@ -20,8 +20,8 @@ Here is the explanation of MVC by Peter Michaux.
 
 -   Created by : [Peter Michaux](http://peter.michaux.ca/)
 
-    -   Github : <span class="citation" data-cites="petermichaux">\[@petermichaux\]</span>(https://github.com/petermichaux)
-    -   Twitter : <span class="citation" data-cites="petermichaux">\[@petermichaux\]</span>(http://twitter.com/petermichaux)
+    -   Github : <span class="citation" data-cites="petermichaux">\[<span class="citation" data-cites="petermichaux">@petermichaux</span>\]</span>(https://github.com/petermichaux)
+    -   Twitter : <span class="citation" data-cites="petermichaux">\[<span class="citation" data-cites="petermichaux">@petermichaux</span>\]</span>(http://twitter.com/petermichaux)
 
 -   MariaJS : [website](http://peter.michaux.ca/maria/)
     -   [Source](https://github.com/petermichaux/maria)

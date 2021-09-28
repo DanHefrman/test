@@ -364,17 +364,7 @@ One issue I face during the shared tests are `this` is undefined error, especial
 
 2.  Use `{ "allowTopLevelThis": true }` as option for `transform-es2015-modules-commonjs` in **.babelrc**
 
-    {
-      "presets": ["react"],
-      "plugins": [
-        [
-          "transform-es2015-modules-commonjs",
-          {
-            "allowTopLevelThis": true
-          }
-        ]
-      ]
-    }
+    { “presets”: \[“react”\], “plugins”: \[ \[ “transform-es2015-modules-commonjs”, { “allowTopLevelThis”: true } \] \] }
 
 The example code is available on [gitlab.com/revathskumar/jest-shared-test-example](https://gitlab.com/revathskumar/jest-shared-test-example) and see the commit of refactoring part as nice [gitlab diff](https://gitlab.com/revathskumar/jest-shared-test-example/commit/d9031be27747cd60cc2ee70282d52c9f7f45345c).
 

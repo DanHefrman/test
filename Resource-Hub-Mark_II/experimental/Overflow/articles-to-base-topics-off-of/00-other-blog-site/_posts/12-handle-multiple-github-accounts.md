@@ -75,6 +75,6 @@ Later, add `export HUB_CONFIG="$HOME/.config/hub-client"` into the our `.envrc` 
 
 That’s it. No more worry about switching accounts before starting the client work or getting access denied error.
 
-Special thanks to <span class="citation" data-cites="emilsoman">\[@emilsoman\]</span>[emil\_twitter](https://twitter.com/emilsoman) for introducing me to `$GIT_SSH_COMMAND` and <span class="citation" data-cites="isaacaggrey">\[@isaacaggrey\]</span>[isaacaggrey\_github](https://github.com/isaacaggrey) for [hub config workaround](https://github.com/github/hub/issues/1300#issuecomment-318872894)
+Special thanks to <span class="citation" data-cites="emilsoman">\[<span class="citation" data-cites="emilsoman">@emilsoman</span>\]</span>[emil\_twitter](https://twitter.com/emilsoman) for introducing me to `$GIT_SSH_COMMAND` and <span class="citation" data-cites="isaacaggrey">\[<span class="citation" data-cites="isaacaggrey">@isaacaggrey</span>\]</span>[isaacaggrey\_github](https://github.com/isaacaggrey) for [hub config workaround](https://github.com/github/hub/issues/1300#issuecomment-318872894)
 
 If you are interested in getting github notification of specific organization into a specific email, check my other post on [Github : Routing organization notifications to official email](https://blog.revathskumar.com/2013/12/github-routing-organization-notifications.html).

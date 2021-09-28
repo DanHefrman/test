@@ -36,7 +36,7 @@ All the yeoman generators comes with a Gruntfile, with so many task included. so
 
 `grunt server`
 
-Server task will help you to compile sass, coffeescript, template etc and starts a http server with live reload then open your webapp in the browser. Live reload will help you to preview all the changes done after starting the server right away in the browser, means you don't wanna reload the page manually.
+Server task will help you to compile sass, coffeescript, template etc and starts a http server with live reload then open your webapp in the browser. Live reload will help you to preview all the changes done after starting the server right away in the browser, means you don’t wanna reload the page manually.
 
 `grunt jshint`
 
@@ -50,7 +50,7 @@ This single command will execute all the tests in your app and make sure it work
 
 This single command will help you to make your app ready for production, means this will compile the scripts, concat all the jsfiles and minify. More over before saying production ready this will run the tests and jshint to make sure everything works fine and follow the standard. According to [jeol on software](http://www.joelonsoftware.com/articles/fog0000000043.html) you should be able to build in a single command and this will help you to achieve that.
 
-You can customize the gruntfile according to your needs. That's all about my workflow on javascript projects.
+You can customize the gruntfile according to your needs. That’s all about my workflow on javascript projects.
 
 Hope you enjoyed reading. If you find any errata in this post, Ping me. I am happy to fix those. Thanks for reading.
 
